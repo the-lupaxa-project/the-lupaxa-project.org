@@ -1,0 +1,240 @@
+# =============================================================================
+# Documentation Catalogue
+# =============================================================================
+#
+# This file controls which documentation sites and documentation resources
+# appear on the portal.
+#
+# Documentation is never discovered or published automatically. An entry only
+# appears when it is explicitly included here and has published set to true.
+#
+# Documentation entries may be linked to a project or organisation, but they do
+# not have to be. This allows the portal to include shared standards, reference
+# material and organisation-wide documentation alongside project-specific
+# documentation.
+
+documentation:
+  # ---------------------------------------------------------------------------
+  # GitHub Repository Sync
+  # ---------------------------------------------------------------------------
+
+  - id: github-repository-sync
+
+    name: GitHub Repository Sync
+
+    description: >-
+      Installation, configuration, usage and reference documentation for
+      synchronising large collections of GitHub repositories.
+
+    documentation_url: https://github-repo-sync.thelupaxaproject.org/
+
+    project: github-repository-sync
+
+    organisation: internal-toolbox
+
+    categories:
+      - github
+      - repository-management
+      - automation
+
+    type: project
+
+    status: active
+
+    featured: true
+
+    published: true
+
+    order: 10
+
+  # ---------------------------------------------------------------------------
+  # Shared Reusable Workflows
+  # ---------------------------------------------------------------------------
+
+  - id: shared-reusable-workflows
+
+    name: Shared Reusable Workflows
+
+    description: >-
+      Documentation for the reusable GitHub Actions workflows contained in the
+      central workflows repository.
+
+    repository_url: https://github.com/the-lupaxa-project/workflows
+
+    project: shared-reusable-workflows
+
+    organisation: the-lupaxa-project
+
+    categories:
+      - github-actions
+      - continuous-integration
+      - automation
+
+    type: project
+
+    status: active
+
+    featured: true
+
+    published: true
+
+    order: 20
+
+  # ---------------------------------------------------------------------------
+  # Brand Assets
+  # ---------------------------------------------------------------------------
+
+  - id: brand-assets
+
+    name: Brand Assets
+
+    description: >-
+      Guidance and reference material for using The Lupaxa Project logos,
+      colours, visual assets and organisation branding.
+
+    repository_url: https://github.com/the-lupaxa-project/brand-assets
+
+    organisation: the-lupaxa-project
+
+    categories:
+      - branding
+      - design
+      - standards
+
+    type: reference
+
+    status: active
+
+    featured: true
+
+    published: true
+
+    order: 30
+
+  # ---------------------------------------------------------------------------
+  # Contributing
+  # ---------------------------------------------------------------------------
+
+  - id: contributing
+
+    name: Contributing
+
+    description: >-
+      Shared contribution guidance and development expectations used across
+      The Lupaxa Project repositories.
+
+    documentation_url: >-
+      https://github.com/the-lupaxa-project/.github/blob/master/CONTRIBUTING.md
+
+    organisation: the-lupaxa-project
+
+    categories:
+      - contributing
+      - development
+      - standards
+
+    type: policy
+
+    status: active
+
+    featured: false
+
+    published: true
+
+    order: 100
+
+  # ---------------------------------------------------------------------------
+  # Code of Conduct
+  # ---------------------------------------------------------------------------
+
+  - id: code-of-conduct
+
+    name: Code of Conduct
+
+    description: >-
+      The shared standards of behaviour and participation used throughout
+      The Lupaxa Project.
+
+    documentation_url: >-
+      https://github.com/the-lupaxa-project/.github/blob/master/CODE_OF_CONDUCT.md
+
+    organisation: the-lupaxa-project
+
+    categories:
+      - community
+      - policy
+      - standards
+
+    type: policy
+
+    status: active
+
+    featured: false
+
+    published: true
+
+    order: 110
+
+  # ---------------------------------------------------------------------------
+  # Security Policy
+  # ---------------------------------------------------------------------------
+
+  - id: security-policy
+
+    name: Security Policy
+
+    description: >-
+      Guidance for reporting security issues and handling vulnerabilities
+      affecting The Lupaxa Project repositories.
+
+    documentation_url: >-
+      https://github.com/the-lupaxa-project/.github/blob/master/SECURITY.md
+
+    organisation: the-lupaxa-project
+
+    categories:
+      - security
+      - policy
+      - vulnerability-reporting
+
+    type: policy
+
+    status: active
+
+    featured: false
+
+    published: true
+
+    order: 120
+
+  # ---------------------------------------------------------------------------
+  # Support
+  # ---------------------------------------------------------------------------
+
+  - id: support
+
+    name: Support
+
+    description: >-
+      Information about requesting help, reporting problems and finding the
+      appropriate support channel.
+
+    documentation_url: >-
+      https://github.com/the-lupaxa-project/.github/blob/master/SUPPORT.md
+
+    organisation: the-lupaxa-project
+
+    categories:
+      - support
+      - community
+      - policy
+
+    type: policy
+
+    status: active
+
+    featured: false
+
+    published: true
+
+    order: 130

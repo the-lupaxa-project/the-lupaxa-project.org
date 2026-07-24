@@ -1,0 +1,524 @@
+/* =============================================================================
+ * The Lupaxa Project Portal
+ * =============================================================================
+ *
+ * Additional presentation rules for the central project portal.
+ *
+ * The stylesheet intentionally builds on MkDocs Material rather than replacing
+ * the theme, keeping the site maintainable and compatible with future theme
+ * updates.
+ */
+
+/* =============================================================================
+ * Global Layout
+ * =============================================================================
+ */
+
+.md-main__inner {
+  margin-top: 0;
+}
+
+.md-content {
+  max-width: none;
+}
+
+.md-content__inner {
+  margin: 0;
+  padding-bottom: 3rem;
+}
+
+.md-content__inner::before {
+  display: none;
+}
+
+/* =============================================================================
+ * Header
+ * =============================================================================
+ */
+
+.md-header {
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-weight: 600;
+}
+
+.md-tabs {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* =============================================================================
+ * Hero
+ * =============================================================================
+ */
+
+.lupaxa-hero {
+  margin: 0 -1.2rem 3rem;
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+  background:
+    radial-gradient(
+      circle at top,
+      color-mix(in srgb, var(--md-primary-fg-color) 20%, transparent),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent),
+      transparent
+    );
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.lupaxa-hero img {
+  display: block;
+  width: min(100%, 256px);
+  height: auto;
+  margin: 0 auto 1.5rem;
+}
+
+.lupaxa-hero h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.lupaxa-hero-subtitle {
+  max-width: 48rem;
+  margin: 1.2rem auto 0;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+}
+
+.lupaxa-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.lupaxa-hero-actions .md-button {
+  min-width: 10rem;
+}
+
+/* =============================================================================
+ * Sections
+ * =============================================================================
+ */
+
+.md-typeset h2 {
+  margin-top: 3rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.md-typeset h2:first-of-type {
+  margin-top: 1rem;
+}
+
+.md-typeset h3 {
+  margin-top: 2.25rem;
+}
+
+/* =============================================================================
+ * Cards
+ * =============================================================================
+ */
+
+.md-typeset .grid.cards {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.md-typeset .grid.cards > ul {
+  display: contents;
+}
+
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > li {
+  position: relative;
+  margin: 0;
+  padding: 1.4rem;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(
+        in srgb,
+        var(--md-default-bg-color) 96%,
+        var(--md-primary-fg-color)
+      ),
+      var(--md-default-bg-color)
+    );
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.7rem;
+  box-shadow:
+    0 0.1rem 0.3rem rgb(0 0 0 / 4%),
+    0 0.3rem 1rem rgb(0 0 0 / 3%);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > li:hover {
+  border-color:
+    color-mix(
+      in srgb,
+      var(--md-primary-fg-color) 55%,
+      var(--md-default-fg-color--lightest)
+    );
+  box-shadow:
+    0 0.2rem 0.6rem rgb(0 0 0 / 7%),
+    0 0.6rem 1.5rem rgb(0 0 0 / 7%);
+  transform: translateY(-0.15rem);
+}
+
+.md-typeset .grid.cards strong {
+  font-size: 1.05rem;
+}
+
+.md-typeset .grid.cards hr {
+  margin: 0.8rem 0;
+  border-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset .grid.cards .lg {
+  margin-right: 0.35rem;
+  color: var(--md-primary-fg-color);
+}
+
+/* =============================================================================
+ * Catalogue Card Grid
+ * =============================================================================
+ *
+ * Catalogue grids use fixed upper card widths. This prevents one or two cards
+ * from expanding across the full content area while still allowing additional
+ * cards to wrap naturally.
+ */
+
+.md-typeset .grid.cards.catalogue-grid {
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 22rem));
+  justify-content: start;
+  align-items: stretch;
+}
+
+.md-typeset .grid.cards.catalogue-grid > ul > li,
+.md-typeset .grid.cards.catalogue-grid > li {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+}
+
+/*
+ * Remove the default paragraph margin from the icon and title row.
+ */
+
+.md-typeset .catalogue-grid > ul > li > p:first-child,
+.md-typeset .catalogue-grid > li > p:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/*
+ * Give catalogue titles slightly more visual prominence than ordinary card
+ * text while keeping the Material icon aligned with the title.
+ */
+
+.md-typeset .catalogue-grid > ul > li > p:first-child strong,
+.md-typeset .catalogue-grid > li > p:first-child strong {
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.md-typeset .catalogue-grid > ul > li > p,
+.md-typeset .catalogue-grid > li > p {
+  line-height: 1.55;
+}
+
+/*
+ * Compact code elements are used as technology tags by the catalogue
+ * renderer.
+ */
+
+.md-typeset .catalogue-grid code {
+  display: inline-block;
+  margin: 0.12rem 0.16rem 0.12rem 0;
+  padding: 0.18rem 0.45rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  background:
+    color-mix(
+      in srgb,
+      var(--md-code-bg-color) 88%,
+      var(--md-primary-fg-color)
+    );
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.3rem;
+}
+
+/* =============================================================================
+ * Catalogue Categories
+ * =============================================================================
+ */
+
+.md-typeset .catalogue-category {
+  display: inline-block;
+  margin: 0.12rem 0.18rem 0.12rem 0;
+  padding: 0.18rem 0.48rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--md-primary-fg-color);
+  text-decoration: none;
+  white-space: nowrap;
+  background:
+    color-mix(
+      in srgb,
+      var(--md-primary-fg-color) 8%,
+      transparent
+    );
+  border:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--md-primary-fg-color) 24%,
+      var(--md-default-fg-color--lightest)
+    );
+  border-radius: 999rem;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.md-typeset .catalogue-category:hover {
+  color: var(--md-primary-bg-color);
+  background: var(--md-primary-fg-color);
+  border-color: var(--md-primary-fg-color);
+}
+
+/* =============================================================================
+ * Catalogue Actions
+ * =============================================================================
+ */
+
+.md-typeset .catalogue-action {
+  display: inline-flex;
+  gap: 0.3rem;
+  align-items: center;
+  margin: 0.15rem 0.45rem 0.15rem 0;
+  font-size: 0.76rem;
+  font-weight: 650;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.md-typeset .catalogue-action:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
+}
+
+.md-typeset .catalogue-action .twemoji,
+.md-typeset .catalogue-action svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+/*
+ * The final horizontal rule and action paragraph form the card footer. Using
+ * auto margin keeps the footer close to the bottom when neighbouring cards
+ * contain longer descriptions.
+ */
+
+.md-typeset .catalogue-grid > ul > li > hr:last-of-type,
+.md-typeset .catalogue-grid > li > hr:last-of-type {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* =============================================================================
+ * Compact Category Cards
+ * =============================================================================
+ */
+
+.md-typeset .grid.cards li:has(> p:only-child) {
+  display: flex;
+  min-height: 5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/*
+ * Catalogue cards contain richer content and must not inherit the compact
+ * category-card layout.
+ */
+
+.md-typeset .catalogue-grid li:has(> p:only-child) {
+  display: block;
+  min-height: initial;
+  text-align: left;
+}
+
+/* =============================================================================
+ * Buttons
+ * =============================================================================
+ */
+
+.md-typeset .md-button {
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  border-width: 1px;
+  border-radius: 0.35rem;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-0.05rem);
+}
+
+/* =============================================================================
+ * Footer
+ * =============================================================================
+ */
+
+.md-footer-meta {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.md-footer-copyright {
+  width: 100%;
+  text-align: center;
+}
+
+/* =============================================================================
+ * Light Mode
+ * =============================================================================
+ */
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #ffffff;
+}
+
+/* =============================================================================
+ * Dark Mode
+ * =============================================================================
+ */
+
+[data-md-color-scheme="slate"] .lupaxa-hero {
+  background:
+    radial-gradient(
+      circle at top,
+      color-mix(in srgb, var(--md-primary-fg-color) 18%, transparent),
+      transparent 58%
+    ),
+    linear-gradient(
+      180deg,
+      rgb(255 255 255 / 2%),
+      transparent
+    );
+}
+
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > li {
+  box-shadow:
+    0 0.1rem 0.4rem rgb(0 0 0 / 15%),
+    0 0.4rem 1.2rem rgb(0 0 0 / 12%);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .catalogue-category {
+  background:
+    color-mix(
+      in srgb,
+      var(--md-primary-fg-color) 12%,
+      transparent
+    );
+}
+
+/* =============================================================================
+ * Responsive Behaviour
+ * =============================================================================
+ */
+
+@media screen and (max-width: 76.234375em) {
+  .lupaxa-hero {
+    margin-right: -0.8rem;
+    margin-left: -0.8rem;
+  }
+
+  .md-typeset .grid.cards.catalogue-grid {
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  }
+}
+
+@media screen and (max-width: 44.984375em) {
+  .lupaxa-hero {
+    margin-right: -0.8rem;
+    margin-bottom: 2rem;
+    margin-left: -0.8rem;
+    padding: 2.5rem 1rem 2.25rem;
+  }
+
+  .lupaxa-hero img {
+    width: min(90%, 381px);
+  }
+
+  .lupaxa-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lupaxa-hero-actions .md-button {
+    width: 100%;
+  }
+
+  .md-typeset .grid.cards,
+  .md-typeset .grid.cards.catalogue-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .md-typeset h2 {
+    margin-top: 2.25rem;
+  }
+
+  .md-typeset .catalogue-category {
+    white-space: normal;
+  }
+}
+
+/* =============================================================================
+ * Reduced Motion
+ * =============================================================================
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid.cards > ul > li,
+  .md-typeset .grid.cards > li,
+  .md-typeset .md-button,
+  .md-typeset .catalogue-category {
+    transition: none;
+  }
+
+  .md-typeset .grid.cards > ul > li:hover,
+  .md-typeset .grid.cards > li:hover,
+  .md-typeset .md-button:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,1249 @@
+{
+  "portal": {
+    "name": "The Lupaxa Project",
+    "description": "The central portal for projects, organisations, toolboxes and documentation contained across The Lupaxa Project ecosystem.",
+    "base_url": "https://thelupaxaproject.org/",
+    "github_url": "https://github.com/the-lupaxa-project",
+    "default_language": "en"
+  },
+  "projects": [
+    {
+      "id": "github-repository-sync",
+      "name": "GitHub Repository Sync",
+      "repository": "the-lupaxa-internal-toolbox/lupaxa-github-repo-sync",
+      "description": "Safely clone and synchronise large collections of GitHub repositories from a single declarative configuration.",
+      "organisation": "internal-toolbox",
+      "categories": [
+        "github",
+        "automation",
+        "repository-management"
+      ],
+      "technologies": [
+        "Python",
+        "GitHub API",
+        "YAML"
+      ],
+      "documentation_url": "https://github-repo-sync.thelupaxaproject.org/",
+      "repository_url": "https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync",
+      "status": "active",
+      "maturity": "stable",
+      "visibility": "public",
+      "featured": true,
+      "published": true,
+      "order": 10
+    },
+    {
+      "id": "github-workflow-scheduler",
+      "name": "GitHub Workflow Scheduler",
+      "repository": "lupaxa/github-workflow-scheduler",
+      "description": "Dispatch scheduled GitHub Actions workflows using a central configuration and a reliable external scheduler.",
+      "organisation": "github-toolbox",
+      "categories": [
+        "github",
+        "automation",
+        "continuous-integration"
+      ],
+      "technologies": [
+        "Python",
+        "GitHub Actions",
+        "YAML"
+      ],
+      "documentation_url": null,
+      "repository_url": "https://github.com/lupaxa/github-workflow-scheduler",
+      "status": "active",
+      "maturity": "beta",
+      "visibility": "public",
+      "featured": true,
+      "published": true,
+      "order": 20
+    },
+    {
+      "id": "github-workflow-reenabler",
+      "name": "GitHub Workflow Re-enabler",
+      "repository": "the-lupaxa-project/github-workflow-reenabler",
+      "description": "Find GitHub Actions workflows disabled because of inactivity and safely re-enable them across repositories and organisations.",
+      "organisation": "github-toolbox",
+      "categories": [
+        "github",
+        "automation",
+        "workflow-management"
+      ],
+      "technologies": [
+        "Python",
+        "GitHub API"
+      ],
+      "documentation_url": null,
+      "repository_url": "https://github.com/the-lupaxa-project/github-workflow-reenabler",
+      "status": "active",
+      "maturity": "stable",
+      "visibility": "public",
+      "featured": true,
+      "published": true,
+      "order": 30
+    },
+    {
+      "id": "shared-reusable-workflows",
+      "name": "Shared Reusable Workflows",
+      "repository": "the-lupaxa-project/workflows",
+      "description": "Reusable GitHub Actions workflows for repository quality, security, documentation, automation and continuous integration.",
+      "organisation": "the-lupaxa-project",
+      "categories": [
+        "github",
+        "automation",
+        "continuous-integration"
+      ],
+      "technologies": [
+        "GitHub Actions",
+        "YAML"
+      ],
+      "documentation_url": null,
+      "repository_url": "https://github.com/the-lupaxa-project/workflows",
+      "status": "active",
+      "maturity": "stable",
+      "visibility": "public",
+      "featured": true,
+      "published": true,
+      "order": 40
+    }
+  ],
+  "organisations": [
+    {
+      "id": "the-lupaxa-project",
+      "name": "The Lupaxa Project",
+      "github_organisation": "the-lupaxa-project",
+      "github_url": "https://github.com/the-lupaxa-project",
+      "description": "The central public organisation containing shared standards, documentation, workflows, brand assets and project-wide resources.",
+      "type": "central",
+      "categories": [
+        "project",
+        "shared-resources",
+        "documentation",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": true,
+      "published": true,
+      "order": 10
+    },
+    {
+      "id": "internal-toolbox",
+      "name": "The Lupaxa Internal Toolbox",
+      "github_organisation": "the-lupaxa-internal-toolbox",
+      "github_url": "https://github.com/the-lupaxa-internal-toolbox",
+      "description": "A collection of internal tools used by The Lupaxa Project team.",
+      "type": "internal",
+      "categories": [
+        "internal-tools",
+        "operations",
+        "repository-management"
+      ],
+      "documentation_url": null,
+      "featured": true,
+      "published": true,
+      "order": 20
+    },
+    {
+      "id": "lupaxa-blueprints",
+      "name": "Lupaxa Blueprints",
+      "github_organisation": "lupaxa-blueprints",
+      "github_url": "https://github.com/lupaxa-blueprints",
+      "description": "Repository templates, project foundations and reusable starting points for creating consistent repositories across The Lupaxa Project.",
+      "type": "central",
+      "categories": [
+        "templates",
+        "standards",
+        "repository-management"
+      ],
+      "documentation_url": null,
+      "featured": true,
+      "published": true,
+      "order": 30
+    },
+    {
+      "id": "github-toolbox",
+      "name": "Lupaxa GitHub Toolbox",
+      "github_organisation": "lupaxa-github-toolbox",
+      "github_url": "https://github.com/lupaxa-github-toolbox",
+      "description": "Contains GitHub automation, repository management, workflow orchestration and supporting platform tools.",
+      "type": "toolbox",
+      "categories": [
+        "github",
+        "automation",
+        "repository-management"
+      ],
+      "documentation_url": null,
+      "featured": true,
+      "published": true,
+      "order": 100
+    },
+    {
+      "id": "git-toolbox",
+      "name": "Lupaxa Git Toolbox",
+      "github_organisation": "lupaxa-git-toolbox",
+      "github_url": "https://github.com/lupaxa-git-toolbox",
+      "description": "Contains Git repository management, history maintenance, synchronisation and source-control utilities.",
+      "type": "toolbox",
+      "categories": [
+        "git",
+        "source-control",
+        "repository-management"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 110
+    },
+    {
+      "id": "git-hooks-toolbox",
+      "name": "Lupaxa Git Hooks Toolbox",
+      "github_organisation": "lupaxa-git-hooks-toolbox",
+      "github_url": "https://github.com/lupaxa-git-hooks-toolbox",
+      "description": "Contains reusable Git hooks and local enforcement tools for repository quality, consistency and development workflows.",
+      "type": "toolbox",
+      "categories": [
+        "git",
+        "automation",
+        "repository-quality"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 120
+    },
+    {
+      "id": "devops-toolbox",
+      "name": "Lupaxa DevOps Toolbox",
+      "github_organisation": "lupaxa-devops-toolbox",
+      "github_url": "https://github.com/lupaxa-devops-toolbox",
+      "description": "Contains operational tooling, deployment automation and reusable engineering utilities.",
+      "type": "toolbox",
+      "categories": [
+        "devops",
+        "automation",
+        "operations"
+      ],
+      "documentation_url": null,
+      "featured": true,
+      "published": true,
+      "order": 130
+    },
+    {
+      "id": "cicd-toolbox",
+      "name": "Lupaxa CI/CD Toolbox",
+      "github_organisation": "lupaxa-cicd-toolbox",
+      "github_url": "https://github.com/lupaxa-cicd-toolbox",
+      "description": "Contains continuous integration, delivery, build, validation and release automation.",
+      "type": "toolbox",
+      "categories": [
+        "cicd",
+        "automation",
+        "release-management"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 140
+    },
+    {
+      "id": "security-toolbox",
+      "name": "Lupaxa Security Toolbox",
+      "github_organisation": "lupaxa-security-toolbox",
+      "github_url": "https://github.com/lupaxa-security-toolbox",
+      "description": "Contains security utilities, certificate tooling, validation and defensive engineering resources.",
+      "type": "toolbox",
+      "categories": [
+        "security",
+        "certificates",
+        "validation"
+      ],
+      "documentation_url": null,
+      "featured": true,
+      "published": true,
+      "order": 150
+    },
+    {
+      "id": "docker-toolbox",
+      "name": "Lupaxa Docker Toolbox",
+      "github_organisation": "lupaxa-docker-toolbox",
+      "github_url": "https://github.com/lupaxa-docker-toolbox",
+      "description": "Contains container tooling, Docker automation, image builds and supporting development resources.",
+      "type": "toolbox",
+      "categories": [
+        "docker",
+        "containers",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 160
+    },
+    {
+      "id": "aws-toolbox",
+      "name": "Lupaxa AWS Toolbox",
+      "github_organisation": "lupaxa-aws-toolbox",
+      "github_url": "https://github.com/lupaxa-aws-toolbox",
+      "description": "Contains tools, automation and reusable resources for Amazon Web Services.",
+      "type": "toolbox",
+      "categories": [
+        "aws",
+        "cloud",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 170
+    },
+    {
+      "id": "azure-toolbox",
+      "name": "Lupaxa Azure Toolbox",
+      "github_organisation": "lupaxa-azure-toolbox",
+      "github_url": "https://github.com/lupaxa-azure-toolbox",
+      "description": "Contains tools and automation for Microsoft Azure environments and services.",
+      "type": "toolbox",
+      "categories": [
+        "azure",
+        "cloud",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 180
+    },
+    {
+      "id": "gcp-toolbox",
+      "name": "Lupaxa GCP Toolbox",
+      "github_organisation": "lupaxa-gcp-toolbox",
+      "github_url": "https://github.com/lupaxa-gcp-toolbox",
+      "description": "Contains tools and supporting resources for Google Cloud Platform.",
+      "type": "toolbox",
+      "categories": [
+        "gcp",
+        "cloud",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 190
+    },
+    {
+      "id": "monitoring-toolbox",
+      "name": "Lupaxa Monitoring Toolbox",
+      "github_organisation": "lupaxa-monitoring-toolbox",
+      "github_url": "https://github.com/lupaxa-monitoring-toolbox",
+      "description": "Contains monitoring, observability, diagnostics and operational visibility tools.",
+      "type": "toolbox",
+      "categories": [
+        "monitoring",
+        "observability",
+        "operations"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 200
+    },
+    {
+      "id": "notifications-toolbox",
+      "name": "Lupaxa Notifications Toolbox",
+      "github_organisation": "lupaxa-notifications-toolbox",
+      "github_url": "https://github.com/lupaxa-notifications-toolbox",
+      "description": "Contains notification delivery, messaging integrations, alert routing and workflow reporting tools.",
+      "type": "toolbox",
+      "categories": [
+        "notifications",
+        "integrations",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 210
+    },
+    {
+      "id": "developers-toolbox",
+      "name": "Lupaxa Developers Toolbox",
+      "github_organisation": "lupaxa-developers-toolbox",
+      "github_url": "https://github.com/lupaxa-developers-toolbox",
+      "description": "Contains general-purpose developer utilities, local tooling and productivity resources.",
+      "type": "toolbox",
+      "categories": [
+        "development",
+        "utilities",
+        "productivity"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 220
+    },
+    {
+      "id": "database-toolbox",
+      "name": "Lupaxa Database Toolbox",
+      "github_organisation": "lupaxa-database-toolbox",
+      "github_url": "https://github.com/lupaxa-database-toolbox",
+      "description": "Contains database administration, migration, inspection and validation tools.",
+      "type": "toolbox",
+      "categories": [
+        "databases",
+        "data",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 230
+    },
+    {
+      "id": "api-extractor-toolbox",
+      "name": "Lupaxa API Extractor Toolbox",
+      "github_organisation": "lupaxa-api-extractor-toolbox",
+      "github_url": "https://github.com/lupaxa-api-extractor-toolbox",
+      "description": "Contains API discovery, extraction, inspection and transformation tools.",
+      "type": "toolbox",
+      "categories": [
+        "api",
+        "extraction",
+        "integrations"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 240
+    },
+    {
+      "id": "spider-toolbox",
+      "name": "Lupaxa Spider Toolbox",
+      "github_organisation": "lupaxa-spider-toolbox",
+      "github_url": "https://github.com/lupaxa-spider-toolbox",
+      "description": "Contains crawling, extraction, collection and web-processing utilities.",
+      "type": "toolbox",
+      "categories": [
+        "crawling",
+        "extraction",
+        "web"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 250
+    },
+    {
+      "id": "sre-toolbox",
+      "name": "Lupaxa SRE Toolbox",
+      "github_organisation": "lupaxa-sre-toolbox",
+      "github_url": "https://github.com/lupaxa-sre-toolbox",
+      "description": "Contains reliability engineering, operational readiness and service management tools.",
+      "type": "toolbox",
+      "categories": [
+        "sre",
+        "reliability",
+        "operations"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 260
+    },
+    {
+      "id": "terraform-toolbox",
+      "name": "Lupaxa Terraform Toolbox",
+      "github_organisation": "lupaxa-terraform-toolbox",
+      "github_url": "https://github.com/lupaxa-terraform-toolbox",
+      "description": "Contains infrastructure-as-code tooling, modules, automation and validation resources.",
+      "type": "toolbox",
+      "categories": [
+        "terraform",
+        "infrastructure-as-code",
+        "automation"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 270
+    },
+    {
+      "id": "code-playground",
+      "name": "Lupaxa Code Playground",
+      "github_organisation": "lupaxa-code-playground",
+      "github_url": "https://github.com/lupaxa-code-playground",
+      "description": "Contains examples, experiments, demonstrations and exploratory software projects.",
+      "type": "experimental",
+      "categories": [
+        "experiments",
+        "examples",
+        "development"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 300
+    },
+    {
+      "id": "the-lupaxa-lab",
+      "name": "The Lupaxa Lab",
+      "github_organisation": "the-lupaxa-lab",
+      "github_url": "https://github.com/the-lupaxa-lab",
+      "description": "Contains experimental projects, prototypes and early-stage ideas.",
+      "type": "experimental",
+      "categories": [
+        "experiments",
+        "prototypes",
+        "research"
+      ],
+      "documentation_url": null,
+      "featured": false,
+      "published": true,
+      "order": 310
+    }
+  ],
+  "documentation": [
+    {
+      "id": "github-repository-sync",
+      "name": "GitHub Repository Sync",
+      "description": "Installation, configuration, usage and reference documentation for synchronising large collections of GitHub repositories.",
+      "type": "project",
+      "categories": [
+        "github",
+        "repository-management",
+        "automation"
+      ],
+      "organisation": "internal-toolbox",
+      "project": "github-repository-sync",
+      "documentation_url": "https://github-repo-sync.thelupaxaproject.org/",
+      "repository_url": null,
+      "featured": true,
+      "published": true,
+      "order": 10
+    },
+    {
+      "id": "shared-reusable-workflows",
+      "name": "Shared Reusable Workflows",
+      "description": "Documentation for the reusable GitHub Actions workflows contained in the central workflows repository.",
+      "type": "project",
+      "categories": [
+        "github-actions",
+        "continuous-integration",
+        "automation"
+      ],
+      "organisation": "the-lupaxa-project",
+      "project": "shared-reusable-workflows",
+      "documentation_url": null,
+      "repository_url": "https://github.com/the-lupaxa-project/workflows",
+      "featured": true,
+      "published": true,
+      "order": 20
+    },
+    {
+      "id": "brand-assets",
+      "name": "Brand Assets",
+      "description": "Guidance and reference material for using The Lupaxa Project logos, colours, visual assets and organisation branding.",
+      "type": "reference",
+      "categories": [
+        "branding",
+        "design",
+        "standards"
+      ],
+      "organisation": "the-lupaxa-project",
+      "project": null,
+      "documentation_url": null,
+      "repository_url": "https://github.com/the-lupaxa-project/brand-assets",
+      "featured": true,
+      "published": true,
+      "order": 30
+    },
+    {
+      "id": "contributing",
+      "name": "Contributing",
+      "description": "Shared contribution guidance and development expectations used across The Lupaxa Project repositories.",
+      "type": "policy",
+      "categories": [
+        "contributing",
+        "development",
+        "standards"
+      ],
+      "organisation": "the-lupaxa-project",
+      "project": null,
+      "documentation_url": "https://github.com/the-lupaxa-project/.github/blob/master/CONTRIBUTING.md",
+      "repository_url": null,
+      "featured": false,
+      "published": true,
+      "order": 100
+    },
+    {
+      "id": "code-of-conduct",
+      "name": "Code of Conduct",
+      "description": "The shared standards of behaviour and participation used throughout The Lupaxa Project.",
+      "type": "policy",
+      "categories": [
+        "community",
+        "policy",
+        "standards"
+      ],
+      "organisation": "the-lupaxa-project",
+      "project": null,
+      "documentation_url": "https://github.com/the-lupaxa-project/.github/blob/master/CODE_OF_CONDUCT.md",
+      "repository_url": null,
+      "featured": false,
+      "published": true,
+      "order": 110
+    },
+    {
+      "id": "security-policy",
+      "name": "Security Policy",
+      "description": "Guidance for reporting security issues and handling vulnerabilities affecting The Lupaxa Project repositories.",
+      "type": "policy",
+      "categories": [
+        "security",
+        "policy",
+        "vulnerability-reporting"
+      ],
+      "organisation": "the-lupaxa-project",
+      "project": null,
+      "documentation_url": "https://github.com/the-lupaxa-project/.github/blob/master/SECURITY.md",
+      "repository_url": null,
+      "featured": false,
+      "published": true,
+      "order": 120
+    },
+    {
+      "id": "support",
+      "name": "Support",
+      "description": "Information about requesting help, reporting problems and finding the appropriate support channel.",
+      "type": "policy",
+      "categories": [
+        "support",
+        "community",
+        "policy"
+      ],
+      "organisation": "the-lupaxa-project",
+      "project": null,
+      "documentation_url": "https://github.com/the-lupaxa-project/.github/blob/master/SUPPORT.md",
+      "repository_url": null,
+      "featured": false,
+      "published": true,
+      "order": 130
+    }
+  ],
+  "categories": [
+    {
+      "id": "github",
+      "name": "GitHub",
+      "description": "GitHub administration, repository management, organisation automation and platform integration.",
+      "group": "platform",
+      "icon": "fontawesome/brands/github",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 10
+    },
+    {
+      "id": "github-actions",
+      "name": "GitHub Actions",
+      "description": "Reusable workflows, workflow orchestration and GitHub Actions automation.",
+      "group": "platform",
+      "icon": "material/github",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 20
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "description": "Git repository management, history maintenance, synchronisation and source-control tooling.",
+      "group": "platform",
+      "icon": "fontawesome/brands/git-alt",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 30
+    },
+    {
+      "id": "source-control",
+      "name": "Source Control",
+      "description": "Version control practices, repository workflows and supporting utilities.",
+      "group": "platform",
+      "icon": "material/source-branch",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 40
+    },
+    {
+      "id": "repository-management",
+      "name": "Repository Management",
+      "description": "Repository creation, synchronisation, maintenance and lifecycle management.",
+      "group": "platform",
+      "icon": "material/source-repository-multiple",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 50
+    },
+    {
+      "id": "workflow-management",
+      "name": "Workflow Management",
+      "description": "Workflow scheduling, maintenance, execution and lifecycle management.",
+      "group": "platform",
+      "icon": "material/workflow",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 60
+    },
+    {
+      "id": "automation",
+      "name": "Automation",
+      "description": "Tools and processes that automate repeatable engineering and operational tasks.",
+      "group": "engineering",
+      "icon": "material/robot",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 100
+    },
+    {
+      "id": "cicd",
+      "name": "CI/CD",
+      "description": "Continuous integration, delivery, validation, release and deployment automation.",
+      "group": "engineering",
+      "icon": "material/pipe",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 110
+    },
+    {
+      "id": "continuous-integration",
+      "name": "Continuous Integration",
+      "description": "Automated validation, testing and build processes for software projects.",
+      "group": "engineering",
+      "icon": "material/check-decagram",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 120
+    },
+    {
+      "id": "release-management",
+      "name": "Release Management",
+      "description": "Versioning, packaging, publishing and software release processes.",
+      "group": "engineering",
+      "icon": "material/package-up",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 130
+    },
+    {
+      "id": "repository-quality",
+      "name": "Repository Quality",
+      "description": "Standards, validation and tooling used to maintain consistent, high-quality repositories.",
+      "group": "engineering",
+      "icon": "material/file-check",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 140
+    },
+    {
+      "id": "devops",
+      "name": "DevOps",
+      "description": "Development operations, delivery automation and repeatable engineering workflows.",
+      "group": "engineering",
+      "icon": "material/infinity",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 150
+    },
+    {
+      "id": "operations",
+      "name": "Operations",
+      "description": "Operational tooling, maintenance, administration and service support.",
+      "group": "engineering",
+      "icon": "material/cog-sync",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 160
+    },
+    {
+      "id": "sre",
+      "name": "Site Reliability Engineering",
+      "description": "Reliability engineering, operational readiness and service management.",
+      "group": "engineering",
+      "icon": "material/account-hard-hat",
+      "short_name": "SRE",
+      "featured": false,
+      "published": true,
+      "order": 170
+    },
+    {
+      "id": "reliability",
+      "name": "Reliability",
+      "description": "Tools and practices supporting resilient, dependable software and services.",
+      "group": "engineering",
+      "icon": "material/shield-check",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 180
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud",
+      "description": "Cloud platforms, services, infrastructure and supporting automation.",
+      "group": "infrastructure",
+      "icon": "material/cloud",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 200
+    },
+    {
+      "id": "aws",
+      "name": "Amazon Web Services",
+      "description": "Tools, automation and reusable resources for Amazon Web Services.",
+      "group": "infrastructure",
+      "icon": "fontawesome/brands/aws",
+      "short_name": "AWS",
+      "featured": true,
+      "published": true,
+      "order": 210
+    },
+    {
+      "id": "azure",
+      "name": "Microsoft Azure",
+      "description": "Tools and automation for Microsoft Azure environments and services.",
+      "group": "infrastructure",
+      "icon": "material/microsoft-azure",
+      "short_name": "Azure",
+      "featured": true,
+      "published": true,
+      "order": 220
+    },
+    {
+      "id": "gcp",
+      "name": "Google Cloud Platform",
+      "description": "Tools and supporting resources for Google Cloud Platform.",
+      "group": "infrastructure",
+      "icon": "material/google-cloud",
+      "short_name": "GCP",
+      "featured": true,
+      "published": true,
+      "order": 230
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "description": "Container tooling, image automation and Docker-based development resources.",
+      "group": "infrastructure",
+      "icon": "fontawesome/brands/docker",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 240
+    },
+    {
+      "id": "containers",
+      "name": "Containers",
+      "description": "Containerised applications, images, runtime tooling and supporting automation.",
+      "group": "infrastructure",
+      "icon": "material/cube-outline",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 250
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "description": "Terraform modules, automation and infrastructure-as-code tooling.",
+      "group": "infrastructure",
+      "icon": "material/terraform",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 260
+    },
+    {
+      "id": "infrastructure-as-code",
+      "name": "Infrastructure as Code",
+      "description": "Declarative infrastructure configuration, deployment and validation.",
+      "group": "infrastructure",
+      "icon": "material/code-braces",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 270
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "description": "Defensive engineering, security analysis, validation and supporting utilities.",
+      "group": "security",
+      "icon": "material/shield-lock",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 300
+    },
+    {
+      "id": "certificates",
+      "name": "Certificates",
+      "description": "Certificate inspection, validation, generation and lifecycle management.",
+      "group": "security",
+      "icon": "material/certificate",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 310
+    },
+    {
+      "id": "validation",
+      "name": "Validation",
+      "description": "Automated verification of files, configuration, data and software behaviour.",
+      "group": "security",
+      "icon": "material/check-circle",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 320
+    },
+    {
+      "id": "vulnerability-reporting",
+      "name": "Vulnerability Reporting",
+      "description": "Processes and guidance for reporting and handling security vulnerabilities.",
+      "group": "security",
+      "icon": "material/security",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 330
+    },
+    {
+      "id": "monitoring",
+      "name": "Monitoring",
+      "description": "Monitoring, diagnostics and operational visibility tooling.",
+      "group": "operations",
+      "icon": "material/monitor-dashboard",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 400
+    },
+    {
+      "id": "observability",
+      "name": "Observability",
+      "description": "Metrics, logs, traces and supporting operational insight.",
+      "group": "operations",
+      "icon": "material/chart-timeline-variant",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 410
+    },
+    {
+      "id": "notifications",
+      "name": "Notifications",
+      "description": "Notification delivery, alert routing and workflow reporting.",
+      "group": "operations",
+      "icon": "material/bell-ring",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 420
+    },
+    {
+      "id": "integrations",
+      "name": "Integrations",
+      "description": "Connections between systems, services, APIs and communication platforms.",
+      "group": "operations",
+      "icon": "material/connection",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 430
+    },
+    {
+      "id": "development",
+      "name": "Development",
+      "description": "Software development tools, examples and supporting resources.",
+      "group": "development",
+      "icon": "material/code-tags",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 500
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "description": "Focused tools that support development, administration and engineering workflows.",
+      "group": "development",
+      "icon": "material/tools",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 510
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity",
+      "description": "Tools and resources that simplify and improve routine development work.",
+      "group": "development",
+      "icon": "material/lightning-bolt",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 520
+    },
+    {
+      "id": "api",
+      "name": "APIs",
+      "description": "API discovery, inspection, extraction, transformation and integration.",
+      "group": "development",
+      "icon": "material/api",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 530
+    },
+    {
+      "id": "extraction",
+      "name": "Data Extraction",
+      "description": "Extraction and transformation of data from APIs, websites and other sources.",
+      "group": "development",
+      "icon": "material/database-export",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 540
+    },
+    {
+      "id": "crawling",
+      "name": "Web Crawling",
+      "description": "Automated discovery and collection of content from websites and online services.",
+      "group": "development",
+      "icon": "material/spider-web",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 550
+    },
+    {
+      "id": "web",
+      "name": "Web",
+      "description": "Web-based systems, services, tooling and supporting technologies.",
+      "group": "development",
+      "icon": "material/web",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 560
+    },
+    {
+      "id": "databases",
+      "name": "Databases",
+      "description": "Database administration, migration, inspection and automation.",
+      "group": "data",
+      "icon": "material/database",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 570
+    },
+    {
+      "id": "data",
+      "name": "Data",
+      "description": "Data management, processing, storage and supporting utilities.",
+      "group": "data",
+      "icon": "material/database-cog",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 580
+    },
+    {
+      "id": "project",
+      "name": "Project Resources",
+      "description": "Shared resources that support The Lupaxa Project as a whole.",
+      "group": "project",
+      "icon": "material/home-circle",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 600
+    },
+    {
+      "id": "shared-resources",
+      "name": "Shared Resources",
+      "description": "Common resources reused across organisations and repositories.",
+      "group": "project",
+      "icon": "material/share-variant",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 610
+    },
+    {
+      "id": "internal-tools",
+      "name": "Internal Tools",
+      "description": "Tools used internally to operate and maintain The Lupaxa Project.",
+      "group": "project",
+      "icon": "material/toolbox",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 620
+    },
+    {
+      "id": "templates",
+      "name": "Templates",
+      "description": "Repository templates, starter projects and reusable project foundations.",
+      "group": "project",
+      "icon": "material/blueprint",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 630
+    },
+    {
+      "id": "standards",
+      "name": "Standards",
+      "description": "Shared conventions, requirements and guidance used across the project.",
+      "group": "project",
+      "icon": "material/ruler-square",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 640
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation",
+      "description": "Project guides, references, policies and supporting technical material.",
+      "group": "project",
+      "icon": "material/book-open-page-variant",
+      "short_name": null,
+      "featured": true,
+      "published": true,
+      "order": 650
+    },
+    {
+      "id": "branding",
+      "name": "Branding",
+      "description": "Logos, colours, visual identity and supporting brand guidance.",
+      "group": "project",
+      "icon": "material/palette",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 660
+    },
+    {
+      "id": "design",
+      "name": "Design",
+      "description": "Visual design, presentation and user-facing project resources.",
+      "group": "project",
+      "icon": "material/brush",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 670
+    },
+    {
+      "id": "community",
+      "name": "Community",
+      "description": "Participation, conduct and collaboration across The Lupaxa Project.",
+      "group": "community",
+      "icon": "material/account-group",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 700
+    },
+    {
+      "id": "contributing",
+      "name": "Contributing",
+      "description": "Contribution guidance, development expectations and participation processes.",
+      "group": "community",
+      "icon": "material/source-pull",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 710
+    },
+    {
+      "id": "policy",
+      "name": "Policies",
+      "description": "Shared policies governing support, security, conduct and participation.",
+      "group": "community",
+      "icon": "material/file-document-check",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 720
+    },
+    {
+      "id": "support",
+      "name": "Support",
+      "description": "Help, issue reporting and support guidance.",
+      "group": "community",
+      "icon": "material/lifebuoy",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 730
+    },
+    {
+      "id": "experiments",
+      "name": "Experiments",
+      "description": "Exploratory work, technical demonstrations and early-stage ideas.",
+      "group": "experimental",
+      "icon": "material/flask",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 800
+    },
+    {
+      "id": "examples",
+      "name": "Examples",
+      "description": "Example implementations, demonstrations and learning resources.",
+      "group": "experimental",
+      "icon": "material/code-block-tags",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 810
+    },
+    {
+      "id": "prototypes",
+      "name": "Prototypes",
+      "description": "Early implementations used to evaluate ideas and technical approaches.",
+      "group": "experimental",
+      "icon": "material/test-tube",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 820
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "description": "Technical investigation, evaluation and exploratory engineering work.",
+      "group": "experimental",
+      "icon": "material/magnify-scan",
+      "short_name": null,
+      "featured": false,
+      "published": true,
+      "order": 830
+    }
+  ]
+}
