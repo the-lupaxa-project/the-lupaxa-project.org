@@ -907,12 +907,17 @@ class CatalogueRenderer:
 
         rendered_links: list[str] = []
 
-        for link in links:
+        for index, link in enumerate(links):
             icon = self._link_icon(link.label)
+
+            if index == 0:
+                css_class = "catalogue-action card-primary-link"
+            else:
+                css_class = "catalogue-action"
 
             rendered_links.append(
                 f"[:{icon}: {link.label}]({link.url})"
-                "{ .catalogue-action }"
+                f"{{ .{css_class.replace(' ', ' .')} }}"
             )
 
         if not rendered_links:

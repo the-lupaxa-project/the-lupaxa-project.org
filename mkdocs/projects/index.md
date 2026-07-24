@@ -30,7 +30,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     ---
 
-    [:material-book-open-page-variant: Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action } [:material-github: Repository](https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync){ .catalogue-action }
+    [:material-book-open-page-variant: Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action .card-primary-link } [:material-github: Repository](https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync){ .catalogue-action }
 
 -   :material-source-repository:{ .lg .middle } __GitHub Workflow Scheduler__
 
@@ -48,7 +48,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     ---
 
-    [:material-github: Repository](https://github.com/lupaxa/github-workflow-scheduler){ .catalogue-action }
+    [:material-github: Repository](https://github.com/lupaxa/github-workflow-scheduler){ .catalogue-action .card-primary-link }
 
 -   :material-source-repository:{ .lg .middle } __GitHub Workflow Re-enabler__
 
@@ -66,7 +66,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     ---
 
-    [:material-github: Repository](https://github.com/the-lupaxa-project/github-workflow-reenabler){ .catalogue-action }
+    [:material-github: Repository](https://github.com/the-lupaxa-project/github-workflow-reenabler){ .catalogue-action .card-primary-link }
 
 -   :material-source-repository:{ .lg .middle } __Shared Reusable Workflows__
 
@@ -84,7 +84,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     ---
 
-    [:material-github: Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action }
+    [:material-github: Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -112,7 +112,7 @@ The central public organisation containing shared standards, documentation, work
 
     ---
 
-    [:material-github: Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action }
+    [:material-github: Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -138,7 +138,7 @@ A collection of internal tools used by The Lupaxa Project team.
 
     ---
 
-    [:material-book-open-page-variant: Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action } [:material-github: Repository](https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync){ .catalogue-action }
+    [:material-book-open-page-variant: Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action .card-primary-link } [:material-github: Repository](https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync){ .catalogue-action }
 
 </div>
 
@@ -164,7 +164,7 @@ Contains GitHub automation, repository management, workflow orchestration and su
 
     ---
 
-    [:material-github: Repository](https://github.com/lupaxa/github-workflow-scheduler){ .catalogue-action }
+    [:material-github: Repository](https://github.com/lupaxa/github-workflow-scheduler){ .catalogue-action .card-primary-link }
 
 -   :material-source-repository:{ .lg .middle } __GitHub Workflow Re-enabler__
 
@@ -182,6 +182,6 @@ Contains GitHub automation, repository management, workflow orchestration and su
 
     ---
 
-    [:material-github: Repository](https://github.com/the-lupaxa-project/github-workflow-reenabler){ .catalogue-action }
+    [:material-github: Repository](https://github.com/the-lupaxa-project/github-workflow-reenabler){ .catalogue-action .card-primary-link }
 
 </div>

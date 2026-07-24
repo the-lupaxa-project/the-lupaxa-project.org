@@ -27,7 +27,7 @@ The organisations that contain the shared resources, projects and experimental w
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/the-lupaxa-project){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/the-lupaxa-project){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __The Lupaxa Internal Toolbox__
 
@@ -42,7 +42,7 @@ The organisations that contain the shared resources, projects and experimental w
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/the-lupaxa-internal-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/the-lupaxa-internal-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Blueprints__
 
@@ -56,7 +56,7 @@ The organisations that contain the shared resources, projects and experimental w
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-blueprints){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-blueprints){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -81,7 +81,7 @@ Organisations containing shared standards, templates, documentation and project-
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/the-lupaxa-project){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/the-lupaxa-project){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Blueprints__
 
@@ -95,7 +95,7 @@ Organisations containing shared standards, templates, documentation and project-
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-blueprints){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-blueprints){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -118,7 +118,7 @@ Organisations containing internal tools and operational resources used by The Lu
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/the-lupaxa-internal-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/the-lupaxa-internal-toolbox){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -140,7 +140,7 @@ Organisations containing experiments, prototypes, demonstrations and early-stage
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-code-playground){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-code-playground){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __The Lupaxa Lab__
 
@@ -154,6 +154,6 @@ Organisations containing experiments, prototypes, demonstrations and early-stage
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/the-lupaxa-lab){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/the-lupaxa-lab){ .catalogue-action .card-primary-link }
 
 </div>

@@ -28,7 +28,7 @@ A curated index of project documentation, shared references, standards, policies
 
     ---
 
-    [:material-book-open-page-variant: Read Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action }
+    [:material-book-open-page-variant: Read Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } __Shared Reusable Workflows__
 
@@ -44,7 +44,7 @@ A curated index of project documentation, shared references, standards, policies
 
     ---
 
-    [:material-github: Source Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action }
+    [:material-github: Source Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } __Brand Assets__
 
@@ -59,7 +59,7 @@ A curated index of project documentation, shared references, standards, policies
 
     ---
 
-    [:material-github: Source Repository](https://github.com/the-lupaxa-project/brand-assets){ .catalogue-action }
+    [:material-github: Source Repository](https://github.com/the-lupaxa-project/brand-assets){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -85,7 +85,7 @@ Installation, configuration, usage and reference documentation for individual pr
 
     ---
 
-    [:material-book-open-page-variant: Read Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action }
+    [:material-book-open-page-variant: Read Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } __Shared Reusable Workflows__
 
@@ -101,7 +101,7 @@ Installation, configuration, usage and reference documentation for individual pr
 
     ---
 
-    [:material-github: Source Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action }
+    [:material-github: Source Repository](https://github.com/the-lupaxa-project/workflows){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -124,7 +124,7 @@ Shared technical references, standards and supporting resources.
 
     ---
 
-    [:material-github: Source Repository](https://github.com/the-lupaxa-project/brand-assets){ .catalogue-action }
+    [:material-github: Source Repository](https://github.com/the-lupaxa-project/brand-assets){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -147,7 +147,7 @@ Project-wide policies covering contribution, conduct, security and support.
 
     ---
 
-    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/CONTRIBUTING.md){ .catalogue-action }
+    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/CONTRIBUTING.md){ .catalogue-action .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } __Code of Conduct__
 
@@ -162,7 +162,7 @@ Project-wide policies covering contribution, conduct, security and support.
 
     ---
 
-    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/CODE_OF_CONDUCT.md){ .catalogue-action }
+    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/CODE_OF_CONDUCT.md){ .catalogue-action .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } __Security Policy__
 
@@ -177,7 +177,7 @@ Project-wide policies covering contribution, conduct, security and support.
 
     ---
 
-    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/SECURITY.md){ .catalogue-action }
+    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/SECURITY.md){ .catalogue-action .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } __Support__
 
@@ -192,6 +192,6 @@ Project-wide policies covering contribution, conduct, security and support.
 
     ---
 
-    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/SUPPORT.md){ .catalogue-action }
+    [:material-book-open-page-variant: Read Documentation](https://github.com/the-lupaxa-project/.github/blob/master/SUPPORT.md){ .catalogue-action .card-primary-link }
 
 </div>

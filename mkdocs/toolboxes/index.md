@@ -27,7 +27,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-github-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-github-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa DevOps Toolbox__
 
@@ -41,7 +41,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-devops-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-devops-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Security Toolbox__
 
@@ -55,7 +55,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-security-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-security-toolbox){ .catalogue-action .card-primary-link }
 
 </div>
 
@@ -74,7 +74,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-github-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-github-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Git Toolbox__
 
@@ -88,7 +88,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-git-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-git-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Git Hooks Toolbox__
 
@@ -102,7 +102,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-git-hooks-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-git-hooks-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa DevOps Toolbox__
 
@@ -116,7 +116,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-devops-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-devops-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa CI/CD Toolbox__
 
@@ -130,7 +130,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-cicd-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-cicd-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Security Toolbox__
 
@@ -144,7 +144,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-security-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-security-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Docker Toolbox__
 
@@ -158,7 +158,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-docker-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-docker-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa AWS Toolbox__
 
@@ -172,7 +172,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-aws-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-aws-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Azure Toolbox__
 
@@ -186,7 +186,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-azure-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-azure-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa GCP Toolbox__
 
@@ -200,7 +200,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-gcp-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-gcp-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Monitoring Toolbox__
 
@@ -214,7 +214,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-monitoring-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-monitoring-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Notifications Toolbox__
 
@@ -228,7 +228,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-notifications-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-notifications-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Developers Toolbox__
 
@@ -242,7 +242,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-developers-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-developers-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Database Toolbox__
 
@@ -256,7 +256,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-database-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-database-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa API Extractor Toolbox__
 
@@ -270,7 +270,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-api-extractor-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-api-extractor-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Spider Toolbox__
 
@@ -284,7 +284,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-spider-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-spider-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa SRE Toolbox__
 
@@ -298,7 +298,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-sre-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-sre-toolbox){ .catalogue-action .card-primary-link }
 
 -   :material-domain:{ .lg .middle } __Lupaxa Terraform Toolbox__
 
@@ -312,6 +312,6 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     ---
 
-    [:material-github: View on GitHub](https://github.com/lupaxa-terraform-toolbox){ .catalogue-action }
+    [:material-github: View on GitHub](https://github.com/lupaxa-terraform-toolbox){ .catalogue-action .card-primary-link }
 
 </div>

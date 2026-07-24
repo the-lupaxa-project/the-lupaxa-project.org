@@ -197,6 +197,44 @@
 }
 
 /* =============================================================================
+ * Clickable Cards
+ * =============================================================================
+ *
+ * A card's primary link is expanded across the complete card. Other links
+ * remain above the expanded link and can still be clicked independently.
+ */
+
+.md-typeset .grid.cards .card-primary-link {
+  position: static;
+}
+
+.md-typeset .grid.cards .card-primary-link::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  border-radius: inherit;
+}
+
+/*
+ * Secondary links must sit above the card-wide primary link.
+ */
+
+.md-typeset .grid.cards a:not(.card-primary-link) {
+  position: relative;
+  z-index: 2;
+}
+
+/*
+ * Show a clear keyboard focus indicator around the complete card.
+ */
+
+.md-typeset .grid.cards li:has(.card-primary-link:focus-visible) {
+  outline: 0.15rem solid var(--md-accent-fg-color);
+  outline-offset: 0.15rem;
+}
+
+/* =============================================================================
  * Catalogue Card Grid
  * =============================================================================
  *
@@ -206,8 +244,8 @@
  */
 
 .md-typeset .grid.cards.catalogue-grid {
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 22rem));
-  justify-content: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: stretch;
   align-items: stretch;
 }
 
@@ -307,6 +345,27 @@
   color: var(--md-primary-bg-color);
   background: var(--md-primary-fg-color);
   border-color: var(--md-primary-fg-color);
+}
+
+/*
+ * Keep category pills compact and on a single line where space allows.
+ */
+
+.md-typeset .catalogue-grid p:has(> .catalogue-category) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.md-typeset .catalogue-grid p:has(> .catalogue-category)
+  > .catalogue-category {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.14rem 0.38rem;
+  font-size: 0.64rem;
+  white-space: nowrap;
 }
 
 /* =============================================================================
@@ -464,7 +523,7 @@
   }
 
   .md-typeset .grid.cards.catalogue-grid {
-    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -496,10 +555,6 @@
 
   .md-typeset h2 {
     margin-top: 2.25rem;
-  }
-
-  .md-typeset .catalogue-category {
-    white-space: normal;
   }
 }
 

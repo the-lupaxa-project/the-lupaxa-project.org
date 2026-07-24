@@ -20,13 +20,13 @@ hide:
 </p>
 
 <p class="lupaxa-hero-actions">
-  <a class="md-button" href="projects/index.md">
+  <a class="md-button" href="projects/">
     Browse Projects
   </a>
-  <a class="md-button" href="organisations/index.md">
+  <a class="md-button" href="organisations/">
     Explore Organisations
   </a>
-  <a class="md-button" href="toolboxes/index.md">
+  <a class="md-button" href="toolboxes/">
     Explore Toolboxes
   </a>
 </p>
@@ -44,7 +44,7 @@ hide:
     Discover software, utilities and automation contained across The Lupaxa
     Project ecosystem.
 
-    [:octicons-arrow-right-24: Browse projects](projects/index.md)
+    [:octicons-arrow-right-24: Browse projects](projects/index.md){ .card-primary-link }
 
 -   :material-toolbox:{ .lg .middle } **Toolboxes**
 
@@ -53,7 +53,7 @@ hide:
     Explore focused collections covering GitHub, DevOps, security, cloud,
     containers, monitoring and more.
 
-    [:octicons-arrow-right-24: Browse toolboxes](toolboxes/index.md)
+    [:octicons-arrow-right-24: Browse toolboxes](toolboxes/index.md){ .card-primary-link }
 
 -   :material-domain:{ .lg .middle } **Organisations**
 
@@ -62,7 +62,7 @@ hide:
     View the GitHub organisations that contain and maintain The Lupaxa Project
     repositories.
 
-    [:octicons-arrow-right-24: View organisations](organisations/index.md)
+    [:octicons-arrow-right-24: View organisations](organisations/index.md){ .card-primary-link }
 
 -   :material-book-open-page-variant:{ .lg .middle } **Documentation**
 
@@ -71,7 +71,7 @@ hide:
     Find project guides, technical references, standards and supporting
     documentation.
 
-    [:octicons-arrow-right-24: Find documentation](documentation/index.md)
+    [:octicons-arrow-right-24: Find documentation](documentation/index.md){ .card-primary-link }
 
 </div>
 
@@ -87,7 +87,7 @@ hide:
     Safely clone and synchronise large collections of GitHub repositories from
     a single declarative configuration.
 
-    [:material-book-open-variant: Documentation][github-repo-sync-docs]
+    [:material-book-open-variant: Documentation][github-repo-sync-docs]{ .card-primary-link }
     ·
     [:fontawesome-brands-github: Source][github-repo-sync-source]
 
@@ -99,7 +99,7 @@ hide:
     Dispatch scheduled GitHub Actions workflows using a central configuration
     and a reliable external scheduler.
 
-    [:fontawesome-brands-github: Source][workflow-scheduler-source]
+    [:fontawesome-brands-github: Source][workflow-scheduler-source]{ .card-primary-link }
 
 -   :material-refresh-auto:{ .lg .middle }
     **GitHub Workflow Re-enabler**
@@ -109,7 +109,7 @@ hide:
     Find workflows disabled because of inactivity and safely re-enable them
     across repositories and organisations.
 
-    [:fontawesome-brands-github: Source][workflow-reenabler-source]
+    [:fontawesome-brands-github: Source][workflow-reenabler-source]{ .card-primary-link }
 
 -   :material-hammer-wrench:{ .lg .middle }
     **Shared Workflows**
@@ -119,7 +119,7 @@ hide:
     Reusable GitHub Actions workflows for repository quality, security,
     documentation, automation and continuous integration.
 
-    [:fontawesome-brands-github: Source][shared-workflows-source]
+    [:fontawesome-brands-github: Source][shared-workflows-source]{ .card-primary-link }
 
 </div>
 
