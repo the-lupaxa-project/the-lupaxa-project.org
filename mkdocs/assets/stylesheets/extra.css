@@ -10,6 +10,43 @@
  */
 
 /* =============================================================================
+ * The Lupaxa Project Brand Colours
+ * =============================================================================
+ */
+
+:root {
+  /* Lupaxa Brand Palette */
+
+  --lupaxa-dark-blue: #111a32;
+  --lupaxa-blue: #203959;
+  --lupaxa-light-blue: #6d95d3;
+  --lupaxa-black: #000000;
+  --lupaxa-white: #ffffff;
+}
+
+/*
+ * MkDocs Material defines its palette variables on the active colour scheme.
+ * They must therefore be overridden at the same level rather than only under
+ * :root.
+ */
+
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--lupaxa-dark-blue);
+  --md-primary-fg-color--light: var(--lupaxa-blue);
+  --md-primary-fg-color--dark: var(--lupaxa-dark-blue);
+  --md-primary-bg-color: var(--lupaxa-white);
+  --md-primary-bg-color--light: rgb(255 255 255 / 70%);
+  --md-accent-fg-color: var(--lupaxa-light-blue);
+  --md-accent-fg-color--transparent:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 10%,
+      transparent
+    );
+}
+
+/* =============================================================================
  * Global Layout
  * =============================================================================
  */
@@ -37,6 +74,8 @@
  */
 
 .md-header {
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
   box-shadow: none;
 }
 
@@ -44,8 +83,33 @@
   font-weight: 600;
 }
 
+/*
+ * The tabs form part of the primary site navigation and use the same middle
+ * blue as the main header and footer.
+ */
+
 .md-tabs {
-  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
+  border-bottom:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--lupaxa-white) 14%,
+      transparent
+    );
+}
+
+.md-tabs__link {
+  color: var(--lupaxa-white);
+  opacity: 0.72;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link:focus,
+.md-tabs__item--active .md-tabs__link {
+  color: var(--lupaxa-white);
+  opacity: 1;
 }
 
 /* =============================================================================
@@ -60,12 +124,12 @@
   background:
     radial-gradient(
       circle at top,
-      color-mix(in srgb, var(--md-primary-fg-color) 20%, transparent),
+      color-mix(in srgb, var(--lupaxa-blue) 20%, transparent),
       transparent 55%
     ),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--md-primary-fg-color) 8%, transparent),
+      color-mix(in srgb, var(--lupaxa-blue) 8%, transparent),
       transparent
     );
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
@@ -127,6 +191,20 @@
 }
 
 /* =============================================================================
+ * Links
+ * =============================================================================
+ */
+
+.md-typeset a {
+  color: var(--lupaxa-light-blue);
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: var(--lupaxa-blue);
+}
+
+/* =============================================================================
  * Cards
  * =============================================================================
  */
@@ -153,7 +231,7 @@
       color-mix(
         in srgb,
         var(--md-default-bg-color) 96%,
-        var(--md-primary-fg-color)
+        var(--lupaxa-blue)
       ),
       var(--md-default-bg-color)
     );
@@ -173,7 +251,7 @@
   border-color:
     color-mix(
       in srgb,
-      var(--md-primary-fg-color) 55%,
+      var(--lupaxa-blue) 55%,
       var(--md-default-fg-color--lightest)
     );
   box-shadow:
@@ -193,7 +271,7 @@
 
 .md-typeset .grid.cards .lg {
   margin-right: 0.35rem;
-  color: var(--md-primary-fg-color);
+  color: var(--lupaxa-blue);
 }
 
 /* =============================================================================
@@ -230,7 +308,7 @@
  */
 
 .md-typeset .grid.cards li:has(.card-primary-link:focus-visible) {
-  outline: 0.15rem solid var(--md-accent-fg-color);
+  outline: 0.15rem solid var(--lupaxa-light-blue);
   outline-offset: 0.15rem;
 }
 
@@ -238,9 +316,8 @@
  * Catalogue Card Grid
  * =============================================================================
  *
- * Catalogue grids use fixed upper card widths. This prevents one or two cards
- * from expanding across the full content area while still allowing additional
- * cards to wrap naturally.
+ * Catalogue grids use three equal columns on wider screens, two columns on
+ * medium-width screens and one column on smaller screens.
  */
 
 .md-typeset .grid.cards.catalogue-grid {
@@ -300,7 +377,7 @@
     color-mix(
       in srgb,
       var(--md-code-bg-color) 88%,
-      var(--md-primary-fg-color)
+      var(--lupaxa-blue)
     );
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 0.3rem;
@@ -318,20 +395,20 @@
   font-size: 0.7rem;
   font-weight: 600;
   line-height: 1.45;
-  color: var(--md-primary-fg-color);
+  color: var(--lupaxa-blue);
   text-decoration: none;
   white-space: nowrap;
   background:
     color-mix(
       in srgb,
-      var(--md-primary-fg-color) 8%,
+      var(--lupaxa-blue) 8%,
       transparent
     );
   border:
     1px solid
     color-mix(
       in srgb,
-      var(--md-primary-fg-color) 24%,
+      var(--lupaxa-blue) 24%,
       var(--md-default-fg-color--lightest)
     );
   border-radius: 999rem;
@@ -342,9 +419,9 @@
 }
 
 .md-typeset .catalogue-category:hover {
-  color: var(--md-primary-bg-color);
-  background: var(--md-primary-fg-color);
-  border-color: var(--md-primary-fg-color);
+  color: var(--lupaxa-white);
+  background: var(--lupaxa-blue);
+  border-color: var(--lupaxa-blue);
 }
 
 /*
@@ -381,11 +458,13 @@
   font-size: 0.76rem;
   font-weight: 650;
   line-height: 1.5;
+  color: var(--lupaxa-light-blue);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .md-typeset .catalogue-action:hover {
+  color: var(--lupaxa-blue);
   text-decoration: underline;
   text-underline-offset: 0.18rem;
 }
@@ -440,6 +519,8 @@
 .md-typeset .md-button {
   padding: 0.65rem 1rem;
   font-weight: 600;
+  color: var(--lupaxa-blue);
+  border-color: var(--lupaxa-blue);
   border-width: 1px;
   border-radius: 0.35rem;
   transition:
@@ -449,8 +530,25 @@
     transform 160ms ease;
 }
 
-.md-typeset .md-button:hover {
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
+  border-color: var(--lupaxa-blue);
   transform: translateY(-0.05rem);
+}
+
+.md-typeset .md-button--primary {
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
+  border-color: var(--lupaxa-blue);
+}
+
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-dark-blue);
+  border-color: var(--lupaxa-dark-blue);
 }
 
 /* =============================================================================
@@ -458,13 +556,48 @@
  * =============================================================================
  */
 
+.md-footer {
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
+}
+
 .md-footer-meta {
-  border-top: 1px solid var(--md-default-fg-color--lightest);
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
+  border-top:
+    1px solid
+    color-mix(
+      in srgb,
+      var(--lupaxa-white) 12%,
+      transparent
+    );
+}
+
+.md-footer-meta__inner {
+  display: flex;
+  justify-content: center;
+  color: var(--lupaxa-white);
+  background-color: var(--lupaxa-blue);
 }
 
 .md-footer-copyright {
   width: 100%;
+  color: var(--lupaxa-white);
   text-align: center;
+  background-color: var(--lupaxa-blue);
+}
+
+.md-footer-copyright .lupaxa-footer,
+.lupaxa-footer {
+  width: 100%;
+  margin: 0;
+  color: var(--lupaxa-white);
+  text-align: center;
+  opacity: 0.85;
+}
+
+.md-footer a {
+  color: var(--lupaxa-white);
 }
 
 /* =============================================================================
@@ -473,7 +606,7 @@
  */
 
 [data-md-color-scheme="default"] {
-  --md-default-bg-color: #ffffff;
+  --md-default-bg-color: var(--lupaxa-white);
 }
 
 /* =============================================================================
@@ -485,7 +618,7 @@
   background:
     radial-gradient(
       circle at top,
-      color-mix(in srgb, var(--md-primary-fg-color) 18%, transparent),
+      color-mix(in srgb, var(--lupaxa-blue) 18%, transparent),
       transparent 58%
     ),
     linear-gradient(
@@ -503,12 +636,25 @@
 }
 
 [data-md-color-scheme="slate"] .md-typeset .catalogue-category {
+  color: var(--lupaxa-light-blue);
   background:
     color-mix(
       in srgb,
-      var(--md-primary-fg-color) 12%,
+      var(--lupaxa-light-blue) 12%,
       transparent
     );
+  border-color:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 30%,
+      var(--md-default-fg-color--lightest)
+    );
+}
+
+[data-md-color-scheme="slate"] .md-typeset .catalogue-category:hover {
+  color: var(--lupaxa-dark-blue);
+  background: var(--lupaxa-light-blue);
+  border-color: var(--lupaxa-light-blue);
 }
 
 /* =============================================================================
@@ -577,3 +723,8 @@
     transform: none;
   }
 }
+
+/* =============================================================================
+ * End of File
+ * =============================================================================
+ */

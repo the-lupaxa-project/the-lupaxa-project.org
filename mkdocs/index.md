@@ -152,14 +152,6 @@ where an individual repository is hosted.
 
 [Browse all organisations](organisations/index.md){ .md-button }
 
----
-
-<p align="center">
-  <strong>The Lupaxa Project</strong><br />
-  Where exploration meets precision.<br />
-  Where the untamed meets the engineered.
-</p>
-
 [github-repo-sync-docs]: https://github-repo-sync.thelupaxaproject.org/
 [github-repo-sync-source]: https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync
 [workflow-scheduler-source]: https://github.com/lupaxa/github-workflow-scheduler
