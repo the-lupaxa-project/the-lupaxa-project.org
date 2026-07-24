@@ -20,13 +20,13 @@ hide:
 </p>
 
 <p class="lupaxa-hero-actions">
-  <a class="md-button" href="projects/">
+  <a class="md-button" href="projects/index.md">
     Browse Projects
   </a>
-  <a class="md-button" href="organisations/">
+  <a class="md-button" href="organisations/index.md">
     Explore Organisations
   </a>
-  <a class="md-button" href="toolboxes/">
+  <a class="md-button" href="toolboxes/index.md">
     Explore Toolboxes
   </a>
 </p>
@@ -44,7 +44,7 @@ hide:
     Discover software, utilities and automation contained across The Lupaxa
     Project ecosystem.
 
-    [:octicons-arrow-right-24: Browse projects](projects.md)
+    [:octicons-arrow-right-24: Browse projects](projects/index.md)
 
 -   :material-toolbox:{ .lg .middle } **Toolboxes**
 
@@ -53,7 +53,7 @@ hide:
     Explore focused collections covering GitHub, DevOps, security, cloud,
     containers, monitoring and more.
 
-    [:octicons-arrow-right-24: Browse toolboxes](toolboxes.md)
+    [:octicons-arrow-right-24: Browse toolboxes](toolboxes/index.md)
 
 -   :material-domain:{ .lg .middle } **Organisations**
 
@@ -62,7 +62,7 @@ hide:
     View the GitHub organisations that contain and maintain The Lupaxa Project
     repositories.
 
-    [:octicons-arrow-right-24: View organisations](organisations.md)
+    [:octicons-arrow-right-24: View organisations](organisations/index.md)
 
 -   :material-book-open-page-variant:{ .lg .middle } **Documentation**
 
@@ -71,7 +71,7 @@ hide:
     Find project guides, technical references, standards and supporting
     documentation.
 
-    [:octicons-arrow-right-24: Find documentation](documentation.md)
+    [:octicons-arrow-right-24: Find documentation](documentation/index.md)
 
 </div>
 
@@ -150,7 +150,7 @@ projects and resources for a particular technical area.
 This portal provides a single entry point to that wider ecosystem, regardless of
 where an individual repository is hosted.
 
-[Browse all organisations](organisations/){ .md-button }
+[Browse all organisations](organisations/index.md){ .md-button }
 
 ---
 

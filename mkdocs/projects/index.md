@@ -26,7 +26,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     `Python` `GitHub API` `YAML`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -44,7 +44,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     `Python` `GitHub Actions` `YAML`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Continuous Integration](../categories/continuous-integration/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Continuous Integration</span>
 
     ---
 
@@ -62,7 +62,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     `Python` `GitHub API`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Workflow Management](../categories/workflow-management/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Workflow Management</span>
 
     ---
 
@@ -80,7 +80,7 @@ A curated catalogue of published projects contained across The Lupaxa Project ec
 
     `GitHub Actions` `YAML`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Continuous Integration](../categories/continuous-integration/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Continuous Integration</span>
 
     ---
 
@@ -108,7 +108,7 @@ The central public organisation containing shared standards, documentation, work
 
     `GitHub Actions` `YAML`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Continuous Integration](../categories/continuous-integration/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Continuous Integration</span>
 
     ---
 
@@ -134,7 +134,7 @@ A collection of internal tools used by The Lupaxa Project team.
 
     `Python` `GitHub API` `YAML`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -160,7 +160,7 @@ Contains GitHub automation, repository management, workflow orchestration and su
 
     `Python` `GitHub Actions` `YAML`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Continuous Integration](../categories/continuous-integration/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Continuous Integration</span>
 
     ---
 
@@ -178,7 +178,7 @@ Contains GitHub automation, repository management, workflow orchestration and su
 
     `Python` `GitHub API`
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Workflow Management](../categories/workflow-management/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Workflow Management</span>
 
     ---
 

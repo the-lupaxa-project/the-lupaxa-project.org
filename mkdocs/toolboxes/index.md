@@ -23,7 +23,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
     :material-github: `lupaxa-github-toolbox`  
     :material-package-variant-closed: 2 published projects
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -37,7 +37,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-devops-toolbox`
 
-    [DevOps](../categories/devops/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Operations](../categories/operations/){ .catalogue-category }
+    <span class="catalogue-category">DevOps</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Operations</span>
 
     ---
 
@@ -51,7 +51,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-security-toolbox`
 
-    [Security](../categories/security/){ .catalogue-category } [Certificates](../categories/certificates/){ .catalogue-category } [Validation](../categories/validation/){ .catalogue-category }
+    <span class="catalogue-category">Security</span> <span class="catalogue-category">Certificates</span> <span class="catalogue-category">Validation</span>
 
     ---
 
@@ -70,7 +70,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
     :material-github: `lupaxa-github-toolbox`  
     :material-package-variant-closed: 2 published projects
 
-    [GitHub](../categories/github/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -84,7 +84,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-git-toolbox`
 
-    [Git](../categories/git/){ .catalogue-category } [Source Control](../categories/source-control/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">Git</span> <span class="catalogue-category">Source Control</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -98,7 +98,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-git-hooks-toolbox`
 
-    [Git](../categories/git/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Repository Quality](../categories/repository-quality/){ .catalogue-category }
+    <span class="catalogue-category">Git</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Repository Quality</span>
 
     ---
 
@@ -112,7 +112,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-devops-toolbox`
 
-    [DevOps](../categories/devops/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Operations](../categories/operations/){ .catalogue-category }
+    <span class="catalogue-category">DevOps</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Operations</span>
 
     ---
 
@@ -126,7 +126,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-cicd-toolbox`
 
-    [CI/CD](../categories/cicd/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category } [Release Management](../categories/release-management/){ .catalogue-category }
+    <span class="catalogue-category">CI/CD</span> <span class="catalogue-category">Automation</span> <span class="catalogue-category">Release Management</span>
 
     ---
 
@@ -140,7 +140,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-security-toolbox`
 
-    [Security](../categories/security/){ .catalogue-category } [Certificates](../categories/certificates/){ .catalogue-category } [Validation](../categories/validation/){ .catalogue-category }
+    <span class="catalogue-category">Security</span> <span class="catalogue-category">Certificates</span> <span class="catalogue-category">Validation</span>
 
     ---
 
@@ -154,7 +154,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-docker-toolbox`
 
-    [Docker](../categories/docker/){ .catalogue-category } [Containers](../categories/containers/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Docker</span> <span class="catalogue-category">Containers</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -168,7 +168,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-aws-toolbox`
 
-    [AWS](../categories/aws/){ .catalogue-category } [Cloud](../categories/cloud/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">AWS</span> <span class="catalogue-category">Cloud</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -182,7 +182,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-azure-toolbox`
 
-    [Azure](../categories/azure/){ .catalogue-category } [Cloud](../categories/cloud/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Azure</span> <span class="catalogue-category">Cloud</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -196,7 +196,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-gcp-toolbox`
 
-    [GCP](../categories/gcp/){ .catalogue-category } [Cloud](../categories/cloud/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">GCP</span> <span class="catalogue-category">Cloud</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -210,7 +210,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-monitoring-toolbox`
 
-    [Monitoring](../categories/monitoring/){ .catalogue-category } [Observability](../categories/observability/){ .catalogue-category } [Operations](../categories/operations/){ .catalogue-category }
+    <span class="catalogue-category">Monitoring</span> <span class="catalogue-category">Observability</span> <span class="catalogue-category">Operations</span>
 
     ---
 
@@ -224,7 +224,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-notifications-toolbox`
 
-    [Notifications](../categories/notifications/){ .catalogue-category } [Integrations](../categories/integrations/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Notifications</span> <span class="catalogue-category">Integrations</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -238,7 +238,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-developers-toolbox`
 
-    [Development](../categories/development/){ .catalogue-category } [Utilities](../categories/utilities/){ .catalogue-category } [Productivity](../categories/productivity/){ .catalogue-category }
+    <span class="catalogue-category">Development</span> <span class="catalogue-category">Utilities</span> <span class="catalogue-category">Productivity</span>
 
     ---
 
@@ -252,7 +252,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-database-toolbox`
 
-    [Databases](../categories/databases/){ .catalogue-category } [Data](../categories/data/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Databases</span> <span class="catalogue-category">Data</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -266,7 +266,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-api-extractor-toolbox`
 
-    [APIs](../categories/api/){ .catalogue-category } [Data Extraction](../categories/extraction/){ .catalogue-category } [Integrations](../categories/integrations/){ .catalogue-category }
+    <span class="catalogue-category">APIs</span> <span class="catalogue-category">Data Extraction</span> <span class="catalogue-category">Integrations</span>
 
     ---
 
@@ -280,7 +280,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-spider-toolbox`
 
-    [Web Crawling](../categories/crawling/){ .catalogue-category } [Data Extraction](../categories/extraction/){ .catalogue-category } [Web](../categories/web/){ .catalogue-category }
+    <span class="catalogue-category">Web Crawling</span> <span class="catalogue-category">Data Extraction</span> <span class="catalogue-category">Web</span>
 
     ---
 
@@ -294,7 +294,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-sre-toolbox`
 
-    [SRE](../categories/sre/){ .catalogue-category } [Reliability](../categories/reliability/){ .catalogue-category } [Operations](../categories/operations/){ .catalogue-category }
+    <span class="catalogue-category">SRE</span> <span class="catalogue-category">Reliability</span> <span class="catalogue-category">Operations</span>
 
     ---
 
@@ -308,7 +308,7 @@ Focused GitHub organisations containing projects, tools and resources for specif
 
     :material-github: `lupaxa-terraform-toolbox`
 
-    [Terraform](../categories/terraform/){ .catalogue-category } [Infrastructure as Code](../categories/infrastructure-as-code/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Terraform</span> <span class="catalogue-category">Infrastructure as Code</span> <span class="catalogue-category">Automation</span>
 
     ---
 

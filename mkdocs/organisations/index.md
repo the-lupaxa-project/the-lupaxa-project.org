@@ -23,7 +23,7 @@ The organisations that contain the shared resources, projects and experimental w
     :material-github: `the-lupaxa-project`  
     :material-package-variant-closed: 1 published project
 
-    [Project Resources](../categories/project/){ .catalogue-category } [Shared Resources](../categories/shared-resources/){ .catalogue-category } [Documentation](../categories/documentation/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Project Resources</span> <span class="catalogue-category">Shared Resources</span> <span class="catalogue-category">Documentation</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -38,7 +38,7 @@ The organisations that contain the shared resources, projects and experimental w
     :material-github: `the-lupaxa-internal-toolbox`  
     :material-package-variant-closed: 1 published project
 
-    [Internal Tools](../categories/internal-tools/){ .catalogue-category } [Operations](../categories/operations/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">Internal Tools</span> <span class="catalogue-category">Operations</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -52,7 +52,7 @@ The organisations that contain the shared resources, projects and experimental w
 
     :material-github: `lupaxa-blueprints`
 
-    [Templates](../categories/templates/){ .catalogue-category } [Standards](../categories/standards/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">Templates</span> <span class="catalogue-category">Standards</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -77,7 +77,7 @@ Organisations containing shared standards, templates, documentation and project-
     :material-github: `the-lupaxa-project`  
     :material-package-variant-closed: 1 published project
 
-    [Project Resources](../categories/project/){ .catalogue-category } [Shared Resources](../categories/shared-resources/){ .catalogue-category } [Documentation](../categories/documentation/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">Project Resources</span> <span class="catalogue-category">Shared Resources</span> <span class="catalogue-category">Documentation</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -91,7 +91,7 @@ Organisations containing shared standards, templates, documentation and project-
 
     :material-github: `lupaxa-blueprints`
 
-    [Templates](../categories/templates/){ .catalogue-category } [Standards](../categories/standards/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">Templates</span> <span class="catalogue-category">Standards</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -114,7 +114,7 @@ Organisations containing internal tools and operational resources used by The Lu
     :material-github: `the-lupaxa-internal-toolbox`  
     :material-package-variant-closed: 1 published project
 
-    [Internal Tools](../categories/internal-tools/){ .catalogue-category } [Operations](../categories/operations/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category }
+    <span class="catalogue-category">Internal Tools</span> <span class="catalogue-category">Operations</span> <span class="catalogue-category">Repository Management</span>
 
     ---
 
@@ -136,7 +136,7 @@ Organisations containing experiments, prototypes, demonstrations and early-stage
 
     :material-github: `lupaxa-code-playground`
 
-    [Experiments](../categories/experiments/){ .catalogue-category } [Examples](../categories/examples/){ .catalogue-category } [Development](../categories/development/){ .catalogue-category }
+    <span class="catalogue-category">Experiments</span> <span class="catalogue-category">Examples</span> <span class="catalogue-category">Development</span>
 
     ---
 
@@ -150,7 +150,7 @@ Organisations containing experiments, prototypes, demonstrations and early-stage
 
     :material-github: `the-lupaxa-lab`
 
-    [Experiments](../categories/experiments/){ .catalogue-category } [Prototypes](../categories/prototypes/){ .catalogue-category } [Research](../categories/research/){ .catalogue-category }
+    <span class="catalogue-category">Experiments</span> <span class="catalogue-category">Prototypes</span> <span class="catalogue-category">Research</span>
 
     ---
 

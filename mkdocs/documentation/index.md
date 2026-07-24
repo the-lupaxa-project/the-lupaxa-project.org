@@ -24,7 +24,7 @@ A curated index of project documentation, shared references, standards, policies
     :material-domain: The Lupaxa Internal Toolbox  
     :material-source-repository: GitHub Repository Sync
 
-    [GitHub](../categories/github/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Repository Management</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -40,7 +40,7 @@ A curated index of project documentation, shared references, standards, policies
     :material-domain: The Lupaxa Project  
     :material-source-repository: Shared Reusable Workflows
 
-    [GitHub Actions](../categories/github-actions/){ .catalogue-category } [Continuous Integration](../categories/continuous-integration/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">GitHub Actions</span> <span class="catalogue-category">Continuous Integration</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -55,7 +55,7 @@ A curated index of project documentation, shared references, standards, policies
     :material-file-document-outline: Reference Material  
     :material-domain: The Lupaxa Project
 
-    [Branding](../categories/branding/){ .catalogue-category } [Design](../categories/design/){ .catalogue-category } [Standards](../categories/standards/){ .catalogue-category }
+    <span class="catalogue-category">Branding</span> <span class="catalogue-category">Design</span> <span class="catalogue-category">Standards</span>
 
     ---
 
@@ -81,7 +81,7 @@ Installation, configuration, usage and reference documentation for individual pr
     :material-domain: The Lupaxa Internal Toolbox  
     :material-source-repository: GitHub Repository Sync
 
-    [GitHub](../categories/github/){ .catalogue-category } [Repository Management](../categories/repository-management/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">GitHub</span> <span class="catalogue-category">Repository Management</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -97,7 +97,7 @@ Installation, configuration, usage and reference documentation for individual pr
     :material-domain: The Lupaxa Project  
     :material-source-repository: Shared Reusable Workflows
 
-    [GitHub Actions](../categories/github-actions/){ .catalogue-category } [Continuous Integration](../categories/continuous-integration/){ .catalogue-category } [Automation](../categories/automation/){ .catalogue-category }
+    <span class="catalogue-category">GitHub Actions</span> <span class="catalogue-category">Continuous Integration</span> <span class="catalogue-category">Automation</span>
 
     ---
 
@@ -120,7 +120,7 @@ Shared technical references, standards and supporting resources.
     :material-file-document-outline: Reference Material  
     :material-domain: The Lupaxa Project
 
-    [Branding](../categories/branding/){ .catalogue-category } [Design](../categories/design/){ .catalogue-category } [Standards](../categories/standards/){ .catalogue-category }
+    <span class="catalogue-category">Branding</span> <span class="catalogue-category">Design</span> <span class="catalogue-category">Standards</span>
 
     ---
 
@@ -143,7 +143,7 @@ Project-wide policies covering contribution, conduct, security and support.
     :material-file-document-outline: Policies  
     :material-domain: The Lupaxa Project
 
-    [Contributing](../categories/contributing/){ .catalogue-category } [Development](../categories/development/){ .catalogue-category } [Standards](../categories/standards/){ .catalogue-category }
+    <span class="catalogue-category">Contributing</span> <span class="catalogue-category">Development</span> <span class="catalogue-category">Standards</span>
 
     ---
 
@@ -158,7 +158,7 @@ Project-wide policies covering contribution, conduct, security and support.
     :material-file-document-outline: Policies  
     :material-domain: The Lupaxa Project
 
-    [Community](../categories/community/){ .catalogue-category } [Policies](../categories/policy/){ .catalogue-category } [Standards](../categories/standards/){ .catalogue-category }
+    <span class="catalogue-category">Community</span> <span class="catalogue-category">Policies</span> <span class="catalogue-category">Standards</span>
 
     ---
 
@@ -173,7 +173,7 @@ Project-wide policies covering contribution, conduct, security and support.
     :material-file-document-outline: Policies  
     :material-domain: The Lupaxa Project
 
-    [Security](../categories/security/){ .catalogue-category } [Policies](../categories/policy/){ .catalogue-category } [Vulnerability Reporting](../categories/vulnerability-reporting/){ .catalogue-category }
+    <span class="catalogue-category">Security</span> <span class="catalogue-category">Policies</span> <span class="catalogue-category">Vulnerability Reporting</span>
 
     ---
 
@@ -188,7 +188,7 @@ Project-wide policies covering contribution, conduct, security and support.
     :material-file-document-outline: Policies  
     :material-domain: The Lupaxa Project
 
-    [Support](../categories/support/){ .catalogue-category } [Community](../categories/community/){ .catalogue-category } [Policies](../categories/policy/){ .catalogue-category }
+    <span class="catalogue-category">Support</span> <span class="catalogue-category">Community</span> <span class="catalogue-category">Policies</span>
 
     ---
 

@@ -892,10 +892,10 @@ class CatalogueRenderer:
 
         return " ".join(
             (
-                f"[{category.display_name}]"
-                f"(../categories/{category.id}/)"
-                "{ .catalogue-category }"
-            )
+                f'<span class="catalogue-category">'
+                f"{category.display_name}"
+                "</span>"
+        )
             for category in categories
         )
 
