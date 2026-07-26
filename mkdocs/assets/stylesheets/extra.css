@@ -976,7 +976,6 @@
 .footer-copyright,
 .footer-tagline {
     font-size: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
-    letter-spacing: -0.02em;
 }
 
 /* =============================================================================
