@@ -974,6 +974,19 @@
   line-height: 1.45;
 }
 
+@media screen and (max-width: 30em) {
+    .footer-copyright {
+        font-size: 0.875rem;
+    }
+
+  .footer-tagline {
+    color: var(--lupaxa-white);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.45;
+  }
+}
+
 /* =============================================================================
  * 11. Colour-Scheme Adjustments
  * ============================================================================= */
