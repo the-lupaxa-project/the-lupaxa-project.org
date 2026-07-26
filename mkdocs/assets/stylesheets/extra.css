@@ -961,22 +961,22 @@
 
 .footer-copyright {
   color: var(--lupaxa-white);
-  font-size: 0.95rem;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
   opacity: 0.9;
+  letter-spacing: -0.02em;
 }
 
 .footer-tagline {
   color: var(--lupaxa-white);
-  font-size: 0.95rem;
   font-weight: 300;
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .footer-copyright,
 .footer-tagline {
     font-size: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
+    letter-spacing: -0.02em;
 }
 
 /* =============================================================================
