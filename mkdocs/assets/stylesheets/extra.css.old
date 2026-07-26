@@ -61,10 +61,6 @@
   --lupaxa-transition-medium: 180ms ease;
 }
 
-.md-header__source {
-  display: none !important;
-}
-
 /*
  * MkDocs Material defines palette variables on the active colour scheme.
  * Override them at the same level so both light and dark modes inherit the
@@ -111,8 +107,12 @@
 }
 
 /* =============================================================================
- * 3. Custom Header Navigation
- * ============================================================================= */
+ * Custom Header Navigation
+ * =============================================================================
+ *
+ * Replace the native-tabs rules with this block. Keep every other section of
+ * the existing stylesheet unchanged.
+ */
 
 .md-header {
   position: sticky;
@@ -129,7 +129,7 @@
 .lupaxa-header__inner {
   display: flex;
   width: 100%;
-  min-height: var(--lupaxa-header-height);
+  min-height: 5rem;
   align-items: center;
   gap: 0;
 }
@@ -161,12 +161,9 @@
 /* Primary desktop navigation */
 
 .lupaxa-header__nav {
-  position: relative;
-  z-index: 2;
   min-width: 0;
   flex: 1 1 auto;
   align-self: stretch;
-  pointer-events: auto;
 }
 
 .lupaxa-header__nav-list {
@@ -177,7 +174,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  pointer-events: auto;
 }
 
 .lupaxa-header__nav-item {
@@ -185,12 +181,10 @@
   align-items: stretch;
   margin: 0;
   padding: 0;
-  pointer-events: auto;
 }
 
 .lupaxa-header__nav-link {
   position: relative;
-  z-index: 1;
   display: flex;
   height: 100%;
   align-items: center;
@@ -203,7 +197,6 @@
   background: none;
   border-radius: 0;
   box-shadow: none;
-  pointer-events: auto;
   transition:
     color var(--lupaxa-transition-fast),
     font-weight var(--lupaxa-transition-fast);
@@ -245,12 +238,92 @@
 }
 
 .lupaxa-header__inner > .md-header__option {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.lupaxa-header__inner > .md-header__option .md-header__button {
+  margin: 0;
+}
+
+@media screen and (max-width: 76.234375em) {
+  .lupaxa-header__inner {
+    min-height: 4rem;
+  }
+
+  .lupaxa-header__nav {
+    display: none;
+  }
+
+  .lupaxa-header__drawer-button {
+    display: inline-flex;
+    order: -1;
+    margin-right: var(--lupaxa-spacing-xs);
+  }
+
+  .md-header__button.md-logo.lupaxa-header__logo {
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-right: var(--lupaxa-spacing-sm);
+  }
+
+  .md-header__button.md-logo.lupaxa-header__logo img,
+  .md-header__button.md-logo.lupaxa-header__logo svg {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lupaxa-header__nav-link {
+    transition: none;
+  }
+}
+
+/* Ensure the custom navigation remains above Material header layers. */
+
+.lupaxa-header__nav {
+  position: relative;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.lupaxa-header__nav-list,
+.lupaxa-header__nav-item,
+.lupaxa-header__nav-link {
+  pointer-events: auto;
+}
+
+.lupaxa-header__nav-link {
+  z-index: 1;
+}
+
+.lupaxa-header__nav-item--active .lupaxa-header__nav-link::after {
+  pointer-events: none;
+}
+
+/* Keep the palette control confined to its own area. */
+
+.lupaxa-header__inner > .md-header__option {
   position: relative;
   z-index: 3;
   width: auto;
   flex: 0 0 auto;
   margin-left: auto;
   pointer-events: auto;
+}
+
+/* Material controls */
+
+.lupaxa-header__drawer-button {
+  display: none;
+  margin: 0;
+  color: var(--lupaxa-white);
+}
+
+.lupaxa-header__inner > .md-header__option {
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .lupaxa-header__inner > .md-header__option .md-header__button {
@@ -273,12 +346,19 @@
   text-decoration: none;
 }
 
+/*
+ * Generic page logo retained for standard content pages that do not use a
+ * dedicated hero component.
+ */
+
 .md-typeset .page-logo {
   display: block;
   width: min(100%, 256px);
   height: auto;
   margin: 0 auto var(--lupaxa-spacing-lg);
 }
+
+/* Page headings */
 
 .md-typeset h1:not(.lupaxa-hero-title) {
   margin-top: var(--lupaxa-spacing-md);
@@ -369,6 +449,8 @@
   line-height: 1.6;
 }
 
+/* Hero buttons */
+
 .lupaxa-hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -396,6 +478,8 @@
   background-color: var(--lupaxa-light-blue);
   border-color: var(--lupaxa-light-blue);
 }
+
+/* Error pages retain a simplified hero without the standard bottom border. */
 
 .lupaxa-error-hero {
   margin: 0 -1.2rem 1.5rem;
@@ -503,6 +587,8 @@
   cursor: pointer;
 }
 
+/* Card title icons */
+
 .md-typeset .grid.cards > ul > li > p:first-child .twemoji,
 .md-typeset .grid.cards > ul > li > p:first-child .lg,
 .md-typeset .grid.cards > ul > li > p:first-child svg,
@@ -516,6 +602,8 @@
 .md-typeset .grid.cards > li > p:first-child svg {
   fill: currentcolor;
 }
+
+/* Optional whole-card link support */
 
 .md-typeset .grid.cards .card-primary-link {
   position: static;
@@ -538,6 +626,8 @@
   outline: 0.15rem solid var(--lupaxa-light-blue);
   outline-offset: 0.15rem;
 }
+
+/* Compact single-purpose cards */
 
 .md-typeset .grid.cards li:has(> p:only-child) {
   display: flex;
@@ -626,6 +716,17 @@
   text-align: left;
 }
 
+/* Catalogue organisation logos
+ *
+ * Markdown renders an unlinked image as:
+ *   <p><img class="catalogue-logo"></p>
+ *
+ * A linked image is rendered as:
+ *   <p><a><img class="catalogue-logo"></a></p>
+ *
+ * The descendant selectors below support both structures.
+ */
+
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) {
   display: flex;
   width: 100%;
@@ -672,6 +773,8 @@
     );
 }
 
+/* Catalogue descriptions */
+
 .md-typeset .catalogue-grid
   > ul
   > li
@@ -689,6 +792,8 @@
   line-height: 1.55;
 }
 
+/* Catalogue technology labels */
+
 .md-typeset .catalogue-grid code {
   display: inline-block;
   margin: 0.12rem 0.16rem 0.12rem 0;
@@ -705,6 +810,8 @@
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: var(--lupaxa-radius-sm);
 }
+
+/* Catalogue categories */
 
 .md-typeset .catalogue-category {
   display: inline-block;
@@ -757,6 +864,8 @@
   flex: 0 0 auto;
   margin: 0;
 }
+
+/* Catalogue footer actions */
 
 .md-typeset .catalogue-action {
   display: inline-flex;
@@ -841,6 +950,8 @@
   margin-top: 0.8rem;
 }
 
+/* About card grids */
+
 .md-typeset .grid.cards.about-summary,
 .md-typeset .grid.cards.about-principles,
 .md-typeset .grid.cards.about-build {
@@ -871,12 +982,16 @@
   margin: 0.65rem 0;
 }
 
+/* Organisation and project buttons */
+
 .about-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin: 1.5rem 0 var(--lupaxa-spacing-lg);
 }
+
+/* Name explanation panel */
 
 .about-name {
   display: grid;
@@ -1029,14 +1144,11 @@
  * 12. Responsive Behaviour
  * ============================================================================= */
 
+/* Tablet and smaller */
+
 @media screen and (max-width: 76.234375em) {
   :root {
     --lupaxa-header-height: 4rem;
-  }
-
-  .md-header {
-    color: var(--lupaxa-white);
-    background-color: var(--lupaxa-blue);
   }
 
   .lupaxa-header__inner {
@@ -1068,118 +1180,6 @@
     object-fit: contain;
   }
 
-  .md-sidebar--primary {
-    z-index: 30;
-  }
-
-  .md-overlay {
-    z-index: 20;
-  }
-
-  .md-nav--primary .md-nav__title,
-  .md-nav--primary .md-nav__title[for="__drawer"] {
-    color: var(--lupaxa-white);
-    background-color: var(--lupaxa-blue);
-  }
-
-  /* Mobile drawer navigation links */
-
-  /* Light mode */
-
-  [data-md-color-scheme="default"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link {
-    color: var(--lupaxa-dark-blue) !important;
-  }
-
-  [data-md-color-scheme="default"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link:hover,
-  [data-md-color-scheme="default"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link:focus {
-    color: var(--lupaxa-light-blue) !important;
-    background-color:
-      color-mix(
-        in srgb,
-        var(--lupaxa-light-blue) 12%,
-        transparent
-      );
-  }
-
-  [data-md-color-scheme="default"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link--active {
-    color: var(--lupaxa-blue) !important;
-    font-weight: 700;
-  }
-
-  /* Dark mode */
-
-  [data-md-color-scheme="slate"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link {
-    color: var(--lupaxa-white) !important;
-  }
-
-  [data-md-color-scheme="slate"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link:hover,
-  [data-md-color-scheme="slate"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link:focus {
-    color: var(--lupaxa-light-blue) !important;
-  }
-
-  [data-md-color-scheme="slate"]
-    .md-sidebar--primary
-    .md-nav--primary
-    .md-nav__link--active {
-    color: var(--lupaxa-light-blue) !important;
-    font-weight: 700;
-  }
-
-  /*
-  * Material renders a TOC-opening label and a normal page link for the active
-  * page on mobile. Hide the TOC label so tapping Home follows the actual link.
-  */
-
-  .md-sidebar--primary
-    .md-nav--primary
-    label.md-nav__link[for="__toc"] {
-    display: none !important;
-  }
-
-  .md-sidebar--primary
-    .md-nav--primary
-    label.md-nav__link[for="__toc"]
-    + a.md-nav__link {
-    display: flex !important;
-  }
-
-  /* Mobile drawer navigation links */
-
-  .md-nav--primary .md-nav__link {
-    color: var(--lupaxa-white);
-  }
-
-  .md-nav--primary .md-nav__link:hover,
-  .md-nav--primary .md-nav__link:focus {
-    color: var(--lupaxa-light-blue);
-  }
-
-  .md-nav--primary .md-nav__link--active {
-    color: var(--lupaxa-light-blue);
-    font-weight: 700;
-  }
-
   .md-content__inner {
     margin-right: 0.625rem;
     margin-left: 0.625rem;
@@ -1200,6 +1200,8 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Mobile */
 
 @media screen and (max-width: 44.984375em) {
   .lupaxa-hero,
@@ -1280,7 +1282,7 @@
  * ============================================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .lupaxa-header__nav-link,
+  .md-tabs.lupaxa-header-tabs .md-tabs__link,
   .md-typeset .grid.cards > ul > li,
   .md-typeset .grid.cards > li,
   .md-typeset .md-button,
@@ -1348,8 +1350,19 @@
 }
 
 /* =============================================================================
- * 15. Compatibility Overrides
+ * End of File
  * ============================================================================= */
+
+/* =============================================================================
+ * 15. Recovery Overrides
+ * =============================================================================
+ *
+ * These final rules intentionally use higher specificity than MkDocs Material.
+ * They preserve the complete component stylesheet above while restoring the
+ * branded buttons, catalogue-logo alignment and native desktop navigation.
+ */
+
+/* Keep the native tabs visible and inside the five-rem header row. */
 
 .md-header .lupaxa-header__drawer-button,
 .md-header .md-header__button.md-logo.lupaxa-header__logo,
@@ -1358,6 +1371,8 @@
   z-index: 50;
   pointer-events: auto;
 }
+
+/* Restore the intended desktop logo dimensions against Material's logo rule. */
 
 .md-header .md-header__button.md-logo.lupaxa-header__logo {
   width: 4.5rem !important;
@@ -1371,6 +1386,8 @@
   max-width: none !important;
   max-height: none !important;
 }
+
+/* Restore solid Lupaxa-blue default buttons. */
 
 .md-typeset a.md-button {
   color: var(--lupaxa-white);
@@ -1391,6 +1408,8 @@
   background-color: var(--lupaxa-blue);
   border-color: var(--lupaxa-blue);
 }
+
+/* Restore catalogue-logo centring for linked and unlinked images. */
 
 .md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) {
   display: flex !important;
@@ -1429,5 +1448,5 @@
 }
 
 /* =============================================================================
- * End of File
+ * End of Recovery Overrides
  * ============================================================================= */
