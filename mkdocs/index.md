@@ -36,22 +36,43 @@ hide:
 
 <div class="grid cards catalogue-grid" markdown>
 
--   :material-source-repository:{ .lg .middle }**GitHub Repository Sync**
+-   :material-source-repository:{ .lg .middle } **GitHub Repository Sync**
 
     ---
 
-    [![The Lupaxa Project](https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png){ .catalogue-logo }](organisations/the-lupaxa-project.md)
+    <img
+        class="catalogue-logo"
+        data-organisation="The Lupaxa Internal Toolbox"
+        src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png"
+        alt="Lupaxa Internal Toolbox"
+    />
 
-    Safely clone and synchronise large collections of GitHub repositories from
-    a single declarative configuration.
+    Clone, organise, and safely synchronise large collections of GitHub repositories using a declarative JSON5 configuration file.
+
+    Each repository is inspected before any Git operation is performed, ensuring that only repositories confirmed to be in a safe state are automatically updated.
 
     <span class="catalogue-category">GitHub</span>
     <span class="catalogue-category">Automation</span>
     <span class="catalogue-category">Repository Management</span>
+    <span class="catalogue-category">Python</span>
 
     ---
 
-    [:material-github: Repository](https://github.com/the-lupaxa-internal-toolbox/lupaxa-github-repo-sync){ .catalogue-action }
-    [:material-book-open-page-variant: Documentation](https://github-repo-sync.thelupaxaproject.org/){ .catalogue-action }
+    <a
+        class="catalogue-action catalogue-action--repository"
+        href="https://github.com/the-lupaxa-internal-toolbox/github-repo-sync"
+        target="_blank"
+        rel="noopener noreferrer">
+        <span class="md-icon">:material-github:</span>
+        View on GitHub
+    </a>
+    <a
+        class="catalogue-action catalogue-action--documentation"
+        href="https://github-repo-sync.thelupaxaproject.org/"
+        target="_blank"
+        rel="noopener noreferrer">
+        <span class="md-icon">:material-book-open-page-variant:</span>
+        Documentation
+    </a>
 
 </div>
