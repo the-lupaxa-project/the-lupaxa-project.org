@@ -8,9 +8,7 @@ hide:
     <img
         class="lupaxa-hero-logo"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/core/256/main-logo-transparent.png"
-        alt="The Lupaxa Project Logo"
-    />
-
+        alt="The Lupaxa Project Logo"/>
     <h1 class="lupaxa-hero-title">
         The Lupaxa Project
     </h1>
@@ -20,15 +18,15 @@ hide:
     </p>
 
     <div class="lupaxa-hero-actions">
-        <a class="md-button" href="projects/">
-            Browse Projects
-        </a>
-
-        <a class="md-button" href="organisations/">
+        <a class="md-button lupaxa-button" href="organisations/">
             Explore Organisations
         </a>
 
-        <a class="md-button" href="toolboxes/">
+        <a class="md-button lupaxa-button" href="projects/">
+            Browse Projects
+        </a>
+
+        <a class="md-button lupaxa-button" href="toolboxes/">
             Explore Toolboxes
         </a>
     </div>
@@ -38,7 +36,7 @@ hide:
 
 <div class="grid cards catalogue-grid" markdown>
 
--   :material-source-repository:{ .lg .middle } __GitHub Repository Sync__
+-   :material-source-repository:{ .lg .middle }**GitHub Repository Sync**
 
     ---
 
