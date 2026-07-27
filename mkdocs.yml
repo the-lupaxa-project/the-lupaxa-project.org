@@ -12,6 +12,15 @@ site_author: The Lupaxa Project
 
 site_url: https://thelupaxaproject.org/
 
+extra:
+  generator: false
+  social_image: assets/images/social-card.png
+  theme_color: "#203959"
+  social_image_width: 1200
+  social_image_height: 630
+  social_locale: en_GB
+  twitter_card: summary_large_image
+
 # =============================================================================
 # Content
 # =============================================================================
@@ -139,13 +148,6 @@ extra_css:
 
 extra_javascript:
   - assets/javascript/navigation.js
-
-# =============================================================================
-# Additional Metadata
-# =============================================================================
-
-extra:
-  generator: false
 
 # =============================================================================
 # Copyright
