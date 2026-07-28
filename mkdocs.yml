@@ -17,6 +17,8 @@ extra:
   social_image: assets/images/social-card.png
   social_image_width: 1200
   social_image_height: 630
+  social_logo: >-
+    https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo.png
   social_locale: en_GB
   theme_color: "#203959"
   twitter_card: summary_large_image
