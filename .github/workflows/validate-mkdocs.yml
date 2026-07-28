@@ -1,10 +1,25 @@
 name: Validate MkDocs
 
 on:
+  push:
+    paths:
+      - ".github/workflows/validate-mkdocs.yml"
+      - ".markdownlint.yml"
+      - ".markdownlintignore"
+      - ".markdownlint-cli2.jsonc"
+      - "data/**"
+      - "main.py"
+      - "mkdocs/**"
+      - "mkdocs.yml"
+      - "overrides/**"
+      - "requirements.txt"
+
   pull_request:
     paths:
       - ".github/workflows/validate-mkdocs.yml"
       - ".markdownlint.yml"
+      - ".markdownlintignore"
+      - ".markdownlint-cli2.jsonc"
       - "data/**"
       - "main.py"
       - "mkdocs/**"
