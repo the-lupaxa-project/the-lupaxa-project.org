@@ -47,6 +47,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Actions Toolbox"
         data-organisation="Actions Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/actions-toolbox/readme-logo-128.png"
         alt="Actions Toolbox"
@@ -76,6 +77,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the API Extractor Toolbox"
         data-organisation="API EXtractor Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/api-extractor-toolbox/readme-logo-128.png"
         alt="API Extractor Toolbox"
@@ -105,6 +107,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the AWS Toolbox"
         data-organisation="AWS Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/aws-toolbox/readme-logo-128.png"
         alt="AWS Toolbox"
@@ -135,6 +138,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Azzure Toolbox"
         data-organisation="Azure Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/azure-toolbox/readme-logo-128.png"
         alt="Azure Toolbox"
@@ -165,6 +169,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the CI/CD Toolbox"
         data-organisation="CI/CD Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png"
         alt="CI/CD Toolbox"
@@ -195,6 +200,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Code Playground"
         data-organisation="Code Playground"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png"
         alt="Code Playground"
@@ -225,6 +231,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Database Toolbox"
         data-organisation="Database Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/database-toolbox/readme-logo-128.png"
         alt="Database Toolbox"
@@ -255,6 +262,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Developers Toolbox"
         data-organisation="Developers Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png"
         alt="Developers Toolbox"
@@ -284,6 +292,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the DevOps Toolbox"
         data-organisation="DevOps Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/devops-toolbox/readme-logo-128.png"
         alt="DevOps Toolbox"
@@ -314,6 +323,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Docker Toolbox"
         data-organisation="Docker Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/docker-toolbox/readme-logo-128.png"
         alt="Docker Toolbox"
@@ -344,6 +354,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the GCP Toolbox"
         data-organisation="GCP Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gcp-toolbox/readme-logo-128.png"
         alt="GCP Toolbox"
@@ -374,6 +385,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Git Toolbox"
         data-organisation="Git Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png"
         alt="Git Toolbox"
@@ -404,6 +416,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Git Hooks Toolbox"
         data-organisation="Git Hooks Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-hooks-toolbox/readme-logo-128.png"
         alt="Git Hooks Toolbox"
@@ -434,6 +447,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the GitHub Toolbox"
         data-organisation="GitHub Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gh-toolbox/readme-logo-128.png"
         alt="GitHub Toolbox"
@@ -464,6 +478,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Monitoring Toolbox"
         data-organisation="Monitoring Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/monitoring-toolbox/readme-logo-128.png"
         alt="Monitoring Toolbox"
@@ -494,6 +509,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Notifications Toolbox"
         data-organisation="Notifications Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/notifications-toolbox/readme-logo-128.png"
         alt="Notifications Toolbox"
@@ -524,6 +540,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Security Toolbox"
         data-organisation="Security Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png"
         alt="Security Toolbox"
@@ -554,6 +571,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Spider Toolbox"
         data-organisation="Spider Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/spider-toolbox/readme-logo-128.png"
         alt="Spider Toolbox"
@@ -584,6 +602,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the SRE Toolbox"
         data-organisation="SRE Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/sre-toolbox/readme-logo-128.png"
         alt="SRE Toolbox"
@@ -614,6 +633,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in the Terraform Toolbox"
         data-organisation="Terraform Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/terraform-toolbox/readme-logo-128.png"
         alt="Terraform Toolbox"
@@ -644,6 +664,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in The Lupaxa Blueprints"
         data-organisation="The Lupaxa Blueprints"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-blueprints/readme-logo-128.png"
         alt="The Lupaxa Blueprints"
@@ -673,6 +694,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in The Lupaxa Internal Toolbox"
         data-organisation="The Lupaxa Internal Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png"
         alt="The Lupaxa Internal Toolbox"
@@ -702,6 +724,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in The Lupaxa Lab"
         data-organisation="The Lupaxa Lab"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-lab/readme-logo-128.png"
         alt="The Lupaxa Lab"
@@ -731,6 +754,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in The Lupaxa Project"
         data-organisation="The Lupaxa Project"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png"
         alt="The Lupaxa Project"
@@ -761,6 +785,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="View projects in The Lupaxa Project (Private)"
         data-organisation="The Lupaxa Project (Private)"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project-private/readme-logo-128.png"
         alt="The Lupaxa Project (Private)"

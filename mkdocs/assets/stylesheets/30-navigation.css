@@ -75,6 +75,7 @@
 
 .lupaxa-header__nav-item {
   display: flex;
+  height: 100%;
   align-items: stretch;
   margin: 0;
   padding: 0;

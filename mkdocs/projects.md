@@ -35,6 +35,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="Security Toolbox"
         data-organisation="Security Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png"
         alt="Security Toolbox"
@@ -73,6 +74,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="Security Toolbox"
         data-organisation="Security Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png"
         alt="Security Toolbox"
@@ -112,6 +114,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="The Lupaxa Internal Toolbox"
         data-organisation="The Lupaxa Internal Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png"
         alt="Lupaxa Internal Toolbox"
@@ -151,6 +154,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="The Lupaxa Project"
         data-organisation="The Lupaxa Project"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png"
         alt="The Lupaxa Project"

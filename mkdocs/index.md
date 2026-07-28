@@ -26,8 +26,8 @@ hide:
             Browse Projects
         </a>
 
-        <a class="md-button lupaxa-button" href="toolboxes/">
-            Explore Toolboxes
+        <a class="md-button lupaxa-button" href="polices/">
+            Explore Policies
         </a>
     </div>
 </div>
@@ -42,6 +42,7 @@ hide:
 
     <img
         class="catalogue-logo"
+        title="The Lupaxa Internal Toolbox"
         data-organisation="The Lupaxa Internal Toolbox"
         src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png"
         alt="Lupaxa Internal Toolbox"
