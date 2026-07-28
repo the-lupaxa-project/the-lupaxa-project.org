@@ -14,6 +14,12 @@ site_url: https://thelupaxaproject.org/
 
 extra:
   generator: false
+  social_image: assets/images/social-card.png
+  social_image_width: 1200
+  social_image_height: 630
+  social_locale: en_GB
+  theme_color: "#203959"
+  twitter_card: summary_large_image
 
 # =============================================================================
 # Content
@@ -24,6 +30,11 @@ docs_dir: mkdocs
 site_dir: site
 
 use_directory_urls: true
+
+# Reload on catalogue data / macros changes during `mkdocs serve`
+watch:
+  - data
+  - main.py
 
 # =============================================================================
 # Theme
@@ -67,6 +78,14 @@ theme:
 
   icon:
     repo: fontawesome/brands/github
+
+# =============================================================================
+# Plugins
+# =============================================================================
+
+plugins:
+  - search
+  - macros
 
 # =============================================================================
 # Navigation
@@ -124,24 +143,21 @@ extra_css:
 
   - assets/stylesheets/40-components/buttons.css
   - assets/stylesheets/40-components/cards.css
+  - assets/stylesheets/40-components/catalogue.css
   - assets/stylesheets/40-components/filter-panel.css
   - assets/stylesheets/40-components/hero.css
   - assets/stylesheets/40-components/footer.css
 
   - assets/stylesheets/50-pages/about.css
-  - assets/stylesheets/50-pages/home.css
-  - assets/stylesheets/50-pages/organisations.css
-  - assets/stylesheets/50-pages/projects.css
-  - assets/stylesheets/50-pages/policies.css
-  - assets/stylesheets/50-pages/documentation.css
-  - assets/stylesheets/50-pages/toolboxes.css
 
   - assets/stylesheets/90-responsive.css
   - assets/stylesheets/95-print.css
   - assets/stylesheets/99-overrides.css
 
 extra_javascript:
-  - assets/javascript/navigation.js
+  - assets/javascript/page-lifecycle.js
+  - assets/javascript/header-active-nav.js
+  - assets/javascript/catalogue-filters.js
 
 # =============================================================================
 # Copyright

@@ -40,23 +40,29 @@
  * Shared Lupaxa action button.
  *
  * Can be applied to links and native buttons throughout the portal.
+ * .filter-panel-clear shares the same visual treatment; layout-specific
+ * sizing for the clear control stays in filter-panel.css.
  */
 
-.md-typeset .md-button.lupaxa-button {
-  min-width: 10rem;
-  padding: 0.65rem 1rem;
+.md-typeset .md-button.lupaxa-button,
+.filter-panel-clear {
   color: var(--lupaxa-white);
   font: inherit;
   font-weight: 600;
-  line-height: 1.4;
   text-align: center;
-  text-decoration: none;
   appearance: none;
   cursor: pointer;
   background-color: var(--lupaxa-blue);
   border: 1px solid var(--lupaxa-blue);
   border-radius: var(--lupaxa-radius-button);
   box-shadow: none;
+}
+
+.md-typeset .md-button.lupaxa-button {
+  min-width: 10rem;
+  padding: 0.65rem 1rem;
+  line-height: 1.4;
+  text-decoration: none;
   transition:
     color var(--lupaxa-transition-fast),
     background-color var(--lupaxa-transition-fast),
@@ -65,17 +71,22 @@
 
 .md-typeset .md-button.lupaxa-button:hover,
 .md-typeset .md-button.lupaxa-button:focus,
-.md-typeset .md-button.lupaxa-button:focus-visible {
+.md-typeset .md-button.lupaxa-button:focus-visible,
+.filter-panel-clear:hover,
+.filter-panel-clear:focus,
+.filter-panel-clear:focus-visible {
   color: var(--lupaxa-dark-blue);
   background-color: var(--lupaxa-light-blue);
   border-color: var(--lupaxa-light-blue);
 }
 
-.md-typeset .md-button.lupaxa-button:active {
+.md-typeset .md-button.lupaxa-button:active,
+.filter-panel-clear:active {
   transform: translateY(1px);
 }
 
-.md-typeset .md-button.lupaxa-button:disabled {
+.md-typeset .md-button.lupaxa-button:disabled,
+.filter-panel-clear:disabled {
   color: var(--lupaxa-dark-blue);
   cursor: default;
   background-color: var(--lupaxa-light-blue);

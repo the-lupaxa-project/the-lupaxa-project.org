@@ -13,3 +13,6 @@ venv/
 # Editors
 .idea/
 .vscode/
+
+# Local Cursor / agent design notes (not site docs)
+cursor-docs/

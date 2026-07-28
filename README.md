@@ -1,218 +1,109 @@
-# Lupaxa Project Website
+# The Lupaxa Project portal
 
-The website provides a consistent look and feel, reusable styling, common
-components and sensible defaults for search engines, social media and modern
-browsers.
+Central MkDocs Material site for organisations, projects, and policies across
+The Lupaxa Project ecosystem.
 
-## Features
+Published at <https://thelupaxaproject.org/>.
 
-- Responsive Material for MkDocs layout
-- Custom Lupaxa styling
-- Reusable page templates
-- Automatic Open Graph metadata
-- Twitter / X Cards
-- Canonical URLs
-- Social preview images
-- Custom navigation components
-- Configurable branding
-- Consistent documentation standards
+## Prerequisites
 
-## Site-wide Configuration
+- Python 3.13+
+- Node.js 22+ (only required for markdownlint)
 
-The following settings are configured in `mkdocs.yml`.
+## Local development
 
-### Basic Metadata
-
-```yaml
-site_name: The Lupaxa Project
-
-site_description: >-
-  Open source software, reusable workflows, documentation and developer
-  tooling from The Lupaxa Project.
-
-site_author: The Lupaxa Project
-
-site_url: https://www.thelupaxaproject.org/
+```bash
+python -m pip install -r requirements.txt
+python -m mkdocs serve
 ```
 
-These values provide the default metadata for the website and are also used for
-social media previews unless overridden by an individual page.
+Open the URL printed by MkDocs (usually `http://127.0.0.1:8000/`).
 
-### Social Media Configuration
+`mkdocs.yml` watches `data/` and `main.py`, so catalogue YAML and macro edits
+reload automatically while `mkdocs serve` is running.
+
+Strict production build:
+
+```bash
+python -m mkdocs build --strict
+```
+
+Markdown lint:
+
+```bash
+npx markdownlint-cli "mkdocs/**/*.md" --config .markdownlint.yml
+```
+
+## Catalogue content
+
+Catalogue entries live in YAML under `data/`:
+
+| File | Page |
+| --- | --- |
+| `data/organisations.yml` | Organisations |
+| `data/projects.yml` | Projects (set `featured: true` for the home page) |
+| `data/policies.yml` | Policies |
+
+`main.py` loads that data for `mkdocs-macros-plugin`. Pages call macros such as
+`filter_panel`, `catalogue_grid`, and `featured_projects` so card markup stays
+in one place.
+
+Brand logos remain remote URLs from the `brand-assets` repository.
+
+## Layout overview
+
+```text
+data/                     Catalogue YAML
+main.py                   Macros plugin entry
+mkdocs/                   Page Markdown and static assets
+overrides/                Material theme overrides
+requirements.txt          Pinned MkDocs dependencies
+.github/workflows/        Publish + PR validate
+```
+
+CSS is numbered by cascade layer under `mkdocs/assets/stylesheets/`.
+JavaScript is split under `mkdocs/assets/javascript/`:
+
+- `page-lifecycle.js` — load + Material instant navigation helpers
+- `header-active-nav.js` — header active state
+- `catalogue-filters.js` — catalogue search / filter / URL sync
+
+## Page social metadata
+
+Site-wide defaults are set in `mkdocs.yml` under `extra`:
 
 ```yaml
 extra:
-  theme_color: "#203959"
-
+  generator: false
   social_image: assets/images/social-card.png
   social_image_width: 1200
   social_image_height: 630
-
   social_locale: en_GB
+  theme_color: "#203959"
   twitter_card: summary_large_image
 ```
 
-#### `theme_color`
-
-Sets the browser theme colour used by supported browsers and mobile devices.
-
-Example:
+Optional per-page overrides in front matter:
 
 ```yaml
-theme_color: "#203959"
-```
-
-#### `social_image`
-
-Specifies the default social preview image used by the entire website.
-
-Example:
-
-```yaml
+---
+description: Short page description for search and social cards.
+social_title: Custom social title
 social_image: assets/images/social-card.png
-```
-
-The recommended image size is:
-
-- PNG format
-- 1200 × 630 pixels
-- Landscape orientation
-- Less than approximately 1 MB
-
-#### `social_image_width`
-
-Advertises the width of the social preview image.
-
-Normally:
-
-```yaml
-social_image_width: 1200
-```
-
-#### `social_image_height`
-
-Advertises the height of the social preview image.
-
-Normally:
-
-```yaml
-social_image_height: 630
-```
-
-#### `social_locale`
-
-Sets the Open Graph locale.
-
-Example:
-
-```yaml
-social_locale: en_GB
-```
-
-#### `twitter_card`
-
-Sets the Twitter / X card type.
-
-Normally:
-
-```yaml
-twitter_card: summary_large_image
-```
-
-## Page Metadata
-
-Individual pages can override the site defaults using YAML front matter.
-
-Example:
-
-```markdown
 ---
-description: Browse every project published by The Lupaxa Project.
-
-social_title: Projects
-
-social_image: assets/images/social/projects.png
----
-
-# Projects
 ```
 
-### Supported Page Metadata
+`overrides/main.html` omits image meta tags when no social image path is set.
 
-#### `description`
+## Publishing
 
-Overrides the default site description.
+Push to `master` triggers `.github/workflows/publish-mkdocs.yml`, which calls
+the org reusable MkDocs publisher. That workflow installs from
+`requirements.txt` when the file is present.
 
-Example:
+Pull requests run `.github/workflows/validate-mkdocs.yml`, which calls the org
+reusable MkDocs site validator (`mkdocs build --strict` + optional markdownlint).
 
-```yaml
-description: Browse every project published by The Lupaxa Project.
-```
-
-#### `social_title`
-
-Overrides the title used for Open Graph and Twitter cards.
-
-Example:
-
-```yaml
-social_title: Projects
-```
-
-If omitted, the template automatically generates:
-
-```text
-<Page Title> | <Site Name>
-```
-
-#### `social_image`
-
-Overrides the default social preview image for a single page.
-
-Example:
-
-```yaml
-social_image: assets/images/social/projects.png
-```
-
-## Metadata Priority
-
-The template uses the following precedence.
-
-| Metadata     | Page Override  | Site Default         |
-| :----------- | :------------- | :------------------- |
-| Title        | `social_title` | `site_name`          |
-| Description  | `description`  | `site_description`   |
-| Social Image | `social_image` | `extra.social_image` |
-
-## Supported Social Platforms
-
-The generated metadata is compatible with:
-
-- Facebook
-- LinkedIn
-- Discord
-- Slack
-- Microsoft Teams
-- WhatsApp
-- X (Twitter)
-- iMessage
-- Most applications that support the Open Graph protocol
-
-## File Locations
-
-```text
-overrides/
-    main.html
-
-mkdocs.yml
-
-mkdocs/
-└── assets/
-    └── images/
-        └── social-card.png
-```
-
-`main.html` automatically generates the required Open Graph and Twitter / X
-metadata using the values defined in `mkdocs.yml` together with any page
-metadata supplied in YAML front matter.
+> Note: both the reusable publisher (conditional `requirements.txt`) and the
+> reusable validator must be merged in `the-lupaxa-project/workflows` before
+> GitHub Actions can use them from `@master`.

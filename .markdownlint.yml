@@ -1,231 +1,61 @@
-# =============================================================================
-# markdownlint Configuration
-#
-# MkDocs and Material for MkDocs configuration.
-#
-# This configuration is based on the standard Lupaxa markdownlint rules while
-# relaxing a small number of rules that commonly conflict with MkDocs,
-# Material extensions and technical documentation.
-#
-# The aim is to:
-#   • Maintain consistent formatting across all documentation.
-#   • Catch genuine authoring mistakes.
-#   • Support MkDocs front matter, custom layouts and Material components.
-#   • Avoid rules that require awkward workarounds in documentation websites.
-# =============================================================================
-
-# Enable all markdownlint rules by default.
-# Only the rules below are customised.
+# markdownlint — MkDocs / Material (Lupaxa defaults, short form)
 default: true
 
-# -----------------------------------------------------------------------------
-# MD003 - Heading style
-#
-# Require ATX-style headings (#, ##, ###) throughout the project.
-# -----------------------------------------------------------------------------
 MD003:
   style: atx
 
-# -----------------------------------------------------------------------------
-# MD004 - Unordered list style
-#
-# Require hyphens (-) for unordered lists.
-# -----------------------------------------------------------------------------
 MD004:
   style: dash
 
-# -----------------------------------------------------------------------------
-# MD007 - Unordered list indentation
-#
-# Require nested lists to use two-space indentation.
-# -----------------------------------------------------------------------------
 MD007:
   indent: 2
 
-# -----------------------------------------------------------------------------
-# MD013 - Line length
-#
-# Relax line length limits for technical documentation.
-#
-# • Normal text: 240 characters
-# • Code blocks: 400 characters
-# • Tables are exempt
-# • Headings remain checked
-# -----------------------------------------------------------------------------
 MD013:
   line_length: 240
   code_block_line_length: 400
   tables: false
   headings: true
 
-# -----------------------------------------------------------------------------
-# MD024 - Duplicate headings
-#
-# Allow duplicate heading names provided they are not siblings within the same
-# section.
-#
-# This permits repeated headings such as "Examples" beneath different parent
-# sections while still catching ambiguous sibling headings.
-# -----------------------------------------------------------------------------
 MD024:
   siblings_only: true
 
-# -----------------------------------------------------------------------------
-# MD026 - Trailing punctuation in headings
-#
-# Allow headings ending with punctuation.
-#
-# Examples:
-#
-#   ## Installation:
-#   ## What's New?
-# -----------------------------------------------------------------------------
+# Allow trailing punctuation in headings.
 MD026:
   punctuation: ""
 
-# -----------------------------------------------------------------------------
-# MD029 - Ordered list numbering
-#
-# Do not enforce a single ordered-list numbering style.
-#
-# Both of the following are permitted:
-#
-#   1. First
-#   2. Second
-#
-# and:
-#
-#   1. First
-#   1. Second
-# -----------------------------------------------------------------------------
 MD029: false
 
-# -----------------------------------------------------------------------------
-# MD030 - Spaces after list markers
-#
-# Require one space after markers in simple, single-line lists.
-#
-# Permit three spaces after markers in multi-line list items. This aligns
-# continuation content and matches common Material for MkDocs examples,
-# including card grids and feature lists.
-#
-# Examples:
-#
-#   - Simple item
-#
-#   -   **Multi-line item**
-#
-#       Additional content for the item.
-# -----------------------------------------------------------------------------
+# One space after simple markers; three for multi-line Material card items.
 MD030:
   ul_single: 1
   ol_single: 1
   ul_multi: 3
   ol_multi: 3
 
-# -----------------------------------------------------------------------------
-# MD033 - Inline HTML
-#
-# Allow all inline and block-level HTML.
-#
-# Material for MkDocs frequently uses HTML for branding, layouts, cards,
-# buttons, images, metadata and custom components.
-# -----------------------------------------------------------------------------
+# HTML heroes, cards, and catalogue markup.
 MD033: false
 
-# -----------------------------------------------------------------------------
-# MD034 - Bare URLs
-#
-# Permit bare URLs where they improve readability in technical documentation
-# or where the URL itself is the subject of an example.
-#
-# Markdown links remain preferred for normal navigation links.
-# -----------------------------------------------------------------------------
 MD034: false
 
-# -----------------------------------------------------------------------------
-# MD035 - Horizontal rule style
-#
-# Require Markdown horizontal rules to use three hyphens.
-# -----------------------------------------------------------------------------
 MD035:
   style: "---"
 
-# -----------------------------------------------------------------------------
-# MD036 - Emphasis used instead of headings
-#
-# Permit bold or italic text to be used as visual section labels.
-#
-# This is useful inside cards, callouts and other Material components where a
-# semantic Markdown heading would not be appropriate.
-#
-# Example:
-#
-#   **Important**
-# -----------------------------------------------------------------------------
+# Bold labels inside cards/callouts.
 MD036: false
 
-# -----------------------------------------------------------------------------
-# MD040 - Fenced code language
-#
-# Require every fenced code block to specify a language for syntax
-# highlighting.
-#
-# Use `text` for plain-text output and `console` for terminal sessions where
-# no more specific language is appropriate.
-# -----------------------------------------------------------------------------
 MD040: true
 
-# -----------------------------------------------------------------------------
-# MD041 - First line should be a top-level heading
-#
-# Do not require the first content line to be a Markdown H1.
-#
-# MkDocs pages may begin with YAML front matter, custom HTML, hero sections or
-# template-specific content. Some pages also provide their top-level heading
-# through a custom layout rather than Markdown.
-# -----------------------------------------------------------------------------
+# Pages may start with front matter / HTML heroes.
 MD041: false
 
-# -----------------------------------------------------------------------------
-# MD046 - Code block style
-#
-# Permit both fenced and indented code blocks.
-#
-# Fenced blocks remain the preferred style for normal source code. Indented
-# blocks are useful when documenting Markdown syntax or nesting examples inside
-# lists, admonitions and other structured content.
-# -----------------------------------------------------------------------------
+# Permit fenced and indented code blocks.
 MD046: false
 
-# -----------------------------------------------------------------------------
-# MD048 - Code fence style
-#
-# Require backticks (`) rather than tildes (~) for fenced code blocks.
-# -----------------------------------------------------------------------------
 MD048:
   style: backtick
 
-# -----------------------------------------------------------------------------
-# MD049 - Emphasis style
-#
-# Require asterisks for italic text.
-#
-# Example:
-#
-#   *Italic*
-# -----------------------------------------------------------------------------
 MD049:
   style: asterisk
 
-# -----------------------------------------------------------------------------
-# MD050 - Strong emphasis style
-#
-# Require double asterisks for bold text.
-#
-# Example:
-#
-#   **Bold**
-# -----------------------------------------------------------------------------
 MD050:
   style: asterisk

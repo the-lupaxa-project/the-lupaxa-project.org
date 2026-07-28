@@ -1,11 +1,10 @@
-name: Publish MkDocs
+name: Validate MkDocs
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
     paths:
-      - ".github/workflows/publish-mkdocs.yml"
+      - ".github/workflows/validate-mkdocs.yml"
+      - ".markdownlint.yml"
       - "data/**"
       - "main.py"
       - "mkdocs/**"
@@ -20,25 +19,22 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  actions: read
   contents: read
-  deployments: write
-  id-token: write
-  pages: write
 
 jobs:
-  publish-mkdocs:
-    name: Publish MkDocs
-    uses: the-lupaxa-project/workflows/.github/workflows/reusable-mkdocs-site-publisher.yml@master
-    secrets: inherit
+  validate-mkdocs:
+    name: Validate MkDocs
+    uses: the-lupaxa-project/workflows/.github/workflows/reusable-mkdocs-site-validator.yml@master
     with:
       python-version: "3.13"
-      cleanup: true
+      lint-markdown: true
+      markdown-glob: "mkdocs/**/*.md"
+      markdownlint-config: ".markdownlint.yml"
 
   generate-workflow-summary:
     name: Generate Workflow Summary
     needs:
-      - publish-mkdocs
+      - validate-mkdocs
     if: always()
     uses: the-lupaxa-project/workflows/.github/workflows/reusable-workflow-summary.yml@master
 

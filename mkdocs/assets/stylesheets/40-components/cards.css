@@ -107,15 +107,3 @@
     0 0.1rem 0.4rem rgb(0 0 0 / 15%),
     0 0.4rem 1.2rem rgb(0 0 0 / 12%);
 }
-
-/* -------------------------------------------------------------------------
- * Catalogue card actions
- * ------------------------------------------------------------------------- */
-
-.catalogue-action--repository {
-  float: left;
-}
-
-.catalogue-action--documentation {
-  float: right;
-}
