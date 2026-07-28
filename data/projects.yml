@@ -16,6 +16,25 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://lupaxa-security-toolbox.github.io/certtool/
+  featured: true
+- id: favicon-generator
+  name: Favicon Generator
+  icon: material-source-repository
+  description: 'Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG).
+
+
+    The project provides a simple and efficient way to create a favicon set from a single source image,
+    ensuring that the favicons are consistent and modern.'
+  categories:
+  - Favicons
+  - Websites
+  - Python
+  organisation: Code Playground
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png
+  logo_alt: Lupaxa Code PLayground
+  repository: https://github.com/lupaxa-code-playground/favicon-generator
+  documentation: https://favicon-generator.thelupaxaproject.org/
+  featured: true
 - id: git-crypt-manager
   name: Git Crypt Manager
   icon: material-source-repository
@@ -35,6 +54,7 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://lupaxa-security-toolbox.github.io/git-crypt-manager/
+  featured: true
 - id: github-repository-sync
   name: GitHub Repository Sync
   icon: material-source-repository
