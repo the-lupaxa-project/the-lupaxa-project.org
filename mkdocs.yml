@@ -40,6 +40,7 @@ use_directory_urls: true
 watch:
   - data
   - main.py
+  - gallery_lib.py
 
 # =============================================================================
 # Theme

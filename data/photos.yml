@@ -1,0 +1,19 @@
+page:
+  title: Gallery
+  subtitle: Tech humour for the road
+  shuffle: true
+
+photos:
+  - photo: https://picsum.photos/id/0/800/600
+    comment: Placeholder — replace with real humour
+    tags: [humour]
+    published: true
+    width: 800
+    height: 600
+
+  - photo: https://picsum.photos/id/180/700/900
+    comment: Another placeholder
+    tags: [humour, devops]
+    published: true
+    width: 700
+    height: 900

@@ -10,6 +10,13 @@ from pathlib import Path
 
 import yaml
 
+from gallery_lib import (
+    collect_tags as collect_photo_tags,
+    load_photos_data,
+    published_photos,
+    validate_photos,
+)
+
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 
@@ -257,6 +264,25 @@ def define_env(env):
 
 </div>
 """.strip()
+
+    photos_path = Path(env.project_dir) / "data" / "photos.yml"
+
+    def validated_photos():
+        data = load_photos_data(photos_path)
+        validate_photos(data)
+        return data
+
+    @env.macro
+    def photos_data():
+        return validated_photos()
+
+    @env.macro
+    def wall_photos():
+        return published_photos(validated_photos())
+
+    @env.macro
+    def photo_wall_tags():
+        return collect_photo_tags(published_photos(validated_photos()))
 
     @env.macro
     def featured_projects() -> str:
