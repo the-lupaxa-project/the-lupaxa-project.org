@@ -242,6 +242,7 @@ When using GitHub Actions for CI/CD, consider the following best practices:
 - **Monitor and Review:** Regularly monitor workflows and review logs for successful and failed runs. Analysing these logs can help identify potential issues and optimise workflows.
 
 ## Closing Thoughts
+
 GitHub Actions provides a powerful, flexible platform for automating CI/CD directly within GitHub. By leveraging GitHub Actions, teams can streamline the development lifecycle, from code integration and testing to deployment. With easy-to-configure YAML files, seamless integration with the GitHub ecosystem, and support for various environments, GitHub Actions is a valuable tool for any software development team.
 
 This guide has covered the basics of setting up a CI/CD pipeline with GitHub Actions, including configurations for builds, tests, and deployments. With a solid understanding of GitHub Actions, you can customize and scale your workflows to meet the unique demands of your projects and bring greater efficiency to your development process.

@@ -65,6 +65,7 @@ In chess, the endgame phase is a culmination of all the prior moves. Players foc
 For the Blue Team, a successful endgame involves complete remediation of any compromise, restoration of affected systems, and a post-mortem analysis to prevent future attacks. For the Red Team, a successful endgame might mean reaching critical assets or gaining access to sensitive information. The game ends when one side achieves its objective, but the insights gained inform future strategies and improvements, contributing to the continuous cycle of defence and attack.
 
 ## Closing Thoughts
+
 Like chess or Risk, cybersecurity is a dynamic and ongoing battle of strategy, vigilance, and adaptability. Both attackers and defenders operate with a similar mindset: constantly watching, learning, and refining their tactics. They analyze each other's moves, exploit mistakes, and employ new techniques to gain the upper hand.
 
 Just as great chess players are always learning from past games and adapting to new challenges, cybersecurity professionals must stay ahead by continually evolving their strategies. They must be agile, patient, and ever-watchful—traits that are equally essential for success on the chessboard and in defending against cyber threats. Whether in the realm of cybersecurity or the game of chess, the most successful players are those who understand the value of foresight, embrace the challenge of adaptation, and know that each move is a step toward a more resilient and secure position.
