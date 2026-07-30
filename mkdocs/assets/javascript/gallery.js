@@ -90,7 +90,7 @@
 
   const initLightbox = (masonry, wall) => {
     const lightbox = document.getElementById("gallery-lightbox");
-    if (!lightbox) return { open() {}, handleKeydown() {} };
+    if (!lightbox) return { open() {}, handleKeydown() {}, destroy() {} };
 
     const image = lightbox.querySelector(".lightbox-image");
     const video = lightbox.querySelector(".lightbox-video");
@@ -151,15 +151,24 @@
       dateEl.hidden = !date;
     };
 
-    const close = () => {
-      if (lightbox.hidden) return;
+    const reset = () => {
       lightbox.hidden = true;
       document.body.classList.remove("lightbox-open");
       if (wall) wall.inert = false;
       stopVideo();
       clearImage();
       currentIndex = -1;
+    };
+
+    const close = () => {
+      if (lightbox.hidden) return;
+      reset();
       if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      lastFocus = null;
+    };
+
+    const destroy = () => {
+      reset();
       lastFocus = null;
     };
 
@@ -219,16 +228,21 @@
     prevBtn.addEventListener("click", () => step(-1));
     nextBtn.addEventListener("click", () => step(1));
 
-    return { open, handleKeydown };
+    return { open, handleKeydown, destroy };
+  };
+
+  const cleanupActiveLightbox = () => {
+    if (activeLightbox) activeLightbox.destroy();
+    activeLightbox = null;
   };
 
   const initGalleryWall = () => {
+    cleanupActiveLightbox();
     const masonry = document.querySelector(".gallery-masonry");
     const filters = document.querySelectorAll(".gallery-filter");
     const wall = document.getElementById("gallery-wall");
     if (!masonry || !filters.length) {
       activeMasonry = null;
-      activeLightbox = null;
       return;
     }
 
