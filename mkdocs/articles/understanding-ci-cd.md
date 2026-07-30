@@ -38,7 +38,7 @@ Continuous Integration is a practice that involves automatically integrating cod
 ### Challenges of CI
 
 - **Initial Setup Complexity:** Setting up a CI pipeline can be complex and time-consuming, particularly for large projects with many dependencies.
-- **Test Maintenance:** As the codebase grows, the test suite can become large and slow to run, requiring ongoing maintenance and optimization.
+- **Test Maintenance:** As the codebase grows, the test suite can become large and slow to run, requiring ongoing maintenance and optimisation.
 - **Dependency Management:** In CI, managing dependencies can be challenging, especially when different parts of the codebase rely on different versions of external libraries.
 
 ## 2. What is Continuous Delivery/Continuous Deployment (CD)?

@@ -39,7 +39,7 @@ A software engineer, on the other hand, takes a more holistic approach to softwa
 - **Principle-Based Approach:** Software engineers understand programming not just as a set of languages and frameworks but as a series of principles, such as design patterns, data structures, and algorithms. They apply engineering concepts to solve problems efficiently and effectively.
 - **Systems Thinking:** Software engineers consider the entire software development lifecycle, from requirements gathering and system design to testing, deployment, and maintenance. They are concerned with how all the pieces of the system fit together, ensuring the software is reliable, scalable, and maintainable.
 - **Problem-Solving Mindset:** Software engineers are trained to approach problems with a methodical, problem-solving mindset. They often perform tasks such as requirements analysis, architectural design, and systems integration, considering various trade-offs to choose the most effective solutions.
-- **Focus on Quality and Optimization:** In addition to writing functional code, software engineers focus on code quality, optimization, and performance. They leverage principles such as SOLID design, object-oriented programming, and test-driven development (TDD) to create software that is robust and high quality.
+- **Focus on Quality and Optimisation:** In addition to writing functional code, software engineers focus on code quality, optimisation, and performance. They leverage principles such as SOLID design, object-oriented programming, and test-driven development (TDD) to create software that is robust and high quality.
 - **Collaborative Role:** Software engineers typically work in collaborative environments, often coordinating with other engineers, product managers, and stakeholders. Their work often involves writing documentation, participating in code reviews, and working within cross-functional teams to ensure software aligns with both technical and business goals.
 
 In essence, while software engineers write code, they do so with a much broader perspective, aiming to create systems that are well-designed, scalable, and sustainable.
@@ -91,7 +91,7 @@ With a focus on systems thinking and engineering principles, software engineers 
 
 ### Problem-Solving and Innovation
 
-Software engineers apply a rigorous, problem-solving approach to their work, which leads to more innovative solutions. By considering various options and analysing trade-offs, they can create software that is optimized not only for performance but also for user experience, security, and other non-functional requirements.
+Software engineers apply a rigorous, problem-solving approach to their work, which leads to more innovative solutions. By considering various options and analysing trade-offs, they can create software that is optimised not only for performance but also for user experience, security, and other non-functional requirements.
 
 ## Conclusion: Programming as a Skill, Engineering as a Discipline
 

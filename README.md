@@ -93,7 +93,7 @@ Site-wide defaults are set in `mkdocs.yml` under `extra`:
 ```yaml
 extra:
   generator: false
-  social_image: assets/images/social-card.png
+  social_image: assets/images/social-media/social-card.png
   social_image_width: 1200
   social_image_height: 630
   social_logo: >-
@@ -109,7 +109,7 @@ Optional per-page overrides in front matter:
 ---
 description: Short page description for search and social cards.
 social_title: Custom social title
-social_image: assets/images/social-card.png
+social_image: assets/images/social-media/social-card.png
 ---
 ```
 

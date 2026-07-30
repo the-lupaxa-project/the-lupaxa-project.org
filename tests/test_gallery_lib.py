@@ -13,12 +13,12 @@ SAMPLE = {
     "page": {"background": "#111111", "text_color": "#f5f5f5"},
     "entries": [
         {
-            "image": "assets/gallery/a.jpg",
+            "image": "assets/images/gallery/a.jpg",
             "comment": "Visible",
             "tags": ["travel", "coast"],
         },
         {
-            "image": "assets/gallery/draft.jpg",
+            "image": "assets/images/gallery/draft.jpg",
             "comment": "Draft",
             "published": False,
             "tags": ["hidden-tag"],
@@ -29,7 +29,7 @@ SAMPLE = {
             "tags": ["travel"],
         },
         {
-            "image": "assets/gallery/c.jpg",
+            "image": "assets/images/gallery/c.jpg",
         },
     ],
 }
@@ -39,9 +39,9 @@ def test_published_entries_defaults_true_and_respects_false():
     result = published_entries(SAMPLE)
     images = [entry["image"] for entry in result]
     assert images == [
-        "assets/gallery/a.jpg",
+        "assets/images/gallery/a.jpg",
         "https://example.com/b.jpg",
-        "assets/gallery/c.jpg",
+        "assets/images/gallery/c.jpg",
     ]
 
 
@@ -62,17 +62,17 @@ def test_load_gallery_data_reads_yaml(tmp_path):
     path = tmp_path / "gallery.yml"
     path.write_text(
         "page:\n  background: '#1a1a1a'\n  text_color: '#f5f5f5'\n"
-        "entries:\n  - image: assets/gallery/x.jpg\n    comment: Hi\n",
+        "entries:\n  - image: assets/images/gallery/x.jpg\n    comment: Hi\n",
         encoding="utf-8",
     )
     data = load_gallery_data(path)
     assert data["page"]["background"] == "#1a1a1a"
-    assert data["entries"][0]["image"] == "assets/gallery/x.jpg"
+    assert data["entries"][0]["image"] == "assets/images/gallery/x.jpg"
 
 
 def test_load_gallery_data_rejects_non_mapping_yaml(tmp_path):
     path = tmp_path / "gallery.yml"
-    path.write_text("- image: assets/gallery/x.jpg\n", encoding="utf-8")
+    path.write_text("- image: assets/images/gallery/x.jpg\n", encoding="utf-8")
     with pytest.raises(ValueError, match="mapping at the top level"):
         load_gallery_data(path)
 
@@ -89,13 +89,13 @@ def test_validate_gallery_accepts_video_without_image():
 
 
 def test_validate_gallery_rejects_tags_as_string():
-    data = {"entries": [{"image": "assets/gallery/x.jpg", "tags": "travel"}]}
+    data = {"entries": [{"image": "assets/images/gallery/x.jpg", "tags": "travel"}]}
     with pytest.raises(ValueError, match="tags"):
         validate_gallery(data)
 
 
 def test_validate_gallery_rejects_non_mapping_entry():
-    data = {"entries": ["assets/gallery/x.jpg"]}
+    data = {"entries": ["assets/images/gallery/x.jpg"]}
     with pytest.raises(ValueError, match="mapping"):
         validate_gallery(data)
 
@@ -108,4 +108,4 @@ def test_validate_gallery_ignores_unpublished_entries():
 def test_is_remote_media():
     assert is_remote_media("https://example.com/a.jpg")
     assert is_remote_media("http://example.com/a.jpg")
-    assert not is_remote_media("assets/gallery/a.jpg")
+    assert not is_remote_media("assets/images/gallery/a.jpg")

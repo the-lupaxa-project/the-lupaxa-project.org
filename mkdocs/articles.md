@@ -69,18 +69,18 @@ hide:
     <span class="catalogue-category">AI</span>
     <span class="catalogue-category">ML</span>
 
--   **[Aptitude & Attitude](articles/aptitude-and-attitude.md)**
+-   **[CLI Design](articles/cli-design.md)**
 
     ---
 
-    ![Article](assets/images/articles/aptitude-and-attitude.png){ class="catalogue-logo" }
+    ![Article](assets/images/articles/cli-design.png){ class="catalogue-logo" }
 
-    Learn why hiring for aptitude and attitude over ability and experience
-    leads to resilient, adaptable, and motivated teams ready to thrive in
-    dynamic environments.
+    Practical CLI design for open-source tools — flags and arguments, exit
+    codes, stdout versus stderr, helpful errors, and interfaces that feel
+    good in scripts and human hands.
 
-    <span class="catalogue-category">Career</span>
-    <span class="catalogue-category">Mindset</span>
+    <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Tools</span>
 
 -   **[Coding Standards](articles/coding-standards.md)**
 
@@ -95,6 +95,19 @@ hide:
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Standards</span>
 
+-   **[Contributing Without the Drama](articles/contributing-without-the-drama.md)**
+
+    ---
+
+    ![Article](assets/images/articles/contributing-without-the-drama.png){ class="catalogue-logo" }
+
+    Practical guidance for opening useful issues and pull requests in open-
+    source projects — small diffs, clear context, good first issues, and
+    knowing when not to bikeshed.
+
+    <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Community</span>
+
 -   **[Cybersecurity & Chess](articles/cybersecurity-and-chess.md)**
 
     ---
@@ -108,6 +121,19 @@ hide:
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Strategy</span>
 
+-   **[Dependency Hygiene](articles/dependency-hygiene.md)**
+
+    ---
+
+    ![Article](assets/images/articles/dependency-hygiene.png){ class="catalogue-logo" }
+
+    Practical dependency hygiene for open-source and small teams — pinning,
+    lockfiles, audits, supply-chain basics, and keeping your software supply
+    line trustworthy without enterprise ceremony.
+
+    <span class="catalogue-category">Security</span>
+    <span class="catalogue-category">Engineering</span>
+
 -   **[Developers & AI](articles/developers-and-ai.md)**
 
     ---
@@ -120,6 +146,19 @@ hide:
 
     <span class="catalogue-category">AI</span>
     <span class="catalogue-category">Development</span>
+
+-   **[Docs That Don't Rot](articles/docs-that-dont-rot.md)**
+
+    ---
+
+    ![Article](assets/images/articles/docs-that-dont-rot.png){ class="catalogue-logo" }
+
+    How to keep project documentation alive — examples as tests, docs sites
+    that ship with releases, screenshots that stay honest, and habits that
+    stop docs from quietly lying.
+
+    <span class="catalogue-category">Documentation</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Don't Fear Failure](articles/dont-fear-failure.md)**
 
@@ -160,19 +199,6 @@ hide:
     <span class="catalogue-category">CI/CD</span>
     <span class="catalogue-category">GitHub</span>
 
--   **[High and Low Level Design](articles/high-and-low-level-design.md)**
-
-    ---
-
-    ![Article](assets/images/articles/high-and-low-level-design.png){ class="catalogue-logo" }
-
-    Learn the differences between High-Level Design (HLD) and Low-Level
-    Design (LLD) documents, their roles in software development, and how
-    they create a strong foundation for reliable and scalable systems.
-
-    <span class="catalogue-category">Architecture</span>
-    <span class="catalogue-category">Design</span>
-
 -   **[Infrastructure as Code](articles/infrastructure-as-code.md)**
 
     ---
@@ -186,18 +212,18 @@ hide:
     <span class="catalogue-category">DevOps</span>
     <span class="catalogue-category">IaC</span>
 
--   **[Leaders Vs Managers](articles/leaders-vs-managers.md)**
+-   **[Licenses for Humans](articles/licenses-for-humans.md)**
 
     ---
 
-    ![Article](assets/images/articles/leaders-vs-managers.png){ class="catalogue-logo" }
+    ![Article](assets/images/articles/licenses-for-humans.png){ class="catalogue-logo" }
 
-    Explore the key differences between leaders and managers, why leadership
-    is crucial for team success, and how to develop qualities that inspire,
-    empower, and foster growth.
+    A plain-language guide to common open-source licenses for people
+    publishing tools — MIT, Apache-2.0, GPL family trade-offs, why LICENSE
+    files matter, and how to choose without a law degree.
 
-    <span class="catalogue-category">Leadership</span>
-    <span class="catalogue-category">Career</span>
+    <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Community</span>
 
 -   **[Monoliths Vs Microservices](articles/monoliths-vs-microservices.md)**
 
@@ -224,6 +250,19 @@ hide:
 
     <span class="catalogue-category">Career</span>
     <span class="catalogue-category">Learning</span>
+
+-   **[Observability for Small Projects](articles/observability-for-small-projects.md)**
+
+    ---
+
+    ![Article](assets/images/articles/observability-for-small-projects.png){ class="catalogue-logo" }
+
+    Practical observability for CLIs, libraries, and small services — useful
+    logs, health signals, failure modes, and knowing what broke without
+    needing an enterprise APM stack.
+
+    <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">DevOps</span>
 
 -   **[Programmers Vs Software Engineers](articles/programmers-vs-software-engineers.md)**
 
@@ -265,6 +304,19 @@ hide:
     <span class="catalogue-category">Python</span>
     <span class="catalogue-category">Tools</span>
 
+-   **[README as Product](articles/readme-as-product.md)**
+
+    ---
+
+    ![Article](assets/images/articles/readme-as-product.png){ class="catalogue-logo" }
+
+    Treat your README as the product surface of an open-source project —
+    clear install steps, honest examples, trustworthy badges, and a path
+    from curiosity to first success.
+
+    <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Documentation</span>
+
 -   **[Red Team Vs Blue Team](articles/red-team-vs-blue-team.md)**
 
     ---
@@ -277,6 +329,19 @@ hide:
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Ops</span>
+
+-   **[Release Automation](articles/release-automation.md)**
+
+    ---
+
+    ![Article](assets/images/articles/release-automation.png){ class="catalogue-logo" }
+
+    How to automate releases for open-source projects — tags, changelogs,
+    GitHub Releases, package publishing, and CI checks that make shipping
+    routine instead of heroic.
+
+    <span class="catalogue-category">CI/CD</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Secrets Management](articles/secrets-management.md)**
 
@@ -304,6 +369,19 @@ hide:
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Design</span>
+
+-   **[Semantic Versioning](articles/semantic-versioning.md)**
+
+    ---
+
+    ![Article](assets/images/articles/semantic-versioning.png){ class="catalogue-logo" }
+
+    A practical guide to semantic versioning for open-source tools — major,
+    minor, and patch releases, 0.x realities, deprecations, and
+    communicating breaking changes without surprising your users.
+
+    <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Engineering</span>
 
 -   **[Software Automation](articles/software-automation.md)**
 
@@ -346,6 +424,19 @@ hide:
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
 
+-   **[Testing What Matters](articles/testing-what-matters.md)**
+
+    ---
+
+    ![Article](assets/images/articles/testing-what-matters.png){ class="catalogue-logo" }
+
+    Why high coverage can be a vanity metric, how to test behaviour instead
+    of mocks, and how small open-source projects can build a test suite that
+    catches real regressions without drowning contributors.
+
+    <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Testing</span>
+
 -   **[The Cybersecurity Rainbow](articles/the-cybersecurity-rainbow.md)**
 
     ---
@@ -359,33 +450,19 @@ hide:
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Ops</span>
 
--   **[The Optimization Trap](articles/the-optimization-trap.md)**
+-   **[The Optimisation Trap](articles/the-optimization-trap.md)**
 
     ---
 
     ![Article](assets/images/articles/the-optimization-trap.png){ class="catalogue-logo" }
 
-    Discover how to avoid the optimization trap in software engineering.
+    Discover how to avoid the optimisation trap in software engineering.
     Learn why it's essential to focus on purpose-driven improvements,
     inspired by Elon Musk's insights on building the right things, not just
     better things.
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Mindset</span>
-
--   **[The Role of Software Architects](articles/the-role-of-software-architects.md)**
-
-    ---
-
-    ![Article](assets/images/articles/the-role-of-software-architects.png){ class="catalogue-logo" }
-
-    Discover why software architects should focus on architecture over
-    coding. Learn how prioritizing high-level design fosters alignment with
-    business goals, enhances system scalability, and improves team
-    collaboration.
-
-    <span class="catalogue-category">Architecture</span>
-    <span class="catalogue-category">Career</span>
 
 -   **[Tools for Jobs](articles/tools-for-jobs.md)**
 

@@ -57,7 +57,7 @@ For instance:
 
 Feature flags allow teams to test new features in real-world environments without impacting all users. They provide additional flexibility for various testing strategies, such as:
 
-- **A/B Testing and Experimentation:** By using feature flags, teams can A/B test different versions of a feature, gathering data on user interactions to make data-driven decisions. This allows teams to experiment with different approaches, optimize user experiences, and fine-tune features before full deployment.
+- **A/B Testing and Experimentation:** By using feature flags, teams can A/B test different versions of a feature, gathering data on user interactions to make data-driven decisions. This allows teams to experiment with different approaches, optimise user experiences, and fine-tune features before full deployment.
 - **Testing in Production:** In certain cases, test environments may not fully replicate the production environment. Feature flags enable teams to conduct “testing in production” by enabling features for internal users or beta testers, allowing them to observe how the feature performs under real-world conditions.
 - **Environment-Specific Testing:** Feature flags make it easier to toggle features on and off in different environments (development, staging, production). This ensures that each environment has the appropriate features enabled for testing and validation.
 

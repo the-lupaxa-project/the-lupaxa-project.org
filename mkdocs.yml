@@ -22,7 +22,7 @@ extra:
   # Counter.dev analytics (omit counter_dev_id to disable).
   counter_dev_id: ef410665-76d4-43fe-9e91-53f26ed1004b
   counter_dev_utcoffset: 0
-  social_image: assets/images/social-card.png
+  social_image: assets/images/social-media/social-card.png
   social_image_width: 1200
   social_image_height: 630
   social_logo: >-
@@ -182,6 +182,7 @@ extra_javascript:
   - assets/javascript/page-lifecycle.js
   - assets/javascript/header-active-nav.js
   - assets/javascript/catalogue-filters.js
+  - assets/javascript/article-pager.js
   - assets/javascript/masonry-wall.js
   - assets/javascript/quotes.js
   - assets/javascript/gallery.js

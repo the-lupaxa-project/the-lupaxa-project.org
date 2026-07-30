@@ -239,7 +239,7 @@ When using GitHub Actions for CI/CD, consider the following best practices:
 - **Use Secrets for Sensitive Data:** Always store sensitive data, such as API keys and AWS credentials, as secrets in GitHub.
 - **Cache Dependencies:** To speed up workflows, use the `actions/cache@v3` action to cache dependencies, which will reduce installation time for subsequent runs.
 - **Limit Permissions:** GitHub Actions runs with elevated permissions. Limit these permissions where possible to reduce the risk of accidental or malicious changes.
-- **Monitor and Review:** Regularly monitor workflows and review logs for successful and failed runs. Analysing these logs can help identify potential issues and optimize workflows.
+- **Monitor and Review:** Regularly monitor workflows and review logs for successful and failed runs. Analysing these logs can help identify potential issues and optimise workflows.
 
 ## Conclusion: Powering CI/CD with GitHub Actions
 

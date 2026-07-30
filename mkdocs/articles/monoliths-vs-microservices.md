@@ -63,7 +63,7 @@ One of the most significant benefits of feature flags is the ability to release 
 ### Best Use Cases for Microservices Architecture
 
 - **Large, Complex Applications:** Microservices architectures are ideal for complex applications with multiple functions or features that need to be maintained and scaled separately.
-- **Scalable Systems:** For applications that need to handle large amounts of traffic or user requests, microservices enable specific parts of the application to be scaled individually, optimizing resource use.
+- **Scalable Systems:** For applications that need to handle large amounts of traffic or user requests, microservices enable specific parts of the application to be scaled individually, optimising resource use.
 - **Agile and Continuous Delivery Environments:** Microservices allow for smaller, more frequent releases, making them well-suited for teams that use agile practices and continuous delivery.
 - **Independent Teams:** Microservices architectures work well for larger organizations with multiple development teams that need to work on different parts of the application independently.
 

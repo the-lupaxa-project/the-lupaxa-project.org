@@ -75,6 +75,17 @@
   max-width: 100%;
   max-height: none;
   height: auto;
+  /* Match Material slate card surface so artwork stays dark in light mode. */
+  background-color: hsla(225deg, 15%, 14%, 1);
+  border-radius: calc(var(--lupaxa-radius-card) - 0.15rem);
+}
+
+[data-md-color-scheme="slate"]
+  .md-typeset
+  .catalogue-grid.catalogue-grid--articles
+  img.catalogue-logo {
+  /* Card colour shows through — reads as transparent in dark mode. */
+  background-color: transparent;
 }
 
 .md-typeset .catalogue-grid.catalogue-grid--articles > ul > li > p:first-child strong,

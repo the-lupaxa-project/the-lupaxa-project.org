@@ -109,7 +109,7 @@ The Maintenance and Support stage begins once the software is live. During this 
 
 - **Monitoring and Bug Fixing:** The team monitors the software for any issues or defects. When bugs are identified, they are logged, prioritized, and fixed in a timely manner.
 - **Updates and Enhancements:** As user needs change and technology advances, the software may require updates or new features. The team develops, tests, and deploys these updates as part of regular maintenance.
-- **Performance Optimization:** The team continuously reviews and optimizes the software's performance, ensuring it remains efficient and responsive over time. This may involve refactoring code, improving database queries, or scaling infrastructure as needed.
+- **Performance Optimisation:** The team continuously reviews and optimises the software's performance, ensuring it remains efficient and responsive over time. This may involve refactoring code, improving database queries, or scaling infrastructure as needed.
 - **Documentation and Knowledge Transfer:** Maintenance includes updating any relevant documentation and transferring knowledge to the support team. This ensures that future updates can be implemented smoothly and efficiently.
 
 ### Deliverables:

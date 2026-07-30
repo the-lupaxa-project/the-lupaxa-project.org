@@ -38,7 +38,7 @@ Moreover, understanding these concepts enables you to quickly understand documen
 
 A solid foundation in programming fundamentals also makes you better at debugging and problem resolution. When you understand how things work under the hood, you're better equipped to identify the source of an issue and solve it. For example, knowledge of memory management helps you diagnose performance issues in languages like C++ or even Java, where understanding how memory is allocated can prevent common pitfalls.
 
-Additionally, debugging tools and practices like testing, code reviews, and optimization techniques are often based on programming principles rather than specific languages. If you understand the fundamental principles, you can more effectively apply them across different languages and environments.
+Additionally, debugging tools and practices like testing, code reviews, and optimisation techniques are often based on programming principles rather than specific languages. If you understand the fundamental principles, you can more effectively apply them across different languages and environments.
 
 ## 5. The Ability to Learn and Adapt to New Technologies
 

@@ -12,6 +12,8 @@
   const URL_PARAM_ORG = "org";
   const FALLBACK_ORG = "Other";
   const CATALOGUE_LOCALE = "en-GB";
+  /** Shared with article-pager.js — filtered prev/next sequence. */
+  const ARTICLE_PAGER_STORAGE_KEY = "lupaxa.articlePager";
 
   /**
    * Build catalogue selector config from a short id prefix.
@@ -139,6 +141,108 @@
 
     logo.replaceWith(link);
     link.append(logo);
+  }
+
+  /**
+   * Persist the visible articles sequence for filtered prev/next paging.
+   *
+   * Cleared when no filters are active so article pages use the full
+   * build-time A–Z pager again.
+   *
+   * @param {Object} config
+   * @param {Array<{ element: HTMLElement }>} cardData
+   * @param {{
+   *   searchTerm: string,
+   *   selectedCategory: string,
+   *   selectedOrganisation: string
+   * }} filters
+   */
+  function syncArticlePagerSequence(config, cardData, filters) {
+    if (config.singular !== "article") {
+      return;
+    }
+
+    const hasFilter =
+      filters.searchTerm !== "" ||
+      filters.selectedCategory !== "" ||
+      filters.selectedOrganisation !== "";
+
+    if (!hasFilter) {
+      sessionStorage.removeItem(ARTICLE_PAGER_STORAGE_KEY);
+      return;
+    }
+
+    const articlesBase = articleCatalogueBasePath();
+
+    const sequence = cardData
+      .filter((card) => !card.element.hidden)
+      .map((card) => {
+        const link = card.element.querySelector(
+          ":scope > p:first-child a[href]",
+        );
+
+        if (!(link instanceof HTMLAnchorElement)) {
+          return null;
+        }
+
+        const title = link.textContent?.trim() || "";
+        const slug = articleSlugFromHref(
+          link.getAttribute("href") || "",
+        );
+
+        if (!title || !slug) {
+          return null;
+        }
+
+        return {
+          title,
+          slug,
+          url: `${articlesBase}/${slug}/`,
+        };
+      })
+      .filter(Boolean);
+
+    if (sequence.length === 0) {
+      sessionStorage.removeItem(ARTICLE_PAGER_STORAGE_KEY);
+      return;
+    }
+
+    sessionStorage.setItem(
+      ARTICLE_PAGER_STORAGE_KEY,
+      JSON.stringify({ sequence }),
+    );
+  }
+
+  /**
+   * Base path for article pages (handles optional site prefix).
+   *
+   * @returns {string}
+   */
+  function articleCatalogueBasePath() {
+    const path = window.location.pathname;
+    const match = path.match(/^(.*?\/articles)(?:\/|$)/);
+
+    return match ? match[1].replace(/\/+$/, "") : "/articles";
+  }
+
+  /**
+   * Article slug from a catalogue href such as "agile-vs-waterfall/".
+   *
+   * @param {string} href
+   * @returns {string}
+   */
+  function articleSlugFromHref(href) {
+    const cleaned = String(href || "")
+      .split(/[?#]/)[0]
+      .replace(/\/+$/, "")
+      .replace(/\.html$/i, "");
+
+    if (!cleaned) {
+      return "";
+    }
+
+    const parts = cleaned.split("/").filter(Boolean);
+    return parts[parts.length - 1] || "";
   }
 
   /**
@@ -490,6 +594,7 @@
       updateClearButton(filters);
       updateEmptyState(visibleCount);
       syncUrlWithFilters(filters);
+      syncArticlePagerSequence(config, cardData, filters);
     };
 
     /**

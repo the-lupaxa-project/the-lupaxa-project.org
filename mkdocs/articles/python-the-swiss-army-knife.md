@@ -80,7 +80,7 @@ Prototyping with Python has several advantages:
 
 - **Reduced Time to Market:** Python's rapid development capabilities mean that teams can build and test prototypes faster, allowing them to bring products to market more quickly.
 - **Cost-Efficiency** Python enables organizations to validate concepts and explore new ideas without investing heavily in development time, which can be especially valuable for startups and innovation teams.
-- **Integration with Other Languages:** Python can be easily integrated with other languages like C and Java, making it possible to use Python for prototyping and then optimize critical components in other languages.
+- **Integration with Other Languages:** Python can be easily integrated with other languages like C and Java, making it possible to use Python for prototyping and then optimise critical components in other languages.
 
 ## Conclusion: Python's Value as a Swiss Army Knife for Developers
 

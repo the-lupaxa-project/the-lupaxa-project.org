@@ -9,601 +9,601 @@ page:
   show_media_filters: false
 
 entries:
-  - image: assets/gallery/comic-01-works-on-my-machine.webp
+  - image: assets/images/gallery/comic-01-works-on-my-machine.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-02-stack-overflow-paste.webp
+  - image: assets/images/gallery/comic-02-stack-overflow-paste.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-03-password-policy.webp
+  - image: assets/images/gallery/comic-03-password-policy.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-04-compiling.webp
+  - image: assets/images/gallery/comic-04-compiling.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-05-force-push.webp
+  - image: assets/images/gallery/comic-05-force-push.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-06-staging-vs-prod.webp
+  - image: assets/images/gallery/comic-06-staging-vs-prod.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-07-allow-all.webp
+  - image: assets/images/gallery/comic-07-allow-all.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-08-legacy-code.webp
+  - image: assets/images/gallery/comic-08-legacy-code.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-09-regex.webp
+  - image: assets/images/gallery/comic-09-regex.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-10-ssl-expired.webp
+  - image: assets/images/gallery/comic-10-ssl-expired.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-11-k8s-iceberg.webp
+  - image: assets/images/gallery/comic-11-k8s-iceberg.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-12-temporary-fix.webp
+  - image: assets/images/gallery/comic-12-temporary-fix.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-13-dark-mode-debug.webp
+  - image: assets/images/gallery/comic-13-dark-mode-debug.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-14-phishing.webp
+  - image: assets/images/gallery/comic-14-phishing.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-15-2fa-fatigue.webp
+  - image: assets/images/gallery/comic-15-2fa-fatigue.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-16-merge-conflict.webp
+  - image: assets/images/gallery/comic-16-merge-conflict.webp
     tags: [humour, devops, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-17-it-compiled.webp
+  - image: assets/images/gallery/comic-17-it-compiled.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-18-root-access.webp
+  - image: assets/images/gallery/comic-18-root-access.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-19-rate-limit.webp
+  - image: assets/images/gallery/comic-19-rate-limit.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-20-untested-backup.webp
+  - image: assets/images/gallery/comic-20-untested-backup.webp
     tags: [humour, devops, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-21-naming-things.webp
+  - image: assets/images/gallery/comic-21-naming-things.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-22-obscurity.webp
+  - image: assets/images/gallery/comic-22-obscurity.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-23-infinite-loop.webp
+  - image: assets/images/gallery/comic-23-infinite-loop.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-24-rubber-duck.webp
+  - image: assets/images/gallery/comic-24-rubber-duck.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-25-sql-injection.webp
+  - image: assets/images/gallery/comic-25-sql-injection.webp
     tags: [humour, security, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-26-off-by-one.webp
+  - image: assets/images/gallery/comic-26-off-by-one.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-27-heisenbug.webp
+  - image: assets/images/gallery/comic-27-heisenbug.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-28-read-the-docs.webp
+  - image: assets/images/gallery/comic-28-read-the-docs.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-29-this-meeting.webp
+  - image: assets/images/gallery/comic-29-this-meeting.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-30-node-modules.webp
+  - image: assets/images/gallery/comic-30-node-modules.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-31-technical-todo.webp
+  - image: assets/images/gallery/comic-31-technical-todo.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-32-yaml-indent.webp
+  - image: assets/images/gallery/comic-32-yaml-indent.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-33-docker-image.webp
+  - image: assets/images/gallery/comic-33-docker-image.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-34-pager-duty.webp
+  - image: assets/images/gallery/comic-34-pager-duty.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-35-cors.webp
+  - image: assets/images/gallery/comic-35-cors.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-36-race-condition.webp
+  - image: assets/images/gallery/comic-36-race-condition.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-37-tabs-vs-spaces.webp
+  - image: assets/images/gallery/comic-37-tabs-vs-spaces.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-38-dependency-hell.webp
+  - image: assets/images/gallery/comic-38-dependency-hell.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-39-code-review.webp
+  - image: assets/images/gallery/comic-39-code-review.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-40-friday-hotfix.webp
+  - image: assets/images/gallery/comic-40-friday-hotfix.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-41-demo-vpn.webp
+  - image: assets/images/gallery/comic-41-demo-vpn.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-42-null-pointer.webp
+  - image: assets/images/gallery/comic-42-null-pointer.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-43-feature-flag.webp
+  - image: assets/images/gallery/comic-43-feature-flag.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-44-tech-debt.webp
+  - image: assets/images/gallery/comic-44-tech-debt.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-45-reputation.webp
+  - image: assets/images/gallery/comic-45-reputation.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-46-permission-denied.webp
+  - image: assets/images/gallery/comic-46-permission-denied.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-47-cache-invalidation.webp
+  - image: assets/images/gallery/comic-47-cache-invalidation.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-48-microservices.webp
+  - image: assets/images/gallery/comic-48-microservices.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-49-abstraction.webp
+  - image: assets/images/gallery/comic-49-abstraction.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-50-hello-prod.webp
+  - image: assets/images/gallery/comic-50-hello-prod.webp
     tags: [humour, devops, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-51-flaky-tests.webp
+  - image: assets/images/gallery/comic-51-flaky-tests.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-52-console-log.webp
+  - image: assets/images/gallery/comic-52-console-log.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-53-zombie-process.webp
+  - image: assets/images/gallery/comic-53-zombie-process.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-54-memory-leak.webp
+  - image: assets/images/gallery/comic-54-memory-leak.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-55-rebase.webp
+  - image: assets/images/gallery/comic-55-rebase.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-56-changelog.webp
+  - image: assets/images/gallery/comic-56-changelog.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-57-secrets-in-chat.webp
+  - image: assets/images/gallery/comic-57-secrets-in-chat.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-58-cookie-banner.webp
+  - image: assets/images/gallery/comic-58-cookie-banner.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-59-npm-audit.webp
+  - image: assets/images/gallery/comic-59-npm-audit.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-60-weekend-deploy.webp
+  - image: assets/images/gallery/comic-60-weekend-deploy.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-61-ticket-pingpong.webp
+  - image: assets/images/gallery/comic-61-ticket-pingpong.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-62-estimate.webp
+  - image: assets/images/gallery/comic-62-estimate.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-63-bus-factor.webp
+  - image: assets/images/gallery/comic-63-bus-factor.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-64-env-commit.webp
+  - image: assets/images/gallery/comic-64-env-commit.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-65-localhost-prod.webp
+  - image: assets/images/gallery/comic-65-localhost-prod.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-66-git-blame.webp
+  - image: assets/images/gallery/comic-66-git-blame.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-67-todo-sea.webp
+  - image: assets/images/gallery/comic-67-todo-sea.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-68-blue-green.webp
+  - image: assets/images/gallery/comic-68-blue-green.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-69-password-manager.webp
+  - image: assets/images/gallery/comic-69-password-manager.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-70-sprint-board.webp
+  - image: assets/images/gallery/comic-70-sprint-board.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-71-architecture.webp
+  - image: assets/images/gallery/comic-71-architecture.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-72-cdn-purge.webp
+  - image: assets/images/gallery/comic-72-cdn-purge.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-73-lgtm.webp
+  - image: assets/images/gallery/comic-73-lgtm.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-74-http-200-error.webp
+  - image: assets/images/gallery/comic-74-http-200-error.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-75-timezone.webp
+  - image: assets/images/gallery/comic-75-timezone.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-76-semver.webp
+  - image: assets/images/gallery/comic-76-semver.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-77-legacy-firewall.webp
+  - image: assets/images/gallery/comic-77-legacy-firewall.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-78-canary.webp
+  - image: assets/images/gallery/comic-78-canary.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-79-refactor-loop.webp
+  - image: assets/images/gallery/comic-79-refactor-loop.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-80-green-dashboard.webp
+  - image: assets/images/gallery/comic-80-green-dashboard.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-81-calendar-tetris.webp
+  - image: assets/images/gallery/comic-81-calendar-tetris.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-82-private-key-shirt.webp
+  - image: assets/images/gallery/comic-82-private-key-shirt.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-83-readme-badges.webp
+  - image: assets/images/gallery/comic-83-readme-badges.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-84-terraform-plan.webp
+  - image: assets/images/gallery/comic-84-terraform-plan.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-85-cap-theorem.webp
+  - image: assets/images/gallery/comic-85-cap-theorem.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-86-hot-fix.webp
+  - image: assets/images/gallery/comic-86-hot-fix.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-87-smishing.webp
+  - image: assets/images/gallery/comic-87-smishing.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-88-pair-programming.webp
+  - image: assets/images/gallery/comic-88-pair-programming.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-89-monorepo.webp
+  - image: assets/images/gallery/comic-89-monorepo.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-90-cert-countdown.webp
+  - image: assets/images/gallery/comic-90-cert-countdown.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-91-graph-query.webp
+  - image: assets/images/gallery/comic-91-graph-query.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-92-rolling-update.webp
+  - image: assets/images/gallery/comic-92-rolling-update.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-93-quick-sync.webp
+  - image: assets/images/gallery/comic-93-quick-sync.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-94-shadow-it.webp
+  - image: assets/images/gallery/comic-94-shadow-it.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-95-wip-pr.webp
+  - image: assets/images/gallery/comic-95-wip-pr.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-96-disk-full.webp
+  - image: assets/images/gallery/comic-96-disk-full.webp
     tags: [humour, devops]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-97-mock-coverage.webp
+  - image: assets/images/gallery/comic-97-mock-coverage.webp
     tags: [humour, programming]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-98-oauth-consent.webp
+  - image: assets/images/gallery/comic-98-oauth-consent.webp
     tags: [humour, security]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-99-postmortem.webp
+  - image: assets/images/gallery/comic-99-postmortem.webp
     tags: [humour, workplace]
     published: true
     width: 960
     height: 640
 
-  - image: assets/gallery/comic-100-ship-laptop.webp
+  - image: assets/images/gallery/comic-100-ship-laptop.webp
     tags: [humour, devops, programming]
     published: true
     width: 960
