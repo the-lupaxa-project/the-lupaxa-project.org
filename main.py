@@ -6,9 +6,14 @@ HTML/Markdown structure previously hand-authored in the page files.
 
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 
 import yaml
+
+ROOT = Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from gallery_lib import (
     collect_tags as collect_photo_tags,
@@ -17,7 +22,6 @@ from gallery_lib import (
     validate_photos,
 )
 
-ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 
 
