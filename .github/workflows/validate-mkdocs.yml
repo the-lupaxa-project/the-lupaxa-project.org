@@ -8,11 +8,15 @@ on:
       - ".markdownlintignore"
       - ".markdownlint-cli2.jsonc"
       - "data/**"
+      - "gallery_lib.py"
       - "main.py"
       - "mkdocs/**"
       - "mkdocs.yml"
       - "overrides/**"
+      - "quotes_lib.py"
       - "requirements.txt"
+      - "articles_lib.py"
+      - "hooks/**"
 
   pull_request:
     paths:
@@ -21,11 +25,15 @@ on:
       - ".markdownlintignore"
       - ".markdownlint-cli2.jsonc"
       - "data/**"
+      - "gallery_lib.py"
       - "main.py"
       - "mkdocs/**"
       - "mkdocs.yml"
       - "overrides/**"
+      - "quotes_lib.py"
       - "requirements.txt"
+      - "articles_lib.py"
+      - "hooks/**"
 
   workflow_dispatch:
 
