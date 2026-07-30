@@ -1,144 +1,135 @@
 - id: code-of-conduct
+  published: true
   name: Code of Conduct
   icon: material-book-open-page-variant
-  description: 'The Lupaxa Project is committed to fostering an open, welcoming and
+  description: >-
+    The Lupaxa Project is committed to fostering an open, welcoming and respectful community
+    where everyone can collaborate with confidence.
 
-    respectful community where everyone can collaborate with confidence.
 
-
-    This Code of Conduct explains the standards of behaviour expected across
-
-    repositories, discussions, issue trackers and other community spaces
-
-    throughout the project.'
+    This Code of Conduct explains the standards of behaviour expected across repositories,
+    discussions, issue trackers and other community spaces throughout the project.
   categories:
-  - Community
-  - Conduct
-  - Standards
+    - Community
+    - Conduct
+    - Standards
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/CODE_OF_CONDUCT.md
+
 - id: governance
+  published: true
   name: Governance
   icon: material-book-open-page-variant
-  description: 'The Lupaxa Project follows a clear and transparent governance model that
+  description: >-
+    The Lupaxa Project follows a clear and transparent governance model that defines how decisions
+    are made across the ecosystem.
 
-    defines how decisions are made across the ecosystem.
 
-
-    This document explains the project''s governance structure,
-
-    decision-making process and the principles that support long-term
-
-    consistency, stability and sustainability.'
+    This document explains the project's governance structure, decision-making process and
+    the principles that support long-term consistency, stability and sustainability.
   categories:
-  - Governance
-  - Decision-Making
-  - Policy
+    - Governance
+    - Decision-Making
+    - Policy
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/GOVERNANCE.md
+
 - id: how-to-contribute
+  published: true
   name: How to Contribute
   icon: material-book-open-page-variant
-  description: 'Contributions of every size are welcome, from fixing bugs and improving
+  description: >-
+    Contributions of every size are welcome, from fixing bugs and improving documentation
+    to proposing new features and submitting code.
 
-    documentation to proposing new features and submitting code.
 
-
-    This guide explains the contribution process followed across The Lupaxa
-
-    Project, with individual repositories providing additional
-
-    project-specific guidance where required.'
+    This guide explains the contribution process followed across The Lupaxa Project, with
+    individual repositories providing additional project-specific guidance where required.
   categories:
-  - Contributing
-  - Development
-  - Guidance
+    - Contributing
+    - Development
+    - Guidance
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/CONTRIBUTING.md
+
 - id: engineering-principles
+  published: true
   name: Engineering Principles
   icon: material-book-open-page-variant
-  description: 'The Lupaxa Project is guided by a shared set of engineering principles
-
-    that influence how software is designed, built, documented and
-
-    maintained.
+  description: >-
+    The Lupaxa Project is guided by a shared set of engineering principles that influence
+    how software is designed, built, documented and maintained.
 
 
-    Rather than prescribing implementation details, these principles provide
-
-    a consistent foundation for technical decision-making across the
-
-    ecosystem.'
+    Rather than prescribing implementation details, these principles provide a consistent
+    foundation for technical decision-making across the ecosystem.
   categories:
-  - Engineering
-  - Principles
-  - Standards
+    - Engineering
+    - Principles
+    - Standards
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/PRINCIPLES.md
+
 - id: maintainer-guide
+  published: true
   name: Maintainer Guide
   icon: material-book-open-page-variant
-  description: 'Maintainers play a key role in ensuring repositories remain welcoming,
+  description: >-
+    Maintainers play a key role in ensuring repositories remain welcoming, secure, well maintained
+    and technically robust.
 
-    secure, well maintained and technically robust.
 
-
-    This document describes the responsibilities, expectations and
-
-    stewardship principles that guide maintainers throughout The Lupaxa
-
-    Project.'
+    This document describes the responsibilities, expectations and stewardship principles
+    that guide maintainers throughout The Lupaxa Project.
   categories:
-  - Maintainers
-  - Stewardship
-  - Governance
+    - Maintainers
+    - Stewardship
+    - Governance
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/MAINTAINERS.md
+
 - id: project-organisation
+  published: true
   name: Project Organisation
   icon: material-book-open-page-variant
-  description: 'The Lupaxa Project is organised into multiple GitHub organisations, each
+  description: >-
+    The Lupaxa Project is organised into multiple GitHub organisations, each focused on a
+    particular area of technology or engineering.
 
-    focused on a particular area of technology or engineering.
 
-
-    This document explains how the ecosystem is structured, why repositories
-
-    are grouped into specialist organisations and how those organisations
-
-    work together as part of the wider project.'
+    This document explains how the ecosystem is structured, why repositories are grouped into
+    specialist organisations and how those organisations work together as part of the wider
+    project.
   categories:
-  - Ecosystem
-  - Organisation
-  - Structure
+    - Ecosystem
+    - Organisation
+    - Structure
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/PROJECTS.md
+
 - id: security-policy
+  published: true
   name: Security Policy
   icon: material-book-open-page-variant
-  description: 'The Lupaxa Project takes the security of its repositories, software and
+  description: >-
+    The Lupaxa Project takes the security of its repositories, software and users seriously.
 
-    users seriously.
 
-
-    This policy explains how to report suspected vulnerabilities responsibly,
-
-    what information to include and how security reports are handled across
-
-    the project.'
+    This policy explains how to report suspected vulnerabilities responsibly, what information
+    to include and how security reports are handled across the project.
   categories:
-  - Security
-  - Policy
-  - Vulnerability Reporting
+    - Security
+    - Policy
+    - Vulnerability Reporting
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/SECURITY.md
+
 - id: support-guide
+  published: true
   name: Support Guide
   icon: material-book-open-page-variant
-  description: 'This guide explains how to request assistance across The Lupaxa Project
+  description: >-
+    This guide explains how to request assistance across The Lupaxa Project and how to select
+    the most appropriate support channel.
 
-    and how to select the most appropriate support channel.
 
-
-    Using the correct channel helps requests reach the people best placed to
-
-    respond and makes support easier to manage consistently.'
+    Using the correct channel helps requests reach the people best placed to respond and makes
+    support easier to manage consistently.
   categories:
-  - Support
-  - Community
-  - Guidance
+    - Support
+    - Community
+    - Guidance
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/SUPPORT.md

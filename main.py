@@ -15,11 +15,18 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from quotes_lib import (
+    collect_tags as collect_quote_tags,
+    load_quotes_data,
+    published_quotes,
+    validate_quotes,
+)
 from gallery_lib import (
-    collect_tags as collect_photo_tags,
-    load_photos_data,
-    published_photos,
-    validate_photos,
+    collect_tags as collect_gallery_tags,
+    is_remote_media,
+    load_gallery_data,
+    published_entries,
+    validate_gallery,
 )
 
 DATA_DIR = ROOT / "data"
@@ -43,7 +50,7 @@ def _indent(text: str, prefix: str = "    ") -> str:
 
 def _categories_markup(categories: list[str]) -> str:
     return "\n".join(
-        f'    <span class="catalogue-category">{category}</span>'
+        f'    <button type="button" class="catalogue-category">{category}</button>'
         for category in categories
     )
 
@@ -68,9 +75,12 @@ def _action_link(modifier: str, href: str, label: str, icon: str) -> str:
 
 
 def define_env(env):
-    organisations = _load_yaml("organisations.yml")
-    projects = _load_yaml("projects.yml")
-    policies = _load_yaml("policies.yml")
+    def _published(items: list[dict]) -> list[dict]:
+        return [item for item in items if item.get("published", True)]
+
+    organisations = _published(_load_yaml("organisations.yml"))
+    projects = _published(_load_yaml("projects.yml"))
+    policies = _published(_load_yaml("policies.yml"))
 
     env.variables["catalogue_organisations"] = organisations
     env.variables["catalogue_projects"] = projects
@@ -269,24 +279,48 @@ def define_env(env):
 </div>
 """.strip()
 
-    photos_path = Path(env.project_dir) / "data" / "photos.yml"
 
-    def validated_photos():
-        data = load_photos_data(photos_path)
-        validate_photos(data)
+    quotes_path = Path(env.project_dir) / "data" / "quotes.yml"
+
+    def validated_quotes():
+        data = load_quotes_data(quotes_path)
+        validate_quotes(data)
         return data
 
     @env.macro
-    def photos_data():
-        return validated_photos()
+    def quotes_data():
+        return validated_quotes()
 
     @env.macro
-    def wall_photos():
-        return published_photos(validated_photos())
+    def wall_quotes():
+        return published_quotes(validated_quotes())
 
     @env.macro
-    def photo_wall_tags():
-        return collect_photo_tags(published_photos(validated_photos()))
+    def wall_tags():
+        return collect_quote_tags(published_quotes(validated_quotes()))
+
+    gallery_path = Path(env.project_dir) / "data" / "gallery.yml"
+
+    def validated_gallery():
+        data = load_gallery_data(gallery_path)
+        validate_gallery(data)
+        return data
+
+    @env.macro
+    def gallery_data():
+        return validated_gallery()
+
+    @env.macro
+    def wall_gallery_entries():
+        return published_entries(validated_gallery())
+
+    @env.macro
+    def gallery_wall_tags():
+        return collect_gallery_tags(published_entries(validated_gallery()))
+
+    @env.macro
+    def gallery_media_is_remote(path: str) -> bool:
+        return is_remote_media(path)
 
     @env.macro
     def featured_projects() -> str:

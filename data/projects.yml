@@ -1,93 +1,107 @@
 - id: certificate-tool
+  published: true
   name: Certificate Tool
   icon: material-source-repository
-  description: 'Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private
+  description: >-
+    Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private
     keys using a modern, fully typed Python command-line application and library.
 
 
-    Designed for automation as well as interactive use, it provides a clean and consistent interface for
-    creating development and testing certificates.'
+    Designed for automation as well as interactive use, it provides a clean and consistent
+    interface for creating development and testing certificates.
   categories:
-  - Certificates
-  - Security
-  - Python
+    - Certificates
+    - Security
+    - Python
   organisation: Security Toolbox
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://lupaxa-security-toolbox.github.io/certtool/
   featured: true
+
 - id: favicon-generator
+  published: true
   name: Favicon Generator
   icon: material-source-repository
-  description: 'Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG).
+  description: >-
+    Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG).
 
 
-    The project provides a simple and efficient way to create a favicon set from a single source image,
-    ensuring that the favicons are consistent and modern.'
+    The project provides a simple and efficient way to create a favicon set from a single
+    source image, ensuring that the favicons are consistent and modern.
   categories:
-  - Favicons
-  - Websites
-  - Python
+    - Favicons
+    - Websites
+    - Python
   organisation: Code Playground
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png
   logo_alt: Lupaxa Code PLayground
   repository: https://github.com/lupaxa-code-playground/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
   featured: true
+
 - id: git-crypt-manager
+  published: true
   name: Git Crypt Manager
   icon: material-source-repository
-  description: 'Simplify the management of encrypted Git repositories with a guided automation tool built
+  description: >-
+    Simplify the management of encrypted Git repositories with a guided automation tool built
     around [git-crypt](https://github.com/AGWA/git-crypt).
 
 
-    The project helps initialise, configure, and maintain encrypted repositories while reducing the complexity
-    of day-to-day key management.'
+    The project helps initialise, configure, and maintain encrypted repositories while reducing
+    the complexity of day-to-day key management.
   categories:
-  - Encryption
-  - Security
-  - Git
-  - Bash
+    - Encryption
+    - Security
+    - Git
+    - Bash
   organisation: Security Toolbox
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://lupaxa-security-toolbox.github.io/git-crypt-manager/
   featured: true
+
 - id: github-repository-sync
+  published: true
   name: GitHub Repository Sync
   icon: material-source-repository
-  description: 'Clone, organise, and safely synchronise large collections of GitHub repositories using
+  description: >-
+    Clone, organise, and safely synchronise large collections of GitHub repositories using
     a declarative JSON5 configuration file.
 
 
-    Each repository is inspected before any Git operation is performed, ensuring that only repositories
-    confirmed to be in a safe state are automatically updated.'
+    Each repository is inspected before any Git operation is performed, ensuring that only
+    repositories confirmed to be in a safe state are automatically updated.
   categories:
-  - GitHub
-  - Automation
-  - Repository Management
-  - Python
+    - GitHub
+    - Automation
+    - Repository Management
+    - Python
   organisation: The Lupaxa Internal Toolbox
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png
   logo_alt: Lupaxa Internal Toolbox
   repository: https://github.com/the-lupaxa-internal-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
   featured: true
+
 - id: shared-reusable-workflows
+  published: true
   name: Shared Reusable Workflows
   icon: material-source-repository
-  description: 'A collection of reusable GitHub Actions workflows for repository quality, continuous integration,
+  description: >-
+    A collection of reusable GitHub Actions workflows for repository quality, continuous integration,
     documentation, security, and automation.
 
 
-    Designed to provide consistent workflows across The Lupaxa Project, these reusable components reduce
-    duplication and simplify repository management.'
+    Designed to provide consistent workflows across The Lupaxa Project, these reusable components
+    reduce duplication and simplify repository management.
   categories:
-  - GitHub Actions
-  - Automation
-  - Continuous Integration
+    - GitHub Actions
+    - Automation
+    - Continuous Integration
   organisation: The Lupaxa Project
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png
   logo_alt: The Lupaxa Project

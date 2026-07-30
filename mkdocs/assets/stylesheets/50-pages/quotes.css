@@ -1,0 +1,47 @@
+/* =============================================================================
+ * Quotes masonry wall — card typography (wall chrome in masonry-wall.css).
+ * ============================================================================= */
+
+.quote-card {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1.25rem 1.15rem;
+  border-radius: var(--lupaxa-radius-card);
+}
+
+.md-typeset .quote-text,
+.quote-text {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.md-typeset .quote-line,
+.quote-line {
+  margin: 0;
+}
+
+.md-typeset .quote-line + .quote-line,
+.quote-line + .quote-line {
+  margin-top: 0.85em;
+}
+
+.quote-attribution {
+  margin-top: 1rem;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.quote-author {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.quote-year {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.65rem;
+  opacity: 0.55;
+}

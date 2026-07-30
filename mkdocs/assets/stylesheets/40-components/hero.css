@@ -49,11 +49,20 @@
 }
 
 .lupaxa-hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
   justify-content: center;
+  max-width: min(100%, 44rem);
   margin-top: var(--lupaxa-spacing-lg);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.lupaxa-hero-actions .md-button {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .lupaxa-error-hero {

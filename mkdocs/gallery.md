@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-{% set wall = photos_data() %}
+{% set wall = gallery_data() %}
 
 <div
   id="gallery-wall"
@@ -12,25 +12,28 @@ hide:
 >
   <nav class="gallery-filters" aria-label="Filter gallery by tag">
     <button type="button" class="gallery-filter is-active" data-filter="all">All</button>
-    {% for tag in photo_wall_tags() %}
+    {% for tag in gallery_wall_tags() %}
     <span class="gallery-filter-sep" aria-hidden="true">·</span>
     <button type="button" class="gallery-filter" data-filter="{{ tag | e }}">{{ tag | e }}</button>
     {% endfor %}
   </nav>
   <nav class="gallery-filters gallery-filters-media" aria-label="Filter by media type">
-    <button type="button" class="gallery-filter" data-filter="photos">photos</button>
+    <button type="button" class="gallery-filter" data-filter="images">images</button>
     <span class="gallery-filter-sep" aria-hidden="true">·</span>
     <button type="button" class="gallery-filter" data-filter="videos">videos</button>
   </nav>
 
   <div class="gallery-masonry">
-    {% for item in wall_photos() %}
+    {% for item in wall_gallery_entries() %}
     {% set is_video = item.get('video') %}
-    {% set media_src = item.video if is_video else item.photo %}
-    {% set media_tag = 'videos' if is_video else 'photos' %}
+    {% set media_src = item.video if is_video else item.image %}
+    {% set media_url = media_src if gallery_media_is_remote(media_src) else media_src | relative_url %}
+    {% set poster_raw = item.get('poster', '') %}
+    {% set poster_url = poster_raw if (not poster_raw or gallery_media_is_remote(poster_raw)) else poster_raw | relative_url %}
+    {% set media_tag = 'videos' if is_video else 'images' %}
     {% set item_tags = [media_tag] + (item.get('tags') or []) %}
     <article
-      class="photo-card{% if is_video %} is-video{% endif %}"
+      class="gallery-card{% if is_video %} is-video{% endif %}"
       data-tags="{{ item_tags | join('|') | e }}"
       data-media="{{ 'video' if is_video else 'image' }}"
       style="
@@ -42,20 +45,20 @@ hide:
     >
       <button
         type="button"
-        class="photo-open"
+        class="gallery-open"
         data-type="{{ 'video' if is_video else 'image' }}"
-        data-src="{{ media_src | e }}"
-        data-poster="{{ item.get('poster', '') | e }}"
+        data-src="{{ media_url | e }}"
+        data-poster="{{ poster_url | e }}"
         data-comment="{{ item.get('comment', '') | e }}"
         data-date="{{ item.get('date', '') | e }}"
-        aria-label="Open {% if is_video %}video{% else %}photo{% endif %}{% if item.get('comment') %}: {{ item.comment | e }}{% endif %}"
+        aria-label="Open {% if is_video %}video{% else %}image{% endif %}{% if item.get('comment') %}: {{ item.comment | e }}{% endif %}"
       >
-        <span class="photo-media">
+        <span class="gallery-media">
           {% if is_video %}
           <video
-            class="photo-image photo-video"
-            src="{{ item.video | e }}"
-            {% if item.get('poster') %}poster="{{ item.poster | e }}"{% endif %}
+            class="gallery-image gallery-video"
+            src="{{ media_url | e }}"
+            {% if poster_url %}poster="{{ poster_url | e }}"{% endif %}
             muted
             playsinline
             preload="metadata"
@@ -67,11 +70,11 @@ hide:
             style="aspect-ratio: {{ item.aspect_ratio | e }};"
             {% endif %}
           ></video>
-          <span class="photo-play" aria-hidden="true">▶</span>
+          <span class="gallery-play" aria-hidden="true">▶</span>
           {% else %}
           <img
-            class="photo-image"
-            src="{{ item.photo | e }}"
+            class="gallery-image"
+            src="{{ media_url | e }}"
             alt="{{ item.get('comment', '') | e }}"
             loading="lazy"
             decoding="async"
@@ -87,12 +90,12 @@ hide:
         </span>
       </button>
       {% if item.get('comment') or item.get('date') %}
-      <div class="photo-meta">
+      <div class="gallery-meta">
         {% if item.get('comment') %}
-        <p class="photo-comment">{{ item.comment | e }}</p>
+        <p class="gallery-comment">{{ item.comment | e }}</p>
         {% endif %}
         {% if item.get('date') %}
-        <div class="photo-date">{{ item.date | e }}</div>
+        <div class="gallery-date">{{ item.date | e }}</div>
         {% endif %}
       </div>
       {% endif %}

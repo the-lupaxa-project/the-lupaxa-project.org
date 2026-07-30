@@ -10,6 +10,7 @@
   .md-typeset .md-button,
   .md-typeset .catalogue-category,
   .md-typeset .catalogue-grid p:has(img.catalogue-logo) > a,
+  .md-typeset .catalogue-grid p:has(img.catalogue-logo) > button,
   .filter-panel-clear {
     transition: none;
   }
@@ -57,7 +58,8 @@
   text-align: center;
 }
 
-.md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > a {
+.md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > a,
+.md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;

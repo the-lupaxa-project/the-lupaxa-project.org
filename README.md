@@ -9,6 +9,7 @@ Published at <https://thelupaxaproject.org/>.
 
 - Python 3.13+
 - Node.js 22+ (only required for markdownlint)
+- `yamllint` (optional; `python -m pip install yamllint`)
 
 ## Local development
 
@@ -34,6 +35,12 @@ Markdown lint:
 npx markdownlint-cli "mkdocs/**/*.md" --config .markdownlint.yml
 ```
 
+YAML lint:
+
+```bash
+yamllint -c .yamllint.yml .github data mkdocs.yml .markdownlint.yml .yamllint.yml
+```
+
 ## Catalogue content
 
 Catalogue entries live in YAML under `data/`:
@@ -41,7 +48,8 @@ Catalogue entries live in YAML under `data/`:
 | File | Page |
 | --- | --- |
 | `data/organisations.yml` | Organisations |
-| `data/photos.yml` | Gallery masonry wall (photos / videos) |
+| `data/quotes.yml` | Quotes masonry wall |
+| `data/gallery.yml` | Gallery masonry wall (images / videos) |
 | `data/projects.yml` | Projects (set `featured: true` for the home page) |
 | `data/policies.yml` | Policies |
 
@@ -65,10 +73,12 @@ requirements.txt          Pinned MkDocs dependencies
 CSS is numbered by cascade layer under `mkdocs/assets/stylesheets/`.
 JavaScript is split under `mkdocs/assets/javascript/`:
 
-- `page-lifecycle.js` — load + Material instant navigation helpers
+- `page-lifecycle.js` — load + Material instant navigation helpers (`onPageRender`)
 - `header-active-nav.js` — header active state
 - `catalogue-filters.js` — catalogue search / filter / URL sync
-- `gallery.js` — gallery masonry, tag/media filters, lightbox
+- `masonry-wall.js` — shared masonry layout and text filters
+- `quotes.js` — quotes wall (uses masonry-wall)
+- `gallery.js` — gallery wall + lightbox (uses masonry-wall)
 
 ## Page social metadata
 

@@ -70,4 +70,11 @@
 
 [data-md-color-scheme="default"] {
   --md-default-bg-color: var(--lupaxa-white);
+  --md-code-fg-color: var(--lupaxa-dark-blue);
+  --md-code-bg-color: color-mix(in srgb, var(--lupaxa-blue) 10%, var(--lupaxa-white));
+}
+
+[data-md-color-scheme="slate"] {
+  --md-code-fg-color: var(--lupaxa-light-blue);
+  --md-code-bg-color: color-mix(in srgb, var(--lupaxa-dark-blue) 55%, var(--md-default-bg-color));
 }

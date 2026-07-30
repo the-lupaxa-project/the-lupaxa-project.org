@@ -1,34 +1,6 @@
 /* =============================================================================
- * Gallery masonry wall — portal-native; behaviour from R&D Gallery.
+ * Gallery cards + lightbox (wall chrome in masonry-wall.css).
  * ============================================================================= */
-
-:root {
-  --lupaxa-gallery-max: 1680px;
-  --lupaxa-gallery-gap: 1rem;
-  --lupaxa-gallery-card-min: 280px;
-}
-
-.md-content__inner:has(#gallery-wall) {
-  max-width: min(100%, var(--lupaxa-gallery-max));
-}
-
-#gallery-wall {
-  box-sizing: border-box;
-  margin: 1.25rem 0 var(--lupaxa-spacing-lg);
-  padding: 0;
-  background: transparent;
-}
-
-.gallery-filters {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.35rem 0.15rem;
-  margin: 0 0 1.25rem;
-  font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.9rem;
-}
 
 .gallery-filters-media {
   margin-top: -0.8rem;
@@ -36,48 +8,7 @@
   font-size: 0.85rem;
 }
 
-.gallery-filter {
-  padding: 0.15rem 0.35rem;
-  color: var(--md-default-fg-color--light);
-  font: inherit;
-  appearance: none;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  transition: color var(--lupaxa-transition-fast);
-}
-
-.gallery-filter:hover,
-.gallery-filter.is-active {
-  color: var(--lupaxa-blue);
-}
-
-.gallery-filter-sep {
-  color: var(--md-default-fg-color--lighter);
-  user-select: none;
-}
-
-.gallery-masonry {
-  max-width: var(--lupaxa-gallery-max);
-  margin: 0 auto;
-  position: relative;
-}
-
-.gallery-masonry:not(.is-laid-out) {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(min(100%, var(--lupaxa-gallery-card-min)), 1fr)
-  );
-  gap: var(--lupaxa-gallery-gap);
-  align-items: start;
-}
-
-.gallery-masonry.is-laid-out {
-  display: block;
-}
-
-.photo-card {
+.gallery-card {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -86,7 +17,7 @@
   color: var(--md-default-fg-color);
 }
 
-.photo-open {
+.gallery-open {
   display: block;
   width: 100%;
   padding: 0;
@@ -96,13 +27,13 @@
   line-height: 0;
 }
 
-.photo-media {
+.gallery-media {
   position: relative;
   display: block;
   line-height: 0;
 }
 
-.photo-image {
+.gallery-image {
   display: block;
   width: 100%;
   height: auto;
@@ -110,12 +41,12 @@
   background: var(--md-code-bg-color);
 }
 
-.photo-video {
+.gallery-video {
   object-fit: cover;
   pointer-events: none;
 }
 
-.photo-play {
+.gallery-play {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -133,17 +64,19 @@
   transform: translate(-50%, -50%);
 }
 
-.photo-card.is-video .photo-open {
+.gallery-card.is-video .gallery-open {
   cursor: pointer;
 }
 
-.photo-meta {
+.gallery-meta {
   padding: 0.75rem 0.9rem 0.85rem;
-  text-align: center;
+  color: var(--lupaxa-white);
   line-height: 1.2;
+  text-align: center;
+  background: var(--lupaxa-blue);
 }
 
-.photo-comment {
+.gallery-comment {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.85rem;
@@ -151,7 +84,7 @@
   color: inherit;
 }
 
-.photo-date {
+.gallery-date {
   margin: 0;
   color: inherit;
   font-family: Georgia, "Times New Roman", serif;
@@ -160,7 +93,7 @@
   opacity: 0.55;
 }
 
-.photo-comment + .photo-date {
+.gallery-comment + .gallery-date {
   margin-top: 0;
 }
 

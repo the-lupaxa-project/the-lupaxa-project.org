@@ -7,42 +7,50 @@ from typing import Any
 import yaml
 
 
-def load_photos_data(path: str | Path) -> dict[str, Any]:
+def load_gallery_data(path: str | Path) -> dict[str, Any]:
     with open(path, encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
     if not isinstance(data, dict):
-        raise ValueError("photos.yml must be a mapping at the top level")
+        raise ValueError("gallery.yml must be a mapping at the top level")
     return data
 
 
-def published_photos(data: dict[str, Any]) -> list[dict[str, Any]]:
-    photos = data.get("photos") or []
-    return [p for p in photos if p.get("published", True)]
+def published_entries(data: dict[str, Any]) -> list[dict[str, Any]]:
+    entries = data.get("entries") or []
+    return [entry for entry in entries if entry.get("published", True)]
 
 
-def validate_photos(data: dict[str, Any]) -> None:
-    photos = data.get("photos") or []
-    for index, photo in enumerate(photos, start=1):
-        if not isinstance(photo, Mapping):
-            raise ValueError(f"Photo entry {index} must be a mapping")
-        if not photo.get("published", True):
+def validate_gallery(data: dict[str, Any]) -> None:
+    entries = data.get("entries") or []
+    for index, entry in enumerate(entries, start=1):
+        if not isinstance(entry, Mapping):
+            raise ValueError(f"Gallery entry {index} must be a mapping")
+        if not entry.get("published", True):
             continue
-        has_photo = bool(photo.get("photo"))
-        has_video = bool(photo.get("video"))
-        if not has_photo and not has_video:
+        has_image = bool(entry.get("image"))
+        has_video = bool(entry.get("video"))
+        if not has_image and not has_video:
             raise ValueError(
-                f"Published photo {index} missing required field(s): photo or video"
+                f"Published gallery entry {index} missing required field(s): image or video"
             )
-        if photo.get("tags") is not None and not isinstance(photo["tags"], list):
-            raise ValueError(f"Published photo {index} field 'tags' must be a list")
+        if entry.get("tags") is not None and not isinstance(entry["tags"], list):
+            raise ValueError(
+                f"Published gallery entry {index} field 'tags' must be a list"
+            )
 
 
-def collect_tags(photos: list[dict[str, Any]]) -> list[str]:
-    reserved = {"photos", "videos"}
+def collect_tags(entries: list[dict[str, Any]]) -> list[str]:
+    # Media filters are rendered separately (images / videos), not as dynamic tags.
+    reserved = {"images", "videos"}
     tags: set[str] = set()
-    for photo in photos:
-        for tag in photo.get("tags") or []:
+    for entry in entries:
+        for tag in entry.get("tags") or []:
             name = str(tag)
             if name not in reserved:
                 tags.add(name)
     return sorted(tags)
+
+
+def is_remote_media(path: str) -> bool:
+    value = (path or "").strip().lower()
+    return value.startswith("http://") or value.startswith("https://")

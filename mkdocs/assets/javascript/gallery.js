@@ -1,84 +1,20 @@
 /**
- * Gallery masonry and media viewer.
- * Re-inits on Material instant navigation via LupaxaPageLifecycle.
+ * Gallery masonry + lightbox. Layout/filter via LupaxaMasonryWall.
  */
 (() => {
   "use strict";
 
-  const GAP = 16;
-  let resizeBound = false;
-  let resizeTimer = null;
-  let activeMasonry = null;
   let activeLightbox = null;
   let keydownBound = false;
 
-  const shuffle = (nodes) => {
-    const arr = Array.from(nodes);
-    for (let i = arr.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  };
-
-  const cardTags = (card) =>
-    (card.getAttribute("data-tags") || "").split("|").filter(Boolean);
-
   const matchesFilter = (card, selected) => {
     if (selected === "all") return true;
-    if (selected === "photos") return card.getAttribute("data-media") === "image";
+    if (selected === "images") return card.getAttribute("data-media") === "image";
     if (selected === "videos") return card.getAttribute("data-media") === "video";
-    return cardTags(card).includes(selected);
-  };
-
-  const columnCountForWidth = (width) => {
-    const cols = Math.floor((width + GAP) / (280 + GAP));
-    return Math.max(1, Math.min(cols, 6));
-  };
-
-  const layoutMasonry = (masonry) => {
-    const cards = Array.from(masonry.querySelectorAll(".photo-card"));
-    const width = masonry.clientWidth;
-    const cols = columnCountForWidth(width);
-    const colWidth = cols === 1 ? width : (width - GAP * (cols - 1)) / cols;
-    const heights = Array.from({ length: cols }, () => 0);
-
-    masonry.classList.add("is-laid-out");
-    masonry.style.height = "";
-
-    cards.forEach((card) => {
-      card.style.width = `${colWidth}px`;
-      card.style.position = "absolute";
-      card.style.left = "0";
-      card.style.top = "0";
-    });
-
-    cards.forEach((card) => {
-      let col = 0;
-      for (let i = 1; i < cols; i += 1) {
-        if (heights[i] < heights[col]) col = i;
-      }
-      const x = col * (colWidth + GAP);
-      const y = heights[col];
-      card.style.transform = `translate(${x}px, ${y}px)`;
-      heights[col] += card.offsetHeight + GAP;
-    });
-
-    const total = heights.length ? Math.max(...heights) : 0;
-    masonry.style.height = `${Math.max(0, total - GAP)}px`;
-  };
-
-  const renderMasonry = (masonry, cards, selected) => {
-    cards.forEach((card) => {
-      card.style.transform = "";
-      card.style.position = "";
-      card.style.width = "";
-      card.remove();
-    });
-    cards
-      .filter((card) => matchesFilter(card, selected))
-      .forEach((card) => masonry.appendChild(card));
-    layoutMasonry(masonry);
+    const tags = window.LupaxaMasonryWall
+      ? window.LupaxaMasonryWall.cardTags(card)
+      : (card.getAttribute("data-tags") || "").split("|").filter(Boolean);
+    return tags.includes(selected);
   };
 
   const focusableIn = (root) =>
@@ -104,7 +40,7 @@
     let currentIndex = -1;
 
     const visibleOpenButtons = () =>
-      Array.from(masonry.querySelectorAll(".photo-card .photo-open"));
+      Array.from(masonry.querySelectorAll(".gallery-card .gallery-open"));
 
     const stopVideo = () => {
       video.pause();
@@ -238,43 +174,29 @@
 
   const initGalleryWall = () => {
     cleanupActiveLightbox();
-    const masonry = document.querySelector(".gallery-masonry");
-    const filters = document.querySelectorAll(".gallery-filter");
-    const wall = document.getElementById("gallery-wall");
-    if (!masonry || !filters.length) {
-      activeMasonry = null;
-      return;
-    }
+    const wallApi = window.LupaxaMasonryWall;
+    if (!wallApi) return;
 
-    activeMasonry = masonry;
-    activeLightbox = initLightbox(masonry, wall);
-    const nodes = masonry.querySelectorAll(".photo-card");
-    const cards =
-      wall && wall.getAttribute("data-shuffle") === "true"
-        ? shuffle(nodes)
-        : Array.from(nodes);
-    let selected = "all";
-
-    renderMasonry(masonry, cards, selected);
-
-    filters.forEach((button) => {
-      button.addEventListener("click", () => {
-        selected = button.getAttribute("data-filter");
-        filters.forEach((filter) =>
-          filter.classList.toggle("is-active", filter === button)
-        );
-        renderMasonry(masonry, cards, selected);
-      });
+    const result = wallApi.init({
+      wallId: "gallery-wall",
+      masonrySelector: ".gallery-masonry",
+      filterSelector: ".gallery-filter",
+      cardSelector: ".gallery-card",
+      matchesFilter,
     });
+    if (!result) return;
+
+    const { masonry, wall, layout } = result;
+    activeLightbox = initLightbox(masonry, wall);
 
     masonry.addEventListener("click", (event) => {
-      const openButton = event.target.closest(".photo-open");
+      const openButton = event.target.closest(".gallery-open");
       if (!openButton || !masonry.contains(openButton)) return;
       activeLightbox.open(openButton);
     });
 
-    masonry.querySelectorAll(".photo-image").forEach((media) => {
-      const relayout = () => layoutMasonry(masonry);
+    masonry.querySelectorAll(".gallery-image").forEach((media) => {
+      const relayout = () => layout();
       if (media.tagName === "VIDEO") {
         media.addEventListener("loadedmetadata", relayout);
         media.addEventListener("error", relayout);
@@ -283,18 +205,6 @@
         media.addEventListener("error", relayout);
       }
     });
-
-    if (!resizeBound) {
-      resizeBound = true;
-      window.addEventListener("resize", () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          if (activeMasonry && document.contains(activeMasonry)) {
-            layoutMasonry(activeMasonry);
-          }
-        }, 100);
-      });
-    }
 
     if (!keydownBound) {
       keydownBound = true;
@@ -305,9 +215,8 @@
   };
 
   const lifecycle = window.LupaxaPageLifecycle;
-  if (lifecycle) {
-    lifecycle.onDocumentReady(initGalleryWall);
-    lifecycle.onInstantNavigation(initGalleryWall);
+  if (lifecycle && lifecycle.onPageRender) {
+    lifecycle.onPageRender(initGalleryWall);
   } else if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initGalleryWall);
   } else {

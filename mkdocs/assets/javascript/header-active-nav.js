@@ -6,8 +6,7 @@
 (() => {
   "use strict";
 
-  const { onDocumentReady, onInstantNavigation } =
-    window.LupaxaPageLifecycle;
+  const { onPageRender } = window.LupaxaPageLifecycle;
 
   const normalisePath = (value) => {
     const url = new URL(value, window.location.origin);
@@ -58,8 +57,7 @@
     requestAnimationFrame(updateActiveNavigation);
   };
 
-  onDocumentReady(updateActiveNavigation);
-  onInstantNavigation(updateActiveNavigation);
+  onPageRender(updateActiveNavigation);
 
   window.addEventListener("popstate", scheduleUpdate);
 })();

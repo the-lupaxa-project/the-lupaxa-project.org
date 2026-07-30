@@ -14,6 +14,11 @@ site_url: https://thelupaxaproject.org/
 
 extra:
   generator: false
+  start_year: 2025
+  footer_name: The Lupaxa Project
+  footer_taglines:
+    - Where exploration meets precision.
+    - Where the untamed meets the engineered.
   # Counter.dev analytics (omit counter_dev_id to disable).
   counter_dev_id: ef410665-76d4-43fe-9e91-53f26ed1004b
   counter_dev_utcoffset: 0
@@ -40,7 +45,10 @@ use_directory_urls: true
 watch:
   - data
   - main.py
+  - articles_lib.py
+  - quotes_lib.py
   - gallery_lib.py
+  - hooks
 
 # =============================================================================
 # Theme
@@ -93,6 +101,9 @@ plugins:
   - search
   - macros
 
+hooks:
+  - hooks/article_nav.py
+
 # =============================================================================
 # Navigation
 # =============================================================================
@@ -102,7 +113,9 @@ nav:
   - About: about.md
   - Organisations: organisations.md
   - Projects: projects.md
+  - Articles: articles.md
   - Policies: policies.md
+  - Quotes: quotes.md
   - Gallery: gallery.md
 
 markdown_extensions:
@@ -154,8 +167,11 @@ extra_css:
   - assets/stylesheets/40-components/filter-panel.css
   - assets/stylesheets/40-components/hero.css
   - assets/stylesheets/40-components/footer.css
+  - assets/stylesheets/40-components/masonry-wall.css
 
   - assets/stylesheets/50-pages/about.css
+  - assets/stylesheets/50-pages/article.css
+  - assets/stylesheets/50-pages/quotes.css
   - assets/stylesheets/50-pages/gallery.css
 
   - assets/stylesheets/90-responsive.css
@@ -166,13 +182,10 @@ extra_javascript:
   - assets/javascript/page-lifecycle.js
   - assets/javascript/header-active-nav.js
   - assets/javascript/catalogue-filters.js
+  - assets/javascript/masonry-wall.js
+  - assets/javascript/quotes.js
   - assets/javascript/gallery.js
 
 # =============================================================================
-# Copyright
+# Copyright (rendered by overrides/partials/copyright.html; year set in-browser)
 # =============================================================================
-
-copyright: >
-  <span class="footer-copyright">© 2026 <strong>The Lupaxa Project</strong>. All rights reserved.</span>
-  <span class="footer-tagline">Where exploration meets precision.</span>
-  <span class="footer-tagline">Where the untamed meets the engineered.</span>

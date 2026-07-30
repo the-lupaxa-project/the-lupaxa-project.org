@@ -5,8 +5,7 @@
 (() => {
   "use strict";
 
-  const { onDocumentReady, onInstantNavigation } =
-    window.LupaxaPageLifecycle;
+  const { onPageRender } = window.LupaxaPageLifecycle;
 
   const URL_PARAM_SEARCH = "search";
   const URL_PARAM_CATEGORY = "category";
@@ -22,7 +21,6 @@
    * @param {string} options.singular
    * @param {string} options.plural
    * @param {boolean} [options.organisation=false]
-   * @param {string} [options.projectsPath]
    * @returns {Object}
    */
   function catalogueConfig({
@@ -30,7 +28,6 @@
     singular,
     plural,
     organisation = false,
-    projectsPath,
   }) {
     const config = {
       singular,
@@ -46,10 +43,6 @@
 
     if (organisation) {
       config.organisationSelector = `[data-${id}-organisation]`;
-    }
-
-    if (projectsPath) {
-      config.projectsPath = projectsPath;
     }
 
     return config;
@@ -259,18 +252,6 @@
           normaliseCatalogueValue(optionLabel);
 
         organisationOptions.set(optionValue, optionLabel);
-      }
-
-      if (
-        config.projectsPath &&
-        logo &&
-        organisationLabel
-      ) {
-        addOrganisationProjectLink(
-          logo,
-          organisationLabel,
-          config.projectsPath,
-        );
       }
 
       return {
@@ -540,6 +521,86 @@
       );
     }
 
+    /**
+     * Category pills set the category filter on this page.
+     */
+    catalogue
+      .querySelectorAll(".catalogue-category")
+      .forEach((pill) => {
+        if (pill.dataset.categoryFilterBound === "true") {
+          return;
+        }
+
+        pill.dataset.categoryFilterBound = "true";
+        pill.setAttribute(
+          "aria-label",
+          `Filter by ${pill.textContent?.trim() || "category"}`,
+        );
+
+        pill.addEventListener("click", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const label = pill.textContent?.trim() || "";
+
+          if (!label) {
+            return;
+          }
+
+          applySelectFilter(categorySelect, label);
+          updateCatalogue();
+          categorySelect.focus({ preventScroll: true });
+        });
+      });
+
+    /**
+     * Organisation logos set the organisation filter on this page.
+     */
+    if (organisationSelect) {
+      catalogue
+        .querySelectorAll("img.catalogue-logo[data-organisation]")
+        .forEach((logo) => {
+          if (logo.dataset.organisationFilterBound === "true") {
+            return;
+          }
+
+          const organisation =
+            logo.dataset.organisation?.trim() || "";
+
+          if (!organisation) {
+            return;
+          }
+
+          logo.dataset.organisationFilterBound = "true";
+
+          let control = logo.closest(
+            "[data-organisation-filter-control]",
+          );
+
+          if (!control) {
+            control = document.createElement("button");
+            control.type = "button";
+            control.dataset.organisationFilterControl = "";
+            logo.replaceWith(control);
+            control.append(logo);
+          }
+
+          control.setAttribute(
+            "aria-label",
+            `Filter by ${organisation}`,
+          );
+
+          control.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            applySelectFilter(organisationSelect, organisation);
+            updateCatalogue();
+            organisationSelect.focus({ preventScroll: true });
+          });
+        });
+    }
+
     applyInitialFilters();
     updateCatalogue();
   }
@@ -555,28 +616,111 @@
       id: "organisation",
       singular: "organisation",
       plural: "organisations",
-      /*
-       * This path is resolved relative to the Organisations page.
-       *
-       * For example:
-       * /organisations/ -> /projects/
-       */
-      projectsPath: "../projects/",
     }),
     catalogueConfig({
       id: "policy",
       singular: "policy",
       plural: "policies",
     }),
+    catalogueConfig({
+      id: "article",
+      singular: "article",
+      plural: "articles",
+    }),
   ];
+
+  /**
+   * Resolve the Projects catalogue path from the current page location.
+   *
+   * @returns {string}
+   */
+  function projectsCataloguePath() {
+    const path = window.location.pathname;
+
+    if (path.includes("/organisations")) {
+      return "../projects/";
+    }
+
+    if (path.includes("/projects")) {
+      return "./";
+    }
+
+    return "projects/";
+  }
+
+  /**
+   * Wrap organisation logos in links to the Projects catalogue (org filter).
+   *
+   * Skipped on the Projects page itself — logos filter in-place there.
+   */
+  function linkOrganisationLogos() {
+    const path = window.location.pathname;
+
+    if (path.includes("/projects")) {
+      return;
+    }
+
+    const projectsPath = projectsCataloguePath();
+
+    document
+      .querySelectorAll("img.catalogue-logo[data-organisation]")
+      .forEach((logo) => {
+        const organisation = logo.dataset.organisation?.trim() || "";
+
+        addOrganisationProjectLink(logo, organisation, projectsPath);
+      });
+  }
+
+  /**
+   * On pages without a filter panel (e.g. featured projects on home), category
+   * pills navigate to the Projects catalogue with that category selected.
+   */
+  function linkStandaloneCategoryPills() {
+    const path = window.location.pathname;
+
+    if (
+      path.includes("/organisations") ||
+      path.includes("/projects") ||
+      path.includes("/policies") ||
+      path.includes("/articles")
+    ) {
+      return;
+    }
+
+    document.querySelectorAll(".catalogue-category").forEach((pill) => {
+      if (pill.dataset.categoryFilterBound === "true") {
+        return;
+      }
+
+      const label = pill.textContent?.trim() || "";
+
+      if (!label) {
+        return;
+      }
+
+      pill.dataset.categoryFilterBound = "true";
+      pill.setAttribute("aria-label", `View projects in ${label}`);
+
+      pill.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const url = new URL("projects/", window.location.href);
+
+        url.searchParams.set(URL_PARAM_CATEGORY, label);
+        window.location.href = url.href;
+      });
+    });
+  }
 
   /**
    * Initialise every catalogue present on the current page.
    */
   function initialiseCatalogues() {
+    linkOrganisationLogos();
     catalogueConfigurations.forEach(initialiseCatalogue);
+    linkStandaloneCategoryPills();
   }
 
-  onDocumentReady(initialiseCatalogues);
-  onInstantNavigation(initialiseCatalogues);
+  onPageRender(initialiseCatalogues);
 })();

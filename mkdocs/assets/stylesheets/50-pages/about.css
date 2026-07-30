@@ -5,34 +5,65 @@
 
 .about-introduction {
   margin: 1.5rem 0 var(--lupaxa-spacing-lg);
-  padding: 1.4rem 1.6rem;
+  padding: 1.5rem 1.75rem;
+  cursor: default;
   background:
     linear-gradient(
       145deg,
       color-mix(
         in srgb,
-        var(--md-default-bg-color) 94%,
+        var(--md-default-bg-color) 96%,
         var(--lupaxa-blue)
       ),
       var(--md-default-bg-color)
     );
-  border-left: 0.25rem solid var(--lupaxa-light-blue);
-  border-radius:
-    var(--lupaxa-radius-button)
-    var(--lupaxa-radius-card)
-    var(--lupaxa-radius-card)
-    var(--lupaxa-radius-button);
-  box-shadow: var(--lupaxa-shadow-panel);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-card);
+  box-shadow: var(--lupaxa-shadow-card);
+  transition:
+    background var(--lupaxa-transition-medium),
+    border-color var(--lupaxa-transition-medium),
+    box-shadow var(--lupaxa-transition-medium);
+}
+
+.about-introduction:hover {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(
+        in srgb,
+        var(--md-default-bg-color) 90%,
+        var(--lupaxa-light-blue)
+      ),
+      var(--md-default-bg-color)
+    );
+  border-color:
+    color-mix(
+      in srgb,
+      var(--lupaxa-light-blue) 45%,
+      var(--md-default-fg-color--lightest)
+    );
+  box-shadow: var(--lupaxa-shadow-card-hover);
 }
 
 .about-introduction p {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.7;
+  color: var(--md-default-fg-color--light);
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .about-introduction p + p {
-  margin-top: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.about-introduction strong {
+  color: var(--lupaxa-blue);
+  font-weight: 650;
+}
+
+[data-md-color-scheme="slate"] .about-introduction strong {
+  color: var(--lupaxa-light-blue);
 }
 
 .md-typeset .grid.cards.about-summary,

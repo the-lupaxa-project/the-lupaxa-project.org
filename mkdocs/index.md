@@ -26,8 +26,20 @@ hide:
             Browse Projects
         </a>
 
+        <a class="md-button lupaxa-button" href="articles/">
+            Read Articles
+        </a>
+
         <a class="md-button lupaxa-button" href="policies/">
             Explore Policies
+        </a>
+
+        <a class="md-button lupaxa-button" href="quotes/">
+            Read Quotes
+        </a>
+
+        <a class="md-button lupaxa-button" href="gallery/">
+            Explore Gallery
         </a>
     </div>
 </div>

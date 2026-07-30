@@ -1,99 +1,111 @@
 import pytest
 
-from gallery_lib import collect_tags, load_photos_data, published_photos, validate_photos
+from gallery_lib import (
+    collect_tags,
+    is_remote_media,
+    load_gallery_data,
+    published_entries,
+    validate_gallery,
+)
 
 
 SAMPLE = {
     "page": {"background": "#111111", "text_color": "#f5f5f5"},
-    "photos": [
+    "entries": [
         {
-            "photo": "assets/photos/a.jpg",
+            "image": "assets/gallery/a.jpg",
             "comment": "Visible",
             "tags": ["travel", "coast"],
         },
         {
-            "photo": "assets/photos/draft.jpg",
+            "image": "assets/gallery/draft.jpg",
             "comment": "Draft",
             "published": False,
             "tags": ["hidden-tag"],
         },
         {
-            "photo": "https://example.com/b.jpg",
+            "image": "https://example.com/b.jpg",
             "published": True,
             "tags": ["travel"],
         },
         {
-            "photo": "assets/photos/c.jpg",
+            "image": "assets/gallery/c.jpg",
         },
     ],
 }
 
 
-def test_published_photos_defaults_true_and_respects_false():
-    result = published_photos(SAMPLE)
-    photos = [p["photo"] for p in result]
-    assert photos == [
-        "assets/photos/a.jpg",
+def test_published_entries_defaults_true_and_respects_false():
+    result = published_entries(SAMPLE)
+    images = [entry["image"] for entry in result]
+    assert images == [
+        "assets/gallery/a.jpg",
         "https://example.com/b.jpg",
-        "assets/photos/c.jpg",
+        "assets/gallery/c.jpg",
     ]
 
 
 def test_collect_tags_unique_sorted_from_given_list():
-    photos = published_photos(SAMPLE)
-    assert collect_tags(photos) == ["coast", "travel"]
+    entries = published_entries(SAMPLE)
+    assert collect_tags(entries) == ["coast", "travel"]
 
 
 def test_collect_tags_excludes_reserved_media_tags():
-    photos = [
-        {"photo": "a.jpg", "tags": ["travel", "photos"]},
+    entries = [
+        {"image": "a.jpg", "tags": ["travel", "images"]},
         {"video": "b.mp4", "tags": ["videos", "animals"]},
     ]
-    assert collect_tags(photos) == ["animals", "travel"]
+    assert collect_tags(entries) == ["animals", "travel"]
 
 
-def test_load_photos_data_reads_yaml(tmp_path):
-    path = tmp_path / "photos.yml"
+def test_load_gallery_data_reads_yaml(tmp_path):
+    path = tmp_path / "gallery.yml"
     path.write_text(
         "page:\n  background: '#1a1a1a'\n  text_color: '#f5f5f5'\n"
-        "photos:\n  - photo: assets/photos/x.jpg\n    comment: Hi\n",
+        "entries:\n  - image: assets/gallery/x.jpg\n    comment: Hi\n",
         encoding="utf-8",
     )
-    data = load_photos_data(path)
+    data = load_gallery_data(path)
     assert data["page"]["background"] == "#1a1a1a"
-    assert data["photos"][0]["photo"] == "assets/photos/x.jpg"
+    assert data["entries"][0]["image"] == "assets/gallery/x.jpg"
 
 
-def test_load_photos_data_rejects_non_mapping_yaml(tmp_path):
-    path = tmp_path / "photos.yml"
-    path.write_text("- photo: assets/photos/x.jpg\n", encoding="utf-8")
+def test_load_gallery_data_rejects_non_mapping_yaml(tmp_path):
+    path = tmp_path / "gallery.yml"
+    path.write_text("- image: assets/gallery/x.jpg\n", encoding="utf-8")
     with pytest.raises(ValueError, match="mapping at the top level"):
-        load_photos_data(path)
+        load_gallery_data(path)
 
 
-def test_validate_photos_rejects_missing_photo():
-    data = {"photos": [{"comment": "No photo field"}]}
-    with pytest.raises(ValueError, match="photo or video"):
-        validate_photos(data)
+def test_validate_gallery_rejects_missing_media():
+    data = {"entries": [{"comment": "No image field"}]}
+    with pytest.raises(ValueError, match="image or video"):
+        validate_gallery(data)
 
 
-def test_validate_photos_accepts_video_without_photo():
-    data = {"photos": [{"video": "https://example.com/clip.mp4", "tags": ["video"]}]}
-    validate_photos(data)
+def test_validate_gallery_accepts_video_without_image():
+    data = {"entries": [{"video": "https://example.com/clip.mp4", "tags": ["video"]}]}
+    validate_gallery(data)
 
 
-def test_validate_photos_rejects_tags_as_string():
-    data = {"photos": [{"photo": "assets/photos/x.jpg", "tags": "travel"}]}
+def test_validate_gallery_rejects_tags_as_string():
+    data = {"entries": [{"image": "assets/gallery/x.jpg", "tags": "travel"}]}
     with pytest.raises(ValueError, match="tags"):
-        validate_photos(data)
+        validate_gallery(data)
 
 
-def test_validate_photos_rejects_non_mapping_photo_entry():
-    data = {"photos": ["assets/photos/x.jpg"]}
+def test_validate_gallery_rejects_non_mapping_entry():
+    data = {"entries": ["assets/gallery/x.jpg"]}
     with pytest.raises(ValueError, match="mapping"):
-        validate_photos(data)
+        validate_gallery(data)
 
 
-def test_validate_photos_ignores_unpublished_photos():
-    data = {"photos": [{"published": False, "comment": "Draft only"}]}
-    validate_photos(data)
+def test_validate_gallery_ignores_unpublished_entries():
+    data = {"entries": [{"published": False, "comment": "Draft only"}]}
+    validate_gallery(data)
+
+
+def test_is_remote_media():
+    assert is_remote_media("https://example.com/a.jpg")
+    assert is_remote_media("http://example.com/a.jpg")
+    assert not is_remote_media("assets/gallery/a.jpg")
