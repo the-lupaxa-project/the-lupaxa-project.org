@@ -132,7 +132,7 @@ def _article_entry(slug: str, meta: dict[str, Any]) -> str:
         f"\n"
         f"    ---\n"
         f"\n"
-        f'    ![Article](assets/images/articles/{slug}.png){{ class="catalogue-logo" }}\n'
+        f'    ![Article](assets/images/articles/{slug}.webp){{ class="catalogue-logo" }}\n'
         f"\n"
         f"    {desc_block}\n"
         f"\n"
