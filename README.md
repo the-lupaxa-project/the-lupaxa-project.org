@@ -49,7 +49,7 @@ Catalogue entries live in YAML under `data/`:
 | --- | --- |
 | `data/organisations.yml` | Organisations |
 | `data/quotes.yml` | Quotes masonry wall |
-| `data/gallery.yml` | Gallery masonry wall (images / videos) |
+| `data/gallery.yml` | Gallery masonry wall (images / videos; set `page.show_media_filters: true` to show the media-type filters) |
 | `data/projects.yml` | Projects (set `featured: true` for the home page) |
 | `data/policies.yml` | Policies |
 

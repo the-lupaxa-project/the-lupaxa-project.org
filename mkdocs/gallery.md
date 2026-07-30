@@ -17,11 +17,13 @@ hide:
     <button type="button" class="gallery-filter" data-filter="{{ tag | e }}">{{ tag | e }}</button>
     {% endfor %}
   </nav>
+  {% if wall.page.get('show_media_filters', false) %}
   <nav class="gallery-filters gallery-filters-media" aria-label="Filter by media type">
     <button type="button" class="gallery-filter" data-filter="images">images</button>
     <span class="gallery-filter-sep" aria-hidden="true">·</span>
     <button type="button" class="gallery-filter" data-filter="videos">videos</button>
   </nav>
+  {% endif %}
 
   <div class="gallery-masonry">
     {% for item in wall_gallery_entries() %}

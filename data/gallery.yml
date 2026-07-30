@@ -2,6 +2,8 @@ page:
   title: Gallery
   subtitle: Tech humour for the road
   shuffle: true
+  # Show the images / videos filter row (useful once videos are added).
+  show_media_filters: false
 
 entries:
   - image: assets/gallery/comic-01-works-on-my-machine.jpg
