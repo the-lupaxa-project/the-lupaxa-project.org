@@ -40,6 +40,7 @@
   repository: https://github.com/lupaxa-code-playground/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
   featured: true
+  banner: in-development
 
 - id: git-crypt-manager
   published: true
@@ -86,6 +87,7 @@
   repository: https://github.com/the-lupaxa-internal-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
   featured: true
+  banner: in-development
 
 - id: shared-reusable-workflows
   published: true

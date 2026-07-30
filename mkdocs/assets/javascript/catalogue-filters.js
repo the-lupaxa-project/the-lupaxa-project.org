@@ -10,6 +10,7 @@
   const URL_PARAM_SEARCH = "search";
   const URL_PARAM_CATEGORY = "category";
   const URL_PARAM_ORG = "org";
+  const URL_PARAM_STATUS = "status";
   const FALLBACK_ORG = "Other";
   const CATALOGUE_LOCALE = "en-GB";
   /** Shared with article-pager.js — filtered prev/next sequence. */
@@ -23,6 +24,7 @@
    * @param {string} options.singular
    * @param {string} options.plural
    * @param {boolean} [options.organisation=false]
+   * @param {boolean} [options.status=false]
    * @returns {Object}
    */
   function catalogueConfig({
@@ -30,6 +32,7 @@
     singular,
     plural,
     organisation = false,
+    status = false,
   }) {
     const config = {
       singular,
@@ -45,6 +48,10 @@
 
     if (organisation) {
       config.organisationSelector = `[data-${id}-organisation]`;
+    }
+
+    if (status) {
+      config.statusSelector = `[data-${id}-status]`;
     }
 
     return config;
@@ -154,7 +161,8 @@
    * @param {{
    *   searchTerm: string,
    *   selectedCategory: string,
-   *   selectedOrganisation: string
+   *   selectedOrganisation: string,
+   *   selectedStatus: string
    * }} filters
    */
   function syncArticlePagerSequence(config, cardData, filters) {
@@ -165,7 +173,8 @@
     const hasFilter =
       filters.searchTerm !== "" ||
       filters.selectedCategory !== "" ||
-      filters.selectedOrganisation !== "";
+      filters.selectedOrganisation !== "" ||
+      filters.selectedStatus !== "";
 
     if (!hasFilter) {
       sessionStorage.removeItem(ARTICLE_PAGER_STORAGE_KEY);
@@ -254,6 +263,7 @@
     url.searchParams.delete(URL_PARAM_SEARCH);
     url.searchParams.delete(URL_PARAM_CATEGORY);
     url.searchParams.delete(URL_PARAM_ORG);
+    url.searchParams.delete(URL_PARAM_STATUS);
 
     window.history.replaceState(
       window.history.state,
@@ -315,13 +325,17 @@
     const organisationSelect = config.organisationSelector
       ? filterPanel.querySelector(config.organisationSelector)
       : null;
+    const statusSelect = config.statusSelector
+      ? filterPanel.querySelector(config.statusSelector)
+      : null;
 
     if (
       !searchInput ||
       !categorySelect ||
       !clearButton ||
       !summary ||
-      (config.organisationSelector && !organisationSelect)
+      (config.organisationSelector && !organisationSelect) ||
+      (config.statusSelector && !statusSelect)
     ) {
       return;
     }
@@ -334,10 +348,12 @@
 
     const categoryOptions = new Map();
     const organisationOptions = new Map();
+    const statusOptions = new Map();
 
     const cardData = cards.map((card) => {
       const categories = getCatalogueCategories(card);
       const logo = card.querySelector(".catalogue-logo");
+      const banner = card.querySelector(".catalogue-banner");
 
       const organisationLabel =
         logo?.dataset.organisation?.trim() || "";
@@ -345,6 +361,15 @@
       const organisationValue = normaliseCatalogueValue(
         organisationLabel,
       );
+
+      const statusValue = normaliseCatalogueValue(
+        banner?.dataset.bannerStatus || "",
+      );
+      const statusLabel =
+        banner?.dataset.bannerLabel?.trim() ||
+        banner?.querySelector(".catalogue-banner__text")
+          ?.textContent?.trim() ||
+        "";
 
       categories.labels.forEach((label, index) => {
         categoryOptions.set(categories.values[index], label);
@@ -358,6 +383,10 @@
         organisationOptions.set(optionValue, optionLabel);
       }
 
+      if (statusSelect && statusValue && statusLabel) {
+        statusOptions.set(statusValue, statusLabel);
+      }
+
       return {
         element: card,
         categories: categories.values,
@@ -365,10 +394,12 @@
           ? organisationValue ||
             normaliseCatalogueValue(FALLBACK_ORG)
           : "",
+        status: statusSelect ? statusValue : "",
         searchableText: normaliseCatalogueValue(
           [
             card.textContent || "",
             organisationLabel,
+            statusLabel,
             ...categories.labels,
           ].join(" "),
         ),
@@ -382,6 +413,10 @@
         organisationSelect,
         organisationOptions,
       );
+    }
+
+    if (statusSelect) {
+      addCatalogueOptions(statusSelect, statusOptions);
     }
 
     /**
@@ -426,6 +461,7 @@
       const search = urlParameters.get(URL_PARAM_SEARCH);
       const category = urlParameters.get(URL_PARAM_CATEGORY);
       const organisation = urlParameters.get(URL_PARAM_ORG);
+      const status = urlParameters.get(URL_PARAM_STATUS);
 
       if (search !== null) {
         searchInput.value = search;
@@ -438,6 +474,10 @@
       if (organisation !== null && organisationSelect) {
         applySelectFilter(organisationSelect, organisation);
       }
+
+      if (status !== null && statusSelect) {
+        applySelectFilter(statusSelect, status);
+      }
     };
 
     /**
@@ -446,7 +486,8 @@
      * @returns {{
      *   searchTerm: string,
      *   selectedCategory: string,
-     *   selectedOrganisation: string
+     *   selectedOrganisation: string,
+     *   selectedStatus: string
      * }}
      */
     const readActiveFilters = () => ({
@@ -457,6 +498,9 @@
       selectedOrganisation: organisationSelect
         ? normaliseCatalogueValue(organisationSelect.value)
         : "",
+      selectedStatus: statusSelect
+        ? normaliseCatalogueValue(statusSelect.value)
+        : "",
     });
 
     /**
@@ -465,7 +509,8 @@
      * @param {{
      *   searchTerm: string,
      *   selectedCategory: string,
-     *   selectedOrganisation: string
+     *   selectedOrganisation: string,
+     *   selectedStatus: string
      * }} filters
      * @returns {number}
      */
@@ -485,10 +530,15 @@
           filters.selectedOrganisation === "" ||
           card.organisation === filters.selectedOrganisation;
 
+        const matchesStatus =
+          filters.selectedStatus === "" ||
+          card.status === filters.selectedStatus;
+
         const isVisible =
           matchesSearch &&
           matchesCategory &&
-          matchesOrganisation;
+          matchesOrganisation &&
+          matchesStatus;
 
         card.element.hidden = !isVisible;
 
@@ -527,14 +577,16 @@
      * @param {{
      *   searchTerm: string,
      *   selectedCategory: string,
-     *   selectedOrganisation: string
+     *   selectedOrganisation: string,
+     *   selectedStatus: string
      * }} filters
      */
     const updateClearButton = (filters) => {
       clearButton.disabled =
         filters.searchTerm === "" &&
         filters.selectedCategory === "" &&
-        filters.selectedOrganisation === "";
+        filters.selectedOrganisation === "" &&
+        filters.selectedStatus === "";
     };
 
     /**
@@ -554,7 +606,8 @@
      * @param {{
      *   searchTerm: string,
      *   selectedCategory: string,
-     *   selectedOrganisation: string
+     *   selectedOrganisation: string,
+     *   selectedStatus: string
      * }} filters
      */
     const syncUrlWithFilters = (filters) => {
@@ -570,6 +623,10 @@
 
       if (filters.selectedOrganisation) {
         params.set(URL_PARAM_ORG, organisationSelect.value);
+      }
+
+      if (filters.selectedStatus) {
+        params.set(URL_PARAM_STATUS, statusSelect.value);
       }
 
       const url = new URL(window.location.href);
@@ -610,6 +667,11 @@
         removeUrlFilterOptions(organisationSelect);
       }
 
+      if (statusSelect) {
+        statusSelect.value = "";
+        removeUrlFilterOptions(statusSelect);
+      }
+
       clearCatalogueUrlParameters();
       updateCatalogue();
       searchInput.focus();
@@ -624,6 +686,10 @@
         "change",
         updateCatalogue,
       );
+    }
+
+    if (statusSelect) {
+      statusSelect.addEventListener("change", updateCatalogue);
     }
 
     /**
@@ -706,6 +772,48 @@
         });
     }
 
+    /**
+     * Status banners set the status filter on this page.
+     */
+    if (statusSelect) {
+      catalogue
+        .querySelectorAll(".catalogue-banner[data-banner-status]")
+        .forEach((banner) => {
+          if (banner.dataset.statusFilterBound === "true") {
+            return;
+          }
+
+          const status = banner.dataset.bannerStatus?.trim() || "";
+          const label = banner.dataset.bannerLabel?.trim() || status;
+
+          if (!status) {
+            return;
+          }
+
+          banner.dataset.statusFilterBound = "true";
+          banner.setAttribute(
+            "aria-label",
+            `Filter by status ${label}`,
+          );
+
+          const activate = (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            applySelectFilter(statusSelect, status);
+            updateCatalogue();
+            statusSelect.focus({ preventScroll: true });
+          };
+
+          banner.addEventListener("click", activate);
+          banner.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              activate(event);
+            }
+          });
+        });
+    }
+
     applyInitialFilters();
     updateCatalogue();
   }
@@ -716,6 +824,7 @@
       singular: "project",
       plural: "projects",
       organisation: true,
+      status: true,
     }),
     catalogueConfig({
       id: "organisation",
@@ -819,12 +928,66 @@
   }
 
   /**
+   * On pages without a project status filter, banners navigate to Projects
+   * with that status selected.
+   */
+  function linkStandaloneStatusBanners() {
+    const path = window.location.pathname;
+
+    if (path.includes("/projects")) {
+      return;
+    }
+
+    document
+      .querySelectorAll(".catalogue-banner[data-banner-status]")
+      .forEach((banner) => {
+        if (banner.dataset.statusFilterBound === "true") {
+          return;
+        }
+
+        const status = banner.dataset.bannerStatus?.trim() || "";
+        const label = banner.dataset.bannerLabel?.trim() || status;
+
+        if (!status) {
+          return;
+        }
+
+        banner.dataset.statusFilterBound = "true";
+        banner.setAttribute(
+          "aria-label",
+          `View ${label} projects`,
+        );
+
+        const go = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const url = new URL(
+            projectsCataloguePath(),
+            window.location.href,
+          );
+
+          url.searchParams.set(URL_PARAM_STATUS, status);
+          window.location.href = url.href;
+        };
+
+        banner.addEventListener("click", go);
+        banner.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            go(event);
+          }
+        });
+      });
+  }
+
+  /**
    * Initialise every catalogue present on the current page.
    */
   function initialiseCatalogues() {
     linkOrganisationLogos();
     catalogueConfigurations.forEach(initialiseCatalogue);
     linkStandaloneCategoryPills();
+    linkStandaloneStatusBanners();
   }
 
   onPageRender(initialiseCatalogues);

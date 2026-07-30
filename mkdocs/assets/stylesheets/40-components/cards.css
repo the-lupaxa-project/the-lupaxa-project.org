@@ -93,6 +93,22 @@
   fill: currentcolor;
 }
 
+/* Body copy inside cards — keep titles / controls left or centred elsewhere. */
+.md-typeset .grid.cards > ul > li > p,
+.md-typeset .grid.cards > li > p {
+  text-align: justify;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  -webkit-hyphens: auto;
+}
+
+.md-typeset .grid.cards > ul > li > p:first-child,
+.md-typeset .grid.cards > li > p:first-child {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
 .md-typeset .grid.cards li:has(> p:only-child) {
   display: flex;
   min-height: 5rem;

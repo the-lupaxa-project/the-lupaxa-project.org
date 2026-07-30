@@ -127,6 +127,8 @@
   margin: 0 0 var(--lupaxa-spacing-md);
   padding: 0;
   text-align: center;
+  hyphens: manual;
+  -webkit-hyphens: manual;
 }
 
 .md-typeset .catalogue-grid p:has(img.catalogue-logo) > a,
@@ -182,15 +184,138 @@
   z-index: 2;
 }
 
+/* Diagonal status banner: flush sash with text flex-centred inside the band. */
+.md-typeset .catalogue-grid > ul > li > p:has(.catalogue-banner),
+.md-typeset .catalogue-grid > li > p:has(.catalogue-banner) {
+  position: static;
+  flex: 0 0 0;
+  height: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 7.5rem;
+  height: 7.5rem;
+  overflow: hidden;
+  pointer-events: auto;
+  cursor: pointer;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  border-top-right-radius: var(--lupaxa-radius-card);
+}
+
+/*
+ * Classic overhang sash, clipped flush to top + right.
+ * Text lives inside the band so cross-axis centering matches the colour plate.
+ * Asymmetric padding shifts the flex centre onto the visible (clipped) segment.
+ */
+.md-typeset .catalogue-grid .catalogue-banner__band {
+  position: absolute;
+  top: 1.7rem;
+  right: -2.55rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12.25rem;
+  height: 1.7rem;
+  margin: 0;
+  /* Midpoint between prior undershoot (~1.65) and overshoot (~2.85). */
+  padding: 0 0.35rem 0 2.15rem;
+  box-sizing: border-box;
+  background: var(--lupaxa-blue);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--lupaxa-dark-blue) 35%, transparent);
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--short .catalogue-banner__band {
+  /* Short words sit too far into the outer tip with the default padding. */
+  padding: 0 1rem 0 1.25rem;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner__text {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: var(--lupaxa-white);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background: transparent;
+  transform: none;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--red .catalogue-banner__band {
+  background: #b43b3b;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--red .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--green .catalogue-banner__band {
+  background: #2f7a4a;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--green .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--purple .catalogue-banner__band {
+  background: #5c4f8c;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--purple .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--blue .catalogue-banner__band {
+  background: var(--lupaxa-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--blue .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--orange .catalogue-banner__band {
+  background: #d4782a;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--orange .catalogue-banner__text {
+  color: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--neutral .catalogue-banner__band {
+  background: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--neutral .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
 .md-typeset .catalogue-grid
   > ul
   > li
   > hr:first-of-type
-  + p:not(:has(img.catalogue-logo)),
+  + p:not(:has(img.catalogue-logo)):not(:has(.catalogue-banner)),
 .md-typeset .catalogue-grid
   > li
   > hr:first-of-type
-  + p:not(:has(img.catalogue-logo)),
+  + p:not(:has(img.catalogue-logo)):not(:has(.catalogue-banner)),
 .md-typeset .catalogue-grid
   p:has(img.catalogue-logo)
   + p {
@@ -302,6 +427,9 @@
   justify-content: space-between;
   gap: var(--lupaxa-spacing-md);
   margin: 0;
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
 }
 
 .md-typeset .catalogue-grid > ul > li > p:has(> .catalogue-category),
@@ -319,6 +447,8 @@
   margin-left: 0;
   padding-top: var(--lupaxa-spacing-md);
   text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
 }
 
 .md-typeset .catalogue-grid > ul > li > p:has(> .catalogue-category) > .catalogue-category,

@@ -51,6 +51,9 @@
   color: var(--md-default-fg-color--light);
   font-size: 1.05rem;
   line-height: 1.75;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .about-introduction p + p {
@@ -137,6 +140,9 @@
 .about-name-content p {
   margin: 0;
   line-height: 1.65;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
 }
 
 .about-name-content p + p {

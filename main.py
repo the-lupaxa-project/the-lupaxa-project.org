@@ -6,10 +6,22 @@ HTML/Markdown structure previously hand-authored in the page files.
 
 from __future__ import annotations
 
+import html
 import sys
 from pathlib import Path
+from typing import Any
 
 import yaml
+
+# Project card status banners: status → (default label, default tone).
+BANNER_PRESETS: dict[str, tuple[str, str]] = {
+    "coming-soon": ("Coming soon", "green"),
+    "new": ("New", "blue"),
+    "in-development": ("In development", "purple"),
+    "open-beta": ("Open beta", "orange"),
+    "closed-alpha": ("Closed alpha", "red"),
+}
+BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"})
 
 ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
@@ -74,6 +86,75 @@ def _action_link(modifier: str, href: str, label: str, icon: str) -> str:
     )
 
 
+def _banner_filter_key(status: str | None, label: str) -> str:
+    """Stable filter value: preset status slug, else label slug."""
+    if status:
+        return status
+    slug = "".join(
+        ch.lower() if ch.isalnum() else "-" for ch in label
+    )
+    while "--" in slug:
+        slug = slug.replace("--", "-")
+    return slug.strip("-")
+
+
+def _resolve_banner(raw: Any) -> tuple[str, str, str] | None:
+    """Return (label, tone, filter_key) for a project banner, or None."""
+    if raw is None or raw is False:
+        return None
+
+    status: str | None = None
+    label: str | None = None
+    tone: str | None = None
+
+    if isinstance(raw, str):
+        status = raw.strip() or None
+    elif isinstance(raw, dict):
+        status_val = raw.get("status")
+        if isinstance(status_val, str) and status_val.strip():
+            status = status_val.strip()
+        label_val = raw.get("label")
+        if isinstance(label_val, str) and label_val.strip():
+            label = label_val.strip()
+        tone_val = raw.get("tone")
+        if isinstance(tone_val, str) and tone_val.strip():
+            tone = tone_val.strip()
+    else:
+        return None
+
+    preset = BANNER_PRESETS.get(status) if status else None
+    if label is None and preset:
+        label = preset[0]
+    if tone is None and preset:
+        tone = preset[1]
+    if tone is None or tone not in BANNER_TONES:
+        tone = "neutral"
+    if not label:
+        return None
+    return label, tone, _banner_filter_key(status, label)
+
+
+def _banner_markup(raw: Any) -> str:
+    resolved = _resolve_banner(raw)
+    if not resolved:
+        return ""
+    label, tone, filter_key = resolved
+    safe_label = html.escape(label, quote=True)
+    safe_key = html.escape(filter_key, quote=True)
+    # Short labels need less along-sash padding or they sit in the outer tip.
+    length_class = " catalogue-banner--short" if len(label) <= 5 else ""
+    return (
+        f'    <span class="catalogue-banner catalogue-banner--{tone}{length_class}" '
+        f'data-banner-status="{safe_key}" '
+        f'data-banner-label="{safe_label}" '
+        f'aria-label="Status: {safe_label}" '
+        f'role="button" tabindex="0">'
+        f'<span class="catalogue-banner__band" aria-hidden="true">'
+        f'<span class="catalogue-banner__text">{safe_label}</span>'
+        f"</span></span>"
+    )
+
+
 def define_env(env):
     def _published(items: list[dict]) -> list[dict]:
         return [item for item in items if item.get("published", True)]
@@ -95,8 +176,10 @@ def define_env(env):
         search_placeholder: str,
         summary_text: str,
         include_organisation: bool = False,
+        include_status: bool = False,
         category_label: str = "Category",
         organisation_label: str = "Organisation",
+        status_label: str = "Status",
         clear_label: str = "Clear filters",
     ) -> str:
         classes = "filter-panel filter-panel--compact" if compact else "filter-panel"
@@ -107,6 +190,15 @@ def define_env(env):
         <label for="{prefix}-organisation">{organisation_label}</label>
         <select id="{prefix}-organisation" data-{prefix}-organisation>
             <option value="">All organisations</option>
+        </select>
+    </div>"""
+        status_block = ""
+        if include_status:
+            status_block = f"""
+    <div class="filter-panel-select">
+        <label for="{prefix}-status">{status_label}</label>
+        <select id="{prefix}-status" data-{prefix}-status>
+            <option value="">All statuses</option>
         </select>
     </div>"""
 
@@ -127,7 +219,7 @@ def define_env(env):
         <select id="{prefix}-category" data-{prefix}-category>
             <option value="">All categories</option>
         </select>
-    </div>
+    </div>{status_block}
     <div class="filter-panel-actions">
         <button
             type="button"
@@ -196,6 +288,8 @@ def define_env(env):
     def project_card(item: dict) -> str:
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
+        banner = _banner_markup(item.get("banner"))
+        banner_block = f"{banner}\n\n" if banner else ""
         actions = [
             _action_link(
                 "repository",
@@ -220,7 +314,7 @@ def define_env(env):
 
     ---
 
-    <img
+{banner_block}    <img
         class="catalogue-logo"
         title="{item["organisation"]}"
         data-organisation="{item["organisation"]}"
