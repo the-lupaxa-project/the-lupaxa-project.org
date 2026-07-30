@@ -1,4 +1,10 @@
-# The Lupaxa Project portal
+<p align="center">
+    <a href="https://github.com/the-lupaxa-project">
+        <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo.png" alt="Organisation Logo" />
+    </a>
+</p>
+
+<h1 align="center">The Lupaxa Project portal</h1>
 
 Central MkDocs Material site for organisations, projects, and policies across
 The Lupaxa Project ecosystem.
@@ -49,7 +55,7 @@ Catalogue entries live in YAML under `data/`:
 | --- | --- |
 | `data/organisations.yml` | Organisations |
 | `data/quotes.yml` | Quotes masonry wall |
-| `data/gallery.yml` | Gallery masonry wall (images / videos; set `page.show_media_filters: true` to show the media-type filters) |
+| `data/gallery.yml` | Gallery masonry wall (`page.show_count: all` or a number; `page.show_media_filters: true` for images/videos filters) |
 | `data/projects.yml` | Projects (set `featured: true` for the home page) |
 | `data/policies.yml` | Policies |
 
@@ -121,3 +127,7 @@ reusable MkDocs site validator (`mkdocs build --strict` + optional markdownlint)
 > Note: both the reusable publisher (conditional `requirements.txt`) and the
 > reusable validator must be merged in `the-lupaxa-project/workflows` before
 > GitHub Actions can use them from `@master`.
+
+<a href="https://github.com/the-lupaxa-project">
+    <img src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/components/footer.svg" alt="The Lupaxa Project Footer" width="100%" />
+</a>

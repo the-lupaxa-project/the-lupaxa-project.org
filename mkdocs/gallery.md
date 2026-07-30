@@ -9,6 +9,7 @@ hide:
 <div
   id="gallery-wall"
   data-shuffle="{{ 'true' if wall.page.get('shuffle', false) else 'false' }}"
+  data-show-count="{{ wall.page.get('show_count', 'all') | e }}"
 >
   <nav class="gallery-filters" aria-label="Filter gallery by tag">
     <button type="button" class="gallery-filter is-active" data-filter="all">All</button>

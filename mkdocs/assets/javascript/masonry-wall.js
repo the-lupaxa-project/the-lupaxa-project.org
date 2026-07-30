@@ -25,6 +25,60 @@
   const defaultMatchesFilter = (card, selected) =>
     selected === "all" || cardTags(card).includes(selected);
 
+  /**
+   * Resolve data-show-count: "all" (default) or a positive integer cap.
+   *
+   * @param {Element | null} wall
+   * @param {number} total
+   * @returns {number}
+   */
+  const resolveShowCount = (wall, total) => {
+    if (!wall) return total;
+    const raw = String(wall.getAttribute("data-show-count") || "all")
+      .trim()
+      .toLowerCase();
+    if (!raw || raw === "all") return total;
+    const limit = Number.parseInt(raw, 10);
+    if (!Number.isFinite(limit) || limit < 1) return total;
+    return Math.min(limit, total);
+  };
+
+  /**
+   * Drop tag filter controls that match nothing in the active card set.
+   *
+   * @param {NodeListOf<Element> | Element[]} filters
+   * @param {Element[]} cards
+   */
+  const pruneUnusedTagFilters = (filters, cards) => {
+    const present = new Set();
+    cards.forEach((card) => {
+      cardTags(card).forEach((tag) => present.add(tag));
+    });
+
+    Array.from(filters).forEach((button) => {
+      const value = button.getAttribute("data-filter");
+      if (
+        !value ||
+        value === "all" ||
+        value === "images" ||
+        value === "videos"
+      ) {
+        return;
+      }
+      if (present.has(value)) return;
+
+      const previous = button.previousElementSibling;
+      if (
+        previous &&
+        (previous.classList.contains("gallery-filter-sep") ||
+          previous.classList.contains("quotes-filter-sep"))
+      ) {
+        previous.remove();
+      }
+      button.remove();
+    });
+  };
+
   const columnCountForWidth = (width) => {
     const cols = Math.floor((width + GAP) / (280 + GAP));
     return Math.max(1, Math.min(cols, 6));
@@ -116,10 +170,19 @@
 
     const wall = wallId ? document.getElementById(wallId) : null;
     const nodes = masonry.querySelectorAll(cardSelector);
-    const cards =
-      wall && wall.getAttribute("data-shuffle") === "true"
-        ? shuffle(nodes)
-        : Array.from(nodes);
+    const shouldShuffle =
+      (wall && wall.getAttribute("data-shuffle") === "true") || false;
+    let cards = shouldShuffle ? shuffle(nodes) : Array.from(nodes);
+
+    const showCount = resolveShowCount(wall, cards.length);
+    if (showCount < cards.length) {
+      if (!shouldShuffle) cards = shuffle(cards);
+      cards.slice(showCount).forEach((card) => card.remove());
+      cards = cards.slice(0, showCount);
+      pruneUnusedTagFilters(filters, cards);
+    }
+
+    const activeFilters = document.querySelectorAll(filterSelector);
     let selected = "all";
 
     const layout = () => layoutMasonry(masonry, cardSelector);
@@ -128,10 +191,10 @@
 
     render(selected);
 
-    filters.forEach((button) => {
+    activeFilters.forEach((button) => {
       button.addEventListener("click", () => {
         selected = button.getAttribute("data-filter");
-        filters.forEach((filter) =>
+        activeFilters.forEach((filter) =>
           filter.classList.toggle("is-active", filter === button)
         );
         render(selected);
