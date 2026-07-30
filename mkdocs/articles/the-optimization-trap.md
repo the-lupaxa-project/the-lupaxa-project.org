@@ -86,8 +86,7 @@ Instead of only focusing on performance, consider refactoring code to improve re
 
 Each external library or dependency you include adds to your codebase's complexity and can make optimisation more challenging. Minimize dependencies to avoid the overhead associated with keeping them updated and compatible. Using a lean codebase with minimal dependencies makes it easier to optimise and manage in the long term.
 
-## Conclusion: Building the Right Things, Not Just Better Things
-
+## Closing Thoughts
 Elon Musk's observation about the dangers of optimising things that shouldn't exist is a powerful reminder for software engineers to focus on purpose-driven improvements. In a field that emphasizes efficiency and performance, it's essential to remember that not every part of a system needs to be refined. By questioning the purpose of what we're building and applying first principles thinking, we can avoid unnecessary complexity and create software that is streamlined, maintainable, and genuinely valuable.
 
 In the end, optimising with purpose means not just making things better but ensuring that we're making the right things better. By focusing on value-driven optimisation, software engineers can build products that serve users effectively, conserve resources, and avoid the common pitfalls of over-engineering and feature bloat.

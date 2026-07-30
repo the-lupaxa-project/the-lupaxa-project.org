@@ -226,7 +226,7 @@
   }
 
   /**
-   * Article slug from a catalogue href such as "agile-vs-waterfall/".
+   * Article slug from a catalogue href such as "cli-design/".
    *
    * @param {string} href
    * @returns {string}
