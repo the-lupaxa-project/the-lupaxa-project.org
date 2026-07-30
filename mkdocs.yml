@@ -103,6 +103,7 @@ nav:
   - Organisations: organisations.md
   - Projects: projects.md
   - Policies: policies.md
+  - Gallery: gallery.md
 
 markdown_extensions:
   - abbr
@@ -155,6 +156,7 @@ extra_css:
   - assets/stylesheets/40-components/footer.css
 
   - assets/stylesheets/50-pages/about.css
+  - assets/stylesheets/50-pages/gallery.css
 
   - assets/stylesheets/90-responsive.css
   - assets/stylesheets/95-print.css
@@ -164,6 +166,7 @@ extra_javascript:
   - assets/javascript/page-lifecycle.js
   - assets/javascript/header-active-nav.js
   - assets/javascript/catalogue-filters.js
+  - assets/javascript/gallery.js
 
 # =============================================================================
 # Copyright

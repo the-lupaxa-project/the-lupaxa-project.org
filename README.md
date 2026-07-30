@@ -41,6 +41,7 @@ Catalogue entries live in YAML under `data/`:
 | File | Page |
 | --- | --- |
 | `data/organisations.yml` | Organisations |
+| `data/photos.yml` | Gallery masonry wall (photos / videos) |
 | `data/projects.yml` | Projects (set `featured: true` for the home page) |
 | `data/policies.yml` | Policies |
 
@@ -67,6 +68,7 @@ JavaScript is split under `mkdocs/assets/javascript/`:
 - `page-lifecycle.js` — load + Material instant navigation helpers
 - `header-active-nav.js` — header active state
 - `catalogue-filters.js` — catalogue search / filter / URL sync
+- `gallery.js` — gallery masonry, tag/media filters, lightbox
 
 ## Page social metadata
 
