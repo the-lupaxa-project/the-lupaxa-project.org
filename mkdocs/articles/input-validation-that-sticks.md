@@ -4,8 +4,8 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical input validation for CLIs and small services — paths, URLs,
-  commands, sizes, and the failure modes that turn tools into exploit gadgets.
+description: Practical input validation for CLIs and small services. Paths, URLs,
+  subprocesses, sizes, and the failure modes that let an attacker steer your tool.
 tags:
 - Security
 - Engineering
@@ -13,7 +13,7 @@ tags:
 
 # Input Validation That Sticks: Don't Become an Exploit Gadget
 
-Most security bugs in small tools are not exotic crypto failures. They are trust in strings: paths, URLs, hostnames, and shell fragments that an attacker influences. Validation that sticks is validation at every trust boundary — not a single regex at the front door.
+Most security bugs in small tools are not exotic crypto failures. They are trust in strings: paths, URLs, hostnames, and shell fragments that an attacker influences. Validation that sticks happens at every trust boundary, not once as a regex at the front door.
 
 ## 1. Name the Untrusted Inputs
 
@@ -70,4 +70,4 @@ Add fixtures for `../`, weird unicode dots, newlines in arguments, oversized inp
 
 ## 7. Closing Thoughts
 
-Input validation that sticks treats every boundary as hostile until proven kind. Contain paths, tame URLs, avoid shells, parse strictly — and your CLI stays a tool instead of becoming someone else's gadget.
+Input validation that sticks treats every boundary as hostile until proven kind. Contain paths, tame URLs, avoid shells, parse strictly. Do that and your CLI stays a tool instead of becoming someone else's gadget.

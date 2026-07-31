@@ -4,8 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: How to deprecate APIs and flags calmly — warnings, timelines, SemVer,
-  migration paths, and removing old behaviour without surprising your users.
+description: How to retire APIs and flags without ambushing anyone. Warnings people
+  actually see, version gates they can plan around, cheap migrations, and removals
+  that happen on purpose.
 tags:
 - Open Source
 - Engineering
@@ -19,7 +20,7 @@ This pairs with semantic versioning: deprecation is the social process; SemVer i
 
 ## 1. Deprecate Before You Delete
 
-Never remove a public flag, function, or config key in a minor release without a prior warning period — unless you are still in `0.x` and have said so clearly.
+Never remove a public flag, function, or config key in a minor release without a prior warning period. The exception is `0.x`, and only if you said so clearly up front.
 
 Sequence that works:
 
@@ -59,7 +60,7 @@ Keep a small "Deprecated" section in the changelog or docs. Maintainers forget; 
 
 ## 6. Resist Eternal Compatibility
 
-Endless shims become a second product. After the announced major, remove the old path. People who need the old behaviour can stay on the old major — that is what majors are for.
+Endless shims become a second product. After the announced major, remove the old path. People who need the old behaviour can stay on the old major, which is exactly what majors are for.
 
 ## 7. Closing Thoughts
 

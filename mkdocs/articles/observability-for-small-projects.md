@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical observability for CLIs, libraries, and small services — useful
+description: Practical observability for CLIs, libraries, and small services. Useful
   logs, health signals, failure modes, and knowing what broke without needing an enterprise
   APM stack.
 tags:
@@ -46,7 +46,7 @@ Avoid:
 - Printing entire payloads on every request
 - Debug spam left enabled by default
 
-If your default log level needs a filter to be readable, it is not a default — it is noise.
+If your default log level needs a filter to be readable, it is not a default. It is noise.
 
 ## 3. Failure Modes Beat Happy Paths
 
@@ -84,7 +84,7 @@ The best on-call experience for a small project is often a contributor reproduci
 
 ## 6. Alert on Symptoms You Will Act On
 
-If nobody will wake up for it, it is not an alert — it is a badge.
+If nobody will wake up for it, it is not an alert. It is a badge.
 
 Alert on user-visible breakage and capacity cliffs. Keep informational noise in dashboards or weekly reviews.
 

@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical supply-chain signing for open-source releases — checksums,
+description: Practical supply-chain signing for open-source releases. Checksums,
   signatures, provenance, and verification steps users can actually follow.
 tags:
 - Security
@@ -35,7 +35,7 @@ Pick keys you can protect. A signature with a leaked key is theatre.
 
 ## 3. Provenance When You Can
 
-Provenance attests *how* something was built (which commit, which workflow). GitHub attestations and similar systems help bind artefacts to source. Use them when your release pipeline is already automated — they are a poor fit for hand-built mystery zips.
+Provenance attests *how* something was built (which commit, which workflow). GitHub attestations and similar systems help bind artefacts to source. Use them when your release pipeline is already automated. They are a poor fit for hand-built mystery zips.
 
 ## 4. Document Verification
 
@@ -50,7 +50,7 @@ Keep the happy-path verify under a minute.
 
 ## 5. Protect the Pipeline
 
-Signing secrets belong in CI environments with tight access — not in the repository, not on every laptop. Separate who can merge from who can publish when the project grows.
+Signing secrets belong in CI environments with tight access, not in the repository and not on every laptop. Separate who can merge from who can publish when the project grows.
 
 Compromise of the release job is compromise of trust. Guard it accordingly.
 
@@ -60,4 +60,4 @@ Signing your releases does not secure your dependencies' releases. Say what you 
 
 ## 7. Closing Thoughts
 
-Supply-chain signing is evidence: checksums for integrity, signatures for authenticity, provenance for build story. Automate it, document verification, and protect the keys — then users can trust your bits on purpose instead of on hope.
+Supply-chain signing is evidence: checksums for integrity, signatures for authenticity, provenance for the build story. Automate it, document verification, and protect the keys. Then users can trust your bits on purpose instead of on hope.

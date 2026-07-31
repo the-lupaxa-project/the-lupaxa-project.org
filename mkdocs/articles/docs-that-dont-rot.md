@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: How to keep project documentation alive — examples as tests, docs sites
+description: How to keep project documentation alive. Examples as tests, docs sites
   that ship with releases, screenshots that stay honest, and habits that stop docs
   from quietly lying.
 tags:
@@ -14,7 +14,7 @@ tags:
 
 # Docs That Don't Rot: Keeping Instructions True
 
-Documentation starts accurate and dies of neglect. A single wrong flag in an example can cost newcomers an afternoon — and cost you an issue you will answer forever. Docs that do not rot are less about writing more and more about wiring docs into the same feedback loops as code.
+Documentation starts accurate and dies of neglect. A single wrong flag in an example can cost newcomers an afternoon, and cost you an issue you will answer forever. Docs that do not rot are less about writing more and more about wiring docs into the same feedback loops as code.
 
 ## 1. Treat Examples as Code
 
@@ -27,7 +27,7 @@ Approaches that work:
 - Store fixtures next to the docs that use them
 - Prefer copy-pasteable blocks over paraphrases
 
-When docs and code disagree, CI should fail — not users.
+When docs and code disagree, CI should fail before users do.
 
 ## 2. Prefer Generated Truth
 

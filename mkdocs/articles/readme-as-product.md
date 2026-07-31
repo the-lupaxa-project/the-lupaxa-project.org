@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Treat your README as the product surface of an open-source project —
-  clear install steps, honest examples, trustworthy badges, and a path from curiosity
-  to first success.
+description: Your README is the product page for an open-source project. Install steps
+  that work, examples that ran, badges that tell the truth, and the shortest path from
+  curiosity to a first success.
 tags:
 - Open Source
 - Documentation
@@ -16,7 +16,7 @@ tags:
 
 For most open-source projects, the README is the product page. It is where strangers decide whether to clone, star, ignore, or trust you. A beautiful codebase with a vague README is a locked workshop. A modest tool with a clear README is already useful.
 
-This article treats the README as a product surface — not an afterthought.
+So treat it as a product surface, not an afterthought.
 
 ## 1. Lead With Clarity
 
@@ -45,7 +45,7 @@ Bad install sections:
 - Copy-pasted commands that only work on the author's laptop
 - Missing notes about virtual environments or permissions
 
-If an install step fails often, put the fix next to the step — not in a buried FAQ.
+If an install step fails often, put the fix next to the step, not in a buried FAQ.
 
 ## 3. Examples Over Abstracts
 
@@ -100,4 +100,4 @@ Open-source readers are skilled at detecting hype. They reward precision.
 
 ## 7. Closing Thoughts
 
-A README is not paperwork. It is the first user experience. Make the first success cheap, the promises honest, and the next steps obvious — and your project will feel finished long before it is large.
+A README is not paperwork. It is the first user experience. Make the first success cheap, the promises honest, and the next steps obvious, and your project will feel finished long before it is large.

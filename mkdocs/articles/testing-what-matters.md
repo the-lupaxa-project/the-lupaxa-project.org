@@ -14,7 +14,7 @@ tags:
 
 # Testing What Matters: Beyond Vanity Coverage
 
-Test suites exist to protect behaviour users care about. They do not exist to decorate a README with `100% coverage`. When tests only exercise mocks, they congratulate the suite for inventing a fake world — then production discovers the real one.
+Test suites exist to protect behaviour users care about. They do not exist to decorate a README with `100% coverage`. When tests only exercise mocks, they congratulate the suite for inventing a fake world, and then production discovers the real one.
 
 This article is about testing that earns its keep, especially in small projects.
 

@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: A plain-language guide to common open-source licenses for people publishing
-  tools — MIT, Apache-2.0, GPL family trade-offs, why LICENSE files matter, and how
-  to choose without a law degree.
+description: A plain-language guide to open-source licenses for people publishing tools.
+  MIT, Apache-2.0, and the GPL family, what each one asks of your users, and how to
+  choose without a law degree.
 tags:
 - Open Source
 - Community
@@ -14,7 +14,7 @@ tags:
 
 # Licenses for Humans: Choosing How Others Can Use Your Code
 
-Publishing code without a license does not mean "do whatever you want." In many places it means the opposite: all rights reserved by default. A clear `LICENSE` file is how you tell people what they may do — and what you expect in return.
+Publishing code without a license does not mean "do whatever you want." In many places it means the opposite: all rights reserved by default. A clear `LICENSE` file is how you tell people what they may do, and what you expect in return.
 
 This is not legal advice. It is a practical map for tool authors who want to make a deliberate choice.
 
@@ -52,7 +52,7 @@ If you care about patent peace and still want wide reuse, Apache-2.0 is a common
 
 **GPL** family licenses require that derivative works distributed to others remain under compatible copyleft terms. That protects user freedom to study and modify software, and it can complicate proprietary embedding.
 
-Choose copyleft when sharing-alike is a core value of the project. Do not choose it by accident because a dependency forced your hand — understand the tree you are building.
+Choose copyleft when sharing-alike is a core value of the project. Do not end up there by accident because a dependency forced your hand. Understand the tree you are building on.
 
 **LGPL** is often used for libraries when you want copyleft on the library itself but allow linking from differently licensed applications. Details matter; read before you commit.
 

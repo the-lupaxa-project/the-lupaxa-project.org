@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical configuration design for tools — flags, environment variables,
+description: Practical configuration design for tools. Flags, environment variables,
   files, precedence, secrets, and defaults that stay understandable as projects grow.
 tags:
 - Engineering
@@ -19,9 +19,9 @@ Configuration is how users shape behaviour without forking your code. Bad config
 
 Most tools use some mix of:
 
-- **Flags / arguments** — per invocation, great for scripts and overrides
-- **Environment variables** — per process/deployment, good for hosts and CI
-- **Config files** — persistent project or user settings
+- **Flags / arguments** apply per invocation, great for scripts and overrides
+- **Environment variables** apply per process or deployment, good for hosts and CI
+- **Config files** hold persistent project or user settings
 
 Use each for what it is good at. Do not invent a fourth source without need.
 
@@ -38,7 +38,7 @@ Document it once. Stick to it. Silent overrides are how people lose weekends.
 
 ## 3. Defaults Must Be Explained
 
-Every default is a product decision. Put the important ones in the README or `--help`. If a default is dangerous, it should not be the default — see secure defaults.
+Every default is a product decision. Put the important ones in the README or `--help`. If a default is dangerous, it should not be the default (see secure defaults).
 
 ## 4. Keep Secrets Out of Config Files in Git
 

@@ -4,8 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Healthy boundaries for open-source maintainers — saying no, defining
-  scope, managing expectations, and protecting energy without abandoning the project.
+description: How open-source maintainers stay in the game. Write down scope, decline
+  without writing an essay, publish honest support expectations, and protect review
+  time before it runs out.
 tags:
 - Open Source
 - Community
@@ -15,7 +16,7 @@ tags:
 
 Open source dies in two ways: abandonment and burnout. Boundaries are how maintainers stay present. They are not rudeness. They are how a volunteer project remains sustainable.
 
-This is for people who maintain tools others rely on — especially alone or in tiny teams.
+This is for people who maintain tools others rely on, especially alone or in tiny teams.
 
 ## 1. Scope Is a Feature
 

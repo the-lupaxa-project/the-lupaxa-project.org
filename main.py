@@ -15,11 +15,11 @@ import yaml
 
 # Project card status banners: status → (default label, default tone).
 BANNER_PRESETS: dict[str, tuple[str, str]] = {
-    "in-planning": ("In planning", "green"),
-    "in-development": ("In development", "purple"),
-    "in-testing": ("In testing", "neutral"),
-    "closed-alpha": ("Closed alpha", "red"),
-    "open-beta": ("Open beta", "orange"),
+    "in-planning": ("In Planning", "green"),
+    "in-development": ("In Development", "purple"),
+    "in-testing": ("In Testing", "neutral"),
+    "closed-alpha": ("Closed Alpha", "red"),
+    "open-beta": ("Open Beta", "orange"),
     "released": ("Released", "blue"),
 }
 BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"})
@@ -190,16 +190,24 @@ def define_env(env):
     <div class="filter-panel-select">
         <label for="{prefix}-organisation">{organisation_label}</label>
         <select id="{prefix}-organisation" data-{prefix}-organisation>
-            <option value="">All organisations</option>
+            <option value="">All Organisations</option>
         </select>
     </div>"""
         status_block = ""
         if include_status:
+            # Fixed lifecycle list (not derived from cards on the page).
+            status_options = "\n".join(
+                f'            <option value="{html.escape(slug, quote=True)}">'
+                f"{html.escape(label)}</option>"
+                for slug, (label, _) in BANNER_PRESETS.items()
+            )
             status_block = f"""
     <div class="filter-panel-select">
         <label for="{prefix}-status">{status_label}</label>
         <select id="{prefix}-status" data-{prefix}-status>
-            <option value="">All statuses</option>
+            <option value="">All Statuses</option>
+{status_options}
+            <option value="stable">Stable</option>
         </select>
     </div>"""
 
@@ -218,7 +226,7 @@ def define_env(env):
     <div class="filter-panel-select">
         <label for="{prefix}-category">{category_label}</label>
         <select id="{prefix}-category" data-{prefix}-category>
-            <option value="">All categories</option>
+            <option value="">All Categories</option>
         </select>
     </div>{status_block}
     <div class="filter-panel-actions">

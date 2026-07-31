@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: When and how to ship CLI tools as containers — pinning base images,
-  non-root users, small attack surface, and avoiding container anti-patterns for
-  simple utilities.
+description: When and how to ship a CLI tool as a container. Pinning base images,
+  running as non-root, keeping the attack surface small, and avoiding container
+  anti-patterns for simple utilities.
 tags:
 - Security
 - Tools
@@ -14,7 +14,7 @@ tags:
 
 # Containers for CLI Tools: When a Box Helps
 
-Not every CLI needs a container. Some benefit from one: complex native dependencies, locked runtimes, or identical behaviour in CI and laptops. Containers are a distribution and isolation tool — not automatic security.
+Not every CLI needs a container. Some benefit from one: complex native dependencies, locked runtimes, or identical behaviour in CI and laptops. Containers are a distribution and isolation tool, not automatic security.
 
 ## 1. When a Container Earns Its Keep
 
@@ -63,4 +63,4 @@ Explain how to run with local files mounted, how to pass config, and when *not* 
 
 ## 7. Closing Thoughts
 
-Containers can make CLI distribution boring and repeatable. Pin bases, run as non-root, keep layers lean, and still offer a non-container install when you can — the box should help users, not become the product.
+Containers can make CLI distribution boring and repeatable. Pin bases, run as non-root, keep layers lean, and still offer a non-container install when you can. The box should help users, not become the product.

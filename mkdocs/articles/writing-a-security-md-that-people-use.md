@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: A practical SECURITY.md playbook for small projects — what to include,
+description: A practical SECURITY.md playbook for small projects. What to include,
   example structure, scope statements, and making the security policy easy to find
   and follow.
 tags:
@@ -28,12 +28,12 @@ If people cannot find it in ten seconds, it does not exist.
 
 Keep sections scannable:
 
-1. **Supported versions** — what you still patch
-2. **Reporting** — private channel and what to include
-3. **Scope** — in and out
-4. **Response expectations** — human timelines, not fake SLAs
-5. **Safe harbour** — good-faith research welcome
-6. **Preferences** — credit, encryption keys if any
+1. **Supported versions:** what you still patch
+2. **Reporting:** private channel and what to include
+3. **Scope:** in and out
+4. **Response expectations:** human timelines, not fake SLAs
+5. **Safe harbour:** good-faith research welcome
+6. **Preferences:** credit, encryption keys if any
 
 One screen on mobile is a good length target for small projects.
 
@@ -86,4 +86,4 @@ A stale policy is how reports go to abandoned email addresses.
 
 ## 7. Closing Thoughts
 
-A useful `SECURITY.md` is a map: where to report, what counts, what to expect. Write it for a tired researcher at midnight — and for future you who has to answer them.
+A useful `SECURITY.md` is a map: where to report, what counts, what to expect. Write it for a tired researcher at midnight, and for future you who has to answer them.

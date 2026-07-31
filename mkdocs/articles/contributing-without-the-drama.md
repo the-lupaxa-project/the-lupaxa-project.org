@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical guidance for opening useful issues and pull requests in open-source
-  projects — small diffs, clear context, good first issues, and knowing when not to
-  bikeshed.
+description: How to open issues and pull requests people actually want to merge. Small
+  diffs, clear context, real reproduction steps, and knowing when an argument is not
+  worth having.
 tags:
 - Open Source
 - Community
@@ -16,7 +16,7 @@ tags:
 
 Open source thrives when people contribute. It stalls when every change becomes a debate, every issue becomes a manifesto, and every pull request tries to redesign the project. Good contribution is a craft: clear, proportional, and respectful of the maintainers who already carry the load.
 
-This article is about helping without the drama — whether you are filing your first issue or your fiftieth pull request.
+Whether this is your first issue or your fiftieth pull request, the same habits apply.
 
 ## 1. Start From the Project's Reality
 
@@ -54,12 +54,12 @@ The best PRs are easy to say yes to.
 - **One concern per PR.** Do not mix a bug fix with a rename pass and a new feature.
 - **Explain why.** The diff shows *what*; the description should show *why*.
 - **Keep the diff small.** Reviewers can hold a few files in their head. They cannot hold a rewrite.
-- **Follow local conventions.** Formatting, tests, commit style — match the neighbourhood.
+- **Follow local conventions.** Match the neighbourhood on formatting, tests, and commit style.
 - **Update docs when behaviour changes.** Silent behaviour changes create future issues.
 
 If you need feedback early, open a draft PR and say what you still plan to finish. Do not ask for a full review of unfinished work without labelling it clearly.
 
-## 4. Good First Issues — For Authors and Newcomers
+## 4. Good First Issues, From Both Sides
 
 Maintainers: label genuinely approachable work. A good first issue has a clear outcome, limited scope, and enough context for someone new to start.
 
@@ -86,6 +86,6 @@ If a review asks for changes, make them or explain the trade-off calmly. Ghostin
 
 ## 7. Closing Thoughts
 
-Open source works when contributors reduce friction: clearer issues, smaller patches, better context, less theatre. You do not need permission to be helpful — you need discipline about *how* you help.
+Open source works when contributors reduce friction: clearer issues, smaller patches, better context, less theatre. You do not need permission to be helpful. You need discipline about *how* you help.
 
 Contribute like someone who will still be welcome next month.

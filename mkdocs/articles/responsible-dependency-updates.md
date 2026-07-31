@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: A practical cadence for dependency updates — Dependabot-style PRs, ignore
+description: A practical cadence for dependency updates. Dependabot-style PRs, ignore
   rules, reading majors, and keeping upgrades boring without ignoring security fixes.
 tags:
 - Security
@@ -13,7 +13,7 @@ tags:
 
 # Responsible Dependency Updates: Cadence Without Chaos
 
-Dependency hygiene says know your tree. Responsible updates say keep it moving — without merging every noisy PR blind or freezing until the next CVE fire drill.
+Dependency hygiene says know your tree. Responsible updates say keep it moving, without merging every noisy PR blind and without freezing until the next CVE fire drill.
 
 ## 1. Schedule Small, Frequent Upgrades
 
@@ -23,13 +23,13 @@ Automate PR creation; do not automate merge without tests.
 
 ## 2. Let Tests Be the Gate
 
-Update PRs should run the same CI as human PRs. Red CI means fix or roll back — not force-merge because the bot is lonely.
+Update PRs should run the same CI as human PRs. Red CI means fix or roll back, not force-merge because the bot is lonely.
 
 If you lack tests, dependency automation will punish you. That is feedback.
 
 ## 3. Triage Security Separately
 
-Critical/high vulns in reachable code get fast-tracked. Low noise in unused optional extras can wait. Reachability and exploitability still matter — see dependency hygiene.
+Critical and high severity vulns in reachable code get fast-tracked. Low noise in unused optional extras can wait. Reachability and exploitability still matter here, same as in dependency hygiene.
 
 Have a human glance at security PRs even when automation is trusted for patches.
 
@@ -53,4 +53,4 @@ Sometimes the fix is upgrading a parent, replacing a package, or vendoring less.
 
 ## 7. Closing Thoughts
 
-Responsible updates are a rhythm: automate proposals, gate on tests, fast-track real risk, and read majors. Stay current on purpose — not only when the internet is on fire.
+Responsible updates are a rhythm: automate proposals, gate on tests, fast-track real risk, and read majors. Stay current on purpose, not only when the internet is on fire.

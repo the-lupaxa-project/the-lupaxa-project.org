@@ -4,90 +4,82 @@ published: true
 hide:
 - navigation
 - toc
-description: Discover how to avoid the optimisation trap in software engineering.
-  Learn why it's essential to focus on purpose-driven improvements, inspired by Elon
-  Musk's insights on building the right things, not just better things.
+description: Why capable engineers waste time polishing things that should not exist,
+  how to tell warranted optimisation from busywork, and how first principles thinking
+  keeps improvements pointed at something that matters.
 tags:
 - Engineering
 - Mindset
 ---
 
-# Avoiding the Optimisation Trap in Software Engineering: Lessons from Elon Musk
+# The Optimisation Trap: Making the Wrong Things Better
 
-Elon Musk once said, *"The most common error of a smart engineer is to optimize a thing that should not exist."* For software engineers, this is a reminder to question assumptions and think critically about the value of the systems, features, and processes we work on. Too often, we can fall into the trap of optimising code, algorithms, or features that don't meaningfully contribute to the software's core goals. Instead of making incremental improvements to things that may not even be necessary, we should step back and consider whether we're addressing the right problems in the first place.
+Elon Musk once said, *"The most common error of a smart engineer is to optimize a thing that should not exist."* It lands because the failure mode is so comfortable. Tuning a slow function feels like progress. Asking whether the function needs to exist feels like admitting the last three weeks were wasted.
 
-Let's explore why it's important to avoid unnecessary optimisation in software engineering, how to recognize when optimisation is warranted, and the strategies we can employ to make purpose-driven improvements.
+Optimisation is not the problem. Optimising without first checking the target is.
 
-## 1. The Perils of Optimising the Wrong Things
+## 1. Optimising the Wrong Thing Costs Twice
 
-Software engineering thrives on efficiency, and the drive to optimise is one of the field's cornerstones. However, this drive can become counterproductive when applied to the wrong things. Optimising unnecessary features or inefficient code that doesn't serve a purpose can lead to wasted time, increased complexity, and a diversion from the software's primary goals. In the worst cases, unnecessary optimisation can result in software bloat and reduced maintainability.
+You lose the time you spend, and you leave behind more complexity to maintain. Worse, the optimised code now looks load-bearing, so the next person is even less likely to delete it.
 
-There are a few common reasons why engineers fall into this optimisation trap:
+Common ways engineers end up there:
 
-- **Legacy Code:** Teams often spend time optimising legacy code that is no longer critical to the software's core function. Legacy code can feel indispensable due to its long-standing presence in the codebase, but it may no longer be necessary.
-- **Feature Bloat:** Adding extra features over time can result in a bloated application. Engineers might optimise each of these features without questioning whether they are still relevant or aligned with user needs.
-- **Sunk Cost Fallacy:** Time and resources that have already been invested in a system or feature may prompt further optimisation simply to justify the initial investment, even if the feature no longer adds value.
-- **Incrementalism Over Innovation:** Optimising small details can distract from broader opportunities for innovation. Focusing on incremental improvements often means missing the chance to rethink or redesign the system with a more effective solution.
+- **Legacy code:** it has been in the codebase for years, so it feels essential. Longevity is not the same as importance.
+- **Feature bloat:** features accumulate, and each one gets attention on its own terms rather than being weighed against user needs.
+- **Sunk cost:** money and effort already spent become the argument for spending more, even when the feature stopped earning its place.
+- **Incrementalism:** shaving milliseconds is easier than rethinking the design, so the bigger opportunity never gets considered.
 
-## 2. Focusing on Purpose-Driven Optimisation
+## 2. Ask Whether It Should Exist
 
-Rather than automatically seeking to optimise existing systems, engineers should consider the purpose and value of the software they're building. Software engineers need to regularly ask:
+Before you tune anything, run through four questions:
 
 - Does this feature add value for the user?
-- Is this system critical to the application's core functionality?
-- Are we spending time on code that isn't necessary for current or future needs?
-- Are there simpler, more efficient ways to solve this problem?
+- Is this system critical to what the application actually does?
+- Are we maintaining code that current or planned work does not need?
+- Is there a simpler way to solve the problem?
 
-By focusing on purpose-driven optimisation, software engineers can prioritize meaningful improvements that align with user needs and the application's goals. This approach promotes a lean and effective codebase rather than one that is weighed down by unnecessary complexity.
+If the honest answers point at deletion, delete. A smaller codebase is faster than a well-optimised large one.
 
-## 3. Avoiding Over-Optimisation: When to Say No
+## 3. When to Say No
 
-It can be tempting to optimise every aspect of a codebase, but knowing when to avoid optimisation is a valuable skill for any software engineer. Here are a few scenarios where stepping back from optimisation can lead to better results:
+### Features Almost Nobody Uses
 
-### Unnecessary Features
+Feature bloat usually comes from trying to satisfy every request or match a competitor's list. If only a sliver of users touch a feature, removing it beats optimising it. Fewer moving parts, less to maintain.
 
-Feature bloat occurs when software has more functionality than is necessary, often due to a desire to address a wide range of user needs or to differentiate from competitors. But not every feature requires deep optimisation. For instance, if a product contains a feature that only a small subset of users utilizes, it may be better to remove the feature entirely rather than continually optimising it. This helps maintain a clean and focused codebase.
+### Hypothetical Scale
 
-### Over Engineering for Hypothetical Scenarios
-
-Engineers often optimise code in anticipation of future needs or increased scale. While planning for growth is essential, optimising for scenarios that may never happen can lead to unnecessary complexity. For example, optimising for a hypothetical data scale far beyond the current requirements can introduce convoluted code, making it harder to maintain and debug. Instead, it's best to focus on realistic needs and revisit optimisation when necessary.
+Planning for growth is sensible. Building for a data volume you have no evidence you will reach is not. Optimising for imaginary scale leaves you with convoluted code that is harder to debug today in exchange for a benefit that may never arrive. Solve for realistic needs and revisit when the numbers move.
 
 ### Premature Optimisation
 
-Premature optimisation is a well-known pitfall in software development. Spending time refining code for performance before you understand the application's actual bottlenecks often results in wasted effort. As Donald Knuth famously said, *"Premature optimization is the root of all evil."* Instead of immediately optimising, focus on creating clear and maintainable code first. Once you have a functioning application, use profiling tools to identify performance bottlenecks and target optimisation efforts there.
+As Donald Knuth put it, *"Premature optimization is the root of all evil."* Refining performance before you know where the bottlenecks are is guessing with extra steps. Write clear, maintainable code first, get it working, then profile and target what the profiler shows you.
 
-## 4. Applying First Principles Thinking to Software Optimisation
+## 4. First Principles as a Filter
 
-Elon Musk often advocates for first principles thinking, a method of problem-solving that involves breaking down complex problems into their most fundamental components and building up from there. This approach is particularly valuable in software engineering, as it encourages us to question assumptions and look for simple, foundational solutions.
+First principles thinking means breaking a problem down to its fundamentals and rebuilding from there. Applied to optimisation, it is a way of testing whether the thing deserves to exist:
 
-By applying first principles thinking, software engineers can better determine whether something should even exist before investing time in optimising it. Here's how to incorporate this approach into software development:
+- **Define the problem.** Name what the system or feature is meant to solve. Vague purpose produces vague optimisation.
+- **Question the assumptions.** Is there a simpler route to the same outcome? Could this be removed entirely?
+- **Rebuild from the requirements.** Start from what is essential rather than from what is currently there, and you often end up with something smaller.
 
-- **Define the Problem:** Identify the specific problem that the system or feature is intended to solve. Understanding the purpose helps ensure that optimisation efforts are aligned with the application's goals.
-- **Question Assumptions:** Consider the assumptions underlying the system or feature. Is there a simpler way to achieve the same outcome? Could the system or feature be removed entirely?
-- **Start from Scratch:** When faced with a complex problem, break it down to its fundamental requirements. By looking at what's essential, you can design a solution that is streamlined and avoids unnecessary complexity.
+## 5. How to Optimise When It Is Worth It
 
-## 5. Strategies for Purpose-Driven Optimisation
+### Profile Before You Touch Anything
 
-Once you've identified areas that genuinely benefit from optimisation, it's essential to implement changes thoughtfully. Here are strategies to help software engineers optimise effectively while keeping the bigger picture in mind:
+Use `Chrome DevTools` for front-end performance, `JProfiler` for Java, or `VisualVM` to find where time actually goes. Measured bottlenecks keep your effort data-driven instead of intuition-driven.
 
-### Profiling and Benchmarking
+### Aim at Core Functionality
 
-Use profiling and benchmarking tools to identify performance bottlenecks. Tools like `Chrome DevTools` (for front-end performance), `JProfiler` (for Java), or `VisualVM` can help you determine where your application is slowing down. By focusing on measurable performance issues, you ensure that your optimisation efforts are targeted and data-driven.
+Optimise the paths users hit constantly or that the product depends on. Background processes and rarely used features can usually stay as they are unless they cause real problems.
 
-### Focus on Core Functionality
+### Refactor for Simplicity
 
-Optimise the parts of your application that impact core functionality. Features that users interact with frequently or that are critical to the application's success should be your primary focus. Non-essential features or background processes can often be left as-is unless they introduce significant issues.
+Not every performance problem needs a performance fix. Complicated code is often a hint that the design is wrong, and simplifying it makes future optimisation easier. `SonarQube` can point at areas worth refactoring.
 
-### Refactoring for Simplicity
+### Keep Dependencies Lean
 
-Instead of only focusing on performance, consider refactoring code to improve readability and simplicity. Complex code can often be a sign that you're optimising something unnecessarily. Cleaner code is easier to maintain and more straightforward to optimise when necessary. Tools like `SonarQube` can help identify areas for refactoring and offer suggestions for improvement.
+Every library you pull in adds surface area to understand, update, and keep compatible. Fewer dependencies means less overhead and a codebase you can reason about when you do need to make it fast.
 
-### Minimize Dependencies
+## 6. Closing Thoughts
 
-Each external library or dependency you include adds to your codebase's complexity and can make optimisation more challenging. Minimize dependencies to avoid the overhead associated with keeping them updated and compatible. Using a lean codebase with minimal dependencies makes it easier to optimise and manage in the long term.
-
-## Closing Thoughts
-
-Elon Musk's observation about the dangers of optimising things that shouldn't exist is a powerful reminder for software engineers to focus on purpose-driven improvements. In a field that emphasizes efficiency and performance, it's essential to remember that not every part of a system needs to be refined. By questioning the purpose of what we're building and applying first principles thinking, we can avoid unnecessary complexity and create software that is streamlined, maintainable, and genuinely valuable.
-
-In the end, optimising with purpose means not just making things better but ensuring that we're making the right things better. By focusing on value-driven optimisation, software engineers can build products that serve users effectively, conserve resources, and avoid the common pitfalls of over-engineering and feature bloat.
+Efficiency is a habit worth having, but it needs a target. Question what you are building before you polish it, apply first principles to decide whether it should exist at all, and profile before you optimise. The goal is not making things better. It is making the right things better.

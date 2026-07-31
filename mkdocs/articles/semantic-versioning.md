@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: A practical guide to semantic versioning for open-source tools — major,
-  minor, and patch releases, 0.x realities, deprecations, and communicating breaking
-  changes without surprising your users.
+description: Semantic versioning as it actually plays out in open-source tools. What
+  counts as breaking, how to live in 0.x honestly, why changelogs are part of the version
+  number, and how to keep upgrades boring.
 tags:
 - Open Source
 - Engineering
@@ -22,11 +22,11 @@ This article focuses on how SemVer behaves for real libraries and CLIs.
 
 For a public API after `1.0.0`:
 
-- **MAJOR** — incompatible API changes
-- **MINOR** — backwards-compatible functionality
-- **PATCH** — backwards-compatible bug fixes
+- **MAJOR** for incompatible API changes
+- **MINOR** for backwards-compatible functionality
+- **PATCH** for backwards-compatible bug fixes
 
-The key phrase is *public API*. Private helpers, undocumented behaviour, and accidental quirks are not automatically part of the contract — but if people rely on them because you documented them by example, you may have shipped a de facto API anyway.
+The key phrase is *public API*. Private helpers, undocumented behaviour, and accidental quirks are not automatically part of the contract. But if you documented them by example and people now rely on them, you have shipped a de facto API anyway.
 
 ## 2. What "Breaking" Usually Means
 
@@ -44,7 +44,7 @@ Not automatically breaking:
 - Adding optional parameters with safe defaults
 - Fixing undefined behaviour you never promised
 
-When unsure, ask: "Would a careful user have to change their code or scripts?" If yes, bump major — or deprecate first.
+When unsure, ask: "Would a careful user have to change their code or scripts?" If yes, bump major, or deprecate first.
 
 ## 3. Life Before 1.0.0
 
@@ -98,4 +98,4 @@ Publishers should:
 
 ## 7. Closing Thoughts
 
-SemVer is communication. The number tells users how scared they should be to upgrade. Make that signal boringly reliable, and your project becomes easier to depend on — which is one of the highest compliments in open source.
+SemVer is communication. The number tells users how scared they should be to upgrade. Make that signal boringly reliable and your project becomes easy to depend on, which is one of the highest compliments in open source.

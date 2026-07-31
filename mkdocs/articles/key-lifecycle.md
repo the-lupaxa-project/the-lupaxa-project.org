@@ -4,8 +4,8 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical key lifecycle for small security tools — generate, distribute,
-  rotate, revoke, and retire cryptographic keys and certificates without drama.
+description: The key lifecycle for small security tools. Generate, distribute, rotate,
+  revoke, and retire cryptographic keys and certificates without drama.
 tags:
 - Security
 - Engineering
@@ -13,7 +13,7 @@ tags:
 
 # Key Lifecycle: From Birth to Retirement
 
-A key that never rotates is a key that eventually leaks in slow motion. Lifecycle thinking — generate, use, rotate, revoke, destroy — turns cryptography from a one-off setup step into an operable system.
+A key that never rotates is a key that eventually leaks in slow motion. Lifecycle thinking (generate, use, rotate, revoke, destroy) turns cryptography from a one-off setup step into something you can actually operate.
 
 This applies to TLS keys, client certificates, signing keys, and API-adjacent secrets that behave like keys.
 
@@ -36,7 +36,7 @@ Only the processes and people that need a private key should have it. Prefer:
 
 Distribution is where most "secure generation" dies.
 
-## 3. Rotate on a Schedule — and on Events
+## 3. Rotate on a Schedule, and on Events
 
 Rotate when:
 
@@ -70,4 +70,4 @@ Humans forget anniversaries. Automate expiry alerts, renewal jobs, and "cert exp
 
 ## 7. Closing Thoughts
 
-Cryptography fails operationally more often than mathematically. Own the lifecycle — generate carefully, distribute narrowly, rotate routinely, revoke when trust ends — and your tools stay trustworthy as people and machines change.
+Cryptography fails operationally more often than mathematically. Own the lifecycle: generate carefully, distribute narrowly, rotate routinely, revoke when trust ends. Do that and your tools stay trustworthy as the people and machines around them change.

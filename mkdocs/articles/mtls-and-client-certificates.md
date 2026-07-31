@@ -4,8 +4,8 @@ published: true
 hide:
 - navigation
 - toc
-description: A practical introduction to mutual TLS and client certificates — how
-  they differ from ordinary HTTPS, when they help, and how small tools should issue
+description: Mutual TLS and client certificates in practice. How they differ from
+  ordinary HTTPS, when they are worth the trouble, and how small tools should issue
   and verify them.
 tags:
 - Security
@@ -14,7 +14,7 @@ tags:
 
 # mTLS and Client Certificates: Proving Both Sides
 
-Ordinary HTTPS proves the server's identity to the client. **Mutual TLS (mTLS)** also proves the client's identity to the server using a client certificate. That is powerful for machine-to-machine links, internal APIs, and agent-style tools — and easy to misconfigure.
+Ordinary HTTPS proves the server's identity to the client. **Mutual TLS (mTLS)** also proves the client's identity to the server using a client certificate. That is powerful for machine-to-machine links, internal APIs, and agent-style tools. It is also easy to misconfigure.
 
 ## 1. Server TLS Versus Mutual TLS
 
@@ -75,4 +75,4 @@ mTLS authenticates the channel identity. Authorisation (roles, scopes) may still
 
 ## 7. Closing Thoughts
 
-mTLS is strong authentication for systems you operate. Issue carefully, verify strictly, renew on purpose — and use it where machines talk to machines, not where a password reset email would have been kinder.
+mTLS is strong authentication for systems you operate. Issue carefully, verify strictly, renew on purpose. Use it where machines talk to machines, not where a password reset email would have been kinder.

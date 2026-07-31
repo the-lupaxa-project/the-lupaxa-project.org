@@ -4,93 +4,88 @@ published: true
 hide:
 - navigation
 - toc
-description: Learn about Static Application Security Testing (SAST) and Dynamic Application
-  Security Testing (DAST) in software development. Understand how these tools help
-  identify and mitigate vulnerabilities, improve security, and ensure regulatory compliance.
+description: What static and dynamic application security testing each catch, why
+  they find different bugs, and how to run SAST in CI and DAST against a deployed
+  environment without drowning the team in findings.
 tags:
 - Security
 - Engineering
 ---
 
-# SAST and DAST: Essential Security Testing Practices
+# SAST and DAST: Two Views of the Same Application
 
-In an era where cybersecurity threats are increasingly common, writing secure software has become a critical concern for organisations across all industries. Vulnerabilities in software can lead to data breaches, financial loss, and damage to a company's reputation. Two essential practices for finding those issues are Static Application Security Testing (SAST) and Dynamic Application Security Testing (DAST). These complementary testing methodologies help identify and mitigate security risks during the software development lifecycle.
+Two scanners, two vantage points. Static Application Security Testing (SAST) reads your code without running it. Dynamic Application Security Testing (DAST) attacks your application without reading it. Neither finds everything the other does, which is why the usual answer is both.
 
-## 1. What is SAST?
+Vulnerabilities that survive to production cost you data, money, and reputation. These two practices are how you find them earlier than that.
 
-Static Application Security Testing (SAST) is a white-box testing method that analyses source code, bytecode, or binary code for security vulnerabilities without executing the application. SAST tools examine the code structure and logic to identify issues such as potential vulnerabilities, code quality problems, and deviations from secure coding practices. Because SAST operates on the code itself, it can be integrated early in the development process—often as soon as developers write new code or modify existing code.
+## 1. SAST: Reading the Code
 
-### How SAST Works
+SAST is a white-box method. It analyses source code, bytecode, or compiled binaries without executing the application, examining structure and logic for vulnerabilities, code quality problems, and departures from secure coding practice. Because it only needs the code, it can run as soon as someone writes or edits a line.
 
-SAST tools scan the codebase and look for specific patterns and weaknesses, such as:
+### What It Looks For
 
-- **SQL Injection:** Checks for unsanitized inputs that may allow attackers to manipulate SQL queries.
-- **Cross-Site Scripting (XSS):** Identifies vulnerabilities that could allow attackers to inject malicious scripts into web applications.
-- **Buffer Overflows:** Looks for conditions where the program writes data beyond the allocated buffer memory, potentially leading to crashes or exploitation.
-- **Hardcoded Secrets:** Flags sensitive data such as passwords, API keys, or tokens that are hardcoded into the code.
+SAST tools scan the codebase for known-bad patterns:
 
-SAST tools produce a report highlighting the detected vulnerabilities, allowing developers to address these issues before the application is compiled and tested in a live environment. By catching issues early, SAST reduces the risk of security vulnerabilities reaching production.
+- **SQL injection:** unsanitised input reaching a query where an attacker could rewrite it.
+- **Cross-site scripting:** paths that let attacker-controlled script into a web page.
+- **Buffer overflows:** writes past the end of an allocated buffer, which crash at best and get exploited at worst.
+- **Hardcoded secrets:** passwords, API keys, and tokens committed into the source.
 
-## 2. What is DAST?
+The output is a report of what it found, before the application is compiled or tested anywhere live. That is the appeal: the vulnerability never reaches an environment where somebody could use it.
 
-Dynamic Application Security Testing (DAST) is a black-box testing method that analyses a running application to identify security vulnerabilities. Unlike SAST, which examines the code itself, DAST tests the application from the outside, simulating attacks to uncover potential weaknesses in the application’s runtime environment. DAST is typically used later in the development lifecycle, once the application is deployed to a testing environment or staging server.
+## 2. DAST: Attacking the Running Application
 
-### How DAST Works
+DAST is a black-box method. It ignores the code and probes a running application from the outside, the way a user or an attacker would, watching how it responds. That means it needs somewhere deployed, usually a test environment or staging server, which puts it later in the lifecycle than SAST.
 
-DAST tools interact with the application as a user or attacker might, probing for vulnerabilities in real-time. They look for issues such as:
+### What It Looks For
 
-- **SQL Injection and XSS:** Similar to SAST, DAST tools can identify SQL Injection and XSS vulnerabilities by submitting malicious inputs to the application and analysing its responses.
-- **Authentication and Authorization Flaws:** DAST tools check for weaknesses in the application's authentication mechanisms, such as improper session management or weak password policies.
-- **Insecure Configuration:** These tools identify misconfigurations, such as exposed error messages, that might reveal sensitive information to attackers.
-- **API Vulnerabilities:** DAST tools can test APIs for potential security weaknesses, such as excessive data exposure or lack of input validation.
+DAST tools interact with the live application and check what comes back:
 
-DAST tools provide a report with detailed information about the vulnerabilities identified, allowing developers to fix these issues before the application is released to production.
+- **SQL injection and XSS:** the same classes SAST hunts for, found from the other side by submitting malicious input and analysing the response.
+- **Authentication and authorisation flaws:** weak session management, weak password policy, and the rest of the login surface.
+- **Insecure configuration:** misconfigurations such as error messages that hand attackers detail about the system.
+- **API weaknesses:** excessive data exposure, missing input validation, and similar gaps in endpoints.
 
-## 3. The Importance of SAST and DAST in Secure Software Development
+You get a report in the same shape as SAST's, detailed enough to fix things, arriving before release rather than before build.
 
-Both SAST and DAST are critical for a comprehensive approach to application security. Here's why they matter:
+## 3. Why You Want Both
 
-### Identifying Vulnerabilities at Different Stages
+### They Catch Different Things at Different Times
 
-- **SAST** allows developers to catch security issues early in the development process, when they are often less expensive and easier to fix. By scanning the codebase directly, SAST tools can identify vulnerabilities before the application is built or deployed.
-- **DAST** complements SAST by testing the application in its runtime environment, identifying vulnerabilities that may only surface during execution. It simulates real-world attack scenarios and helps find issues that might be missed during code analysis, such as configuration errors or runtime behaviors.
+SAST scans the codebase directly and catches issues early, when they are cheapest and easiest to fix, before anything is built or deployed. DAST tests the application in its runtime environment and catches what only appears during execution: configuration errors, runtime behaviours, and the problems static analysis cannot see. Between them you cover the code level and the operational level.
 
-Together, SAST and DAST provide a more thorough examination of the application's security by identifying vulnerabilities at both the code level and the operational level.
+### Early Fixes Cost Less
 
-### Reducing the Cost of Fixing Security Issues
+A flaw fixed during development is far cheaper than the same flaw fixed after deployment, and the gap widens at every stage the bug survives. Putting both scanners in the development process is how you resolve things before production instead of paying for them afterwards.
 
-Fixing vulnerabilities early in the development lifecycle is significantly less expensive than addressing them after the application is deployed. Studies have shown that the cost of fixing security flaws increases exponentially as they move through the development stages. By integrating SAST and DAST into the development process, organizations can catch and resolve vulnerabilities before they reach production, saving time and resources.
+### Compliance Wants Evidence
 
-### Ensuring Compliance with Security Standards
+Plenty of industries mandate secure development practice. SAST and DAST help you meet standards such as the `OWASP Top Ten`, `PCI-DSS`, and `ISO/IEC 27001` by identifying and addressing the risks those standards care about, and by giving you something concrete to show.
 
-Many industries have regulatory requirements and security standards that mandate secure software development practices. SAST and DAST help organizations comply with standards such as the `OWASP Top Ten`, `PCI-DSS`, and `ISO/IEC 27001` by identifying and addressing security risks. By incorporating SAST and DAST into their security strategy, organizations can demonstrate their commitment to security best practices and regulatory compliance.
+### Attackers Are Looking Anyway
 
-### Protecting Against Cyber Threats
+New security risks appear regularly and attackers keep scanning for them. Finding your own problems first is the cheap version of that conversation. It protects sensitive data, customer trust, and reputation, none of which recover quickly.
 
-Cyber attackers are constantly looking for vulnerabilities to exploit, and new security risks emerge regularly. SAST and DAST allow organizations to proactively identify and address potential threats, reducing the likelihood of a successful cyberattack. By implementing these testing methods, organizations can protect sensitive data, preserve customer trust, and safeguard their reputation.
+## 4. Wiring Them Into the Pipeline
 
-## 4. Integrating SAST and DAST into the Development Lifecycle
+### SAST Belongs in CI
 
-To maximize the effectiveness of SAST and DAST, it's important to integrate them into the development lifecycle as part of a comprehensive security strategy. Here's how to effectively incorporate these tools:
+Run SAST automatically whenever a developer commits, so code is checked continuously rather than during an occasional security push. `SonarQube`, `Checkmarx`, and `Fortify` all slot into a CI/CD pipeline, giving developers immediate feedback and keeping flawed code out of the main branch.
 
-### Incorporating SAST in the CI/CD Pipeline
+### DAST Belongs in a Deployed Environment
 
-SAST can be integrated into the Continuous Integration/Continuous Deployment (CI/CD) pipeline, allowing code to be scanned automatically whenever a developer commits changes. This ensures that code is continuously checked for security vulnerabilities throughout the development process. Tools like `SonarQube`, `Checkmarx`, and `Fortify` can be configured to run as part of the CI/CD pipeline, providing immediate feedback to developers and preventing code with security flaws from being merged.
+DAST needs a running application, so point it at a test or staging environment where the app is fully deployed and you can attack it without consequences. `OWASP ZAP`, `Burp Suite`, and `Acunetix` are the usual choices. Run them as a pipeline stage or on a schedule, but run them before the release goes out.
 
-### Using DAST in the Testing Environment
+### Together, Not Instead
 
-DAST tools should be run in a testing or staging environment where the application is fully deployed and can be tested in a controlled environment. Tools like `OWASP ZAP`, `Burp Suite`, and `Acunetix` are popular DAST solutions that can simulate attacks on the application, identify vulnerabilities, and provide detailed reports. By running DAST tests as part of the CI/CD pipeline or as a scheduled task, organizations can ensure that security testing is consistently performed before the application goes live.
+SAST works from the inside on the code. DAST works from the outside on the running system. Combined they find a broader range of vulnerabilities than either manages alone, which is the whole argument for running both.
 
-### Combining SAST and DAST for Comprehensive Security Coverage
+### Shift Left, and Keep Going
 
-Combining SAST and DAST provides a holistic approach to application security. While SAST focuses on identifying vulnerabilities in the code, DAST examines the application from an external perspective, finding issues that may arise in the runtime environment. Together, they offer comprehensive security coverage and help to identify a broader range of vulnerabilities than either method could achieve alone.
-
-### Shifting Security Left with DevSecOps
-
-DevSecOps is a modern approach that integrates security practices into the DevOps process, promoting a *"shift-left"* strategy where security testing occurs early and often. By incorporating SAST and DAST into the DevSecOps pipeline, organizations can ensure that security is a core part of the development process. This not only reduces the risk of security issues but also fosters a culture of proactive security within the development team.
+DevSecOps builds security into the DevOps process rather than bolting it on at the end, the *"shift-left"* idea of testing early and often. Putting SAST and DAST into that pipeline makes security part of how the team works instead of a gate they resent, and a team that expects security feedback writes safer code before the scanner asks.
 
 ## Closing Thoughts
 
-SAST and DAST are powerful tools that play a crucial role in securing applications. By identifying vulnerabilities at both the code and operational levels, they provide comprehensive security coverage and help organizations protect against potential threats. Integrating SAST and DAST into the development lifecycle allows teams to catch vulnerabilities early, reduce the cost of fixing security issues, and comply with industry standards.
+SAST and DAST answer different questions. Is this code dangerous? Is this deployment attackable? Run both and you cover vulnerabilities at the code level and the operational level, early enough that fixing them stays cheap and quiet.
 
-In today's threat landscape, proactive security practices are essential for building resilient software. By leveraging SAST and DAST in tandem, organizations can enhance their security posture, protect sensitive data, and ensure the delivery of secure, high-quality software.
+The pitch is not that scanners make you secure. It is that they shrink your list of unknowns on your schedule, before somebody else goes looking.

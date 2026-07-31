@@ -4,43 +4,40 @@ published: true
 hide:
 - navigation
 - toc
-description: Learn how to use GitHub Actions for CI/CD, with a step-by-step guide
-  on automating builds, tests, and deployments, complete with YAML configurations
-  and best practices.
+description: Build a working CI/CD pipeline with GitHub Actions, from a first build-and-test
+  workflow to deploying an artefact, with the YAML to copy and the habits that keep
+  workflows fast and safe.
 tags:
 - CI/CD
 - GitHub
 ---
 
-# Using GitHub Actions for CI/CD: A Comprehensive Guide
+# GitHub Actions: CI/CD Without Leaving Your Repository
 
-GitHub Actions have quickly become a popular choice for automating CI/CD workflows directly within GitHub. With GitHub Actions, developers can automate the build, test, and deployment processes without needing an external CI/CD tool, making it a convenient and powerful option for streamlining software delivery. This article will explore how GitHub Actions can be used for CI/CD, with step-by-step examples, YAML configurations, and directory structures.
+GitHub Actions puts your pipeline next to your code. No separate CI server, no second set of credentials to manage, no tab-switching to find out why the build went red. You commit a YAML file and GitHub runs it.
 
-## 1. What are GitHub Actions?
+This walkthrough builds up a pipeline in stages: test on every push, then deploy, then put a human in front of production.
 
-GitHub Actions are a workflow automation tool integrated directly into GitHub. It allows developers to create custom workflows that respond to GitHub events, such as pushes, pull requests, or issues. For CI/CD, GitHub Actions enables you to automate the build, test, and deployment processes each time code changes are pushed to the repository.
+## 1. What GitHub Actions Actually Is
 
-Key features include:
+It is an event-driven runner attached to your repository. Something happens (a push, a pull request, a schedule, a manual click) and GitHub executes the jobs you defined.
 
-- **Event-driven workflows:** Workflows can be triggered by events like code pushes, pull requests, issue creation, or on a schedule.
-- **Customizable workflows:** YAML-based configuration allows for easy customization of workflows to fit specific project needs.
-- **Pre-built actions and reusable workflows:** GitHub provides a marketplace with pre-built actions that can be reused, reducing the time and effort required to create workflows from scratch.
-- **Integrated with GitHub ecosystem:** Since GitHub Actions is built into GitHub, it integrates seamlessly with your repository, making it easy to set up and manage CI/CD.
+The parts worth knowing:
 
-## 2. Setting Up CI/CD with GitHub Actions
+- **Events** trigger workflows: pushes, pull requests, issue activity, cron schedules.
+- **YAML** defines everything, so your pipeline is reviewable and versioned like the rest of the repo.
+- **Marketplace actions** cover the boring steps (checkout, language setup, caching) so you are not scripting them yourself.
+- **Repository integration** means secrets, environments, and status checks are already where you expect them.
 
-Let's walk through setting up a simple CI/CD pipeline using GitHub Actions. For this example, we'll cover:
+## 2. Building a Pipeline
 
-- Directory structure
-- Writing a basic GitHub Actions YAML configuration
-- Running automated tests
-- Deploying to a staging environment
+Four things to get right: where the files live, a workflow that installs and tests on every push, a deploy step, and a way to hold that deploy back until someone approves it.
 
 ### Directory Structure
 
-When setting up GitHub Actions, workflows are defined within the `.github/workflows` directory of your repository. This directory contains YAML files that specify the workflows you want to create.
+Workflows live in `.github/workflows`. Every YAML file in that directory is a workflow GitHub will consider running.
 
-Here's an example directory structure for a Node.js application:
+A Node.js project might look like this:
 
 ```bash
 my-project/
@@ -59,13 +56,11 @@ my-project/
 └── README.md
 ```
 
-The file `.github/workflows/ci-cd.yml` is where we'll define our GitHub Actions workflow.
+Everything below happens in `.github/workflows/ci-cd.yml`.
 
-### Writing a Basic CI/CD Workflow
+### A Workflow That Installs, Tests, and Builds
 
-Let's start with a simple CI/CD workflow that installs dependencies, runs tests, and builds the project each time code is pushed to the `master` branch.
-
-Create a YAML file named `ci-cd.yml` within the `.github/workflows` directory and add the following configuration:
+Start with the pipeline you will actually use every day: on each push and pull request to `main`, install dependencies, run the tests, build the project.
 
 ```yaml
 name: CI/CD Pipeline
@@ -101,32 +96,32 @@ jobs:
         run: npm run build
 ```
 
-### Explanation of the Workflow Steps:
+### Reading the Workflow
 
 <!-- markdownlint-disable MD030 -->
-- **name:** Gives the workflow a name for easy identification.
-- **on:** Specifies the events that trigger this workflow. Here, the workflow runs on `push` and `pull_request` events targeting the `master` branch.
-- **jobs:** Defines the jobs to run within the workflow.
-  - **build:** Defines a job called build that runs on an Ubuntu virtual machine.
-  - **steps:** Defines the individual steps for this job:
-    - **Checkout code:** Uses the `actions/checkout@v3` action to pull the repository code.
-    - **Set up Node.js:** Uses `actions/setup-node@v3` to set up a Node.js environment with the specified version (Node.js 14 in this case).
-    - **Install dependencies:** Installs project dependencies with `npm install`.
-    - **Run tests:** Runs tests using the `npm test` command.
-    - **Build application:** Builds the application with `npm run build`.
+- **name:** what shows up in the Actions tab.
+- **on:** the triggers. Here, pushes and pull requests aimed at `main`.
+- **jobs:** the work itself.
+  - **build:** one job, running on a GitHub-hosted Ubuntu machine.
+  - **steps:** run in order, and the job stops at the first failure:
+    - **Checkout code:** `actions/checkout@v3` fetches the repository into the runner.
+    - **Set up Node.js:** `actions/setup-node@v3` installs the version you pin (Node.js 14 here).
+    - **Install dependencies:** `npm install`.
+    - **Run tests:** `npm test`.
+    - **Build application:** `npm run build`.
 <!-- markdownlint-enable MD030 -->
 
-This basic workflow provides a foundational CI pipeline. Every time code is pushed to the main branch, the workflow installs dependencies, runs tests, and builds the application, providing immediate feedback if any step fails.
+That is a complete CI pipeline. Push to `main` or open a pull request and you find out within minutes whether you broke something, which is the whole point.
 
-## 3. Adding Deployment to the Workflow
+## 3. Adding Deployment
 
-In this section, we'll extend the workflow to include deployment. In this example, we'll demonstrate deployment to an S3 bucket, commonly used to host static files.
+Next, ship the build. This example syncs a static site to an S3 bucket.
 
-### Extending the YAML for Deployment:
+### Extending the Workflow
 
-We'll assume that we have AWS credentials set up as GitHub repository secrets (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`), as well as a `BUCKET_NAME` for deployment.
+Store the AWS credentials as repository secrets (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`) along with `BUCKET_NAME`. Never put them in the YAML.
 
-Update the `ci-cd.yml` file as follows:
+The updated `ci-cd.yml`:
 
 ```yaml
 name: CI/CD Pipeline
@@ -168,19 +163,17 @@ jobs:
           aws s3 sync ./build s3://$BUCKET_NAME --region $AWS_REGION
 ```
 
-### Explanation of Deployment Step:
+### The Deploy Step
 
-- **if: success():** This ensures that the deployment step runs only if the previous steps were successful.
-- **env:** This block sets up environment variables for AWS credentials using secrets stored in the GitHub repository.
-- **run:** Uses the AWS CLI to sync the contents of the ./build directory with the specified S3 bucket.
+- **if: success():** only deploy when the earlier steps passed. A failed test should never reach the bucket.
+- **env:** pulls the credentials from repository secrets into the step's environment.
+- **run:** the AWS CLI syncs `./build` to the bucket.
 
-To set up your AWS credentials and bucket name as secrets, navigate to your GitHub repository, go to `Settings > Secrets > Actions`, and add each secret ( `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, `BUCKET_NAME`).
+To add the secrets, go to `Settings > Secrets > Actions` in the repository and add `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, and `BUCKET_NAME`.
 
-## 4. Adding a Manual Approval Step for Deployment
+## 4. Putting a Human in Front of Production
 
-For teams that want a layer of control before deploying to production, GitHub Actions supports manual approval steps using the `workflow_dispatch` event.
-
-Here's an example of how to add a manual approval step:
+Automatic deploys on every push are fine for staging. For production, most teams want someone to press the button. Splitting build and deploy into separate jobs and gating the deploy on `workflow_dispatch` gets you that:
 
 ```yaml
 name: CI/CD Pipeline with Manual Deployment Approval
@@ -227,22 +220,21 @@ jobs:
           aws s3 sync ./build s3://$BUCKET_NAME --region $AWS_REGION
 ```
 
-### Explanation of Manual Approval Step:
+### The Gate
 
-- **workflow_dispatch:** Allows you to manually trigger this workflow from the GitHub Actions tab in your repository.
-- **f: github.event_name == 'workflow_dispatch':** Ensures that the deployment step is only triggered if the workflow was manually started. This condition provides an additional layer of control, so code is not automatically deployed with every push.
+- **workflow_dispatch:** adds a "Run workflow" button in the Actions tab.
+- **needs: build:** the deploy job waits for a green build.
+- **if: github.event_name == 'workflow_dispatch':** the deploy only runs when a person started the workflow. Ordinary pushes still build and test, they just stop short of shipping.
 
-## 5. Best Practices for Using GitHub Actions in CI/CD
+## 5. Habits Worth Keeping
 
-When using GitHub Actions for CI/CD, consider the following best practices:
-
-- **Use Secrets for Sensitive Data:** Always store sensitive data, such as API keys and AWS credentials, as secrets in GitHub.
-- **Cache Dependencies:** To speed up workflows, use the `actions/cache@v3` action to cache dependencies, which will reduce installation time for subsequent runs.
-- **Limit Permissions:** GitHub Actions runs with elevated permissions. Limit these permissions where possible to reduce the risk of accidental or malicious changes.
-- **Monitor and Review:** Regularly monitor workflows and review logs for successful and failed runs. Analysing these logs can help identify potential issues and optimise workflows.
+- **Secrets stay secrets.** API keys and cloud credentials belong in repository or environment secrets, never in the YAML or a committed `.env`.
+- **Cache your dependencies.** `actions/cache@v3` cuts install time on repeat runs, which is usually the cheapest speed win available.
+- **Trim permissions.** Workflow tokens are generous by default. Narrow them to what the job needs so a compromised action cannot rewrite your repository.
+- **Read the logs.** Check both failures and successes now and then. Slow steps and flaky tests show up there long before anyone complains.
 
 ## Closing Thoughts
 
-GitHub Actions provides a powerful, flexible platform for automating CI/CD directly within GitHub. By leveraging GitHub Actions, teams can streamline the development lifecycle, from code integration and testing to deployment. With easy-to-configure YAML files, seamless integration with the GitHub ecosystem, and support for various environments, GitHub Actions is a valuable tool for any software development team.
+The value of GitHub Actions is proximity: the pipeline lives with the code, changes through pull requests, and reports back in the same place you already work.
 
-This guide has covered the basics of setting up a CI/CD pipeline with GitHub Actions, including configurations for builds, tests, and deployments. With a solid understanding of GitHub Actions, you can customize and scale your workflows to meet the unique demands of your projects and bring greater efficiency to your development process.
+Start with the build-and-test workflow above. Add deployment when the tests are worth trusting, add a manual gate when a mistake would reach real users, and grow from there. A pipeline you can read in one screen beats an elaborate one nobody understands.

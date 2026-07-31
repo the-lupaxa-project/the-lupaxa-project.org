@@ -183,7 +183,7 @@ def rebuild_articles_index(docs_dir: Path) -> int:
           <div class="filter-panel-select">
             <label for="article-category">Tag</label>
             <select id="article-category" data-article-category>
-              <option value="">All tags</option>
+              <option value="">All Tags</option>
             </select>
           </div>
           <div class="filter-panel-actions">

@@ -4,9 +4,8 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical guidance for encrypting secrets in Git repositories — when
-  git-crypt and similar tools help, key management pitfalls, and safer patterns for
-  small teams.
+description: Encrypting secrets inside Git repositories. When git-crypt and similar
+  tools help, where key management goes wrong, and safer patterns for small teams.
 tags:
 - Security
 - Git
@@ -16,7 +15,7 @@ tags:
 
 Git is excellent history and a terrible place for plaintext secrets. Encryption-at-rest tools such as `git-crypt` let you store sensitive files in a repository while keeping the blobs unreadable to anyone without a key. Used well, they reduce accidental leaks. Used carelessly, they create a false sense of safety.
 
-This article is for small teams shipping tools that need shared encrypted config — without building a full enterprise vault on day one.
+This is for small teams shipping tools that need shared encrypted config, without standing up a full enterprise vault on day one.
 
 ## 1. What Problem This Solves
 
@@ -35,7 +34,7 @@ Encrypted-in-git is not:
 - A substitute for proper secret stores in production
 - Protection against a compromised developer laptop that has the key
 - Safe if you commit the key beside the ciphertext
-- A fix for secrets already in history — rotate those
+- A fix for secrets already in history, which need rotating instead
 
 If the decrypt key is world-readable in CI logs, you encrypted nothing that matters.
 

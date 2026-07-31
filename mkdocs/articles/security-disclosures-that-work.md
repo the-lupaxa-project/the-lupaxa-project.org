@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical security disclosure for small open-source projects — SECURITY.md,
+description: Practical security disclosure for small open-source projects. SECURITY.md,
   private reporting, triage, credit, and promises maintainers can actually keep.
 tags:
 - Security
@@ -13,7 +13,7 @@ tags:
 
 # Security Disclosures That Work: Reporting Bugs Without the Chaos
 
-Every project that ships code will eventually hear about a vulnerability — or wish it had. A workable disclosure process is not a corporate programme. It is a clear door for good-faith reporters and a calm path for maintainers who still have day jobs.
+Every project that ships code will eventually hear about a vulnerability, or wish it had. A workable disclosure process is not a corporate programme. It is a clear door for good-faith reporters and a calm path for maintainers who still have day jobs.
 
 This article is for small open-source tools and libraries that want to do the right thing without promising a 24/7 SOC.
 
@@ -72,7 +72,7 @@ When a report arrives:
 3. Decide patch, mitigate, or decline with reasons
 4. Coordinate disclosure timing if the issue is serious
 
-Out-of-scope reports deserve a short polite reply — not silence.
+Out-of-scope reports deserve a short polite reply, not silence.
 
 ## 6. Fix, Release, Then Talk
 

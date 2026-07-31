@@ -4,8 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Hardening CI/CD credentials — short-lived tokens, OIDC, protected environments,
-  and GitHub Actions patterns that avoid long-lived secrets in pipelines.
+description: Hardening CI/CD credentials. Short-lived tokens, OIDC, protected
+  environments, and the GitHub Actions patterns that keep long-lived secrets out of
+  your pipelines.
 tags:
 - Security
 - CI/CD
@@ -17,7 +18,7 @@ CI is a privileged robot with a keyboard. If it holds long-lived cloud keys or c
 
 ## 1. Prefer Short-Lived Identity
 
-Where platforms allow it, use **OIDC / federated identity** so jobs receive temporary tokens instead of stored static keys. GitHub Actions → cloud roles is the common pattern.
+Where platforms allow it, use **OIDC / federated identity** so jobs receive temporary tokens instead of stored static keys. An Actions job assuming a cloud role is the common pattern.
 
 Static secrets in repository settings should be the exception you can justify.
 
@@ -45,7 +46,7 @@ Org-wide admin PATs in Actions are an incident waiting for a calendar date.
 
 Require passing checks before deploy. Restrict who can approve production environments. Prevent `pull_request_target` foot-guns that expose secrets to untrusted code.
 
-Treat workflow files as security-sensitive code — because they are.
+Treat workflow files as security-sensitive code, because they are.
 
 ## 5. Log Access, Not Secrets
 
@@ -57,4 +58,4 @@ List CI secrets quarterly. Delete orphans. Confirm OIDC trust policies still mat
 
 ## 7. Closing Thoughts
 
-CI least privilege is boring hygiene with outsized payoff: short-lived identity, split trust boundaries, tiny scopes, protected publish paths. Make the pipeline earn every credential — then take it back when the job ends.
+CI least privilege is boring hygiene with outsized payoff: short-lived identity, split trust boundaries, tiny scopes, protected publish paths. Make the pipeline earn every credential, then take it back when the job ends.

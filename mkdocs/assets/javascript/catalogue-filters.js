@@ -348,7 +348,6 @@
 
     const categoryOptions = new Map();
     const organisationOptions = new Map();
-    const statusOptions = new Map();
 
     const cardData = cards.map((card) => {
       const categories = getCatalogueCategories(card);
@@ -383,10 +382,6 @@
         organisationOptions.set(optionValue, optionLabel);
       }
 
-      if (statusSelect && statusValue && statusLabel) {
-        statusOptions.set(statusValue, statusLabel);
-      }
-
       return {
         element: card,
         categories: categories.values,
@@ -415,9 +410,8 @@
       );
     }
 
-    if (statusSelect) {
-      addCatalogueOptions(statusSelect, statusOptions);
-    }
+    // Status options are fixed in the filter panel markup (all presets +
+    // Stable), not derived from banners present on the page.
 
     /**
      * Select a URL-supplied filter value.
@@ -532,7 +526,9 @@
 
         const matchesStatus =
           filters.selectedStatus === "" ||
-          card.status === filters.selectedStatus;
+          (filters.selectedStatus === "stable"
+            ? card.status === ""
+            : card.status === filters.selectedStatus);
 
         const isVisible =
           matchesSearch &&

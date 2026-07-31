@@ -18,7 +18,7 @@ hide:
   <div class="filter-panel-select">
     <label for="article-category">Tag</label>
     <select id="article-category" data-article-category>
-      <option value="">All tags</option>
+      <option value="">All Tags</option>
     </select>
   </div>
   <div class="filter-panel-actions">
@@ -47,9 +47,9 @@ hide:
 
     ![Article](assets/images/articles/certificates-without-the-jargon.webp){ class="catalogue-logo" }
 
-    A plain-language guide to X.509 certificates for developers — keys,
-    CSRs, self-signed vs CA-signed, trust stores, and what actually matters
-    when generating certs for tools and tests.
+    X.509 certificates in plain language. Keys, CSRs, self-signed versus CA-
+    signed, trust stores, and what actually matters when you generate certs
+    for tools and tests.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Tools</span>
@@ -60,9 +60,9 @@ hide:
 
     ![Article](assets/images/articles/cli-design.webp){ class="catalogue-logo" }
 
-    Practical CLI design for open-source tools — flags and arguments, exit
+    Practical CLI design for open-source tools. Flags and arguments, exit
     codes, stdout versus stderr, helpful errors, and interfaces that feel
-    good in scripts and human hands.
+    good in scripts and in human hands.
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Tools</span>
@@ -73,9 +73,9 @@ hide:
 
     ![Article](assets/images/articles/coding-standards.webp){ class="catalogue-logo" }
 
-    Explore the importance of coding standards for consistent, maintainable
-    code and discover how automation can simplify enforcement, ensuring
-    quality in software development.
+    What coding standards actually cover, why they save review time, and how
+    to enforce them with linters, formatters, CI checks, editor settings,
+    and hooks instead of nagging.
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Standards</span>
@@ -86,7 +86,7 @@ hide:
 
     ![Article](assets/images/articles/config-design.webp){ class="catalogue-logo" }
 
-    Practical configuration design for tools — flags, environment variables,
+    Practical configuration design for tools. Flags, environment variables,
     files, precedence, secrets, and defaults that stay understandable as
     projects grow.
 
@@ -99,9 +99,9 @@ hide:
 
     ![Article](assets/images/articles/containers-for-cli-tools.webp){ class="catalogue-logo" }
 
-    When and how to ship CLI tools as containers — pinning base images, non-
-    root users, small attack surface, and avoiding container anti-patterns
-    for simple utilities.
+    When and how to ship a CLI tool as a container. Pinning base images,
+    running as non-root, keeping the attack surface small, and avoiding
+    container anti-patterns for simple utilities.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Tools</span>
@@ -112,9 +112,9 @@ hide:
 
     ![Article](assets/images/articles/contributing-without-the-drama.webp){ class="catalogue-logo" }
 
-    Practical guidance for opening useful issues and pull requests in open-
-    source projects — small diffs, clear context, good first issues, and
-    knowing when not to bikeshed.
+    How to open issues and pull requests people actually want to merge.
+    Small diffs, clear context, real reproduction steps, and knowing when an
+    argument is not worth having.
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Community</span>
@@ -125,9 +125,9 @@ hide:
 
     ![Article](assets/images/articles/cybersecurity-and-chess.webp){ class="catalogue-logo" }
 
-    Discover the strategic parallels between cybersecurity and chess, where
-    anticipation, adaptation, and calculated risks define success in both
-    digital and game-based battlefields.
+    The strategic parallels between cybersecurity and chess. Reading your
+    opponent, adapting when the board changes, keeping tactics in service of
+    strategy, and taking risks you have actually priced.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Strategy</span>
@@ -138,8 +138,8 @@ hide:
 
     ![Article](assets/images/articles/dependency-hygiene.webp){ class="catalogue-logo" }
 
-    Practical dependency hygiene for open-source and small teams — pinning,
-    lockfiles, audits, supply-chain basics, and keeping your software supply
+    Practical dependency hygiene for small teams and open-source projects.
+    Pinning, lockfiles, audits, supply-chain basics, and keeping your supply
     line trustworthy without enterprise ceremony.
 
     <span class="catalogue-category">Security</span>
@@ -151,9 +151,9 @@ hide:
 
     ![Article](assets/images/articles/deprecation-without-chaos.webp){ class="catalogue-logo" }
 
-    How to deprecate APIs and flags calmly — warnings, timelines, SemVer,
-    migration paths, and removing old behaviour without surprising your
-    users.
+    How to retire APIs and flags without ambushing anyone. Warnings people
+    actually see, version gates they can plan around, cheap migrations, and
+    removals that happen on purpose.
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Engineering</span>
@@ -164,7 +164,7 @@ hide:
 
     ![Article](assets/images/articles/docs-that-dont-rot.webp){ class="catalogue-logo" }
 
-    How to keep project documentation alive — examples as tests, docs sites
+    How to keep project documentation alive. Examples as tests, docs sites
     that ship with releases, screenshots that stay honest, and habits that
     stop docs from quietly lying.
 
@@ -177,9 +177,9 @@ hide:
 
     ![Article](assets/images/articles/encryption-at-rest-for-repos.webp){ class="catalogue-logo" }
 
-    Practical guidance for encrypting secrets in Git repositories — when
-    git-crypt and similar tools help, key management pitfalls, and safer
-    patterns for small teams.
+    Encrypting secrets inside Git repositories. When git-crypt and similar
+    tools help, where key management goes wrong, and safer patterns for
+    small teams.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Git</span>
@@ -190,7 +190,7 @@ hide:
 
     ![Article](assets/images/articles/error-handling-people-can-use.webp){ class="catalogue-logo" }
 
-    Practical error handling for CLIs and libraries — clear messages, exit
+    Practical error handling for CLIs and libraries. Clear messages, exit
     codes, retries, typed failures, and when to crash versus recover.
 
     <span class="catalogue-category">Engineering</span>
@@ -202,7 +202,7 @@ hide:
 
     ![Article](assets/images/articles/git-workflows-for-tiny-teams.webp){ class="catalogue-logo" }
 
-    Practical Git workflows for small teams and solo maintainers — trunk-
+    Practical Git workflows for small teams and solo maintainers. Trunk-
     based development, short-lived branches, pull requests, and release tags
     without enterprise branching theatre.
 
@@ -215,9 +215,9 @@ hide:
 
     ![Article](assets/images/articles/github-actions.webp){ class="catalogue-logo" }
 
-    Learn how to use GitHub Actions for CI/CD, with a step-by-step guide on
-    automating builds, tests, and deployments, complete with YAML
-    configurations and best practices.
+    Build a working CI/CD pipeline with GitHub Actions, from a first build-
+    and-test workflow to deploying an artefact, with the YAML to copy and
+    the habits that keep workflows fast and safe.
 
     <span class="catalogue-category">CI/CD</span>
     <span class="catalogue-category">GitHub</span>
@@ -228,9 +228,9 @@ hide:
 
     ![Article](assets/images/articles/input-validation-that-sticks.webp){ class="catalogue-logo" }
 
-    Practical input validation for CLIs and small services — paths, URLs,
-    commands, sizes, and the failure modes that turn tools into exploit
-    gadgets.
+    Practical input validation for CLIs and small services. Paths, URLs,
+    subprocesses, sizes, and the failure modes that let an attacker steer
+    your tool.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
@@ -241,7 +241,7 @@ hide:
 
     ![Article](assets/images/articles/key-lifecycle.webp){ class="catalogue-logo" }
 
-    Practical key lifecycle for small security tools — generate, distribute,
+    The key lifecycle for small security tools. Generate, distribute,
     rotate, revoke, and retire cryptographic keys and certificates without
     drama.
 
@@ -254,9 +254,9 @@ hide:
 
     ![Article](assets/images/articles/least-privilege-for-ci.webp){ class="catalogue-logo" }
 
-    Hardening CI/CD credentials — short-lived tokens, OIDC, protected
-    environments, and GitHub Actions patterns that avoid long-lived secrets
-    in pipelines.
+    Hardening CI/CD credentials. Short-lived tokens, OIDC, protected
+    environments, and the GitHub Actions patterns that keep long-lived
+    secrets out of your pipelines.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">CI/CD</span>
@@ -267,9 +267,9 @@ hide:
 
     ![Article](assets/images/articles/licenses-for-humans.webp){ class="catalogue-logo" }
 
-    A plain-language guide to common open-source licenses for people
-    publishing tools — MIT, Apache-2.0, GPL family trade-offs, why LICENSE
-    files matter, and how to choose without a law degree.
+    A plain-language guide to open-source licenses for people publishing
+    tools. MIT, Apache-2.0, and the GPL family, what each one asks of your
+    users, and how to choose without a law degree.
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Community</span>
@@ -280,9 +280,9 @@ hide:
 
     ![Article](assets/images/articles/maintainer-boundaries.webp){ class="catalogue-logo" }
 
-    Healthy boundaries for open-source maintainers — saying no, defining
-    scope, managing expectations, and protecting energy without abandoning
-    the project.
+    How open-source maintainers stay in the game. Write down scope, decline
+    without writing an essay, publish honest support expectations, and
+    protect review time before it runs out.
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Community</span>
@@ -293,8 +293,8 @@ hide:
 
     ![Article](assets/images/articles/mtls-and-client-certificates.webp){ class="catalogue-logo" }
 
-    A practical introduction to mutual TLS and client certificates — how
-    they differ from ordinary HTTPS, when they help, and how small tools
+    Mutual TLS and client certificates in practice. How they differ from
+    ordinary HTTPS, when they are worth the trouble, and how small tools
     should issue and verify them.
 
     <span class="catalogue-category">Security</span>
@@ -306,7 +306,7 @@ hide:
 
     ![Article](assets/images/articles/observability-for-small-projects.webp){ class="catalogue-logo" }
 
-    Practical observability for CLIs, libraries, and small services — useful
+    Practical observability for CLIs, libraries, and small services. Useful
     logs, health signals, failure modes, and knowing what broke without
     needing an enterprise APM stack.
 
@@ -319,9 +319,9 @@ hide:
 
     ![Article](assets/images/articles/programming-fundamentals.webp){ class="catalogue-logo" }
 
-    Discover why mastering programming principles and fundamentals is more
-    valuable than focusing on a specific language, enabling you to adapt,
-    debug, and collaborate more effectively in an evolving tech landscape.
+    Why the principles underneath programming outlast any single language,
+    and how a grip on algorithms, data structures, and design makes picking
+    up new syntax the easy part.
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Fundamentals</span>
@@ -332,9 +332,9 @@ hide:
 
     ![Article](assets/images/articles/readme-as-product.webp){ class="catalogue-logo" }
 
-    Treat your README as the product surface of an open-source project —
-    clear install steps, honest examples, trustworthy badges, and a path
-    from curiosity to first success.
+    Your README is the product page for an open-source project. Install
+    steps that work, examples that ran, badges that tell the truth, and the
+    shortest path from curiosity to a first success.
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Documentation</span>
@@ -345,9 +345,9 @@ hide:
 
     ![Article](assets/images/articles/red-team-vs-blue-team.webp){ class="catalogue-logo" }
 
-    Learn the differences between Red Teams and Blue Teams in cybersecurity,
-    their roles in attack and defence simulations, and how they work
-    together to strengthen an organization's security posture.
+    What Red Teams and Blue Teams actually do, why running them against each
+    other finds the weaknesses a questionnaire never will, and where Purple,
+    Green, and White Teams fit around them.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Ops</span>
@@ -358,9 +358,9 @@ hide:
 
     ![Article](assets/images/articles/release-automation.webp){ class="catalogue-logo" }
 
-    How to automate releases for open-source projects — tags, changelogs,
-    GitHub Releases, package publishing, and CI checks that make shipping
-    routine instead of heroic.
+    How to make releases boring. Tags as the source of truth, changelogs
+    people can read, scoped publishing tokens, and CI guardrails that stop a
+    bad release before it reaches a registry.
 
     <span class="catalogue-category">CI/CD</span>
     <span class="catalogue-category">Open Source</span>
@@ -371,9 +371,9 @@ hide:
 
     ![Article](assets/images/articles/reproducible-builds.webp){ class="catalogue-logo" }
 
-    Lightweight reproducible builds for small tools — pinning inputs, stable
-    artefacts, and practical steps toward bit-for-bit or practically
-    identical releases without enterprise ceremony.
+    Lightweight reproducible builds for small tools. Pinning inputs, killing
+    nondeterminism, and getting to bit-for-bit or near-identical releases
+    without enterprise ceremony.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
@@ -384,9 +384,9 @@ hide:
 
     ![Article](assets/images/articles/responsible-dependency-updates.webp){ class="catalogue-logo" }
 
-    A practical cadence for dependency updates — Dependabot-style PRs,
-    ignore rules, reading majors, and keeping upgrades boring without
-    ignoring security fixes.
+    A practical cadence for dependency updates. Dependabot-style PRs, ignore
+    rules, reading majors, and keeping upgrades boring without ignoring
+    security fixes.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
@@ -397,10 +397,9 @@ hide:
 
     ![Article](assets/images/articles/right-tools-for-the-job.webp){ class="catalogue-logo" }
 
-    Learn why choosing the right tools for the job is crucial in software
-    development. Discover how to select the best programming languages,
-    operating systems, cloud providers, frameworks, and databases based on
-    specific project requirements.
+    How to match languages, operating systems, cloud providers, frameworks,
+    and databases to what a project actually needs, instead of forcing one
+    familiar stack onto every problem.
 
     <span class="catalogue-category">Tools</span>
     <span class="catalogue-category">Engineering</span>
@@ -411,10 +410,9 @@ hide:
 
     ![Article](assets/images/articles/sast-and-dast.webp){ class="catalogue-logo" }
 
-    Learn about Static Application Security Testing (SAST) and Dynamic
-    Application Security Testing (DAST) in software development. Understand
-    how these tools help identify and mitigate vulnerabilities, improve
-    security, and ensure regulatory compliance.
+    What static and dynamic application security testing each catch, why
+    they find different bugs, and how to run SAST in CI and DAST against a
+    deployed environment without drowning the team in findings.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
@@ -425,9 +423,9 @@ hide:
 
     ![Article](assets/images/articles/secrets-management.webp){ class="catalogue-logo" }
 
-    Learn the essentials of secrets management, its importance in protecting
-    sensitive data, best practices for secure handling, and an overview of
-    tools to safeguard your organization's credentials.
+    What counts as a secret, the five ways secrets management usually goes
+    wrong, and the practices and tools that keep credentials out of your
+    codebase and under control.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">DevOps</span>
@@ -438,7 +436,7 @@ hide:
 
     ![Article](assets/images/articles/secure-defaults.webp){ class="catalogue-logo" }
 
-    Designing secure defaults for tools and libraries — fail closed, least
+    Designing secure defaults for tools and libraries. Fail closed, least
     privilege, dangerous features opt-in, and interfaces that make the safe
     path the easy path.
 
@@ -451,7 +449,7 @@ hide:
 
     ![Article](assets/images/articles/secure-logging.webp){ class="catalogue-logo" }
 
-    Practical secure logging for tools and services — what never to log,
+    Practical secure logging for tools and services. What never to log,
     redaction, crash reports, debug flags, and keeping observability from
     becoming a leak.
 
@@ -464,10 +462,9 @@ hide:
 
     ![Article](assets/images/articles/security-by-design.webp){ class="catalogue-logo" }
 
-    Explore the concept of Security by Design, its importance in building
-    resilient systems, and how to apply its principles across software
-    development, infrastructure, and cloud environments for proactive
-    cybersecurity.
+    Security by Design in practice. The principles behind it, why fixing
+    flaws at design time is cheaper, and what it looks like applied to
+    software, infrastructure, and cloud environments.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Design</span>
@@ -478,7 +475,7 @@ hide:
 
     ![Article](assets/images/articles/security-disclosures-that-work.webp){ class="catalogue-logo" }
 
-    Practical security disclosure for small open-source projects —
+    Practical security disclosure for small open-source projects.
     SECURITY.md, private reporting, triage, credit, and promises maintainers
     can actually keep.
 
@@ -491,9 +488,9 @@ hide:
 
     ![Article](assets/images/articles/semantic-versioning.webp){ class="catalogue-logo" }
 
-    A practical guide to semantic versioning for open-source tools — major,
-    minor, and patch releases, 0.x realities, deprecations, and
-    communicating breaking changes without surprising your users.
+    Semantic versioning as it actually plays out in open-source tools. What
+    counts as breaking, how to live in 0.x honestly, why changelogs are part
+    of the version number, and how to keep upgrades boring.
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Engineering</span>
@@ -504,7 +501,7 @@ hide:
 
     ![Article](assets/images/articles/supply-chain-signing.webp){ class="catalogue-logo" }
 
-    Practical supply-chain signing for open-source releases — checksums,
+    Practical supply-chain signing for open-source releases. Checksums,
     signatures, provenance, and verification steps users can actually
     follow.
 
@@ -530,9 +527,9 @@ hide:
 
     ![Article](assets/images/articles/the-cybersecurity-rainbow.webp){ class="catalogue-logo" }
 
-    Explore the roles of the color-coded cybersecurity teams—Red, Blue,
-    Purple, Green, Yellow, Orange, and White—and learn how they contribute
-    to a comprehensive, resilient cybersecurity strategy.
+    A map of the colour-coded cybersecurity teams. Red, Blue, Purple, Green,
+    Yellow, Orange, and White, what each one is responsible for, and how
+    they fit together into one security programme.
 
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Ops</span>
@@ -543,10 +540,10 @@ hide:
 
     ![Article](assets/images/articles/the-optimization-trap.webp){ class="catalogue-logo" }
 
-    Discover how to avoid the optimisation trap in software engineering.
-    Learn why it's essential to focus on purpose-driven improvements,
-    inspired by Elon Musk's insights on building the right things, not just
-    better things.
+    Why capable engineers waste time polishing things that should not exist,
+    how to tell warranted optimisation from busywork, and how first
+    principles thinking keeps improvements pointed at something that
+    matters.
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Mindset</span>
@@ -557,8 +554,8 @@ hide:
 
     ![Article](assets/images/articles/threat-modelling-for-small-tools.webp){ class="catalogue-logo" }
 
-    Lightweight threat modelling for CLIs, libraries, and small services —
-    assets, attackers, trust boundaries, and a practical checklist without
+    Lightweight threat modelling for CLIs, libraries, and small services.
+    Assets, attackers, trust boundaries, and a practical checklist without
     enterprise ceremony.
 
     <span class="catalogue-category">Security</span>
@@ -570,9 +567,9 @@ hide:
 
     ![Article](assets/images/articles/understanding-ci-cd.webp){ class="catalogue-logo" }
 
-    Explore the fundamentals of CI/CD in software development. Understand
-    the benefits, challenges, and best practices to implement Continuous
-    Integration and Continuous Delivery/Deployment effectively.
+    What continuous integration and continuous delivery buy you, what they
+    cost, and the concrete guardrails (feature flags, staging, monitoring,
+    canaries, rollbacks) that make automatic deployment survivable.
 
     <span class="catalogue-category">CI/CD</span>
     <span class="catalogue-category">DevOps</span>
@@ -583,7 +580,7 @@ hide:
 
     ![Article](assets/images/articles/writing-a-security-md-that-people-use.webp){ class="catalogue-logo" }
 
-    A practical SECURITY.md playbook for small projects — what to include,
+    A practical SECURITY.md playbook for small projects. What to include,
     example structure, scope statements, and making the security policy easy
     to find and follow.
 

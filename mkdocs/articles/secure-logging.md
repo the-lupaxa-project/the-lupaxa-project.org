@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical secure logging for tools and services — what never to log,
+description: Practical secure logging for tools and services. What never to log,
   redaction, crash reports, debug flags, and keeping observability from becoming a
   leak.
 tags:
@@ -52,8 +52,8 @@ Access control matters. Shared Slack channels, public CI logs, and world-readabl
 
 ## 6. Retention and Deletion
 
-Keep logs long enough to investigate; not forever by default. Know how to purge when a secret *did* slip through — and rotate the secret anyway.
+Keep logs long enough to investigate, not forever by default. Know how to purge when a secret *did* slip through, and rotate the secret anyway.
 
 ## 7. Closing Thoughts
 
-Secure logging is restraint: redact by default, protect sinks, and make dangerous verbosity opt-in. You can still see what broke — without mailing the keys to everyone who can open a log viewer.
+Secure logging is restraint: redact by default, protect sinks, and make dangerous verbosity opt-in. You can still see what broke without mailing the keys to everyone who can open a log viewer.

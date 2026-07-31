@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical Git workflows for small teams and solo maintainers — trunk-based
+description: Practical Git workflows for small teams and solo maintainers. Trunk-based
   development, short-lived branches, pull requests, and release tags without enterprise
   branching theatre.
 tags:
@@ -20,17 +20,17 @@ Git workflows expand to fill the org chart. Tiny teams do not need seven long-li
 
 Keep `main` (or `trunk`) green. Merge only what you would be willing to ship. Feature flags and small PRs help; giant week-long branches fight you.
 
-If `main` is routinely broken, you do not have a workflow problem — you have a testing and ownership problem.
+If `main` is routinely broken, you do not have a workflow problem. You have a testing and ownership problem.
 
 ## 2. Short-Lived Branches
 
 Branch for a change, open a PR, merge, delete. Days, not months. Long-lived feature branches are where conflicts and abandoned work breed.
 
-Solo maintainers can still use PRs against themselves — the review diff and CI are the point.
+Solo maintainers can still use PRs against themselves. The review diff and CI are the point.
 
 ## 3. Pull Requests as Conversation
 
-A PR should explain *why*. Link the issue. Keep the diff reviewable. Squash or rebase according to the project's norm — pick one and document it.
+A PR should explain *why*. Link the issue. Keep the diff reviewable. Squash or rebase according to the project's norm, but pick one and document it.
 
 "LGTM" on a 2,000-line tangle is not review; it is hope.
 
@@ -46,8 +46,8 @@ Release from tags, not from "whatever was on my laptop." Annotated tags plus CI 
 
 `develop`, `release/*`, `hotfix/*`, and environment branches earn their keep at scale. For two people shipping a CLI, they mostly add merge debt.
 
-Add structure when pain appears — parallel releases, long support windows — not because a blog post diagram looked official.
+Add structure when pain appears, like parallel releases or long support windows, not because a blog post diagram looked official.
 
 ## 7. Closing Thoughts
 
-A tiny-team Git workflow is a releasable mainline, short branches, protected merges, and tags for ships. Everything else should justify the complexity it adds — or leave.
+A tiny-team Git workflow is a releasable mainline, short branches, protected merges, and tags for ships. Everything else should justify the complexity it adds, or leave.

@@ -4,8 +4,8 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical dependency hygiene for open-source and small teams — pinning,
-  lockfiles, audits, supply-chain basics, and keeping your software supply line
+description: Practical dependency hygiene for small teams and open-source projects.
+  Pinning, lockfiles, audits, supply-chain basics, and keeping your supply line
   trustworthy without enterprise ceremony.
 tags:
 - Security
@@ -39,7 +39,7 @@ Libraries are different: they declare compatible ranges so apps can resolve a si
 
 ## 3. Audit Without Theatre
 
-Run vulnerability audits regularly — in CI, not only after an incident.
+Run vulnerability audits regularly, in CI, not only after an incident.
 
 Then triage like an engineer:
 
@@ -74,7 +74,7 @@ Habits that help:
 
 ## 6. Own Your Tree
 
-Know how to generate a dependency graph or bill of materials for your project. When someone asks "are we affected by X?", you want an answer in minutes, not a archaeological dig.
+Know how to generate a dependency graph or bill of materials for your project. When someone asks "are we affected by X?", you want an answer in minutes, not an archaeological dig.
 
 ## 7. Closing Thoughts
 

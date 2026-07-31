@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: How to automate releases for open-source projects — tags, changelogs,
-  GitHub Releases, package publishing, and CI checks that make shipping routine instead
-  of heroic.
+description: How to make releases boring. Tags as the source of truth, changelogs people
+  can read, scoped publishing tokens, and CI guardrails that stop a bad release before
+  it reaches a registry.
 tags:
 - CI/CD
 - Open Source
@@ -14,9 +14,9 @@ tags:
 
 # Release Automation: Shipping Without Heroics
 
-A release should be a boring button — or better, a tag that triggers a known pipeline. When shipping depends on a maintainer remembering twelve manual steps, releases become rare, late, and error-prone.
+A release should be a boring button, or better, a tag that triggers a known pipeline. When shipping depends on a maintainer remembering twelve manual steps, releases become rare, late, and error-prone.
 
-This article outlines a practical automation shape for small open-source projects.
+Here is a practical shape for small open-source projects.
 
 ## 1. Decide What a Release Is
 
@@ -54,7 +54,7 @@ Link issues/PRs when helpful. Skip empty marketing fluff.
 
 ## 4. GitHub Releases and Packages
 
-GitHub Releases are a friendly landing page for notes and binaries. Attach checksums for distributed binaries. Publish packages with tokens scoped as tightly as practical, stored as secrets — never in the repository.
+GitHub Releases are a friendly landing page for notes and binaries. Attach checksums for anything you distribute. Publish packages with tokens scoped as tightly as practical, stored as secrets, never in the repository.
 
 ## 5. Guardrails in CI
 
@@ -77,4 +77,4 @@ Provide a dry-run mode for packaging and note generation. Rehearse the release p
 
 ## 8. Closing Thoughts
 
-Release automation turns "we should ship" into "we shipped." Combine tags, green CI, honest changelogs, and constrained secrets — and maintainers get weekends back while users get predictable upgrades.
+Release automation turns "we should ship" into "we shipped." Combine tags, green CI, honest changelogs, and constrained secrets. Maintainers get their weekends back, and users get predictable upgrades.

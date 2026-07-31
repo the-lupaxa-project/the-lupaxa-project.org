@@ -2,11 +2,11 @@ from main import BANNER_PRESETS, _resolve_banner
 
 
 EXPECTED = {
-    "in-planning": ("In planning", "green"),
-    "in-development": ("In development", "purple"),
-    "in-testing": ("In testing", "neutral"),
-    "closed-alpha": ("Closed alpha", "red"),
-    "open-beta": ("Open beta", "orange"),
+    "in-planning": ("In Planning", "green"),
+    "in-development": ("In Development", "purple"),
+    "in-testing": ("In Testing", "neutral"),
+    "closed-alpha": ("Closed Alpha", "red"),
+    "open-beta": ("Open Beta", "orange"),
     "released": ("Released", "blue"),
 }
 

@@ -4,8 +4,8 @@ published: true
 hide:
 - navigation
 - toc
-description: Lightweight threat modelling for CLIs, libraries, and small services —
-  assets, attackers, trust boundaries, and a practical checklist without enterprise
+description: Lightweight threat modelling for CLIs, libraries, and small services.
+  Assets, attackers, trust boundaries, and a practical checklist without enterprise
   ceremony.
 tags:
 - Security
@@ -77,7 +77,7 @@ Future you will thank present you.
 
 ## 6. Revisit on Big Changes
 
-New network calls, new privilege, new deserialization, new plugin system — those are threat-model events. A five-minute review at PR time is worth more than an annual ceremony.
+New network calls, new privilege, new deserialisation, a new plugin system: those are threat-model events. A five-minute review at PR time is worth more than an annual ceremony.
 
 ## 7. Closing Thoughts
 

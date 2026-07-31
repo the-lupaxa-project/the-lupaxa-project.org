@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical CLI design for open-source tools — flags and arguments, exit
+description: Practical CLI design for open-source tools. Flags and arguments, exit
   codes, stdout versus stderr, helpful errors, and interfaces that feel good in scripts
-  and human hands.
+  and in human hands.
 tags:
 - Engineering
 - Tools
@@ -16,7 +16,7 @@ tags:
 
 A command-line tool is an API that people type. Good CLIs disappear into muscle memory and shell scripts. Bad CLIs invent surprises: wrong exit codes, banners on stdout, flags that mean different things on Tuesdays.
 
-This article collects practical defaults for small tools — the kind Lupaxa builds.
+This article collects practical defaults for small tools, the kind Lupaxa builds.
 
 ## 1. Make the Happy Path Short
 
@@ -43,18 +43,18 @@ Scripts branch on exit status.
 
 Typical pattern:
 
-- `0` — success
-- non-zero — failure
+- `0` means success
+- non-zero means failure
 - Distinct codes for distinct failure classes when scripts need them (optional, document them)
 
 Never exit `0` after a failed operation because you printed an error nicely.
 
-## 4.Stdout Versus Stderr
+## 4. Stdout Versus Stderr
 
 A simple rule:
 
-- **stdout** — the actual result (data a pipe should receive)
-- **stderr** — diagnostics, progress, errors, help
+- **stdout** carries the actual result (data a pipe should receive)
+- **stderr** carries diagnostics, progress, errors, and help
 
 If your tool prints a success banner to stdout, you have broken `tool | jq`. Quiet by default; verbose on request.
 
@@ -77,7 +77,7 @@ Assume someone will run your tool in CI:
 - Support non-interactive modes
 - Avoid prompts unless explicitly requested
 - Provide machine-readable output modes when useful (`--json`)
-- Keep output stable enough to parse — or version the format
+- Keep output stable enough to parse, or version the format
 
 ## 7. Closing Thoughts
 

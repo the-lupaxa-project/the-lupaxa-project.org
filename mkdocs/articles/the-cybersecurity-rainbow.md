@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Explore the roles of the color-coded cybersecurity teams—Red, Blue, Purple,
-  Green, Yellow, Orange, and White—and learn how they contribute to a comprehensive,
-  resilient cybersecurity strategy.
+description: A map of the colour-coded cybersecurity teams. Red, Blue, Purple, Green,
+  Yellow, Orange, and White, what each one is responsible for, and how they fit
+  together into one security programme.
 tags:
 - Security
 - Ops
@@ -14,52 +14,56 @@ tags:
 
 # The Cybersecurity Rainbow
 
-In cybersecurity, color-coded teams represent distinct roles and responsibilities, each focusing on specific aspects of securing and defending an organization. These teams work together, often in controlled exercises, to assess, strengthen, and continuously improve security. Each color team has unique expertise, enabling a comprehensive and proactive approach to cybersecurity. This article explores the seven primary color teams—Red, Blue, Purple, Green, Yellow, Orange, and White—outlining their roles and how they collectively contribute to an organization's security posture.
+Security work gets divided by colour. Red attacks, Blue defends, and five more teams cover the parts those two miss. The labels are a convenient shorthand for who owns which slice of the problem, and the useful thing about the full set is seeing the gaps between them.
+
+Most organisations do not staff all seven. Treat this as a map of the responsibilities, not a hiring plan.
 
 ## Red Team: The Attackers
 
-The Red Team simulates the role of an adversary, using offensive tactics to identify vulnerabilities in an organization's defences. Red Team members are skilled in penetration testing, social engineering, and advanced hacking techniques. Their objective is to mimic real-world cyberattacks, challenging the organization's defences to reveal security weaknesses that could be exploited by malicious actors.
+The Red Team plays the adversary. Its members are skilled in penetration testing, social engineering, and advanced hacking techniques, and the job is to mimic real-world attacks against your defences until something gives.
 
-Red Teams conduct reconnaissance, exploit vulnerabilities, and navigate within networks to gain unauthorized access and escalate privileges. By documenting their findings in detailed reports, Red Teams provide valuable insights into potential security gaps and offer recommendations for improvement. These exercises help organizations identify weak points, understand attack vectors, and proactively address vulnerabilities before they can be exploited.
+In practice that means reconnaissance, exploiting vulnerabilities, moving through networks to gain unauthorised access, and escalating privileges. The deliverable is a detailed report: what they found, how they exploited it, and what to do about it. That report is where the value is, and it tells you which weak points a real attacker would have reached first.
+
+Red Team versus Blue Team exercises get their own article. This is the summary.
 
 ## Blue Team: The Defenders
 
-The Blue Team is responsible for defending the organization's infrastructure against cyber threats. They monitor, detect, and respond to attacks, using a variety of tools and techniques to protect critical systems. Blue Teams focus on building strong defences, conducting regular vulnerability assessments, and applying patches and security updates to minimize risk.
+The Blue Team defends the infrastructure. It monitors, detects, and responds, using security information and event management (SIEM) systems, intrusion detection systems (IDS), and firewalls to turn odd activity into an alert somebody acts on.
 
-Blue Team members use tools such as security information and event management (SIEM) systems, intrusion detection systems (IDS), and firewalls. They are also responsible for implementing and refining the organization's incident response plan, allowing them to quickly and effectively respond to any detected threats. While Red Teams focus on identifying weaknesses, Blue Teams work to fortify the organization's defences and ensure security measures are in place to mitigate risks.
+The rest of the work is quieter: building solid defences, running regular vulnerability assessments, and applying patches and updates to keep the easy wins away from attackers. Blue also owns the incident response plan, writing it and refining it, so that when something is detected the response is a procedure rather than an improvisation.
 
 ## Purple Team: The Collaborators
 
-The Purple Team fosters collaboration between the Red and Blue Teams, creating a feedback loop to enhance both offensive and defensive strategies. Rather than functioning as an independent team, Purple Teams facilitate cooperation, allowing the Red Team's attack insights to directly inform the Blue Team's defences. This collaborative approach ensures continuous improvement and rapid adaptation to emerging threats.
+Purple is less a team than an arrangement. It puts Red and Blue in the same room so attack insights feed defensive improvements directly, instead of arriving weeks later as a document.
 
-During Purple Team exercises, Red and Blue Team members work together, sharing findings and discussing attack methods. By integrating the insights and techniques from both sides, Purple Teams help organizations strengthen their defences based on actual attack scenarios. This collaboration accelerates learning for the Blue Team, enhancing their detection and response capabilities and ultimately creating a more resilient security posture.
+During a Purple exercise, both sides share findings and discuss attack methods as they go. The Blue Team learns detection and response against techniques it has just watched succeed, which is a much faster feedback loop than a report and a follow-up meeting.
 
 ## Green Team: The Builders
 
-The Green Team is focused on secure development and aligning security with the software development lifecycle, following DevSecOps principles. Green Teams integrate security practices into code development, including secure coding standards, automated testing, and secure architecture design. They conduct code reviews, manage software dependencies, and use tools like static application security testing (SAST) to identify vulnerabilities early in the development process.
+Green pushes security into the software development lifecycle, the DevSecOps end of the work. Secure coding standards, automated testing, secure architecture, code review, and dependency management, with tools like static application security testing (SAST) catching vulnerabilities early.
 
-Green Teams work closely with development and engineering teams to build security into applications from the ground up, ensuring that security is not an afterthought but a core component of the development workflow. This proactive approach reduces the likelihood of vulnerabilities entering production and complements the work of the Red, Blue, and Purple Teams by embedding security directly within the software.
+The team works alongside developers and engineers so security is part of the development workflow rather than a review stage at the end. Fewer vulnerabilities reach production, which means fewer for Blue to defend against.
 
-## Yellow Team: The Security Educators
+## Yellow Team: The Educators
 
-The Yellow Team focuses on cybersecurity awareness, training, and education for all employees within an organization. They work to build a security-aware culture by educating employees about common threats like phishing, social engineering, and secure password practices. By empowering employees to recognize and respond to potential threats, Yellow Teams reduce human error and make individuals the first line of defence against cyberattacks.
+Yellow handles awareness and training for everyone in the organisation, not just the technical staff. Phishing, social engineering, and password practice, taught to the people attackers actually target.
 
-Yellow Teams create and deliver training programs, run workshops, and develop resources like newsletters, posters, and online courses. They often collaborate with other color teams to ensure training content is relevant to the latest threats and attack techniques. By fostering a security-conscious workforce, Yellow Teams strengthen the organization's overall defence and promote a culture where everyone plays a role in protecting the organization.
+The work is training programmes, workshops, newsletters, posters, and online courses, usually built with input from the other colour teams so the content reflects current attack techniques rather than last decade's. Done well, it turns the largest source of human error into the first line of defence. Most successful intrusions still start with someone clicking something, which is why this team matters more than its budget usually suggests.
 
 ## Orange Team: The Secure Designers
 
-The Orange Team bridges the gap between secure development (Green Team) and defensive operations (Blue Team) by focusing on secure design principles. Orange Teams are responsible for incorporating security into the architectural design of systems, networks, and applications. They conduct threat modelling exercises, identify potential risks during the design phase, and ensure that security controls are built into the architecture from the outset.
+Orange sits between Green's secure development and Blue's defensive operations, and owns secure design. It puts security into the architecture of systems, networks, and applications before any of it is built.
 
-Orange Teams work closely with developers, architects, and engineers to build resilient systems that can withstand attacks. By focusing on secure design, Orange Teams help prevent vulnerabilities from arising during the design and development process, reducing the need for reactive security measures. Their proactive approach aligns with Security by Design principles, enabling organizations to build security into the very foundation of their systems.
+The main activity is threat modelling: identifying risks during the design phase and making sure controls are part of the architecture from the outset. Orange works with developers, architects, and engineers, and its output is design decisions rather than code or alerts. It is Security by Design as a staffed function, and it prevents the vulnerabilities the other teams would otherwise spend their time finding.
 
 ## White Team: The Overseers
 
-The White Team oversees Red Team vs. Blue Team exercises, setting the rules of engagement, defining objectives, and ensuring that the exercises are fair and safe. They act as referees during these exercises, monitoring activities and ensuring that both teams adhere to the agreed-upon scope. White Teams help manage the exercise, mediate any issues, and ensure that the organization's security is not inadvertently compromised during the simulation.
+White runs the exercise. It sets the rules of engagement, defines the objectives, and keeps everything fair, in scope, and safe. During a Red versus Blue exercise, White referees: monitoring activity, checking both teams stay within the agreed boundaries, and mediating disputes so the simulation does not compromise the security it is meant to test.
 
-After the exercises, White Teams facilitate debriefings and post-mortem analyses, gathering insights from the Red, Blue, and Purple Teams. They document lessons learned and work with the teams to implement improvements based on the findings. The White Team's role is critical for ensuring that adversarial simulations achieve their goals, enhancing the organization's defences in a structured and controlled manner.
+Afterwards White facilitates the debrief and post-mortem, collecting insights from Red, Blue, and Purple, documenting the lessons, and following up on the improvements. Without that last part an exercise is entertainment.
 
 ## Closing Thoughts
 
-Each color team in cybersecurity brings unique skills and perspectives, contributing to a comprehensive approach to protecting an organization. Red Teams uncover vulnerabilities by simulating attacks, Blue Teams build defences and respond to threats, Purple Teams facilitate collaboration between offensive and defensive efforts, Green Teams integrate security into development, Yellow Teams educate and raise awareness, Orange Teams ensure secure design, and White Teams manage and oversee security exercises.
+The seven colours split into three groups. Red and Blue test the running system against each other. Green and Orange build security in during development and design. Yellow trains the people, Purple keeps the feedback flowing, and White makes sure the exercises produce evidence instead of anecdotes.
 
-Together, these teams create a well-rounded cybersecurity strategy that addresses threats from multiple angles, proactively builds security into systems, and raises awareness throughout the organization. By understanding and leveraging the contributions of each color team, organizations can build a proactive, adaptive, and resilient cybersecurity program capable of withstanding a wide range of cyber threats in today's ever-evolving landscape.
+You almost certainly do not need seven teams. You do need to know which of those responsibilities nobody currently holds, because that is where your next incident starts.

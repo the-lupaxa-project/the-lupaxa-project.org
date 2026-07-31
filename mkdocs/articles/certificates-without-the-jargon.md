@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: A plain-language guide to X.509 certificates for developers — keys,
-  CSRs, self-signed vs CA-signed, trust stores, and what actually matters when generating
-  certs for tools and tests.
+description: X.509 certificates in plain language. Keys, CSRs, self-signed versus
+  CA-signed, trust stores, and what actually matters when you generate certs for tools
+  and tests.
 tags:
 - Security
 - Tools
@@ -16,7 +16,7 @@ tags:
 
 TLS certificates look mystical until you strip the acronyms. At heart they answer one question: "Can I trust that this public key belongs to who I think it does?" Everything else is packaging, policy, and tooling.
 
-This article is for people who generate or consume certificates in CLIs, services, and test environments — without needing a PKI textbook.
+You do not need a PKI textbook to generate or consume certificates in CLIs, services, and test environments. You need to know which fields matter and who is vouching for what.
 
 ## 1. Keys Come First
 
@@ -28,11 +28,11 @@ You keep the **private key** secret. Anyone with it can impersonate the identity
 
 Typical fields that matter day to day:
 
-- **Subject / SAN** — who this cert is for (hostname, email, etc.)
-- **Validity window** — not before / not after
-- **Public key** — the key you will encrypt or verify with
-- **Issuer** — who signed this claim
-- **Extensions** — usage constraints (server auth, client auth, CA, …)
+- **Subject / SAN** is who the certificate is for (hostname, email, and so on)
+- **Validity window** is the not-before and not-after pair
+- **Public key** is the key you will encrypt or verify with
+- **Issuer** is who signed the claim
+- **Extensions** carry usage constraints (server auth, client auth, CA, and so on)
 
 If the name in the certificate does not match what you connected to, clients should refuse. That is a feature.
 
@@ -50,7 +50,7 @@ A **Certificate Signing Request (CSR)** is "please sign this public key for this
 
 ## 5. Trust Stores Are the Real Gate
 
-Software trusts certificates because of a **trust store** — a set of root (and sometimes intermediate) CAs it believes. Operating systems and browsers ship defaults. Your CLI or service may use those, or a custom bundle.
+Software trusts certificates because of a **trust store**, a set of root (and sometimes intermediate) CAs it believes. Operating systems and browsers ship defaults. Your CLI or service may use those, or a custom bundle.
 
 Debugging "certificate verify failed" usually means: wrong chain, expired cert, name mismatch, or the verifier does not trust the issuer.
 

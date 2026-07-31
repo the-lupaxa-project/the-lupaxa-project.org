@@ -4,9 +4,9 @@ published: true
 hide:
 - navigation
 - toc
-description: Lightweight reproducible builds for small tools — pinning inputs, stable
-  artefacts, and practical steps toward bit-for-bit or practically identical releases
-  without enterprise ceremony.
+description: Lightweight reproducible builds for small tools. Pinning inputs, killing
+  nondeterminism, and getting to bit-for-bit or near-identical releases without
+  enterprise ceremony.
 tags:
 - Security
 - Engineering
@@ -14,7 +14,7 @@ tags:
 
 # Reproducible Builds: Same Inputs, Same Artefacts
 
-A reproducible build means that given the same source and toolchain inputs, you get the same artefact bytes — or close enough that you can explain differences. For small open-source tools this is less about academic purity and more about trust: others can rebuild what you shipped.
+A reproducible build means that given the same source and toolchain inputs, you get the same artefact bytes, or close enough that you can explain the differences. For small open-source tools this is less about academic purity and more about trust. Someone else can rebuild what you shipped and check that it matches.
 
 ## 1. Why It Matters
 
@@ -48,7 +48,7 @@ Prefer `SOURCE_DATE_EPOCH` and stable archive settings when your ecosystem suppo
 
 ## 4. Practical, Not Perfect
 
-Bit-for-bit identity is ideal. **Practical reproducibility** — same functional content, documented toolchain — is still valuable when absolute identity is hard (some proprietary linkers, some language ecosystems).
+Bit-for-bit identity is ideal. **Practical reproducibility** (same functional content, documented toolchain) is still valuable when absolute identity is hard (some proprietary linkers, some language ecosystems).
 
 Say what you guarantee. Honesty beats fake hermetic claims.
 
@@ -74,4 +74,4 @@ If only your laptop can reproduce, it is not reproducible.
 
 ## 7. Closing Thoughts
 
-Reproducible builds shrink the trust gap between source and binary. Pin inputs, remove noise, check digests in CI, and document how strangers can rebuild — enough ceremony to matter, not enough to stop shipping.
+Reproducible builds shrink the trust gap between source and binary. Pin inputs, remove noise, check digests in CI, and document how a stranger can rebuild. That is enough ceremony to matter and not enough to stop shipping.

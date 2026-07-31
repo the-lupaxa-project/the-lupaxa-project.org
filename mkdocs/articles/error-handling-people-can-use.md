@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Practical error handling for CLIs and libraries — clear messages, exit
+description: Practical error handling for CLIs and libraries. Clear messages, exit
   codes, retries, typed failures, and when to crash versus recover.
 tags:
 - Engineering
@@ -15,7 +15,7 @@ tags:
 
 Errors are part of the interface. A stack trace dumped on a new user is a failed conversation. A precise message with a next step is product quality.
 
-This article focuses on CLIs and small libraries — where error handling is often the difference between adoption and abandonment.
+This article focuses on CLIs and small libraries, where error handling is often the difference between adoption and abandonment.
 
 ## 1. Say What Failed and What to Try
 
@@ -25,7 +25,7 @@ Useful errors include:
 - Which input or resource was involved (without secrets)
 - A plausible next step when one exists
 
-"Error: failed" trains people to ignore you. "Cannot read key file `/path`: permission denied — check ownership or run without elevated paths you cannot access" teaches.
+"Error: failed" trains people to ignore you. "Cannot read key file `/path`: permission denied. Check ownership, or run without elevated paths you cannot access" teaches.
 
 ## 2. Exit Codes Are for Scripts
 
@@ -33,7 +33,7 @@ Reserve `0` for success. Use non-zero for failure. If you expose distinct codes,
 
 ## 3. Choose Crash Versus Recover Deliberately
 
-Crash (or return a hard error) when continuing would corrupt state or hide danger. Recover when the failure is expected and local — missing optional file, empty search result, retryable network blip.
+Crash (or return a hard error) when continuing would corrupt state or hide danger. Recover when the failure is expected and local, like a missing optional file, an empty search result, or a retryable network blip.
 
 Infinite silent retries are not recovery. They are a hang.
 
@@ -60,4 +60,4 @@ Verbose logs can hold detail. The default user-facing message should stay short.
 
 ## 7. Closing Thoughts
 
-Error handling is empathy under failure. Clear messages, honest exit codes, deliberate retries, and typed failures turn broken runs into solvable problems — which is what users actually needed.
+Error handling is empathy under failure. Clear messages, honest exit codes, deliberate retries, and typed failures turn broken runs into solvable problems, which is what users actually needed.

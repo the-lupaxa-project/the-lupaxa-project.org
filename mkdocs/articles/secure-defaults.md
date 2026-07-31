@@ -4,7 +4,7 @@ published: true
 hide:
 - navigation
 - toc
-description: Designing secure defaults for tools and libraries — fail closed, least
+description: Designing secure defaults for tools and libraries. Fail closed, least
   privilege, dangerous features opt-in, and interfaces that make the safe path the
   easy path.
 tags:
@@ -14,7 +14,7 @@ tags:
 
 # Secure Defaults: Making the Safe Path the Easy Path
 
-Users will keep the defaults. Attackers know that. Secure defaults are not about scaring people — they are about shipping behaviour that stays safe when nobody reads the manual.
+Users will keep the defaults. Attackers know that. Secure defaults are not about scaring people. They are about shipping behaviour that stays safe when nobody reads the manual.
 
 This matters especially for CLIs and libraries, where a convenient flag can become a permanent foot-gun.
 
@@ -54,7 +54,7 @@ Changing a default is a breaking change for someone. Prefer:
 - Warnings in the old behaviour for one release cycle
 - Migration notes that say *why* the default moved
 
-Shipping a secure default late is still better than never — just version it honestly.
+Shipping a secure default late is still better than never. Just version it honestly.
 
 ## 6. Document the Sharp Edges
 
