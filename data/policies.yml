@@ -3,7 +3,6 @@
   name: Code of Conduct
   icon: material-handshake
   publish_date: "2026-07-31"
-  banner: new
   description: >-
     The Lupaxa Project is committed to fostering an open, welcoming and respectful community
     where everyone can collaborate with confidence.
@@ -22,8 +21,6 @@
   name: Governance
   icon: material-gavel
   publish_date: "2025-04-01"
-  banner: updated
-  updated_date: "2026-07-31"
   description: >-
     The Lupaxa Project follows a clear and transparent governance model that defines how decisions
     are made across the ecosystem.
