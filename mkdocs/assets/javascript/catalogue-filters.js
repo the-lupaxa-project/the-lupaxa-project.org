@@ -410,8 +410,9 @@
       );
     }
 
-    // Status options are fixed in the filter panel markup (all presets +
-    // Stable), not derived from banners present on the page.
+    // Status options are fixed in the filter panel markup (lifecycle
+    // presets for the relevant status_kind, plus Stable for projects
+    // only), not derived from banners present on the page.
 
     /**
      * Select a URL-supplied filter value.
@@ -831,6 +832,7 @@
       id: "policy",
       singular: "policy",
       plural: "policies",
+      status: true,
     }),
     catalogueConfig({
       id: "article",

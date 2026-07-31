@@ -21,6 +21,7 @@ from banner_lib import (
     BANNER_PRESETS,
     BANNER_TONES,
     DEFAULT_BANNER_EXPIRY_DAYS,
+    POLICY_BANNER_PRESETS,
     PROJECT_BANNER_PRESETS,
     banner_markup as _shared_banner_markup,
     parse_iso_date,
@@ -116,6 +117,7 @@ def define_env(env):
         summary_text: str,
         include_organisation: bool = False,
         include_status: bool = False,
+        status_kind: str = "project",
         category_label: str = "Category",
         organisation_label: str = "Organisation",
         status_label: str = "Status",
@@ -134,18 +136,30 @@ def define_env(env):
         status_block = ""
         if include_status:
             # Fixed lifecycle list (not derived from cards on the page).
+            if status_kind == "project":
+                presets = PROJECT_BANNER_PRESETS
+                show_stable = True
+            elif status_kind == "policy":
+                presets = POLICY_BANNER_PRESETS
+                show_stable = False
+            else:
+                raise ValueError(f"Unrecognised status_kind: {status_kind!r}")
             status_options = "\n".join(
                 f'            <option value="{html.escape(slug, quote=True)}">'
                 f"{html.escape(label)}</option>"
-                for slug, (label, _) in PROJECT_BANNER_PRESETS.items()
+                for slug, (label, _) in presets.items()
+            )
+            stable_option = (
+                '\n            <option value="stable">Stable</option>'
+                if show_stable
+                else ""
             )
             status_block = f"""
     <div class="filter-panel-select">
         <label for="{prefix}-status">{status_label}</label>
         <select id="{prefix}-status" data-{prefix}-status>
             <option value="">All Statuses</option>
-{status_options}
-            <option value="stable">Stable</option>
+{status_options}{stable_option}
         </select>
     </div>"""
 
@@ -286,9 +300,26 @@ def define_env(env):
 {actions_markup}
 """.strip()
 
-    def policy_card(item: dict) -> str:
+    def policy_card(
+        item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS
+    ) -> str:
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
+        raw_banner = item.get("banner")
+        resolved = _shared_resolve_banner(raw_banner, presets=POLICY_BANNER_PRESETS)
+        event_date = None
+        if resolved:
+            filter_key = resolved[2]
+            date_field = "updated_date" if filter_key == "updated" else "publish_date"
+            event_date = parse_iso_date(item.get(date_field))
+        banner = _shared_banner_markup(
+            raw_banner,
+            presets=POLICY_BANNER_PRESETS,
+            event_date=event_date,
+            expiry_days=expiry_days,
+            time_limited_statuses=frozenset({"new", "updated"}),
+        )
+        banner_block = f"{banner}\n\n" if banner else ""
         action = _action_link(
             "repository",
             item["document"],
@@ -300,7 +331,7 @@ def define_env(env):
 
     ---
 
-{description}
+{banner_block}{description}
 
 {categories}
 
@@ -323,7 +354,10 @@ def define_env(env):
                 for item in projects
             )
         elif kind == "policy":
-            cards = "\n\n".join(policy_card(item) for item in policies)
+            cards = "\n\n".join(
+                policy_card(item, expiry_days=banner_expiry_days)
+                for item in policies
+            )
         else:
             raise ValueError(f"Unknown catalogue kind: {kind}")
 

@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pytest
+
 import main
 
 
@@ -53,3 +55,50 @@ def test_filter_panel_without_status_does_not_crash():
 
     assert "filter-panel" in markup
     assert "Released" not in markup
+
+
+def test_filter_panel_status_options_project_includes_stable():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "project",
+        search_label="Search",
+        search_placeholder="Search projects",
+        summary_text="Showing all projects",
+        include_status=True,
+    )
+
+    assert "Stable" in markup
+
+
+def test_filter_panel_status_options_policy_presets_no_stable():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "policy",
+        compact=True,
+        search_label="Search",
+        search_placeholder="Search policies",
+        summary_text="Showing all policies",
+        include_status=True,
+        status_kind="policy",
+    )
+
+    assert "New Policy" in markup
+    assert "Updated Policy" in markup
+    assert "Stable" not in markup
+    assert "In Development" not in markup
+
+
+def test_filter_panel_status_kind_unrecognised_raises():
+    filter_panel = _filter_panel()
+
+    with pytest.raises(ValueError):
+        filter_panel(
+            "policy",
+            search_label="Search",
+            search_placeholder="Search policies",
+            summary_text="Showing all policies",
+            include_status=True,
+            status_kind="bogus",
+        )

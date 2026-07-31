@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+banner_expiry_days: 28
 ---
 
 {{ filter_panel(
@@ -10,9 +11,11 @@ hide:
     search_label="Search policies",
     search_placeholder="Search by policy name or description",
     summary_text="Showing all policies",
+    include_status=True,
+    status_kind="policy",
 ) }}
 
-{{ catalogue_grid("policy", "policy") }}
+{{ catalogue_grid("policy", "policy", banner_expiry_days=page.meta.banner_expiry_days or 28) }}
 
 {{ catalogue_empty(
     "policy",

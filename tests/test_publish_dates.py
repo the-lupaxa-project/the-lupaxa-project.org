@@ -38,3 +38,17 @@ def test_all_published_articles_have_parseable_publish_date():
         )
 
     assert checked > 0, "expected at least one published article"
+
+
+def test_all_policies_have_parseable_publish_date():
+    policies_path = ROOT / "data" / "policies.yml"
+    policies = yaml.safe_load(policies_path.read_text(encoding="utf-8")) or []
+    assert policies, "expected at least one policy in data/policies.yml"
+
+    for policy in policies:
+        publish_date = policy.get("publish_date")
+        identifier = policy.get("id", "<unknown>")
+        assert publish_date is not None, f"policy {identifier!r} is missing publish_date"
+        assert parse_iso_date(publish_date) is not None, (
+            f"policy {identifier!r} has unparseable publish_date: {publish_date!r}"
+        )

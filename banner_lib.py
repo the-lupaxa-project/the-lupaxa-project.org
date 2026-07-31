@@ -17,6 +17,13 @@ PROJECT_BANNER_PRESETS: dict[str, tuple[str, str]] = {
 ARTICLE_BANNER_PRESETS: dict[str, tuple[str, str]] = {
     "new": ("New Article", "blue"),
 }
+POLICY_BANNER_PRESETS: dict[str, tuple[str, str]] = {
+    "new": ("New Policy", "blue"),
+    "updated": ("Updated Policy", "purple"),
+}
+# Deliberately not merged into BANNER_PRESETS — the "new" slug clashes with
+# ARTICLE_BANNER_PRESETS, and policy resolve/markup calls always pass
+# presets=POLICY_BANNER_PRESETS explicitly so labels never leak across kinds.
 BANNER_PRESETS: dict[str, tuple[str, str]] = {
     **PROJECT_BANNER_PRESETS,
     **ARTICLE_BANNER_PRESETS,
