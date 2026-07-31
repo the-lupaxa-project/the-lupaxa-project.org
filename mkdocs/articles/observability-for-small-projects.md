@@ -1,6 +1,7 @@
 ---
 title: Observability for Small Projects
 published: true
+publish_date: "2026-03-05"
 hide:
 - navigation
 - toc

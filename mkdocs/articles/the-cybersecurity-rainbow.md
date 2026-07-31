@@ -1,6 +1,7 @@
 ---
 title: The Cybersecurity Rainbow
 published: true
+publish_date: "2026-07-02"
 hide:
 - navigation
 - toc

@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-<div class="filter-panel filter-panel--compact" data-article-filters markdown="0">
+<div class="filter-panel filter-panel--compact" data-article-filters data-banner-expiry-days="28" markdown="0">
   <div class="filter-panel-search">
     <label for="article-search">Search articles</label>
     <input
@@ -19,6 +19,13 @@ hide:
     <label for="article-category">Tag</label>
     <select id="article-category" data-article-category>
       <option value="">All Tags</option>
+    </select>
+  </div>
+  <div class="filter-panel-select">
+    <label for="article-status">Status</label>
+    <select id="article-status" data-article-status>
+      <option value="">All Statuses</option>
+      <option value="new">New Article</option>
     </select>
   </div>
   <div class="filter-panel-actions">
@@ -578,6 +585,8 @@ hide:
 
     ---
 
+    <span class="catalogue-banner catalogue-banner--blue" data-banner-status="new" data-banner-label="New Article" aria-label="Status: New Article" role="button" tabindex="0"><span class="catalogue-banner__band" aria-hidden="true"><span class="catalogue-banner__text">New Article</span></span></span>
+
     ![Article](assets/images/articles/writing-a-security-md-that-people-use.webp){ class="catalogue-logo" }
 
     A practical SECURITY.md playbook for small projects. What to include,
@@ -593,6 +602,6 @@ hide:
 
 :material-magnify: No articles match the current filters.
 
-Try clearing the search or choosing a different tag.
+Try clearing the search or choosing a different tag or status.
 
 </div>

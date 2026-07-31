@@ -3,10 +3,17 @@
 from __future__ import annotations
 
 import textwrap
+from datetime import date
 from pathlib import Path
 from typing import Any
 
 import yaml
+
+from banner_lib import ARTICLE_BANNER_PRESETS, banner_markup, parse_iso_date
+
+# Days a "New Article" banner stays visible after `publish_date`.
+ARTICLE_BANNER_EXPIRY_DAYS = 28
+_ARTICLE_TIME_LIMITED = frozenset({"new"})
 
 # Optional shorter titles for cards / pager (page H1 can stay longer).
 ARTICLE_CARD_TITLES: dict[str, str] = {}
@@ -105,12 +112,15 @@ def format_front_matter(
     published: bool = True,
     description: str = "",
     tags: list[str] | None = None,
+    publish_date: str = "",
 ) -> str:
     payload: dict[str, Any] = {
         "title": title,
         "published": published,
         "hide": ["navigation", "toc"],
     }
+    if publish_date:
+        payload["publish_date"] = publish_date
     if description:
         payload["description"] = description
     if tags:
@@ -124,7 +134,9 @@ def format_front_matter(
     return f"---\n{dumped}\n---\n\n"
 
 
-def _article_entry(slug: str, meta: dict[str, Any]) -> str:
+def _article_entry(
+    slug: str, meta: dict[str, Any], *, today: date | None = None
+) -> str:
     title = display_title(slug, meta)
     desc = str(meta.get("description") or "").strip()
     tags = article_tags(slug, meta)
@@ -133,11 +145,21 @@ def _article_entry(slug: str, meta: dict[str, Any]) -> str:
     tag_spans = "\n    ".join(
         f'<span class="catalogue-category">{tag}</span>' for tag in tags
     )
+    banner = banner_markup(
+        meta.get("banner"),
+        presets=ARTICLE_BANNER_PRESETS,
+        event_date=parse_iso_date(meta.get("publish_date")),
+        today=today,
+        expiry_days=ARTICLE_BANNER_EXPIRY_DAYS,
+        time_limited_statuses=_ARTICLE_TIME_LIMITED,
+    )
+    banner_block = f"{banner}\n\n" if banner else ""
     return (
         f"-   **[{title}](articles/{slug}.md)**\n"
         f"\n"
         f"    ---\n"
         f"\n"
+        f"{banner_block}"
         f'    ![Article](assets/images/articles/{slug}.webp){{ class="catalogue-logo" }}\n'
         f"\n"
         f"    {desc_block}\n"
@@ -146,7 +168,7 @@ def _article_entry(slug: str, meta: dict[str, Any]) -> str:
     )
 
 
-def rebuild_articles_index(docs_dir: Path) -> int:
+def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
     """Rewrite articles.md from published article front matter. Returns count."""
     articles_dir = docs_dir / "articles"
     index_path = docs_dir / "articles.md"
@@ -159,17 +181,19 @@ def rebuild_articles_index(docs_dir: Path) -> int:
         items.append((path.stem, meta))
 
     items.sort(key=lambda item: display_title(item[0], item[1]).casefold())
-    entries = "\n".join(_article_entry(slug, meta) for slug, meta in items)
+    entries = "\n".join(
+        _article_entry(slug, meta, today=today) for slug, meta in items
+    )
 
     header = textwrap.dedent(
-        """\
+        f"""\
         ---
         hide:
           - navigation
           - toc
         ---
 
-        <div class="filter-panel filter-panel--compact" data-article-filters markdown="0">
+        <div class="filter-panel filter-panel--compact" data-article-filters data-banner-expiry-days="{ARTICLE_BANNER_EXPIRY_DAYS}" markdown="0">
           <div class="filter-panel-search">
             <label for="article-search">Search articles</label>
             <input
@@ -184,6 +208,13 @@ def rebuild_articles_index(docs_dir: Path) -> int:
             <label for="article-category">Tag</label>
             <select id="article-category" data-article-category>
               <option value="">All Tags</option>
+            </select>
+          </div>
+          <div class="filter-panel-select">
+            <label for="article-status">Status</label>
+            <select id="article-status" data-article-status>
+              <option value="">All Statuses</option>
+              <option value="new">New Article</option>
             </select>
           </div>
           <div class="filter-panel-actions">
@@ -216,7 +247,7 @@ def rebuild_articles_index(docs_dir: Path) -> int:
 
         :material-magnify: No articles match the current filters.
 
-        Try clearing the search or choosing a different tag.
+        Try clearing the search or choosing a different tag or status.
 
         </div>
         """

@@ -1,6 +1,7 @@
 ---
 title: Responsible Dependency Updates
 published: true
+publish_date: "2026-04-16"
 hide:
 - navigation
 - toc

@@ -1,6 +1,7 @@
 ---
 title: Deprecation Without Chaos
 published: true
+publish_date: "2025-12-11"
 hide:
 - navigation
 - toc

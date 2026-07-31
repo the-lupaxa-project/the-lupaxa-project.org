@@ -1,6 +1,7 @@
 ---
 title: Certificates Without the Jargon
 published: true
+publish_date: "2025-10-16"
 hide:
 - navigation
 - toc

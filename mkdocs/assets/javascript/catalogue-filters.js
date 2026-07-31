@@ -836,6 +836,7 @@
       id: "article",
       singular: "article",
       plural: "articles",
+      status: true,
     }),
   ];
 

@@ -1,6 +1,8 @@
 ---
 title: Writing a SECURITY.md That People Use
 published: true
+publish_date: "2026-07-31"
+banner: new
 hide:
 - navigation
 - toc

@@ -1,6 +1,7 @@
 ---
 title: Programming Fundamentals
 published: true
+publish_date: "2026-03-12"
 hide:
 - navigation
 - toc

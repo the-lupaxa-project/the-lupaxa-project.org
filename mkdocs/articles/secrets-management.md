@@ -1,6 +1,7 @@
 ---
 title: Secrets Management
 published: true
+publish_date: "2026-05-07"
 hide:
 - navigation
 - toc

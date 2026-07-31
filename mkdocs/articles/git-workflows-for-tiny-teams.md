@@ -1,6 +1,7 @@
 ---
 title: Git Workflows for Tiny Teams
 published: true
+publish_date: "2026-01-08"
 hide:
 - navigation
 - toc

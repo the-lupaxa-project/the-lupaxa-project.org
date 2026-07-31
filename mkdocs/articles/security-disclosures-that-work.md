@@ -1,6 +1,7 @@
 ---
 title: Security Disclosures That Work
 published: true
+publish_date: "2026-06-04"
 hide:
 - navigation
 - toc

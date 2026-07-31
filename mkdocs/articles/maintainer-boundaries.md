@@ -1,6 +1,7 @@
 ---
 title: Maintainer Boundaries
 published: true
+publish_date: "2026-02-19"
 hide:
 - navigation
 - toc

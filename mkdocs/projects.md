@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+banner_expiry_days: 28
 ---
 
 {{ filter_panel(
@@ -13,7 +14,7 @@ hide:
     include_status=True,
 ) }}
 
-{{ catalogue_grid("project", "project") }}
+{{ catalogue_grid("project", "project", banner_expiry_days=page.meta.banner_expiry_days or 28) }}
 
 {{ catalogue_empty(
     "project",

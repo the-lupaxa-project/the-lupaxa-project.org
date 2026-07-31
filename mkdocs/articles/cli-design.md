@@ -1,6 +1,7 @@
 ---
 title: CLI Design
 published: true
+publish_date: "2025-10-23"
 hide:
 - navigation
 - toc

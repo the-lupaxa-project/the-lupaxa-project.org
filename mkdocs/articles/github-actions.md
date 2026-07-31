@@ -1,6 +1,7 @@
 ---
 title: GitHub Actions
 published: true
+publish_date: "2026-01-15"
 hide:
 - navigation
 - toc

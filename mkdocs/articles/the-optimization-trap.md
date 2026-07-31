@@ -1,6 +1,7 @@
 ---
 title: The Optimisation Trap
 published: true
+publish_date: "2026-07-09"
 hide:
 - navigation
 - toc

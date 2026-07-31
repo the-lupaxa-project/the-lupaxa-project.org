@@ -1,6 +1,7 @@
 ---
 title: SAST and DAST
 published: true
+publish_date: "2026-04-30"
 hide:
 - navigation
 - toc

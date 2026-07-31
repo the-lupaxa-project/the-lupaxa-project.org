@@ -1,6 +1,7 @@
 ---
 title: mTLS and Client Certificates
 published: true
+publish_date: "2026-02-26"
 hide:
 - navigation
 - toc

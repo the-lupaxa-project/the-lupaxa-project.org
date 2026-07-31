@@ -1,6 +1,7 @@
 ---
 title: Contributing Without the Drama
 published: true
+publish_date: "2025-11-20"
 hide:
 - navigation
 - toc

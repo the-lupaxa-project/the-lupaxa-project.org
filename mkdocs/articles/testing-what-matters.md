@@ -1,6 +1,7 @@
 ---
 title: Testing What Matters
 published: true
+publish_date: "2026-06-25"
 hide:
 - navigation
 - toc

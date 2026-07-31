@@ -1,6 +1,7 @@
 ---
 title: Error Handling People Can Use
 published: true
+publish_date: "2026-01-01"
 hide:
 - navigation
 - toc

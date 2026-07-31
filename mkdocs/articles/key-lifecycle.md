@@ -1,6 +1,7 @@
 ---
 title: Key Lifecycle
 published: true
+publish_date: "2026-01-29"
 hide:
 - navigation
 - toc

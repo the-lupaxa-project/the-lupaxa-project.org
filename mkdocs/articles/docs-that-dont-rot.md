@@ -1,6 +1,7 @@
 ---
 title: Docs That Don't Rot
 published: true
+publish_date: "2025-12-18"
 hide:
 - navigation
 - toc

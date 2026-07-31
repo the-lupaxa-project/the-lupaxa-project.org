@@ -46,6 +46,7 @@ watch:
   - data
   - main.py
   - articles_lib.py
+  - banner_lib.py
   - quotes_lib.py
   - gallery_lib.py
   - hooks

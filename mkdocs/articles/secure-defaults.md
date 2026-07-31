@@ -1,6 +1,7 @@
 ---
 title: Secure Defaults
 published: true
+publish_date: "2026-05-14"
 hide:
 - navigation
 - toc

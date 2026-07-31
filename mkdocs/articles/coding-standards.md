@@ -1,6 +1,7 @@
 ---
 title: Coding Standards
 published: true
+publish_date: "2025-10-30"
 hide:
 - navigation
 - toc

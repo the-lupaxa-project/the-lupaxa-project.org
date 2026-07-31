@@ -1,6 +1,7 @@
 ---
 title: Secure Logging
 published: true
+publish_date: "2026-05-21"
 hide:
 - navigation
 - toc

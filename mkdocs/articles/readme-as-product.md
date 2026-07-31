@@ -1,6 +1,7 @@
 ---
 title: README as Product
 published: true
+publish_date: "2026-03-19"
 hide:
 - navigation
 - toc

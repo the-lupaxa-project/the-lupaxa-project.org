@@ -1,6 +1,7 @@
 ---
 title: Cybersecurity & Chess
 published: true
+publish_date: "2025-11-27"
 hide:
 - navigation
 - toc

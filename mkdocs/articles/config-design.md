@@ -1,6 +1,7 @@
 ---
 title: Config Design
 published: true
+publish_date: "2025-11-06"
 hide:
 - navigation
 - toc

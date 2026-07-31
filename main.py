@@ -13,21 +13,19 @@ from typing import Any
 
 import yaml
 
-# Project card status banners: status → (default label, default tone).
-BANNER_PRESETS: dict[str, tuple[str, str]] = {
-    "in-planning": ("In Planning", "green"),
-    "in-development": ("In Development", "purple"),
-    "in-testing": ("In Testing", "neutral"),
-    "closed-alpha": ("Closed Alpha", "red"),
-    "open-beta": ("Open Beta", "orange"),
-    "released": ("Released", "blue"),
-}
-BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"})
-
 ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from banner_lib import (
+    BANNER_PRESETS,
+    BANNER_TONES,
+    DEFAULT_BANNER_EXPIRY_DAYS,
+    PROJECT_BANNER_PRESETS,
+    banner_markup as _shared_banner_markup,
+    parse_iso_date,
+    resolve_banner as _shared_resolve_banner,
+)
 from quotes_lib import (
     collect_tags as collect_quote_tags,
     load_quotes_data,
@@ -87,73 +85,13 @@ def _action_link(modifier: str, href: str, label: str, icon: str) -> str:
     )
 
 
-def _banner_filter_key(status: str | None, label: str) -> str:
-    """Stable filter value: preset status slug, else label slug."""
-    if status:
-        return status
-    slug = "".join(
-        ch.lower() if ch.isalnum() else "-" for ch in label
-    )
-    while "--" in slug:
-        slug = slug.replace("--", "-")
-    return slug.strip("-")
-
-
 def _resolve_banner(raw: Any) -> tuple[str, str, str] | None:
     """Return (label, tone, filter_key) for a project banner, or None."""
-    if raw is None or raw is False:
-        return None
-
-    status: str | None = None
-    label: str | None = None
-    tone: str | None = None
-
-    if isinstance(raw, str):
-        status = raw.strip() or None
-    elif isinstance(raw, dict):
-        status_val = raw.get("status")
-        if isinstance(status_val, str) and status_val.strip():
-            status = status_val.strip()
-        label_val = raw.get("label")
-        if isinstance(label_val, str) and label_val.strip():
-            label = label_val.strip()
-        tone_val = raw.get("tone")
-        if isinstance(tone_val, str) and tone_val.strip():
-            tone = tone_val.strip()
-    else:
-        return None
-
-    preset = BANNER_PRESETS.get(status) if status else None
-    if label is None and preset:
-        label = preset[0]
-    if tone is None and preset:
-        tone = preset[1]
-    if tone is None or tone not in BANNER_TONES:
-        tone = "neutral"
-    if not label:
-        return None
-    return label, tone, _banner_filter_key(status, label)
+    return _shared_resolve_banner(raw)
 
 
 def _banner_markup(raw: Any) -> str:
-    resolved = _resolve_banner(raw)
-    if not resolved:
-        return ""
-    label, tone, filter_key = resolved
-    safe_label = html.escape(label, quote=True)
-    safe_key = html.escape(filter_key, quote=True)
-    # Short labels need less along-sash padding or they sit in the outer tip.
-    length_class = " catalogue-banner--short" if len(label) <= 5 else ""
-    return (
-        f'    <span class="catalogue-banner catalogue-banner--{tone}{length_class}" '
-        f'data-banner-status="{safe_key}" '
-        f'data-banner-label="{safe_label}" '
-        f'aria-label="Status: {safe_label}" '
-        f'role="button" tabindex="0">'
-        f'<span class="catalogue-banner__band" aria-hidden="true">'
-        f'<span class="catalogue-banner__text">{safe_label}</span>'
-        f"</span></span>"
-    )
+    return _shared_banner_markup(raw)
 
 
 def define_env(env):
@@ -199,7 +137,7 @@ def define_env(env):
             status_options = "\n".join(
                 f'            <option value="{html.escape(slug, quote=True)}">'
                 f"{html.escape(label)}</option>"
-                for slug, (label, _) in BANNER_PRESETS.items()
+                for slug, (label, _) in PROJECT_BANNER_PRESETS.items()
             )
             status_block = f"""
     <div class="filter-panel-select">
@@ -294,10 +232,18 @@ def define_env(env):
 {action}
 """.strip()
 
-    def project_card(item: dict) -> str:
+    def project_card(
+        item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS
+    ) -> str:
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
-        banner = _banner_markup(item.get("banner"))
+        banner = _shared_banner_markup(
+            item.get("banner"),
+            presets=PROJECT_BANNER_PRESETS,
+            event_date=parse_iso_date(item.get("released_date")),
+            expiry_days=expiry_days,
+            time_limited_statuses=frozenset({"released"}),
+        )
         banner_block = f"{banner}\n\n" if banner else ""
         actions = [
             _action_link(
@@ -364,11 +310,18 @@ def define_env(env):
 """.strip()
 
     @env.macro
-    def catalogue_grid(prefix: str, kind: str) -> str:
+    def catalogue_grid(
+        prefix: str,
+        kind: str,
+        banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS,
+    ) -> str:
         if kind == "organisation":
             cards = "\n\n".join(organisation_card(item) for item in organisations)
         elif kind == "project":
-            cards = "\n\n".join(project_card(item) for item in projects)
+            cards = "\n\n".join(
+                project_card(item, expiry_days=banner_expiry_days)
+                for item in projects
+            )
         elif kind == "policy":
             cards = "\n\n".join(policy_card(item) for item in policies)
         else:
@@ -426,9 +379,11 @@ def define_env(env):
         return is_remote_media(path)
 
     @env.macro
-    def featured_projects() -> str:
+    def featured_projects(banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
         featured = [item for item in projects if item.get("featured")]
-        cards = "\n\n".join(project_card(item) for item in featured)
+        cards = "\n\n".join(
+            project_card(item, expiry_days=banner_expiry_days) for item in featured
+        )
         return f"""
 <div class="grid cards catalogue-grid" markdown>
 
