@@ -91,7 +91,7 @@
 
 - id: makefile-skills
   published: true
-  name: makefile-skills
+  name: Makefile Skills
   icon: material-source-repository
   description: >-
     Reusable Makefile skills for project versioning, Python, MkDocs, and Bash
