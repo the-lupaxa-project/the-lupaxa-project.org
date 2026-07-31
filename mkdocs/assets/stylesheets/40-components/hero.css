@@ -1,6 +1,6 @@
 /* =============================================================================
  * The Lupaxa Project Portal
- * Shared Hero Component
+ * Shared Hero Component (home + 404)
  * ============================================================================= */
 
 .lupaxa-hero {
@@ -67,7 +67,7 @@
 
 .lupaxa-error-hero {
   margin: 0 -1.2rem 1.5rem;
-  padding: 3.5rem 1.5rem 1.5rem;
+  padding: 3.5rem 1.5rem 2.5rem;
   text-align: center;
   background:
     radial-gradient(
@@ -82,6 +82,10 @@
     );
 }
 
+.lupaxa-error-hero .lupaxa-hero-actions {
+  grid-template-columns: minmax(0, 16rem);
+}
+
 .lupaxa-error-code {
   margin: 0 0 0.75rem;
   color: var(--lupaxa-light-blue);
@@ -91,7 +95,8 @@
   letter-spacing: -0.05em;
 }
 
-[data-md-color-scheme="slate"] .lupaxa-hero {
+[data-md-color-scheme="slate"] .lupaxa-hero,
+[data-md-color-scheme="slate"] .lupaxa-error-hero {
   background:
     radial-gradient(
       circle at top,

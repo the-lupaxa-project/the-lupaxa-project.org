@@ -89,6 +89,31 @@
   featured: true
   banner: in-development
 
+- id: makefile-skills
+  published: true
+  name: makefile-skills
+  icon: material-source-repository
+  description: >-
+    Reusable Makefile skills for project versioning, Python, MkDocs, and Bash
+    workflows.
+
+
+    Consumer projects keep a thin wrapper Makefile that sparse-clones shared
+    targets into a gitignored `.makefiles/` directory, always enables versioning,
+    and optionally enables standalone skills via `SKILLS`.
+  categories:
+    - Makefiles
+    - Automation
+    - Templates
+    - Standards
+  organisation: The Lupaxa Blueprints
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-blueprints/readme-logo-128.png
+  logo_alt: The Lupaxa Blueprints
+  repository: https://github.com/the-lupaxa-blueprints/makefile-skills
+  documentation: https://the-lupaxa-blueprints.github.io/makefile-skills/
+  featured: true
+  banner: in-development
+
 - id: shared-reusable-workflows
   published: true
   name: Shared Reusable Workflows
