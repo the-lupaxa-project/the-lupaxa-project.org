@@ -19,7 +19,7 @@ Open source thrives when people contribute. It stalls when every change becomes 
 
 Whether this is your first issue or your fiftieth pull request, the same habits apply.
 
-## 1. Start From the Project's Reality
+## Start From the Project's Reality
 
 Before you write code, read what the project already tells you: README, contributing guide, issue templates, recent pull requests, and open bugs. Match the project's tone and process. A tiny CLI tool and a large framework do not want the same style of contribution.
 
@@ -29,7 +29,7 @@ Ask yourself:
 - **Is this in scope?** A brilliant idea that fights the project's goals is still noise.
 - **Can I make this small?** Large patches are harder to review and easier to abandon.
 
-## 2. Issues That Help Maintainers
+## Issues That Help Maintainers
 
 A useful issue is a gift: it makes a problem reproducible and actionable.
 
@@ -48,7 +48,7 @@ Avoid:
 
 If you are unsure whether something is a bug, say so. Curiosity is welcome; certainty without evidence is not.
 
-## 3. Pull Requests That Get Merged
+## Pull Requests That Get Merged
 
 The best PRs are easy to say yes to.
 
@@ -60,13 +60,13 @@ The best PRs are easy to say yes to.
 
 If you need feedback early, open a draft PR and say what you still plan to finish. Do not ask for a full review of unfinished work without labelling it clearly.
 
-## 4. Good First Issues, From Both Sides
+## Good First Issues, From Both Sides
 
 Maintainers: label genuinely approachable work. A good first issue has a clear outcome, limited scope, and enough context for someone new to start.
 
 Contributors: treat "good first issue" as a doorway, not a demand that the project teach you the entire stack. Ask focused questions after you have tried the obvious steps.
 
-## 5. When Not to Bikeshed
+## When Not to Bikeshed
 
 Not every opinion needs a thread.
 
@@ -79,13 +79,13 @@ Skip the fight when:
 
 Disagreement is fine. Repeating the same preference louder is not contribution.
 
-## 6. Manners Still Matter
+## Manners Still Matter
 
 Assume good intent. Thank people for reviews, even when you disagree. Accept "not now" and "not in this project." Maintainers are not a helpdesk with infinite bandwidth.
 
 If a review asks for changes, make them or explain the trade-off calmly. Ghosting a review is a reliable way to stall your own PR.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Open source works when contributors reduce friction: clearer issues, smaller patches, better context, less theatre. You do not need permission to be helpful. You need discipline about *how* you help.
 

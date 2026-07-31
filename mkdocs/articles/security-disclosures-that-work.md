@@ -18,7 +18,7 @@ Every project that ships code will eventually hear about a vulnerability, or wis
 
 This article is for small open-source tools and libraries that want to do the right thing without promising a 24/7 SOC.
 
-## 1. Put the Door Where People Look
+## Put the Door Where People Look
 
 Add a `SECURITY.md` at the repository root. GitHub and many scanners look for it.
 
@@ -31,7 +31,7 @@ It should answer:
 
 Link it from the README. A buried wiki page is not a disclosure channel.
 
-## 2. Prefer Private Channels First
+## Prefer Private Channels First
 
 Public issues are fine for ordinary bugs. Security findings that enable exploitation should stay private until a fix or mitigation is ready.
 
@@ -43,7 +43,7 @@ Common options:
 
 Pick one primary channel and say so clearly. Two half-documented paths create missed reports.
 
-## 3. Promise Only What You Can Keep
+## Promise Only What You Can Keep
 
 Do not invent SLA theatre. Honest language beats fake urgency:
 
@@ -53,7 +53,7 @@ Do not invent SLA theatre. Honest language beats fake urgency:
 
 Reporters respect clarity. They distrust corporate countdown clocks that maintainers cannot honour.
 
-## 4. Ask for Useful Details
+## Ask for Useful Details
 
 Invite reporters to include:
 
@@ -64,7 +64,7 @@ Invite reporters to include:
 
 Thank people who send a minimal PoC. Do not demand unpaid consulting disguised as a bug report.
 
-## 5. Triage Like an Engineer
+## Triage Like an Engineer
 
 When a report arrives:
 
@@ -75,12 +75,12 @@ When a report arrives:
 
 Out-of-scope reports deserve a short polite reply, not silence.
 
-## 6. Fix, Release, Then Talk
+## Fix, Release, Then Talk
 
 Ship the fix (or mitigation) before broad public write-ups when practical. Credit reporters who want credit. Document the issue in release notes without teaching attackers more than they need.
 
 If you cannot patch immediately, document temporary mitigations for users.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 A good disclosure process is hospitality for people trying to help you. Make the door obvious, keep reports private until users are safer, and promise only what a small team can deliver. That is enough to be a responsible maintainer.

@@ -19,7 +19,7 @@ Security added at the end is a patch on a decision you already made. Security by
 
 The payoff is systems that are secure by default and need little rework after deployment. The cost is thinking about attackers before you write code, which most teams skip.
 
-## 1. The Principles
+## The Principles
 
 Five ideas do most of the work:
 
@@ -29,7 +29,7 @@ Five ideas do most of the work:
 - **Fail securely.** When something errors or hits an unexpected state, it fails closed rather than handing an attacker an opening.
 - **Continuous monitoring and patching.** Security decays. Watch for new vulnerabilities and apply fixes as they land.
 
-## 2. Why It Beats Reacting
+## Why It Beats Reacting
 
 ### Smaller Attack Surface
 
@@ -47,7 +47,7 @@ GDPR, HIPAA, PCI-DSS, and their relatives mandate specific controls. Building th
 
 Breaches cost data, money, and reputation, and reputation is the slowest to recover. Systems designed to be secure give users a reason to keep trusting you with their data.
 
-## 3. In Software Development
+## In Software Development
 
 ### Get Security Into the Requirements
 
@@ -69,7 +69,7 @@ Put security testing in the CI/CD pipeline. Static application security testing 
 
 Deployment is not the end. Monitor for new vulnerabilities and emerging threats, update and patch on a schedule, and keep logging and monitoring in place so suspicious activity surfaces while you can still act on it.
 
-## 4. In Infrastructure
+## In Infrastructure
 
 The servers, networks, and storage under your applications need the same treatment.
 
@@ -93,7 +93,7 @@ TLS for network communication. Encrypted disks and storage volumes so a physical
 
 Watch for anomalous activity and intrusion attempts. Security Information and Event Management (SIEM) tools aggregate logs and alert on suspicious behaviour, which is how you spot something at hour one rather than month three.
 
-## 5. In Cloud Environments
+## In Cloud Environments
 
 The shared responsibility model is the thing to internalise: the provider secures the infrastructure, you secure your applications, data, and configuration. Most cloud incidents happen on your side of that line.
 

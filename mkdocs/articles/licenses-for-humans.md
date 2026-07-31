@@ -19,7 +19,7 @@ Publishing code without a license does not mean "do whatever you want." In many 
 
 This is not legal advice. It is a practical map for tool authors who want to make a deliberate choice.
 
-## 1. Why a License Matters
+## Why a License Matters
 
 A license answers:
 
@@ -31,7 +31,7 @@ A license answers:
 
 Without answers, careful organisations will not touch your project. Careless ones may use it anyway and create confusion later.
 
-## 2. Permissive Licenses: MIT and BSD-style
+## Permissive Licenses: MIT and BSD-style
 
 **MIT** and similar BSD licenses are short and popular for libraries and tools.
 
@@ -43,13 +43,13 @@ Typical spirit:
 
 They maximise adoption. They do not require downstream projects to open their modifications.
 
-## 3. Apache License 2.0
+## Apache License 2.0
 
 **Apache-2.0** is also permissive, with clearer patent language and an explicit contribution license grant. Many companies prefer it for that clarity.
 
 If you care about patent peace and still want wide reuse, Apache-2.0 is a common choice.
 
-## 4. Copyleft: GPL and Friends
+## Copyleft: GPL and Friends
 
 **GPL** family licenses require that derivative works distributed to others remain under compatible copyleft terms. That protects user freedom to study and modify software, and it can complicate proprietary embedding.
 
@@ -57,7 +57,7 @@ Choose copyleft when sharing-alike is a core value of the project. Do not end up
 
 **LGPL** is often used for libraries when you want copyleft on the library itself but allow linking from differently licensed applications. Details matter; read before you commit.
 
-## 5. How to Choose Without Spiralling
+## How to Choose Without Spiralling
 
 A simple heuristic for many Lupaxa-style tools:
 
@@ -71,7 +71,7 @@ Also check:
 - Whether your community already standardises on one license
 - Whether you need a contributor agreement (often you do not for small projects)
 
-## 6. Put It Where Humans Look
+## Put It Where Humans Look
 
 - Add a `LICENSE` file at the repository root
 - Mention the license in the README
@@ -79,6 +79,6 @@ Also check:
 
 Ambiguous "see license" links to nowhere help nobody.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 A license is part of your product's honesty. Pick one on purpose, publish it clearly, and stay consistent across the repository. That small act turns source code into something others can safely build on.

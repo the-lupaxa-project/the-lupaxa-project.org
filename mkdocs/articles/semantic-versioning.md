@@ -19,7 +19,7 @@ Semantic Versioning (SemVer) looks simple: `MAJOR.MINOR.PATCH`. In practice, mai
 
 This article focuses on how SemVer behaves for real libraries and CLIs.
 
-## 1. The Contract in Plain Language
+## The Contract in Plain Language
 
 For a public API after `1.0.0`:
 
@@ -29,7 +29,7 @@ For a public API after `1.0.0`:
 
 The key phrase is *public API*. Private helpers, undocumented behaviour, and accidental quirks are not automatically part of the contract. But if you documented them by example and people now rely on them, you have shipped a de facto API anyway.
 
-## 2. What "Breaking" Usually Means
+## What "Breaking" Usually Means
 
 Breaking changes include:
 
@@ -47,7 +47,7 @@ Not automatically breaking:
 
 When unsure, ask: "Would a careful user have to change their code or scripts?" If yes, bump major, or deprecate first.
 
-## 3. Life Before 1.0.0
+## Life Before 1.0.0
 
 In `0.x`, SemVer allows sharper edges: anything may change. That freedom is useful while the design is still moving. It is also a trust test.
 
@@ -59,7 +59,7 @@ Be explicit in the README:
 
 Users pin `0.x` ranges differently than `1.x`. Do not pretend a chaotic `0.x` is production-solid without saying so.
 
-## 4. Deprecate Before You Destroy
+## Deprecate Before You Destroy
 
 A kind breaking change is announced early:
 
@@ -70,7 +70,7 @@ A kind breaking change is announced early:
 
 Silent removals train users to fear upgrades.
 
-## 5. Changelogs Are Part of Versioning
+## Changelogs Are Part of Versioning
 
 A version number without a changelog is a rumour.
 
@@ -83,7 +83,7 @@ For each release, say:
 
 "Bug fixes and improvements" is not a changelog. It is a shrug.
 
-## 6. Ranges, Lockfiles, and Reality
+## Ranges, Lockfiles, and Reality
 
 Consumers should:
 
@@ -97,6 +97,6 @@ Publishers should:
 - Not hide breaks in minors "because it is easier"
 - Tag releases consistently in git and packages
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 SemVer is communication. The number tells users how scared they should be to upgrade. Make that signal boringly reliable and your project becomes easy to depend on, which is one of the highest compliments in open source.

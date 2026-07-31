@@ -18,7 +18,7 @@ A key that never rotates is a key that eventually leaks in slow motion. Lifecycl
 
 This applies to TLS keys, client certificates, signing keys, and API-adjacent secrets that behave like keys.
 
-## 1. Generate Deliberately
+## Generate Deliberately
 
 - Use well-tested libraries and tools
 - Choose algorithm and size/curves you can support for the lifetime
@@ -27,7 +27,7 @@ This applies to TLS keys, client certificates, signing keys, and API-adjacent se
 
 One key per purpose beats a master key that unlocks everything.
 
-## 2. Distribute Narrowly
+## Distribute Narrowly
 
 Only the processes and people that need a private key should have it. Prefer:
 
@@ -37,7 +37,7 @@ Only the processes and people that need a private key should have it. Prefer:
 
 Distribution is where most "secure generation" dies.
 
-## 3. Rotate on a Schedule, and on Events
+## Rotate on a Schedule, and on Events
 
 Rotate when:
 
@@ -48,13 +48,13 @@ Rotate when:
 
 Overlapping trust (old and new valid briefly) makes rotation calm. Big-bang cutovers make outages.
 
-## 4. Revoke When Trust Ends
+## Revoke When Trust Ends
 
 Certificates need CRL/OCSP or short lifetimes. Signing keys need published revocation or key retirement notices. Application secrets need invalidation at the provider.
 
 If you cannot revoke, your lifetimes must be short enough that revocation is less critical.
 
-## 5. Retire Cleanly
+## Retire Cleanly
 
 When a key is done:
 
@@ -65,10 +65,10 @@ When a key is done:
 
 Forgotten keys in backups are still keys.
 
-## 6. Automate the Boring Path
+## Automate the Boring Path
 
 Humans forget anniversaries. Automate expiry alerts, renewal jobs, and "cert expires in 14 days" checks. Manual calendars fail during holidays.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Cryptography fails operationally more often than mathematically. Own the lifecycle: generate carefully, distribute narrowly, rotate routinely, revoke when trust ends. Do that and your tools stay trustworthy as the people and machines around them change.

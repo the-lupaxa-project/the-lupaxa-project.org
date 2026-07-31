@@ -19,7 +19,7 @@ Two teams, opposite jobs, one goal. The Red Team tries to break into your system
 
 The value is not in who wins. It is in the list of surprises you hold afterwards.
 
-## 1. What a Red Team Does
+## What a Red Team Does
 
 The Red Team plays the adversary. It uses the tactics, techniques, and procedures (TTPs) real attackers use, and it is staffed by people who are good at it. The job is to find the weaknesses before a criminal, a cybercriminal group, or a state-sponsored team finds them for you.
 
@@ -37,7 +37,7 @@ The Red Team plays the adversary. It uses the tactics, techniques, and procedure
 - **Lateral movement.** Spreading through the network, compromising other machines and accounts, establishing persistence.
 - **Exfiltration.** Simulating theft of the data that matters, to show what a real breach would have cost.
 
-## 2. What a Blue Team Does
+## What a Blue Team Does
 
 The Blue Team defends. It protects the infrastructure, spots attacks in progress, responds to them, and limits the damage when something lands. Less glamorous than the Red Team's job and considerably more constant.
 
@@ -55,7 +55,7 @@ The Blue Team defends. It protects the infrastructure, spots attacks in progress
 - **Threat hunting.** Looking for compromise proactively, guided by known attacker behaviour, rather than waiting for an alarm.
 - **Vulnerability management.** Scanning, patching, system hardening, and checking that the controls still do what they were installed to do.
 
-## 3. Why Running Them Against Each Other Works
+## Why Running Them Against Each Other Works
 
 An adversarial simulation is not a competition with a trophy at the end. It is a test of your security under conditions closer to real than anything a questionnaire produces.
 
@@ -73,7 +73,7 @@ An adversarial simulation is not a competition with a trophy at the end. It is a
 - **A stronger posture.** Weaknesses found and fixed on your schedule rather than an attacker's.
 - **A habit of improving.** Red Teams keep looking for new routes in, Blue Teams keep closing them, and both get better because the other side will not stop.
 
-## 4. The Other Colours
+## The Other Colours
 
 Red and Blue are the two everyone names. A few other teams cover parts of the lifecycle those two miss.
 

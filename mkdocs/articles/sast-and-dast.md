@@ -19,7 +19,7 @@ Two scanners, two vantage points. Static Application Security Testing (SAST) rea
 
 Vulnerabilities that survive to production cost you data, money, and reputation. These two practices are how you find them earlier than that.
 
-## 1. SAST: Reading the Code
+## SAST: Reading the Code
 
 SAST is a white-box method. It analyses source code, bytecode, or compiled binaries without executing the application, examining structure and logic for vulnerabilities, code quality problems, and departures from secure coding practice. Because it only needs the code, it can run as soon as someone writes or edits a line.
 
@@ -34,7 +34,7 @@ SAST tools scan the codebase for known-bad patterns:
 
 The output is a report of what it found, before the application is compiled or tested anywhere live. That is the appeal: the vulnerability never reaches an environment where somebody could use it.
 
-## 2. DAST: Attacking the Running Application
+## DAST: Attacking the Running Application
 
 DAST is a black-box method. It ignores the code and probes a running application from the outside, the way a user or an attacker would, watching how it responds. That means it needs somewhere deployed, usually a test environment or staging server, which puts it later in the lifecycle than SAST.
 
@@ -49,7 +49,7 @@ DAST tools interact with the live application and check what comes back:
 
 You get a report in the same shape as SAST's, detailed enough to fix things, arriving before release rather than before build.
 
-## 3. Why You Want Both
+## Why You Want Both
 
 ### They Catch Different Things at Different Times
 
@@ -67,7 +67,7 @@ Plenty of industries mandate secure development practice. SAST and DAST help you
 
 New security risks appear regularly and attackers keep scanning for them. Finding your own problems first is the cheap version of that conversation. It protects sensitive data, customer trust, and reputation, none of which recover quickly.
 
-## 4. Wiring Them Into the Pipeline
+## Wiring Them Into the Pipeline
 
 ### SAST Belongs in CI
 

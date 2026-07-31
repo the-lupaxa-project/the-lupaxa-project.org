@@ -18,7 +18,7 @@ Errors are part of the interface. A stack trace dumped on a new user is a failed
 
 This article focuses on CLIs and small libraries, where error handling is often the difference between adoption and abandonment.
 
-## 1. Say What Failed and What to Try
+## Say What Failed and What to Try
 
 Useful errors include:
 
@@ -28,17 +28,17 @@ Useful errors include:
 
 "Error: failed" trains people to ignore you. "Cannot read key file `/path`: permission denied. Check ownership, or run without elevated paths you cannot access" teaches.
 
-## 2. Exit Codes Are for Scripts
+## Exit Codes Are for Scripts
 
 Reserve `0` for success. Use non-zero for failure. If you expose distinct codes, document them. Scripts should not scrape stderr to decide what happened if a code would do.
 
-## 3. Choose Crash Versus Recover Deliberately
+## Choose Crash Versus Recover Deliberately
 
 Crash (or return a hard error) when continuing would corrupt state or hide danger. Recover when the failure is expected and local, like a missing optional file, an empty search result, or a retryable network blip.
 
 Infinite silent retries are not recovery. They are a hang.
 
-## 4. Retries Need Budgets
+## Retries Need Budgets
 
 If you retry:
 
@@ -49,16 +49,16 @@ If you retry:
 
 Libraries should usually let the caller decide retry policy.
 
-## 5. Typed Errors Help Callers
+## Typed Errors Help Callers
 
 For libraries, distinct error types or codes beat string matching. Callers can handle "not found" differently from "permission denied" without parsing English.
 
 Keep messages human; keep structure machine-friendly.
 
-## 6. Log for Operators, Message for Users
+## Log for Operators, Message for Users
 
 Verbose logs can hold detail. The default user-facing message should stay short. Do not dump internal tracebacks unless `--debug` is on.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Error handling is empathy under failure. Clear messages, honest exit codes, deliberate retries, and typed failures turn broken runs into solvable problems, which is what users actually needed.

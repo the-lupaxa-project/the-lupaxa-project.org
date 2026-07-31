@@ -17,7 +17,7 @@ tags:
 
 You already know disclosures need a door. This article is about the **document behind the door**: a `SECURITY.md` that reporters can follow and maintainers can honour. Short, concrete, and honest beats a copied enterprise policy.
 
-## 1. Put It Where Tools Expect
+## Put It Where Tools Expect
 
 - Repository root: `SECURITY.md`
 - Optional: `.github/SECURITY.md` on GitHub (still keep root or link clearly)
@@ -25,7 +25,7 @@ You already know disclosures need a door. This article is about the **document b
 
 If people cannot find it in ten seconds, it does not exist.
 
-## 2. A Structure That Works
+## A Structure That Works
 
 Keep sections scannable:
 
@@ -38,7 +38,7 @@ Keep sections scannable:
 
 One screen on mobile is a good length target for small projects.
 
-## 3. Be Explicit About Scope
+## Be Explicit About Scope
 
 In scope examples:
 
@@ -55,7 +55,7 @@ Out of scope examples:
 
 Clarity saves everyone time.
 
-## 4. Tell Reporters What to Send
+## Tell Reporters What to Send
 
 Ask for:
 
@@ -66,7 +66,7 @@ Ask for:
 
 Say thank you for concise reports. Do not demand a full consulting engagement.
 
-## 5. Promise Only Your Real Capacity
+## Promise Only Your Real Capacity
 
 Example language:
 
@@ -74,7 +74,7 @@ Example language:
 
 Update the file when capacity changes. An outdated promise is worse than a modest one.
 
-## 6. Keep It Alive
+## Keep It Alive
 
 Review `SECURITY.md` when you:
 
@@ -85,6 +85,6 @@ Review `SECURITY.md` when you:
 
 A stale policy is how reports go to abandoned email addresses.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 A useful `SECURITY.md` is a map: where to report, what counts, what to expect. Write it for a tired researcher at midnight, and for future you who has to answer them.

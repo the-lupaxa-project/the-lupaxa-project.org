@@ -16,7 +16,7 @@ tags:
 
 Most security bugs in small tools are not exotic crypto failures. They are trust in strings: paths, URLs, hostnames, and shell fragments that an attacker influences. Validation that sticks happens at every trust boundary, not once as a regex at the front door.
 
-## 1. Name the Untrusted Inputs
+## Name the Untrusted Inputs
 
 List them:
 
@@ -29,7 +29,7 @@ List them:
 
 If it crossed a boundary, it is untrusted until proven otherwise.
 
-## 2. Paths: Contain Them
+## Paths: Contain Them
 
 Path traversal (`../../etc/passwd`) still works when you naively join user strings to a base directory.
 
@@ -38,7 +38,7 @@ Path traversal (`../../etc/passwd`) still works when you naively join user strin
 - Refuse unexpected symlinks when that is your threat model
 - Do not shell out with user paths unquoted
 
-## 3. URLs and Network Targets
+## URLs and Network Targets
 
 User-supplied URLs invite SSRF: your tool fetches internal metadata endpoints or localhost admin ports.
 
@@ -49,7 +49,7 @@ User-supplied URLs invite SSRF: your tool fetches internal metadata endpoints or
 
 "Just curl whatever they gave us" is a feature request from attackers.
 
-## 4. Commands and Shells
+## Commands and Shells
 
 If you must run subprocesses:
 
@@ -59,16 +59,16 @@ If you must run subprocesses:
 
 Command injection is almost always a design smell, not bad luck.
 
-## 5. Validate Types Early
+## Validate Types Early
 
 Parse ints, enums, hostnames, and PEM blocks with strict parsers. Reject unknown fields in configs. Fail with a clear error pointing at the bad value.
 
 Silent coercion hides attacks and bugs alike.
 
-## 6. Test the Nasty Cases
+## Test the Nasty Cases
 
 Add fixtures for `../`, weird unicode dots, newlines in arguments, oversized inputs, and file:// URLs. Security tests are just tests that remember adversaries.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Input validation that sticks treats every boundary as hostile until proven kind. Contain paths, tame URLs, avoid shells, parse strictly. Do that and your CLI stays a tool instead of becoming someone else's gadget.

@@ -19,7 +19,7 @@ For most open-source projects, the README is the product page. It is where stran
 
 So treat it as a product surface, not an afterthought.
 
-## 1. Lead With Clarity
+## Lead With Clarity
 
 The top of the README should answer three questions fast:
 
@@ -29,7 +29,7 @@ The top of the README should answer three questions fast:
 
 A short pitch beats a manifesto. Save philosophy for later sections or a separate docs site.
 
-## 2. Install Paths That Actually Work
+## Install Paths That Actually Work
 
 Document the happy path first. Then note alternatives.
 
@@ -48,7 +48,7 @@ Bad install sections:
 
 If an install step fails often, put the fix next to the step, not in a buried FAQ.
 
-## 3. Examples Over Abstracts
+## Examples Over Abstracts
 
 Show one complete, boring, correct example before advanced options. People learn by running something that works.
 
@@ -64,7 +64,7 @@ Avoid:
 - Screenshots of UIs that no longer match
 - Examples that require secret infrastructure you do not provide
 
-## 4. Badges That Do Not Lie
+## Badges That Do Not Lie
 
 Badges are fine when they reflect reality. They are harmful when they decorate neglect.
 
@@ -83,7 +83,7 @@ Skip or remove:
 
 Honesty builds more trust than a colourful header.
 
-## 5. Navigation for Humans
+## Navigation for Humans
 
 As a project grows, the README should stay a map, not an encyclopaedia.
 
@@ -93,12 +93,12 @@ As a project grows, the README should stay a map, not an encyclopaedia.
 
 If the README is scrolling past several screenshots of concepts before install, reorder it.
 
-## 6. Tone Without Corporate Fog
+## Tone Without Corporate Fog
 
 Write like a competent peer. Be direct. Avoid empty claims ("blazing fast", "enterprise-grade") unless you can show what that means.
 
 Open-source readers are skilled at detecting hype. They reward precision.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 A README is not paperwork. It is the first user experience. Make the first success cheap, the promises honest, and the next steps obvious, and your project will feel finished long before it is large.

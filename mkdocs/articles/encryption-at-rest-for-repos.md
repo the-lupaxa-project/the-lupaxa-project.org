@@ -18,7 +18,7 @@ Git is excellent history and a terrible place for plaintext secrets. Encryption-
 
 This is for small teams shipping tools that need shared encrypted config, without standing up a full enterprise vault on day one.
 
-## 1. What Problem This Solves
+## What Problem This Solves
 
 You need a file in the repo (or next to it in the workflow) that:
 
@@ -28,7 +28,7 @@ You need a file in the repo (or next to it in the workflow) that:
 
 Examples: environment templates with real values for staging, API tokens for integration tests, customer-specific overlays.
 
-## 2. What It Does Not Solve
+## What It Does Not Solve
 
 Encrypted-in-git is not:
 
@@ -39,13 +39,13 @@ Encrypted-in-git is not:
 
 If the decrypt key is world-readable in CI logs, you encrypted nothing that matters.
 
-## 3. Pick a Narrow Set of Files
+## Pick a Narrow Set of Files
 
 Encrypt only what must be shared as files. Prefer environment injection from a vault or CI secrets for runtime credentials.
 
 Mark paths explicitly (for example via `.gitattributes`). Review that list in PRs. Encrypting "everything under `config/`" invites surprises.
 
-## 4. Key Management Is the Real Product
+## Key Management Is the Real Product
 
 Decide:
 
@@ -56,7 +56,7 @@ Decide:
 
 Document the ceremony. Untested key recovery is not a plan.
 
-## 5. CI Patterns That Work
+## CI Patterns That Work
 
 - Store the unlock key in a protected CI secret
 - Decrypt only on jobs that need it
@@ -65,13 +65,13 @@ Document the ceremony. Untested key recovery is not a plan.
 
 Keep decrypt steps boring and identical across environments.
 
-## 6. Operational Habits
+## Operational Habits
 
 - Rotate when someone leaves the project
 - Audit who has keys periodically
 - Keep a break-glass path owned by more than one person
 - Treat plaintext working copies as sensitive disks
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Repo encryption is a scalpel: useful for a few shared files, dangerous as a general secret strategy. Encrypt narrowly, guard keys like production credentials, and still prefer proper secret stores when the system grows up.

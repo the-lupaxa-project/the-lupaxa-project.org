@@ -19,7 +19,7 @@ Threat modelling sounds like a workshop with sticky notes and a facilitator. For
 
 You do not need STRIDE bingo. You need clearer design decisions.
 
-## 1. Start With Assets
+## Start With Assets
 
 Write down what would hurt if abused:
 
@@ -31,7 +31,7 @@ Write down what would hurt if abused:
 
 If nothing valuable is at stake, say so and move on. Most CLIs still touch *something*.
 
-## 2. Draw Trust Boundaries Roughly
+## Draw Trust Boundaries Roughly
 
 Ask where data crosses a line:
 
@@ -43,7 +43,7 @@ Ask where data crosses a line:
 
 Attacks love boundaries. So should your checks.
 
-## 3. Name Realistic Attackers
+## Name Realistic Attackers
 
 Skip movie villains. Prefer:
 
@@ -55,7 +55,7 @@ Skip movie villains. Prefer:
 
 Design for the attackers you will actually meet.
 
-## 4. Ask Four Questions
+## Ask Four Questions
 
 For each important flow:
 
@@ -66,7 +66,7 @@ For each important flow:
 
 Controls might be: validate input, refuse unsafe defaults, verify signatures, drop privileges, or document "do not run as root."
 
-## 5. Record Decisions, Not Decks
+## Record Decisions, Not Decks
 
 A short `SECURITY.md` section or architecture note beats a forgotten Confluence page:
 
@@ -76,10 +76,10 @@ A short `SECURITY.md` section or architecture note beats a forgotten Confluence 
 
 Future you will thank present you.
 
-## 6. Revisit on Big Changes
+## Revisit on Big Changes
 
 New network calls, new privilege, new deserialisation, a new plugin system: those are threat-model events. A five-minute review at PR time is worth more than an annual ceremony.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Threat modelling for small tools is disciplined curiosity: protect the valuable bits, distrust boundaries, and write down the non-negotiables. Do that and security stops being a vibe and becomes part of the design.

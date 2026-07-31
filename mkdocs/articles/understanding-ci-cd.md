@@ -19,7 +19,7 @@ CI/CD is two ideas bolted together. Continuous integration keeps everyone's code
 
 Most write-ups stop at the benefits. The interesting part is the trade-offs, especially at the deployment end, where automation means a bad commit can reach production without anyone looking at it.
 
-## 1. Continuous Integration
+## Continuous Integration
 
 CI means merging code into a shared branch often, several times a day, and having a machine build and test every merge.
 
@@ -44,7 +44,7 @@ CI means merging code into a shared branch often, several times a day, and havin
 - **Infrastructure adds up.** Running builds and tests continuously consumes compute, and someone pays for it.
 - **Dependencies get complicated.** Different parts of a codebase pinning different versions of the same library is a recurring headache in CI.
 
-## 2. Continuous Delivery and Continuous Deployment
+## Continuous Delivery and Continuous Deployment
 
 Both extend CI past the test stage. The difference is who presses the button.
 
@@ -68,7 +68,7 @@ Delivery is the safer default. Deployment is faster, and it demands much more of
 - **Failures propagate fast.** A bad change can degrade or take down the service before anyone has read the alert.
 - **Rollbacks are harder than they sound.** Reverting code is easy. Reverting a migration or a change that other systems already consumed is not.
 
-## 3. Making Continuous Deployment Survivable
+## Making Continuous Deployment Survivable
 
 The risks above are manageable, but only if you build for them deliberately.
 

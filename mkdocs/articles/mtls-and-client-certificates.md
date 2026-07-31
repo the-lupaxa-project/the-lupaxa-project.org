@@ -17,14 +17,14 @@ tags:
 
 Ordinary HTTPS proves the server's identity to the client. **Mutual TLS (mTLS)** also proves the client's identity to the server using a client certificate. That is powerful for machine-to-machine links, internal APIs, and agent-style tools. It is also easy to misconfigure.
 
-## 1. Server TLS Versus Mutual TLS
+## Server TLS Versus Mutual TLS
 
 - **Server TLS:** client verifies the server certificate; server may still use passwords or tokens for the user.
 - **mTLS:** both sides present certificates; the server authenticates the client by certificate (often *instead of* a shared password).
 
 mTLS is identity in the handshake, not application logic sprinkled later.
 
-## 2. When Client Certificates Help
+## When Client Certificates Help
 
 Good fits:
 
@@ -38,7 +38,7 @@ Poor fits:
 - Random browser users on the public internet (painful UX)
 - Anything where you cannot distribute and revoke client certs
 
-## 3. What You Must Verify
+## What You Must Verify
 
 On the server:
 
@@ -50,7 +50,7 @@ On the server:
 
 Skipping verification "to make it work" deletes the point of mTLS.
 
-## 4. Issuance and Renewal
+## Issuance and Renewal
 
 Treat client certificates like keys with an expiry:
 
@@ -61,7 +61,7 @@ Treat client certificates like keys with an expiry:
 
 Self-signed client certs pinned one-by-one do not scale; a small internal CA usually does.
 
-## 5. Tooling Habits
+## Tooling Habits
 
 For CLIs and libraries:
 
@@ -70,10 +70,10 @@ For CLIs and libraries:
 - Surface handshake errors clearly (`certificate verify failed` with cause)
 - Document a local mutual-TLS smoke test
 
-## 6. Tokens Still Have a Place
+## Tokens Still Have a Place
 
 mTLS authenticates the channel identity. Authorisation (roles, scopes) may still live in the application. Do not confuse "has a valid client cert" with "may delete production."
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 mTLS is strong authentication for systems you operate. Issue carefully, verify strictly, renew on purpose. Use it where machines talk to machines, not where a password reset email would have been kinder.

@@ -19,7 +19,7 @@ A release should be a boring button, or better, a tag that triggers a known pipe
 
 Here is a practical shape for small open-source projects.
 
-## 1. Decide What a Release Is
+## Decide What a Release Is
 
 Define the artefacts you publish:
 
@@ -30,7 +30,7 @@ Define the artefacts you publish:
 
 Write the checklist once. Then make machines execute it.
 
-## 2. Tags as the Source of Truth
+## Tags as the Source of Truth
 
 A clean pattern:
 
@@ -41,7 +41,7 @@ A clean pattern:
 
 Avoid publishing from dirty local trees. If it is not in git, it is not a release.
 
-## 3. Changelogs That Humans Read
+## Changelogs That Humans Read
 
 Automate collection where you can (conventional commits, PR labels), but keep a human pass for majors.
 
@@ -53,11 +53,11 @@ Every release note should answer:
 
 Link issues/PRs when helpful. Skip empty marketing fluff.
 
-## 4. GitHub Releases and Packages
+## GitHub Releases and Packages
 
 GitHub Releases are a friendly landing page for notes and binaries. Attach checksums for anything you distribute. Publish packages with tokens scoped as tightly as practical, stored as secrets, never in the repository.
 
-## 5. Guardrails in CI
+## Guardrails in CI
 
 Before publish jobs run:
 
@@ -68,14 +68,14 @@ Before publish jobs run:
 
 A publish job that can run twice safely (idempotent) saves panic later.
 
-## 6. Separate Build From Deploy Privileges
+## Separate Build From Deploy Privileges
 
 Use environments and protected secrets so routine PRs cannot publish. Tag builds can request publishing credentials; pull requests should not.
 
-## 7. Practice Dry Runs
+## Practice Dry Runs
 
 Provide a dry-run mode for packaging and note generation. Rehearse the release pipeline on a pre-release tag when the project is young. Confidence comes from repetition, not optimism.
 
-## 8. Closing Thoughts
+## Closing Thoughts
 
 Release automation turns "we should ship" into "we shipped." Combine tags, green CI, honest changelogs, and constrained secrets. Maintainers get their weekends back, and users get predictable upgrades.

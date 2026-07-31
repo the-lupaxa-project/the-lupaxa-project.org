@@ -19,7 +19,7 @@ Test suites exist to protect behaviour users care about. They do not exist to de
 
 This article is about testing that earns its keep, especially in small projects.
 
-## 1. Coverage Is a Clue, Not a Score
+## Coverage Is a Clue, Not a Score
 
 Coverage answers: "Which lines ran?" It does not answer: "Would we notice a bad change?"
 
@@ -27,7 +27,7 @@ High coverage with weak assertions is theatre. Low coverage on a tiny critical p
 
 Use coverage to find *untested risk*, not to chase a number.
 
-## 2. Prefer Behaviour Over Implementation
+## Prefer Behaviour Over Implementation
 
 Behavioural tests describe outcomes:
 
@@ -43,7 +43,7 @@ Implementation tests bind you to private structure:
 
 When the design improves, behaviour tests still help. Implementation tests mostly fight you.
 
-## 3. Mocks Are Tools, Not a Lifestyle
+## Mocks Are Tools, Not a Lifestyle
 
 Mocks are useful at boundaries you do not control: network, time, third-party APIs. They are overused when they replace your own modules so thoroughly that nothing real remains.
 
@@ -55,7 +55,7 @@ Prefer:
 - Temporary directories and sample files
 - Contract tests at the edges
 
-## 4. Design for Testability Without Ceremony
+## Design for Testability Without Ceremony
 
 Small projects can stay testable by:
 
@@ -66,7 +66,7 @@ Small projects can stay testable by:
 
 You do not need a grandiose architecture diagram to make a function testable.
 
-## 5. Make Failures Obvious
+## Make Failures Obvious
 
 A good failing test names the behaviour that broke. A bad one dumps a stack and a puzzle.
 
@@ -79,7 +79,7 @@ Invest in:
 
 Flaky tests train teams to ignore red builds. Delete or fix them quickly.
 
-## 6. Right-Size the Suite
+## Right-Size the Suite
 
 Not every idea needs an integration palace. Aim for a pyramid that matches the project:
 
@@ -89,6 +89,6 @@ Not every idea needs an integration palace. Aim for a pyramid that matches the p
 
 For libraries, public API tests matter most. For CLIs, exit codes and output contracts matter most.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Test what users would curse you for breaking. Let coverage reports guide curiosity, not vanity. A modest suite that fails for the right reasons is worth more than a green cathedral of mocks.

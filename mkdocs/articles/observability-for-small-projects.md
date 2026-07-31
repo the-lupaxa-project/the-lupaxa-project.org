@@ -19,7 +19,7 @@ Observability is often sold as dashboards, agents, and acronyms. For small open-
 
 This article focuses on lightweight practices that fit CLIs, libraries, and modest deployments.
 
-## 1. Decide What "Healthy" Means
+## Decide What "Healthy" Means
 
 Before tooling, define signals:
 
@@ -30,7 +30,7 @@ Before tooling, define signals:
 
 A CLI might use exit codes and stderr. A service might expose a health endpoint. A library might raise specific errors instead of returning vague `None`.
 
-## 2. Logs Should Explain, Not Drown
+## Logs Should Explain, Not Drown
 
 Good logs are sparse and structured enough to scan.
 
@@ -49,7 +49,7 @@ Avoid:
 
 If your default log level needs a filter to be readable, it is not a default. It is noise.
 
-## 3. Failure Modes Beat Happy Paths
+## Failure Modes Beat Happy Paths
 
 Document and test how the tool behaves when:
 
@@ -61,7 +61,7 @@ Document and test how the tool behaves when:
 
 Users forgive failures they can diagnose. They do not forgive silent corruption or hanging processes.
 
-## 4. Metrics in Proportion
+## Metrics in Proportion
 
 You do not need a dozen golden signals on day one. Start with counters that answer real questions:
 
@@ -71,7 +71,7 @@ You do not need a dozen golden signals on day one. Start with counters that answ
 
 Add complexity when a question repeats and logs are no longer enough.
 
-## 5. Make Local Debugging First-Class
+## Make Local Debugging First-Class
 
 Observability that only works in a vendor cloud is incomplete for open source.
 
@@ -83,12 +83,12 @@ Provide:
 
 The best on-call experience for a small project is often a contributor reproducing the issue locally in minutes.
 
-## 6. Alert on Symptoms You Will Act On
+## Alert on Symptoms You Will Act On
 
 If nobody will wake up for it, it is not an alert. It is a badge.
 
 Alert on user-visible breakage and capacity cliffs. Keep informational noise in dashboards or weekly reviews.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Observability for small projects is empathy for future you: exit codes that mean something, logs that narrate failures, and docs that name the sharp edges. You can add fancy tooling later. You cannot skip clarity.

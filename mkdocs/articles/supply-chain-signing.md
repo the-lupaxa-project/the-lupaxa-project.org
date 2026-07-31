@@ -18,13 +18,13 @@ Dependency hygiene asks what you trust. Signing asks whether the artefact in fro
 
 You do not need a full enterprise SLSA programme on day one. You need verifiable releases and docs that show how to check them.
 
-## 1. Start With Checksums
+## Start With Checksums
 
 Publish checksums (SHA-256 is fine) next to binaries and archives. Users can verify downloads. Automate generation in release CI so humans do not mistype hashes.
 
 Checksums detect corruption and many dumb substitutions. They do not prove *who* produced the file unless the checksum list itself is authenticated.
 
-## 2. Sign the Artefacts You Care About
+## Sign the Artefacts You Care About
 
 Common patterns:
 
@@ -34,11 +34,11 @@ Common patterns:
 
 Pick keys you can protect. A signature with a leaked key is theatre.
 
-## 3. Provenance When You Can
+## Provenance When You Can
 
 Provenance attests *how* something was built (which commit, which workflow). GitHub attestations and similar systems help bind artefacts to source. Use them when your release pipeline is already automated. They are a poor fit for hand-built mystery zips.
 
-## 4. Document Verification
+## Document Verification
 
 A signature nobody knows how to check is decoration. In the README or release docs:
 
@@ -49,16 +49,16 @@ A signature nobody knows how to check is decoration. In the README or release do
 
 Keep the happy-path verify under a minute.
 
-## 5. Protect the Pipeline
+## Protect the Pipeline
 
 Signing secrets belong in CI environments with tight access, not in the repository and not on every laptop. Separate who can merge from who can publish when the project grows.
 
 Compromise of the release job is compromise of trust. Guard it accordingly.
 
-## 6. Be Honest About Scope
+## Be Honest About Scope
 
 Signing your releases does not secure your dependencies' releases. Say what you guarantee. Point users at lockfiles and audits for the rest.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Supply-chain signing is evidence: checksums for integrity, signatures for authenticity, provenance for the build story. Automate it, document verification, and protect the keys. Then users can trust your bits on purpose instead of on hope.

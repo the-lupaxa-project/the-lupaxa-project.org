@@ -17,7 +17,7 @@ tags:
 
 A reproducible build means that given the same source and toolchain inputs, you get the same artefact bytes, or close enough that you can explain the differences. For small open-source tools this is less about academic purity and more about trust. Someone else can rebuild what you shipped and check that it matches.
 
-## 1. Why It Matters
+## Why It Matters
 
 Reproducibility helps:
 
@@ -27,7 +27,7 @@ Reproducibility helps:
 
 It pairs with signing: signatures say who published; reproducibility says what was built.
 
-## 2. Pin the Inputs
+## Pin the Inputs
 
 - Lock dependencies
 - Record language/runtime version
@@ -36,7 +36,7 @@ It pairs with signing: signatures say who published; reproducibility says what w
 
 Floating toolchains produce floating artefacts.
 
-## 3. Kill Obvious Nondeterminism
+## Kill Obvious Nondeterminism
 
 Common culprits:
 
@@ -47,13 +47,13 @@ Common culprits:
 
 Prefer `SOURCE_DATE_EPOCH` and stable archive settings when your ecosystem supports them.
 
-## 4. Practical, Not Perfect
+## Practical, Not Perfect
 
 Bit-for-bit identity is ideal. **Practical reproducibility** (same functional content, documented toolchain) is still valuable when absolute identity is hard (some proprietary linkers, some language ecosystems).
 
 Say what you guarantee. Honesty beats fake hermetic claims.
 
-## 5. Automate a Rebuild Check
+## Automate a Rebuild Check
 
 In CI:
 
@@ -63,7 +63,7 @@ In CI:
 
 Fail the job when digests diverge unexpectedly.
 
-## 6. Publish Enough for Others to Retry
+## Publish Enough for Others to Retry
 
 Release notes or a `BUILD.md` should list:
 
@@ -73,6 +73,6 @@ Release notes or a `BUILD.md` should list:
 
 If only your laptop can reproduce, it is not reproducible.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Reproducible builds shrink the trust gap between source and binary. Pin inputs, remove noise, check digests in CI, and document how a stranger can rebuild. That is enough ceremony to matter and not enough to stop shipping.

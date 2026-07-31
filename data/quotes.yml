@@ -5,514 +5,563 @@ page:
   text_color: '#f5f8fc'
   shuffle: true
 quotes:
-- text: Failure is an option here. If things are not failing, you are not innovating
-    enough.
-  published: true
-  author: Elon Musk
-  year: 2005
-  tags:
-  - work
-  - risk
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: The most common mistake of smart engineers is to optimize a thing that should
-    not exist.
-  published: true
-  author: Elon Musk
-  year: 2021
-  tags:
-  - work
-  - simplicity
-  - engineering
-  card_color: '#42759a'
-  text_color: '#ffffff'
-- text: Perfection is achieved, not when there is nothing more to add, but when
-    there is nothing left to take away.
-  published: true
-  author: Antoine de Saint-Exupéry
-  year: 1939
-  tags:
-  - simplicity
-  - product
-  card_color: '#4b81a7'
-  text_color: '#ffffff'
-- text: Simplicity is a prerequisite for reliability.
-  published: true
-  author: Edsger W. Dijkstra
-  year: 1975
-  tags:
-  - simplicity
-  - engineering
-  card_color: '#6d95d3'
-  text_color: '#111a32'
-- text: Everything should be made as simple as possible, but not simpler.
-  published: true
-  author: Albert Einstein
-  year: 1950
-  tags:
-  - simplicity
-  card_color: '#111a32'
-  text_color: '#e8eef8'
-- text: The best way to predict the future is to invent it.
-  published: true
-  author: Alan Kay
-  year: 1971
-  tags:
-  - work
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: Complexity is your enemy. Any fool can make something complicated.
-  published: true
-  author: Richard Branson
-  tags:
-  - simplicity
-  card_color: '#335d80'
-  text_color: '#ffffff'
-- text: Design is not just what it looks like and feels like. Design is how it works.
-  published: true
-  author: Steve Jobs
-  year: 2003
-  tags:
-  - product
-  card_color: '#182a4c'
-  text_color: '#eaeff7'
-- text: People don't care about what you say. They care about what you build.
-  published: true
-  author: Mark Zuckerberg
-  tags:
-  - work
-  - product
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: Your most unhappy customers are your greatest source of learning.
-  published: true
-  author: Bill Gates
-  year: 1999
-  tags:
-  - product
-  - work
-  card_color: '#335d80'
-  text_color: '#ffffff'
-- text: Measuring programming progress by lines of code is like measuring aircraft
-    building progress by weight.
-  published: true
-  author: Bill Gates
-  tags:
-  - work
-  - engineering
-  - simplicity
-  card_color: '#42759a'
-  text_color: '#ffffff'
-- text: Talk is cheap. Show me the code.
-  published: true
-  author: Linus Torvalds
-  year: 2000
-  tags:
-  - work
-  - engineering
-  card_color: '#1c3358'
-  text_color: '#f0f4fa'
-- text: Bad programmers worry about the code. Good programmers worry about data
-    structures and their relationships.
-  published: true
-  author: Linus Torvalds
-  year: 2006
-  tags:
-  - engineering
-  - work
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: First, solve the problem. Then, write the code.
-  published: true
-  author: John Johnson
-  tags:
-  - engineering
-  - simplicity
-  card_color: '#264566'
-  text_color: '#f5f8fc'
-- text: Premature optimization is the root of all evil.
-  published: true
-  author: Donald Knuth
-  year: 1974
-  tags:
-  - engineering
-  - simplicity
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: Software is a great combination of artistry and engineering.
-  published: true
-  author: Bill Gates
-  tags:
-  - engineering
-  - product
-  card_color: '#3a698d'
-  text_color: '#ffffff'
-- text: If you are not embarrassed by the first version of your product, you've
-    launched too late.
-  published: true
-  author: Reid Hoffman
-  year: 2011
-  tags:
-  - product
-  - risk
-  - work
-  card_color: '#15233f'
-  text_color: '#e8eef8'
-- text: Code is like humor. When you have to explain it, it's bad.
-  published: true
-  author: Cory House
-  tags:
-  - engineering
-  - simplicity
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: Programs must be written for people to read, and only incidentally for machines
-    to execute.
-  published: true
-  author: Harold Abelson
-  year: 1985
-  tags:
-  - engineering
-  - simplicity
-  card_color: '#264566'
-  text_color: '#f5f8fc'
-- text: The function of good software is to make the complex appear to be simple.
-  published: true
-  author: Grady Booch
-  tags:
-  - simplicity
-  - engineering
-  - product
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: One of my most productive days was throwing away 1000 lines of code.
-  published: true
-  author: Ken Thompson
-  tags:
-  - simplicity
-  - engineering
-  card_color: '#3a698d'
-  text_color: '#ffffff'
-- text: The most disastrous thing that you can ever learn is your first programming
-    language.
-  published: true
-  author: Alan Kay
-  tags:
-  - work
-  - engineering
-  card_color: '#42759a'
-  text_color: '#ffffff'
-- text: Controlling complexity is the essence of computer programming.
-  published: true
-  author: Brian Kernighan
-  tags:
-  - simplicity
-  - engineering
-  card_color: '#4b81a7'
-  text_color: '#ffffff'
-- text: 'There are only two hard things in Computer Science: cache invalidation
-    and naming things.'
-  published: true
-  author: Phil Karlton
-  year: 1996
-  tags:
-  - engineering
-  - work
-  card_color: '#335d80'
-  text_color: '#ffffff'
-- text: Make it work, make it right, make it fast.
-  published: true
-  author: Kent Beck
-  year: 1999
-  tags:
-  - engineering
-  - work
-  - simplicity
-  card_color: '#3a698d'
-  text_color: '#ffffff'
-- text: Any fool can write code that a computer can understand. Good programmers
-    write code that humans can understand.
-  published: true
-  author: Martin Fowler
-  year: 1999
-  tags:
-  - engineering
-  - simplicity
-  card_color: '#42759a'
-  text_color: '#ffffff'
-- text: The most powerful tool we have as developers is automation.
-  published: true
-  author: Scott Hanselman
-  tags:
-  - engineering
-  - work
-  card_color: '#111a32'
-  text_color: '#e8eef8'
-- text: Debugging is twice as hard as writing the code in the first place.
-  published: true
-  author: Brian Kernighan
-  year: 1978
-  tags:
-  - engineering
-  - work
-  card_color: '#15233f'
-  text_color: '#e8eef8'
-- text: Deleted code is debugged code.
-  published: true
-  author: Jeff Sickel
-  tags:
-  - simplicity
-  - engineering
-  card_color: '#182a4c'
-  text_color: '#eaeff7'
-- text: Before software can be reusable, it first has to be usable.
-  published: true
-  author: Ralph Johnson
-  tags:
-  - engineering
-  - product
-  card_color: '#1c3358'
-  text_color: '#f0f4fa'
-- text: A primary cause of complexity is that software vendors uncritically adopt
-    almost any feature that users want.
-  published: true
-  author: Niklaus Wirth
-  year: 1995
-  tags:
-  - simplicity
-  - product
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: The cheapest, fastest and most reliable components are those that aren't
-    there.
-  published: true
-  author: Gordon Bell
-  tags:
-  - simplicity
-  - engineering
-  card_color: '#264566'
-  text_color: '#f5f8fc'
-- text: In programming, the hard part isn't solving problems, but deciding what
-    problems to solve.
-  published: true
-  author: Paul Graham
-  tags:
-  - work
-  - product
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: I'm as proud of many of the things we haven't done as the things we have
-    done. Innovation is saying no to a thousand things.
-  published: true
-  author: Steve Jobs
-  year: 1997
-  tags:
-  - simplicity
-  - work
-  card_color: '#4b81a7'
-  text_color: '#ffffff'
-- text: It's fine to celebrate success, but it is more important to heed the lessons
-    of failure.
-  published: true
-  author: Bill Gates
-  tags:
-  - work
-  - risk
-  card_color: '#182a4c'
-  text_color: '#eaeff7'
-- text: 'The most damaging phrase in the language is: ''We''ve always done it this
-    way.'''
-  published: true
-  author: Grace Hopper
-  tags:
-  - work
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: The best error message is the one that never shows up.
-  published: true
-  author: Thomas Fuchs
-  tags:
-  - product
-  - engineering
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: UX is not about adding features. It's about removing barriers.
-  published: true
-  author: Unknown
-  tags:
-  - product
-  - simplicity
-  card_color: '#335d80'
-  text_color: '#ffffff'
-- text: Users hate change, even when it's for the better.
-  published: true
-  author: Jakob Nielsen
-  tags:
-  - product
-  card_color: '#3a698d'
-  text_color: '#ffffff'
-- text: The best code is no code at all.
-  published: true
-  author: Jeff Atwood
-  year: 2007
-  tags:
-  - simplicity
-  - engineering
-  card_color: '#182a4c'
-  text_color: '#eaeff7'
-- text: Simple can be harder than complex.
-  published: true
-  author: Steve Jobs
-  year: 1998
-  tags:
-  - simplicity
-  - product
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: 'Software and cathedrals are much the same: first we build them, then we
-    pray.'
-  published: true
-  author: Sam Redwine
-  year: 1988
-  tags:
-  - engineering
-  - work
-  card_color: '#15233f'
-  text_color: '#e8eef8'
-- text: Adding manpower to a late software project makes it later.
-  published: true
-  author: Fred Brooks
-  year: 1975
-  tags:
-  - engineering
-  - work
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: Good judgment comes from experience, and experience comes from bad judgment.
-  published: true
-  author: Fred Brooks
-  year: 1975
-  tags:
-  - work
-  - risk
-  card_color: '#335d80'
-  text_color: '#ffffff'
-- text: Security is a process, not a product.
-  published: true
-  author: Bruce Schneier
-  year: 2000
-  tags:
-  - engineering
-  - risk
-  card_color: '#111a32'
-  text_color: '#e8eef8'
-- text: Security is a chain; it's only as secure as the weakest link.
-  published: true
-  author: Bruce Schneier
-  year: 2000
-  tags:
-  - engineering
-  - risk
-  card_color: '#15233f'
-  text_color: '#e8eef8'
-- text: The only truly secure system is one that is powered off, cast in a block
-    of concrete and sealed in a lead-lined room with armed guards - and even then
-    I have my doubts.
-  published: true
-  author: Gene Spafford
-  year: 1989
-  tags:
-  - engineering
-  - risk
-  - work
-  card_color: '#182a4c'
-  text_color: '#eaeff7'
-- text: Security engineering is about building systems to remain dependable in the
-    face of malice, error, or mischance.
-  published: true
-  author: Ross Anderson
-  year: 2001
-  tags:
-  - engineering
-  - risk
-  card_color: '#1c3358'
-  text_color: '#f0f4fa'
-- text: Given enough eyeballs, all bugs are shallow.
-  published: true
-  author: Eric S. Raymond
-  year: 1999
-  tags:
-  - engineering
-  - work
-  - simplicity
-  card_color: '#203959'
-  text_color: '#f5f8fc'
-- text: At the very basic level, organizations should provide a clear way for someone
-    to report issues.
-  published: true
-  author: Katie Moussouris
-  year: 2017
-  tags:
-  - engineering
-  - work
-  - risk
-  card_color: '#2c5173'
-  text_color: '#f8fafc'
-- text: Risk is a necessary consequence of dependence.
-  published: true
-  author: Dan Geer
-  year: 2013
-  tags:
-  - risk
-  - engineering
-  card_color: '#335d80'
-  text_color: '#ffffff'
-- text: If you want to build truly large and long-lasting software, aim to build
-    a free software community.
-  published: true
-  author: Pieter Hintjens
-  year: 2016
-  tags:
-  - work
-  - engineering
-  card_color: '#3a698d'
-  text_color: '#ffffff'
-- text: Over the last twenty years, open source has skewed from a collaborative
-    to a solo endeavor.
-  published: true
-  author: Nadia Eghbal
-  year: 2020
-  tags:
-  - work
-  card_color: '#42759a'
-  text_color: '#ffffff'
-- text: Complexity is the enemy of security.
-  published: true
-  author: Cory Doctorow
-  year: 2005
-  tags:
-  - simplicity
-  - risk
-  - engineering
-  card_color: '#4b81a7'
-  text_color: '#ffffff'
-- text: It is simply unrealistic to depend on secrecy for security in computer software.
-  published: true
-  author: Whitfield Diffie
-  year: 1996
-  tags:
-  - engineering
-  - risk
-  card_color: '#6d95d3'
-  text_color: '#111a32'
-- text: Thinking that technology will solve your problems means you do not understand
-    the technology and you do not understand your problems.
-  published: true
-  author: Bruce Schneier
-  year: 2000
-  tags:
-  - engineering
-  - work
-  - risk
-  card_color: '#111a32'
-  text_color: '#e8eef8'
+  - text: Failure is an option here. If things are not failing, you are not innovating enough.
+    published: true
+    author: Elon Musk
+    year: 2005
+    tags:
+      - work
+      - risk
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: The most common mistake of smart engineers is to optimize a thing that should not
+      exist.
+    published: true
+    author: Elon Musk
+    year: 2021
+    tags:
+      - work
+      - simplicity
+      - engineering
+    card_color: '#42759a'
+    text_color: '#ffffff'
+
+  - text: Perfection is achieved, not when there is nothing more to add, but when there is
+      nothing left to take away.
+    published: true
+    author: Antoine de Saint-Exupéry
+    year: 1939
+    tags:
+      - simplicity
+      - product
+    card_color: '#4b81a7'
+    text_color: '#ffffff'
+
+  - text: Simplicity is a prerequisite for reliability.
+    published: true
+    author: Edsger W. Dijkstra
+    year: 1975
+    tags:
+      - simplicity
+      - engineering
+    card_color: '#6d95d3'
+    text_color: '#111a32'
+
+  - text: Everything should be made as simple as possible, but not simpler.
+    published: true
+    author: Albert Einstein
+    year: 1950
+    tags:
+      - simplicity
+    card_color: '#111a32'
+    text_color: '#e8eef8'
+
+  - text: The best way to predict the future is to invent it.
+    published: true
+    author: Alan Kay
+    year: 1971
+    tags:
+      - work
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: Complexity is your enemy. Any fool can make something complicated.
+    published: true
+    author: Richard Branson
+    tags:
+      - simplicity
+    card_color: '#335d80'
+    text_color: '#ffffff'
+
+  - text: Design is not just what it looks like and feels like. Design is how it works.
+    published: true
+    author: Steve Jobs
+    year: 2003
+    tags:
+      - product
+    card_color: '#182a4c'
+    text_color: '#eaeff7'
+
+  - text: People don't care about what you say. They care about what you build.
+    published: true
+    author: Mark Zuckerberg
+    tags:
+      - work
+      - product
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: Your most unhappy customers are your greatest source of learning.
+    published: true
+    author: Bill Gates
+    year: 1999
+    tags:
+      - product
+      - work
+    card_color: '#335d80'
+    text_color: '#ffffff'
+
+  - text: Measuring programming progress by lines of code is like measuring aircraft building
+      progress by weight.
+    published: true
+    author: Bill Gates
+    tags:
+      - work
+      - engineering
+      - simplicity
+    card_color: '#42759a'
+    text_color: '#ffffff'
+
+  - text: Talk is cheap. Show me the code.
+    published: true
+    author: Linus Torvalds
+    year: 2000
+    tags:
+      - work
+      - engineering
+    card_color: '#1c3358'
+    text_color: '#f0f4fa'
+
+  - text: Bad programmers worry about the code. Good programmers worry about data structures
+      and their relationships.
+    published: true
+    author: Linus Torvalds
+    year: 2006
+    tags:
+      - engineering
+      - work
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: First, solve the problem. Then, write the code.
+    published: true
+    author: John Johnson
+    tags:
+      - engineering
+      - simplicity
+    card_color: '#264566'
+    text_color: '#f5f8fc'
+
+  - text: Premature optimization is the root of all evil.
+    published: true
+    author: Donald Knuth
+    year: 1974
+    tags:
+      - engineering
+      - simplicity
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: Software is a great combination of artistry and engineering.
+    published: true
+    author: Bill Gates
+    tags:
+      - engineering
+      - product
+    card_color: '#3a698d'
+    text_color: '#ffffff'
+
+  - text: If you are not embarrassed by the first version of your product, you've launched
+      too late.
+    published: true
+    author: Reid Hoffman
+    year: 2011
+    tags:
+      - product
+      - risk
+      - work
+    card_color: '#15233f'
+    text_color: '#e8eef8'
+
+  - text: Code is like humor. When you have to explain it, it's bad.
+    published: true
+    author: Cory House
+    tags:
+      - engineering
+      - simplicity
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: Programs must be written for people to read, and only incidentally for machines
+      to execute.
+    published: true
+    author: Harold Abelson
+    year: 1985
+    tags:
+      - engineering
+      - simplicity
+    card_color: '#264566'
+    text_color: '#f5f8fc'
+
+  - text: The function of good software is to make the complex appear to be simple.
+    published: true
+    author: Grady Booch
+    tags:
+      - simplicity
+      - engineering
+      - product
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: One of my most productive days was throwing away 1000 lines of code.
+    published: true
+    author: Ken Thompson
+    tags:
+      - simplicity
+      - engineering
+    card_color: '#3a698d'
+    text_color: '#ffffff'
+
+  - text: The most disastrous thing that you can ever learn is your first programming language.
+    published: true
+    author: Alan Kay
+    tags:
+      - work
+      - engineering
+    card_color: '#42759a'
+    text_color: '#ffffff'
+
+  - text: Controlling complexity is the essence of computer programming.
+    published: true
+    author: Brian Kernighan
+    tags:
+      - simplicity
+      - engineering
+    card_color: '#4b81a7'
+    text_color: '#ffffff'
+
+  - text: 'There are only two hard things in Computer Science: cache invalidation and naming
+      things.'
+    published: true
+    author: Phil Karlton
+    year: 1996
+    tags:
+      - engineering
+      - work
+    card_color: '#335d80'
+    text_color: '#ffffff'
+
+  - text: Make it work, make it right, make it fast.
+    published: true
+    author: Kent Beck
+    year: 1999
+    tags:
+      - engineering
+      - work
+      - simplicity
+    card_color: '#3a698d'
+    text_color: '#ffffff'
+
+  - text: Any fool can write code that a computer can understand. Good programmers write code
+      that humans can understand.
+    published: true
+    author: Martin Fowler
+    year: 1999
+    tags:
+      - engineering
+      - simplicity
+    card_color: '#42759a'
+    text_color: '#ffffff'
+
+  - text: The most powerful tool we have as developers is automation.
+    published: true
+    author: Scott Hanselman
+    tags:
+      - engineering
+      - work
+    card_color: '#111a32'
+    text_color: '#e8eef8'
+
+  - text: Debugging is twice as hard as writing the code in the first place.
+    published: true
+    author: Brian Kernighan
+    year: 1978
+    tags:
+      - engineering
+      - work
+    card_color: '#15233f'
+    text_color: '#e8eef8'
+
+  - text: Deleted code is debugged code.
+    published: true
+    author: Jeff Sickel
+    tags:
+      - simplicity
+      - engineering
+    card_color: '#182a4c'
+    text_color: '#eaeff7'
+
+  - text: Before software can be reusable, it first has to be usable.
+    published: true
+    author: Ralph Johnson
+    tags:
+      - engineering
+      - product
+    card_color: '#1c3358'
+    text_color: '#f0f4fa'
+
+  - text: A primary cause of complexity is that software vendors uncritically adopt almost
+      any feature that users want.
+    published: true
+    author: Niklaus Wirth
+    year: 1995
+    tags:
+      - simplicity
+      - product
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: The cheapest, fastest and most reliable components are those that aren't there.
+    published: true
+    author: Gordon Bell
+    tags:
+      - simplicity
+      - engineering
+    card_color: '#264566'
+    text_color: '#f5f8fc'
+
+  - text: In programming, the hard part isn't solving problems, but deciding what problems
+      to solve.
+    published: true
+    author: Paul Graham
+    tags:
+      - work
+      - product
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: I'm as proud of many of the things we haven't done as the things we have done. Innovation
+      is saying no to a thousand things.
+    published: true
+    author: Steve Jobs
+    year: 1997
+    tags:
+      - simplicity
+      - work
+    card_color: '#4b81a7'
+    text_color: '#ffffff'
+
+  - text: It's fine to celebrate success, but it is more important to heed the lessons of
+      failure.
+    published: true
+    author: Bill Gates
+    tags:
+      - work
+      - risk
+    card_color: '#182a4c'
+    text_color: '#eaeff7'
+
+  - text: 'The most damaging phrase in the language is: ''We''ve always done it this way.'''
+    published: true
+    author: Grace Hopper
+    tags:
+      - work
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: The best error message is the one that never shows up.
+    published: true
+    author: Thomas Fuchs
+    tags:
+      - product
+      - engineering
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: UX is not about adding features. It's about removing barriers.
+    published: true
+    author: Unknown
+    tags:
+      - product
+      - simplicity
+    card_color: '#335d80'
+    text_color: '#ffffff'
+
+  - text: Users hate change, even when it's for the better.
+    published: true
+    author: Jakob Nielsen
+    tags:
+      - product
+    card_color: '#3a698d'
+    text_color: '#ffffff'
+
+  - text: The best code is no code at all.
+    published: true
+    author: Jeff Atwood
+    year: 2007
+    tags:
+      - simplicity
+      - engineering
+    card_color: '#182a4c'
+    text_color: '#eaeff7'
+
+  - text: Simple can be harder than complex.
+    published: true
+    author: Steve Jobs
+    year: 1998
+    tags:
+      - simplicity
+      - product
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: 'Software and cathedrals are much the same: first we build them, then we pray.'
+    published: true
+    author: Sam Redwine
+    year: 1988
+    tags:
+      - engineering
+      - work
+    card_color: '#15233f'
+    text_color: '#e8eef8'
+
+  - text: Adding manpower to a late software project makes it later.
+    published: true
+    author: Fred Brooks
+    year: 1975
+    tags:
+      - engineering
+      - work
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: Good judgment comes from experience, and experience comes from bad judgment.
+    published: true
+    author: Fred Brooks
+    year: 1975
+    tags:
+      - work
+      - risk
+    card_color: '#335d80'
+    text_color: '#ffffff'
+
+  - text: Security is a process, not a product.
+    published: true
+    author: Bruce Schneier
+    year: 2000
+    tags:
+      - engineering
+      - risk
+    card_color: '#111a32'
+    text_color: '#e8eef8'
+
+  - text: Security is a chain; it's only as secure as the weakest link.
+    published: true
+    author: Bruce Schneier
+    year: 2000
+    tags:
+      - engineering
+      - risk
+    card_color: '#15233f'
+    text_color: '#e8eef8'
+
+  - text: The only truly secure system is one that is powered off, cast in a block of concrete
+      and sealed in a lead-lined room with armed guards - and even then I have my doubts.
+    published: true
+    author: Gene Spafford
+    year: 1989
+    tags:
+      - engineering
+      - risk
+      - work
+    card_color: '#182a4c'
+    text_color: '#eaeff7'
+
+  - text: Security engineering is about building systems to remain dependable in the face
+      of malice, error, or mischance.
+    published: true
+    author: Ross Anderson
+    year: 2001
+    tags:
+      - engineering
+      - risk
+    card_color: '#1c3358'
+    text_color: '#f0f4fa'
+
+  - text: Given enough eyeballs, all bugs are shallow.
+    published: true
+    author: Eric S. Raymond
+    year: 1999
+    tags:
+      - engineering
+      - work
+      - simplicity
+    card_color: '#203959'
+    text_color: '#f5f8fc'
+
+  - text: At the very basic level, organizations should provide a clear way for someone to
+      report issues.
+    published: true
+    author: Katie Moussouris
+    year: 2017
+    tags:
+      - engineering
+      - work
+      - risk
+    card_color: '#2c5173'
+    text_color: '#f8fafc'
+
+  - text: Risk is a necessary consequence of dependence.
+    published: true
+    author: Dan Geer
+    year: 2013
+    tags:
+      - risk
+      - engineering
+    card_color: '#335d80'
+    text_color: '#ffffff'
+
+  - text: If you want to build truly large and long-lasting software, aim to build a free
+      software community.
+    published: true
+    author: Pieter Hintjens
+    year: 2016
+    tags:
+      - work
+      - engineering
+    card_color: '#3a698d'
+    text_color: '#ffffff'
+
+  - text: Over the last twenty years, open source has skewed from a collaborative to a solo
+      endeavor.
+    published: true
+    author: Nadia Eghbal
+    year: 2020
+    tags:
+      - work
+    card_color: '#42759a'
+    text_color: '#ffffff'
+
+  - text: Complexity is the enemy of security.
+    published: true
+    author: Cory Doctorow
+    year: 2005
+    tags:
+      - simplicity
+      - risk
+      - engineering
+    card_color: '#4b81a7'
+    text_color: '#ffffff'
+
+  - text: It is simply unrealistic to depend on secrecy for security in computer software.
+    published: true
+    author: Whitfield Diffie
+    year: 1996
+    tags:
+      - engineering
+      - risk
+    card_color: '#6d95d3'
+    text_color: '#111a32'
+
+  - text: Thinking that technology will solve your problems means you do not understand the
+      technology and you do not understand your problems.
+    published: true
+    author: Bruce Schneier
+    year: 2000
+    tags:
+      - engineering
+      - work
+      - risk
+    card_color: '#111a32'
+    text_color: '#e8eef8'

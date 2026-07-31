@@ -19,7 +19,7 @@ GitHub Actions puts your pipeline next to your code. No separate CI server, no s
 
 This walkthrough builds up a pipeline in stages: test on every push, then deploy, then put a human in front of production.
 
-## 1. What GitHub Actions Actually Is
+## What GitHub Actions Actually Is
 
 It is an event-driven runner attached to your repository. Something happens (a push, a pull request, a schedule, a manual click) and GitHub executes the jobs you defined.
 
@@ -30,7 +30,7 @@ The parts worth knowing:
 - **Marketplace actions** cover the boring steps (checkout, language setup, caching) so you are not scripting them yourself.
 - **Repository integration** means secrets, environments, and status checks are already where you expect them.
 
-## 2. Building a Pipeline
+## Building a Pipeline
 
 Four things to get right: where the files live, a workflow that installs and tests on every push, a deploy step, and a way to hold that deploy back until someone approves it.
 
@@ -114,7 +114,7 @@ jobs:
 
 That is a complete CI pipeline. Push to `main` or open a pull request and you find out within minutes whether you broke something, which is the whole point.
 
-## 3. Adding Deployment
+## Adding Deployment
 
 Next, ship the build. This example syncs a static site to an S3 bucket.
 
@@ -172,7 +172,7 @@ jobs:
 
 To add the secrets, go to `Settings > Secrets > Actions` in the repository and add `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_REGION`, and `BUCKET_NAME`.
 
-## 4. Putting a Human in Front of Production
+## Putting a Human in Front of Production
 
 Automatic deploys on every push are fine for staging. For production, most teams want someone to press the button. Splitting build and deploy into separate jobs and gating the deploy on `workflow_dispatch` gets you that:
 
@@ -227,7 +227,7 @@ jobs:
 - **needs: build:** the deploy job waits for a green build.
 - **if: github.event_name == 'workflow_dispatch':** the deploy only runs when a person started the workflow. Ordinary pushes still build and test, they just stop short of shipping.
 
-## 5. Habits Worth Keeping
+## Habits Worth Keeping
 
 - **Secrets stay secrets.** API keys and cloud credentials belong in repository or environment secrets, never in the YAML or a committed `.env`.
 - **Cache your dependencies.** `actions/cache@v3` cuts install time on repeat runs, which is usually the cheapest speed win available.

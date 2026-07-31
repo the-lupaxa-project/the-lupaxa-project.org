@@ -19,7 +19,7 @@ Every application of any size runs on credentials it must not reveal. API keys, 
 
 Get it wrong and the failure mode is not subtle. Exposed credentials mean unauthorised access to systems and data, usually before anyone notices.
 
-## 1. What Counts as a Secret
+## What Counts as a Secret
 
 Anything that grants access or protects data:
 
@@ -31,7 +31,7 @@ Anything that grants access or protects data:
 
 If leaking it would let someone act as you, treat it as a secret.
 
-## 2. Why It Deserves Real Effort
+## Why It Deserves Real Effort
 
 ### It Prevents Breaches
 
@@ -49,7 +49,7 @@ Compliance standards mandate secure handling of sensitive information: PCI-DSS f
 
 This one surprises people. When secure access to credentials is a solved problem, developers stop improvising around it. No manual configuration steps, no waiting for someone to email a password, no incidents caused by a shortcut.
 
-## 3. The Five Ways It Goes Wrong
+## The Five Ways It Goes Wrong
 
 ### Secrets Hardcoded in Code
 
@@ -81,7 +81,7 @@ Secrets sitting in plaintext, or crossing the network unencrypted, are available
 
 **Fix:** encrypt at rest and in transit. AES-256 for storage, TLS for transport. Most secrets managers do this for you, which is a good reason to use one.
 
-## 4. Practices Worth Adopting
+## Practices Worth Adopting
 
 ### Use a Dedicated Tool
 
@@ -95,7 +95,7 @@ Environment variables let you pass credentials into a running application withou
 
 Private repositories are not a security boundary. Use `.gitignore` to exclude config files that hold credentials, and inject the real values at deployment time. Once a secret reaches git history, rotating it is the only real fix.
 
-## 5. The Tools
+## The Tools
 
 ### HashiCorp Vault
 

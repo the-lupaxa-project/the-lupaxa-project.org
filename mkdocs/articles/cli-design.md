@@ -19,7 +19,7 @@ A command-line tool is an API that people type. Good CLIs disappear into muscle 
 
 This article collects practical defaults for small tools, the kind Lupaxa builds.
 
-## 1. Make the Happy Path Short
+## Make the Happy Path Short
 
 The most common task should need the fewest keystrokes. Put advanced power behind explicit flags, not behind mandatory ceremony.
 
@@ -27,7 +27,7 @@ The most common task should need the fewest keystrokes. Put advanced power behin
 - Subcommands should map to verbs users already say
 - `--help` should be complete enough to avoid a docs hunt for basics
 
-## 2. Flags, Arguments, and Predictability
+## Flags, Arguments, and Predictability
 
 Conventions help:
 
@@ -38,7 +38,7 @@ Conventions help:
 
 Once you publish a flag name, changing it is a breaking change. Choose boring names.
 
-## 3. Exit Codes Are Part of the Interface
+## Exit Codes Are Part of the Interface
 
 Scripts branch on exit status.
 
@@ -50,7 +50,7 @@ Typical pattern:
 
 Never exit `0` after a failed operation because you printed an error nicely.
 
-## 4. Stdout Versus Stderr
+## Stdout Versus Stderr
 
 A simple rule:
 
@@ -59,7 +59,7 @@ A simple rule:
 
 If your tool prints a success banner to stdout, you have broken `tool | jq`. Quiet by default; verbose on request.
 
-## 5. Errors Should Teach the Next Step
+## Errors Should Teach the Next Step
 
 Bad error: `Error: failed`
 
@@ -71,7 +71,7 @@ Better error:
 
 Colour and emoji are optional. Clarity is not.
 
-## 6. Design for Automation
+## Design for Automation
 
 Assume someone will run your tool in CI:
 
@@ -80,6 +80,6 @@ Assume someone will run your tool in CI:
 - Provide machine-readable output modes when useful (`--json`)
 - Keep output stable enough to parse, or version the format
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 CLI design is empathy under constraint: few keystrokes, honest exit codes, clean pipes, and errors that shorten debugging. Get those right and your tool feels professional long before it grows a GUI.

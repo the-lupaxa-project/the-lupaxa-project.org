@@ -19,7 +19,7 @@ Elon Musk once said, *"The most common error of a smart engineer is to optimize 
 
 Optimisation is not the problem. Optimising without first checking the target is.
 
-## 1. Optimising the Wrong Thing Costs Twice
+## Optimising the Wrong Thing Costs Twice
 
 You lose the time you spend, and you leave behind more complexity to maintain. Worse, the optimised code now looks load-bearing, so the next person is even less likely to delete it.
 
@@ -30,7 +30,7 @@ Common ways engineers end up there:
 - **Sunk cost:** money and effort already spent become the argument for spending more, even when the feature stopped earning its place.
 - **Incrementalism:** shaving milliseconds is easier than rethinking the design, so the bigger opportunity never gets considered.
 
-## 2. Ask Whether It Should Exist
+## Ask Whether It Should Exist
 
 Before you tune anything, run through four questions:
 
@@ -41,7 +41,7 @@ Before you tune anything, run through four questions:
 
 If the honest answers point at deletion, delete. A smaller codebase is faster than a well-optimised large one.
 
-## 3. When to Say No
+## When to Say No
 
 ### Features Almost Nobody Uses
 
@@ -55,7 +55,7 @@ Planning for growth is sensible. Building for a data volume you have no evidence
 
 As Donald Knuth put it, *"Premature optimization is the root of all evil."* Refining performance before you know where the bottlenecks are is guessing with extra steps. Write clear, maintainable code first, get it working, then profile and target what the profiler shows you.
 
-## 4. First Principles as a Filter
+## First Principles as a Filter
 
 First principles thinking means breaking a problem down to its fundamentals and rebuilding from there. Applied to optimisation, it is a way of testing whether the thing deserves to exist:
 
@@ -63,7 +63,7 @@ First principles thinking means breaking a problem down to its fundamentals and 
 - **Question the assumptions.** Is there a simpler route to the same outcome? Could this be removed entirely?
 - **Rebuild from the requirements.** Start from what is essential rather than from what is currently there, and you often end up with something smaller.
 
-## 5. How to Optimise When It Is Worth It
+## How to Optimise When It Is Worth It
 
 ### Profile Before You Touch Anything
 
@@ -81,6 +81,6 @@ Not every performance problem needs a performance fix. Complicated code is often
 
 Every library you pull in adds surface area to understand, update, and keep compatible. Fewer dependencies means less overhead and a codebase you can reason about when you do need to make it fast.
 
-## 6. Closing Thoughts
+## Closing Thoughts
 
 Efficiency is a habit worth having, but it needs a target. Question what you are building before you polish it, apply first principles to decide whether it should exist at all, and profile before you optimise. The goal is not making things better. It is making the right things better.

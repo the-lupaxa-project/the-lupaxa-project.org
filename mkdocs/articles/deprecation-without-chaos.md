@@ -19,7 +19,7 @@ Software has to change. Deprecation is how you change without blindsiding people
 
 This pairs with semantic versioning: deprecation is the social process; SemVer is the numbering.
 
-## 1. Deprecate Before You Delete
+## Deprecate Before You Delete
 
 Never remove a public flag, function, or config key in a minor release without a prior warning period. The exception is `0.x`, and only if you said so clearly up front.
 
@@ -29,7 +29,7 @@ Sequence that works:
 2. Ship at least one release where both old and new work
 3. Remove in a major (or announced `0.x` break)
 
-## 2. Warn Where Developers Will See It
+## Warn Where Developers Will See It
 
 Documentation alone is not enough.
 
@@ -39,13 +39,13 @@ Documentation alone is not enough.
 
 Include the replacement in the warning. "Deprecated" without "use X instead" is just noise.
 
-## 3. Give a Timeline People Can Plan Around
+## Give a Timeline People Can Plan Around
 
 Say which version will remove the behaviour, or "will be removed in the next major." If you cannot commit to a date, commit to a version gate.
 
 Silence followed by a sudden break feels like betrayal even when SemVer allows it.
 
-## 4. Make Migration Cheap
+## Make Migration Cheap
 
 Provide:
 
@@ -55,14 +55,14 @@ Provide:
 
 The goal is conversion, not punishment.
 
-## 5. Track Deprecations Visibly
+## Track Deprecations Visibly
 
 Keep a small "Deprecated" section in the changelog or docs. Maintainers forget; users search. A living list prevents zombie APIs that linger forever without removal *or* support.
 
-## 6. Resist Eternal Compatibility
+## Resist Eternal Compatibility
 
 Endless shims become a second product. After the announced major, remove the old path. People who need the old behaviour can stay on the old major, which is exactly what majors are for.
 
-## 7. Closing Thoughts
+## Closing Thoughts
 
 Deprecation without chaos is courtesy plus SemVer: warn early, guide clearly, remove on purpose. Change the system without training users to fear every upgrade.
