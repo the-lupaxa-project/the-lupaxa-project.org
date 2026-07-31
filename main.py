@@ -15,11 +15,12 @@ import yaml
 
 # Project card status banners: status → (default label, default tone).
 BANNER_PRESETS: dict[str, tuple[str, str]] = {
-    "coming-soon": ("Coming soon", "green"),
-    "new": ("New", "blue"),
+    "in-planning": ("In planning", "green"),
     "in-development": ("In development", "purple"),
-    "open-beta": ("Open beta", "orange"),
+    "in-testing": ("In testing", "neutral"),
     "closed-alpha": ("Closed alpha", "red"),
+    "open-beta": ("Open beta", "orange"),
+    "released": ("Released", "blue"),
 }
 BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"})
 

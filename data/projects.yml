@@ -40,7 +40,7 @@
   repository: https://github.com/lupaxa-code-playground/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
   featured: true
-  banner: in-development
+  banner: in-testing
 
 - id: git-crypt-manager
   published: true
@@ -87,7 +87,7 @@
   repository: https://github.com/the-lupaxa-internal-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
   featured: true
-  banner: in-development
+  banner: in-testing
 
 - id: makefile-skills
   published: true
@@ -112,7 +112,7 @@
   repository: https://github.com/the-lupaxa-blueprints/makefile-skills
   documentation: https://the-lupaxa-blueprints.github.io/makefile-skills/
   featured: true
-  banner: in-development
+  banner: in-testing
 
 - id: shared-reusable-workflows
   published: true
