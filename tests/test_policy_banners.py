@@ -163,3 +163,29 @@ def test_policy_card_without_banner_is_unchanged(tmp_path, monkeypatch):
 
     assert "catalogue-banner" not in markup
     assert "Synthetic Policy" in markup
+
+
+def test_policy_card_includes_default_brand_logo(tmp_path, monkeypatch):
+    policies = [_synthetic_policy()]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, policies)
+
+    markup = catalogue_grid("policy", "policy")
+
+    assert 'class="catalogue-logo"' in markup
+    assert "the-lupaxa-project/readme-logo-128.png" in markup
+    assert 'alt="The Lupaxa Project"' in markup
+
+
+def test_policy_card_allows_logo_override(tmp_path, monkeypatch):
+    policies = [
+        _synthetic_policy(
+            logo="https://example.com/custom-policy.png",
+            logo_alt="Custom Policy Mark",
+        )
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, policies)
+
+    markup = catalogue_grid("policy", "policy")
+
+    assert "https://example.com/custom-policy.png" in markup
+    assert 'alt="Custom Policy Mark"' in markup

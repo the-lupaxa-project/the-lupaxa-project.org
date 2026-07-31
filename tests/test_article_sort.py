@@ -33,9 +33,21 @@ def test_articles_index_includes_sort_toggle(tmp_path):
     )
     rebuild_articles_index(tmp_path)
     html = (tmp_path / "articles.md").read_text(encoding="utf-8")
-    assert 'class="filter-panel-sort"' in html
+    assert 'class="filter-panel"' in html
+    assert "filter-panel--compact" not in html
+    assert '<label id="article-status-label">View Articles</label>' in html
+    assert 'data-article-status="all"' in html
+    assert 'data-article-status="new"' in html
+    assert 'id="article-category"' in html  # Tag remains a select
+    assert 'id="article-status"' not in html  # Status is a toggle, not a select
+    assert '<label id="article-sort-label">Sort</label>' in html
     assert 'data-article-sort="alpha"' in html
     assert 'data-article-sort="newest"' in html
     assert "A–Z" in html
     assert "Newest" in html
     assert 'data-publish-date="2026-01-01"' in html
+    assert "filter-panel-toggle__options" in html
+    # Same row as Projects: search | tag | status | sort | clear
+    assert html.index("article-status-label") < html.index("article-sort-label")
+    assert html.index("article-sort-label") < html.index("filter-panel-actions")
+    assert html.index("filter-panel-actions") < html.index("filter-panel-summary")

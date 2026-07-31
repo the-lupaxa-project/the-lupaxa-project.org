@@ -1,7 +1,7 @@
 ---
 title: Dependency Hygiene
 published: true
-publish_date: "2025-12-04"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

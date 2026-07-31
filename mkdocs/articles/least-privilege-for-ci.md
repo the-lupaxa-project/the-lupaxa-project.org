@@ -1,7 +1,7 @@
 ---
 title: Least Privilege for CI
 published: true
-publish_date: "2026-02-05"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

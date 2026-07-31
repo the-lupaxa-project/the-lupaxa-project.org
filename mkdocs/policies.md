@@ -13,6 +13,7 @@ banner_expiry_days: 28
     summary_text="Showing all policies",
     include_status=True,
     status_kind="policy",
+    status_label="View Policies",
 ) }}
 
 {{ catalogue_grid("policy", "policy", banner_expiry_days=page.meta.banner_expiry_days or 28) }}

@@ -1,7 +1,7 @@
 ---
 title: Supply-Chain Signing
 published: true
-publish_date: "2026-06-18"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

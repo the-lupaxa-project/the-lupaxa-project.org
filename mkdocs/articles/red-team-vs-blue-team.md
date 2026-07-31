@@ -1,7 +1,7 @@
 ---
 title: Red Team vs Blue Team
 published: true
-publish_date: "2026-03-26"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

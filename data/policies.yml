@@ -1,7 +1,7 @@
 - id: code-of-conduct
   published: true
   name: Code of Conduct
-  icon: material-book-open-page-variant
+  icon: material-handshake
   publish_date: "2026-07-31"
   banner: new
   description: >-
@@ -20,7 +20,7 @@
 - id: governance
   published: true
   name: Governance
-  icon: material-book-open-page-variant
+  icon: material-gavel
   publish_date: "2025-04-01"
   banner: updated
   updated_date: "2026-07-31"
@@ -40,7 +40,7 @@
 - id: how-to-contribute
   published: true
   name: How to Contribute
-  icon: material-book-open-page-variant
+  icon: material-source-pull
   publish_date: "2025-06-15"
   description: >-
     Contributions of every size are welcome, from fixing bugs and improving documentation
@@ -58,7 +58,7 @@
 - id: engineering-principles
   published: true
   name: Engineering Principles
-  icon: material-book-open-page-variant
+  icon: material-compass
   publish_date: "2025-08-01"
   description: >-
     The Lupaxa Project is guided by a shared set of engineering principles that influence
@@ -76,7 +76,7 @@
 - id: maintainer-guide
   published: true
   name: Maintainer Guide
-  icon: material-book-open-page-variant
+  icon: material-shield-account
   publish_date: "2025-10-12"
   description: >-
     Maintainers play a key role in ensuring repositories remain welcoming, secure, well maintained
@@ -94,7 +94,7 @@
 - id: project-organisation
   published: true
   name: Project Organisation
-  icon: material-book-open-page-variant
+  icon: material-sitemap
   publish_date: "2025-12-01"
   description: >-
     The Lupaxa Project is organised into multiple GitHub organisations, each focused on a
@@ -113,7 +113,7 @@
 - id: security-policy
   published: true
   name: Security Policy
-  icon: material-book-open-page-variant
+  icon: material-shield-lock
   publish_date: "2026-03-15"
   description: >-
     The Lupaxa Project takes the security of its repositories, software and users seriously.
@@ -130,7 +130,7 @@
 - id: support-guide
   published: true
   name: Support Guide
-  icon: material-book-open-page-variant
+  icon: material-lifebuoy
   publish_date: "2026-05-20"
   description: >-
     This guide explains how to request assistance across The Lupaxa Project and how to select

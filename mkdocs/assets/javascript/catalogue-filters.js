@@ -58,6 +58,8 @@
 
     if (status) {
       config.statusSelector = `[data-${id}-status]`;
+      // dataset key for data-{id}-status on toggle buttons (e.g. policyStatus)
+      config.statusDatasetKey = `${id}Status`;
     }
 
     return config;
@@ -342,9 +344,19 @@
     const organisationSelect = config.organisationSelector
       ? filterPanel.querySelector(config.organisationSelector)
       : null;
-    const statusSelect = config.statusSelector
-      ? filterPanel.querySelector(config.statusSelector)
-      : null;
+    const statusNodes = config.statusSelector
+      ? Array.from(
+          filterPanel.querySelectorAll(config.statusSelector),
+        )
+      : [];
+    const statusSelect =
+      statusNodes.length === 1 &&
+      statusNodes[0] instanceof HTMLSelectElement
+        ? statusNodes[0]
+        : null;
+    const statusButtons = statusSelect ? [] : statusNodes;
+    const hasStatusControl = Boolean(statusSelect) ||
+      statusButtons.length > 0;
 
     if (
       !searchInput ||
@@ -352,7 +364,7 @@
       !clearButton ||
       !summary ||
       (config.organisationSelector && !organisationSelect) ||
-      (config.statusSelector && !statusSelect)
+      (config.statusSelector && !hasStatusControl)
     ) {
       return;
     }
@@ -406,7 +418,7 @@
           ? organisationValue ||
             normaliseCatalogueValue(FALLBACK_ORG)
           : "",
-        status: statusSelect ? statusValue : "",
+        status: hasStatusControl ? statusValue : "",
         searchableText: normaliseCatalogueValue(
           [
             card.textContent || "",
@@ -441,6 +453,8 @@
       : [];
 
     let activeSort = SORT_ALPHA;
+    // Segmented status toggle (articles): "" = All, "new" = New.
+    let activeStatus = "";
 
     /**
      * Read the requested sort mode from the URL (defaults to A–Z).
@@ -463,6 +477,40 @@
     const setSortPressed = (sort) => {
       sortButtons.forEach((button) => {
         const isActive = button.dataset.articleSort === sort;
+
+        button.setAttribute(
+          "aria-pressed",
+          isActive ? "true" : "false",
+        );
+      });
+    };
+
+    /**
+     * Map a status-toggle button dataset value to the filter key.
+     *
+     * @param {HTMLElement} button
+     * @returns {string}
+     */
+    const statusFromButton = (button) => {
+      const raw = String(
+        button.dataset[config.statusDatasetKey] ?? "",
+      );
+
+      if (!raw || raw === "all") {
+        return "";
+      }
+
+      return normaliseCatalogueValue(raw);
+    };
+
+    /**
+     * Reflect the active status on the segmented button group.
+     *
+     * @param {string} status
+     */
+    const setStatusPressed = (status) => {
+      statusButtons.forEach((button) => {
+        const isActive = statusFromButton(button) === status;
 
         button.setAttribute(
           "aria-pressed",
@@ -579,6 +627,14 @@
 
       if (status !== null && statusSelect) {
         applySelectFilter(statusSelect, status);
+      } else if (status !== null && statusButtons.length) {
+        const normalised = normaliseCatalogueValue(status);
+        const allowed = new Set(
+          statusButtons.map((button) => statusFromButton(button)),
+        );
+
+        activeStatus = allowed.has(normalised) ? normalised : "";
+        setStatusPressed(activeStatus);
       }
     };
 
@@ -602,7 +658,9 @@
         : "",
       selectedStatus: statusSelect
         ? normaliseCatalogueValue(statusSelect.value)
-        : "",
+        : statusButtons.length
+          ? activeStatus
+          : "",
     });
 
     /**
@@ -730,7 +788,12 @@
       }
 
       if (filters.selectedStatus) {
-        params.set(URL_PARAM_STATUS, statusSelect.value);
+        params.set(
+          URL_PARAM_STATUS,
+          statusSelect
+            ? statusSelect.value
+            : filters.selectedStatus,
+        );
       }
 
       if (config.sort && activeSort === SORT_NEWEST) {
@@ -785,6 +848,11 @@
         removeUrlFilterOptions(statusSelect);
       }
 
+      if (statusButtons.length) {
+        activeStatus = "";
+        setStatusPressed("");
+      }
+
       clearCatalogueUrlParameters();
       updateCatalogue();
       searchInput.focus();
@@ -804,6 +872,20 @@
     if (statusSelect) {
       statusSelect.addEventListener("change", updateCatalogue);
     }
+
+    statusButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const status = statusFromButton(button);
+
+        if (status === activeStatus) {
+          return;
+        }
+
+        activeStatus = status;
+        setStatusPressed(activeStatus);
+        updateCatalogue();
+      });
+    });
 
     if (config.sort) {
       sortButtons.forEach((button) => {
@@ -905,7 +987,7 @@
     /**
      * Status banners set the status filter on this page.
      */
-    if (statusSelect) {
+    if (hasStatusControl) {
       catalogue
         .querySelectorAll(".catalogue-banner[data-banner-status]")
         .forEach((banner) => {
@@ -930,9 +1012,27 @@
             event.preventDefault();
             event.stopPropagation();
 
-            applySelectFilter(statusSelect, status);
+            if (statusSelect) {
+              applySelectFilter(statusSelect, status);
+              updateCatalogue();
+              statusSelect.focus({ preventScroll: true });
+              return;
+            }
+
+            const normalised = normaliseCatalogueValue(status);
+            const allowed = new Set(
+              statusButtons.map((button) => statusFromButton(button)),
+            );
+
+            activeStatus = allowed.has(normalised) ? normalised : "";
+            setStatusPressed(activeStatus);
             updateCatalogue();
-            statusSelect.focus({ preventScroll: true });
+
+            const focusButton = statusButtons.find(
+              (button) => statusFromButton(button) === activeStatus,
+            );
+
+            focusButton?.focus({ preventScroll: true });
           };
 
           banner.addEventListener("click", activate);

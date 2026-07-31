@@ -1,7 +1,7 @@
 ---
 title: Release Automation
 published: true
-publish_date: "2026-04-02"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

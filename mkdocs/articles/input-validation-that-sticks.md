@@ -1,7 +1,7 @@
 ---
 title: Input Validation That Sticks
 published: true
-publish_date: "2026-01-22"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

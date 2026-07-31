@@ -1,7 +1,7 @@
 ---
 title: Threat Modelling for Small Tools
 published: true
-publish_date: "2026-07-16"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

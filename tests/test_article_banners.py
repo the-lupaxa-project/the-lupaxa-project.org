@@ -98,9 +98,9 @@ def _build_index(tmp_path: Path, *, banner: str | None = None) -> str:
 def test_index_header_has_status_filter(tmp_path):
     text = _build_index(tmp_path)
 
-    assert "data-article-status" in text
-    assert '<option value="">All Statuses</option>' in text
-    assert '<option value="new">New Article</option>' in text
+    assert 'data-article-status="all"' in text
+    assert 'data-article-status="new"' in text
+    assert 'id="article-status"' not in text
 
 
 def test_index_header_documents_expiry_days(tmp_path):

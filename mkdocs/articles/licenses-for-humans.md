@@ -1,7 +1,7 @@
 ---
 title: Licenses for Humans
 published: true
-publish_date: "2026-02-12"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

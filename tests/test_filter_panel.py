@@ -82,10 +82,15 @@ def test_filter_panel_status_options_policy_presets_no_stable():
         summary_text="Showing all policies",
         include_status=True,
         status_kind="policy",
+        status_label="View Policies",
     )
 
-    assert "New Policy" in markup
-    assert "Updated Policy" in markup
+    assert "View Policies" in markup
+    assert 'data-policy-status="all"' in markup
+    assert 'data-policy-status="new"' in markup
+    assert 'data-policy-status="updated"' in markup
+    assert "filter-panel-toggle" in markup
+    assert 'id="policy-status"' not in markup
     assert "Stable" not in markup
     assert "In Development" not in markup
 

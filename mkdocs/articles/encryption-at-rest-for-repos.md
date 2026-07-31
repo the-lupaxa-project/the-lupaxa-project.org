@@ -1,7 +1,7 @@
 ---
 title: Encryption at Rest for Repos
 published: true
-publish_date: "2025-12-25"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

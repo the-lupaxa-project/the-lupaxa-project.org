@@ -43,6 +43,13 @@ from gallery_lib import (
 
 DATA_DIR = ROOT / "data"
 
+# Shared brand mark for policy cards (same visual slot as project/org logos).
+DEFAULT_POLICY_LOGO = (
+    "https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/"
+    "master/logos/organisations/the-lupaxa-project/readme-logo-128.png"
+)
+DEFAULT_POLICY_LOGO_ALT = "The Lupaxa Project"
+
 
 def _load_yaml(name: str) -> list[dict]:
     path = DATA_DIR / name
@@ -144,17 +151,44 @@ def define_env(env):
                 show_stable = False
             else:
                 raise ValueError(f"Unrecognised status_kind: {status_kind!r}")
-            status_options = "\n".join(
-                f'            <option value="{html.escape(slug, quote=True)}">'
-                f"{html.escape(label)}</option>"
-                for slug, (label, _) in presets.items()
-            )
-            stable_option = (
-                '\n            <option value="stable">Stable</option>'
-                if show_stable
-                else ""
-            )
-            status_block = f"""
+
+            if status_kind == "policy":
+                # Segmented All | New | Updated (same pattern as articles).
+                toggle_buttons = [
+                    ("all", "All"),
+                    ("new", "New"),
+                    ("updated", "Updated"),
+                ]
+                options_markup = "\n".join(
+                    f"""            <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-{prefix}-status="{html.escape(slug, quote=True)}"
+                aria-pressed="{"true" if slug == "all" else "false"}"
+            >
+                {html.escape(label)}
+            </button>"""
+                    for slug, label in toggle_buttons
+                )
+                status_block = f"""
+    <div class="filter-panel-toggle" role="group" aria-labelledby="{prefix}-status-label">
+        <label id="{prefix}-status-label">{status_label}</label>
+        <div class="filter-panel-toggle__options">
+{options_markup}
+        </div>
+    </div>"""
+            else:
+                status_options = "\n".join(
+                    f'            <option value="{html.escape(slug, quote=True)}">'
+                    f"{html.escape(label)}</option>"
+                    for slug, (label, _) in presets.items()
+                )
+                stable_option = (
+                    '\n            <option value="stable">Stable</option>'
+                    if show_stable
+                    else ""
+                )
+                status_block = f"""
     <div class="filter-panel-select">
         <label for="{prefix}-status">{status_label}</label>
         <select id="{prefix}-status" data-{prefix}-status>
@@ -320,6 +354,10 @@ def define_env(env):
             time_limited_statuses=frozenset({"new", "updated"}),
         )
         banner_block = f"{banner}\n\n" if banner else ""
+        logo = html.escape(item.get("logo", DEFAULT_POLICY_LOGO), quote=True)
+        logo_alt = html.escape(
+            item.get("logo_alt", DEFAULT_POLICY_LOGO_ALT), quote=True
+        )
         action = _action_link(
             "repository",
             item["document"],
@@ -331,7 +369,14 @@ def define_env(env):
 
     ---
 
-{banner_block}{description}
+{banner_block}    <img
+        class="catalogue-logo"
+        title="{logo_alt}"
+        src="{logo}"
+        alt="{logo_alt}"
+    />
+
+{description}
 
 {categories}
 

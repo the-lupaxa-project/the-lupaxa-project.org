@@ -1,7 +1,7 @@
 ---
 title: Security by Design
 published: true
-publish_date: "2026-05-28"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

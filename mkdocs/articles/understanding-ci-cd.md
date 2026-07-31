@@ -1,7 +1,7 @@
 ---
 title: Understanding CI/CD
 published: true
-publish_date: "2026-07-23"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

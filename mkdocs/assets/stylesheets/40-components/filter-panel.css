@@ -4,12 +4,16 @@
  * ============================================================================= */
 
 /*
- * Desktop — Projects:
- *   search | organisation | category | status | clear
+ * Desktop — Projects / Articles (full panel):
+ *   search | filter | filter | filter | clear
+ *   Projects: organisation | category | status
+ *   Articles: tag | status | sort
  * Desktop — Compact (one select, e.g. organisations):
  *   search | category | clear
- * Desktop — Compact (two selects, e.g. articles/policies):
+ * Desktop — Compact (two selects):
  *   search | category | status | clear
+ * Desktop — Compact (policies: category + View Policies toggle):
+ *   search | category | All|New|Updated | clear
  */
 .filter-panel {
   display: grid;
@@ -51,9 +55,13 @@
     auto;
 }
 
-/* Sort control adds a second row inside search — keep labels aligned. */
-.filter-panel.filter-panel--compact:has(.filter-panel-sort) {
-  align-items: start;
+/* Policies: search | category | All/New/Updated toggle | clear */
+.filter-panel.filter-panel--compact:has(> .filter-panel-toggle) {
+  grid-template-columns:
+    minmax(10rem, 1.4fr)
+    minmax(8rem, 1fr)
+    minmax(12rem, 1.3fr)
+    auto;
 }
 
 article.md-content__inner:has(> .filter-panel:first-child)::before {
@@ -63,38 +71,43 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
 }
 
 .filter-panel-search,
-.filter-panel-select {
+.filter-panel-select,
+.filter-panel-toggle {
   display: flex;
   min-width: 0;
   flex-direction: column;
   gap: 0.3rem;
 }
 
-.filter-panel-sort {
+/*
+ * Segmented toggle column (Status All|New, Sort A–Z|Newest) — same
+ * footprint as a filter-panel-select.
+ */
+.filter-panel-toggle__options {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  min-height: 2.25rem;
+}
+
+.filter-panel-toggle__option {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 1 1 0;
   align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.15rem;
-}
-
-.filter-panel-sort__label {
-  margin-right: 0.15rem;
-  color: var(--md-default-fg-color--light);
-  font-size: 0.75rem;
-}
-
-.filter-panel-sort__option {
-  min-height: 1.85rem;
-  padding: 0.28rem 0.6rem;
+  justify-content: center;
+  min-width: 0;
+  min-height: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.45rem;
   color: var(--md-default-fg-color);
   font: inherit;
-  font-size: 0.75rem;
-  line-height: 1.2;
+  font-size: 0.82rem;
+  line-height: 1;
+  white-space: nowrap;
   background: var(--md-default-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 0.3rem;
   cursor: pointer;
+  appearance: none;
   transition:
     border-color 150ms ease,
     box-shadow 150ms ease,
@@ -102,11 +115,29 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
     color 150ms ease;
 }
 
-.filter-panel-sort__option:hover {
+.filter-panel-toggle__option:first-child {
+  border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.filter-panel-toggle__option + .filter-panel-toggle__option {
+  margin-left: -1px;
+}
+
+.filter-panel-toggle__option:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.filter-panel-toggle__option:last-child {
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.filter-panel-toggle__option:hover {
+  z-index: 1;
   border-color: var(--lupaxa-light-blue);
 }
 
-.filter-panel-sort__option:focus-visible {
+.filter-panel-toggle__option:focus-visible {
+  z-index: 1;
   border-color: var(--lupaxa-light-blue);
   outline: none;
   box-shadow:
@@ -118,10 +149,18 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
     );
 }
 
-.filter-panel-sort__option[aria-pressed="true"] {
+.filter-panel-toggle__option[aria-pressed="true"] {
+  z-index: 1;
   color: var(--lupaxa-white);
   background: var(--lupaxa-blue);
   border-color: var(--lupaxa-blue);
+}
+
+/* Beat Material .md-typeset button defaults */
+.md-typeset .filter-panel-toggle__option {
+  margin: 0;
+  max-height: 2.25rem;
+  text-align: center;
 }
 
 .filter-panel label {
@@ -189,6 +228,7 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
  */
 .filter-panel-clear {
   display: inline-flex;
+  box-sizing: border-box;
   min-width: 8.5rem;
   min-height: 2.25rem;
   align-items: center;
@@ -235,12 +275,27 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
 
 /* =============================================================================
  * Responsive — aligned with site breakpoints in 90-responsive.css
+ *
+ * Breakpoints (16px root):
+ *   ≤76.234375em (~1220px)  tablet / laptop narrow
+ *   ≤59.984375em (~960px)   tablet portrait
+ *   ≤44.984375em (~720px)   mobile
+ *
+ * Layout intent per catalogue:
+ *   Projects (full):     5-col → search+4 → 2×2 → stack
+ *   Articles (full):     5-col → search+4 → 2×2 → stack
+ *   Compact 1-select:    3-col → search+2 → stack
+ *   Compact 2-select:    4-col → search+3 → 2+clear → stack
+ *   Policies (toggle):   4-col → search+3 (same as Projects) → stack at mobile
  * ============================================================================= */
 
 /*
  * Tablet / laptop narrow (~1220px and below):
- *   search (full)
- *   organisation | category | status | clear
+ *   Projects/Articles: search (full), then org|cat|status|clear
+ *                      (articles: tag | view | sort | clear)
+ *   Compact 1-select:  search (full), then category | clear
+ *   Compact 2-select:  search (full), then category | status | clear
+ *   Policies:          search (full), then category | toggle | clear
  */
 @media screen and (max-width: 76.234375em) {
   .filter-panel {
@@ -256,16 +311,20 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
   }
 
   .filter-panel-select,
+  .filter-panel-toggle,
   .filter-panel-actions {
     grid-column: auto;
   }
 
   .filter-panel-actions {
     justify-self: stretch;
-    justify-content: stretch;
+    justify-content: flex-start;
   }
 
+  .md-typeset .filter-panel .md-button.filter-panel-clear,
+  .md-typeset .filter-panel .filter-panel-clear,
   .filter-panel-clear {
+    flex: 1 1 auto;
     width: 100%;
     min-width: 0;
   }
@@ -291,7 +350,7 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
   /* Compact (two selects): search full, then category | status | clear */
   .filter-panel.filter-panel--compact:has(
     .filter-panel-select + .filter-panel-select
-  ) {
+  ):not(:has(> .filter-panel-toggle)) {
     grid-template-columns:
       minmax(0, 1fr)
       minmax(0, 1fr)
@@ -300,21 +359,67 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
 
   .filter-panel.filter-panel--compact:has(
     .filter-panel-select + .filter-panel-select
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-select,
   .filter-panel.filter-panel--compact:has(
     .filter-panel-select + .filter-panel-select
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-actions {
     grid-column: auto;
+  }
+
+  /* Policies: same pattern as Projects — search row, then controls on one line */
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle) {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(10rem, 1.3fr)
+      auto;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-select,
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-toggle,
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-actions {
+    grid-column: auto;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-actions {
+    justify-self: stretch;
+    justify-content: flex-start;
+  }
+
+  .md-typeset
+    .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .md-button.filter-panel-clear,
+  .md-typeset
+    .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-clear,
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-clear {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
   }
 }
 
 /*
  * Tablet portrait (~960px and below):
- *   search (full)
- *   organisation | category
- *   status | clear
+ *   Projects/Articles: search (full)
+ *                      organisation | category
+ *                      status | clear
+ *                      (articles: tag | view, then sort | clear)
+ *   Compact 1-select:  stack
+ *   Compact 2-select:  category | status, then clear (end-aligned)
+ *   Policies:          keep category | toggle | clear on one line
+ *                      (matches Projects “controls stay together” until mobile)
  */
 @media screen and (max-width: 59.984375em) {
   .filter-panel {
@@ -325,17 +430,21 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
     grid-column: 1 / -1;
   }
 
-  .filter-panel-select {
+  .filter-panel-select,
+  .filter-panel-toggle {
     grid-column: auto;
   }
 
   .filter-panel-actions {
     grid-column: auto;
     justify-self: stretch;
-    justify-content: stretch;
+    justify-content: flex-start;
   }
 
+  .md-typeset .filter-panel .md-button.filter-panel-clear,
+  .md-typeset .filter-panel .filter-panel-clear,
   .filter-panel-clear {
+    flex: 1 1 auto;
     width: 100%;
     min-width: 0;
   }
@@ -344,64 +453,158 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
     text-align: right;
   }
 
-  .filter-panel.filter-panel--compact {
+  .filter-panel.filter-panel--compact:not(:has(> .filter-panel-toggle)) {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
-  .filter-panel.filter-panel--compact .filter-panel-search {
+  .filter-panel.filter-panel--compact:not(:has(> .filter-panel-toggle))
+    .filter-panel-search {
     grid-column: 1 / -1;
   }
 
-  .filter-panel.filter-panel--compact .filter-panel-select,
-  .filter-panel.filter-panel--compact .filter-panel-actions {
+  .filter-panel.filter-panel--compact:not(:has(> .filter-panel-toggle))
+    .filter-panel-select,
+  .filter-panel.filter-panel--compact:not(:has(> .filter-panel-toggle))
+    .filter-panel-actions {
     grid-column: auto;
   }
 
-  /* Two selects: category | status, then clear full-width on the right */
+  /* Two selects: category | status, then clear alone (end-aligned) */
   .filter-panel.filter-panel--compact:has(
     .filter-panel-select + .filter-panel-select
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-actions {
     grid-column: 1 / -1;
     justify-content: flex-end;
   }
 
+  .md-typeset
+    .filter-panel.filter-panel--compact:has(
+      .filter-panel-select + .filter-panel-select
+    ):not(:has(> .filter-panel-toggle))
+    .md-button.filter-panel-clear,
+  .md-typeset
+    .filter-panel.filter-panel--compact:has(
+      .filter-panel-select + .filter-panel-select
+    ):not(:has(> .filter-panel-toggle))
+    .filter-panel-clear,
   .filter-panel.filter-panel--compact:has(
     .filter-panel-select + .filter-panel-select
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-clear {
+    flex: 0 0 auto;
     width: auto;
     min-width: 8.5rem;
   }
 
+  /* One-select compact: stack */
   .filter-panel.filter-panel--compact:not(
     :has(.filter-panel-select + .filter-panel-select)
-  ) {
+  ):not(:has(> .filter-panel-toggle)) {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .filter-panel.filter-panel--compact:not(
     :has(.filter-panel-select + .filter-panel-select)
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-search,
   .filter-panel.filter-panel--compact:not(
     :has(.filter-panel-select + .filter-panel-select)
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-select,
   .filter-panel.filter-panel--compact:not(
     :has(.filter-panel-select + .filter-panel-select)
-  )
+  ):not(:has(> .filter-panel-toggle))
     .filter-panel-actions {
     grid-column: 1;
+  }
+
+  .filter-panel.filter-panel--compact:not(
+    :has(.filter-panel-select + .filter-panel-select)
+  ):not(:has(> .filter-panel-toggle))
+    .filter-panel-actions {
+    justify-content: flex-start;
+  }
+
+  .md-typeset
+    .filter-panel.filter-panel--compact:not(
+      :has(.filter-panel-select + .filter-panel-select)
+    ):not(:has(> .filter-panel-toggle))
+    .md-button.filter-panel-clear,
+  .md-typeset
+    .filter-panel.filter-panel--compact:not(
+      :has(.filter-panel-select + .filter-panel-select)
+    ):not(:has(> .filter-panel-toggle))
+    .filter-panel-clear,
+  .filter-panel.filter-panel--compact:not(
+    :has(.filter-panel-select + .filter-panel-select)
+  ):not(:has(> .filter-panel-toggle))
+    .filter-panel-clear {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Policies: still search + one controls row (like Projects until mobile) */
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle) {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(9rem, 1.2fr)
+      auto;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-search {
+    grid-column: 1 / -1;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-select,
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-toggle,
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-actions {
+    grid-column: auto;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-actions {
+    justify-self: stretch;
+    justify-content: flex-start;
+  }
+
+  .md-typeset
+    .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .md-button.filter-panel-clear,
+  .md-typeset
+    .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-clear,
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-clear {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle)
+    .filter-panel-toggle__option {
+    padding: 0 0.35rem;
+    font-size: 0.78rem;
   }
 }
 
 /*
- * Mobile (~720px and below): stack everything.
- * Clear is full-width (same as Projects). Summary stays right-aligned.
+ * Mobile (~720px and below): stack everything on every catalogue.
+ * Clear is full-width. Summary stays right-aligned.
+ * Toggle segments share width evenly (All | New | Updated).
  */
 @media screen and (max-width: 44.984375em) {
-  .filter-panel {
+  .filter-panel,
+  .filter-panel.filter-panel--compact,
+  .filter-panel.filter-panel--compact:has(
+    .filter-panel-select + .filter-panel-select
+  ),
+  .filter-panel.filter-panel--compact:has(> .filter-panel-toggle) {
     grid-template-columns: minmax(0, 1fr);
     gap: 0.7rem;
     padding: 0.85rem;
@@ -409,26 +612,47 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
 
   .filter-panel-search,
   .filter-panel-select,
+  .filter-panel-toggle,
   .filter-panel-actions,
-  .filter-panel-summary {
+  .filter-panel-summary,
+  .filter-panel.filter-panel--compact .filter-panel-search,
+  .filter-panel.filter-panel--compact .filter-panel-select,
+  .filter-panel.filter-panel--compact .filter-panel-toggle,
+  .filter-panel.filter-panel--compact .filter-panel-actions {
     grid-column: 1;
   }
 
   .filter-panel-actions,
-  .filter-panel.filter-panel--compact:has(
-    .filter-panel-select + .filter-panel-select
-  )
-    .filter-panel-actions {
-    justify-content: stretch;
+  .filter-panel.filter-panel--compact .filter-panel-actions {
+    /*
+     * Reserve the same vertical slot as a field label + gap so Clear
+     * isn’t tighter to the control above than Category/Status/etc.
+     * (label: 0.68rem × line-height 1.2, plus column gap 0.3rem)
+     */
+    justify-self: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: calc(0.68rem * 1.2 + 0.3rem);
   }
 
-  .filter-panel-clear,
-  .filter-panel.filter-panel--compact:has(
-    .filter-panel-select + .filter-panel-select
-  )
-    .filter-panel-clear {
+  .md-typeset .filter-panel .md-button.filter-panel-clear,
+  .md-typeset .filter-panel .filter-panel-clear,
+  .md-typeset .filter-panel.filter-panel--compact .filter-panel-clear,
+  .filter-panel-clear {
+    flex: 1 1 auto;
     width: 100%;
     min-width: 0;
+  }
+
+  .filter-panel-toggle__options {
+    width: 100%;
+  }
+
+  .filter-panel-toggle__option {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 0.3rem;
+    font-size: 0.78rem;
   }
 
   .filter-panel-summary,

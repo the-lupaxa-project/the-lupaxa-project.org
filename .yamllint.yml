@@ -1,4 +1,8 @@
 # yamllint — MkDocs portal / GitHub Actions (Lupaxa defaults)
+#
+# Note: !!python/name: tags in mkdocs.yml (emoji) are valid for MkDocs and
+# pass yamllint. Editor “Unresolved tag” squiggles are from the YAML language
+# server — see .vscode/settings.json (yaml.customTags), not this file.
 extends: default
 
 ignore: |

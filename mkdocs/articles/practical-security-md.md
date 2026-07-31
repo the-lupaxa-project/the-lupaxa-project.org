@@ -1,7 +1,7 @@
 ---
-title: A SECURITY.md People Use
+title: Practical SECURITY.md
 published: true
-publish_date: "2026-07-31"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc
@@ -13,7 +13,7 @@ tags:
 - Open Source
 ---
 
-# A SECURITY.md People Use
+# Practical SECURITY.md
 
 You already know disclosures need a door. This article is about the **document behind the door**: a `SECURITY.md` that reporters can follow and maintainers can honour. Short, concrete, and honest beats a copied enterprise policy.
 

@@ -60,7 +60,7 @@ ARTICLE_TAGS: dict[str, list[str]] = {
     "the-optimization-trap": ["Engineering", "Mindset"],
     "threat-modelling-for-small-tools": ["Security", "Engineering"],
     "understanding-ci-cd": ["CI/CD", "DevOps"],
-    "writing-a-security-md-that-people-use": ["Security", "Open Source"],
+    "practical-security-md": ["Security", "Open Source"],
 }
 
 
@@ -199,7 +199,7 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
           - toc
         ---
 
-        <div class="filter-panel filter-panel--compact" data-article-filters data-banner-expiry-days="{ARTICLE_BANNER_EXPIRY_DAYS}" markdown="0">
+        <div class="filter-panel" data-article-filters data-banner-expiry-days="{ARTICLE_BANNER_EXPIRY_DAYS}" markdown="0">
           <div class="filter-panel-search">
             <label for="article-search">Search articles</label>
             <input
@@ -209,25 +209,6 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
               autocomplete="off"
               data-article-search
             />
-            <div class="filter-panel-sort" role="group" aria-label="Sort">
-              <span class="filter-panel-sort__label">Sort</span>
-              <button
-                type="button"
-                class="filter-panel-sort__option"
-                data-article-sort="alpha"
-                aria-pressed="true"
-              >
-                A–Z
-              </button>
-              <button
-                type="button"
-                class="filter-panel-sort__option"
-                data-article-sort="newest"
-                aria-pressed="false"
-              >
-                Newest
-              </button>
-            </div>
           </div>
           <div class="filter-panel-select">
             <label for="article-category">Tag</label>
@@ -235,12 +216,47 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
               <option value="">All Tags</option>
             </select>
           </div>
-          <div class="filter-panel-select">
-            <label for="article-status">Status</label>
-            <select id="article-status" data-article-status>
-              <option value="">All Statuses</option>
-              <option value="new">New Article</option>
-            </select>
+          <div class="filter-panel-toggle" role="group" aria-labelledby="article-status-label">
+            <label id="article-status-label">View Articles</label>
+            <div class="filter-panel-toggle__options">
+              <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-article-status="all"
+                aria-pressed="true"
+              >
+                All
+              </button>
+              <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-article-status="new"
+                aria-pressed="false"
+              >
+                New
+              </button>
+            </div>
+          </div>
+          <div class="filter-panel-toggle" role="group" aria-labelledby="article-sort-label">
+            <label id="article-sort-label">Sort</label>
+            <div class="filter-panel-toggle__options">
+              <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-article-sort="alpha"
+                aria-pressed="true"
+              >
+                A–Z
+              </button>
+              <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-article-sort="newest"
+                aria-pressed="false"
+              >
+                Newest
+              </button>
+            </div>
           </div>
           <div class="filter-panel-actions">
             <button

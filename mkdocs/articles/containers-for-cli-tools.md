@@ -1,7 +1,7 @@
 ---
 title: Containers for CLI Tools
 published: true
-publish_date: "2025-11-13"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

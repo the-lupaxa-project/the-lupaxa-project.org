@@ -1,7 +1,7 @@
 ---
 title: Right Tools for the Job
 published: true
-publish_date: "2026-04-23"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc

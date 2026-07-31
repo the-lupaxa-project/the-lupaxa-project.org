@@ -1,7 +1,7 @@
 ---
 title: Semantic Versioning
 published: true
-publish_date: "2026-06-11"
+publish_date: "2026-08-01"
 hide:
 - navigation
 - toc
