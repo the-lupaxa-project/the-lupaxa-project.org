@@ -11,6 +11,9 @@
   const URL_PARAM_CATEGORY = "category";
   const URL_PARAM_ORG = "org";
   const URL_PARAM_STATUS = "status";
+  const URL_PARAM_SORT = "sort";
+  const SORT_NEWEST = "newest";
+  const SORT_ALPHA = "alpha";
   const FALLBACK_ORG = "Other";
   const CATALOGUE_LOCALE = "en-GB";
   /** Shared with article-pager.js — filtered prev/next sequence. */
@@ -25,6 +28,7 @@
    * @param {string} options.plural
    * @param {boolean} [options.organisation=false]
    * @param {boolean} [options.status=false]
+   * @param {boolean} [options.sort=false]
    * @returns {Object}
    */
   function catalogueConfig({
@@ -33,10 +37,12 @@
     plural,
     organisation = false,
     status = false,
+    sort = false,
   }) {
     const config = {
       singular,
       plural,
+      sort,
       filtersSelector: `[data-${id}-filters]`,
       catalogueSelector: `[data-${id}-catalogue]`,
       searchSelector: `[data-${id}-search]`,
@@ -153,8 +159,10 @@
   /**
    * Persist the visible articles sequence for filtered prev/next paging.
    *
-   * Cleared when no filters are active so article pages use the full
-   * build-time A–Z pager again.
+   * Cleared when no filters are active and sort is A–Z, so article pages
+   * use the full build-time A–Z pager again. Kept whenever a filter is
+   * active or the Newest sort is selected, since both change the visible
+   * order relative to that build-time pager.
    *
    * @param {Object} config
    * @param {Array<{ element: HTMLElement }>} cardData
@@ -164,8 +172,14 @@
    *   selectedOrganisation: string,
    *   selectedStatus: string
    * }} filters
+   * @param {string} [activeSort]
    */
-  function syncArticlePagerSequence(config, cardData, filters) {
+  function syncArticlePagerSequence(
+    config,
+    cardData,
+    filters,
+    activeSort,
+  ) {
     if (config.singular !== "article") {
       return;
     }
@@ -176,7 +190,10 @@
       filters.selectedOrganisation !== "" ||
       filters.selectedStatus !== "";
 
-    if (!hasFilter) {
+    const needsCustomOrder =
+      hasFilter || activeSort === SORT_NEWEST;
+
+    if (!needsCustomOrder) {
       sessionStorage.removeItem(ARTICLE_PAGER_STORAGE_KEY);
       return;
     }
@@ -398,6 +415,11 @@
             ...categories.labels,
           ].join(" "),
         ),
+        publishDate: logo?.dataset.publishDate?.trim() || "",
+        title: (
+          card.querySelector(":scope > p:first-child a[href]")
+            ?.textContent || ""
+        ).trim(),
       };
     });
 
@@ -413,6 +435,91 @@
     // Status options are fixed in the filter panel markup (lifecycle
     // presets for the relevant status_kind, plus Stable for projects
     // only), not derived from banners present on the page.
+
+    const sortButtons = config.sort
+      ? filterPanel.querySelectorAll("[data-article-sort]")
+      : [];
+
+    let activeSort = SORT_ALPHA;
+
+    /**
+     * Read the requested sort mode from the URL (defaults to A–Z).
+     *
+     * @returns {string}
+     */
+    const readSortFromUrl = () => {
+      const value = new URLSearchParams(
+        window.location.search,
+      ).get(URL_PARAM_SORT);
+
+      return value === SORT_NEWEST ? SORT_NEWEST : SORT_ALPHA;
+    };
+
+    /**
+     * Reflect the active sort on the segmented button group.
+     *
+     * @param {string} sort
+     */
+    const setSortPressed = (sort) => {
+      sortButtons.forEach((button) => {
+        const isActive = button.dataset.articleSort === sort;
+
+        button.setAttribute(
+          "aria-pressed",
+          isActive ? "true" : "false",
+        );
+      });
+    };
+
+    /**
+     * Compare two cards for the active sort order.
+     *
+     * @param {Object} left
+     * @param {Object} right
+     * @returns {number}
+     */
+    const compareCards = (left, right) => {
+      if (activeSort === SORT_NEWEST) {
+        const leftDate = left.publishDate || "";
+        const rightDate = right.publishDate || "";
+
+        if (leftDate !== rightDate) {
+          if (!leftDate) {
+            return 1;
+          }
+
+          if (!rightDate) {
+            return -1;
+          }
+
+          return rightDate.localeCompare(leftDate);
+        }
+      }
+
+      return left.title.localeCompare(right.title, CATALOGUE_LOCALE, {
+        sensitivity: "base",
+      });
+    };
+
+    /**
+     * Reorder the catalogue DOM (and cardData) to match the active sort.
+     */
+    const applyCardOrder = () => {
+      const list = catalogue.querySelector(":scope > ul");
+
+      if (!list) {
+        return;
+      }
+
+      const ordered = [...cardData].sort(compareCards);
+
+      ordered.forEach((card) => {
+        list.append(card.element);
+      });
+
+      cardData.length = 0;
+      cardData.push(...ordered);
+    };
 
     /**
      * Select a URL-supplied filter value.
@@ -626,6 +733,10 @@
         params.set(URL_PARAM_STATUS, statusSelect.value);
       }
 
+      if (config.sort && activeSort === SORT_NEWEST) {
+        params.set(URL_PARAM_SORT, SORT_NEWEST);
+      }
+
       const url = new URL(window.location.href);
 
       url.search = params.toString();
@@ -648,7 +759,12 @@
       updateClearButton(filters);
       updateEmptyState(visibleCount);
       syncUrlWithFilters(filters);
-      syncArticlePagerSequence(config, cardData, filters);
+      syncArticlePagerSequence(
+        config,
+        cardData,
+        filters,
+        activeSort,
+      );
     };
 
     /**
@@ -687,6 +803,23 @@
 
     if (statusSelect) {
       statusSelect.addEventListener("change", updateCatalogue);
+    }
+
+    if (config.sort) {
+      sortButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const sort = button.dataset.articleSort;
+
+          if (!sort || sort === activeSort) {
+            return;
+          }
+
+          activeSort = sort === SORT_NEWEST ? SORT_NEWEST : SORT_ALPHA;
+          setSortPressed(activeSort);
+          applyCardOrder();
+          updateCatalogue();
+        });
+      });
     }
 
     /**
@@ -811,6 +944,17 @@
         });
     }
 
+    if (config.sort) {
+      activeSort = readSortFromUrl();
+      setSortPressed(activeSort);
+
+      // Cards already render A–Z at build time — only reorder on init
+      // when Newest is requested. Toggling back to A–Z still reorders.
+      if (activeSort === SORT_NEWEST) {
+        applyCardOrder();
+      }
+    }
+
     applyInitialFilters();
     updateCatalogue();
   }
@@ -839,6 +983,7 @@
       singular: "article",
       plural: "articles",
       status: true,
+      sort: true,
     }),
   ];
 

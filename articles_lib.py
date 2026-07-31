@@ -145,22 +145,28 @@ def _article_entry(
     tag_spans = "\n    ".join(
         f'<span class="catalogue-category">{tag}</span>' for tag in tags
     )
+    publish_date = parse_iso_date(meta.get("publish_date"))
     banner = banner_markup(
         meta.get("banner"),
         presets=ARTICLE_BANNER_PRESETS,
-        event_date=parse_iso_date(meta.get("publish_date")),
+        event_date=publish_date,
         today=today,
         expiry_days=ARTICLE_BANNER_EXPIRY_DAYS,
         time_limited_statuses=_ARTICLE_TIME_LIMITED,
     )
     banner_block = f"{banner}\n\n" if banner else ""
+    date_attr = (
+        f' data-publish-date="{publish_date.isoformat()}"'
+        if publish_date is not None
+        else ""
+    )
     return (
         f"-   **[{title}](articles/{slug}.md)**\n"
         f"\n"
         f"    ---\n"
         f"\n"
         f"{banner_block}"
-        f'    ![Article](assets/images/articles/{slug}.webp){{ class="catalogue-logo" }}\n'
+        f'    ![Article](assets/images/articles/{slug}.webp){{ class="catalogue-logo"{date_attr} }}\n'
         f"\n"
         f"    {desc_block}\n"
         f"\n"
@@ -203,6 +209,25 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
               autocomplete="off"
               data-article-search
             />
+            <div class="filter-panel-sort" role="group" aria-label="Sort">
+              <span class="filter-panel-sort__label">Sort</span>
+              <button
+                type="button"
+                class="filter-panel-sort__option"
+                data-article-sort="alpha"
+                aria-pressed="true"
+              >
+                A–Z
+              </button>
+              <button
+                type="button"
+                class="filter-panel-sort__option"
+                data-article-sort="newest"
+                aria-pressed="false"
+              >
+                Newest
+              </button>
+            </div>
           </div>
           <div class="filter-panel-select">
             <label for="article-category">Tag</label>

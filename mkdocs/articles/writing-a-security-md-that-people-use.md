@@ -1,8 +1,7 @@
 ---
-title: Writing a SECURITY.md That People Use
+title: A SECURITY.md People Use
 published: true
 publish_date: "2026-07-31"
-banner: new
 hide:
 - navigation
 - toc
@@ -14,7 +13,7 @@ tags:
 - Open Source
 ---
 
-# Writing a SECURITY.md That People Use
+# A SECURITY.md People Use
 
 You already know disclosures need a door. This article is about the **document behind the door**: a `SECURITY.md` that reporters can follow and maintainers can honour. Short, concrete, and honest beats a copied enterprise policy.
 
