@@ -21,6 +21,32 @@
   documentation: https://lupaxa-security-toolbox.github.io/certtool/
   featured: true
 
+- id: check-git-repositories
+  published: true
+  name: Check Git Repositories
+  icon: material-source-repository
+  publish_date: "2026-08-01"
+  description: >-
+    Scan a directory tree for Git repositories and report anything that is not
+    fully clean and synced with its upstream — uncommitted work, unpushed
+    commits, stashes, and sync drift.
+
+
+    A single portable Bash script that needs only bash, find, and git. Useful as
+    an end-of-day check across a workspace full of clones.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - Bash
+  organisation: Git Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo_alt: Git Toolbox
+  repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
+  documentation: https://lupaxa-git-toolbox.github.io/check-git-repositories/
+  featured: true
+  banner: in-testing
+
 - id: favicon-generator
   published: true
   name: Favicon Generator
