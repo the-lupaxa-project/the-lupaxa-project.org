@@ -33,8 +33,12 @@ def test_articles_index_includes_sort_toggle(tmp_path):
     )
     rebuild_articles_index(tmp_path)
     html = (tmp_path / "articles.md").read_text(encoding="utf-8")
-    assert 'class="filter-panel"' in html
+    assert 'class="filter-panel filter-panel--with-sort"' in html
     assert "filter-panel--compact" not in html
+    assert "filter-panel-toolbar" in html
+    assert 'data-filter-expand' in html
+    assert "filter-panel-expand__icon" in html
+    assert 'data-article-summary' in html
     assert '<label id="article-status-label">View Articles</label>' in html
     assert 'data-article-status="all"' in html
     assert 'data-article-status="new"' in html
@@ -47,7 +51,8 @@ def test_articles_index_includes_sort_toggle(tmp_path):
     assert "Newest" in html
     assert 'data-publish-date="2026-01-01"' in html
     assert "filter-panel-toggle__options" in html
-    # Same row as Projects: search | tag | status | sort | clear
+    # Toolbar (Filters + summary), then search | tag | status | sort | clear
+    assert html.index("filter-panel-toolbar") < html.index("data-article-summary")
+    assert html.index("data-article-summary") < html.index("filter-panel-search")
     assert html.index("article-status-label") < html.index("article-sort-label")
     assert html.index("article-sort-label") < html.index("filter-panel-actions")
-    assert html.index("filter-panel-actions") < html.index("filter-panel-summary")

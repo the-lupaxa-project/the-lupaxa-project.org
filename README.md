@@ -26,8 +26,10 @@ python -m mkdocs serve
 
 Open the URL printed by MkDocs (usually `http://127.0.0.1:8000/`).
 
-`mkdocs.yml` watches `data/` and `main.py`, so catalogue YAML and macro edits
-reload automatically while `mkdocs serve` is running.
+`mkdocs.yml` watches `data/`, `hooks/`, and every build-time Python module
+(`main.py`, `*_lib.py`), so catalogue YAML and macro edits reload
+automatically while `mkdocs serve` is running. Add new build scripts to
+`watch` when you create them — MkDocs does not support globs there.
 
 Strict production build:
 

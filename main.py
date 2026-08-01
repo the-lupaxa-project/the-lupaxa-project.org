@@ -50,6 +50,42 @@ DEFAULT_POLICY_LOGO = (
 )
 DEFAULT_POLICY_LOGO_ALT = "The Lupaxa Project"
 
+# Material filter-variant / filter-off icons for Show / Hide Filters.
+FILTER_EXPAND_ICONS = """\
+<span class="filter-panel-expand__icon filter-panel-expand__icon--show" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+                <path d="M6 13h12v-2H6m-3-5v2h18V6M10 18h4v-2h-4v2Z"/>
+            </svg>
+        </span>
+        <span class="filter-panel-expand__icon filter-panel-expand__icon--hide" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+                <path d="M14.76 20.83 17.6 18l-2.84-2.83 1.41-1.41L19 16.57l2.83-2.81 1.41 1.41L20.41 18l2.83 2.83-1.41 1.41L19 19.41l-2.83 2.83-1.41-1.41M6 13h7.07c.14-.71.4-1.38.76-2H6m-3-5v2h18V6H3Z"/>
+            </svg>
+        </span>"""
+
+
+def filter_panel_toolbar(*, prefix: str, summary_text: str) -> str:
+    """Shared Show/Hide Filters button + live summary row for catalogues."""
+    return f"""
+    <div class="filter-panel-toolbar">
+        <button
+            type="button"
+            class="md-button lupaxa-button filter-panel-expand"
+            data-filter-expand
+            aria-expanded="false"
+        >
+            {FILTER_EXPAND_ICONS}
+            <span class="filter-panel-expand__label">Show Filters</span>
+        </button>
+        <div
+            class="filter-panel-summary"
+            aria-live="polite"
+            data-{prefix}-summary
+        >
+            {summary_text}
+        </div>
+    </div>"""
+
 
 def _load_yaml(name: str) -> list[dict]:
     path = DATA_DIR / name
@@ -124,13 +160,19 @@ def define_env(env):
         summary_text: str,
         include_organisation: bool = False,
         include_status: bool = False,
+        include_sort: bool = False,
         status_kind: str = "project",
         category_label: str = "Category",
         organisation_label: str = "Organisation",
         status_label: str = "Status",
         clear_label: str = "Clear filters",
     ) -> str:
-        classes = "filter-panel filter-panel--compact" if compact else "filter-panel"
+        classes = ["filter-panel"]
+        if compact:
+            classes.append("filter-panel--compact")
+        if include_sort:
+            classes.append("filter-panel--with-sort")
+        class_attr = " ".join(classes)
         organisation_block = ""
         if include_organisation:
             organisation_block = f"""
@@ -197,8 +239,35 @@ def define_env(env):
         </select>
     </div>"""
 
+        sort_block = ""
+        if include_sort:
+            sort_block = f"""
+    <div class="filter-panel-toggle" role="group" aria-labelledby="{prefix}-sort-label">
+        <label id="{prefix}-sort-label">Sort</label>
+        <div class="filter-panel-toggle__options">
+            <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-{prefix}-sort="alpha"
+                aria-pressed="true"
+            >
+                A–Z
+            </button>
+            <button
+                type="button"
+                class="filter-panel-toggle__option"
+                data-{prefix}-sort="newest"
+                aria-pressed="false"
+            >
+                Newest
+            </button>
+        </div>
+    </div>"""
+
+        toolbar = filter_panel_toolbar(prefix=prefix, summary_text=summary_text)
         return f"""
-<div class="{classes}" data-{prefix}-filters>
+<div class="{class_attr}" data-{prefix}-filters>
+{toolbar}
     <div class="filter-panel-search">
         <label for="{prefix}-search">{search_label}</label>
         <input
@@ -214,7 +283,7 @@ def define_env(env):
         <select id="{prefix}-category" data-{prefix}-category>
             <option value="">All Categories</option>
         </select>
-    </div>{status_block}
+    </div>{status_block}{sort_block}
     <div class="filter-panel-actions">
         <button
             type="button"
@@ -223,13 +292,6 @@ def define_env(env):
         >
             {clear_label}
         </button>
-    </div>
-    <div
-        class="filter-panel-summary"
-        aria-live="polite"
-        data-{prefix}-summary
-    >
-        {summary_text}
     </div>
 </div>
 """.strip()
@@ -252,6 +314,12 @@ def define_env(env):
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
         title = _organisation_logo_title(item["name"])
+        publish_date = parse_iso_date(item.get("publish_date"))
+        publish_date_attr = (
+            f'\n        data-publish-date="{publish_date.isoformat()}"'
+            if publish_date is not None
+            else ""
+        )
         action = _action_link(
             "repository",
             item["repository"],
@@ -266,7 +334,7 @@ def define_env(env):
     <img
         class="catalogue-logo"
         title="{title}"
-        data-organisation="{item["name"]}"
+        data-organisation="{item["name"]}"{publish_date_attr}
         src="{item["logo"]}"
         alt="{item.get("logo_alt", item["name"])}"
     />
@@ -312,6 +380,12 @@ def define_env(env):
                 )
             )
         actions_markup = "\n".join(actions)
+        publish_date = parse_iso_date(item.get("publish_date"))
+        publish_date_attr = (
+            f'\n        data-publish-date="{publish_date.isoformat()}"'
+            if publish_date is not None
+            else ""
+        )
         return f"""
 -   :{item["icon"]}:{{ .lg .middle }} **{item["name"]}**
 
@@ -320,7 +394,7 @@ def define_env(env):
 {banner_block}    <img
         class="catalogue-logo"
         title="{item["organisation"]}"
-        data-organisation="{item["organisation"]}"
+        data-organisation="{item["organisation"]}"{publish_date_attr}
         src="{item["logo"]}"
         alt="{item.get("logo_alt", item["organisation"])}"
     />
@@ -464,7 +538,34 @@ def define_env(env):
             project_card(item, expiry_days=banner_expiry_days) for item in featured
         )
         return f"""
-<div class="grid cards catalogue-grid" markdown>
+<div class="featured-projects-header" markdown="0">
+    <h2 id="featured-projects">Featured Projects</h2>
+    <div class="featured-sort" data-featured-sort-bar>
+        <div class="filter-panel-toggle" role="group" aria-labelledby="featured-sort-label">
+            <label id="featured-sort-label">Sort</label>
+            <div class="filter-panel-toggle__options">
+                <button
+                    type="button"
+                    class="filter-panel-toggle__option"
+                    data-featured-sort="alpha"
+                    aria-pressed="true"
+                >
+                    A–Z
+                </button>
+                <button
+                    type="button"
+                    class="filter-panel-toggle__option"
+                    data-featured-sort="newest"
+                    aria-pressed="false"
+                >
+                    Newest
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="grid cards catalogue-grid" data-featured-catalogue markdown>
 
 {cards}
 

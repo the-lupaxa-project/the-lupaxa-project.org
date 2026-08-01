@@ -3,6 +3,64 @@
  * Catalogue Cards
  * ============================================================================= */
 
+/* Home: Featured Projects heading + sort on one row */
+.md-typeset .featured-projects-header,
+.featured-projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.6em 0 0.8em;
+}
+
+.md-typeset .featured-projects-header > h2,
+.featured-projects-header > h2 {
+  margin: 0;
+  min-width: 0;
+}
+
+.featured-sort {
+  flex: 0 0 auto;
+}
+
+.featured-sort .filter-panel-toggle {
+  display: flex;
+  width: auto;
+  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.featured-sort .filter-panel-toggle label {
+  color: var(--md-default-fg-color);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  opacity: 0.8;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.featured-sort .filter-panel-toggle__options {
+  width: auto;
+}
+
+.featured-sort .filter-panel-toggle__option,
+.md-typeset .featured-sort .filter-panel-toggle__option {
+  flex: 0 0 auto;
+  min-width: 4.75rem;
+  padding: 0 0.85rem;
+}
+
+/* Hide sort on mobile so it never crowds the heading */
+@media screen and (max-width: 44.984375em) {
+  .featured-sort {
+    display: none;
+  }
+}
+
 /* Catalogue cards */
 
 .md-typeset .grid.cards.catalogue-grid {

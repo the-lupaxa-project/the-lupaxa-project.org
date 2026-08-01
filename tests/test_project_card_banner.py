@@ -110,3 +110,13 @@ def test_project_card_shows_non_time_limited_preset(tmp_path, monkeypatch):
 
     assert "catalogue-banner" in markup
     assert "In Development" in markup
+
+
+def test_project_card_includes_publish_date_on_logo(tmp_path, monkeypatch):
+    projects = [_synthetic_project(publish_date="2026-08-01")]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert 'data-publish-date="2026-08-01"' in markup
+    assert "catalogue-logo" in markup

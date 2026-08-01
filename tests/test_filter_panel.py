@@ -107,3 +107,71 @@ def test_filter_panel_status_kind_unrecognised_raises():
             include_status=True,
             status_kind="bogus",
         )
+
+
+def test_filter_panel_includes_collapse_toolbar():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "organisation",
+        compact=True,
+        search_label="Search",
+        search_placeholder="Search organisations",
+        summary_text="Showing all organisations",
+    )
+
+    assert "filter-panel-toolbar" in markup
+    assert 'data-filter-expand' in markup
+    assert "filter-panel-expand__icon--show" in markup
+    assert "filter-panel-expand__icon--hide" in markup
+    assert "filter-panel-expand__label" in markup
+    assert "Show Filters" in markup
+    assert 'data-organisation-summary' in markup
+    # Summary sits in the toolbar (same row as Show Filters)
+    assert markup.index("filter-panel-toolbar") < markup.index(
+        "data-organisation-summary"
+    )
+    assert markup.index("data-organisation-summary") < markup.index(
+        "filter-panel-search"
+    )
+
+
+def test_filter_panel_include_sort_adds_toggle():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "project",
+        search_label="Search",
+        search_placeholder="Search projects",
+        summary_text="Showing all projects",
+        include_organisation=True,
+        include_status=True,
+        include_sort=True,
+    )
+
+    assert "filter-panel--with-sort" in markup
+    assert 'id="project-sort-label">Sort</label>' in markup
+    assert 'data-project-sort="alpha"' in markup
+    assert 'data-project-sort="newest"' in markup
+    assert "A–Z" in markup
+    assert "Newest" in markup
+    assert markup.index("project-status") < markup.index("project-sort-label")
+    assert markup.index("project-sort-label") < markup.index("filter-panel-actions")
+
+
+def test_filter_panel_organisation_sort_toggle():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "organisation",
+        compact=True,
+        search_label="Search",
+        search_placeholder="Search organisations",
+        summary_text="Showing all organisations",
+        include_sort=True,
+    )
+
+    assert "filter-panel--compact" in markup
+    assert "filter-panel--with-sort" in markup
+    assert 'data-organisation-sort="alpha"' in markup
+    assert 'data-organisation-sort="newest"' in markup

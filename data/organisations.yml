@@ -2,9 +2,9 @@
   published: true
   name: Actions Toolbox
   icon: material-domain
-  description: >-
-    Open source GitHub Actions, reusable workflows and supporting automation for building
-    consistent repository workflows.
+  publish_date: '2025-06-27'
+  description: Open source GitHub Actions, reusable workflows and supporting automation for
+    building consistent repository workflows.
   categories:
     - GitHub Actions
     - Automation
@@ -17,8 +17,8 @@
   published: true
   name: API Extractor Toolbox
   icon: material-domain
-  description: >-
-    Tools and libraries for extracting, processing and transforming data from application
+  publish_date: '2025-06-27'
+  description: Tools and libraries for extracting, processing and transforming data from application
     programming interfaces.
   categories:
     - APIs
@@ -32,9 +32,9 @@
   published: true
   name: AWS Toolbox
   icon: material-domain
-  description: >-
-    Open source tools, libraries and automation focused on Amazon Web Services and cloud infrastructure
-    management.
+  publish_date: '2025-06-27'
+  description: Open source tools, libraries and automation focused on Amazon Web Services
+    and cloud infrastructure management.
   categories:
     - AWS
     - Cloud
@@ -48,9 +48,9 @@
   published: true
   name: Azure Toolbox
   icon: material-domain
-  description: >-
-    Open source projects for Microsoft Azure, including cloud automation, deployment and infrastructure
-    management tools.
+  publish_date: '2025-06-27'
+  description: Open source projects for Microsoft Azure, including cloud automation, deployment
+    and infrastructure management tools.
   categories:
     - Azure
     - Cloud
@@ -64,9 +64,9 @@
   published: true
   name: CI/CD Toolbox
   icon: material-domain
-  description: >-
-    Tools, templates and automation for continuous integration, continuous delivery and repeatable
-    software release workflows.
+  publish_date: '2025-06-27'
+  description: Tools, templates and automation for continuous integration, continuous delivery
+    and repeatable software release workflows.
   categories:
     - CI/CD
     - Automation
@@ -80,9 +80,9 @@
   published: true
   name: Code Playground
   icon: material-domain
-  description: >-
-    Experimental code, technical demonstrations and small example projects used to explore
-    languages, libraries and software engineering approaches.
+  publish_date: '2025-06-27'
+  description: Experimental code, technical demonstrations and small example projects used
+    to explore languages, libraries and software engineering approaches.
   categories:
     - Examples
     - Experiments
@@ -96,8 +96,9 @@
   published: true
   name: Database Toolbox
   icon: material-domain
-  description: >-
-    Tools and libraries for working with relational, document and other data storage systems.
+  publish_date: '2025-06-27'
+  description: Tools and libraries for working with relational, document and other data storage
+    systems.
   categories:
     - Databases
     - Data
@@ -111,9 +112,9 @@
   published: true
   name: Developers Toolbox
   icon: material-domain
-  description: >-
-    General-purpose utilities, libraries and productivity tools for software development and
-    local development environments.
+  publish_date: '2025-06-27'
+  description: General-purpose utilities, libraries and productivity tools for software development
+    and local development environments.
   categories:
     - Developer Tools
     - Productivity
@@ -126,8 +127,9 @@
   published: true
   name: DevOps Toolbox
   icon: material-domain
-  description: >-
-    Tools and automation for managing software delivery, infrastructure and operational workflows.
+  publish_date: '2025-10-23'
+  description: Tools and automation for managing software delivery, infrastructure and operational
+    workflows.
   categories:
     - DevOps
     - Automation
@@ -141,8 +143,8 @@
   published: true
   name: Docker Toolbox
   icon: material-domain
-  description: >-
-    Tools, images and supporting resources for building, running and managing containerised
+  publish_date: '2025-06-27'
+  description: Tools, images and supporting resources for building, running and managing containerised
     applications with Docker.
   categories:
     - Docker
@@ -157,9 +159,9 @@
   published: true
   name: GCP Toolbox
   icon: material-domain
-  description: >-
-    Open source tools, libraries and automation focused on Google Cloud Platform and cloud
-    infrastructure management.
+  publish_date: '2025-06-27'
+  description: Open source tools, libraries and automation focused on Google Cloud Platform
+    and cloud infrastructure management.
   categories:
     - Google Cloud
     - Cloud
@@ -173,9 +175,9 @@
   published: true
   name: Git Toolbox
   icon: material-domain
-  description: >-
-    Utilities and automation for Git repositories, version control operations and repository
-    maintenance workflows.
+  publish_date: '2025-06-27'
+  description: Utilities and automation for Git repositories, version control operations and
+    repository maintenance workflows.
   categories:
     - Git
     - Version Control
@@ -189,9 +191,9 @@
   published: true
   name: Git Hooks Toolbox
   icon: material-domain
-  description: >-
-    Reusable Git hooks and supporting tools for automating repository checks, validation and
-    development workflows.
+  publish_date: '2025-06-27'
+  description: Reusable Git hooks and supporting tools for automating repository checks, validation
+    and development workflows.
   categories:
     - Git
     - Git Hooks
@@ -205,9 +207,9 @@
   published: true
   name: GitHub Toolbox
   icon: material-domain
-  description: >-
-    GitHub-focused tools covering repository administration, APIs, workflows and platform
-    automation.
+  publish_date: '2025-06-27'
+  description: GitHub-focused tools covering repository administration, APIs, workflows and
+    platform automation.
   categories:
     - GitHub
     - Repository Management
@@ -221,9 +223,9 @@
   published: true
   name: Monitoring Toolbox
   icon: material-domain
-  description: >-
-    Monitoring, observability and diagnostic tools for understanding the behaviour and health
-    of applications and infrastructure.
+  publish_date: '2025-06-27'
+  description: Monitoring, observability and diagnostic tools for understanding the behaviour
+    and health of applications and infrastructure.
   categories:
     - Monitoring
     - Observability
@@ -237,9 +239,9 @@
   published: true
   name: Notifications Toolbox
   icon: material-domain
-  description: >-
-    Tools and integrations for delivering notifications, alerts and automated messages across
-    different communication platforms.
+  publish_date: '2025-06-27'
+  description: Tools and integrations for delivering notifications, alerts and automated messages
+    across different communication platforms.
   categories:
     - Notifications
     - Alerts
@@ -253,9 +255,9 @@
   published: true
   name: Security Toolbox
   icon: material-domain
-  description: >-
-    Security-focused tools covering certificates, encryption, authentication and security
-    automation.
+  publish_date: '2025-06-27'
+  description: Security-focused tools covering certificates, encryption, authentication and
+    security automation.
   categories:
     - Security
     - Certificates
@@ -269,9 +271,9 @@
   published: true
   name: Spider Toolbox
   icon: material-domain
-  description: >-
-    Web crawling, scraping and content discovery tools for collecting and processing information
-    from websites.
+  publish_date: '2025-10-23'
+  description: Web crawling, scraping and content discovery tools for collecting and processing
+    information from websites.
   categories:
     - Web Crawling
     - Web Scraping
@@ -285,9 +287,9 @@
   published: true
   name: SRE Toolbox
   icon: material-domain
-  description: >-
-    Tools and automation supporting reliability engineering, service operations and resilient
-    production systems.
+  publish_date: '2025-06-27'
+  description: Tools and automation supporting reliability engineering, service operations
+    and resilient production systems.
   categories:
     - Site Reliability Engineering
     - Reliability
@@ -301,9 +303,9 @@
   published: true
   name: Terraform Toolbox
   icon: material-domain
-  description: >-
-    Terraform modules, tools and automation for defining, provisioning and maintaining infrastructure
-    as code.
+  publish_date: '2025-06-27'
+  description: Terraform modules, tools and automation for defining, provisioning and maintaining
+    infrastructure as code.
   categories:
     - Terraform
     - Infrastructure as Code
@@ -317,9 +319,9 @@
   published: true
   name: The Lupaxa Blueprints
   icon: material-domain
-  description: >-
-    Repository templates, project foundations and reusable starting points for creating consistent
-    repositories across The Lupaxa Project.
+  publish_date: '2026-07-20'
+  description: Repository templates, project foundations and reusable starting points for
+    creating consistent repositories across The Lupaxa Project.
   categories:
     - Templates
     - Standards
@@ -332,8 +334,8 @@
   published: true
   name: The Lupaxa Internal Toolbox
   icon: material-domain
-  description: >-
-    A collection of internal tools used by The Lupaxa Project team to support administration,
+  publish_date: '2026-07-23'
+  description: A collection of internal tools used by The Lupaxa Project team to support administration,
     automation and repository management.
   categories:
     - Internal Tools
@@ -347,9 +349,9 @@
   published: true
   name: The Lupaxa Lab
   icon: material-domain
-  description: >-
-    Experimental projects, prototypes and technical investigations that may later become established
-    projects elsewhere in the ecosystem.
+  publish_date: '2025-11-09'
+  description: Experimental projects, prototypes and technical investigations that may later
+    become established projects elsewhere in the ecosystem.
   categories:
     - Experiments
     - Prototypes
@@ -362,9 +364,9 @@
   published: true
   name: The Lupaxa Project
   icon: material-domain
-  description: >-
-    The central public organisation containing shared standards, documentation, workflows,
-    brand assets and project-wide resources.
+  publish_date: '2025-06-27'
+  description: The central public organisation containing shared standards, documentation,
+    workflows, brand assets and project-wide resources.
   categories:
     - Project Resources
     - Shared Resources
@@ -378,8 +380,8 @@
   published: true
   name: The Lupaxa Project (Private)
   icon: material-domain
-  description: >-
-    Private repositories and member-only resources supporting the internal administration
+  publish_date: '2025-06-27'
+  description: Private repositories and member-only resources supporting the internal administration
     and coordination of The Lupaxa Project.
   categories:
     - Private Resources

@@ -10,6 +10,7 @@ from typing import Any
 import yaml
 
 from banner_lib import ARTICLE_BANNER_PRESETS, banner_markup, parse_iso_date
+from main import filter_panel_toolbar
 
 # Days a "New Article" banner stays visible after `publish_date`.
 ARTICLE_BANNER_EXPIRY_DAYS = 28
@@ -191,6 +192,8 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
         _article_entry(slug, meta, today=today) for slug, meta in items
     )
 
+    # Insert toolbar after dedent — embedding it in the f-string breaks
+    # textwrap.dedent (zero-indent line) and corrupts YAML front matter.
     header = textwrap.dedent(
         f"""\
         ---
@@ -199,7 +202,8 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
           - toc
         ---
 
-        <div class="filter-panel" data-article-filters data-banner-expiry-days="{ARTICLE_BANNER_EXPIRY_DAYS}" markdown="0">
+        <div class="filter-panel filter-panel--with-sort" data-article-filters data-banner-expiry-days="{ARTICLE_BANNER_EXPIRY_DAYS}" markdown="0">
+        __FILTER_TOOLBAR__
           <div class="filter-panel-search">
             <label for="article-search">Search articles</label>
             <input
@@ -267,18 +271,16 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
               Clear filters
             </button>
           </div>
-          <div
-            class="filter-panel-summary"
-            aria-live="polite"
-            data-article-summary
-          >
-            Showing all articles
-          </div>
         </div>
 
         <div class="grid cards catalogue-grid catalogue-grid--articles" data-article-catalogue markdown>
 
         """
+    ).replace(
+        "__FILTER_TOOLBAR__",
+        filter_panel_toolbar(
+            prefix="article", summary_text="Showing all articles"
+        ).rstrip("\n"),
     )
     footer = textwrap.dedent(
         """

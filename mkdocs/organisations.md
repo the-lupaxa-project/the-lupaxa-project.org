@@ -10,6 +10,7 @@ hide:
     search_label="Search organisations",
     search_placeholder="Search by organisation name",
     summary_text="Showing all organisations",
+    include_sort=True,
 ) }}
 
 {{ catalogue_grid("organisation", "organisation") }}

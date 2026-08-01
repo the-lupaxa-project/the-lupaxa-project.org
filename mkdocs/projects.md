@@ -12,6 +12,7 @@ banner_expiry_days: 28
     summary_text="Showing all projects",
     include_organisation=True,
     include_status=True,
+    include_sort=True,
 ) }}
 
 {{ catalogue_grid("project", "project", banner_expiry_days=page.meta.banner_expiry_days or 28) }}

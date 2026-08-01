@@ -4,7 +4,35 @@ hide:
   - toc
 ---
 
-<div class="filter-panel" data-article-filters data-banner-expiry-days="28" markdown="0">
+<div class="filter-panel filter-panel--with-sort" data-article-filters data-banner-expiry-days="28" markdown="0">
+
+    <div class="filter-panel-toolbar">
+        <button
+            type="button"
+            class="md-button lupaxa-button filter-panel-expand"
+            data-filter-expand
+            aria-expanded="false"
+        >
+            <span class="filter-panel-expand__icon filter-panel-expand__icon--show" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+                <path d="M6 13h12v-2H6m-3-5v2h18V6M10 18h4v-2h-4v2Z"/>
+            </svg>
+        </span>
+        <span class="filter-panel-expand__icon filter-panel-expand__icon--hide" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" focusable="false">
+                <path d="M14.76 20.83 17.6 18l-2.84-2.83 1.41-1.41L19 16.57l2.83-2.81 1.41 1.41L20.41 18l2.83 2.83-1.41 1.41L19 19.41l-2.83 2.83-1.41-1.41M6 13h7.07c.14-.71.4-1.38.76-2H6m-3-5v2h18V6H3Z"/>
+            </svg>
+        </span>
+            <span class="filter-panel-expand__label">Show Filters</span>
+        </button>
+        <div
+            class="filter-panel-summary"
+            aria-live="polite"
+            data-article-summary
+        >
+            Showing all articles
+        </div>
+    </div>
   <div class="filter-panel-search">
     <label for="article-search">Search articles</label>
     <input
@@ -71,13 +99,6 @@ hide:
     >
       Clear filters
     </button>
-  </div>
-  <div
-    class="filter-panel-summary"
-    aria-live="polite"
-    data-article-summary
-  >
-    Showing all articles
   </div>
 </div>
 

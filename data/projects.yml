@@ -2,7 +2,7 @@
   published: true
   name: Certificate Tool
   icon: material-source-repository
-  publish_date: "2025-03-10"
+  publish_date: "2025-11-20"
   description: >-
     Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private
     keys using a modern, fully typed Python command-line application and library.
@@ -51,7 +51,7 @@
   published: true
   name: Favicon Generator
   icon: material-source-repository
-  publish_date: "2025-05-22"
+  publish_date: "2026-07-28"
   description: >-
     Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG).
 
@@ -74,7 +74,7 @@
   published: true
   name: Git Crypt Manager
   icon: material-source-repository
-  publish_date: "2025-08-14"
+  publish_date: "2025-11-27"
   description: >-
     Simplify the management of encrypted Git repositories with a guided automation tool built
     around [git-crypt](https://github.com/AGWA/git-crypt).
@@ -98,7 +98,7 @@
   published: true
   name: GitHub Repository Sync
   icon: material-source-repository
-  publish_date: "2025-11-02"
+  publish_date: "2026-07-24"
   description: >-
     Clone, organise, and safely synchronise large collections of GitHub repositories using
     a declarative JSON5 configuration file.
@@ -123,7 +123,7 @@
   published: true
   name: Makefile Skills
   icon: material-source-repository
-  publish_date: "2026-02-18"
+  publish_date: "2026-07-22"
   description: >-
     Reusable Makefile skills for project versioning, Python, MkDocs, and Bash
     workflows.
@@ -149,7 +149,7 @@
   published: true
   name: Shared Reusable Workflows
   icon: material-source-repository
-  publish_date: "2026-05-30"
+  publish_date: "2025-11-24"
   description: >-
     A collection of reusable GitHub Actions workflows for repository quality, continuous integration,
     documentation, security, and automation.

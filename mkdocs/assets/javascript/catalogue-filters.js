@@ -62,7 +62,64 @@
       config.statusDatasetKey = `${id}Status`;
     }
 
+    if (sort) {
+      config.sortSelector = `[data-${id}-sort]`;
+      config.sortDatasetKey = `${id}Sort`;
+    }
+
     return config;
+  }
+
+  /**
+   * Collapsible filter toolbar for every catalogue viewport.
+   *
+   * Panels start collapsed (Filters + summary only). Expand when the
+   * button is pressed, or when the URL already carries filter/sort
+   * parameters.
+   *
+   * @param {HTMLElement} filterPanel
+   */
+  function initialiseFilterCollapse(filterPanel) {
+    const button = filterPanel.querySelector("[data-filter-expand]");
+
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    const urlHasFilterParams = () => {
+      const params = new URLSearchParams(window.location.search);
+
+      return (
+        params.has(URL_PARAM_SEARCH) ||
+        params.has(URL_PARAM_CATEGORY) ||
+        params.has(URL_PARAM_ORG) ||
+        params.has(URL_PARAM_STATUS) ||
+        params.has(URL_PARAM_SORT)
+      );
+    };
+
+    const setExpanded = (expanded) => {
+      filterPanel.classList.toggle("filter-panel--expanded", expanded);
+      button.setAttribute("aria-expanded", expanded ? "true" : "false");
+
+      const label = button.querySelector(".filter-panel-expand__label");
+      const labelText = expanded ? "Hide Filters" : "Show Filters";
+
+      if (label) {
+        label.textContent = labelText;
+      } else {
+        button.textContent = labelText;
+      }
+    };
+
+    button.addEventListener("click", () => {
+      filterPanel.dataset.collapseUserToggled = "true";
+      setExpanded(
+        !filterPanel.classList.contains("filter-panel--expanded"),
+      );
+    });
+
+    setExpanded(urlHasFilterParams());
   }
 
   /**
@@ -370,6 +427,7 @@
     }
 
     filterPanel.dataset.initialised = "true";
+    initialiseFilterCollapse(filterPanel);
 
     const cards = Array.from(
       catalogue.querySelectorAll(":scope > ul > li"),
@@ -411,6 +469,10 @@
         organisationOptions.set(optionValue, optionLabel);
       }
 
+      const titleNode = card.querySelector(
+        ":scope > p:first-child a[href], :scope > p:first-child strong",
+      );
+
       return {
         element: card,
         categories: categories.values,
@@ -428,10 +490,7 @@
           ].join(" "),
         ),
         publishDate: logo?.dataset.publishDate?.trim() || "",
-        title: (
-          card.querySelector(":scope > p:first-child a[href]")
-            ?.textContent || ""
-        ).trim(),
+        title: (titleNode?.textContent || "").trim(),
       };
     });
 
@@ -449,12 +508,21 @@
     // only), not derived from banners present on the page.
 
     const sortButtons = config.sort
-      ? filterPanel.querySelectorAll("[data-article-sort]")
+      ? filterPanel.querySelectorAll(config.sortSelector)
       : [];
 
     let activeSort = SORT_ALPHA;
     // Segmented status toggle (articles): "" = All, "new" = New.
     let activeStatus = "";
+
+    /**
+     * Read the sort value from a segmented sort button.
+     *
+     * @param {HTMLElement} button
+     * @returns {string}
+     */
+    const sortFromButton = (button) =>
+      String(button.dataset[config.sortDatasetKey] ?? "");
 
     /**
      * Read the requested sort mode from the URL (defaults to A–Z).
@@ -476,7 +544,7 @@
      */
     const setSortPressed = (sort) => {
       sortButtons.forEach((button) => {
-        const isActive = button.dataset.articleSort === sort;
+        const isActive = sortFromButton(button) === sort;
 
         button.setAttribute(
           "aria-pressed",
@@ -890,7 +958,7 @@
     if (config.sort) {
       sortButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          const sort = button.dataset.articleSort;
+          const sort = sortFromButton(button);
 
           if (!sort || sort === activeSort) {
             return;
@@ -1066,11 +1134,13 @@
       plural: "projects",
       organisation: true,
       status: true,
+      sort: true,
     }),
     catalogueConfig({
       id: "organisation",
       singular: "organisation",
       plural: "organisations",
+      sort: true,
     }),
     catalogueConfig({
       id: "policy",
@@ -1225,11 +1295,158 @@
   }
 
   /**
+   * Home Featured Projects: A–Z / Newest reorder only (no filter panel).
+   */
+  function initialiseFeaturedSort() {
+    const sortBar = document.querySelector("[data-featured-sort-bar]");
+    const catalogue = document.querySelector("[data-featured-catalogue]");
+
+    if (
+      !sortBar ||
+      !catalogue ||
+      sortBar.dataset.initialised === "true"
+    ) {
+      return;
+    }
+
+    const sortButtons = Array.from(
+      sortBar.querySelectorAll("[data-featured-sort]"),
+    ).filter((node) => node instanceof HTMLButtonElement);
+
+    if (!sortButtons.length) {
+      return;
+    }
+
+    sortBar.dataset.initialised = "true";
+
+    const cards = Array.from(
+      catalogue.querySelectorAll(":scope > ul > li"),
+    ).map((card) => {
+      const logo = card.querySelector(".catalogue-logo");
+      const titleNode = card.querySelector(
+        ":scope > p:first-child a[href], :scope > p:first-child strong",
+      );
+
+      return {
+        element: card,
+        publishDate: logo?.dataset.publishDate?.trim() || "",
+        title: (titleNode?.textContent || "").trim(),
+      };
+    });
+
+    let activeSort = SORT_ALPHA;
+
+    const sortFromButton = (button) =>
+      String(button.dataset.featuredSort ?? "");
+
+    const setSortPressed = (sort) => {
+      sortButtons.forEach((button) => {
+        const isActive = sortFromButton(button) === sort;
+
+        button.setAttribute(
+          "aria-pressed",
+          isActive ? "true" : "false",
+        );
+      });
+    };
+
+    const compareCards = (left, right) => {
+      if (activeSort === SORT_NEWEST) {
+        const leftDate = left.publishDate || "";
+        const rightDate = right.publishDate || "";
+
+        if (leftDate !== rightDate) {
+          if (!leftDate) {
+            return 1;
+          }
+
+          if (!rightDate) {
+            return -1;
+          }
+
+          return rightDate.localeCompare(leftDate);
+        }
+      }
+
+      return left.title.localeCompare(right.title, CATALOGUE_LOCALE, {
+        sensitivity: "base",
+      });
+    };
+
+    const applyCardOrder = () => {
+      const list = catalogue.querySelector(":scope > ul");
+
+      if (!list) {
+        return;
+      }
+
+      const ordered = [...cards].sort(compareCards);
+
+      ordered.forEach((card) => {
+        list.append(card.element);
+      });
+
+      cards.length = 0;
+      cards.push(...ordered);
+    };
+
+    const syncUrl = () => {
+      const url = new URL(window.location.href);
+      const params = new URLSearchParams(url.search);
+
+      if (activeSort === SORT_NEWEST) {
+        params.set(URL_PARAM_SORT, SORT_NEWEST);
+      } else {
+        params.delete(URL_PARAM_SORT);
+      }
+
+      url.search = params.toString();
+      window.history.replaceState(
+        window.history.state,
+        "",
+        `${url.pathname}${url.search}${url.hash}`,
+      );
+    };
+
+    const readSortFromUrl = () => {
+      const value = new URLSearchParams(
+        window.location.search,
+      ).get(URL_PARAM_SORT);
+
+      return value === SORT_NEWEST ? SORT_NEWEST : SORT_ALPHA;
+    };
+
+    sortButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const sort = sortFromButton(button);
+
+        if (!sort || sort === activeSort) {
+          return;
+        }
+
+        activeSort = sort === SORT_NEWEST ? SORT_NEWEST : SORT_ALPHA;
+        setSortPressed(activeSort);
+        applyCardOrder();
+        syncUrl();
+      });
+    });
+
+    activeSort = readSortFromUrl();
+    setSortPressed(activeSort);
+
+    if (activeSort === SORT_NEWEST) {
+      applyCardOrder();
+      syncUrl();
+    }
+  }
+
+  /**
    * Initialise every catalogue present on the current page.
    */
   function initialiseCatalogues() {
     linkOrganisationLogos();
     catalogueConfigurations.forEach(initialiseCatalogue);
+    initialiseFeaturedSort();
     linkStandaloneCategoryPills();
     linkStandaloneStatusBanners();
   }

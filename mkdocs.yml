@@ -41,15 +41,16 @@ site_dir: site
 
 use_directory_urls: true
 
-# Reload on catalogue data / macros changes during `mkdocs serve`
+# Reload on catalogue data / build Python / hooks during `mkdocs serve`.
+# MkDocs watch has no globs — list every build-time .py (not tests/).
 watch:
   - data
-  - main.py
+  - hooks
   - articles_lib.py
   - banner_lib.py
-  - quotes_lib.py
   - gallery_lib.py
-  - hooks
+  - main.py
+  - quotes_lib.py
 
 # =============================================================================
 # Theme

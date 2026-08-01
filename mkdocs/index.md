@@ -44,6 +44,4 @@ hide:
     </div>
 </div>
 
-## Featured Projects
-
 {{ featured_projects() }}

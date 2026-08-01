@@ -45,7 +45,8 @@
  */
 
 .md-typeset .md-button.lupaxa-button,
-.filter-panel-clear {
+.filter-panel-clear,
+.filter-panel-expand {
   color: var(--lupaxa-white);
   font: inherit;
   font-weight: 600;
@@ -74,19 +75,24 @@
 .md-typeset .md-button.lupaxa-button:focus-visible,
 .filter-panel-clear:hover,
 .filter-panel-clear:focus,
-.filter-panel-clear:focus-visible {
+.filter-panel-clear:focus-visible,
+.filter-panel-expand:hover,
+.filter-panel-expand:focus,
+.filter-panel-expand:focus-visible {
   color: var(--lupaxa-dark-blue);
   background-color: var(--lupaxa-light-blue);
   border-color: var(--lupaxa-light-blue);
 }
 
 .md-typeset .md-button.lupaxa-button:active,
-.filter-panel-clear:active {
+.filter-panel-clear:active,
+.filter-panel-expand:active {
   transform: translateY(1px);
 }
 
 .md-typeset .md-button.lupaxa-button:disabled,
-.filter-panel-clear:disabled {
+.filter-panel-clear:disabled,
+.filter-panel-expand:disabled {
   color: var(--lupaxa-dark-blue);
   cursor: default;
   background-color: var(--lupaxa-light-blue);
