@@ -279,7 +279,7 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
     ).replace(
         "__FILTER_TOOLBAR__",
         filter_panel_toolbar(
-            prefix="article", summary_text="Showing all articles"
+            prefix="article", summary_text="Showing…"
         ).rstrip("\n"),
     )
     footer = textwrap.dedent(

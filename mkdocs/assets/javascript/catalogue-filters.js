@@ -788,17 +788,10 @@
     const updateSummary = (visibleCount) => {
       const totalCount = cardData.length;
 
-      const itemLabel =
-        totalCount === 1 ? config.singular : config.plural;
-
-      if (visibleCount === totalCount) {
-        summary.textContent =
-          `Showing all ${totalCount} ${itemLabel}`;
-      } else {
-        summary.textContent =
-          `Showing ${visibleCount} of ${totalCount} ` +
-          `${itemLabel}`;
-      }
+      // Keep copy short for the collapsed toolbar (esp. mobile).
+      // Page context already implies projects / articles / etc.
+      summary.textContent =
+        `Showing ${visibleCount} of ${totalCount}`;
     };
 
     /**

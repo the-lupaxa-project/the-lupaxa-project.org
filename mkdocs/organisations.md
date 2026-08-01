@@ -9,7 +9,7 @@ hide:
     compact=True,
     search_label="Search organisations",
     search_placeholder="Search by organisation name",
-    summary_text="Showing all organisations",
+    summary_text="Showing…",
     include_sort=True,
 ) }}
 
