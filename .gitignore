@@ -16,4 +16,5 @@ venv/
 
 # Local Cursor / agent design notes (not site docs)
 cursor-docs/
+cursor-docs
 .superpowers/
