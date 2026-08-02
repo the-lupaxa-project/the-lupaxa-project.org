@@ -19,7 +19,6 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://lupaxa-security-toolbox.github.io/certtool/
-  featured: true
 
 - id: check-git-repositories
   published: true
@@ -142,6 +141,32 @@
   logo_alt: The Lupaxa Blueprints
   repository: https://github.com/the-lupaxa-blueprints/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
+  featured: true
+  banner: in-testing
+
+- id: photo-renamer
+  published: true
+  name: Photo Renamer
+  icon: material-source-repository
+  publish_date: "2026-08-02"
+  description: >-
+    Safely copy or move photographs and videos into consistent, date-based
+    filenames. Reads image EXIF or video metadata when available, falls back to
+    filesystem modification time, and reports progress with Rich.
+
+
+    Useful for cleaning up camera rolls and export dumps into predictable paths
+    while keeping originals untouched by default.
+  categories:
+    - Photos
+    - Automation
+    - Python
+    - CLI
+  organisation: Code Playground
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png
+  logo_alt: Code Playground
+  repository: https://github.com/lupaxa-code-playground/photo-renamer
+  documentation: https://lupaxa-code-playground.github.io/photo-renamer/
   featured: true
   banner: in-testing
 
