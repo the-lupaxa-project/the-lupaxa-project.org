@@ -30,7 +30,7 @@ hide:
             aria-live="polite"
             data-article-summary
         >
-            Showing all articles
+            Showing…
         </div>
     </div>
   <div class="filter-panel-search">
