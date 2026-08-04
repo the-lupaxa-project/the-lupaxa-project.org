@@ -76,22 +76,6 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox
 
-- id: code-playground
-  published: true
-  name: Code Playground
-  icon: material-domain
-  publish_date: '2025-06-27'
-  description: Experimental code, technical demonstrations and small example projects used
-    to explore languages, libraries and software engineering approaches.
-  categories:
-    - Examples
-    - Experiments
-    - Learning
-    - Prototypes
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png
-  logo_alt: Code Playground
-  repository: https://github.com/lupaxa-code-playground
-
 - id: database-toolbox
   published: true
   name: Database Toolbox
@@ -218,6 +202,21 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gh-toolbox/readme-logo-128.png
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox
+
+- id: miscellaneous-toolbox
+  published: true
+  name: Miscellaneous Toolbox
+  icon: material-domain
+  publish_date: '2026-08-04'
+  description: Assorted tools and utilities that do not belong in a dedicated domain toolbox.
+  categories:
+    - Utilities
+    - Tools
+    - Assorted
+    - General
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
+  logo_alt: Miscellaneous Toolbox
+  repository: https://github.com/lupaxa-miscellaneous-toolbox
 
 - id: monitoring-toolbox
   published: true

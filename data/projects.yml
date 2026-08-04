@@ -61,10 +61,10 @@
     - Favicons
     - Websites
     - Python
-  organisation: Code Playground
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png
-  logo_alt: Lupaxa Code PLayground
-  repository: https://github.com/lupaxa-code-playground/favicon-generator
+  organisation: Miscellaneous Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
+  logo_alt: Miscellaneous Toolbox
+  repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
   featured: true
   banner: in-testing
@@ -162,11 +162,11 @@
     - Automation
     - Python
     - CLI
-  organisation: Code Playground
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/code-playground/readme-logo-128.png
-  logo_alt: Code Playground
-  repository: https://github.com/lupaxa-code-playground/photo-renamer
-  documentation: https://lupaxa-code-playground.github.io/photo-renamer/
+  organisation: Miscellaneous Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
+  logo_alt: Miscellaneous Toolbox
+  repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
+  documentation: https://lupaxa-miscellaneous-toolbox.github.io/photo-renamer/
   featured: true
   banner: in-testing
 
