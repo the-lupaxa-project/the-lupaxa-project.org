@@ -138,6 +138,30 @@ def _banner_markup(raw: Any) -> str:
     return _shared_banner_markup(raw)
 
 
+NEWEST_PROJECTS_LIMIT = 6
+
+
+def select_newest_projects(
+    projects: list[dict[str, Any]],
+    *,
+    limit: int = NEWEST_PROJECTS_LIMIT,
+) -> list[dict[str, Any]]:
+    """Return up to ``limit`` projects newest-first by publish_date.
+
+    Ties break on ``id`` ascending. Missing/unparseable dates sort last.
+    """
+    def sort_key(item: dict[str, Any]) -> tuple:
+        parsed = parse_iso_date(item.get("publish_date"))
+        # Invert date via timestamp-ish: None sorts last when using
+        # (has_date, date, id) with has_date True first and date descending.
+        if parsed is None:
+            return (1, "", str(item.get("id") or ""))
+        return (0, -parsed.toordinal(), str(item.get("id") or ""))
+
+    ordered = sorted(projects, key=sort_key)
+    return ordered[:limit]
+
+
 def define_env(env):
     def _published(items: list[dict]) -> list[dict]:
         return [item for item in items if item.get("published", True)]
