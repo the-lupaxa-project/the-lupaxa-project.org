@@ -58,7 +58,7 @@ Catalogue entries live in YAML under `data/`:
 | `data/organisations.yml` | Organisations |
 | `data/quotes.yml` | Quotes masonry wall |
 | `data/gallery.yml` | Gallery masonry wall (`page.show_count: all` or a number; `page.show_media_filters: true` for images/videos filters) |
-| `data/projects.yml` | Projects (home page shows the six newest by `publish_date`) |
+| `data/projects.yml` | Projects (home shows nine newest by `publish_date`; six on tablet/mobile) |
 | `data/policies.yml` | Policies |
 
 `main.py` loads that data for `mkdocs-macros-plugin`. Pages call macros such as

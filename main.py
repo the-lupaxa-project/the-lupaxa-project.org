@@ -138,7 +138,10 @@ def _banner_markup(raw: Any) -> str:
     return _shared_banner_markup(raw)
 
 
-NEWEST_PROJECTS_LIMIT = 6
+# Desktop home grid is 3 columns → show three full rows.
+# Tablet/mobile hide cards beyond COMPACT via CSS (see catalogue.css).
+NEWEST_PROJECTS_LIMIT = 9
+NEWEST_PROJECTS_COMPACT_LIMIT = 6
 
 
 def select_newest_projects(

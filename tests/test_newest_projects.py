@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import yaml
+
 import main
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -46,9 +48,11 @@ def test_select_newest_projects_orders_by_publish_date_then_id():
 
 
 def test_select_newest_projects_respects_limit():
-    projects = [_project(f"p{i}", f"2026-01-{i:02d}") for i in range(1, 10)]
+    projects = [_project(f"p{i}", f"2026-01-{i:02d}") for i in range(1, 12)]
     assert len(main.select_newest_projects(projects, limit=6)) == 6
-    assert main.NEWEST_PROJECTS_LIMIT == 6
+    assert len(main.select_newest_projects(projects)) == 9
+    assert main.NEWEST_PROJECTS_LIMIT == 9
+    assert main.NEWEST_PROJECTS_COMPACT_LIMIT == 6
 
 
 def test_select_newest_projects_skips_unparseable_dates_last():
@@ -86,9 +90,15 @@ def test_newest_projects_macro_heading_and_no_sort_bar():
     assert "data-featured-sort=" not in markup
 
 
-def test_newest_projects_macro_emits_six_cards_from_live_data():
+def test_newest_projects_macro_emits_up_to_limit_cards_from_live_data():
     env = _FakeEnv(ROOT)
     main.define_env(env)
     markup = env.macros["newest_projects"]()
+    published = [
+        item
+        for item in yaml.safe_load((ROOT / "data" / "projects.yml").read_text())
+        if item.get("published", True)
+    ]
+    expected = min(main.NEWEST_PROJECTS_LIMIT, len(published))
     # Each rendered project card contains exactly one catalogue logo.
-    assert markup.count('class="catalogue-logo"') == main.NEWEST_PROJECTS_LIMIT
+    assert markup.count('class="catalogue-logo"') == expected
