@@ -43,7 +43,6 @@
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
   documentation: https://lupaxa-git-toolbox.github.io/check-git-repositories/
-  featured: true
   banner: in-testing
 
 - id: favicon-generator
@@ -66,7 +65,6 @@
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
-  featured: true
   banner: in-testing
 
 - id: git-crypt-manager
@@ -91,7 +89,6 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://lupaxa-security-toolbox.github.io/git-crypt-manager/
-  featured: true
 
 - id: github-repository-sync
   published: true
@@ -115,7 +112,6 @@
   logo_alt: Lupaxa Internal Toolbox
   repository: https://github.com/the-lupaxa-internal-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
-  featured: true
   banner: in-testing
 
 - id: makefile-skills
@@ -141,7 +137,6 @@
   logo_alt: The Lupaxa Blueprints
   repository: https://github.com/the-lupaxa-blueprints/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
-  featured: true
   banner: in-testing
 
 - id: photo-renamer
@@ -167,7 +162,6 @@
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
   documentation: https://lupaxa-miscellaneous-toolbox.github.io/photo-renamer/
-  featured: true
   banner: in-testing
 
 - id: shared-reusable-workflows

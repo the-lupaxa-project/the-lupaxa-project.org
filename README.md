@@ -58,11 +58,11 @@ Catalogue entries live in YAML under `data/`:
 | `data/organisations.yml` | Organisations |
 | `data/quotes.yml` | Quotes masonry wall |
 | `data/gallery.yml` | Gallery masonry wall (`page.show_count: all` or a number; `page.show_media_filters: true` for images/videos filters) |
-| `data/projects.yml` | Projects (set `featured: true` for the home page) |
+| `data/projects.yml` | Projects (home page shows the six newest by `publish_date`) |
 | `data/policies.yml` | Policies |
 
 `main.py` loads that data for `mkdocs-macros-plugin`. Pages call macros such as
-`filter_panel`, `catalogue_grid`, and `featured_projects` so card markup stays
+`filter_panel`, `catalogue_grid`, and `newest_projects` so card markup stays
 in one place.
 
 Brand logos remain remote URLs from the `brand-assets` repository.

@@ -71,7 +71,7 @@ class _FakeEnv:
         return func
 
 
-def test_newest_projects_macro_heading_and_no_sort_bar():
+def test_newest_projects_macro_heading_and_catalogue():
     env = _FakeEnv(ROOT)
     main.define_env(env)
     markup = env.macros["newest_projects"]()
@@ -79,11 +79,7 @@ def test_newest_projects_macro_heading_and_no_sort_bar():
     assert "newest-projects-header" in markup
     assert 'id="newest-projects"' in markup
     assert "Newest Projects" in markup
-    assert "Featured Projects" not in markup
-    assert "data-featured-sort-bar" not in markup
-    assert "data-featured-catalogue" not in markup
     assert "data-newest-catalogue" in markup
-    assert 'data-featured-sort=' not in markup
 
 
 def test_newest_projects_macro_emits_six_cards_from_live_data():
