@@ -71,7 +71,7 @@ class _FakeEnv:
         return func
 
 
-def test_newest_projects_macro_heading_and_catalogue():
+def test_newest_projects_macro_heading_and_no_sort_bar():
     env = _FakeEnv(ROOT)
     main.define_env(env)
     markup = env.macros["newest_projects"]()
@@ -80,13 +80,15 @@ def test_newest_projects_macro_heading_and_catalogue():
     assert 'id="newest-projects"' in markup
     assert "Newest Projects" in markup
     assert "data-newest-catalogue" in markup
+    assert "Featured Projects" not in markup
+    assert "data-featured-sort-bar" not in markup
+    assert "data-featured-catalogue" not in markup
+    assert "data-featured-sort=" not in markup
 
 
 def test_newest_projects_macro_emits_six_cards_from_live_data():
     env = _FakeEnv(ROOT)
     main.define_env(env)
     markup = env.macros["newest_projects"]()
-    # Material grid cards are list items after markdown processing; the macro
-    # emits one project_card block per project separated by blank lines.
-    # Count repository links as a stable proxy for card count.
-    assert markup.count('class="catalogue-logo"') == 6
+    # Each rendered project card contains exactly one catalogue logo.
+    assert markup.count('class="catalogue-logo"') == main.NEWEST_PROJECTS_LIMIT

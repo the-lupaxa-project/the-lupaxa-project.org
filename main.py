@@ -146,16 +146,16 @@ def select_newest_projects(
     *,
     limit: int = NEWEST_PROJECTS_LIMIT,
 ) -> list[dict[str, Any]]:
-    """Return up to ``limit`` projects newest-first by publish_date.
+    """Return up to ``limit`` already-published projects newest-first.
 
-    Ties break on ``id`` ascending. Missing/unparseable dates sort last.
+    The caller filters unpublished projects. Ties break on ``id`` ascending;
+    missing/unparseable publish dates sort last.
     """
     def sort_key(item: dict[str, Any]) -> tuple:
         parsed = parse_iso_date(item.get("publish_date"))
-        # Invert date via timestamp-ish: None sorts last when using
-        # (has_date, date, id) with has_date True first and date descending.
+        # Sort by (0|1, -ordinal|0, id): dated entries newest-first, then id.
         if parsed is None:
-            return (1, "", str(item.get("id") or ""))
+            return (1, 0, str(item.get("id") or ""))
         return (0, -parsed.toordinal(), str(item.get("id") or ""))
 
     ordered = sorted(projects, key=sort_key)
