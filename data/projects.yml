@@ -90,6 +90,53 @@
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://lupaxa-security-toolbox.github.io/git-crypt-manager/
 
+- id: git-delete-tags
+  published: true
+  name: Git Delete Tags
+  icon: material-source-repository
+  publish_date: "2026-08-04"
+  description: >-
+    Delete local and remote Git tags with dry-run, summary, and protection.
+
+
+    Remove specific tags or clear every tag in a repository while protecting
+    selected names. Useful for cleaning up stale release tags or resetting a
+    tag namespace before a fresh release cycle.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - Bash
+  organisation: Git Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo_alt: Git Toolbox
+  repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
+  banner: in-testing
+
+- id: git-reset-history
+  published: true
+  name: Git Reset History
+  icon: material-source-repository
+  publish_date: "2026-08-04"
+  description: >-
+    Rewrite a Git repository down to a single initial commit — with dry-run,
+    backups, and controlled tag handling.
+
+
+    Keeps the current tree while replacing primary-branch history. Useful after
+    scaffolding, before a first public release, or when history is no longer
+    useful.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - Bash
+  organisation: Git Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo_alt: Git Toolbox
+  repository: https://github.com/lupaxa-git-toolbox/git-reset-history
+  banner: in-testing
+
 - id: github-repository-sync
   published: true
   name: GitHub Repository Sync
@@ -132,10 +179,10 @@
     - Automation
     - Templates
     - Standards
-  organisation: The Lupaxa Blueprints
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-blueprints/readme-logo-128.png
-  logo_alt: The Lupaxa Blueprints
-  repository: https://github.com/the-lupaxa-blueprints/makefile-skills
+  organisation: The Lupaxa Internal Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png
+  logo_alt: Lupaxa Internal Toolbox
+  repository: https://github.com/the-lupaxa-internal-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: in-testing
 
