@@ -1193,8 +1193,8 @@
   }
 
   /**
-   * On pages without a filter panel (e.g. featured projects on home), category
-   * pills navigate to the Projects catalogue with that category selected.
+   * On pages without a filter panel, category pills navigate to the Projects
+   * catalogue with that category selected.
    */
   function linkStandaloneCategoryPills() {
     const path = window.location.pathname;
@@ -1288,158 +1288,11 @@
   }
 
   /**
-   * Home Featured Projects: A–Z / Newest reorder only (no filter panel).
-   */
-  function initialiseFeaturedSort() {
-    const sortBar = document.querySelector("[data-featured-sort-bar]");
-    const catalogue = document.querySelector("[data-featured-catalogue]");
-
-    if (
-      !sortBar ||
-      !catalogue ||
-      sortBar.dataset.initialised === "true"
-    ) {
-      return;
-    }
-
-    const sortButtons = Array.from(
-      sortBar.querySelectorAll("[data-featured-sort]"),
-    ).filter((node) => node instanceof HTMLButtonElement);
-
-    if (!sortButtons.length) {
-      return;
-    }
-
-    sortBar.dataset.initialised = "true";
-
-    const cards = Array.from(
-      catalogue.querySelectorAll(":scope > ul > li"),
-    ).map((card) => {
-      const logo = card.querySelector(".catalogue-logo");
-      const titleNode = card.querySelector(
-        ":scope > p:first-child a[href], :scope > p:first-child strong",
-      );
-
-      return {
-        element: card,
-        publishDate: logo?.dataset.publishDate?.trim() || "",
-        title: (titleNode?.textContent || "").trim(),
-      };
-    });
-
-    let activeSort = SORT_ALPHA;
-
-    const sortFromButton = (button) =>
-      String(button.dataset.featuredSort ?? "");
-
-    const setSortPressed = (sort) => {
-      sortButtons.forEach((button) => {
-        const isActive = sortFromButton(button) === sort;
-
-        button.setAttribute(
-          "aria-pressed",
-          isActive ? "true" : "false",
-        );
-      });
-    };
-
-    const compareCards = (left, right) => {
-      if (activeSort === SORT_NEWEST) {
-        const leftDate = left.publishDate || "";
-        const rightDate = right.publishDate || "";
-
-        if (leftDate !== rightDate) {
-          if (!leftDate) {
-            return 1;
-          }
-
-          if (!rightDate) {
-            return -1;
-          }
-
-          return rightDate.localeCompare(leftDate);
-        }
-      }
-
-      return left.title.localeCompare(right.title, CATALOGUE_LOCALE, {
-        sensitivity: "base",
-      });
-    };
-
-    const applyCardOrder = () => {
-      const list = catalogue.querySelector(":scope > ul");
-
-      if (!list) {
-        return;
-      }
-
-      const ordered = [...cards].sort(compareCards);
-
-      ordered.forEach((card) => {
-        list.append(card.element);
-      });
-
-      cards.length = 0;
-      cards.push(...ordered);
-    };
-
-    const syncUrl = () => {
-      const url = new URL(window.location.href);
-      const params = new URLSearchParams(url.search);
-
-      if (activeSort === SORT_NEWEST) {
-        params.set(URL_PARAM_SORT, SORT_NEWEST);
-      } else {
-        params.delete(URL_PARAM_SORT);
-      }
-
-      url.search = params.toString();
-      window.history.replaceState(
-        window.history.state,
-        "",
-        `${url.pathname}${url.search}${url.hash}`,
-      );
-    };
-
-    const readSortFromUrl = () => {
-      const value = new URLSearchParams(
-        window.location.search,
-      ).get(URL_PARAM_SORT);
-
-      return value === SORT_NEWEST ? SORT_NEWEST : SORT_ALPHA;
-    };
-
-    sortButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const sort = sortFromButton(button);
-
-        if (!sort || sort === activeSort) {
-          return;
-        }
-
-        activeSort = sort === SORT_NEWEST ? SORT_NEWEST : SORT_ALPHA;
-        setSortPressed(activeSort);
-        applyCardOrder();
-        syncUrl();
-      });
-    });
-
-    activeSort = readSortFromUrl();
-    setSortPressed(activeSort);
-
-    if (activeSort === SORT_NEWEST) {
-      applyCardOrder();
-      syncUrl();
-    }
-  }
-
-  /**
    * Initialise every catalogue present on the current page.
    */
   function initialiseCatalogues() {
     linkOrganisationLogos();
     catalogueConfigurations.forEach(initialiseCatalogue);
-    initialiseFeaturedSort();
     linkStandaloneCategoryPills();
     linkStandaloneStatusBanners();
   }
