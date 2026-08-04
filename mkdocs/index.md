@@ -44,4 +44,4 @@ hide:
     </div>
 </div>
 
-{{ featured_projects() }}
+{{ newest_projects() }}

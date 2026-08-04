@@ -58,3 +58,39 @@ def test_select_newest_projects_skips_unparseable_dates_last():
     ]
     selected = main.select_newest_projects(projects, limit=6)
     assert [item["id"] for item in selected] == ["dated", "bad-date"]
+
+
+class _FakeEnv:
+    def __init__(self, project_dir: Path) -> None:
+        self.project_dir = str(project_dir)
+        self.variables: dict = {}
+        self.macros: dict = {}
+
+    def macro(self, func):
+        self.macros[func.__name__] = func
+        return func
+
+
+def test_newest_projects_macro_heading_and_no_sort_bar():
+    env = _FakeEnv(ROOT)
+    main.define_env(env)
+    markup = env.macros["newest_projects"]()
+
+    assert "newest-projects-header" in markup
+    assert 'id="newest-projects"' in markup
+    assert "Newest Projects" in markup
+    assert "Featured Projects" not in markup
+    assert "data-featured-sort-bar" not in markup
+    assert "data-featured-catalogue" not in markup
+    assert "data-newest-catalogue" in markup
+    assert 'data-featured-sort=' not in markup
+
+
+def test_newest_projects_macro_emits_six_cards_from_live_data():
+    env = _FakeEnv(ROOT)
+    main.define_env(env)
+    markup = env.macros["newest_projects"]()
+    # Material grid cards are list items after markdown processing; the macro
+    # emits one project_card block per project separated by blank lines.
+    # Count repository links as a stable proxy for card count.
+    assert markup.count('class="catalogue-logo"') == 6

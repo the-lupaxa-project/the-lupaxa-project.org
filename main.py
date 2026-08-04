@@ -556,40 +556,17 @@ def define_env(env):
         return is_remote_media(path)
 
     @env.macro
-    def featured_projects(banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
-        featured = [item for item in projects if item.get("featured")]
+    def newest_projects(banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
+        newest = select_newest_projects(projects)
         cards = "\n\n".join(
-            project_card(item, expiry_days=banner_expiry_days) for item in featured
+            project_card(item, expiry_days=banner_expiry_days) for item in newest
         )
         return f"""
-<div class="featured-projects-header" markdown="0">
-    <h2 id="featured-projects">Featured Projects</h2>
-    <div class="featured-sort" data-featured-sort-bar>
-        <div class="filter-panel-toggle" role="group" aria-labelledby="featured-sort-label">
-            <label id="featured-sort-label">Sort</label>
-            <div class="filter-panel-toggle__options">
-                <button
-                    type="button"
-                    class="filter-panel-toggle__option"
-                    data-featured-sort="alpha"
-                    aria-pressed="true"
-                >
-                    A–Z
-                </button>
-                <button
-                    type="button"
-                    class="filter-panel-toggle__option"
-                    data-featured-sort="newest"
-                    aria-pressed="false"
-                >
-                    Newest
-                </button>
-            </div>
-        </div>
-    </div>
+<div class="newest-projects-header" markdown="0">
+    <h2 id="newest-projects">Newest Projects</h2>
 </div>
 
-<div class="grid cards catalogue-grid" data-featured-catalogue markdown>
+<div class="grid cards catalogue-grid" data-newest-catalogue markdown>
 
 {cards}
 
