@@ -178,9 +178,9 @@ $(foreach s,$(SKILLS),$(eval -include $(MAKEFILES_DIR)/skills/$(s).mk))
 # python-* / mkdocs-* targets from makefile-skills exist. Each alias re-invokes
 # $(MAKE) so includes are re-read after init.
 
-.PHONY: install-dev install-test lint check format test _ensure-makefiles
+.PHONY: install-dev install-test lint check format test ensure-skills
 
-_ensure-makefiles:
+ensure-skills:
 	@if [ ! -f "$(MAKEFILES_DIR)/skills/versioning.mk" ]; then \
 		if [ -e "$(MAKEFILES_DIR)" ]; then \
 			echo "==> Removing incomplete $(MAKEFILES_DIR) before init" >&2; \
@@ -189,20 +189,20 @@ _ensure-makefiles:
 		$(MAKE) --no-print-directory init; \
 	fi
 
-install-dev: _ensure-makefiles
+install-dev: ensure-skills
 	@$(MAKE) --no-print-directory python-install-dev
 
-install-test: _ensure-makefiles
+install-test: ensure-skills
 	@$(MAKE) --no-print-directory python-install-test
 
-lint: _ensure-makefiles
+lint: ensure-skills
 	@$(MAKE) --no-print-directory python-lint
 
-check: _ensure-makefiles
+check: ensure-skills
 	@$(MAKE) --no-print-directory python-check
 
-format: _ensure-makefiles
+format: ensure-skills
 	@$(MAKE) --no-print-directory python-format
 
-test: _ensure-makefiles
+test: ensure-skills
 	@$(MAKE) --no-print-directory python-test
