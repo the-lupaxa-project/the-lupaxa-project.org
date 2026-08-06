@@ -182,6 +182,10 @@ $(foreach s,$(SKILLS),$(eval -include $(MAKEFILES_DIR)/skills/$(s).mk))
 
 _ensure-makefiles:
 	@if [ ! -f "$(MAKEFILES_DIR)/skills/versioning.mk" ]; then \
+		if [ -e "$(MAKEFILES_DIR)" ]; then \
+			echo "==> Removing incomplete $(MAKEFILES_DIR) before init" >&2; \
+			rm -rf "$(MAKEFILES_DIR)"; \
+		fi; \
 		$(MAKE) --no-print-directory init; \
 	fi
 
