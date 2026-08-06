@@ -179,10 +179,10 @@
     - Automation
     - Repository Management
     - Python
-  organisation: The Lupaxa Internal Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png
-  logo_alt: Lupaxa Internal Toolbox
-  repository: https://github.com/the-lupaxa-internal-toolbox/github-repo-sync
+  organisation: GitHub Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gh-toolbox/readme-logo-128.png
+  logo_alt: GitHub Toolbox
+  repository: https://github.com/lupaxa-gh-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
   banner: in-testing
 
@@ -204,10 +204,10 @@
     - Automation
     - Templates
     - Standards
-  organisation: The Lupaxa Internal Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png
-  logo_alt: Lupaxa Internal Toolbox
-  repository: https://github.com/the-lupaxa-internal-toolbox/makefile-skills
+  organisation: Developers Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: in-testing
 
