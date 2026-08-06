@@ -135,17 +135,13 @@ def format_front_matter(
     return f"---\n{dumped}\n---\n\n"
 
 
-def _article_entry(
-    slug: str, meta: dict[str, Any], *, today: date | None = None
-) -> str:
+def _article_entry(slug: str, meta: dict[str, Any], *, today: date | None = None) -> str:
     title = display_title(slug, meta)
     desc = str(meta.get("description") or "").strip()
     tags = article_tags(slug, meta)
     desc_lines = textwrap.wrap(desc, width=72) or [""]
     desc_block = "\n    ".join(desc_lines)
-    tag_spans = "\n    ".join(
-        f'<span class="catalogue-category">{tag}</span>' for tag in tags
-    )
+    tag_spans = "\n    ".join(f'<span class="catalogue-category">{tag}</span>' for tag in tags)
     publish_date = parse_iso_date(meta.get("publish_date"))
     banner = banner_markup(
         meta.get("banner"),
@@ -157,9 +153,7 @@ def _article_entry(
     )
     banner_block = f"{banner}\n\n" if banner else ""
     date_attr = (
-        f' data-publish-date="{publish_date.isoformat()}"'
-        if publish_date is not None
-        else ""
+        f' data-publish-date="{publish_date.isoformat()}"' if publish_date is not None else ""
     )
     return (
         f"-   **[{title}](articles/{slug}.md)**\n"
@@ -188,9 +182,7 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
         items.append((path.stem, meta))
 
     items.sort(key=lambda item: display_title(item[0], item[1]).casefold())
-    entries = "\n".join(
-        _article_entry(slug, meta, today=today) for slug, meta in items
-    )
+    entries = "\n".join(_article_entry(slug, meta, today=today) for slug, meta in items)
 
     # Insert toolbar after dedent — embedding it in the f-string breaks
     # textwrap.dedent (zero-indent line) and corrupts YAML front matter.
@@ -278,9 +270,7 @@ def rebuild_articles_index(docs_dir: Path, *, today: date | None = None) -> int:
         """
     ).replace(
         "__FILTER_TOOLBAR__",
-        filter_panel_toolbar(
-            prefix="article", summary_text="Showing…"
-        ).rstrip("\n"),
+        filter_panel_toolbar(prefix="article", summary_text="Showing…").rstrip("\n"),
     )
     footer = textwrap.dedent(
         """

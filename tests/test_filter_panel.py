@@ -4,7 +4,6 @@ import pytest
 
 import main
 
-
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -121,19 +120,15 @@ def test_filter_panel_includes_collapse_toolbar():
     )
 
     assert "filter-panel-toolbar" in markup
-    assert 'data-filter-expand' in markup
+    assert "data-filter-expand" in markup
     assert "filter-panel-expand__icon--show" in markup
     assert "filter-panel-expand__icon--hide" in markup
     assert "filter-panel-expand__label" in markup
     assert "Show Filters" in markup
-    assert 'data-organisation-summary' in markup
+    assert "data-organisation-summary" in markup
     # Summary sits in the toolbar (same row as Show Filters)
-    assert markup.index("filter-panel-toolbar") < markup.index(
-        "data-organisation-summary"
-    )
-    assert markup.index("data-organisation-summary") < markup.index(
-        "filter-panel-search"
-    )
+    assert markup.index("filter-panel-toolbar") < markup.index("data-organisation-summary")
+    assert markup.index("data-organisation-summary") < markup.index("filter-panel-search")
 
 
 def test_filter_panel_include_sort_adds_toggle():

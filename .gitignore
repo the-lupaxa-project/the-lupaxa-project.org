@@ -21,3 +21,12 @@ cursor-docs
 
 # Git worktrees
 .worktrees/
+
+# Bootstrap / tooling
+.makefiles/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+dist/
+build/
+*.egg-info/

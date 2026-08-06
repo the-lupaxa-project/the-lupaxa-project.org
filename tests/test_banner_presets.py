@@ -1,6 +1,5 @@
 from banner_lib import (
     ARTICLE_BANNER_PRESETS,
-    BANNER_PRESETS,
     PROJECT_BANNER_PRESETS,
     resolve_banner,
 )
@@ -34,6 +33,8 @@ def test_unknown_preset_string_does_not_resolve():
 
 
 def test_custom_override_still_works():
-    assert resolve_banner(
-        {"status": "in-testing", "label": "QA", "tone": "orange"}
-    ) == ("QA", "orange", "in-testing")
+    assert resolve_banner({"status": "in-testing", "label": "QA", "tone": "orange"}) == (
+        "QA",
+        "orange",
+        "in-testing",
+    )

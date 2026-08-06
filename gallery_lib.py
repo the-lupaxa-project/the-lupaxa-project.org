@@ -34,9 +34,7 @@ def validate_gallery(data: dict[str, Any]) -> None:
                 f"Published gallery entry {index} missing required field(s): image or video"
             )
         if entry.get("tags") is not None and not isinstance(entry["tags"], list):
-            raise ValueError(
-                f"Published gallery entry {index} field 'tags' must be a list"
-            )
+            raise ValueError(f"Published gallery entry {index} field 'tags' must be a list")
 
 
 def collect_tags(entries: list[dict[str, Any]]) -> list[str]:

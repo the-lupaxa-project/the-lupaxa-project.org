@@ -1,6 +1,6 @@
 from datetime import date
 
-from banner_lib import banner_still_active, parse_iso_date, banner_markup
+from banner_lib import banner_markup, banner_still_active, parse_iso_date
 
 
 def test_parse_iso_date():

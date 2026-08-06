@@ -113,9 +113,7 @@ def on_page_context(context, page, config, nav):
         return context
 
     context["article_prev"] = sequence[index - 1] if index > 0 else None
-    context["article_next"] = (
-        sequence[index + 1] if index < len(sequence) - 1 else None
-    )
+    context["article_next"] = sequence[index + 1] if index < len(sequence) - 1 else None
     context["article_position"] = index + 1
     context["article_count"] = len(sequence)
     return context

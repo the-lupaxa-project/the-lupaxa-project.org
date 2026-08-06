@@ -18,27 +18,33 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from banner_lib import (
-    BANNER_PRESETS,
-    BANNER_TONES,
     DEFAULT_BANNER_EXPIRY_DAYS,
     POLICY_BANNER_PRESETS,
     PROJECT_BANNER_PRESETS,
-    banner_markup as _shared_banner_markup,
     parse_iso_date,
-    resolve_banner as _shared_resolve_banner,
 )
-from quotes_lib import (
-    collect_tags as collect_quote_tags,
-    load_quotes_data,
-    published_quotes,
-    validate_quotes,
+from banner_lib import (
+    banner_markup as _shared_banner_markup,
+)
+from banner_lib import (
+    resolve_banner as _shared_resolve_banner,
 )
 from gallery_lib import (
     collect_tags as collect_gallery_tags,
+)
+from gallery_lib import (
     is_remote_media,
     load_gallery_data,
     published_entries,
     validate_gallery,
+)
+from quotes_lib import (
+    collect_tags as collect_quote_tags,
+)
+from quotes_lib import (
+    load_quotes_data,
+    published_quotes,
+    validate_quotes,
 )
 
 DATA_DIR = ROOT / "data"
@@ -98,8 +104,7 @@ def _load_yaml(name: str) -> list[dict]:
 
 def _indent(text: str, prefix: str = "    ") -> str:
     return "\n".join(
-        f"{prefix}{line}" if line else prefix.rstrip()
-        for line in text.strip().splitlines()
+        f"{prefix}{line}" if line else prefix.rstrip() for line in text.strip().splitlines()
     )
 
 
@@ -118,14 +123,14 @@ def _organisation_logo_title(name: str) -> str:
 
 def _action_link(modifier: str, href: str, label: str, icon: str) -> str:
     return (
-        f'    <a\n'
+        f"    <a\n"
         f'        class="catalogue-action catalogue-action--{modifier}"\n'
         f'        href="{href}"\n'
         f'        target="_blank"\n'
         f'        rel="noopener noreferrer">\n'
         f'        <span class="md-icon">:{icon}:</span>\n'
-        f'        {label}\n'
-        f'    </a>'
+        f"        {label}\n"
+        f"    </a>"
     )
 
 
@@ -154,6 +159,7 @@ def select_newest_projects(
     The caller filters unpublished projects. Ties break on ``id`` ascending;
     missing/unparseable publish dates sort last.
     """
+
     def sort_key(item: dict[str, Any]) -> tuple:
         parsed = parse_iso_date(item.get("publish_date"))
         # Sort by (0|1, -ordinal|0, id): dated entries newest-first, then id.
@@ -253,9 +259,7 @@ def define_env(env):
                     for slug, (label, _) in presets.items()
                 )
                 stable_option = (
-                    '\n            <option value="stable">Stable</option>'
-                    if show_stable
-                    else ""
+                    '\n            <option value="stable">Stable</option>' if show_stable else ""
                 )
                 status_block = f"""
     <div class="filter-panel-select">
@@ -375,9 +379,7 @@ def define_env(env):
 {action}
 """.strip()
 
-    def project_card(
-        item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS
-    ) -> str:
+    def project_card(item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
         banner = _shared_banner_markup(
@@ -435,9 +437,7 @@ def define_env(env):
 {actions_markup}
 """.strip()
 
-    def policy_card(
-        item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS
-    ) -> str:
+    def policy_card(item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
         raw_banner = item.get("banner")
@@ -456,9 +456,7 @@ def define_env(env):
         )
         banner_block = f"{banner}\n\n" if banner else ""
         logo = html.escape(item.get("logo", DEFAULT_POLICY_LOGO), quote=True)
-        logo_alt = html.escape(
-            item.get("logo_alt", DEFAULT_POLICY_LOGO_ALT), quote=True
-        )
+        logo_alt = html.escape(item.get("logo_alt", DEFAULT_POLICY_LOGO_ALT), quote=True)
         action = _action_link(
             "repository",
             item["document"],
@@ -496,13 +494,11 @@ def define_env(env):
             cards = "\n\n".join(organisation_card(item) for item in organisations)
         elif kind == "project":
             cards = "\n\n".join(
-                project_card(item, expiry_days=banner_expiry_days)
-                for item in projects
+                project_card(item, expiry_days=banner_expiry_days) for item in projects
             )
         elif kind == "policy":
             cards = "\n\n".join(
-                policy_card(item, expiry_days=banner_expiry_days)
-                for item in policies
+                policy_card(item, expiry_days=banner_expiry_days) for item in policies
             )
         else:
             raise ValueError(f"Unknown catalogue kind: {kind}")
@@ -514,7 +510,6 @@ def define_env(env):
 
 </div>
 """.strip()
-
 
     quotes_path = Path(env.project_dir) / "data" / "quotes.yml"
 
@@ -561,9 +556,7 @@ def define_env(env):
     @env.macro
     def newest_projects(banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
         newest = select_newest_projects(projects)
-        cards = "\n\n".join(
-            project_card(item, expiry_days=banner_expiry_days) for item in newest
-        )
+        cards = "\n\n".join(project_card(item, expiry_days=banner_expiry_days) for item in newest)
         return f"""
 <div class="newest-projects-header" markdown="0">
     <h2 id="newest-projects">Newest Projects</h2>

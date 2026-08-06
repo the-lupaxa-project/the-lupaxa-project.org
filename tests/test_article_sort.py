@@ -36,9 +36,9 @@ def test_articles_index_includes_sort_toggle(tmp_path):
     assert 'class="filter-panel filter-panel--with-sort"' in html
     assert "filter-panel--compact" not in html
     assert "filter-panel-toolbar" in html
-    assert 'data-filter-expand' in html
+    assert "data-filter-expand" in html
     assert "filter-panel-expand__icon" in html
-    assert 'data-article-summary' in html
+    assert "data-article-summary" in html
     assert '<label id="article-status-label">View Articles</label>' in html
     assert 'data-article-status="all"' in html
     assert 'data-article-status="new"' in html

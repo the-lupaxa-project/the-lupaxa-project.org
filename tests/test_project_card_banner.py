@@ -5,7 +5,6 @@ import yaml
 
 import main
 
-
 ROOT = Path(__file__).resolve().parent.parent
 
 
@@ -70,9 +69,7 @@ def test_project_card_rejects_article_only_presets(tmp_path, monkeypatch):
 
 def test_project_card_shows_fresh_released_banner(tmp_path, monkeypatch):
     fresh_date = (date.today() - timedelta(days=1)).isoformat()
-    projects = [
-        _synthetic_project(banner="released", released_date=fresh_date)
-    ]
+    projects = [_synthetic_project(banner="released", released_date=fresh_date)]
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
 
     markup = catalogue_grid("project", "project")
@@ -83,9 +80,7 @@ def test_project_card_shows_fresh_released_banner(tmp_path, monkeypatch):
 
 def test_project_card_hides_expired_released_banner(tmp_path, monkeypatch):
     expired_date = (date.today() - timedelta(days=400)).isoformat()
-    projects = [
-        _synthetic_project(banner="released", released_date=expired_date)
-    ]
+    projects = [_synthetic_project(banner="released", released_date=expired_date)]
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
 
     markup = catalogue_grid("project", "project")

@@ -4,6 +4,10 @@
   "ignores": [
     "cursor-docs/**",
     "site/**",
+    ".venv/**",
+    ".makefiles/**",
+    ".superpowers/**",
+    ".pytest_cache/**",
     "**/node_modules/**"
   ]
 }

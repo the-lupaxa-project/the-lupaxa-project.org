@@ -138,15 +138,11 @@ def test_policy_card_hides_new_banner_without_publish_date(tmp_path, monkeypatch
     assert "catalogue-banner" not in markup
 
 
-def test_policy_card_uses_updated_date_not_publish_date_for_updated_banner(
-    tmp_path, monkeypatch
-):
+def test_policy_card_uses_updated_date_not_publish_date_for_updated_banner(tmp_path, monkeypatch):
     fresh_date = (date.today() - timedelta(days=1)).isoformat()
     expired_date = (date.today() - timedelta(days=400)).isoformat()
     policies = [
-        _synthetic_policy(
-            banner="updated", publish_date=fresh_date, updated_date=expired_date
-        )
+        _synthetic_policy(banner="updated", publish_date=fresh_date, updated_date=expired_date)
     ]
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, policies)
 

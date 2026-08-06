@@ -8,7 +8,6 @@ from gallery_lib import (
     validate_gallery,
 )
 
-
 SAMPLE = {
     "page": {"background": "#111111", "text_color": "#f5f5f5"},
     "entries": [

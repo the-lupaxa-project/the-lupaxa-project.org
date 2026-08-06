@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "the-lupaxa-project-org"
+version = "0.1.0"
+description = "The Lupaxa Project public portal (MkDocs + GitHub Pages)."
+readme = "README.md"
+license = { file = "LICENCE" }
+requires-python = ">=3.13"
+authors = [{ name = "The Lupaxa Project" }]
+dependencies = [
+  "mkdocs==1.6.1",
+  "mkdocs-material==9.7.7",
+  "mkdocs-macros-plugin==1.5.0",
+  "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.6.0",
+  "mypy>=1.12.0",
+  "types-PyYAML",
+  "yamllint>=1.35.0",
+]
+
+[project.urls]
+Homepage = "https://thelupaxaproject.org"
+Repository = "https://github.com/the-lupaxa-project/the-lupaxa-project.org"
+
+[tool.setuptools]
+py-modules = [
+  "articles_lib",
+  "banner_lib",
+  "gallery_lib",
+  "main",
+  "quotes_lib",
+]
+packages = ["hooks"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+src = ["."]
+extend-exclude = [
+  "site",
+  ".makefiles",
+  ".venv",
+  "venv",
+  "cursor-docs",
+  ".worktrees",
+  ".superpowers",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+# Portal macros load path before local imports; HTML/SVG strings are often long.
+ignore = ["E402", "E501", "SIM108"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+files = [
+  "articles_lib.py",
+  "banner_lib.py",
+  "gallery_lib.py",
+  "main.py",
+  "quotes_lib.py",
+  "hooks",
+  "tests",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

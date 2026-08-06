@@ -26,9 +26,7 @@ def test_article_expiry_default_is_28_days():
 
 
 def test_new_banner_renders_for_recent_article():
-    entry = _article_entry(
-        "example", _meta(banner="new", publish_date="2026-07-20"), today=TODAY
-    )
+    entry = _article_entry("example", _meta(banner="new", publish_date="2026-07-20"), today=TODAY)
 
     assert 'data-banner-status="new"' in entry
     assert "New Article" in entry
@@ -36,9 +34,7 @@ def test_new_banner_renders_for_recent_article():
 
 
 def test_new_banner_sits_between_rule_and_image():
-    entry = _article_entry(
-        "example", _meta(banner="new", publish_date="2026-07-20"), today=TODAY
-    )
+    entry = _article_entry("example", _meta(banner="new", publish_date="2026-07-20"), today=TODAY)
 
     rule = entry.index("    ---")
     banner = entry.index("catalogue-banner")
@@ -48,9 +44,7 @@ def test_new_banner_sits_between_rule_and_image():
 
 
 def test_new_banner_hidden_after_expiry():
-    entry = _article_entry(
-        "example", _meta(banner="new", publish_date="2026-01-01"), today=TODAY
-    )
+    entry = _article_entry("example", _meta(banner="new", publish_date="2026-01-01"), today=TODAY)
 
     assert "catalogue-banner" not in entry
 

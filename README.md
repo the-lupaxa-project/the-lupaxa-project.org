@@ -20,6 +20,14 @@ Published at <https://thelupaxaproject.org/>.
 ## Local development
 
 ```bash
+make init
+make install-dev
+make mkdocs-serve
+```
+
+Or without Make:
+
+```bash
 python -m pip install -r requirements.txt
 python -m mkdocs serve
 ```
