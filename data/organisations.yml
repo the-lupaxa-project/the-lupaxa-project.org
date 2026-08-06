@@ -314,6 +314,22 @@
   logo_alt: Terraform Toolbox
   repository: https://github.com/lupaxa-terraform-toolbox
 
+- id: workstation-toolbox
+  published: true
+  name: Workstation Toolbox
+  icon: material-domain
+  publish_date: '2026-08-06'
+  description: Shell, package-manager and local workstation tooling for setting up and maintaining
+    developer machines.
+  categories:
+    - Workstation
+    - Shell
+    - Package Management
+    - Productivity
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/workstation-toolbox/readme-logo-128.png
+  logo_alt: Workstation Toolbox
+  repository: https://github.com/lupaxa-workstation-toolbox
+
 - id: the-lupaxa-blueprints
   published: true
   name: The Lupaxa Blueprints
