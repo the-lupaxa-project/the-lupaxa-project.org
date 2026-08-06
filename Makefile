@@ -174,12 +174,31 @@ $(foreach s,$(SKILLS),$(eval -include $(MAKEFILES_DIR)/skills/$(s).mk))
 # -----------------------------------------------------------------------------
 # CI-friendly aliases (reusable-python-makefile-ci expects these names)
 # -----------------------------------------------------------------------------
+# .makefiles/ is gitignored, so CI (and fresh clones) must init before the
+# python-* / mkdocs-* targets from makefile-skills exist. Each alias re-invokes
+# $(MAKE) so includes are re-read after init.
 
+.PHONY: install-dev install-test lint check format test _ensure-makefiles
 
-.PHONY: install-dev install-test lint check format test
-install-dev: python-install-dev
-install-test: python-install-test
-lint: python-lint
-check: python-check
-format: python-format
-test: python-test
+_ensure-makefiles:
+	@if [ ! -f "$(MAKEFILES_DIR)/skills/versioning.mk" ]; then \
+		$(MAKE) --no-print-directory init; \
+	fi
+
+install-dev: _ensure-makefiles
+	@$(MAKE) --no-print-directory python-install-dev
+
+install-test: _ensure-makefiles
+	@$(MAKE) --no-print-directory python-install-test
+
+lint: _ensure-makefiles
+	@$(MAKE) --no-print-directory python-lint
+
+check: _ensure-makefiles
+	@$(MAKE) --no-print-directory python-check
+
+format: _ensure-makefiles
+	@$(MAKE) --no-print-directory python-format
+
+test: _ensure-makefiles
+	@$(MAKE) --no-print-directory python-test
