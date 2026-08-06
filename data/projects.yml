@@ -1,3 +1,28 @@
+- id: bash-aliases
+  published: true
+  name: Bash Aliases
+  icon: material-source-repository
+  publish_date: "2026-08-05"
+  description: >-
+    Modular Bash aliases with file-equals-group organisation, listing helpers,
+    and Git quality-of-life shortcuts.
+
+
+    A forkable starter pack under `~/.bash/aliases/` with example Git, system,
+    MkDocs, and catch-all groups, plus helpers to add, edit, delete, list, and
+    reload aliases.
+  categories:
+    - Bash
+    - Developer Tools
+    - Productivity
+    - Git
+  organisation: Developers Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/bash-aliases
+  documentation: https://bash-aliases.thelupaxaproject.org/
+  banner: in-testing
+
 - id: certificate-tool
   published: true
   name: Certificate Tool
