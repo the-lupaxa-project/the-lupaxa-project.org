@@ -66,7 +66,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
-  documentation: https://lupaxa-security-toolbox.github.io/certtool/
+  documentation: https://certtool.thelupaxaproject.org/
 
 - id: check-git-repositories
   published: true
@@ -90,7 +90,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
-  documentation: https://lupaxa-git-toolbox.github.io/check-git-repositories/
+  documentation: https://check-git-repositories.thelupaxaproject.org/
   banner: in-testing
 
 - id: favicon-generator
@@ -136,7 +136,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
-  documentation: https://lupaxa-security-toolbox.github.io/git-crypt-manager/
+  documentation: https://git-crypt-manager.thelupaxaproject.org/
 
 - id: git-delete-tags
   published: true
@@ -256,7 +256,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
-  documentation: https://lupaxa-miscellaneous-toolbox.github.io/photo-renamer/
+  documentation: https://photo-renamer.thelupaxaproject.org/
   banner: in-testing
 
 - id: shared-reusable-workflows
