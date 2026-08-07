@@ -23,6 +23,29 @@
   documentation: https://bash-aliases.thelupaxaproject.org/
   banner: in-testing
 
+- id: brew-manager
+  published: true
+  name: Brew Manager
+  icon: material-source-repository
+  publish_date: "2026-08-06"
+  description: >-
+    Interactive Homebrew maintenance menu for workstation brew state.
+
+
+    Run common `brew` operations from a numbered menu — updates, upgrades,
+    cleanup, doctor, installed package lists, and helpers for deprecated or
+    disabled casks — with confirmation prompts before destructive actions.
+  categories:
+    - Homebrew
+    - Workstation
+    - Package Management
+    - Bash
+  organisation: Workstation Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/workstation-toolbox/readme-logo-128.png
+  logo_alt: Workstation Toolbox
+  repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
+  banner: in-testing
+
 - id: certificate-tool
   published: true
   name: Certificate Tool
