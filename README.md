@@ -32,7 +32,7 @@ python -m pip install -r requirements.txt
 python -m mkdocs serve
 ```
 
-Open the URL printed by MkDocs (usually `http://127.0.0.1:8000/`).
+Open the local URL MkDocs prints (typically port `8000` on `127.0.0.1`).
 
 `mkdocs.yml` watches `data/`, `hooks/`, and every build-time Python module
 (`src/`, `hooks/`), so catalogue YAML and macro edits reload
