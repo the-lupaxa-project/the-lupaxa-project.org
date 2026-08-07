@@ -636,6 +636,31 @@
   repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
   banner: in-review
 
+- id: sysinfo
+  published: true
+  name: Sysinfo
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Cross-platform system inventory CLI with modular collectors, redaction, and
+    JSON/YAML/XML/HTML reports.
+
+
+    Install the library (`lupaxa-sysinfo`) or the CLI (`lupaxa-sysinfo-cli`) from
+    PyPI. Opt into collectors for CPU, memory, disks, network, processes, and
+    more, with profiles for minimal, CI, and support workflows.
+  categories:
+    - System Information
+    - Python
+    - CLI
+    - Developer Tools
+  organisation: Developers Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/sysinfo
+  documentation: https://sysinfo.thelupaxaproject.org/
+  banner: in-testing
+
 - id: validate-citations-file
   published: true
   name: Validate Citations File
