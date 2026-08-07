@@ -66,6 +66,11 @@ python_version = "3.13"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
+# Root main.py is an mkdocs-macros shim that loads src/main.py; checking both
+# as module "main" makes mypy abort (duplicate module).
+exclude = [
+  "^main\\.py$",
+]
 files = [
   "src",
   "hooks",
