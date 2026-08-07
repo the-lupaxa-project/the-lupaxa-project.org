@@ -7,8 +7,10 @@ import sys
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
-if str(PROJECT_DIR) not in sys.path:
-    sys.path.insert(0, str(PROJECT_DIR))
+_SRC = PROJECT_DIR / "src"
+for _path in (_SRC, PROJECT_DIR):
+    if str(_path) not in sys.path:
+        sys.path.insert(0, str(_path))
 
 from articles_lib import (
     display_title,

@@ -9,15 +9,11 @@ on:
       - ".markdownlint-cli2.jsonc"
       - ".yamllint.yml"
       - "data/**"
-      - "banner_lib.py"
-      - "gallery_lib.py"
-      - "main.py"
+      - "src/**"
       - "mkdocs/**"
       - "mkdocs.yml"
       - "overrides/**"
-      - "quotes_lib.py"
       - "requirements.txt"
-      - "articles_lib.py"
       - "hooks/**"
 
   pull_request:
@@ -28,15 +24,11 @@ on:
       - ".markdownlint-cli2.jsonc"
       - ".yamllint.yml"
       - "data/**"
-      - "banner_lib.py"
-      - "gallery_lib.py"
-      - "main.py"
+      - "src/**"
       - "mkdocs/**"
       - "mkdocs.yml"
       - "overrides/**"
-      - "quotes_lib.py"
       - "requirements.txt"
-      - "articles_lib.py"
       - "hooks/**"
 
   workflow_dispatch:

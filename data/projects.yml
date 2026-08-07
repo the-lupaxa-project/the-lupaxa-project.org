@@ -1,16 +1,72 @@
+- id: action-lint
+  published: true
+  name: Action Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint GitHub Actions workflow YAML with [actionlint](https://github.com/rhysd/actionlint). A
+    reusable CICD Toolbox pipeline script for catching workflow syntax and best-practice issues in
+    CI or locally via `src/pipeline.sh`.
+  categories:
+    - CI/CD
+    - GitHub Actions
+    - Linting
+    - YAML
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/action-lint
+  banner: in-testing
+
+- id: awesomebot
+  published: true
+  name: Awesomebot
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Check links in Markdown and text files with
+    [awesome_bot](https://rubygems.org/gems/awesome_bot). A reusable CICD Toolbox pipeline for
+    broken-link detection across documentation sets.
+  categories:
+    - CI/CD
+    - Documentation
+    - Linting
+    - Ruby
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
+  banner: in-testing
+
+- id: bandit
+  published: true
+  name: Bandit
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Find common security issues in Python code with [Bandit](https://pypi.org/project/bandit/). A
+    reusable CICD Toolbox pipeline for static security analysis of Python projects.
+  categories:
+    - CI/CD
+    - Python
+    - Security
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/bandit
+  banner: in-testing
+
 - id: bash-aliases
   published: true
   name: Bash Aliases
   icon: material-source-repository
   publish_date: "2026-08-05"
   description: >-
-    Modular Bash aliases with file-equals-group organisation, listing helpers,
-    and Git quality-of-life shortcuts.
-
-
-    A forkable starter pack under `~/.bash/aliases/` with example Git, system,
-    MkDocs, and catch-all groups, plus helpers to add, edit, delete, list, and
-    reload aliases.
+    Modular Bash aliases with file-equals-group organisation, listing helpers, and Git
+    quality-of-life shortcuts. A forkable starter pack under `~/.bash/aliases/` with example Git,
+    system, MkDocs, and catch-all groups, plus helpers to add, edit, delete, list, and reload
+    aliases.
   categories:
     - Bash
     - Developer Tools
@@ -29,12 +85,9 @@
   icon: material-source-repository
   publish_date: "2026-08-06"
   description: >-
-    Interactive Homebrew maintenance menu for workstation brew state.
-
-
-    Run common `brew` operations from a numbered menu — updates, upgrades,
-    cleanup, doctor, installed package lists, and helpers for deprecated or
-    disabled casks — with confirmation prompts before destructive actions.
+    Interactive Homebrew maintenance menu for workstation brew state. Run common `brew` operations
+    from a numbered menu — updates, upgrades, cleanup, doctor, installed package lists, and helpers
+    for deprecated or disabled casks — with confirmation prompts before destructive actions.
   categories:
     - Homebrew
     - Workstation
@@ -52,12 +105,10 @@
   icon: material-source-repository
   publish_date: "2025-11-20"
   description: >-
-    Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private
-    keys using a modern, fully typed Python command-line application and library.
-
-
-    Designed for automation as well as interactive use, it provides a clean and consistent
-    interface for creating development and testing certificates.
+    Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private keys
+    using a modern, fully typed Python command-line application and library. Designed for automation
+    as well as interactive use, it provides a clean and consistent interface for creating
+    development and testing certificates.
   categories:
     - Certificates
     - Security
@@ -74,13 +125,10 @@
   icon: material-source-repository
   publish_date: "2026-08-01"
   description: >-
-    Scan a directory tree for Git repositories and report anything that is not
-    fully clean and synced with its upstream — uncommitted work, unpushed
-    commits, stashes, and sync drift.
-
-
-    A single portable Bash script that needs only bash, find, and git. Useful as
-    an end-of-day check across a workspace full of clones.
+    Scan a directory tree for Git repositories and report anything that is not fully clean and
+    synced with its upstream — uncommitted work, unpushed commits, stashes, and sync drift. A single
+    portable Bash script that needs only bash, find, and git. Useful as an end-of-day check across a
+    workspace full of clones.
   categories:
     - Git
     - Automation
@@ -99,11 +147,9 @@
   icon: material-source-repository
   publish_date: "2026-07-28"
   description: >-
-    Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG).
-
-
-    The project provides a simple and efficient way to create a favicon set from a single
-    source image, ensuring that the favicons are consistent and modern.
+    Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG). The project
+    provides a simple and efficient way to create a favicon set from a single source image, ensuring
+    that the favicons are consistent and modern.
   categories:
     - Favicons
     - Websites
@@ -115,18 +161,35 @@
   documentation: https://favicon-generator.thelupaxaproject.org/
   banner: in-testing
 
+- id: get-all-tools
+  published: true
+  name: Get All Tools
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Download all Lupaxa CICD Toolbox pipeline scripts into `~/bin`. A Python helper that fetches
+    each tool's `src/pipeline.sh` from `lupaxa-cicd-toolbox` (master or latest release) and installs
+    them as `cicd-<tool>` commands.
+  categories:
+    - CI/CD
+    - Python
+    - CLI
+    - Developer Tools
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
+  banner: in-testing
+
 - id: git-crypt-manager
   published: true
   name: Git Crypt Manager
   icon: material-source-repository
   publish_date: "2025-11-27"
   description: >-
-    Simplify the management of encrypted Git repositories with a guided automation tool built
-    around [git-crypt](https://github.com/AGWA/git-crypt).
-
-
-    The project helps initialise, configure, and maintain encrypted repositories while reducing
-    the complexity of day-to-day key management.
+    Simplify the management of encrypted Git repositories with a guided automation tool built around
+    [git-crypt](https://github.com/AGWA/git-crypt). The project helps initialise, configure, and
+    maintain encrypted repositories while reducing the complexity of day-to-day key management.
   categories:
     - Encryption
     - Security
@@ -144,12 +207,9 @@
   icon: material-source-repository
   publish_date: "2026-08-04"
   description: >-
-    Delete local and remote Git tags with dry-run, summary, and protection.
-
-
-    Remove specific tags or clear every tag in a repository while protecting
-    selected names. Useful for cleaning up stale release tags or resetting a
-    tag namespace before a fresh release cycle.
+    Delete local and remote Git tags with dry-run, summary, and protection. Remove specific tags or
+    clear every tag in a repository while protecting selected names. Useful for cleaning up stale
+    release tags or resetting a tag namespace before a fresh release cycle.
   categories:
     - Git
     - Automation
@@ -167,13 +227,9 @@
   icon: material-source-repository
   publish_date: "2026-08-04"
   description: >-
-    Rewrite a Git repository down to a single initial commit — with dry-run,
-    backups, and controlled tag handling.
-
-
-    Keeps the current tree while replacing primary-branch history. Useful after
-    scaffolding, before a first public release, or when history is no longer
-    useful.
+    Rewrite a Git repository down to a single initial commit — with dry-run, backups, and controlled
+    tag handling. Keeps the current tree while replacing primary-branch history. Useful after
+    scaffolding, before a first public release, or when history is no longer useful.
   categories:
     - Git
     - Automation
@@ -191,12 +247,10 @@
   icon: material-source-repository
   publish_date: "2026-07-24"
   description: >-
-    Clone, organise, and safely synchronise large collections of GitHub repositories using
-    a declarative JSON5 configuration file.
-
-
-    Each repository is inspected before any Git operation is performed, ensuring that only
-    repositories confirmed to be in a safe state are automatically updated.
+    Clone, organise, and safely synchronise large collections of GitHub repositories using a
+    declarative JSON5 configuration file. Each repository is inspected before any Git operation is
+    performed, ensuring that only repositories confirmed to be in a safe state are automatically
+    updated.
   categories:
     - GitHub
     - Automation
@@ -209,19 +263,70 @@
   documentation: https://github-repo-sync.thelupaxaproject.org/
   banner: in-testing
 
+- id: hadolint
+  published: true
+  name: Hadolint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint Dockerfiles with [Hadolint](https://github.com/hadolint/hadolint). A reusable CICD Toolbox
+    pipeline for Dockerfile best practices and common mistakes.
+  categories:
+    - CI/CD
+    - Docker
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/hadolint
+  banner: in-testing
+
+- id: json-lint
+  published: true
+  name: JSON Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Validate JSON files with [jq](https://stedolan.github.io/jq/). A reusable CICD Toolbox pipeline
+    for JSON syntax validation in repositories.
+  categories:
+    - CI/CD
+    - JSON
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/json-lint
+  banner: in-testing
+
+- id: makefile-lint
+  published: true
+  name: Makefile Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint Makefiles with [checkmake](https://github.com/checkmake/checkmake). A reusable CICD Toolbox
+    pipeline aligned with Lupaxa makefile validation workflows.
+  categories:
+    - CI/CD
+    - Makefiles
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/makefile-lint
+  banner: in-testing
+
 - id: makefile-skills
   published: true
   name: Makefile Skills
   icon: material-source-repository
   publish_date: "2026-07-22"
   description: >-
-    Reusable Makefile skills for project versioning, Python, MkDocs, and Bash
-    workflows.
-
-
-    Consumer projects keep a thin wrapper Makefile that sparse-clones shared
-    targets into a gitignored `.makefiles/` directory, always enables versioning,
-    and optionally enables standalone skills via `SKILLS`.
+    Reusable Makefile skills for project versioning, Python, MkDocs, and Bash workflows. Consumer
+    projects keep a thin wrapper Makefile that sparse-clones shared targets into a gitignored
+    `.makefiles/` directory, always enables versioning, and optionally enables standalone skills via
+    `SKILLS`.
   categories:
     - Makefiles
     - Automation
@@ -234,18 +339,71 @@
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: in-testing
 
+- id: markdown-lint
+  published: true
+  name: Markdown Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli).
+    A reusable CICD Toolbox pipeline for documentation style and structure checks.
+  categories:
+    - CI/CD
+    - Markdown
+    - Documentation
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/markdown-lint
+  banner: in-testing
+
+- id: mypy
+  published: true
+  name: Mypy
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Type-check Python code with [mypy](https://mypy.readthedocs.io/). A reusable CICD Toolbox
+    pipeline for static type checking across Python trees.
+  categories:
+    - CI/CD
+    - Python
+    - Type Checking
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/mypy
+  banner: in-testing
+
+- id: perl-lint
+  published: true
+  name: Perl Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Check Perl scripts for syntax errors using the native Perl checker. A reusable CICD Toolbox
+    pipeline for Perl syntax validation.
+  categories:
+    - CI/CD
+    - Perl
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/perl-lint
+  banner: in-testing
+
 - id: photo-renamer
   published: true
   name: Photo Renamer
   icon: material-source-repository
   publish_date: "2026-08-02"
   description: >-
-    Safely copy or move photographs and videos into consistent, date-based
-    filenames. Reads image EXIF or video metadata when available, falls back to
-    filesystem modification time, and reports progress with Rich.
-
-
-    Useful for cleaning up camera rolls and export dumps into predictable paths
+    Safely copy or move photographs and videos into consistent, date-based filenames. Reads image
+    EXIF or video metadata when available, falls back to filesystem modification time, and reports
+    progress with Rich. Useful for cleaning up camera rolls and export dumps into predictable paths
     while keeping originals untouched by default.
   categories:
     - Photos
@@ -259,18 +417,198 @@
   documentation: https://photo-renamer.thelupaxaproject.org/
   banner: in-testing
 
+- id: php-lint
+  published: true
+  name: PHP Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint PHP files with [overtrue/phplint](https://github.com/overtrue/phplint). A reusable CICD
+    Toolbox pipeline for PHP syntax validation.
+  categories:
+    - CI/CD
+    - PHP
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/php-lint
+  banner: in-testing
+
+- id: puppet-lint
+  published: true
+  name: Puppet Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint Puppet manifests with [puppet-lint](https://rubygems.org/gems/puppet-lint). A reusable CICD
+    Toolbox pipeline for Puppet style and best-practice checks.
+  categories:
+    - CI/CD
+    - Puppet
+    - Linting
+    - Ruby
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/puppet-lint
+  banner: in-testing
+
+- id: pur
+  published: true
+  name: Pur
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Check Python `requirements.txt` currency with [pur](https://pypi.org/project/pur/). A reusable
+    CICD Toolbox pipeline that highlights outdated Python dependencies.
+  categories:
+    - CI/CD
+    - Python
+    - Dependencies
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/pur
+  banner: in-testing
+
+- id: pycodestyle
+  published: true
+  name: PyCodeStyle
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Check Python code against PEP 8 with [pycodestyle](https://pypi.org/project/pycodestyle/). A
+    reusable CICD Toolbox pipeline for Python style-guide compliance.
+  categories:
+    - CI/CD
+    - Python
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/pycodestyle
+  banner: in-testing
+
+- id: pydocstyle
+  published: true
+  name: PyDocStyle
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Check Python docstring conventions with [pydocstyle](https://pypi.org/project/pydocstyle/). A
+    reusable CICD Toolbox pipeline for docstring quality and convention checks.
+  categories:
+    - CI/CD
+    - Python
+    - Documentation
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/pydocstyle
+  banner: in-testing
+
+- id: pylama
+  published: true
+  name: Pylama
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Run Python code audits with [Pylama](https://pypi.org/project/pylama/). A reusable CICD Toolbox
+    pipeline that wraps a multi-linter Python audit suite.
+  categories:
+    - CI/CD
+    - Python
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/pylama
+  banner: in-testing
+
+- id: pylint
+  published: true
+  name: Pylint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Static analysis for Python with [Pylint](https://pypi.org/project/pylint/). A reusable CICD
+    Toolbox pipeline for deep Python linting and code smells.
+  categories:
+    - CI/CD
+    - Python
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/pylint
+  banner: in-testing
+
+- id: reek
+  published: true
+  name: Reek
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Detect Ruby code smells with [Reek](https://rubygems.org/gems/reek). A reusable CICD Toolbox
+    pipeline for Ruby maintainability analysis.
+  categories:
+    - CI/CD
+    - Ruby
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/reek
+  banner: in-testing
+
+- id: rubocop
+  published: true
+  name: RuboCop
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint and analyse Ruby with [RuboCop](https://rubygems.org/gems/rubocop). A reusable CICD Toolbox
+    pipeline for Ruby style and static analysis.
+  categories:
+    - CI/CD
+    - Ruby
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/rubocop
+  banner: in-testing
+
+- id: ruff
+  published: true
+  name: Ruff
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint Python code with [Ruff](https://docs.astral.sh/ruff/) (`ruff check`). A reusable CICD
+    Toolbox pipeline for fast Python linting.
+  categories:
+    - CI/CD
+    - Python
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/ruff
+  banner: in-testing
+
 - id: shared-reusable-workflows
   published: true
   name: Shared Reusable Workflows
   icon: material-source-repository
   publish_date: "2025-11-24"
   description: >-
-    A collection of reusable GitHub Actions workflows for repository quality, continuous integration,
-    documentation, security, and automation.
-
-
-    Designed to provide consistent workflows across The Lupaxa Project, these reusable components
-    reduce duplication and simplify repository management.
+    A collection of reusable GitHub Actions workflows for repository quality, continuous
+    integration, documentation, security, and automation. Designed to provide consistent workflows
+    across The Lupaxa Project, these reusable components reduce duplication and simplify repository
+    management.
   categories:
     - GitHub Actions
     - Automation
@@ -279,3 +617,57 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
+
+- id: shellcheck
+  published: true
+  name: ShellCheck
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Analyse shell scripts with [ShellCheck](https://github.com/koalaman/shellcheck). A reusable CICD
+    Toolbox pipeline for Bash/shell portability and bug finding.
+  categories:
+    - CI/CD
+    - Bash
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
+  banner: in-testing
+
+- id: validate-citations-file
+  published: true
+  name: Validate Citations File
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Validate `CITATION.cff` files with [cffconvert](https://pypi.org/project/cffconvert/). A
+    reusable CICD Toolbox pipeline for citation metadata quality checks.
+  categories:
+    - CI/CD
+    - Documentation
+    - Metadata
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/validate-citations-file
+  banner: in-testing
+
+- id: yaml-lint
+  published: true
+  name: YAML Lint
+  icon: material-source-repository
+  publish_date: "2026-08-07"
+  description: >-
+    Lint YAML files with [yamllint](https://pypi.org/project/yamllint/). A reusable CICD Toolbox
+    pipeline for YAML syntax and style validation.
+  categories:
+    - CI/CD
+    - YAML
+    - Linting
+  organisation: CI/CD Toolbox
+  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
+  banner: in-testing

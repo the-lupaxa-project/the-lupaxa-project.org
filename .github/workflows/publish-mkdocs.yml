@@ -7,15 +7,11 @@ on:
     paths:
       - ".github/workflows/publish-mkdocs.yml"
       - "data/**"
-      - "banner_lib.py"
-      - "gallery_lib.py"
-      - "main.py"
+      - "src/**"
       - "mkdocs/**"
       - "mkdocs.yml"
       - "overrides/**"
-      - "quotes_lib.py"
       - "requirements.txt"
-      - "articles_lib.py"
       - "hooks/**"
 
   workflow_dispatch:

@@ -46,11 +46,7 @@ use_directory_urls: true
 watch:
   - data
   - hooks
-  - articles_lib.py
-  - banner_lib.py
-  - gallery_lib.py
-  - main.py
-  - quotes_lib.py
+  - src
 
 # =============================================================================
 # Theme
@@ -101,7 +97,8 @@ theme:
 
 plugins:
   - search
-  - macros
+  - macros:
+      module_name: main
 
 hooks:
   - hooks/article_nav.py

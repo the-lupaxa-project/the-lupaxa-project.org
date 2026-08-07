@@ -35,7 +35,7 @@ python -m mkdocs serve
 Open the URL printed by MkDocs (usually `http://127.0.0.1:8000/`).
 
 `mkdocs.yml` watches `data/`, `hooks/`, and every build-time Python module
-(`main.py`, `*_lib.py`), so catalogue YAML and macro edits reload
+(`src/`, `hooks/`), so catalogue YAML and macro edits reload
 automatically while `mkdocs serve` is running. Add new build scripts to
 `watch` when you create them — MkDocs does not support globs there.
 
@@ -69,7 +69,7 @@ Catalogue entries live in YAML under `data/`:
 | `data/projects.yml` | Projects (home shows nine newest by `publish_date`; six on tablet/mobile) |
 | `data/policies.yml` | Policies |
 
-`main.py` loads that data for `mkdocs-macros-plugin`. Pages call macros such as
+`src/main.py` (via a thin root `main.py` shim) loads that data for `mkdocs-macros-plugin`. Pages call macros such as
 `filter_panel`, `catalogue_grid`, and `newest_projects` so card markup stays
 in one place.
 
@@ -79,7 +79,8 @@ Brand logos remain remote URLs from the `brand-assets` repository.
 
 ```text
 data/                     Catalogue YAML
-main.py                   Macros plugin entry
+src/*.py                  Portal macros and helpers
+main.py                   Thin mkdocs-macros shim → src/main.py
 mkdocs/                   Page Markdown and static assets
 overrides/                Material theme overrides
 requirements.txt          Pinned MkDocs dependencies
