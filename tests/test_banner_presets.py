@@ -8,6 +8,7 @@ EXPECTED_PROJECT = {
     "in-planning": ("In Planning", "green"),
     "in-development": ("In Development", "purple"),
     "in-testing": ("In Testing", "neutral"),
+    "in-review": ("In Review", "orange"),
     "closed-alpha": ("Closed Alpha", "red"),
     "open-beta": ("Open Beta", "orange"),
     "released": ("Released", "blue"),

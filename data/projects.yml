@@ -16,7 +16,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/action-lint
-  banner: in-testing
+  banner: in-review
 
 - id: awesomebot
   published: true
@@ -36,7 +36,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
-  banner: in-testing
+  banner: in-review
 
 - id: bandit
   published: true
@@ -55,7 +55,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/bandit
-  banner: in-testing
+  banner: in-review
 
 - id: bash-aliases
   published: true
@@ -179,7 +179,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
-  banner: in-testing
+  banner: in-review
 
 - id: git-crypt-manager
   published: true
@@ -279,7 +279,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/hadolint
-  banner: in-testing
+  banner: in-review
 
 - id: json-lint
   published: true
@@ -297,7 +297,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/json-lint
-  banner: in-testing
+  banner: in-review
 
 - id: makefile-lint
   published: true
@@ -315,7 +315,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/makefile-lint
-  banner: in-testing
+  banner: in-review
 
 - id: makefile-skills
   published: true
@@ -356,7 +356,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/markdown-lint
-  banner: in-testing
+  banner: in-review
 
 - id: mypy
   published: true
@@ -375,7 +375,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/mypy
-  banner: in-testing
+  banner: in-review
 
 - id: perl-lint
   published: true
@@ -393,7 +393,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/perl-lint
-  banner: in-testing
+  banner: in-review
 
 - id: photo-renamer
   published: true
@@ -433,7 +433,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/php-lint
-  banner: in-testing
+  banner: in-review
 
 - id: puppet-lint
   published: true
@@ -452,7 +452,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/puppet-lint
-  banner: in-testing
+  banner: in-review
 
 - id: pur
   published: true
@@ -470,7 +470,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pur
-  banner: in-testing
+  banner: in-review
 
 - id: pycodestyle
   published: true
@@ -488,7 +488,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pycodestyle
-  banner: in-testing
+  banner: in-review
 
 - id: pydocstyle
   published: true
@@ -507,7 +507,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pydocstyle
-  banner: in-testing
+  banner: in-review
 
 - id: pylama
   published: true
@@ -525,7 +525,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylama
-  banner: in-testing
+  banner: in-review
 
 - id: pylint
   published: true
@@ -543,7 +543,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylint
-  banner: in-testing
+  banner: in-review
 
 - id: reek
   published: true
@@ -561,7 +561,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/reek
-  banner: in-testing
+  banner: in-review
 
 - id: rubocop
   published: true
@@ -579,7 +579,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/rubocop
-  banner: in-testing
+  banner: in-review
 
 - id: ruff
   published: true
@@ -597,7 +597,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
-  banner: in-testing
+  banner: in-review
 
 - id: shared-reusable-workflows
   published: true
@@ -634,7 +634,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
-  banner: in-testing
+  banner: in-review
 
 - id: validate-citations-file
   published: true
@@ -652,7 +652,7 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/validate-citations-file
-  banner: in-testing
+  banner: in-review
 
 - id: yaml-lint
   published: true
@@ -670,4 +670,4 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
-  banner: in-testing
+  banner: in-review
