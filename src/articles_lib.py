@@ -9,7 +9,12 @@ from typing import Any
 
 import yaml
 
-from banner_lib import ARTICLE_BANNER_PRESETS, banner_markup, parse_iso_date
+from banner_lib import (
+    ARTICLE_BANNER_PRESETS,
+    banner_markup,
+    format_publish_date_attr,
+    parse_iso_date,
+)
 from main import filter_panel_toolbar
 
 # Days a "New Article" banner stays visible after `publish_date`.
@@ -152,8 +157,9 @@ def _article_entry(slug: str, meta: dict[str, Any], *, today: date | None = None
         time_limited_statuses=_ARTICLE_TIME_LIMITED,
     )
     banner_block = f"{banner}\n\n" if banner else ""
+    publish_date_value = format_publish_date_attr(meta.get("publish_date"))
     date_attr = (
-        f' data-publish-date="{publish_date.isoformat()}"' if publish_date is not None else ""
+        f' data-publish-date="{publish_date_value}"' if publish_date_value is not None else ""
     )
     return (
         f"-   **[{title}](articles/{slug}.md)**\n"

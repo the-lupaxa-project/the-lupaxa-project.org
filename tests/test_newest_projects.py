@@ -64,6 +64,23 @@ def test_select_newest_projects_skips_unparseable_dates_last():
     assert [item["id"] for item in selected] == ["dated", "bad-date"]
 
 
+def test_select_newest_projects_orders_by_time_within_same_day():
+    projects = [
+        _project("morning", "2026-08-07T09:00:00"),
+        _project("evening", "2026-08-07T17:30:00"),
+        _project("date-only", "2026-08-07"),
+        _project("older-day", "2026-08-06T23:59:59"),
+    ]
+
+    selected = main.select_newest_projects(projects, limit=4)
+    assert [item["id"] for item in selected] == [
+        "evening",
+        "morning",
+        "date-only",
+        "older-day",
+    ]
+
+
 class _FakeEnv:
     def __init__(self, project_dir: Path) -> None:
         self.project_dir = str(project_dir)

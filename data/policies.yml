@@ -2,7 +2,7 @@
   published: true
   name: Code of Conduct
   icon: material-handshake
-  publish_date: "2026-07-31"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     The Lupaxa Project is committed to fostering an open, welcoming and respectful community
     where everyone can collaborate with confidence.
@@ -20,7 +20,7 @@
   published: true
   name: Governance
   icon: material-gavel
-  publish_date: "2025-04-01"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     The Lupaxa Project follows a clear and transparent governance model that defines how decisions
     are made across the ecosystem.
@@ -38,7 +38,7 @@
   published: true
   name: How to Contribute
   icon: material-source-pull
-  publish_date: "2025-06-15"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     Contributions of every size are welcome, from fixing bugs and improving documentation
     to proposing new features and submitting code.
@@ -56,7 +56,7 @@
   published: true
   name: Engineering Principles
   icon: material-compass
-  publish_date: "2025-08-01"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     The Lupaxa Project is guided by a shared set of engineering principles that influence
     how software is designed, built, documented and maintained.
@@ -74,7 +74,7 @@
   published: true
   name: Maintainer Guide
   icon: material-shield-account
-  publish_date: "2025-10-12"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     Maintainers play a key role in ensuring repositories remain welcoming, secure, well maintained
     and technically robust.
@@ -92,7 +92,7 @@
   published: true
   name: Project Organisation
   icon: material-sitemap
-  publish_date: "2025-12-01"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     The Lupaxa Project is organised into multiple GitHub organisations, each focused on a
     particular area of technology or engineering.
@@ -111,7 +111,7 @@
   published: true
   name: Security Policy
   icon: material-shield-lock
-  publish_date: "2026-03-15"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     The Lupaxa Project takes the security of its repositories, software and users seriously.
 
@@ -128,7 +128,7 @@
   published: true
   name: Support Guide
   icon: material-lifebuoy
-  publish_date: "2026-05-20"
+  publish_date: "2026-07-20T12:53:51"
   description: >-
     This guide explains how to request assistance across The Lupaxa Project and how to select
     the most appropriate support channel.

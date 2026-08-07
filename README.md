@@ -69,6 +69,10 @@ Catalogue entries live in YAML under `data/`:
 | `data/projects.yml` | Projects (home shows nine newest by `publish_date`; six on tablet/mobile) |
 | `data/policies.yml` | Policies |
 
+`publish_date` (and article front matter of the same name) accepts either a calendar day
+(`YYYY-MM-DD`) or a UTC timestamp (`YYYY-MM-DDTHH:MM:SS`). Banner expiry still uses the
+calendar day; newest-project and catalogue “newest” sorts use the full timestamp.
+
 `src/main.py` (via a thin root `main.py` shim) loads that data for `mkdocs-macros-plugin`. Pages call macros such as
 `filter_panel`, `catalogue_grid`, and `newest_projects` so card markup stays
 in one place.

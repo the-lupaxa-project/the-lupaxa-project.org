@@ -108,7 +108,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/certificates-without-the-jargon.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/certificates-without-the-jargon.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     X.509 certificates in plain language. Keys, CSRs, self-signed versus CA-
     signed, trust stores, and what actually matters when you generate certs
@@ -121,7 +121,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/cli-design.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/cli-design.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     Practical CLI design for open-source tools. Flags and arguments, exit
     codes, stdout versus stderr, helpful errors, and interfaces that feel
@@ -134,7 +134,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/coding-standards.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/coding-standards.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     What coding standards actually cover, why they save review time, and how
     to enforce them with linters, formatters, CI checks, editor settings,
@@ -147,7 +147,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/config-design.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/config-design.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical configuration design for tools. Flags, environment variables,
     files, precedence, secrets, and defaults that stay understandable as
@@ -160,7 +160,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/containers-for-cli-tools.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/containers-for-cli-tools.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     When and how to ship a CLI tool as a container. Pinning base images,
     running as non-root, keeping the attack surface small, and avoiding
@@ -173,7 +173,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/contributing-without-the-drama.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/contributing-without-the-drama.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     How to open issues and pull requests people actually want to merge.
     Small diffs, clear context, real reproduction steps, and knowing when an
@@ -186,7 +186,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/cybersecurity-and-chess.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/cybersecurity-and-chess.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     The strategic parallels between cybersecurity and chess. Reading your
     opponent, adapting when the board changes, keeping tactics in service of
@@ -199,7 +199,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/dependency-hygiene.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/dependency-hygiene.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     Practical dependency hygiene for small teams and open-source projects.
     Pinning, lockfiles, audits, supply-chain basics, and keeping your supply
@@ -212,7 +212,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/deprecation-without-chaos.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/deprecation-without-chaos.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     How to retire APIs and flags without ambushing anyone. Warnings people
     actually see, version gates they can plan around, cheap migrations, and
@@ -225,7 +225,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/docs-that-dont-rot.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/docs-that-dont-rot.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     How to keep project documentation alive. Examples as tests, docs sites
     that ship with releases, screenshots that stay honest, and habits that
@@ -238,7 +238,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/encryption-at-rest-for-repos.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/encryption-at-rest-for-repos.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Encrypting secrets inside Git repositories. When git-crypt and similar
     tools help, where key management goes wrong, and safer patterns for
@@ -251,7 +251,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/error-handling-people-can-use.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/error-handling-people-can-use.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical error handling for CLIs and libraries. Clear messages, exit
     codes, retries, typed failures, and when to crash versus recover.
@@ -263,7 +263,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/git-workflows-for-tiny-teams.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/git-workflows-for-tiny-teams.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical Git workflows for small teams and solo maintainers. Trunk-
     based development, short-lived branches, pull requests, and release tags
@@ -276,7 +276,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/github-actions.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/github-actions.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     Build a working CI/CD pipeline with GitHub Actions, from a first build-
     and-test workflow to deploying an artefact, with the YAML to copy and
@@ -289,7 +289,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/input-validation-that-sticks.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/input-validation-that-sticks.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical input validation for CLIs and small services. Paths, URLs,
     subprocesses, sizes, and the failure modes that let an attacker steer
@@ -302,7 +302,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/key-lifecycle.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/key-lifecycle.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     The key lifecycle for small security tools. Generate, distribute,
     rotate, revoke, and retire cryptographic keys and certificates without
@@ -315,7 +315,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/least-privilege-for-ci.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/least-privilege-for-ci.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Hardening CI/CD credentials. Short-lived tokens, OIDC, protected
     environments, and the GitHub Actions patterns that keep long-lived
@@ -328,7 +328,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/licenses-for-humans.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/licenses-for-humans.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     A plain-language guide to open-source licenses for people publishing
     tools. MIT, Apache-2.0, and the GPL family, what each one asks of your
@@ -341,7 +341,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/maintainer-boundaries.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/maintainer-boundaries.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     How open-source maintainers stay in the game. Write down scope, decline
     without writing an essay, publish honest support expectations, and
@@ -354,7 +354,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/mtls-and-client-certificates.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/mtls-and-client-certificates.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Mutual TLS and client certificates in practice. How they differ from
     ordinary HTTPS, when they are worth the trouble, and how small tools
@@ -367,7 +367,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/observability-for-small-projects.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/observability-for-small-projects.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     Practical observability for CLIs, libraries, and small services. Useful
     logs, health signals, failure modes, and knowing what broke without
@@ -380,7 +380,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/practical-security-md.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/practical-security-md.webp){ class="catalogue-logo" data-publish-date="2026-07-31T17:42:00" }
 
     A practical SECURITY.md playbook for small projects. What to include,
     example structure, scope statements, and making the security policy easy
@@ -393,7 +393,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/programming-fundamentals.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/programming-fundamentals.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     Why the principles underneath programming outlast any single language,
     and how a grip on algorithms, data structures, and design makes picking
@@ -406,7 +406,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/readme-as-product.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/readme-as-product.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     Your README is the product page for an open-source project. Install
     steps that work, examples that ran, badges that tell the truth, and the
@@ -419,7 +419,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/red-team-vs-blue-team.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/red-team-vs-blue-team.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     What Red Teams and Blue Teams actually do, why running them against each
     other finds the weaknesses a questionnaire never will, and where Purple,
@@ -432,7 +432,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/release-automation.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/release-automation.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     How to make releases boring. Tags as the source of truth, changelogs
     people can read, scoped publishing tokens, and CI guardrails that stop a
@@ -445,7 +445,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/reproducible-builds.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/reproducible-builds.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Lightweight reproducible builds for small tools. Pinning inputs, killing
     nondeterminism, and getting to bit-for-bit or near-identical releases
@@ -458,7 +458,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/responsible-dependency-updates.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/responsible-dependency-updates.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     A practical cadence for dependency updates. Dependabot-style PRs, ignore
     rules, reading majors, and keeping upgrades boring without ignoring
@@ -471,7 +471,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/right-tools-for-the-job.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/right-tools-for-the-job.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     How to match languages, operating systems, cloud providers, frameworks,
     and databases to what a project actually needs, instead of forcing one
@@ -484,7 +484,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/sast-and-dast.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/sast-and-dast.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     What static and dynamic application security testing each catch, why
     they find different bugs, and how to run SAST in CI and DAST against a
@@ -497,7 +497,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/secrets-management.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/secrets-management.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     What counts as a secret, the five ways secrets management usually goes
     wrong, and the practices and tools that keep credentials out of your
@@ -510,7 +510,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/secure-defaults.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/secure-defaults.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Designing secure defaults for tools and libraries. Fail closed, least
     privilege, dangerous features opt-in, and interfaces that make the safe
@@ -523,7 +523,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/secure-logging.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/secure-logging.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical secure logging for tools and services. What never to log,
     redaction, crash reports, debug flags, and keeping observability from
@@ -536,7 +536,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/security-by-design.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/security-by-design.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     Security by Design in practice. The principles behind it, why fixing
     flaws at design time is cheaper, and what it looks like applied to
@@ -549,7 +549,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/security-disclosures-that-work.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/security-disclosures-that-work.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical security disclosure for small open-source projects.
     SECURITY.md, private reporting, triage, credit, and promises maintainers
@@ -562,7 +562,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/semantic-versioning.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/semantic-versioning.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     Semantic versioning as it actually plays out in open-source tools. What
     counts as breaking, how to live in 0.x honestly, why changelogs are part
@@ -575,7 +575,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/supply-chain-signing.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/supply-chain-signing.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Practical supply-chain signing for open-source releases. Checksums,
     signatures, provenance, and verification steps users can actually
@@ -588,7 +588,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/testing-what-matters.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/testing-what-matters.webp){ class="catalogue-logo" data-publish-date="2026-07-30T14:04:44" }
 
     Why high coverage can be a vanity metric, how to test behaviour instead
     of mocks, and how small open-source projects can build a test suite that
@@ -601,7 +601,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/the-cybersecurity-rainbow.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/the-cybersecurity-rainbow.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     A map of the colour-coded cybersecurity teams. Red, Blue, Purple, Green,
     Yellow, Orange, and White, what each one is responsible for, and how
@@ -614,7 +614,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/the-optimization-trap.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/the-optimization-trap.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     Why capable engineers waste time polishing things that should not exist,
     how to tell warranted optimisation from busywork, and how first
@@ -628,7 +628,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/threat-modelling-for-small-tools.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/threat-modelling-for-small-tools.webp){ class="catalogue-logo" data-publish-date="2026-07-30T16:03:17" }
 
     Lightweight threat modelling for CLIs, libraries, and small services.
     Assets, attackers, trust boundaries, and a practical checklist without
@@ -641,7 +641,7 @@ hide:
 
     ---
 
-    ![Article](assets/images/articles/understanding-ci-cd.webp){ class="catalogue-logo" data-publish-date="2026-08-01" }
+    ![Article](assets/images/articles/understanding-ci-cd.webp){ class="catalogue-logo" data-publish-date="2026-07-30T10:47:40" }
 
     What continuous integration and continuous delivery buy you, what they
     cost, and the concrete guardrails (feature flags, staging, monitoring,

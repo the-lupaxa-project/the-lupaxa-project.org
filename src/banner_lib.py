@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import html
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from typing import Any
 
 PROJECT_BANNER_PRESETS: dict[str, tuple[str, str]] = {
@@ -33,17 +33,63 @@ BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"}
 DEFAULT_BANNER_EXPIRY_DAYS = 28
 
 
-def parse_iso_date(value: Any) -> date | None:
-    if isinstance(value, date) and not isinstance(value, datetime):
-        return value
+def parse_iso_datetime(value: Any) -> datetime | None:
+    """Parse an ISO calendar date or date-time into a ``datetime``.
+
+    Date-only values (``YYYY-MM-DD``) become midnight on that day. Strings may
+    use ``T`` or a space between date and time. Banner expiry still uses the
+    calendar date via :func:`parse_iso_date`; newest-project sorting uses the
+    full timestamp.
+    """
+
     if isinstance(value, datetime):
-        return value.date()
+        return value
+    if isinstance(value, date):
+        return datetime.combine(value, datetime.min.time())
     if not isinstance(value, str) or not value.strip():
         return None
+    text = value.strip().replace(" ", "T", 1)
+    if text.endswith("Z"):
+        text = f"{text[:-1]}+00:00"
     try:
-        return date.fromisoformat(value.strip())
+        return datetime.fromisoformat(text)
     except ValueError:
         return None
+
+
+def parse_iso_date(value: Any) -> date | None:
+    """Parse an ISO date or date-time and return the calendar date."""
+
+    parsed = parse_iso_datetime(value)
+    return parsed.date() if parsed is not None else None
+
+
+def format_publish_date_attr(value: Any) -> str | None:
+    """Format ``data-publish-date`` for catalogue cards.
+
+    Date-only inputs stay ``YYYY-MM-DD``. Values with a time use UTC
+    ``YYYY-MM-DDTHH:MM:SS`` so client-side newest sort can break same-day ties.
+    """
+
+    if isinstance(value, datetime):
+        dt = value
+        if dt.tzinfo is not None:
+            dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
+        return dt.replace(microsecond=0).isoformat(sep="T")
+    if isinstance(value, date):
+        return value.isoformat()
+    if not isinstance(value, str) or not value.strip():
+        return None
+    text = value.strip()
+    parsed = parse_iso_datetime(text)
+    if parsed is None:
+        return None
+    normalised = text.replace(" ", "T", 1)
+    if "T" in normalised and len(text) > 10:
+        if parsed.tzinfo is not None:
+            parsed = parsed.astimezone(timezone.utc).replace(tzinfo=None)
+        return parsed.replace(microsecond=0).isoformat(sep="T")
+    return parsed.date().isoformat()
 
 
 def banner_still_active(

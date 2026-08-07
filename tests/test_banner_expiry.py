@@ -1,12 +1,36 @@
-from datetime import date
+from datetime import date, datetime
 
-from banner_lib import banner_markup, banner_still_active, parse_iso_date
+from banner_lib import (
+    banner_markup,
+    banner_still_active,
+    format_publish_date_attr,
+    parse_iso_date,
+    parse_iso_datetime,
+)
 
 
 def test_parse_iso_date():
     assert parse_iso_date("2026-07-01") == date(2026, 7, 1)
+    assert parse_iso_date("2026-07-01T17:30:00") == date(2026, 7, 1)
+    assert parse_iso_date("2026-07-01 17:30:00") == date(2026, 7, 1)
     assert parse_iso_date(None) is None
     assert parse_iso_date("nope") is None
+
+
+def test_parse_iso_datetime():
+    assert parse_iso_datetime("2026-07-01") == datetime(2026, 7, 1, 0, 0, 0)
+    assert parse_iso_datetime("2026-07-01T17:30:00") == datetime(2026, 7, 1, 17, 30, 0)
+    assert parse_iso_datetime("2026-07-01 17:30:00") == datetime(2026, 7, 1, 17, 30, 0)
+    assert parse_iso_datetime(None) is None
+    assert parse_iso_datetime("nope") is None
+
+
+def test_format_publish_date_attr():
+    assert format_publish_date_attr("2026-07-01") == "2026-07-01"
+    assert format_publish_date_attr("2026-07-01T17:30:00") == "2026-07-01T17:30:00"
+    assert format_publish_date_attr("2026-07-01 17:30:00") == "2026-07-01T17:30:00"
+    assert format_publish_date_attr(None) is None
+    assert format_publish_date_attr("nope") is None
 
 
 def test_banner_still_active_window():

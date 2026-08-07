@@ -2,7 +2,7 @@
   published: true
   name: Action Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:01:55"
   description: >-
     Lint GitHub Actions workflow YAML with [actionlint](https://github.com/rhysd/actionlint). A
     reusable CICD Toolbox pipeline script for catching workflow syntax and best-practice issues in
@@ -22,7 +22,7 @@
   published: true
   name: Awesomebot
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:02:33"
   description: >-
     Check links in Markdown and text files with
     [awesome_bot](https://rubygems.org/gems/awesome_bot). A reusable CICD Toolbox pipeline for
@@ -42,7 +42,7 @@
   published: true
   name: Bandit
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:03:12"
   description: >-
     Find common security issues in Python code with [Bandit](https://pypi.org/project/bandit/). A
     reusable CICD Toolbox pipeline for static security analysis of Python projects.
@@ -61,7 +61,7 @@
   published: true
   name: Bash Aliases
   icon: material-source-repository
-  publish_date: "2026-08-05"
+  publish_date: "2026-08-05T17:00:51"
   description: >-
     Modular Bash aliases with file-equals-group organisation, listing helpers, and Git
     quality-of-life shortcuts. A forkable starter pack under `~/.bash/aliases/` with example Git,
@@ -83,7 +83,7 @@
   published: true
   name: Brew Manager
   icon: material-source-repository
-  publish_date: "2026-08-06"
+  publish_date: "2026-08-01T09:46:31"
   description: >-
     Interactive Homebrew maintenance menu for workstation brew state. Run common `brew` operations
     from a numbered menu — updates, upgrades, cleanup, doctor, installed package lists, and helpers
@@ -103,7 +103,7 @@
   published: true
   name: Certificate Tool
   icon: material-source-repository
-  publish_date: "2025-11-20"
+  publish_date: "2025-11-20T18:56:42"
   description: >-
     Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private keys
     using a modern, fully typed Python command-line application and library. Designed for automation
@@ -123,7 +123,7 @@
   published: true
   name: Check Git Repositories
   icon: material-source-repository
-  publish_date: "2026-08-01"
+  publish_date: "2026-08-01T09:51:27"
   description: >-
     Scan a directory tree for Git repositories and report anything that is not fully clean and
     synced with its upstream — uncommitted work, unpushed commits, stashes, and sync drift. A single
@@ -145,7 +145,7 @@
   published: true
   name: Favicon Generator
   icon: material-source-repository
-  publish_date: "2026-07-28"
+  publish_date: "2026-07-28T13:53:05"
   description: >-
     Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG). The project
     provides a simple and efficient way to create a favicon set from a single source image, ensuring
@@ -165,7 +165,7 @@
   published: true
   name: Get All Tools
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:33:18"
   description: >-
     Download all Lupaxa CICD Toolbox pipeline scripts into `~/bin`. A Python helper that fetches
     each tool's `src/pipeline.sh` from `lupaxa-cicd-toolbox` (master or latest release) and installs
@@ -185,7 +185,7 @@
   published: true
   name: Git Crypt Manager
   icon: material-source-repository
-  publish_date: "2025-11-27"
+  publish_date: "2025-11-27T22:26:41"
   description: >-
     Simplify the management of encrypted Git repositories with a guided automation tool built around
     [git-crypt](https://github.com/AGWA/git-crypt). The project helps initialise, configure, and
@@ -205,7 +205,7 @@
   published: true
   name: Git Delete Tags
   icon: material-source-repository
-  publish_date: "2026-08-04"
+  publish_date: "2026-08-01T09:50:38"
   description: >-
     Delete local and remote Git tags with dry-run, summary, and protection. Remove specific tags or
     clear every tag in a repository while protecting selected names. Useful for cleaning up stale
@@ -225,7 +225,7 @@
   published: true
   name: Git Reset History
   icon: material-source-repository
-  publish_date: "2026-08-04"
+  publish_date: "2026-08-01T09:49:14"
   description: >-
     Rewrite a Git repository down to a single initial commit — with dry-run, backups, and controlled
     tag handling. Keeps the current tree while replacing primary-branch history. Useful after
@@ -245,7 +245,7 @@
   published: true
   name: GitHub Repository Sync
   icon: material-source-repository
-  publish_date: "2026-07-24"
+  publish_date: "2026-07-24T10:38:26"
   description: >-
     Clone, organise, and safely synchronise large collections of GitHub repositories using a
     declarative JSON5 configuration file. Each repository is inspected before any Git operation is
@@ -267,7 +267,7 @@
   published: true
   name: Hadolint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:03:50"
   description: >-
     Lint Dockerfiles with [Hadolint](https://github.com/hadolint/hadolint). A reusable CICD Toolbox
     pipeline for Dockerfile best practices and common mistakes.
@@ -285,7 +285,7 @@
   published: true
   name: JSON Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:04:30"
   description: >-
     Validate JSON files with [jq](https://stedolan.github.io/jq/). A reusable CICD Toolbox pipeline
     for JSON syntax validation in repositories.
@@ -303,7 +303,7 @@
   published: true
   name: Makefile Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:16:30"
   description: >-
     Lint Makefiles with [checkmake](https://github.com/checkmake/checkmake). A reusable CICD Toolbox
     pipeline aligned with Lupaxa makefile validation workflows.
@@ -321,7 +321,7 @@
   published: true
   name: Makefile Skills
   icon: material-source-repository
-  publish_date: "2026-07-22"
+  publish_date: "2026-07-22T16:15:19"
   description: >-
     Reusable Makefile skills for project versioning, Python, MkDocs, and Bash workflows. Consumer
     projects keep a thin wrapper Makefile that sparse-clones shared targets into a gitignored
@@ -343,7 +343,7 @@
   published: true
   name: Markdown Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:05:09"
   description: >-
     Lint Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli).
     A reusable CICD Toolbox pipeline for documentation style and structure checks.
@@ -362,7 +362,7 @@
   published: true
   name: Mypy
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:17:51"
   description: >-
     Type-check Python code with [mypy](https://mypy.readthedocs.io/). A reusable CICD Toolbox
     pipeline for static type checking across Python trees.
@@ -381,7 +381,7 @@
   published: true
   name: Perl Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:05:47"
   description: >-
     Check Perl scripts for syntax errors using the native Perl checker. A reusable CICD Toolbox
     pipeline for Perl syntax validation.
@@ -399,7 +399,7 @@
   published: true
   name: Photo Renamer
   icon: material-source-repository
-  publish_date: "2026-08-02"
+  publish_date: "2026-08-02T09:10:18"
   description: >-
     Safely copy or move photographs and videos into consistent, date-based filenames. Reads image
     EXIF or video metadata when available, falls back to filesystem modification time, and reports
@@ -421,7 +421,7 @@
   published: true
   name: PHP Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:06:25"
   description: >-
     Lint PHP files with [overtrue/phplint](https://github.com/overtrue/phplint). A reusable CICD
     Toolbox pipeline for PHP syntax validation.
@@ -439,7 +439,7 @@
   published: true
   name: Puppet Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:07:02"
   description: >-
     Lint Puppet manifests with [puppet-lint](https://rubygems.org/gems/puppet-lint). A reusable CICD
     Toolbox pipeline for Puppet style and best-practice checks.
@@ -458,7 +458,7 @@
   published: true
   name: Pur
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:07:42"
   description: >-
     Check Python `requirements.txt` currency with [pur](https://pypi.org/project/pur/). A reusable
     CICD Toolbox pipeline that highlights outdated Python dependencies.
@@ -476,7 +476,7 @@
   published: true
   name: PyCodeStyle
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:08:21"
   description: >-
     Check Python code against PEP 8 with [pycodestyle](https://pypi.org/project/pycodestyle/). A
     reusable CICD Toolbox pipeline for Python style-guide compliance.
@@ -494,7 +494,7 @@
   published: true
   name: PyDocStyle
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:09:00"
   description: >-
     Check Python docstring conventions with [pydocstyle](https://pypi.org/project/pydocstyle/). A
     reusable CICD Toolbox pipeline for docstring quality and convention checks.
@@ -513,7 +513,7 @@
   published: true
   name: Pylama
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:09:38"
   description: >-
     Run Python code audits with [Pylama](https://pypi.org/project/pylama/). A reusable CICD Toolbox
     pipeline that wraps a multi-linter Python audit suite.
@@ -531,7 +531,7 @@
   published: true
   name: Pylint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:10:18"
   description: >-
     Static analysis for Python with [Pylint](https://pypi.org/project/pylint/). A reusable CICD
     Toolbox pipeline for deep Python linting and code smells.
@@ -549,7 +549,7 @@
   published: true
   name: Reek
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:10:55"
   description: >-
     Detect Ruby code smells with [Reek](https://rubygems.org/gems/reek). A reusable CICD Toolbox
     pipeline for Ruby maintainability analysis.
@@ -567,7 +567,7 @@
   published: true
   name: RuboCop
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:11:32"
   description: >-
     Lint and analyse Ruby with [RuboCop](https://rubygems.org/gems/rubocop). A reusable CICD Toolbox
     pipeline for Ruby style and static analysis.
@@ -585,7 +585,7 @@
   published: true
   name: Ruff
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:17:12"
   description: >-
     Lint Python code with [Ruff](https://docs.astral.sh/ruff/) (`ruff check`). A reusable CICD
     Toolbox pipeline for fast Python linting.
@@ -603,7 +603,7 @@
   published: true
   name: Shared Reusable Workflows
   icon: material-source-repository
-  publish_date: "2025-11-24"
+  publish_date: "2025-11-24T15:43:59"
   description: >-
     A collection of reusable GitHub Actions workflows for repository quality, continuous
     integration, documentation, security, and automation. Designed to provide consistent workflows
@@ -622,7 +622,7 @@
   published: true
   name: ShellCheck
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:12:12"
   description: >-
     Analyse shell scripts with [ShellCheck](https://github.com/koalaman/shellcheck). A reusable CICD
     Toolbox pipeline for Bash/shell portability and bug finding.
@@ -640,7 +640,7 @@
   published: true
   name: Sysinfo
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T13:36:15"
   description: >-
     Cross-platform system inventory CLI with modular collectors, redaction, and
     JSON/YAML/XML/HTML reports.
@@ -665,7 +665,7 @@
   published: true
   name: Validate Citations File
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:12:52"
   description: >-
     Validate `CITATION.cff` files with [cffconvert](https://pypi.org/project/cffconvert/). A
     reusable CICD Toolbox pipeline for citation metadata quality checks.
@@ -683,7 +683,7 @@
   published: true
   name: YAML Lint
   icon: material-source-repository
-  publish_date: "2026-08-07"
+  publish_date: "2026-08-07T09:13:32"
   description: >-
     Lint YAML files with [yamllint](https://pypi.org/project/yamllint/). A reusable CICD Toolbox
     pipeline for YAML syntax and style validation.

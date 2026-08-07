@@ -1,7 +1,7 @@
 ---
 title: Practical SECURITY.md
 published: true
-publish_date: "2026-08-01"
+publish_date: "2026-07-31T17:42:00"
 hide:
 - navigation
 - toc

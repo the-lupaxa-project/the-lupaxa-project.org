@@ -23,7 +23,9 @@ from banner_lib import (
     DEFAULT_BANNER_EXPIRY_DAYS,
     POLICY_BANNER_PRESETS,
     PROJECT_BANNER_PRESETS,
+    format_publish_date_attr,
     parse_iso_date,
+    parse_iso_datetime,
 )
 from banner_lib import (
     banner_markup as _shared_banner_markup,
@@ -158,16 +160,18 @@ def select_newest_projects(
 ) -> list[dict[str, Any]]:
     """Return up to ``limit`` already-published projects newest-first.
 
-    The caller filters unpublished projects. Ties break on ``id`` ascending;
-    missing/unparseable publish dates sort last.
+    The caller filters unpublished projects. ``publish_date`` may be a calendar
+    date (``YYYY-MM-DD``) or a date-time (``YYYY-MM-DDTHH:MM:SS``). Ties on the
+    same timestamp break on ``id`` ascending; missing/unparseable values sort
+    last. Date-only values sort as midnight on that day.
     """
 
     def sort_key(item: dict[str, Any]) -> tuple:
-        parsed = parse_iso_date(item.get("publish_date"))
-        # Sort by (0|1, -ordinal|0, id): dated entries newest-first, then id.
+        parsed = parse_iso_datetime(item.get("publish_date"))
+        # Sort by (0|1, -timestamp|0, id): dated entries newest-first, then id.
         if parsed is None:
-            return (1, 0, str(item.get("id") or ""))
-        return (0, -parsed.toordinal(), str(item.get("id") or ""))
+            return (1, 0.0, str(item.get("id") or ""))
+        return (0, -parsed.timestamp(), str(item.get("id") or ""))
 
     ordered = sorted(projects, key=sort_key)
     return ordered[:limit]
@@ -347,10 +351,10 @@ def define_env(env):
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
         title = _organisation_logo_title(item["name"])
-        publish_date = parse_iso_date(item.get("publish_date"))
+        publish_date_value = format_publish_date_attr(item.get("publish_date"))
         publish_date_attr = (
-            f'\n        data-publish-date="{publish_date.isoformat()}"'
-            if publish_date is not None
+            f'\n        data-publish-date="{publish_date_value}"'
+            if publish_date_value is not None
             else ""
         )
         action = _action_link(
@@ -411,10 +415,10 @@ def define_env(env):
                 )
             )
         actions_markup = "\n".join(actions)
-        publish_date = parse_iso_date(item.get("publish_date"))
+        publish_date_value = format_publish_date_attr(item.get("publish_date"))
         publish_date_attr = (
-            f'\n        data-publish-date="{publish_date.isoformat()}"'
-            if publish_date is not None
+            f'\n        data-publish-date="{publish_date_value}"'
+            if publish_date_value is not None
             else ""
         )
         return f"""
