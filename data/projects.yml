@@ -397,7 +397,9 @@
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/mypy
-  banner: in-review
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-17T20:05:58"
 
 - id: perl-lint
   published: true
