@@ -459,7 +459,9 @@
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/php-lint
-  banner: in-review
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-17T21:43:20"
 
 - id: puppet-lint
   published: true
