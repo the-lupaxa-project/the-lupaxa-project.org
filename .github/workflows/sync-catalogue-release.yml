@@ -1,0 +1,150 @@
+name: Sync Catalogue Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: owner/repo of the product that was released
+        required: true
+        type: string
+      tag:
+        description: Optional vX.Y.Z; re-fetched from GitHub and ignored if unstable
+        required: false
+        type: string
+
+concurrency:
+  group: sync-catalogue-release-${{ inputs.repository }}
+  cancel-in-progress: false
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-catalogue-release:
+    name: Sync Catalogue Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install PyYAML
+        run: pip install "PyYAML==6.0.3"
+
+      - name: Resolve stable release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ inputs.repository }}
+          TAG: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          if [[ "${REPOSITORY}" != */* ]]; then
+            echo "::error::repository must be owner/repo"
+            exit 1
+          fi
+          if [[ -n "${TAG}" ]]; then
+            API="repos/${REPOSITORY}/releases/tags/${TAG}"
+          else
+            API="repos/${REPOSITORY}/releases/latest"
+          fi
+          JSON="$(gh api "${API}")"
+          TAG_NAME="$(printf '%s' "${JSON}" | python3 -c 'import json,sys; print(json.load(sys.stdin)["tag_name"])')"
+          PUBLISHED="$(printf '%s' "${JSON}" | python3 -c 'import json,sys; print(json.load(sys.stdin)["published_at"])')"
+          DRAFT="$(printf '%s' "${JSON}" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("draft", False))')"
+          PRERELEASE="$(printf '%s' "${JSON}" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("prerelease", False))')"
+          if [[ "${DRAFT}" == "True" || "${PRERELEASE}" == "True" ]]; then
+            echo "Unstable release; skipping"
+            echo "skip=true" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+          VERSION="$(PYTHONPATH=src python3 -c "from catalogue_release_sync import version_from_tag; v=version_from_tag('${TAG_NAME}'); print(v or '')")"
+          if [[ -z "${VERSION}" ]]; then
+            echo "Tag ${TAG_NAME} is not a stable vX.Y.Z; skipping"
+            echo "skip=true" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+          RELEASED="$(PYTHONPATH=src python3 -c "from catalogue_release_sync import format_released_date; print(format_released_date('${PUBLISHED}'))")"
+          echo "skip=false" >> "${GITHUB_OUTPUT}"
+          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
+          echo "released_date=${RELEASED}" >> "${GITHUB_OUTPUT}"
+          echo "tag=${TAG_NAME}" >> "${GITHUB_OUTPUT}"
+
+      - name: Apply catalogue YAML
+        if: steps.release.outputs.skip != 'true'
+        id: apply
+        env:
+          REPOSITORY: ${{ inputs.repository }}
+          VERSION: ${{ steps.release.outputs.version }}
+          RELEASED_DATE: ${{ steps.release.outputs.released_date }}
+        run: |
+          set -euo pipefail
+          set +e
+          PYTHONPATH=src python3 -m catalogue_release_sync apply \
+            --file data/projects.yml \
+            --repository "${REPOSITORY}" \
+            --version "${VERSION}" \
+            --released-date "${RELEASED_DATE}" \
+            --write
+          code=$?
+          set -e
+          if [[ "${code}" -eq 0 ]]; then
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+          if [[ "${code}" -eq 2 ]]; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+            exit 0
+          fi
+          echo "::error::catalogue sync failed with exit ${code} (3 means ambiguous repository URLs)"
+          exit 1
+
+      - name: Open or update pull request
+        if: steps.release.outputs.skip != 'true' && steps.apply.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.release.outputs.version }}
+          RELEASED_DATE: ${{ steps.release.outputs.released_date }}
+          REPOSITORY: ${{ inputs.repository }}
+        run: |
+          set -euo pipefail
+          eval "$(PYTHONPATH=src python3 - <<'PY'
+          import os
+          from pathlib import Path
+          from catalogue_release_sync import apply_catalogue_release
+
+          result = apply_catalogue_release(
+              Path("data/projects.yml").read_text(encoding="utf-8"),
+              repository=os.environ["REPOSITORY"],
+              version=os.environ["VERSION"],
+              released_date=os.environ["RELEASED_DATE"],
+          )
+          print(f"CARD_ID={result.card_id}")
+          print(f"CARD_NAME={result.card_name}")
+          PY
+          )"
+          BRANCH="catalogue/release-${CARD_ID}-${VERSION}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "${BRANCH}"
+          git add data/projects.yml
+          git commit -m "Release ${CARD_NAME} ${VERSION} on the catalogue."
+          git push -u origin "${BRANCH}" --force
+          BODY="Sets \`banner: released\`, \`version: \"${VERSION}\"\`,"
+          BODY="${BODY} and \`released_date\` for **${CARD_NAME}**"
+          BODY="${BODY} from the GitHub Release on \`${REPOSITORY}\`."
+          if gh pr view "${BRANCH}" --json url >/dev/null 2>&1; then
+            echo "Updated existing pull request for ${BRANCH}"
+          else
+            gh pr create \
+              --title "Release ${CARD_NAME} ${VERSION} on the catalogue." \
+              --body "${BODY}" \
+              --head "${BRANCH}" \
+              --base master
+          fi

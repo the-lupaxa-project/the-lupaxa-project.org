@@ -69,9 +69,23 @@ Catalogue entries live in YAML under `data/`:
 | `data/projects.yml` | Projects (home shows nine newest by `publish_date`; six on tablet/mobile) |
 | `data/policies.yml` | Policies |
 
-`publish_date` (and article front matter of the same name) accepts either a calendar day
-(`YYYY-MM-DD`) or a UTC timestamp (`YYYY-MM-DDTHH:MM:SS`). Banner expiry still uses the
-calendar day; newest-project and catalogue “newest” sorts use the full timestamp.
+`publish_date` and `released_date` accept either a calendar day (`YYYY-MM-DD`) or a
+UTC timestamp (`YYYY-MM-DDTHH:MM:SS`). Banner expiry still uses the calendar day.
+Newest-project and catalogue “newest” sorts use `released_date` when it is set,
+otherwise `publish_date`, including the time so same-day stamps stay in order.
+
+Project banners always show a SemVer on the sash. Quote `version` as a string
+(`"0.1.0"`); if it is omitted the sash uses `0.1.0`, the default first public release.
+`banner: released` still expires 28 days after `released_date`.
+
+A stable GitHub Release (`vX.Y.Z`) on a product repo that already has a
+published card here opens a pull request that sets `banner: released`,
+`version`, and `released_date`. New projects are still added to
+`data/projects.yml` by hand.
+
+Catalogue pages (organisations, projects, policies, articles) always render A–Z
+by name/title. YAML or filename order is never used. Newest is an explicit sort,
+not the default.
 
 `src/main.py` (via a thin root `main.py` shim) loads that data for `mkdocs-macros-plugin`. Pages call macros such as
 `filter_panel`, `catalogue_grid`, and `newest_projects` so card markup stays
