@@ -9,7 +9,11 @@ ignore: |
   site/
   cursor-docs/
   .venv/
+  venv/
   .makefiles/
+  .superpowers/
+  .cursor/
+  *.egg-info/
 
 rules:
   # Project YAML omits the optional document-start marker.

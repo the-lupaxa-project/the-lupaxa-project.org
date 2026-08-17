@@ -86,9 +86,9 @@ def test_filter_panel_policy_page_omits_status_toggle():
     assert "View Policies" not in markup
     assert "data-policy-status" not in markup
     assert "filter-panel-toggle" not in markup
-    assert 'data-policy-search' in markup
-    assert 'data-policy-category' in markup
-    assert 'data-policy-clear' in markup
+    assert "data-policy-search" in markup
+    assert "data-policy-category" in markup
+    assert "data-policy-clear" in markup
 
 
 def test_filter_panel_status_options_policy_presets_no_stable():

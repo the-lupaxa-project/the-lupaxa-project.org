@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import html
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from typing import Any
 
 PROJECT_BANNER_PRESETS: dict[str, tuple[str, str]] = {
@@ -100,7 +100,7 @@ def format_publish_date_attr(value: Any) -> str | None:
     if isinstance(value, datetime):
         dt = value
         if dt.tzinfo is not None:
-            dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
+            dt = dt.astimezone(UTC).replace(tzinfo=None)
         return dt.replace(microsecond=0).isoformat(sep="T")
     if isinstance(value, date):
         return value.isoformat()
@@ -113,7 +113,7 @@ def format_publish_date_attr(value: Any) -> str | None:
     normalised = text.replace(" ", "T", 1)
     if "T" in normalised and len(text) > 10:
         if parsed.tzinfo is not None:
-            parsed = parsed.astimezone(timezone.utc).replace(tzinfo=None)
+            parsed = parsed.astimezone(UTC).replace(tzinfo=None)
         return parsed.replace(microsecond=0).isoformat(sep="T")
     return parsed.date().isoformat()
 

@@ -30,6 +30,8 @@ jobs:
     name: YAML Linter
     uses: the-lupaxa-project/workflows/.github/workflows/reusable-yaml-linter.yml@master
     secrets: inherit
+    with:
+      exclude_files: "^\\.venv/,^venv/,^site/,^\\.makefiles/,^cursor-docs/,\\.egg-info/,^\\.superpowers/,^\\.cursor/"
 
   generate-workflow-summary:
     name: Generate Workflow Summary

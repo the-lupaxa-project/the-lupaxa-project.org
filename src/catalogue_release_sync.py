@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 from dataclasses import dataclass
@@ -23,6 +24,15 @@ class SyncResult:
     card_id: str | None
     card_name: str | None
     yaml_text: str
+
+
+@dataclass(frozen=True)
+class ReleaseResolution:
+    skip: bool
+    reason: str
+    version: str | None = None
+    released_date: str | None = None
+    tag: str | None = None
 
 
 def normalise_github_repo(value: str) -> str:
@@ -57,6 +67,27 @@ def format_released_date(published_at: str) -> str:
     return parsed.replace(tzinfo=None, microsecond=0).strftime("%Y-%m-%dT%H:%M:%S")
 
 
+def resolve_stable_release(payload: dict[str, Any] | None) -> ReleaseResolution:
+    if not payload or "tag_name" not in payload:
+        return ReleaseResolution(True, "no_release")
+    if payload.get("draft") or payload.get("prerelease"):
+        return ReleaseResolution(True, "unstable")
+    tag = str(payload.get("tag_name") or "")
+    version = version_from_tag(tag)
+    if not version:
+        return ReleaseResolution(True, "unstable_tag")
+    published = payload.get("published_at")
+    if not published:
+        return ReleaseResolution(True, "no_release")
+    return ReleaseResolution(
+        False,
+        "ok",
+        version=version,
+        released_date=format_released_date(str(published)),
+        tag=tag,
+    )
+
+
 def _cards(yaml_text: str) -> list[dict[str, Any]]:
     loaded = yaml.safe_load(yaml_text) or []
     if not isinstance(loaded, list):
@@ -67,9 +98,7 @@ def _cards(yaml_text: str) -> list[dict[str, Any]]:
 def _matching_cards(cards: list[dict[str, Any]], repository: str) -> list[dict[str, Any]]:
     key = normalise_github_repo(repository)
     return [
-        card
-        for card in cards
-        if normalise_github_repo(str(card.get("repository") or "")) == key
+        card for card in cards if normalise_github_repo(str(card.get("repository") or "")) == key
     ]
 
 
@@ -151,11 +180,39 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Write the file when status is updated",
     )
+    sub.add_parser(
+        "resolve",
+        help="Read GitHub Release JSON from stdin; print skip/version fields",
+    )
     return parser.parse_args(argv)
+
+
+def _resolve_from_stdin() -> int:
+    raw = sys.stdin.read().strip()
+    if not raw:
+        payload: dict[str, Any] | None = None
+    else:
+        loaded = json.loads(raw)
+        if not isinstance(loaded, dict):
+            print("invalid release JSON", file=sys.stderr)
+            return 1
+        payload = loaded
+    result = resolve_stable_release(payload)
+    print(f"skip={'true' if result.skip else 'false'}")
+    print(f"reason={result.reason}")
+    if result.version:
+        print(f"version={result.version}")
+    if result.released_date:
+        print(f"released_date={result.released_date}")
+    if result.tag:
+        print(f"tag={result.tag}")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
+    if args.command == "resolve":
+        return _resolve_from_stdin()
     text = args.file.read_text(encoding="utf-8")
     result = apply_catalogue_release(
         text,
