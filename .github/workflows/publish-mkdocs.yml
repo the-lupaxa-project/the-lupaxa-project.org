@@ -14,6 +14,10 @@ on:
       - "requirements.txt"
       - "hooks/**"
 
+  # UTC. 02:18 UTC is about 02:18 GMT / 03:18 BST so banners expire overnight.
+  schedule:
+    - cron: "18 2 * * *"
+
   workflow_dispatch:
 
 concurrency:

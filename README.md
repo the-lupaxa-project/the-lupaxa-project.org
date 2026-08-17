@@ -145,8 +145,10 @@ social_image: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/
 
 ## Publishing
 
-Push to `master` triggers `.github/workflows/publish-mkdocs.yml`, which calls
-the org reusable MkDocs publisher. That workflow installs from
+Push to `master` or the nightly schedule (about 02:18 UTC) triggers
+`.github/workflows/publish-mkdocs.yml`, which calls the org reusable MkDocs
+publisher. That rebuild picks up banner expiry (Released to Stable, policy
+New/Updated dropping) without a YAML edit. The workflow installs from
 `requirements.txt` when the file is present.
 
 Pull requests run `.github/workflows/validate-mkdocs.yml`, which calls the org
