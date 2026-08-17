@@ -40,6 +40,7 @@ def test_filter_panel_status_options_project_lifecycle_only():
     assert "Released" in markup
     assert "In Review" in markup
     assert "New Article" not in markup
+    assert ">Updated<" not in markup
 
 
 def test_filter_panel_without_status_does_not_crash():
@@ -69,6 +70,25 @@ def test_filter_panel_status_options_project_includes_stable():
     )
 
     assert "Stable" in markup
+
+
+def test_filter_panel_policy_page_omits_status_toggle():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "policy",
+        compact=True,
+        search_label="Search policies",
+        search_placeholder="Search by policy name or description",
+        summary_text="Showing…",
+    )
+
+    assert "View Policies" not in markup
+    assert "data-policy-status" not in markup
+    assert "filter-panel-toggle" not in markup
+    assert 'data-policy-search' in markup
+    assert 'data-policy-category' in markup
+    assert 'data-policy-clear' in markup
 
 
 def test_filter_panel_status_options_policy_presets_no_stable():

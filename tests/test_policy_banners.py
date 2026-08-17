@@ -168,6 +168,7 @@ def test_policy_card_includes_default_brand_logo(tmp_path, monkeypatch):
     markup = catalogue_grid("policy", "policy")
 
     assert 'class="catalogue-logo"' in markup
+    assert 'data-name="Synthetic Policy"' in markup
     assert "the-lupaxa-project/readme-logo-128.png" in markup
     assert 'alt="The Lupaxa Project"' in markup
 

@@ -64,6 +64,21 @@ def test_select_newest_projects_skips_unparseable_dates_last():
     assert [item["id"] for item in selected] == ["dated", "bad-date"]
 
 
+def test_select_newest_projects_prefers_released_date_time():
+    projects = [
+        _project("listed-later", "2026-08-17T18:00:00", released_date="2026-08-17T09:00:00"),
+        _project("released-later", "2026-08-17T08:00:00", released_date="2026-08-17T14:00:00"),
+        _project("no-release", "2026-08-17T12:00:00"),
+    ]
+
+    selected = main.select_newest_projects(projects, limit=3)
+    assert [item["id"] for item in selected] == [
+        "released-later",
+        "no-release",
+        "listed-later",
+    ]
+
+
 def test_select_newest_projects_orders_by_time_within_same_day():
     projects = [
         _project("morning", "2026-08-07T09:00:00"),

@@ -1,3 +1,4 @@
+import re
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -76,6 +77,7 @@ def test_project_card_shows_fresh_released_banner(tmp_path, monkeypatch):
 
     assert "catalogue-banner" in markup
     assert "Released" in markup
+    assert "v0.1.0" in markup
 
 
 def test_project_card_hides_expired_released_banner(tmp_path, monkeypatch):
@@ -105,6 +107,70 @@ def test_project_card_shows_non_time_limited_preset(tmp_path, monkeypatch):
 
     assert "catalogue-banner" in markup
     assert "In Development" in markup
+    assert "v0.1.0" in markup
+
+
+def test_project_card_released_keeps_status_and_shows_version(tmp_path, monkeypatch):
+    fresh_date = (date.today() - timedelta(days=1)).isoformat()
+    projects = [
+        _synthetic_project(
+            banner="released",
+            released_date=fresh_date,
+            version="0.1.0",
+        )
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "Released" in markup
+    assert "v0.1.0" in markup
+    assert 'data-banner-status="released"' in markup
+    assert "catalogue-banner--blue" in markup
+
+
+def test_project_card_later_version_stays_released(tmp_path, monkeypatch):
+    fresh_date = (date.today() - timedelta(days=1)).isoformat()
+    projects = [
+        _synthetic_project(
+            banner="released",
+            released_date=fresh_date,
+            version="1.2.0",
+        )
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "Released" in markup
+    assert "v1.2.0" in markup
+    assert 'data-banner-status="released"' in markup
+    assert "catalogue-banner--blue" in markup
+
+
+def test_project_card_in_testing_keeps_status_and_shows_version(tmp_path, monkeypatch):
+    projects = [_synthetic_project(banner="in-testing", version="1.2.0")]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "In Testing" in markup
+    assert "v1.2.0" in markup
+    assert 'data-banner-status="in-testing"' in markup
+
+
+def test_catalogue_grid_projects_emit_in_name_order(tmp_path, monkeypatch):
+    projects = [
+        _synthetic_project(id="ccc", name="CCC"),
+        _synthetic_project(id="action-lint", name="Action Lint"),
+        _synthetic_project(id="aaa", name="AAA"),
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+    names = re.findall(r'data-name="([^"]+)"', markup)
+
+    assert names == ["AAA", "Action Lint", "CCC"]
 
 
 def test_project_card_includes_publish_date_on_logo(tmp_path, monkeypatch):
@@ -114,4 +180,21 @@ def test_project_card_includes_publish_date_on_logo(tmp_path, monkeypatch):
     markup = catalogue_grid("project", "project")
 
     assert 'data-publish-date="2026-08-01"' in markup
+    assert 'data-name="Synthetic Project"' in markup
     assert "catalogue-logo" in markup
+    assert "data-released-date" not in markup
+
+
+def test_project_card_includes_released_date_time_on_logo(tmp_path, monkeypatch):
+    projects = [
+        _synthetic_project(
+            publish_date="2026-08-01T09:00:00",
+            released_date="2026-08-17T14:00:00",
+        )
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert 'data-publish-date="2026-08-01T09:00:00"' in markup
+    assert 'data-released-date="2026-08-17T14:00:00"' in markup

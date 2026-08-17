@@ -71,11 +71,69 @@
   }
 
   /**
+   * Whether the current URL already carries a catalogue filter or sort.
+   *
+   * @returns {boolean}
+   */
+  function urlHasFilterParams() {
+    const params = new URLSearchParams(window.location.search);
+
+    return (
+      params.has(URL_PARAM_SEARCH) ||
+      params.has(URL_PARAM_CATEGORY) ||
+      params.has(URL_PARAM_ORG) ||
+      params.has(URL_PARAM_STATUS) ||
+      params.has(URL_PARAM_SORT)
+    );
+  }
+
+  /**
+   * Expand or collapse a catalogue filter panel and keep the toggle in sync.
+   *
+   * @param {HTMLElement} filterPanel
+   * @param {boolean} expanded
+   */
+  function setFilterPanelExpanded(filterPanel, expanded) {
+    const button = filterPanel.querySelector("[data-filter-expand]");
+
+    filterPanel.classList.toggle("filter-panel--expanded", expanded);
+
+    if (!(button instanceof HTMLButtonElement)) {
+      return;
+    }
+
+    button.setAttribute("aria-expanded", expanded ? "true" : "false");
+
+    const label = button.querySelector(".filter-panel-expand__label");
+    const labelText = expanded ? "Hide Filters" : "Show Filters";
+
+    if (label) {
+      label.textContent = labelText;
+    } else {
+      button.textContent = labelText;
+    }
+  }
+
+  /**
+   * Show the filter controls after a card pill, banner, or logo applies a
+   * filter, so the active selection is visible.
+   *
+   * @param {HTMLElement} filterPanel
+   */
+  function revealFilterPanel(filterPanel) {
+    setFilterPanelExpanded(filterPanel, true);
+    filterPanel.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
+  }
+
+  /**
    * Collapsible filter toolbar for every catalogue viewport.
    *
    * Panels start collapsed (Filters + summary only). Expand when the
-   * button is pressed, or when the URL already carries filter/sort
-   * parameters.
+   * button is pressed, when the URL already carries filter/sort
+   * parameters, or when a card control applies a filter.
    *
    * @param {HTMLElement} filterPanel
    */
@@ -86,40 +144,15 @@
       return;
     }
 
-    const urlHasFilterParams = () => {
-      const params = new URLSearchParams(window.location.search);
-
-      return (
-        params.has(URL_PARAM_SEARCH) ||
-        params.has(URL_PARAM_CATEGORY) ||
-        params.has(URL_PARAM_ORG) ||
-        params.has(URL_PARAM_STATUS) ||
-        params.has(URL_PARAM_SORT)
-      );
-    };
-
-    const setExpanded = (expanded) => {
-      filterPanel.classList.toggle("filter-panel--expanded", expanded);
-      button.setAttribute("aria-expanded", expanded ? "true" : "false");
-
-      const label = button.querySelector(".filter-panel-expand__label");
-      const labelText = expanded ? "Hide Filters" : "Show Filters";
-
-      if (label) {
-        label.textContent = labelText;
-      } else {
-        button.textContent = labelText;
-      }
-    };
-
     button.addEventListener("click", () => {
       filterPanel.dataset.collapseUserToggled = "true";
-      setExpanded(
+      setFilterPanelExpanded(
+        filterPanel,
         !filterPanel.classList.contains("filter-panel--expanded"),
       );
     });
 
-    setExpanded(urlHasFilterParams());
+    setFilterPanelExpanded(filterPanel, urlHasFilterParams());
   }
 
   /**
@@ -374,11 +407,15 @@
       config.catalogueSelector,
     );
 
-    if (
-      !filterPanel ||
-      !catalogue ||
-      filterPanel.dataset.initialised === "true"
-    ) {
+    if (!filterPanel || !catalogue) {
+      return;
+    }
+
+    if (filterPanel.dataset.initialised === "true") {
+      if (urlHasFilterParams()) {
+        setFilterPanelExpanded(filterPanel, true);
+      }
+
       return;
     }
 
@@ -489,8 +526,13 @@
             ...categories.labels,
           ].join(" "),
         ),
-        publishDate: logo?.dataset.publishDate?.trim() || "",
-        title: (titleNode?.textContent || "").trim(),
+        publishDate:
+          logo?.dataset.releasedDate?.trim() ||
+          logo?.dataset.publishDate?.trim() ||
+          "",
+        title:
+          logo?.dataset.name?.trim() ||
+          (titleNode?.textContent || "").trim(),
       };
     });
 
@@ -992,6 +1034,7 @@
           }
 
           applySelectFilter(categorySelect, label);
+          revealFilterPanel(filterPanel);
           updateCatalogue();
           categorySelect.focus({ preventScroll: true });
         });
@@ -1039,6 +1082,7 @@
             event.stopPropagation();
 
             applySelectFilter(organisationSelect, organisation);
+            revealFilterPanel(filterPanel);
             updateCatalogue();
             organisationSelect.focus({ preventScroll: true });
           });
@@ -1075,6 +1119,7 @@
 
             if (statusSelect) {
               applySelectFilter(statusSelect, status);
+              revealFilterPanel(filterPanel);
               updateCatalogue();
               statusSelect.focus({ preventScroll: true });
               return;
@@ -1087,6 +1132,7 @@
 
             activeStatus = allowed.has(normalised) ? normalised : "";
             setStatusPressed(activeStatus);
+            revealFilterPanel(filterPanel);
             updateCatalogue();
 
             const focusButton = statusButtons.find(
@@ -1108,13 +1154,9 @@
     if (config.sort) {
       activeSort = readSortFromUrl();
       setSortPressed(activeSort);
-
-      // Cards already render A–Z at build time — only reorder on init
-      // when Newest is requested. Toggling back to A–Z still reorders.
-      if (activeSort === SORT_NEWEST) {
-        applyCardOrder();
-      }
     }
+
+    applyCardOrder();
 
     applyInitialFilters();
     updateCatalogue();
@@ -1139,7 +1181,6 @@
       id: "policy",
       singular: "policy",
       plural: "policies",
-      status: true,
     }),
     catalogueConfig({
       id: "article",
@@ -1236,12 +1277,13 @@
 
   /**
    * On pages without a project status filter, banners navigate to Projects
-   * with that status selected.
+   * with that status selected. Policies keep banners but have no status
+   * control, so do not send those clicks to Projects.
    */
   function linkStandaloneStatusBanners() {
     const path = window.location.pathname;
 
-    if (path.includes("/projects")) {
+    if (path.includes("/projects") || path.includes("/policies")) {
       return;
     }
 

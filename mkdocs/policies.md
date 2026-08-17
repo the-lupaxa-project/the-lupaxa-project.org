@@ -11,9 +11,6 @@ banner_expiry_days: 28
     search_label="Search policies",
     search_placeholder="Search by policy name or description",
     summary_text="Showing…",
-    include_status=True,
-    status_kind="policy",
-    status_label="View Policies",
 ) }}
 
 {{ catalogue_grid("policy", "policy", banner_expiry_days=page.meta.banner_expiry_days or 28) }}

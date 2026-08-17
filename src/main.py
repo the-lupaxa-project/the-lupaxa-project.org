@@ -21,6 +21,7 @@ if str(_SRC) not in sys.path:
 
 from banner_lib import (
     DEFAULT_BANNER_EXPIRY_DAYS,
+    DEFAULT_PROJECT_VERSION,
     POLICY_BANNER_PRESETS,
     PROJECT_BANNER_PRESETS,
     format_publish_date_attr,
@@ -153,6 +154,20 @@ NEWEST_PROJECTS_LIMIT = 9
 NEWEST_PROJECTS_COMPACT_LIMIT = 6
 
 
+def sort_catalogue_by_name(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Return catalogue items in A–Z name order. YAML file order is ignored."""
+
+    return sorted(items, key=lambda item: str(item.get("name") or "").casefold())
+
+
+def project_sort_datetime(item: dict[str, Any]):
+    """Newest-sort timestamp: ``released_date`` when set, else ``publish_date``."""
+
+    return parse_iso_datetime(item.get("released_date")) or parse_iso_datetime(
+        item.get("publish_date")
+    )
+
+
 def select_newest_projects(
     projects: list[dict[str, Any]],
     *,
@@ -160,30 +175,29 @@ def select_newest_projects(
 ) -> list[dict[str, Any]]:
     """Return up to ``limit`` already-published projects newest-first.
 
-    The caller filters unpublished projects. ``publish_date`` may be a calendar
-    date (``YYYY-MM-DD``) or a date-time (``YYYY-MM-DDTHH:MM:SS``). Ties on the
+    The caller filters unpublished projects. Newest uses ``released_date`` when
+    it is set, otherwise ``publish_date``. Either field may be a calendar date
+    (``YYYY-MM-DD``) or a date-time (``YYYY-MM-DDTHH:MM:SS``). Ties on the
     same timestamp break on ``id`` ascending; missing/unparseable values sort
     last. Date-only values sort as midnight on that day.
     """
 
     def sort_key(item: dict[str, Any]) -> tuple:
-        parsed = parse_iso_datetime(item.get("publish_date"))
-        # Sort by (0|1, -timestamp|0, id): dated entries newest-first, then id.
+        parsed = project_sort_datetime(item)
         if parsed is None:
             return (1, 0.0, str(item.get("id") or ""))
         return (0, -parsed.timestamp(), str(item.get("id") or ""))
 
-    ordered = sorted(projects, key=sort_key)
-    return ordered[:limit]
+    return sorted(projects, key=sort_key)[:limit]
 
 
 def define_env(env):
     def _published(items: list[dict]) -> list[dict]:
         return [item for item in items if item.get("published", True)]
 
-    organisations = _published(_load_yaml("organisations.yml"))
-    projects = _published(_load_yaml("projects.yml"))
-    policies = _published(_load_yaml("policies.yml"))
+    organisations = sort_catalogue_by_name(_published(_load_yaml("organisations.yml")))
+    projects = sort_catalogue_by_name(_published(_load_yaml("projects.yml")))
+    policies = sort_catalogue_by_name(_published(_load_yaml("policies.yml")))
 
     env.variables["catalogue_organisations"] = organisations
     env.variables["catalogue_projects"] = projects
@@ -357,6 +371,7 @@ def define_env(env):
             if publish_date_value is not None
             else ""
         )
+        name_attr = html.escape(item["name"], quote=True)
         action = _action_link(
             "repository",
             item["repository"],
@@ -371,6 +386,7 @@ def define_env(env):
     <img
         class="catalogue-logo"
         title="{title}"
+        data-name="{name_attr}"
         data-organisation="{item["name"]}"{publish_date_attr}
         src="{item["logo"]}"
         alt="{item.get("logo_alt", item["name"])}"
@@ -394,6 +410,8 @@ def define_env(env):
             event_date=parse_iso_date(item.get("released_date")),
             expiry_days=expiry_days,
             time_limited_statuses=frozenset({"released"}),
+            version=item.get("version"),
+            default_version=DEFAULT_PROJECT_VERSION,
         )
         banner_block = f"{banner}\n\n" if banner else ""
         actions = [
@@ -421,6 +439,13 @@ def define_env(env):
             if publish_date_value is not None
             else ""
         )
+        released_date_value = format_publish_date_attr(item.get("released_date"))
+        released_date_attr = (
+            f'\n        data-released-date="{released_date_value}"'
+            if released_date_value is not None
+            else ""
+        )
+        name_attr = html.escape(item["name"], quote=True)
         return f"""
 -   :{item["icon"]}:{{ .lg .middle }} **{item["name"]}**
 
@@ -429,7 +454,8 @@ def define_env(env):
 {banner_block}    <img
         class="catalogue-logo"
         title="{item["organisation"]}"
-        data-organisation="{item["organisation"]}"{publish_date_attr}
+        data-name="{name_attr}"
+        data-organisation="{item["organisation"]}"{publish_date_attr}{released_date_attr}
         src="{item["logo"]}"
         alt="{item.get("logo_alt", item["organisation"])}"
     />
@@ -463,6 +489,7 @@ def define_env(env):
         banner_block = f"{banner}\n\n" if banner else ""
         logo = html.escape(item.get("logo", DEFAULT_POLICY_LOGO), quote=True)
         logo_alt = html.escape(item.get("logo_alt", DEFAULT_POLICY_LOGO_ALT), quote=True)
+        name_attr = html.escape(item["name"], quote=True)
         action = _action_link(
             "repository",
             item["document"],
@@ -477,6 +504,7 @@ def define_env(env):
 {banner_block}    <img
         class="catalogue-logo"
         title="{logo_alt}"
+        data-name="{name_attr}"
         src="{logo}"
         alt="{logo_alt}"
     />
@@ -497,14 +525,18 @@ def define_env(env):
         banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS,
     ) -> str:
         if kind == "organisation":
-            cards = "\n\n".join(organisation_card(item) for item in organisations)
+            cards = "\n\n".join(
+                organisation_card(item) for item in sort_catalogue_by_name(organisations)
+            )
         elif kind == "project":
             cards = "\n\n".join(
-                project_card(item, expiry_days=banner_expiry_days) for item in projects
+                project_card(item, expiry_days=banner_expiry_days)
+                for item in sort_catalogue_by_name(projects)
             )
         elif kind == "policy":
             cards = "\n\n".join(
-                policy_card(item, expiry_days=banner_expiry_days) for item in policies
+                policy_card(item, expiry_days=banner_expiry_days)
+                for item in sort_catalogue_by_name(policies)
             )
         else:
             raise ValueError(f"Unknown catalogue kind: {kind}")

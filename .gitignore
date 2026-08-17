@@ -1,4 +1,20 @@
-# MkDocs build output
+# OS
+.DS_Store
+
+# Cursor
+.cursor/
+.superpowers/
+.worktrees/
+cursor-docs
+
+# Editors
+.idea/
+.vscode/
+
+# Make
+.makefiles/
+
+# MkDocs
 site/
 
 # Python
@@ -6,24 +22,6 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-
-# macOS
-.DS_Store
-
-# Editors
-.idea/
-.vscode/
-
-# Local Cursor / agent design notes (not site docs)
-cursor-docs/
-cursor-docs
-.superpowers/
-
-# Git worktrees
-.worktrees/
-
-# Bootstrap / tooling
-.makefiles/
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/

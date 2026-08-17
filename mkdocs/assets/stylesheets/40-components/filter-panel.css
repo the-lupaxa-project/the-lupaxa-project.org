@@ -12,8 +12,7 @@
  *               tag | All/New | Sort | clear
  *   Orgs:       search
  *               category | sort | clear
- *   Policies:   search
- *               category | All/New/Updated | clear
+ *   Policies:   search | category | clear
  */
 .filter-panel {
   display: grid;
@@ -229,25 +228,23 @@
 
 /*
  * Policies (expanded):
- *   search (full width)
- *   category | All/New/Updated | clear
+ *   search | category | clear
  */
 .filter-panel[data-policy-filters] {
   grid-template-columns:
-    minmax(0, 1fr)
-    minmax(12rem, 1.3fr)
+    minmax(12rem, 1.6fr)
+    minmax(10rem, 1fr)
     auto;
   column-gap: 1rem;
   row-gap: 0.9rem;
 }
 
-.filter-panel[data-policy-filters] > .filter-panel-toolbar,
-.filter-panel[data-policy-filters] > .filter-panel-search {
+.filter-panel[data-policy-filters] > .filter-panel-toolbar {
   grid-column: 1 / -1;
 }
 
+.filter-panel[data-policy-filters] > .filter-panel-search,
 .filter-panel[data-policy-filters] > .filter-panel-select,
-.filter-panel[data-policy-filters] > .filter-panel-toggle,
 .filter-panel[data-policy-filters] > .filter-panel-actions {
   grid-column: auto;
 }
@@ -566,7 +563,7 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
  *   Projects:      search / org|category / status|sort|clear  (unchanged)
  *   Articles:      search / tag|All-New / Sort|Clear
  *   Organisations: search / category|sort / clear
- *   Policies:      search / category|All-New-Updated / clear
+ *   Policies:      search / category | clear
  */
 @media screen and (max-width: 59.984375em) {
   /* --- Projects: keep 3-row plan --- */
@@ -649,9 +646,9 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
     justify-content: flex-start;
   }
 
-  /* --- Policies: search; category | toggle; clear --- */
+  /* --- Policies: search; category | clear --- */
   .filter-panel[data-policy-filters] {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 0.85rem;
     row-gap: 0.85rem;
   }
@@ -662,19 +659,13 @@ article.md-content__inner:has(> .filter-panel:first-child)::before {
   }
 
   .filter-panel[data-policy-filters] > .filter-panel-select,
-  .filter-panel[data-policy-filters] > .filter-panel-toggle {
+  .filter-panel[data-policy-filters] > .filter-panel-actions {
     grid-column: auto;
   }
 
   .filter-panel[data-policy-filters] > .filter-panel-actions {
-    grid-column: 1 / -1;
     justify-self: stretch;
     justify-content: flex-start;
-  }
-
-  .filter-panel[data-policy-filters] .filter-panel-toggle__option {
-    padding: 0 0.35rem;
-    font-size: 0.78rem;
   }
 
   /* Collapsed: only toolbar */

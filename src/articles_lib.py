@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import textwrap
 from datetime import date
 from pathlib import Path
@@ -161,13 +162,14 @@ def _article_entry(slug: str, meta: dict[str, Any], *, today: date | None = None
     date_attr = (
         f' data-publish-date="{publish_date_value}"' if publish_date_value is not None else ""
     )
+    name_attr = f' data-name="{html.escape(title, quote=True)}"'
     return (
         f"-   **[{title}](articles/{slug}.md)**\n"
         f"\n"
         f"    ---\n"
         f"\n"
         f"{banner_block}"
-        f'    ![Article](assets/images/articles/{slug}.webp){{ class="catalogue-logo"{date_attr} }}\n'
+        f'    ![Article](assets/images/articles/{slug}.webp){{ class="catalogue-logo"{name_attr}{date_attr} }}\n'
         f"\n"
         f"    {desc_block}\n"
         f"\n"

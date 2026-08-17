@@ -31,6 +31,32 @@ BANNER_PRESETS: dict[str, tuple[str, str]] = {
 }
 BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"})
 DEFAULT_BANNER_EXPIRY_DAYS = 28
+# SemVer pre-1.0 default. Quote ``version`` in YAML (``"0.1.0"``) so it stays a string.
+DEFAULT_PROJECT_VERSION = "0.1.0"
+
+
+def normalise_project_version(value: Any) -> str | None:
+    """Return a version string without a leading ``v``, or ``None``."""
+
+    if value is None or isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        text = str(value)
+    elif isinstance(value, float):
+        text = str(int(value)) if value.is_integer() else str(value)
+    else:
+        text = str(value).strip()
+    if not text:
+        return None
+    if text[:1] in {"v", "V"} and len(text) > 1 and text[1].isdigit():
+        text = text[1:]
+    return text or None
+
+
+def resolve_project_version(value: Any, *, default: str = DEFAULT_PROJECT_VERSION) -> str:
+    """Return a display version, defaulting to ``0.1.0`` when unset."""
+
+    return normalise_project_version(value) or default
 
 
 def parse_iso_datetime(value: Any) -> datetime | None:
@@ -155,18 +181,33 @@ def resolve_banner(
     return label, tone, _banner_filter_key(status, label)
 
 
-def banner_markup_from_resolved(label: str, tone: str, filter_key: str) -> str:
+def banner_markup_from_resolved(
+    label: str,
+    tone: str,
+    filter_key: str,
+    *,
+    version: str | None = None,
+) -> str:
     safe_label = html.escape(label, quote=True)
     safe_key = html.escape(filter_key, quote=True)
     length_class = " catalogue-banner--short" if len(label) <= 5 else ""
+    version_class = ""
+    version_html = ""
+    aria_label = f"Status: {safe_label}"
+    if version:
+        safe_version = html.escape(f"v{version}", quote=True)
+        version_class = " catalogue-banner--with-version"
+        version_html = f'<span class="catalogue-banner__version">{safe_version}</span>'
+        aria_label = f"Status: {safe_label} {safe_version}"
     return (
-        f'    <span class="catalogue-banner catalogue-banner--{tone}{length_class}" '
+        f'    <span class="catalogue-banner catalogue-banner--{tone}'
+        f'{length_class}{version_class}" '
         f'data-banner-status="{safe_key}" '
         f'data-banner-label="{safe_label}" '
-        f'aria-label="Status: {safe_label}" '
+        f'aria-label="{aria_label}" '
         f'role="button" tabindex="0">'
         f'<span class="catalogue-banner__band" aria-hidden="true">'
-        f'<span class="catalogue-banner__text">{safe_label}</span>'
+        f'<span class="catalogue-banner__text">{safe_label}{version_html}</span>'
         f"</span></span>"
     )
 
@@ -179,6 +220,8 @@ def banner_markup(
     today: date | None = None,
     expiry_days: int | None = None,
     time_limited_statuses: frozenset[str] = frozenset({"released", "new"}),
+    version: Any = None,
+    default_version: str | None = None,
 ) -> str:
     resolved = resolve_banner(raw, presets=presets)
     if not resolved:
@@ -189,4 +232,7 @@ def banner_markup(
         day = today or date.today()
         if not banner_still_active(event_date, today=day, expiry_days=days):
             return ""
-    return banner_markup_from_resolved(label, tone, filter_key)
+    version_text = None
+    if default_version is not None:
+        version_text = resolve_project_version(version, default=default_version)
+    return banner_markup_from_resolved(label, tone, filter_key, version=version_text)
