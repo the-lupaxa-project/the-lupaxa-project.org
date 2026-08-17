@@ -58,6 +58,19 @@ DATA_DIR = ROOT / "data"
 DEFAULT_POLICY_LOGO = "assets/images/brand/organisation-the-lupaxa-project-logo.png"
 DEFAULT_POLICY_LOGO_ALT = "The Lupaxa Project"
 
+
+def catalogue_media_src(path: str) -> str:
+    """Return an img src that resolves from any site page, not only ``/``.
+
+    Catalogue cards emit raw HTML, so MkDocs does not rewrite these paths.
+    Site-root paths (``/assets/...``) stay valid on ``/projects/`` and friends.
+    Remote URLs are left unchanged.
+    """
+    value = (path or "").strip()
+    if not value or value.startswith(("http://", "https://", "/")):
+        return value
+    return f"/{value}"
+
 # Material filter-variant / filter-off icons for Show / Hide Filters.
 FILTER_EXPAND_ICONS = """\
 <span class="filter-panel-expand__icon filter-panel-expand__icon--show" aria-hidden="true">
@@ -385,7 +398,7 @@ def define_env(env):
         title="{title}"
         data-name="{name_attr}"
         data-organisation="{item["name"]}"{publish_date_attr}
-        src="{item["logo"]}"
+        src="{html.escape(catalogue_media_src(item["logo"]), quote=True)}"
         alt="{item.get("logo_alt", item["name"])}"
     />
 
@@ -453,7 +466,7 @@ def define_env(env):
         title="{item["organisation"]}"
         data-name="{name_attr}"
         data-organisation="{item["organisation"]}"{publish_date_attr}{released_date_attr}
-        src="{item["logo"]}"
+        src="{html.escape(catalogue_media_src(item["logo"]), quote=True)}"
         alt="{item.get("logo_alt", item["organisation"])}"
     />
 
@@ -484,7 +497,9 @@ def define_env(env):
             time_limited_statuses=frozenset({"new", "updated"}),
         )
         banner_block = f"{banner}\n\n" if banner else ""
-        logo = html.escape(item.get("logo", DEFAULT_POLICY_LOGO), quote=True)
+        logo = html.escape(
+            catalogue_media_src(item.get("logo", DEFAULT_POLICY_LOGO)), quote=True
+        )
         logo_alt = html.escape(item.get("logo_alt", DEFAULT_POLICY_LOGO_ALT), quote=True)
         name_attr = html.escape(item["name"], quote=True)
         action = _action_link(

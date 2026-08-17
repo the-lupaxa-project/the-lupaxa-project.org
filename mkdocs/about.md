@@ -7,7 +7,7 @@ hide:
 <div class="lupaxa-hero">
     <img
         class="lupaxa-hero-logo"
-        src="assets/images/brand/the-lupaxa-project-hero-logo.png"
+        src="{{ 'assets/images/brand/the-lupaxa-project-hero-logo.png' | relative_url }}"
         alt="The Lupaxa Project Logo"
     />
 

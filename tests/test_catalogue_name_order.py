@@ -79,6 +79,25 @@ def test_organisation_grid_is_alphabetical(tmp_path, monkeypatch):
     assert _names(grid("organisation", "organisation")) == ["Alpha Org", "Zebra Org"]
 
 
+def test_organisation_card_local_logo_is_site_root_relative(tmp_path, monkeypatch):
+    organisations = [
+        {
+            "id": "alpha",
+            "published": True,
+            "name": "Alpha Org",
+            "icon": "material-domain",
+            "publish_date": "2026-01-01",
+            "description": "A",
+            "categories": ["Testing"],
+            "logo": "assets/images/brand/organisation-actions-toolbox-logo.png",
+            "repository": "https://github.com/example/a",
+        }
+    ]
+    grid = _grid(tmp_path, monkeypatch, organisations=organisations)
+    markup = grid("organisation", "organisation")
+    assert 'src="/assets/images/brand/organisation-actions-toolbox-logo.png"' in markup
+
+
 def test_policy_grid_is_alphabetical(tmp_path, monkeypatch):
     policies = [
         {
