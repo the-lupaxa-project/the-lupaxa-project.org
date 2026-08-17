@@ -53,6 +53,37 @@ def test_released_markup_hidden_when_expired():
     assert html == ""
 
 
+def test_released_markup_hidden_when_expired_even_with_version():
+    html = banner_markup(
+        "released",
+        event_date=date(2020, 1, 1),
+        today=date(2026, 7, 31),
+        expiry_days=28,
+        time_limited_statuses=frozenset({"released"}),
+        version="1.2.0",
+        default_version="0.1.0",
+    )
+    assert html == ""
+
+
+def test_released_markup_shows_stable_version_when_expired():
+    html = banner_markup(
+        "released",
+        event_date=date(2020, 1, 1),
+        today=date(2026, 7, 31),
+        expiry_days=28,
+        time_limited_statuses=frozenset({"released"}),
+        version="1.2.0",
+        default_version="0.1.0",
+        stable_after_expiry=True,
+    )
+    assert "Released" not in html
+    assert "Stable" in html
+    assert "v1.2.0" in html
+    assert 'data-banner-status="stable"' in html
+    assert "catalogue-banner--blue" in html
+
+
 def test_released_markup_shown_when_fresh():
     html = banner_markup(
         "released",
@@ -61,7 +92,7 @@ def test_released_markup_shown_when_fresh():
         expiry_days=28,
         time_limited_statuses=frozenset({"released"}),
     )
-    assert "catalogue-banner--blue" in html
+    assert "catalogue-banner--dark-blue" in html
     assert "Released" in html
 
 

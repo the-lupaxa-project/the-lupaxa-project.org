@@ -124,6 +124,9 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://certtool.thelupaxaproject.org/
+  banner: released
+  version: "0.1.1"
+  released_date: "2025-11-21T17:27:48"
 
 - id: check-git-repositories
   published: true
@@ -165,7 +168,7 @@
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
-  banner: in-testing
+  banner: in-development
 
 - id: get-all-tools
   published: true
@@ -208,6 +211,9 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://git-crypt-manager.thelupaxaproject.org/
+  banner: released
+  version: "1.0.0"
+  released_date: "2025-12-02T15:31:58"
 
 - id: git-delete-tags
   published: true
@@ -427,7 +433,7 @@
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
   documentation: https://photo-renamer.thelupaxaproject.org/
-  banner: in-testing
+  banner: in-development
 
 - id: php-lint
   published: true
@@ -629,6 +635,9 @@
   logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
+  banner: released
+  version: "0.1.12"
+  released_date: "2026-08-07T11:13:30"
 
 - id: shellcheck
   published: true
@@ -671,7 +680,7 @@
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/sysinfo
   documentation: https://sysinfo.thelupaxaproject.org/
-  banner: in-testing
+  banner: in-development
 
 - id: validate-citations-file
   published: true

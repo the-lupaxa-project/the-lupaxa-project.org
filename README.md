@@ -34,10 +34,11 @@ python -m mkdocs serve
 
 Open the local URL MkDocs prints (typically port `8000` on `127.0.0.1`).
 
-`mkdocs.yml` watches `data/`, `hooks/`, and every build-time Python module
-(`src/`, `hooks/`), so catalogue YAML and macro edits reload
-automatically while `mkdocs serve` is running. Add new build scripts to
-`watch` when you create them — MkDocs does not support globs there.
+`mkdocs.yml` watches `data/`, `hooks/`, `src/`, and
+`mkdocs/assets/stylesheets/`, so catalogue YAML, macro, and CSS edits
+reload automatically while `mkdocs serve` is running. Add new build
+scripts to `watch` when you create them — MkDocs does not support globs
+there.
 
 Strict production build:
 
@@ -66,24 +67,27 @@ Catalogue entries live in YAML under `data/`:
 | `data/organisations.yml` | Organisations |
 | `data/quotes.yml` | Quotes masonry wall |
 | `data/gallery.yml` | Gallery masonry wall (`page.show_count: all` or a number; `page.show_media_filters: true` for images/videos filters) |
-| `data/projects.yml` | Projects (home shows nine newest by `publish_date`; six on tablet/mobile) |
+| `data/projects.yml` | Projects |
 | `data/policies.yml` | Policies |
 
 `publish_date` and `released_date` accept either a calendar day (`YYYY-MM-DD`) or a
 UTC timestamp (`YYYY-MM-DDTHH:MM:SS`). Banner expiry still uses the calendar day.
-Newest-project and catalogue “newest” sorts use `released_date` when it is set,
-otherwise `publish_date`, including the time so same-day stamps stay in order.
+Catalogue “newest” sorts use `released_date` when it is set, otherwise
+`publish_date`, including the time so same-day stamps stay in order.
 
 Project banners always show a SemVer on the sash. Quote `version` as a string
 (`"0.1.0"`); if it is omitted the sash uses `0.1.0`, the default first public release.
-`banner: released` still expires 28 days after `released_date`.
+If `banner` is omitted, the card is **In Development**.
+`banner: released` still expires 28 days after `released_date`. The Released
+sash is dark navy; after expiry the card keeps a lighter Lupaxa-blue **Stable**
+sash with the version on the projects catalogue.
 
 Catalogue pages (organisations, projects, policies, articles) always render A–Z
 by name/title. YAML or filename order is never used. Newest is an explicit sort,
 not the default.
 
 `src/main.py` (via a thin root `main.py` shim) loads that data for `mkdocs-macros-plugin`. Pages call macros such as
-`filter_panel`, `catalogue_grid`, and `newest_projects` so card markup stays
+`filter_panel` and `catalogue_grid` so card markup stays
 in one place.
 
 MkDocs brand logos are local copies under `mkdocs/assets/images/brand/`.

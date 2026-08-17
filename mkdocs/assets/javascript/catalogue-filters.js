@@ -803,7 +803,7 @@
         const matchesStatus =
           filters.selectedStatus === "" ||
           (filters.selectedStatus === "stable"
-            ? card.status === ""
+            ? card.status === "" || card.status === "stable"
             : card.status === filters.selectedStatus);
 
         const isVisible =

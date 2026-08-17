@@ -39,6 +39,9 @@ def test_filter_panel_status_options_project_lifecycle_only():
 
     assert "Released" in markup
     assert "In Review" in markup
+    assert "In Planning" not in markup
+    assert "Closed Alpha" not in markup
+    assert "Open Beta" not in markup
     assert "New Article" not in markup
     assert ">Updated<" not in markup
 

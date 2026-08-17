@@ -9,13 +9,10 @@ from banner_lib import (
 )
 
 EXPECTED_PROJECT = {
-    "in-planning": ("In Planning", "green"),
-    "in-development": ("In Development", "purple"),
-    "in-testing": ("In Testing", "neutral"),
-    "in-review": ("In Review", "orange"),
-    "closed-alpha": ("Closed Alpha", "red"),
-    "open-beta": ("Open Beta", "orange"),
-    "released": ("Released", "blue"),
+    "in-development": ("In Development", "red"),
+    "in-testing": ("In Testing", "magenta"),
+    "in-review": ("In Review", "purple"),
+    "released": ("Released", "dark-blue"),
 }
 
 

@@ -3,17 +3,6 @@
  * Catalogue Cards
  * ============================================================================= */
 
-/* Home: Newest Projects heading */
-.md-typeset .newest-projects-header,
-.newest-projects-header {
-  margin: 1.6em 0 0.8em;
-}
-
-.md-typeset .newest-projects-header > h2,
-.newest-projects-header > h2 {
-  margin: 0;
-}
-
 /* Catalogue cards */
 
 .md-typeset .grid.cards.catalogue-grid {
@@ -316,6 +305,14 @@
   color: var(--lupaxa-white);
 }
 
+.md-typeset .catalogue-grid .catalogue-banner--dark-blue .catalogue-banner__band {
+  background: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--dark-blue .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
 .md-typeset .catalogue-grid .catalogue-banner--orange .catalogue-banner__band {
   background: #d4782a;
 }
@@ -329,6 +326,23 @@
 }
 
 .md-typeset .catalogue-grid .catalogue-banner--neutral .catalogue-banner__text {
+  color: var(--lupaxa-white);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--silver .catalogue-banner__band {
+  background: #8d97a6;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--silver .catalogue-banner__text {
+  color: var(--lupaxa-dark-blue);
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--magenta .catalogue-banner__band {
+  /* Midpoint on the red→purple hue arc (not through yellow/green). */
+  background: #9a4a7a;
+}
+
+.md-typeset .catalogue-grid .catalogue-banner--magenta .catalogue-banner__text {
   color: var(--lupaxa-white);
 }
 
@@ -529,12 +543,6 @@
 @media screen and (max-width: 76.234375em) {
   .md-typeset .grid.cards.catalogue-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  /* Newest Projects: keep six cards on tablet/mobile (2-col / 1-col). */
-  .md-typeset [data-newest-catalogue] > ul > li:nth-child(n + 7),
-  [data-newest-catalogue] > ul > li:nth-child(n + 7) {
-    display: none !important;
   }
 }
 

@@ -7,13 +7,10 @@ from datetime import UTC, date, datetime
 from typing import Any
 
 PROJECT_BANNER_PRESETS: dict[str, tuple[str, str]] = {
-    "in-planning": ("In Planning", "green"),
-    "in-development": ("In Development", "purple"),
-    "in-testing": ("In Testing", "neutral"),
-    "in-review": ("In Review", "orange"),
-    "closed-alpha": ("Closed Alpha", "red"),
-    "open-beta": ("Open Beta", "orange"),
-    "released": ("Released", "blue"),
+    "in-development": ("In Development", "red"),
+    "in-testing": ("In Testing", "magenta"),
+    "in-review": ("In Review", "purple"),
+    "released": ("Released", "dark-blue"),
 }
 ARTICLE_BANNER_PRESETS: dict[str, tuple[str, str]] = {
     "new": ("New Article", "blue"),
@@ -29,7 +26,19 @@ BANNER_PRESETS: dict[str, tuple[str, str]] = {
     **PROJECT_BANNER_PRESETS,
     **ARTICLE_BANNER_PRESETS,
 }
-BANNER_TONES = frozenset({"red", "green", "purple", "blue", "orange", "neutral"})
+BANNER_TONES = frozenset(
+    {
+        "red",
+        "green",
+        "purple",
+        "blue",
+        "dark-blue",
+        "orange",
+        "neutral",
+        "silver",
+        "magenta",
+    }
+)
 DEFAULT_BANNER_EXPIRY_DAYS = 28
 # SemVer pre-1.0 default. Quote ``version`` in YAML (``"0.1.0"``) so it stays a string.
 DEFAULT_PROJECT_VERSION = "0.1.0"
@@ -222,6 +231,7 @@ def banner_markup(
     time_limited_statuses: frozenset[str] = frozenset({"released", "new"}),
     version: Any = None,
     default_version: str | None = None,
+    stable_after_expiry: bool = False,
 ) -> str:
     resolved = resolve_banner(raw, presets=presets)
     if not resolved:
@@ -231,6 +241,20 @@ def banner_markup(
         days = DEFAULT_BANNER_EXPIRY_DAYS if expiry_days is None else expiry_days
         day = today or date.today()
         if not banner_still_active(event_date, today=day, expiry_days=days):
+            if (
+                stable_after_expiry
+                and default_version is not None
+                and filter_key == "released"
+            ):
+                version_text = resolve_project_version(
+                    version, default=default_version
+                )
+                return banner_markup_from_resolved(
+                    "Stable",
+                    "blue",
+                    "stable",
+                    version=version_text,
+                )
             return ""
     version_text = None
     if default_version is not None:

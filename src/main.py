@@ -26,7 +26,6 @@ from banner_lib import (
     PROJECT_BANNER_PRESETS,
     format_publish_date_attr,
     parse_iso_date,
-    parse_iso_datetime,
 )
 from banner_lib import (
     banner_markup as _shared_banner_markup,
@@ -158,47 +157,10 @@ def _banner_markup(raw: Any) -> str:
     return _shared_banner_markup(raw)
 
 
-# Desktop home grid is 3 columns → show three full rows.
-# Tablet/mobile hide cards beyond COMPACT via CSS (see catalogue.css).
-NEWEST_PROJECTS_LIMIT = 9
-NEWEST_PROJECTS_COMPACT_LIMIT = 6
-
-
 def sort_catalogue_by_name(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """Return catalogue items in A–Z name order. YAML file order is ignored."""
 
     return sorted(items, key=lambda item: str(item.get("name") or "").casefold())
-
-
-def project_sort_datetime(item: dict[str, Any]):
-    """Newest-sort timestamp: ``released_date`` when set, else ``publish_date``."""
-
-    return parse_iso_datetime(item.get("released_date")) or parse_iso_datetime(
-        item.get("publish_date")
-    )
-
-
-def select_newest_projects(
-    projects: list[dict[str, Any]],
-    *,
-    limit: int = NEWEST_PROJECTS_LIMIT,
-) -> list[dict[str, Any]]:
-    """Return up to ``limit`` already-published projects newest-first.
-
-    The caller filters unpublished projects. Newest uses ``released_date`` when
-    it is set, otherwise ``publish_date``. Either field may be a calendar date
-    (``YYYY-MM-DD``) or a date-time (``YYYY-MM-DDTHH:MM:SS``). Ties on the
-    same timestamp break on ``id`` ascending; missing/unparseable values sort
-    last. Date-only values sort as midnight on that day.
-    """
-
-    def sort_key(item: dict[str, Any]) -> tuple:
-        parsed = project_sort_datetime(item)
-        if parsed is None:
-            return (1, 0.0, str(item.get("id") or ""))
-        return (0, -parsed.timestamp(), str(item.get("id") or ""))
-
-    return sorted(projects, key=sort_key)[:limit]
 
 
 def define_env(env):
@@ -414,14 +376,20 @@ def define_env(env):
     def project_card(item: dict, *, expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
+        raw_banner = item.get("banner")
+        if raw_banner is None or raw_banner is False:
+            raw_banner = "in-development"
+        elif isinstance(raw_banner, str) and not raw_banner.strip():
+            raw_banner = "in-development"
         banner = _shared_banner_markup(
-            item.get("banner"),
+            raw_banner,
             presets=PROJECT_BANNER_PRESETS,
             event_date=parse_iso_date(item.get("released_date")),
             expiry_days=expiry_days,
             time_limited_statuses=frozenset({"released"}),
             version=item.get("version"),
             default_version=DEFAULT_PROJECT_VERSION,
+            stable_after_expiry=True,
         )
         banner_block = f"{banner}\n\n" if banner else ""
         actions = [
@@ -602,19 +570,3 @@ def define_env(env):
     @env.macro
     def gallery_media_is_remote(path: str) -> bool:
         return is_remote_media(path)
-
-    @env.macro
-    def newest_projects(banner_expiry_days: int = DEFAULT_BANNER_EXPIRY_DAYS) -> str:
-        newest = select_newest_projects(projects)
-        cards = "\n\n".join(project_card(item, expiry_days=banner_expiry_days) for item in newest)
-        return f"""
-<div class="newest-projects-header" markdown="0">
-    <h2 id="newest-projects">Newest Projects</h2>
-</div>
-
-<div class="grid cards catalogue-grid" data-newest-catalogue markdown>
-
-{cards}
-
-</div>
-""".strip()
