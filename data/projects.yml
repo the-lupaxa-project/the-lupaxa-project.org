@@ -463,6 +463,26 @@
   version: "0.1.0"
   released_date: "2026-08-17T21:43:20"
 
+- id: pipeline-template
+  published: true
+  name: Pipeline Template
+  icon: material-source-repository
+  publish_date: "2026-08-07T08:00:46"
+  description: >-
+    Reusable shell-based CI/CD pipeline template for Lupaxa projects. New CICD Toolbox tools copy
+    `src/pipeline.sh` and edit only the configuration block; the same script runs from GitHub
+    Actions, Bitbucket, Travis, or a local shell.
+  categories:
+    - CI/CD
+    - Bash
+    - Templates
+    - Automation
+  organisation: CI/CD Toolbox
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/pipeline-template
+  banner: in-review
+
 - id: puppet-lint
   published: true
   name: Puppet Lint
