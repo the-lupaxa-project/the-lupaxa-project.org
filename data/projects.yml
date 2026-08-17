@@ -16,7 +16,9 @@
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/action-lint
-  banner: in-review
+  banner: released
+  version: "0.1.1"
+  released_date: "2026-08-17T16:52:44"
 
 - id: awesomebot
   published: true
