@@ -70,6 +70,7 @@ def catalogue_media_src(path: str) -> str:
         return value
     return f"/{value}"
 
+
 # Material filter-variant / filter-off icons for Show / Hide Filters.
 FILTER_EXPAND_ICONS = """\
 <span class="filter-panel-expand__icon filter-panel-expand__icon--show" aria-hidden="true">
@@ -377,9 +378,11 @@ def define_env(env):
         categories = _categories_markup(item["categories"])
         description = _indent(item["description"])
         raw_banner = item.get("banner")
-        if raw_banner is None or raw_banner is False:
-            raw_banner = "in-development"
-        elif isinstance(raw_banner, str) and not raw_banner.strip():
+        if (
+            raw_banner is None
+            or raw_banner is False
+            or (isinstance(raw_banner, str) and not raw_banner.strip())
+        ):
             raw_banner = "in-development"
         banner = _shared_banner_markup(
             raw_banner,
@@ -465,9 +468,7 @@ def define_env(env):
             time_limited_statuses=frozenset({"new", "updated"}),
         )
         banner_block = f"{banner}\n\n" if banner else ""
-        logo = html.escape(
-            catalogue_media_src(item.get("logo", DEFAULT_POLICY_LOGO)), quote=True
-        )
+        logo = html.escape(catalogue_media_src(item.get("logo", DEFAULT_POLICY_LOGO)), quote=True)
         logo_alt = html.escape(item.get("logo_alt", DEFAULT_POLICY_LOGO_ALT), quote=True)
         name_attr = html.escape(item["name"], quote=True)
         action = _action_link(

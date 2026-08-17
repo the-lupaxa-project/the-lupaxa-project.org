@@ -57,9 +57,7 @@ def _catalogue_grid(tmp_path: Path, monkeypatch, projects: list[dict]):
     return env.macros["catalogue_grid"]
 
 
-def test_project_card_defaults_missing_banner_to_in_development(
-    tmp_path, monkeypatch
-):
+def test_project_card_defaults_missing_banner_to_in_development(tmp_path, monkeypatch):
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, [_synthetic_project()])
 
     markup = catalogue_grid("project", "project")
@@ -93,9 +91,7 @@ def test_project_card_shows_fresh_released_banner(tmp_path, monkeypatch):
     assert "v0.1.0" in markup
 
 
-def test_project_card_shows_stable_version_when_released_expires(
-    tmp_path, monkeypatch
-):
+def test_project_card_shows_stable_version_when_released_expires(tmp_path, monkeypatch):
     expired_date = (date.today() - timedelta(days=400)).isoformat()
     projects = [
         _synthetic_project(
@@ -115,9 +111,7 @@ def test_project_card_shows_stable_version_when_released_expires(
     assert "catalogue-banner--blue" in markup
 
 
-def test_project_card_shows_stable_version_without_released_date(
-    tmp_path, monkeypatch
-):
+def test_project_card_shows_stable_version_without_released_date(tmp_path, monkeypatch):
     projects = [_synthetic_project(banner="released", version="0.3.1")]
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
 
@@ -208,9 +202,7 @@ def test_catalogue_grid_projects_emit_in_name_order(tmp_path, monkeypatch):
 
 def test_project_card_local_logo_is_site_root_relative(tmp_path, monkeypatch):
     """Raw HTML img src must work from /projects/, not only the homepage."""
-    projects = [
-        _synthetic_project(logo="assets/images/brand/organisation-cicd-toolbox-logo.png")
-    ]
+    projects = [_synthetic_project(logo="assets/images/brand/organisation-cicd-toolbox-logo.png")]
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
 
     markup = catalogue_grid("project", "project")

@@ -241,19 +241,12 @@ def banner_markup(
         days = DEFAULT_BANNER_EXPIRY_DAYS if expiry_days is None else expiry_days
         day = today or date.today()
         if not banner_still_active(event_date, today=day, expiry_days=days):
-            if (
-                stable_after_expiry
-                and default_version is not None
-                and filter_key == "released"
-            ):
-                version_text = resolve_project_version(
-                    version, default=default_version
-                )
+            if stable_after_expiry and default_version is not None and filter_key == "released":
                 return banner_markup_from_resolved(
                     "Stable",
                     "blue",
                     "stable",
-                    version=version_text,
+                    version=resolve_project_version(version, default=default_version),
                 )
             return ""
     version_text = None
