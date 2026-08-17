@@ -661,25 +661,6 @@
   documentation: https://sysinfo.thelupaxaproject.org/
   banner: in-testing
 
-- id: test
-  published: true
-  name: Test
-  icon: material-source-repository
-  publish_date: "2026-08-17T15:43:00"
-  description: >-
-    Lab fixture used to verify that a stable GitHub Release updates the matching
-    catalogue card (`banner`, `version`, and `released_date`) via portal sync.
-  categories:
-    - Experiments
-    - Testing
-  organisation: The Lupaxa Lab
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-lab/readme-logo-128.png
-  logo_alt: The Lupaxa Lab
-  repository: https://github.com/the-lupaxa-lab/test
-  banner: released
-
-  version: "0.1.1"
-  released_date: "2026-08-17T14:54:49"
 - id: validate-citations-file
   published: true
   name: Validate Citations File

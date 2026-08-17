@@ -78,11 +78,6 @@ Project banners always show a SemVer on the sash. Quote `version` as a string
 (`"0.1.0"`); if it is omitted the sash uses `0.1.0`, the default first public release.
 `banner: released` still expires 28 days after `released_date`.
 
-A stable GitHub Release (`vX.Y.Z`) on a product repo that already has a
-published card here opens a pull request that sets `banner: released`,
-`version`, and `released_date`. New projects are still added to
-`data/projects.yml` by hand.
-
 Catalogue pages (organisations, projects, policies, articles) always render A–Z
 by name/title. YAML or filename order is never used. Newest is an explicit sort,
 not the default.
