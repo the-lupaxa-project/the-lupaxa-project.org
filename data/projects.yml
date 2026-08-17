@@ -615,6 +615,28 @@
   repository: https://github.com/lupaxa-cicd-toolbox/reek
   banner: in-review
 
+- id: reusable-workflows
+  published: true
+  name: Reusable Workflows
+  icon: material-source-repository
+  publish_date: "2025-11-24T15:43:59"
+  description: >-
+    A collection of reusable GitHub Actions workflows for repository quality, continuous
+    integration, documentation, security, and automation. Designed to provide consistent workflows
+    across The Lupaxa Project, these reusable components reduce duplication and simplify repository
+    management.
+  categories:
+    - GitHub Actions
+    - Automation
+    - Continuous Integration
+  organisation: The Lupaxa Project
+  logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
+  logo_alt: The Lupaxa Project
+  repository: https://github.com/the-lupaxa-project/workflows
+  banner: released
+  version: "0.1.12"
+  released_date: "2026-08-07T11:13:30"
+
 - id: rubocop
   published: true
   name: RuboCop
@@ -650,28 +672,6 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
   banner: in-review
-
-- id: shared-reusable-workflows
-  published: true
-  name: Shared Reusable Workflows
-  icon: material-source-repository
-  publish_date: "2025-11-24T15:43:59"
-  description: >-
-    A collection of reusable GitHub Actions workflows for repository quality, continuous
-    integration, documentation, security, and automation. Designed to provide consistent workflows
-    across The Lupaxa Project, these reusable components reduce duplication and simplify repository
-    management.
-  categories:
-    - GitHub Actions
-    - Automation
-    - Continuous Integration
-  organisation: The Lupaxa Project
-  logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
-  logo_alt: The Lupaxa Project
-  repository: https://github.com/the-lupaxa-project/workflows
-  banner: released
-  version: "0.1.12"
-  released_date: "2026-08-07T11:13:30"
 
 - id: shellcheck
   published: true
