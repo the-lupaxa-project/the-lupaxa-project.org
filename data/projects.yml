@@ -676,8 +676,10 @@
   logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-lab/readme-logo-128.png
   logo_alt: The Lupaxa Lab
   repository: https://github.com/the-lupaxa-lab/test
-  banner: in-review
+  banner: released
 
+  version: "0.1.1"
+  released_date: "2026-08-17T14:54:49"
 - id: validate-citations-file
   published: true
   name: Validate Citations File
