@@ -22,11 +22,10 @@ extra:
   # Counter.dev analytics (omit counter_dev_id to disable).
   counter_dev_id: ef410665-76d4-43fe-9e91-53f26ed1004b
   counter_dev_utcoffset: 0
-  social_image: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/social-media/social-card.png
+  social_image: assets/images/brand/the-lupaxa-project-social-card.png
   social_image_width: 1200
   social_image_height: 630
-  social_logo: >-
-    https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo.png
+  social_logo: assets/images/brand/the-lupaxa-project-logo.png
   social_locale: en_GB
   theme_color: "#203959"
   twitter_card: summary_large_image
@@ -58,11 +57,9 @@ theme:
 
   language: en
 
-  logo: >-
-    https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo.png
+  logo: assets/images/brand/the-lupaxa-project-logo.png
 
-  favicon: >-
-    https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png
+  favicon: assets/images/brand/organisation-the-lupaxa-project-logo.png
 
   features:
     - content.code.copy

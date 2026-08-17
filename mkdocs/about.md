@@ -7,7 +7,7 @@ hide:
 <div class="lupaxa-hero">
     <img
         class="lupaxa-hero-logo"
-        src="https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/core/256/main-logo-transparent.png"
+        src="assets/images/brand/the-lupaxa-project-hero-logo.png"
         alt="The Lupaxa Project Logo"
     />
 

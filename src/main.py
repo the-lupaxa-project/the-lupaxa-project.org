@@ -55,10 +55,7 @@ from quotes_lib import (
 DATA_DIR = ROOT / "data"
 
 # Shared brand mark for policy cards (same visual slot as project/org logos).
-DEFAULT_POLICY_LOGO = (
-    "https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/"
-    "master/logos/organisations/the-lupaxa-project/readme-logo-128.png"
-)
+DEFAULT_POLICY_LOGO = "assets/images/brand/organisation-the-lupaxa-project-logo.png"
 DEFAULT_POLICY_LOGO_ALT = "The Lupaxa Project"
 
 # Material filter-variant / filter-off icons for Show / Hide Filters.

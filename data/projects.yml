@@ -13,7 +13,7 @@
     - Linting
     - YAML
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/action-lint
   banner: in-review
@@ -33,7 +33,7 @@
     - Linting
     - Ruby
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
   banner: in-review
@@ -52,7 +52,7 @@
     - Security
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/bandit
   banner: in-review
@@ -73,7 +73,7 @@
     - Productivity
     - Git
   organisation: Workstation Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/workstation-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/bash-aliases
   documentation: https://bash-aliases.thelupaxaproject.org/
@@ -94,7 +94,7 @@
     - Package Management
     - Bash
   organisation: Workstation Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/workstation-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   banner: in-testing
@@ -114,7 +114,7 @@
     - Security
     - Python
   organisation: Security Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://certtool.thelupaxaproject.org/
@@ -135,7 +135,7 @@
     - Repository Management
     - Bash
   organisation: Git Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
   documentation: https://check-git-repositories.thelupaxaproject.org/
@@ -155,7 +155,7 @@
     - Websites
     - Python
   organisation: Miscellaneous Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
@@ -176,7 +176,7 @@
     - CLI
     - Developer Tools
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   banner: in-review
@@ -196,7 +196,7 @@
     - Git
     - Bash
   organisation: Security Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://git-crypt-manager.thelupaxaproject.org/
@@ -216,7 +216,7 @@
     - Repository Management
     - Bash
   organisation: Git Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
   banner: in-testing
@@ -236,7 +236,7 @@
     - Repository Management
     - Bash
   organisation: Git Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
   banner: in-testing
@@ -257,7 +257,7 @@
     - Repository Management
     - Python
   organisation: GitHub Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gh-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-gh-toolbox-logo.png
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
@@ -276,7 +276,7 @@
     - Docker
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/hadolint
   banner: in-review
@@ -294,7 +294,7 @@
     - JSON
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/json-lint
   banner: in-review
@@ -312,7 +312,7 @@
     - Makefiles
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/makefile-lint
   banner: in-review
@@ -333,7 +333,7 @@
     - Templates
     - Standards
   organisation: Developers Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
@@ -353,7 +353,7 @@
     - Documentation
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/markdown-lint
   banner: in-review
@@ -372,7 +372,7 @@
     - Type Checking
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/mypy
   banner: in-review
@@ -390,7 +390,7 @@
     - Perl
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/perl-lint
   banner: in-review
@@ -411,7 +411,7 @@
     - Python
     - CLI
   organisation: Miscellaneous Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
   documentation: https://photo-renamer.thelupaxaproject.org/
@@ -430,7 +430,7 @@
     - PHP
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/php-lint
   banner: in-review
@@ -449,7 +449,7 @@
     - Linting
     - Ruby
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/puppet-lint
   banner: in-review
@@ -467,7 +467,7 @@
     - Python
     - Dependencies
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pur
   banner: in-review
@@ -485,7 +485,7 @@
     - Python
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pycodestyle
   banner: in-review
@@ -504,7 +504,7 @@
     - Documentation
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pydocstyle
   banner: in-review
@@ -522,7 +522,7 @@
     - Python
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylama
   banner: in-review
@@ -540,7 +540,7 @@
     - Python
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylint
   banner: in-review
@@ -558,7 +558,7 @@
     - Ruby
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/reek
   banner: in-review
@@ -576,7 +576,7 @@
     - Ruby
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/rubocop
   banner: in-review
@@ -594,7 +594,7 @@
     - Python
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
   banner: in-review
@@ -614,7 +614,7 @@
     - Automation
     - Continuous Integration
   organisation: The Lupaxa Project
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png
+  logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
 
@@ -631,7 +631,7 @@
     - Bash
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
   banner: in-review
@@ -655,7 +655,7 @@
     - CLI
     - Developer Tools
   organisation: Developers Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/sysinfo
   documentation: https://sysinfo.thelupaxaproject.org/
@@ -674,7 +674,7 @@
     - Documentation
     - Metadata
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/validate-citations-file
   banner: in-review
@@ -692,7 +692,7 @@
     - YAML
     - Linting
   organisation: CI/CD Toolbox
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
   banner: in-review

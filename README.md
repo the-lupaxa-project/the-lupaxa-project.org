@@ -86,7 +86,7 @@ not the default.
 `filter_panel`, `catalogue_grid`, and `newest_projects` so card markup stays
 in one place.
 
-Brand logos remain remote URLs from the `brand-assets` repository.
+MkDocs brand logos are local copies under `mkdocs/assets/images/brand/`.
 
 ## Layout overview
 

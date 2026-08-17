@@ -9,7 +9,7 @@
     - GitHub Actions
     - Automation
     - Continuous Integration
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/actions-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-actions-toolbox-logo.png
   logo_alt: Actions Toolbox
   repository: https://github.com/lupaxa-actions-toolbox
 
@@ -24,7 +24,7 @@
     - APIs
     - Data Extraction
     - Developer Tools
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/api-extractor-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-api-extractor-toolbox-logo.png
   logo_alt: API Extractor Toolbox
   repository: https://github.com/lupaxa-api-extractor-toolbox
 
@@ -40,7 +40,7 @@
     - Cloud
     - Infrastructure
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/aws-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-aws-toolbox-logo.png
   logo_alt: AWS Toolbox
   repository: https://github.com/lupaxa-aws-toolbox
 
@@ -56,7 +56,7 @@
     - Cloud
     - Infrastructure
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/azure-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-azure-toolbox-logo.png
   logo_alt: Azure Toolbox
   repository: https://github.com/lupaxa-azure-toolbox
 
@@ -72,7 +72,7 @@
     - Automation
     - DevOps
     - Software Delivery
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/cicd-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox
 
@@ -88,7 +88,7 @@
     - Data
     - Storage
     - Developer Tools
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/database-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-database-toolbox-logo.png
   logo_alt: Database Toolbox
   repository: https://github.com/lupaxa-database-toolbox
 
@@ -103,7 +103,7 @@
     - Developer Tools
     - Productivity
     - Software Development
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/developers-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox
 
@@ -119,7 +119,7 @@
     - Automation
     - Infrastructure
     - Operations
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/devops-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-devops-toolbox-logo.png
   logo_alt: DevOps Toolbox
   repository: https://github.com/lupaxa-devops-toolbox
 
@@ -135,7 +135,7 @@
     - Containers
     - Infrastructure
     - DevOps
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/docker-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-docker-toolbox-logo.png
   logo_alt: Docker Toolbox
   repository: https://github.com/lupaxa-docker-toolbox
 
@@ -151,7 +151,7 @@
     - Cloud
     - Infrastructure
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gcp-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-gcp-toolbox-logo.png
   logo_alt: GCP Toolbox
   repository: https://github.com/lupaxa-gcp-toolbox
 
@@ -167,7 +167,7 @@
     - Version Control
     - Repository Management
     - Developer Tools
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox
 
@@ -183,7 +183,7 @@
     - Git Hooks
     - Automation
     - Repository Quality
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/git-hooks-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox
 
@@ -199,7 +199,7 @@
     - Repository Management
     - Automation
     - DevOps
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/gh-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-gh-toolbox-logo.png
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox
 
@@ -214,7 +214,7 @@
     - Tools
     - Assorted
     - General
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/miscellaneous-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox
 
@@ -230,7 +230,7 @@
     - Observability
     - Diagnostics
     - Operations
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/monitoring-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-monitoring-toolbox-logo.png
   logo_alt: Monitoring Toolbox
   repository: https://github.com/lupaxa-monitoring-toolbox
 
@@ -246,7 +246,7 @@
     - Alerts
     - Communications
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/notifications-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox
 
@@ -262,7 +262,7 @@
     - Certificates
     - Encryption
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/security-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox
 
@@ -278,7 +278,7 @@
     - Web Scraping
     - Data Extraction
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/spider-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-spider-toolbox-logo.png
   logo_alt: Spider Toolbox
   repository: https://github.com/lupaxa-spider-toolbox
 
@@ -294,7 +294,7 @@
     - Reliability
     - Operations
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/sre-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox
 
@@ -310,7 +310,7 @@
     - Infrastructure as Code
     - Infrastructure
     - Automation
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/terraform-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-terraform-toolbox-logo.png
   logo_alt: Terraform Toolbox
   repository: https://github.com/lupaxa-terraform-toolbox
 
@@ -326,7 +326,7 @@
     - Shell
     - Package Management
     - Productivity
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/workstation-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox
 
@@ -341,7 +341,7 @@
     - Templates
     - Standards
     - Repository Management
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-blueprints/readme-logo-128.png
+  logo: assets/images/brand/organisation-the-lupaxa-blueprints-logo.png
   logo_alt: The Lupaxa Blueprints
   repository: https://github.com/the-lupaxa-blueprints
 
@@ -356,7 +356,7 @@
     - Internal Tools
     - Automation
     - Repository Management
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-internal-toolbox/readme-logo-128.png
+  logo: assets/images/brand/organisation-the-lupaxa-internal-toolbox-logo.png
   logo_alt: The Lupaxa Internal Toolbox
   repository: https://github.com/the-lupaxa-internal-toolbox
 
@@ -371,7 +371,7 @@
     - Experiments
     - Prototypes
     - Research
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-lab/readme-logo-128.png
+  logo: assets/images/brand/organisation-the-lupaxa-lab-logo.png
   logo_alt: The Lupaxa Lab
   repository: https://github.com/the-lupaxa-lab
 
@@ -387,7 +387,7 @@
     - Shared Resources
     - Documentation
     - Standards
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project/readme-logo-128.png
+  logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project
 
@@ -402,6 +402,6 @@
     - Private Resources
     - Administration
     - Project Management
-  logo: https://raw.githubusercontent.com/the-lupaxa-project/brand-assets/master/logos/organisations/the-lupaxa-project-private/readme-logo-128.png
+  logo: assets/images/brand/organisation-the-lupaxa-project-private-logo.png
   logo_alt: The Lupaxa Project (Private)
   repository: https://github.com/the-lupaxa-project-private
