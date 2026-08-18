@@ -237,7 +237,9 @@
   logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T12:32:57"
 
 - id: git-reset-history
   published: true
