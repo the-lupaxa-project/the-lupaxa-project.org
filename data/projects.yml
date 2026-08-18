@@ -770,4 +770,6 @@
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
-  banner: in-review
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T10:07:57"
