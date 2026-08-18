@@ -365,7 +365,9 @@
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T15:51:22"
 
 - id: markdown-lint
   published: true
