@@ -138,15 +138,29 @@
   color: var(--lupaxa-white);
 }
 
-.lupaxa-header__inner > .md-header__option {
+.lupaxa-header__controls {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-left: auto;
+}
+
+.lupaxa-header__search {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 auto;
+  color: var(--lupaxa-white);
+  pointer-events: auto;
+}
+
+.lupaxa-header__controls > .md-header__option {
   position: relative;
   z-index: 3;
   width: auto;
   flex: 0 0 auto;
-  margin-left: auto;
   pointer-events: auto;
 }
 
-.lupaxa-header__inner > .md-header__option .md-header__button {
+.lupaxa-header__controls > .md-header__option .md-header__button {
   margin: 0;
 }

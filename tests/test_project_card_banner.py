@@ -230,6 +230,16 @@ def test_project_card_includes_publish_date_on_logo(tmp_path, monkeypatch):
     assert "data-released-date" not in markup
 
 
+def test_project_card_title_is_searchable_heading(tmp_path, monkeypatch):
+    """Site search deep-links to the card via a heading id matching YAML id."""
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, [_synthetic_project()])
+
+    markup = catalogue_grid("project", "project")
+
+    assert "### :material-source-repository: Synthetic Project" in markup
+    assert "{ #synthetic-project .no_toc }" in markup
+
+
 def test_project_card_includes_released_date_time_on_logo(tmp_path, monkeypatch):
     projects = [
         _synthetic_project(

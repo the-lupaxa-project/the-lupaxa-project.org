@@ -507,7 +507,7 @@
       }
 
       const titleNode = card.querySelector(
-        ":scope > p:first-child a[href], :scope > p:first-child strong",
+        ":scope > h3, :scope > p:first-child a[href], :scope > p:first-child strong",
       );
 
       return {

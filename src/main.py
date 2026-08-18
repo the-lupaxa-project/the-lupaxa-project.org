@@ -136,6 +136,11 @@ def _organisation_logo_title(name: str) -> str:
     return f"View projects in the {name}"
 
 
+def catalogue_card_heading(item: dict) -> str:
+    """Card title as a heading so site search can deep-link to the card."""
+    return f"-   ### :{item['icon']}: {item['name']} {{ #{item['id']} .no_toc }}"
+
+
 def _action_link(modifier: str, href: str, label: str, icon: str) -> str:
     return (
         f"    <a\n"
@@ -352,7 +357,7 @@ def define_env(env):
             "material-github",
         )
         return f"""
--   :{item["icon"]}:{{ .lg .middle }} **{item["name"]}**
+{catalogue_card_heading(item)}
 
     ---
 
@@ -428,7 +433,7 @@ def define_env(env):
         )
         name_attr = html.escape(item["name"], quote=True)
         return f"""
--   :{item["icon"]}:{{ .lg .middle }} **{item["name"]}**
+{catalogue_card_heading(item)}
 
     ---
 
@@ -478,7 +483,7 @@ def define_env(env):
             "material-github",
         )
         return f"""
--   :{item["icon"]}:{{ .lg .middle }} **{item["name"]}**
+{catalogue_card_heading(item)}
 
     ---
 

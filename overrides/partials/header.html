@@ -1,8 +1,8 @@
 <!--
   Custom single-row header for The Lupaxa Project Portal.
 
-  Retains Material's native logo, drawer and palette controls while rendering
-  the top-level portal navigation directly in the header.
+  Retains Material's native logo, drawer, search and palette controls while
+  rendering the top-level portal navigation directly in the header.
 -->
 
 {% set class = "md-header md-header--shadow" %}
@@ -51,21 +51,35 @@
       </ul>
     </nav>
 
-    <!-- Material's native colour-palette toggle -->
-    {% if config.theme.palette %}
-      {% if not config.theme.palette is mapping %}
-        {% include "partials/palette.html" %}
+    <div class="lupaxa-header__controls">
+      {% if "material/search" in config.plugins %}
+        {% set search = config.plugins["material/search"] | attr("config") %}
+        {% if search.enabled %}
+          <label
+            class="md-header__button md-icon lupaxa-header__search"
+            for="__search"
+            aria-label="{{ lang.t('search.placeholder') }}"
+          >
+            {% set icon = config.theme.icon.search or "material/magnify" %}
+            {% include ".icons/" ~ icon ~ ".svg" %}
+          </label>
+          {% include "partials/search.html" %}
+        {% endif %}
       {% endif %}
-    {% endif %}
 
-    <!-- Material's native palette preference handling -->
-    {% if not config.theme.palette is mapping %}
-      {% include "partials/javascripts/palette.html" %}
-    {% endif %}
+      {% if config.theme.palette %}
+        {% if not config.theme.palette is mapping %}
+          {% include "partials/palette.html" %}
+        {% endif %}
+      {% endif %}
 
-    <!-- Site language selector -->
-    {% if config.extra.alternate %}
-      {% include "partials/alternate.html" %}
-    {% endif %}
+      {% if not config.theme.palette is mapping %}
+        {% include "partials/javascripts/palette.html" %}
+      {% endif %}
+
+      {% if config.extra.alternate %}
+        {% include "partials/alternate.html" %}
+      {% endif %}
+    </div>
   </nav>
 </header>
