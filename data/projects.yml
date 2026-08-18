@@ -152,7 +152,9 @@
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
   documentation: https://check-git-repositories.thelupaxaproject.org/
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T16:02:12"
 
 - id: favicon-generator
   published: true
