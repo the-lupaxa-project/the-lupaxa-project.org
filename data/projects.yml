@@ -685,7 +685,9 @@
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
-  banner: in-review
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T09:35:52"
 
 - id: shellcheck
   published: true
