@@ -721,6 +721,27 @@
   version: "0.1.0"
   released_date: "2026-08-18T09:42:50"
 
+- id: snippets
+  published: true
+  name: Snippets
+  icon: material-source-repository
+  publish_date: "2026-08-18T16:06:31"
+  description: >-
+    A curated, searchable catalogue of reusable code snippets for Bash, Python, Ruby, and other
+    languages. Browse by language or tag, open a snippet in place, and copy highlighted examples
+    with caveats when they matter.
+  categories:
+    - Developer Tools
+    - Documentation
+    - Bash
+    - Python
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/snippets
+  documentation: https://snippets.thelupaxaproject.org/
+  banner: in-development
+
 - id: sysinfo
   published: true
   name: Sysinfo
