@@ -40,12 +40,13 @@
   text-decoration: none;
 }
 
+.md-typeset .lupaxa-hero-subtitle,
 .lupaxa-hero-subtitle {
   max-width: 48rem;
   margin: 1.2rem auto 0;
   color: var(--md-default-fg-color--light);
   font-size: clamp(1rem, 2vw, 1.3rem);
-  line-height: 1.6;
+  line-height: 1.25;
 }
 
 .lupaxa-hero-actions {
