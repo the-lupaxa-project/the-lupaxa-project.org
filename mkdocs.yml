@@ -69,23 +69,11 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.top
-    - search.highlight
 
   palette:
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: blue
-      accent: light blue
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: blue
-      accent: blue
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
+    scheme: slate
+    primary: blue
+    accent: light blue
 
   icon:
     repo: fontawesome/brands/github
@@ -95,7 +83,6 @@ theme:
 # =============================================================================
 
 plugins:
-  - search
   - macros:
       module_name: main
 
@@ -165,7 +152,6 @@ extra_css:
   - assets/stylesheets/40-components/hero.css
   - assets/stylesheets/40-components/footer.css
   - assets/stylesheets/40-components/masonry-wall.css
-  - assets/stylesheets/40-components/search.css
 
   - assets/stylesheets/50-pages/about.css
   - assets/stylesheets/50-pages/article.css
@@ -179,7 +165,6 @@ extra_css:
 extra_javascript:
   - assets/javascript/page-lifecycle.js
   - assets/javascript/header-active-nav.js
-  - assets/javascript/search-results.js
   - assets/javascript/catalogue-filters.js
   - assets/javascript/article-pager.js
   - assets/javascript/masonry-wall.js
