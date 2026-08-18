@@ -4,17 +4,41 @@
  * ============================================================================= */
 
 .md-typeset.lupaxa-article-page {
-  max-width: 44rem;
+  max-width: var(--lupaxa-content-width);
   margin-inline: auto;
   padding-top: var(--lupaxa-spacing-md);
-  padding-inline: var(--lupaxa-spacing-md);
   font-size: 0.92rem;
   line-height: 1.7;
 }
 
+.md-typeset .lupaxa-article-card {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2rem 2.4rem 2.25rem;
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(
+        in srgb,
+        var(--md-default-bg-color) 96%,
+        var(--lupaxa-blue)
+      ),
+      var(--md-default-bg-color)
+    );
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-card);
+  box-shadow: var(--lupaxa-shadow-card);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .lupaxa-article-card {
+  box-shadow:
+    0 0.1rem 0.4rem rgb(0 0 0 / 15%),
+    0 0.4rem 1.2rem rgb(0 0 0 / 12%);
+}
+
 /* Title */
 
-.md-typeset.lupaxa-article-page > h1:first-child {
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type {
   margin-top: 0;
   margin-bottom: 1.35rem;
   padding-left: 0;
@@ -26,7 +50,7 @@
   border-left: none;
 }
 
-.md-typeset.lupaxa-article-page > h1:first-child .article-title-sub {
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type .article-title-sub {
   display: block;
   margin-top: 0.4em;
   color: var(--md-default-fg-color--light);
@@ -39,8 +63,8 @@
 
 /* Opening paragraphs — slightly more air before the first section */
 
-.md-typeset.lupaxa-article-page > h1:first-child + p,
-.md-typeset.lupaxa-article-page > h1:first-child + p + p {
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p,
+.md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p + p {
   color: var(--md-default-fg-color--light);
 }
 
@@ -182,16 +206,26 @@
 
 /* Dark mode — keep silver accents readable */
 
-[data-md-color-scheme="slate"] .md-typeset.lupaxa-article-page > h1:first-child + p,
-[data-md-color-scheme="slate"] .md-typeset.lupaxa-article-page > h1:first-child + p + p {
+[data-md-color-scheme="slate"] .md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p,
+[data-md-color-scheme="slate"] .md-typeset.lupaxa-article-page .lupaxa-article-card > h1:first-of-type + p + p {
   color: var(--md-default-fg-color--light);
+}
+
+@media screen and (max-width: 76.234375em) {
+  .md-typeset.lupaxa-article-page {
+    padding-inline: var(--lupaxa-spacing-md);
+  }
 }
 
 @media screen and (max-width: 44.984375em) {
   .md-typeset.lupaxa-article-page {
-    padding-inline: 1.2rem;
+    padding-inline: var(--lupaxa-spacing-md);
     font-size: 0.9rem;
     line-height: 1.65;
+  }
+
+  .md-typeset .lupaxa-article-card {
+    padding: 1.4rem 1.25rem 1.6rem;
   }
 }
 
@@ -260,8 +294,13 @@
     gap: var(--lupaxa-spacing-sm);
   }
 
+  .md-typeset .lupaxa-article-pager__prev,
   .md-typeset .lupaxa-article-pager__next {
-    text-align: left;
+    text-align: center;
+  }
+
+  .md-typeset .lupaxa-article-pager__link {
+    align-items: center;
   }
 
   .md-typeset .lupaxa-article-pager__prev:empty {
