@@ -103,7 +103,9 @@
   logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T11:09:29"
 
 - id: certificate-tool
   published: true
