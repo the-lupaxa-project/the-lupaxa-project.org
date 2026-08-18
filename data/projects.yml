@@ -259,7 +259,9 @@
   logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T12:48:43"
 
 - id: github-repository-sync
   published: true
