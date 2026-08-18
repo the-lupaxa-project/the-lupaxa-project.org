@@ -83,7 +83,9 @@
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/bash-aliases
   documentation: https://bash-aliases.thelupaxaproject.org/
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-18T12:20:28"
 
 - id: brew-manager
   published: true
