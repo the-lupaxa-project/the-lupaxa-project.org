@@ -477,6 +477,28 @@
   documentation: https://photo-renamer.thelupaxaproject.org/
   banner: in-development
 
+- id: pre-commit-template
+  published: true
+  name: Pre-commit Template
+  icon: material-source-repository
+  publish_date: "2026-08-19T12:45:00"
+  description: >-
+    One self-contained Git pre-commit hook script you copy and configure. No pip install. Edit the
+    header for the tool, file filter, and optional yes/no prompts; leave the engine below `# STOP
+    HERE` alone. Works as a silent lint (ruff, mypy, shellcheck, rubocop) or with prompts on
+    `/dev/tty`.
+  categories:
+    - Git
+    - Git Hooks
+    - Automation
+    - Python
+  organisation: Git Hooks Toolbox
+  logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
+  logo_alt: Git Hooks Toolbox
+  repository: https://github.com/lupaxa-git-hooks-toolbox/pre-commit-template
+  documentation: https://pre-commit-template.thelupaxaproject.org/
+  banner: in-development
+
 - id: php-lint
   published: true
   name: PHP Lint
