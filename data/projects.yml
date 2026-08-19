@@ -745,6 +745,28 @@
   version: "0.1.0"
   released_date: "2026-08-18T09:35:52"
 
+- id: setup-git-hooks
+  published: true
+  name: Setup Git Hooks
+  icon: material-source-repository
+  publish_date: "2026-08-19T11:20:16"
+  description: >-
+    Install Git Hooks Toolbox subhooks from per-type YAML. Each consuming repo lists hook sources in
+    `hooks/<type>-config.yml`. `setup-hooks` fetches `src/<type>` from those remotes and writes
+    `hooks/<type>/01-<filename>`. The multiplexer is installed into Git's hooks directory unless you
+    skip it.
+  categories:
+    - Git
+    - Git Hooks
+    - Automation
+    - Python
+  organisation: Git Hooks Toolbox
+  logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
+  logo_alt: Git Hooks Toolbox
+  repository: https://github.com/lupaxa-git-hooks-toolbox/setup-git-hooks
+  documentation: https://setup-git-hooks.thelupaxaproject.org/
+  banner: in-development
+
 - id: shellcheck
   published: true
   name: ShellCheck
