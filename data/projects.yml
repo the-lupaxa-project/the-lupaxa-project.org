@@ -243,6 +243,28 @@
   version: "0.1.0"
   released_date: "2026-08-18T12:32:57"
 
+- id: git-hooks-multiplexer
+  published: true
+  name: Git Hooks Multiplexer
+  icon: material-source-repository
+  publish_date: "2026-08-19T10:25:00"
+  description: >-
+    One self-contained Git hook script. Copy it into `.git/hooks` — no pip install, no package. It
+    runs every executable under `hooks/<hook-type>/` at the repository root, in name order, and
+    stops on the first failure. The same file works as pre-commit, commit-msg, pre-push, or any
+    other hook Git invokes.
+  categories:
+    - Git
+    - Git Hooks
+    - Automation
+    - Python
+  organisation: Git Hooks Toolbox
+  logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
+  logo_alt: Git Hooks Toolbox
+  repository: https://github.com/lupaxa-git-hooks-toolbox/git-hooks-multiplexer
+  documentation: https://lupaxa-git-hooks-toolbox.github.io/git-hooks-multiplexer/
+  banner: in-development
+
 - id: git-reset-history
   published: true
   name: Git Reset History
