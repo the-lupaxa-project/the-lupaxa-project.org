@@ -258,7 +258,9 @@
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/git-hooks-multiplexer
   documentation: https://lupaxa-git-hooks-toolbox.github.io/git-hooks-multiplexer/
-  banner: in-development
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-20T21:22:22"
 
 - id: git-reset-history
   published: true
