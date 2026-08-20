@@ -179,8 +179,8 @@ hide:
     Small diffs, clear context, real reproduction steps, and knowing when an
     argument is not worth having.
 
-    <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Community</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Cybersecurity & Chess](articles/cybersecurity-and-chess.md)**
 
@@ -205,8 +205,8 @@ hide:
     Pinning, lockfiles, audits, supply-chain basics, and keeping your supply
     line trustworthy without enterprise ceremony.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Deprecation Without Chaos](articles/deprecation-without-chaos.md)**
 
@@ -218,8 +218,8 @@ hide:
     actually see, version gates they can plan around, cheap migrations, and
     removals that happen on purpose.
 
-    <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Docs That Don't Rot](articles/docs-that-dont-rot.md)**
 
@@ -244,8 +244,8 @@ hide:
     tools help, where key management goes wrong, and safer patterns for
     small teams.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Git</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Error Handling People Can Use](articles/error-handling-people-can-use.md)**
 
@@ -295,8 +295,8 @@ hide:
     subprocesses, sizes, and the failure modes that let an attacker steer
     your tool.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Key Lifecycle](articles/key-lifecycle.md)**
 
@@ -308,8 +308,8 @@ hide:
     rotate, revoke, and retire cryptographic keys and certificates without
     drama.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Least Privilege for CI](articles/least-privilege-for-ci.md)**
 
@@ -321,8 +321,8 @@ hide:
     environments, and the GitHub Actions patterns that keep long-lived
     secrets out of your pipelines.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">CI/CD</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Licenses for Humans](articles/licenses-for-humans.md)**
 
@@ -334,8 +334,8 @@ hide:
     tools. MIT, Apache-2.0, and the GPL family, what each one asks of your
     users, and how to choose without a law degree.
 
-    <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Community</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Maintainer Boundaries](articles/maintainer-boundaries.md)**
 
@@ -347,8 +347,8 @@ hide:
     without writing an essay, publish honest support expectations, and
     protect review time before it runs out.
 
-    <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Community</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[mTLS and Client Certificates](articles/mtls-and-client-certificates.md)**
 
@@ -360,8 +360,8 @@ hide:
     ordinary HTTPS, when they are worth the trouble, and how small tools
     should issue and verify them.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Certificates</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Observability for Small Projects](articles/observability-for-small-projects.md)**
 
@@ -373,8 +373,8 @@ hide:
     logs, health signals, failure modes, and knowing what broke without
     needing an enterprise APM stack.
 
-    <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">DevOps</span>
+    <span class="catalogue-category">Engineering</span>
 
 -   **[Practical SECURITY.md](articles/practical-security-md.md)**
 
@@ -386,8 +386,8 @@ hide:
     example structure, scope statements, and making the security policy easy
     to find and follow.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Programming Fundamentals](articles/programming-fundamentals.md)**
 
@@ -412,8 +412,8 @@ hide:
     steps that work, examples that ran, badges that tell the truth, and the
     shortest path from curiosity to a first success.
 
-    <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Documentation</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Red Team vs Blue Team](articles/red-team-vs-blue-team.md)**
 
@@ -425,8 +425,8 @@ hide:
     other finds the weaknesses a questionnaire never will, and where Purple,
     Green, and White Teams fit around them.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Ops</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Release Automation](articles/release-automation.md)**
 
@@ -451,8 +451,8 @@ hide:
     nondeterminism, and getting to bit-for-bit or near-identical releases
     without enterprise ceremony.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Responsible Dependency Updates](articles/responsible-dependency-updates.md)**
 
@@ -464,8 +464,8 @@ hide:
     rules, reading majors, and keeping upgrades boring without ignoring
     security fixes.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Right Tools for the Job](articles/right-tools-for-the-job.md)**
 
@@ -477,8 +477,8 @@ hide:
     and databases to what a project actually needs, instead of forcing one
     familiar stack onto every problem.
 
-    <span class="catalogue-category">Tools</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Tools</span>
 
 -   **[SAST and DAST](articles/sast-and-dast.md)**
 
@@ -490,8 +490,8 @@ hide:
     they find different bugs, and how to run SAST in CI and DAST against a
     deployed environment without drowning the team in findings.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Secrets Management](articles/secrets-management.md)**
 
@@ -503,8 +503,8 @@ hide:
     wrong, and the practices and tools that keep credentials out of your
     codebase and under control.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">DevOps</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Secure Defaults](articles/secure-defaults.md)**
 
@@ -516,8 +516,8 @@ hide:
     privilege, dangerous features opt-in, and interfaces that make the safe
     path the easy path.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Design</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Secure Logging](articles/secure-logging.md)**
 
@@ -529,8 +529,8 @@ hide:
     redaction, crash reports, debug flags, and keeping observability from
     becoming a leak.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Security by Design](articles/security-by-design.md)**
 
@@ -542,8 +542,8 @@ hide:
     flaws at design time is cheaper, and what it looks like applied to
     software, infrastructure, and cloud environments.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Design</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Security Disclosures That Work](articles/security-disclosures-that-work.md)**
 
@@ -555,8 +555,8 @@ hide:
     SECURITY.md, private reporting, triage, credit, and promises maintainers
     can actually keep.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Semantic Versioning](articles/semantic-versioning.md)**
 
@@ -568,8 +568,8 @@ hide:
     counts as breaking, how to live in 0.x honestly, why changelogs are part
     of the version number, and how to keep upgrades boring.
 
-    <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Open Source</span>
 
 -   **[Supply-Chain Signing](articles/supply-chain-signing.md)**
 
@@ -581,8 +581,8 @@ hide:
     signatures, provenance, and verification steps users can actually
     follow.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Testing What Matters](articles/testing-what-matters.md)**
 
@@ -607,8 +607,8 @@ hide:
     Yellow, Orange, and White, what each one is responsible for, and how
     they fit together into one security programme.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Ops</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[The Optimisation Trap](articles/the-optimization-trap.md)**
 
@@ -634,8 +634,8 @@ hide:
     Assets, attackers, trust boundaries, and a practical checklist without
     enterprise ceremony.
 
-    <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Security</span>
 
 -   **[Understanding CI/CD](articles/understanding-ci-cd.md)**
 

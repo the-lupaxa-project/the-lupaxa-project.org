@@ -148,8 +148,7 @@ def _article_entry(slug: str, meta: dict[str, Any], *, today: date | None = None
     desc_lines = textwrap.wrap(desc, width=72) or [""]
     desc_block = "\n    ".join(desc_lines)
     tag_spans = "\n    ".join(
-        f'<span class="catalogue-category">{tag}</span>'
-        for tag in sorted(tags, key=str.casefold)
+        f'<span class="catalogue-category">{tag}</span>' for tag in sorted(tags, key=str.casefold)
     )
     publish_date = parse_iso_date(meta.get("publish_date"))
     banner = banner_markup(
