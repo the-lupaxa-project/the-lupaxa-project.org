@@ -1,6 +1,8 @@
+import re
 from pathlib import Path
 
 import pytest
+import yaml
 
 import main
 
@@ -153,6 +155,55 @@ def test_filter_panel_includes_collapse_toolbar():
     # Summary sits in the toolbar (same row as Show Filters)
     assert markup.index("filter-panel-toolbar") < markup.index("data-organisation-summary")
     assert markup.index("data-organisation-summary") < markup.index("filter-panel-search")
+
+
+def test_filter_panel_lists_every_organisation_from_yaml():
+    filter_panel = _filter_panel()
+    organisations = yaml.safe_load((ROOT / "data" / "organisations.yml").read_text())
+    published_names = [item["name"] for item in organisations if item.get("published", True)]
+
+    markup = filter_panel(
+        "project",
+        search_label="Search",
+        search_placeholder="Search projects",
+        summary_text="Showing all projects",
+        include_organisation=True,
+    )
+
+    for name in published_names:
+        assert f">{name}</option>" in markup
+
+    org_labels = re.findall(
+        r'<select id="project-organisation"[^>]*>.*?</select>',
+        markup,
+        flags=re.S,
+    )[0]
+    option_labels = re.findall(r"<option[^>]*>(.*?)</option>", org_labels)
+    assert option_labels[0] == "All Organisations"
+    assert option_labels[1:] == sorted(published_names, key=str.casefold)
+    assert "AWS Toolbox" in option_labels
+    assert "The Lupaxa Lab" in option_labels
+
+
+def test_filter_panel_category_options_stay_empty_in_markup():
+    filter_panel = _filter_panel()
+
+    markup = filter_panel(
+        "project",
+        search_label="Search",
+        search_placeholder="Search projects",
+        summary_text="Showing all projects",
+        include_organisation=True,
+        include_status=True,
+    )
+
+    category_block = re.findall(
+        r'<select id="project-category"[^>]*>.*?</select>',
+        markup,
+        flags=re.S,
+    )[0]
+    assert category_block.count("<option") == 1
+    assert "All Categories" in category_block
 
 
 def test_filter_panel_include_sort_adds_toggle():

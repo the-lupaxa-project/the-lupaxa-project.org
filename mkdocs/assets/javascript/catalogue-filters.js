@@ -471,7 +471,6 @@
     );
 
     const categoryOptions = new Map();
-    const organisationOptions = new Map();
 
     const cardData = cards.map((card) => {
       const categories = getCatalogueCategories(card);
@@ -497,14 +496,6 @@
       categories.labels.forEach((label, index) => {
         categoryOptions.set(categories.values[index], label);
       });
-
-      if (organisationSelect) {
-        const optionLabel = organisationLabel || FALLBACK_ORG;
-        const optionValue =
-          normaliseCatalogueValue(optionLabel);
-
-        organisationOptions.set(optionValue, optionLabel);
-      }
 
       const titleNode = card.querySelector(
         ":scope > h3, :scope > p:first-child a[href], :scope > p:first-child strong",
@@ -538,16 +529,9 @@
 
     addCatalogueOptions(categorySelect, categoryOptions);
 
-    if (organisationSelect) {
-      addCatalogueOptions(
-        organisationSelect,
-        organisationOptions,
-      );
-    }
-
-    // Status options are fixed in the filter panel markup (lifecycle
-    // presets for the relevant status_kind, plus Stable for projects
-    // only), not derived from banners present on the page.
+    // Organisation and status options are fixed in the filter panel
+    // markup (every published organisation; lifecycle presets plus
+    // Stable for projects). Only categories come from visible cards.
 
     const sortButtons = config.sort
       ? filterPanel.querySelectorAll(config.sortSelector)

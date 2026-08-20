@@ -123,6 +123,10 @@ def _indent(text: str, prefix: str = "    ") -> str:
     )
 
 
+def _normalise_catalogue_value(value: str) -> str:
+    return " ".join(value.casefold().split())
+
+
 def _categories_markup(categories: list[str]) -> str:
     return "\n".join(
         f'    <button type="button" class="catalogue-category">{category}</button>'
@@ -206,11 +210,18 @@ def define_env(env):
         class_attr = " ".join(classes)
         organisation_block = ""
         if include_organisation:
+            # Fixed list from organisations.yml (not derived from project cards).
+            org_options = "\n".join(
+                f'            <option value="{html.escape(_normalise_catalogue_value(org["name"]), quote=True)}">'
+                f"{html.escape(org['name'])}</option>"
+                for org in organisations
+            )
             organisation_block = f"""
     <div class="filter-panel-select">
         <label for="{prefix}-organisation">{organisation_label}</label>
         <select id="{prefix}-organisation" data-{prefix}-organisation>
             <option value="">All Organisations</option>
+{org_options}
         </select>
     </div>"""
         status_block = ""
