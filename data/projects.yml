@@ -83,8 +83,8 @@
   repository: https://github.com/lupaxa-workstation-toolbox/bash-aliases
   documentation: https://bash-aliases.thelupaxaproject.org/
   banner: released
-  version: "0.1.0"
-  released_date: "2026-08-18T12:20:28"
+  version: "0.1.1"
+  released_date: "2026-08-20T14:37:58"
 
 - id: brew-manager
   published: true
@@ -104,8 +104,8 @@
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   banner: released
-  version: "0.1.0"
-  released_date: "2026-08-18T11:09:29"
+  version: "0.1.1"
+  released_date: "2026-08-20T14:41:16"
 
 - id: certificate-tool
   published: true
@@ -127,8 +127,8 @@
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://certtool.thelupaxaproject.org/
   banner: released
-  version: "0.1.1"
-  released_date: "2025-11-21T17:27:48"
+  version: "0.1.4"
+  released_date: "2026-08-20T15:03:33"
 
 - id: check-git-repositories
   published: true
@@ -697,8 +697,8 @@
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
   banner: released
-  version: "0.1.14"
-  released_date: "2026-08-20T14:08:26"
+  version: "0.1.15"
+  released_date: "2026-08-20T14:55:13"
 
 - id: rubocop
   published: true
