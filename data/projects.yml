@@ -17,8 +17,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/action-lint
   banner: released
-  version: "0.1.3"
-  released_date: "2026-08-20T11:16:03"
+  version: "0.1.4"
+  released_date: "2026-08-20T13:12:51"
 
 - id: awesomebot
   published: true
@@ -39,8 +39,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:15:21"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:13:52"
 
 - id: bandit
   published: true
@@ -60,8 +60,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/bandit
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:16:14"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:15:13"
 
 - id: bash-aliases
   published: true
@@ -193,8 +193,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T10:43:13"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:15:43"
 
 - id: git-crypt-manager
   published: true
@@ -215,8 +215,8 @@
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   documentation: https://git-crypt-manager.thelupaxaproject.org/
   banner: released
-  version: "1.0.0"
-  released_date: "2025-12-02T15:31:58"
+  version: "1.0.1"
+  released_date: "2026-08-20T13:55:50"
 
 - id: git-delete-tags
   published: true
@@ -320,8 +320,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/hadolint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:17:02"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:16:23"
 
 - id: json-lint
   published: true
@@ -341,8 +341,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/json-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:17:36"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:17:04"
 
 - id: makefile-lint
   published: true
@@ -362,8 +362,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/makefile-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:18:07"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:17:07"
 
 - id: makefile-skills
   published: true
@@ -385,8 +385,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: released
-  version: "0.1.1"
-  released_date: "2026-08-20T09:21:36"
+  version: "0.1.2"
+  released_date: "2026-08-20T12:11:39"
 
 - id: markdown-lint
   published: true
@@ -406,8 +406,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/markdown-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:18:21"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:19:06"
 
 - id: mypy
   published: true
@@ -427,8 +427,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/mypy
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:18:46"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:21:11"
 
 - id: perl-lint
   published: true
@@ -447,8 +447,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/perl-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:18:56"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:20:35"
 
 - id: photo-renamer
   published: true
@@ -511,8 +511,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/php-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:19:10"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:21:43"
 
 - id: pipeline-template
   published: true
@@ -533,8 +533,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pipeline-template
   banner: released
-  version: "0.1.1"
-  released_date: "2026-08-20T10:53:53"
+  version: "0.1.2"
+  released_date: "2026-08-20T13:21:51"
 
 - id: puppet-lint
   published: true
@@ -554,8 +554,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/puppet-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:19:50"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:23:33"
 
 - id: pur
   published: true
@@ -574,8 +574,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pur
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:21:39"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:23:42"
 
 - id: pycodestyle
   published: true
@@ -594,8 +594,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pycodestyle
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:22:05"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:24:40"
 
 - id: pydocstyle
   published: true
@@ -615,8 +615,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pydocstyle
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:22:52"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:24:46"
 
 - id: pylama
   published: true
@@ -635,8 +635,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylama
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:23:27"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:26:08"
 
 - id: pylint
   published: true
@@ -655,8 +655,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:23:42"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:26:08"
 
 - id: reek
   published: true
@@ -675,8 +675,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/reek
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:24:18"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:26:43"
 
 - id: reusable-workflows
   published: true
@@ -697,8 +697,8 @@
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
   banner: released
-  version: "0.1.13"
-  released_date: "2026-08-20T10:39:09"
+  version: "0.1.14"
+  released_date: "2026-08-20T14:08:26"
 
 - id: rubocop
   published: true
@@ -717,8 +717,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/rubocop
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:24:50"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:26:49"
 
 - id: ruff
   published: true
@@ -737,8 +737,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:25:29"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:27:35"
 
 - id: setup-git-hooks
   published: true
@@ -779,8 +779,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:25:49"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:27:49"
 
 - id: snippets
   published: true
@@ -801,8 +801,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.1.0"
-  released_date: "2026-08-19T08:49:10"
+  version: "0.1.2"
+  released_date: "2026-08-20T13:31:34"
 
 - id: sysinfo
   published: true
@@ -846,8 +846,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/validate-citations-file
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:26:27"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:28:27"
 
 - id: yaml-lint
   published: true
@@ -867,5 +867,5 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T11:27:25"
+  version: "0.1.3"
+  released_date: "2026-08-20T13:28:30"
