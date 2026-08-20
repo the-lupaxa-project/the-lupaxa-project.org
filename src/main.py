@@ -126,7 +126,7 @@ def _indent(text: str, prefix: str = "    ") -> str:
 def _categories_markup(categories: list[str]) -> str:
     return "\n".join(
         f'    <button type="button" class="catalogue-category">{category}</button>'
-        for category in categories
+        for category in sorted(categories, key=str.casefold)
     )
 
 

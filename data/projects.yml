@@ -11,7 +11,7 @@
     - CI/CD
     - GitHub Actions
     - Linting
-    - YAML
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -33,7 +33,7 @@
     - CI/CD
     - Documentation
     - Linting
-    - Ruby
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -52,9 +52,9 @@
     reusable CICD Toolbox pipeline for static security analysis of Python projects.
   categories:
     - CI/CD
-    - Python
     - Security
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -74,10 +74,9 @@
     system, MkDocs, and catch-all groups, plus helpers to add, edit, delete, list, and reload
     aliases.
   categories:
-    - Bash
+    - Workstation
     - Developer Tools
     - Productivity
-    - Git
   organisation: Workstation Toolbox
   logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
@@ -100,7 +99,6 @@
     - Homebrew
     - Workstation
     - Package Management
-    - Bash
   organisation: Workstation Toolbox
   logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
@@ -122,7 +120,7 @@
   categories:
     - Certificates
     - Security
-    - Python
+    - CLI
   organisation: Security Toolbox
   logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
@@ -146,7 +144,7 @@
     - Git
     - Automation
     - Repository Management
-    - Bash
+    - CLI
   organisation: Git Toolbox
   logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -168,7 +166,7 @@
   categories:
     - Favicons
     - Websites
-    - Python
+    - Utilities
   organisation: Miscellaneous Toolbox
   logo: assets/images/brand/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
@@ -187,9 +185,9 @@
     them as `cicd-<tool>` commands.
   categories:
     - CI/CD
-    - Python
     - CLI
     - Developer Tools
+    - Automation
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -211,7 +209,6 @@
     - Encryption
     - Security
     - Git
-    - Bash
   organisation: Security Toolbox
   logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
@@ -234,7 +231,6 @@
     - Git
     - Automation
     - Repository Management
-    - Bash
   organisation: Git Toolbox
   logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -257,7 +253,6 @@
     - Git
     - Git Hooks
     - Automation
-    - Python
   organisation: Git Hooks Toolbox
   logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
@@ -278,7 +273,6 @@
     - Git
     - Automation
     - Repository Management
-    - Bash
   organisation: Git Toolbox
   logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -299,9 +293,8 @@
     updated.
   categories:
     - GitHub
+    - Git
     - Automation
-    - Repository Management
-    - Python
   organisation: GitHub Toolbox
   logo: assets/images/brand/organisation-gh-toolbox-logo.png
   logo_alt: GitHub Toolbox
@@ -321,6 +314,7 @@
     - CI/CD
     - Docker
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -341,6 +335,7 @@
     - CI/CD
     - JSON
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -359,8 +354,9 @@
     pipeline aligned with Lupaxa makefile validation workflows.
   categories:
     - CI/CD
-    - Makefiles
+    - Makefile
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -380,10 +376,9 @@
     `.makefiles/` directory, always enables versioning, and optionally enables standalone skills via
     `SKILLS`.
   categories:
-    - Makefiles
     - Automation
-    - Templates
     - Standards
+    - Developer Tools
   organisation: Developers Toolbox
   logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -404,8 +399,8 @@
   categories:
     - CI/CD
     - Markdown
-    - Documentation
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -424,9 +419,9 @@
     pipeline for static type checking across Python trees.
   categories:
     - CI/CD
-    - Python
     - Type Checking
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -445,8 +440,8 @@
     pipeline for Perl syntax validation.
   categories:
     - CI/CD
-    - Perl
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -468,8 +463,8 @@
   categories:
     - Photos
     - Automation
-    - Python
     - CLI
+    - Utilities
   organisation: Miscellaneous Toolbox
   logo: assets/images/brand/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
@@ -490,8 +485,8 @@
   categories:
     - Git
     - Git Hooks
+    - Templates
     - Automation
-    - Python
   organisation: Git Hooks Toolbox
   logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
@@ -509,8 +504,8 @@
     Toolbox pipeline for PHP syntax validation.
   categories:
     - CI/CD
-    - PHP
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -530,9 +525,9 @@
     Actions, Bitbucket, Travis, or a local shell.
   categories:
     - CI/CD
-    - Bash
     - Templates
     - Automation
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -553,7 +548,7 @@
     - CI/CD
     - Puppet
     - Linting
-    - Ruby
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -572,8 +567,8 @@
     CICD Toolbox pipeline that highlights outdated Python dependencies.
   categories:
     - CI/CD
-    - Python
     - Dependencies
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -592,8 +587,8 @@
     reusable CICD Toolbox pipeline for Python style-guide compliance.
   categories:
     - CI/CD
-    - Python
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -612,9 +607,9 @@
     reusable CICD Toolbox pipeline for docstring quality and convention checks.
   categories:
     - CI/CD
-    - Python
     - Documentation
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -633,8 +628,8 @@
     pipeline that wraps a multi-linter Python audit suite.
   categories:
     - CI/CD
-    - Python
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -653,8 +648,8 @@
     Toolbox pipeline for deep Python linting and code smells.
   categories:
     - CI/CD
-    - Python
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -673,8 +668,8 @@
     pipeline for Ruby maintainability analysis.
   categories:
     - CI/CD
-    - Ruby
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -695,8 +690,8 @@
     management.
   categories:
     - GitHub Actions
+    - CI/CD
     - Automation
-    - Continuous Integration
   organisation: The Lupaxa Project
   logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
@@ -715,8 +710,8 @@
     pipeline for Ruby style and static analysis.
   categories:
     - CI/CD
-    - Ruby
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -735,8 +730,8 @@
     Toolbox pipeline for fast Python linting.
   categories:
     - CI/CD
-    - Python
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -759,7 +754,7 @@
     - Git
     - Git Hooks
     - Automation
-    - Python
+    - YAML
   organisation: Git Hooks Toolbox
   logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
@@ -777,8 +772,8 @@
     Toolbox pipeline for Bash/shell portability and bug finding.
   categories:
     - CI/CD
-    - Bash
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -799,8 +794,7 @@
   categories:
     - Developer Tools
     - Documentation
-    - Bash
-    - Python
+    - Productivity
   organisation: Developers Toolbox
   logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -825,7 +819,6 @@
     more, with profiles for minimal, CI, and support workflows.
   categories:
     - System Information
-    - Python
     - CLI
     - Developer Tools
   organisation: Developers Toolbox
@@ -845,8 +838,9 @@
     reusable CICD Toolbox pipeline for citation metadata quality checks.
   categories:
     - CI/CD
-    - Documentation
     - Metadata
+    - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
@@ -867,6 +861,7 @@
     - CI/CD
     - YAML
     - Linting
+    - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox

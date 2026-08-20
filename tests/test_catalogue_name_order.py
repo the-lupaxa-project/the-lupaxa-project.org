@@ -41,6 +41,15 @@ def _names(markup: str) -> list[str]:
     return re.findall(r'data-name="([^"]+)"', markup)
 
 
+def test_category_pills_are_alphabetical():
+    markup = main._categories_markup(["Zebra", "alpha", "Middle"])
+    assert re.findall(r'catalogue-category">([^<]+)', markup) == [
+        "alpha",
+        "Middle",
+        "Zebra",
+    ]
+
+
 def test_sort_catalogue_by_name_ignores_yaml_order():
     items = [{"name": "Zebra"}, {"name": "alpha"}, {"name": "Middle"}]
     assert [item["name"] for item in main.sort_catalogue_by_name(items)] == [

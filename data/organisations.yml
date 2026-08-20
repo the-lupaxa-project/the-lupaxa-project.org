@@ -3,12 +3,13 @@
   name: Actions Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:37:39"
-  description: Open source GitHub Actions, reusable workflows and supporting automation for
-    building consistent repository workflows.
+  description: Reusable GitHub Actions for consistent repository workflows, shared CI steps
+    and repeatable project setup, so common jobs do not have to be rewritten in
+    every repository.
   categories:
-    - GitHub Actions
     - Automation
-    - Continuous Integration
+    - CI/CD
+    - Github Actions
   logo: assets/images/brand/organisation-actions-toolbox-logo.png
   logo_alt: Actions Toolbox
   repository: https://github.com/lupaxa-actions-toolbox
@@ -18,12 +19,12 @@
   name: API Extractor Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:38:23"
-  description: Tools and libraries for extracting, processing and transforming data from application
-    programming interfaces.
+  description: API extraction and transformation tools for pulling structured data from
+    application interfaces and shaping it so it can be collected, compared and
+    reused.
   categories:
     - APIs
     - Data Extraction
-    - Developer Tools
   logo: assets/images/brand/organisation-api-extractor-toolbox-logo.png
   logo_alt: API Extractor Toolbox
   repository: https://github.com/lupaxa-api-extractor-toolbox
@@ -33,8 +34,9 @@
   name: AWS Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:36:52"
-  description: Open source tools, libraries and automation focused on Amazon Web Services
-    and cloud infrastructure management.
+  description: Automation tools and utilities for Amazon Web Services, covering everyday
+    cloud operations, account tasks and infrastructure management without
+    repeating the same console work.
   categories:
     - AWS
     - Cloud
@@ -49,8 +51,9 @@
   name: Azure Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:38:57"
-  description: Open source projects for Microsoft Azure, including cloud automation, deployment
-    and infrastructure management tools.
+  description: Automation tools and utilities for Microsoft Azure, covering everyday cloud
+    operations, account tasks and infrastructure management without repeating the
+    same portal work.
   categories:
     - Azure
     - Cloud
@@ -65,13 +68,13 @@
   name: CI/CD Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:39:58"
-  description: Tools, templates and automation for continuous integration, continuous delivery
-    and repeatable software release workflows.
+  description: Components, linters and helpers for CI/CD pipelines, from checks you run
+    locally to reusable GitHub Actions workflows that keep the same quality gates
+    on every repository.
   categories:
     - CI/CD
     - Automation
     - DevOps
-    - Software Delivery
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox
@@ -81,13 +84,12 @@
   name: Database Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:40:27"
-  description: Tools and libraries for working with relational, document and other data storage
-    systems.
+  description: Database tools and scripts for analysis, migration and automation across
+    relational, document and other storage systems, so routine data work does not
+    stay as one-off queries.
   categories:
     - Databases
-    - Data
     - Storage
-    - Developer Tools
   logo: assets/images/brand/organisation-database-toolbox-logo.png
   logo_alt: Database Toolbox
   repository: https://github.com/lupaxa-database-toolbox
@@ -97,12 +99,12 @@
   name: Developers Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:40:56"
-  description: General-purpose utilities, libraries and productivity tools for software development
-    and local development environments.
+  description: Developer utilities and productivity-enhancing scripts for everyday software
+    work and local development environments, from small helpers to shared project
+    tooling.
   categories:
     - Developer Tools
     - Productivity
-    - Software Development
   logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox
@@ -112,13 +114,13 @@
   name: DevOps Toolbox
   icon: material-domain
   publish_date: "2025-10-23T12:16:59"
-  description: Tools and automation for managing software delivery, infrastructure and operational
-    workflows.
+  description: DevOps automation tools for infrastructure, software delivery and the
+    operational workflows that sit between them, so those steps stay repeatable
+    instead of being done by hand.
   categories:
     - DevOps
     - Automation
     - Infrastructure
-    - Operations
   logo: assets/images/brand/organisation-devops-toolbox-logo.png
   logo_alt: DevOps Toolbox
   repository: https://github.com/lupaxa-devops-toolbox
@@ -128,13 +130,12 @@
   name: Docker Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:41:26"
-  description: Tools, images and supporting resources for building, running and managing containerised
-    applications with Docker.
+  description: Docker containers, base images and utilities for building, running and
+    maintaining containerised applications, including the supporting images those
+    workloads depend on.
   categories:
     - Docker
     - Containers
-    - Infrastructure
-    - DevOps
   logo: assets/images/brand/organisation-docker-toolbox-logo.png
   logo_alt: Docker Toolbox
   repository: https://github.com/lupaxa-docker-toolbox
@@ -144,10 +145,11 @@
   name: GCP Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:42:03"
-  description: Open source tools, libraries and automation focused on Google Cloud Platform
-    and cloud infrastructure management.
+  description: Automation tools and utilities for Google Cloud Platform, covering everyday
+    cloud operations, project tasks and infrastructure management without
+    repeating the same console work.
   categories:
-    - Google Cloud
+    - GCP
     - Cloud
     - Infrastructure
     - Automation
@@ -160,11 +162,11 @@
   name: Git Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:44:22"
-  description: Utilities and automation for Git repositories, version control operations and
-    repository maintenance workflows.
+  description: Scripts, aliases and tools for everyday Git workflows, repository maintenance
+    and version-control operations, from day-to-day shortcuts to wider workspace
+    checks.
   categories:
     - Git
-    - Version Control
     - Repository Management
     - Developer Tools
   logo: assets/images/brand/organisation-git-toolbox-logo.png
@@ -176,13 +178,13 @@
   name: Git Hooks Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:42:31"
-  description: Reusable Git hooks and supporting tools for automating repository checks, validation
-    and development workflows.
+  description: Reusable Git hooks for linting, testing, security and enforcing code quality
+    before changes leave the local repository, so those checks run at commit and
+    push time.
   categories:
     - Git
     - Git Hooks
     - Automation
-    - Repository Quality
   logo: assets/images/brand/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox
@@ -192,13 +194,13 @@
   name: GitHub Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:47:17"
-  description: GitHub-focused tools covering repository administration, APIs, workflows and
-    platform automation.
+  description: Utilities for managing GitHub organisations, repositories and workflows, so
+    routine administration can be done in bulk instead of one repository at a
+    time.
   categories:
+    - Automation
     - GitHub
     - Repository Management
-    - Automation
-    - DevOps
   logo: assets/images/brand/organisation-gh-toolbox-logo.png
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox
@@ -208,12 +210,11 @@
   name: Miscellaneous Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:51:24"
-  description: Assorted tools and utilities that do not belong in a dedicated domain toolbox.
+  description: Assorted tools, utilities and supporting projects that do not belong in a
+    dedicated domain toolbox and would otherwise have nowhere else to live in the
+    catalogue.
   categories:
     - Utilities
-    - Tools
-    - Assorted
-    - General
   logo: assets/images/brand/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox
@@ -223,12 +224,12 @@
   name: Monitoring Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:48:40"
-  description: Monitoring, observability and diagnostic tools for understanding the behaviour
-    and health of applications and infrastructure.
+  description: Monitoring and observability tools for system visibility, so the behaviour and
+    health of applications and infrastructure can be understood while they are
+    running.
   categories:
     - Monitoring
     - Observability
-    - Diagnostics
     - Operations
   logo: assets/images/brand/organisation-monitoring-toolbox-logo.png
   logo_alt: Monitoring Toolbox
@@ -239,13 +240,12 @@
   name: Notifications Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:49:10"
-  description: Tools and integrations for delivering notifications, alerts and automated messages
-    across different communication platforms.
+  description: Notification and messaging tools for automation and alerts, so projects can
+    reach people on the channels they already use when something needs attention.
   categories:
-    - Notifications
     - Alerts
-    - Communications
     - Automation
+    - Notifications
   logo: assets/images/brand/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox
@@ -255,13 +255,13 @@
   name: Security Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:39:29"
-  description: Security-focused tools covering certificates, encryption, authentication and
-    security automation.
+  description: Security-focused tools for scanning, auditing and hardening, so common
+    weaknesses are found and reduced before they spread through repositories and
+    deployments.
   categories:
-    - Security
     - Certificates
     - Encryption
-    - Automation
+    - Security
   logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox
@@ -271,10 +271,9 @@
   name: Spider Toolbox
   icon: material-domain
   publish_date: "2025-10-23T12:17:28"
-  description: Web crawling, scraping and content discovery tools for collecting and processing
-    information from websites.
+  description: Web spiders and crawlers for collecting information from websites and turning
+    that material into structured data that can be stored, compared and analysed.
   categories:
-    - Web Crawling
     - Web Scraping
     - Data Extraction
     - Automation
@@ -287,10 +286,10 @@
   name: SRE Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:49:40"
-  description: Tools and automation supporting reliability engineering, service operations
-    and resilient production systems.
+  description: Site reliability engineering tools focused on availability, resilience and
+    performance, so production systems stay understandable and recoverable when
+    they are under load.
   categories:
-    - Site Reliability Engineering
     - Reliability
     - Operations
     - Automation
@@ -303,12 +302,11 @@
   name: Terraform Toolbox
   icon: material-domain
   publish_date: "2025-06-27T18:50:41"
-  description: Terraform modules, tools and automation for defining, provisioning and maintaining
-    infrastructure as code.
+  description: Terraform modules and infrastructure-as-code resources for defining,
+    provisioning and maintaining cloud infrastructure in a form that can be
+    reviewed and reused.
   categories:
-    - Terraform
     - Infrastructure as Code
-    - Infrastructure
     - Automation
   logo: assets/images/brand/organisation-terraform-toolbox-logo.png
   logo_alt: Terraform Toolbox
@@ -319,11 +317,11 @@
   name: Workstation Toolbox
   icon: material-domain
   publish_date: "2026-08-06T08:29:52"
-  description: Shell, package-manager and local workstation tooling for setting up and maintaining
-    developer machines.
+  description: Tools for local operating-system environments, shell configuration,
+    package-management helpers and workstation automation, so developer machines
+    can be set up and kept in a known state.
   categories:
     - Workstation
-    - Shell
     - Package Management
     - Productivity
   logo: assets/images/brand/organisation-workstation-toolbox-logo.png
@@ -335,8 +333,9 @@
   name: The Lupaxa Blueprints
   icon: material-domain
   publish_date: "2026-07-20T13:50:58"
-  description: Repository templates, project foundations and reusable starting points for
-    creating consistent repositories across The Lupaxa Project.
+  description: Organisation and repository templates and blueprints for consistent starting
+    points across The Lupaxa Project, so new work begins from the same foundations
+    instead of a blank repository.
   categories:
     - Templates
     - Standards
@@ -350,12 +349,13 @@
   name: The Lupaxa Internal Toolbox
   icon: material-domain
   publish_date: "2026-07-23T07:40:35"
-  description: A collection of internal tools used by The Lupaxa Project team to support administration,
-    automation and repository management.
+  description: Member-only repositories for early-stage development, security work
+    before disclosure, planning, release preparation and private support for public
+    projects.
   categories:
-    - Internal Tools
-    - Automation
-    - Repository Management
+    - Planning
+    - Security
+    - Shared Resources
   logo: assets/images/brand/organisation-the-lupaxa-internal-toolbox-logo.png
   logo_alt: The Lupaxa Internal Toolbox
   repository: https://github.com/the-lupaxa-internal-toolbox
@@ -365,11 +365,11 @@
   name: The Lupaxa Lab
   icon: material-domain
   publish_date: "2025-11-09T23:10:02"
-  description: Experimental projects, prototypes and technical investigations that may later
-    become established projects elsewhere in the ecosystem.
+  description: A space for experimental ideas, prototypes and technical investigations that
+    may later grow into established projects elsewhere in The Lupaxa Project
+    ecosystem.
   categories:
     - Experiments
-    - Prototypes
     - Research
   logo: assets/images/brand/organisation-the-lupaxa-lab-logo.png
   logo_alt: The Lupaxa Lab
@@ -380,13 +380,13 @@
   name: The Lupaxa Project
   icon: material-domain
   publish_date: "2025-06-27T18:52:25"
-  description: The central public organisation containing shared standards, documentation,
-    workflows, brand assets and project-wide resources.
+  description: The central public organisation for shared standards, documentation,
+    workflows, brand assets and other project-wide resources used across The
+    Lupaxa Project.
   categories:
-    - Project Resources
-    - Shared Resources
     - Documentation
     - Standards
+    - Shared Resources
   logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project
@@ -396,12 +396,13 @@
   name: The Lupaxa Project (Private)
   icon: material-domain
   publish_date: "2025-06-27T18:51:55"
-  description: Private repositories and member-only resources supporting the internal administration
-    and coordination of The Lupaxa Project.
+  description: Private repositories and member-only resources supporting the internal
+    administration and coordination of The Lupaxa Project, away from the public
+    catalogue.
   categories:
-    - Private Resources
     - Administration
-    - Project Management
+    - Internal Tools
+    - Coordination
   logo: assets/images/brand/organisation-the-lupaxa-project-private-logo.png
   logo_alt: The Lupaxa Project (Private)
   repository: https://github.com/the-lupaxa-project-private
