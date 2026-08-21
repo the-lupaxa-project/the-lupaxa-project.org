@@ -813,8 +813,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.1"
-  released_date: "2026-08-21T12:05:30"
+  version: "0.2.2"
+  released_date: "2026-08-21T12:45:53"
 
 - id: sysinfo
   published: true
