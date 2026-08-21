@@ -834,7 +834,9 @@
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/sysinfo
   documentation: https://sysinfo.thelupaxaproject.org/
-  banner: in-development
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-21T09:58:03"
 
 - id: validate-citations-file
   published: true
