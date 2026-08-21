@@ -302,7 +302,9 @@
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
-  banner: in-testing
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-21T08:33:53"
 
 - id: hadolint
   published: true
