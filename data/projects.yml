@@ -172,7 +172,9 @@
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
   documentation: https://favicon-generator.thelupaxaproject.org/
-  banner: in-development
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-21T10:59:47"
 
 - id: get-all-tools
   published: true
