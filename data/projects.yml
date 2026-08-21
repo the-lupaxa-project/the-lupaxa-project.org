@@ -154,6 +154,28 @@
   version: "0.1.0"
   released_date: "2026-08-18T16:02:12"
 
+- id: divulge
+  published: true
+  name: Divulge
+  icon: material-source-repository
+  publish_date: "2026-08-21T13:13:40"
+  description: >-
+    Opinionated console messaging helper with coloured, prefixed info, success, warning, error, and
+    system output. Install `lupaxa-divulge` from PyPI and use simple function calls or a chainable
+    `Divulge` object in scripts and tools.
+  categories:
+    - Console
+    - Developer Tools
+    - Messaging
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/divulge
+  documentation: https://divulge.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-21T14:51:32"
+
 - id: favicon-generator
   published: true
   name: Favicon Generator
