@@ -176,6 +176,21 @@
   version: "0.1.0"
   released_date: "2026-08-21T14:51:32"
 
+- id: expired
+  published: true
+  name: Expired
+  icon: material-source-repository
+  publish_date: "2026-08-23T16:14:46"
+  description: >-
+    Forthcoming Developers Toolbox project. The public repository is in early development.
+  categories:
+    - Developer Tools
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/expired
+  banner: in-development
+
 - id: favicon-generator
   published: true
   name: Favicon Generator
