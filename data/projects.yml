@@ -182,14 +182,17 @@
   icon: material-source-repository
   publish_date: "2026-08-23T16:14:46"
   description: >-
-    Forthcoming Developers Toolbox project. The public repository is in early development.
+    Tiny Python library and CLI to check whether a timestamp has expired relative to UTC now.
   categories:
     - Developer Tools
   organisation: Developers Toolbox
   logo: assets/images/brand/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/expired
-  banner: in-development
+  documentation: https://expired.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-23T18:35:41"
 
 - id: favicon-generator
   published: true
