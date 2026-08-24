@@ -369,6 +369,27 @@
   version: "0.1.3"
   released_date: "2026-08-20T13:16:23"
 
+- id: ini-file-parser
+  published: true
+  name: INI File Parser
+  icon: material-source-repository
+  publish_date: "2026-08-24T10:05:28"
+  description: >-
+    Sourceable Bash helper that reads INI-style config files into section arrays and key variables.
+    Load a file with `process_ini_file`, then read values with `get_value` or the generated
+    `section_key` variables.
+  categories:
+    - Configuration
+    - Developer Tools
+    - INI
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/ini-file-parser
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-24T10:46:49"
+
 - id: json-lint
   published: true
   name: JSON Lint
