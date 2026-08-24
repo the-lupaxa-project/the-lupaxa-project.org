@@ -729,6 +729,28 @@
   version: "0.1.3"
   released_date: "2026-08-20T13:26:08"
 
+- id: qrcode-generator
+  published: true
+  name: QR Code Generator
+  icon: material-source-repository
+  publish_date: "2026-08-23T19:45:02"
+  description: >-
+    CLI and library to generate QR codes for text, Wi-Fi, contacts, email, SMS, locations, and
+    calendar events. Install `lupaxa-qrcode-generator` from PyPI and run `qrcode-generator` or
+    `qrcodes`.
+  categories:
+    - CLI
+    - Developer Tools
+    - QR Codes
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/qrcode-generator
+  documentation: https://qrcode-generator.thelupaxaproject.org/
+  banner: released
+  version: "0.2.0"
+  released_date: "2026-08-24T08:28:46"
+
 - id: reek
   published: true
   name: Reek
