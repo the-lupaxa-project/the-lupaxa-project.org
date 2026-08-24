@@ -14,7 +14,6 @@ site_url: https://thelupaxaproject.org/
 
 extra:
   generator: false
-  start_year: 2025
   footer_name: The Lupaxa Project
   footer_taglines:
     - Where exploration meets precision.
@@ -172,5 +171,5 @@ extra_javascript:
   - assets/javascript/gallery.js
 
 # =============================================================================
-# Copyright (rendered by overrides/partials/copyright.html; year set in-browser)
+# Copyright (rendered by overrides/partials/copyright.html)
 # =============================================================================
