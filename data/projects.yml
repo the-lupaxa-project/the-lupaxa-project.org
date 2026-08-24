@@ -431,8 +431,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: released
-  version: "0.1.2"
-  released_date: "2026-08-20T12:11:39"
+  version: "0.1.3"
+  released_date: "2026-08-24T09:33:21"
 
 - id: markdown-lint
   published: true
