@@ -62,6 +62,10 @@ hide:
         to refine. The Lupaxa Project is where exploration meets precision, and
         where the untamed meets the engineered.
     </p>
+    <p>
+        The project is volunteer-led. If you want to help cover time and
+        running costs, see [Sponsor](sponsor/).
+    </p>
 </div>
 
 <div class="grid cards about-summary" markdown>
