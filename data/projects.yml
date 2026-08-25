@@ -154,6 +154,28 @@
   version: "0.1.1"
   released_date: "2026-08-24T14:55:44"
 
+- id: data-converter
+  published: true
+  name: Data Converter
+  icon: material-source-repository
+  publish_date: "2026-08-24T19:40:50"
+  description: >-
+    Library that converts data between JSON, JSON5, XML, YAML, and TOML, including dictionary
+    round-trips. Install `lupaxa-data-converter` from PyPI and use `DataConverter` to load one
+    format and write another.
+  categories:
+    - Data Conversion
+    - Developer Tools
+    - JSON
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/data-converter
+  documentation: https://data-converter.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-25T10:21:30"
+
 - id: divulge
   published: true
   name: Divulge
