@@ -1,0 +1,42 @@
+"""Sponsor page nav, copy, and Ko-fi embed."""
+
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+MKDOCS_YML = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+INDEX_MD = (ROOT / "mkdocs/index.md").read_text(encoding="utf-8")
+SPONSOR_MD = (ROOT / "mkdocs/sponsor.md").read_text(encoding="utf-8")
+
+
+def test_nav_lists_sponsor_after_gallery():
+    gallery = "- Gallery: gallery.md"
+    sponsor = "- Sponsor: sponsor.md"
+    assert gallery in MKDOCS_YML
+    assert sponsor in MKDOCS_YML
+    assert MKDOCS_YML.index(gallery) < MKDOCS_YML.index(sponsor)
+    assert "assets/stylesheets/50-pages/sponsor.css" in MKDOCS_YML
+
+
+def test_sponsor_page_states_time_then_costs_and_embeds_kofi():
+    time_at = SPONSOR_MD.index("**Time**")
+    costs_at = SPONSOR_MD.index("**Running costs**")
+    assert time_at < costs_at
+    assert (
+        'src="https://ko-fi.com/thelupaxaproject/'
+        '?hidefeed=true&widget=true&embed=true"'
+    ) in SPONSOR_MD
+    assert 'title="Support The Lupaxa Project on Ko-fi"' in SPONSOR_MD
+    assert 'href="https://ko-fi.com/thelupaxaproject"' in SPONSOR_MD
+    assert 'rel="noopener noreferrer"' in SPONSOR_MD
+    assert 'target="_blank"' in SPONSOR_MD
+    assert "overlay-widget.js" not in SPONSOR_MD
+
+
+def test_home_who_we_are_links_to_sponsor():
+    assert "[Sponsor](sponsor/)" in INDEX_MD
+    assert "volunteer-led" in INDEX_MD
+
+
+def test_home_hero_has_no_sponsor_button():
+    hero = INDEX_MD.split("## Who We Are", 1)[0]
+    assert "Sponsor" not in hero
