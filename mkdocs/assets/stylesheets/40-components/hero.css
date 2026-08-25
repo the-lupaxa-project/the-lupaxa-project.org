@@ -40,6 +40,11 @@
   text-decoration: none;
 }
 
+.md-typeset .lupaxa-hero .lupaxa-hero-title {
+  color: var(--lupaxa-light-blue);
+  font-weight: 500;
+}
+
 .md-typeset .lupaxa-hero-subtitle,
 .lupaxa-hero-subtitle {
   max-width: 48rem;
