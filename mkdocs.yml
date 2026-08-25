@@ -100,6 +100,7 @@ nav:
   - Policies: policies.md
   - Quotes: quotes.md
   - Gallery: gallery.md
+  - Sponsor: sponsor.md
 
 markdown_extensions:
   - abbr
@@ -156,6 +157,7 @@ extra_css:
   - assets/stylesheets/50-pages/article.css
   - assets/stylesheets/50-pages/quotes.css
   - assets/stylesheets/50-pages/gallery.css
+  - assets/stylesheets/50-pages/sponsor.css
 
   - assets/stylesheets/90-responsive.css
   - assets/stylesheets/95-print.css
