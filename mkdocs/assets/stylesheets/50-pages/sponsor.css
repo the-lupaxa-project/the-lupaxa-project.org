@@ -4,7 +4,13 @@
  * ============================================================================= */
 
 .md-typeset .grid.cards.sponsor-reasons {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-introduction.sponsor-close p {
+  color: var(--lupaxa-light-blue);
+  font-size: 20px;
+  text-align: center;
 }
 
 .md-typeset .sponsor-reasons > ul > li,
@@ -23,6 +29,7 @@
 
 .sponsor-widget {
   margin: 1.5rem 0 var(--lupaxa-spacing-lg);
+  padding: 1.25rem;
   overflow: hidden;
   background:
     linear-gradient(
@@ -39,22 +46,30 @@
   box-shadow: var(--lupaxa-shadow-card);
 }
 
+.sponsor-widget-frame {
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0.45rem;
+  padding: 2rem 0 1.25rem;
+}
+
 .sponsor-widget iframe {
   display: block;
   width: 100%;
-  height: 712px;
+  height: 640px;
+  overflow: hidden;
   padding: 0;
-  background: transparent;
+  background: #fff;
   border: 0;
 }
 
 .sponsor-widget-fallback {
   margin: 0;
-  padding: 0.85rem 1.25rem 1.1rem;
+  padding: 0.85rem 0 0;
   text-align: center;
 }
 
-@media screen and (max-width: 44.984375em) {
+@media screen and (max-width: 59.984375em) {
   .md-typeset .grid.cards.sponsor-reasons {
     grid-template-columns: minmax(0, 1fr);
   }

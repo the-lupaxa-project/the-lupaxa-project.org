@@ -164,7 +164,8 @@
   .md-typeset .grid.cards,
   .md-typeset .grid.cards.about-summary,
   .md-typeset .grid.cards.about-principles,
-  .md-typeset .grid.cards.about-build {
+  .md-typeset .grid.cards.about-build,
+  .md-typeset .grid.cards.sponsor-reasons {
     grid-template-columns: minmax(0, 1fr);
   }
 

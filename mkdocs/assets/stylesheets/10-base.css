@@ -3,6 +3,14 @@
  * Base Typography and Links
  * ============================================================================= */
 
+.md-typeset {
+  line-height: var(--lupaxa-body-line-height);
+}
+
+.md-typeset p {
+  line-height: var(--lupaxa-body-line-height);
+}
+
 .md-typeset a {
   color: var(--lupaxa-light-blue);
   text-decoration: none;

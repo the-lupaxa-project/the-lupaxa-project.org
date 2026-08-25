@@ -401,24 +401,21 @@
   flex: 1 1 auto;
   min-height: 4.65rem;
   margin: 0;
-  line-height: 1.55;
+  line-height: var(--lupaxa-body-line-height);
 }
 
 .md-typeset .catalogue-grid code {
-  display: inline-block;
-  margin: 0.12rem 0.16rem 0.12rem 0;
-  padding: 0.18rem 0.45rem;
-  font-size: 0.72rem;
-  line-height: 1.4;
-  white-space: nowrap;
-  background:
-    color-mix(
-      in srgb,
-      var(--md-code-bg-color) 88%,
-      var(--lupaxa-blue)
-    );
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: var(--lupaxa-radius-sm);
+  display: inline;
+  margin: 0;
+  padding: 0;
+  color: var(--lupaxa-light-blue);
+  font: inherit;
+  white-space: inherit;
+  word-break: break-word;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .md-typeset .catalogue-category {

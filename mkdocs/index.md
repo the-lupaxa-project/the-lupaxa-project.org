@@ -48,7 +48,7 @@ hide:
 
 ## Who We Are
 
-<div class="about-introduction">
+<div class="about-introduction about-introduction-lead">
     <p>
         <strong>The Lupaxa Project</strong> is a community of independent
         developers and contributors building useful software for developers,
@@ -64,7 +64,7 @@ hide:
     </p>
     <p>
         The project is volunteer-led. If you want to help cover time and
-        running costs, see [Sponsor](sponsor/).
+        running costs, see <a href="sponsor/">Sponsor</a>.
     </p>
 </div>
 
