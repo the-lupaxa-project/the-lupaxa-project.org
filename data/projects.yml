@@ -796,6 +796,28 @@
   version: "0.2.1"
   released_date: "2026-08-24T14:51:58"
 
+- id: real-url
+  published: true
+  name: Real URL
+  icon: material-source-repository
+  publish_date: "2026-08-26T07:50:01"
+  description: >-
+    Follow HTTP redirects and report the URL that actually serves the page,
+    with an optional hop list and status codes. A Python CLI and library.
+    Install `lupaxa-real-url` from PyPI and run `real-url`.
+  categories:
+    - CLI
+    - Developer Tools
+    - HTTP
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/real-url
+  documentation: https://real-url.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-26T08:31:45"
+
 - id: reek
   published: true
   name: Reek
