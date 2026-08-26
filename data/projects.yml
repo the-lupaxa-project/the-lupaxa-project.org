@@ -154,6 +154,29 @@
   version: "0.1.1"
   released_date: "2026-08-24T14:55:44"
 
+- id: cms-detection
+  published: true
+  name: CMS Detection
+  icon: material-source-repository
+  publish_date: "2026-08-25T21:16:50"
+  description: >-
+    Identify which CMS a website is using from public signals — name, evidence,
+    version when it is exposed, and a confidence rating. A Python CLI and
+    library for authorised security-assessment recon. Install
+    `lupaxa-cms-detection` from PyPI and run `cms-detection`.
+  categories:
+    - Security
+    - CLI
+    - Recon
+  organisation: Security Toolbox
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/cms-detection
+  documentation: https://cms-detection.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-26T07:51:33"
+
 - id: data-converter
   published: true
   name: Data Converter
