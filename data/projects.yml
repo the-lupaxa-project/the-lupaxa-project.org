@@ -177,6 +177,28 @@
   version: "0.1.0"
   released_date: "2026-08-26T07:51:33"
 
+- id: convert-size
+  published: true
+  name: Convert Size
+  icon: material-source-repository
+  publish_date: "2026-08-26T11:00:02"
+  description: >-
+    Convert file sizes between IEC binary and SI decimal units, including bits,
+    nibbles, and bytes. A Python library only — there is no CLI. Install
+    `lupaxa-convert-size` from PyPI and import `convert_size`.
+  categories:
+    - Developer Tools
+    - Utilities
+    - Units
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/convert-size
+  documentation: https://convert-size.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-08-26T11:36:07"
+
 - id: data-converter
   published: true
   name: Data Converter
