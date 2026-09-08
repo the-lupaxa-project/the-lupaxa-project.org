@@ -1035,6 +1035,27 @@
   version: "0.1.1"
   released_date: "2026-08-24T14:53:10"
 
+- id: trapper
+  published: true
+  name: Trapper
+  icon: material-source-repository
+  publish_date: "2026-09-08T16:53:12"
+  description: >-
+    Sourceable Bash plugin that reports file, line, command, snippet, and stack
+    when a script fails. Source `trapper.sh` near the top of a script; it
+    installs `ERR` and `EXIT` traps. Must be sourced, not executed.
+  categories:
+    - Developer Tools
+    - Bash
+    - Debugging
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/trapper
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-08T17:16:20"
+
 - id: validate-citations-file
   published: true
   name: Validate Citations File
