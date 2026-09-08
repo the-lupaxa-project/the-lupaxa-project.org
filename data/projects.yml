@@ -221,6 +221,27 @@
   version: "0.1.0"
   released_date: "2026-08-25T10:21:30"
 
+- id: design-patterns
+  published: true
+  name: Design Patterns
+  icon: material-source-repository
+  publish_date: "2026-09-08T16:35:58"
+  description: >-
+    A catalogue of software design patterns with matching examples in Go, Perl,
+    Python, Ruby, and Rust. Each pattern is a conceptual template you can adapt
+    to the problem and language at hand.
+  categories:
+    - Developer Tools
+    - Documentation
+    - Design Patterns
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/design-patterns
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-08T16:50:25"
+
 - id: divulge
   published: true
   name: Divulge
