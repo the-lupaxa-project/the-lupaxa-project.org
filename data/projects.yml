@@ -1142,3 +1142,26 @@
   banner: released
   version: "0.1.4"
   released_date: "2026-08-24T14:50:20"
+
+- id: zone-transfer
+  published: true
+  name: Zone Transfer
+  icon: material-source-repository
+  publish_date: "2026-09-09T10:39:34"
+  description: >-
+    Test whether a domain's nameservers allow DNS zone transfer (AXFR), and
+    show the zone contents when they do. A Python CLI and library for
+    authorised DNS security checks. Install `lupaxa-zone-transfer` from PyPI
+    and run `zone-transfer`.
+  categories:
+    - Security
+    - CLI
+    - DNS
+  organisation: Security Toolbox
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/zone-transfer
+  documentation: https://zone-transfer.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-09T12:15:24"
