@@ -1054,6 +1054,28 @@
   version: "0.2.3"
   released_date: "2026-08-24T15:07:07"
 
+- id: spider-frameworks
+  published: true
+  name: Spider Frameworks
+  icon: material-source-repository
+  publish_date: "2026-09-09T13:50:42"
+  description: >-
+    A collection of web-spider templates for clone-and-pick starting points.
+    Clone the repository, pick a folder under `spiders/`, and use that script
+    as a starting point — not an installable crawler library. Templates cover
+    httpx threadpool, asyncio, Selenium, and threaded Selenium.
+  categories:
+    - Web Scraping
+    - Data Extraction
+    - Templates
+  organisation: Spider Toolbox
+  logo: assets/images/brand/organisation-spider-toolbox-logo.png
+  logo_alt: Spider Toolbox
+  repository: https://github.com/lupaxa-spider-toolbox/spider-frameworks
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-09T15:29:32"
+
 - id: sysinfo
   published: true
   name: Sysinfo
