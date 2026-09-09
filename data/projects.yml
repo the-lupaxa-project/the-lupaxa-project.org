@@ -1038,9 +1038,9 @@
   icon: material-source-repository
   publish_date: "2026-08-18T16:06:31"
   description: >-
-    A curated, searchable catalogue of reusable code snippets for Bash, Python, Ruby, and other
-    languages. Browse by language or tag, open a snippet in place, and copy highlighted examples
-    with caveats when they matter.
+    A curated collection of reusable code snippets for Shell, Python, Ruby, and
+    other languages. Browse by language or tag, open a snippet in place, and
+    copy highlighted examples with caveats when they matter.
   categories:
     - Developer Tools
     - Documentation
@@ -1051,8 +1051,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.3"
-  released_date: "2026-08-24T15:07:07"
+  version: "0.2.4"
+  released_date: "2026-09-09T15:49:59"
 
 - id: spider-frameworks
   published: true
