@@ -586,6 +586,29 @@
   version: "0.1.4"
   released_date: "2026-08-24T14:46:36"
 
+- id: mx-inspector
+  published: true
+  name: MX Inspector
+  icon: material-source-repository
+  publish_date: "2026-09-09T08:52:55"
+  description: >-
+    Look up a domain's MX hosts and DMARC policy from public DNS, with an
+    optional SMTP banner probe. A Python CLI and library for authorised
+    email-security checks. Install `lupaxa-mx-inspector` from PyPI and run
+    `mx-inspector`.
+  categories:
+    - Security
+    - CLI
+    - Email
+  organisation: Security Toolbox
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/mx-inspector
+  documentation: https://mx-inspector.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-09T09:49:36"
+
 - id: mypy
   published: true
   name: Mypy
