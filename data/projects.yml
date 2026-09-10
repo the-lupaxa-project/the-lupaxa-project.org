@@ -1054,6 +1054,27 @@
   version: "0.1.4"
   released_date: "2026-08-24T14:50:27"
 
+- id: smtp-tester
+  published: true
+  name: SMTP Tester
+  icon: material-source-repository
+  publish_date: "2026-09-10T09:46:46"
+  description: >-
+    Send a test email through an SMTP server to verify delivery. A Python CLI
+    and library. Install `lupaxa-smtp-tester` from PyPI and run `smtp-tester`.
+  categories:
+    - CLI
+    - Email
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/smtp-tester
+  documentation: https://smtp-tester.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-10T10:23:06"
+
 - id: snippets
   published: true
   name: Snippets
