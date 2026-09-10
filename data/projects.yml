@@ -740,6 +740,28 @@
   version: "0.1.3"
   released_date: "2026-08-24T14:48:52"
 
+- id: port-forwarder
+  published: true
+  name: Port Forwarder
+  icon: material-source-repository
+  publish_date: "2026-09-10T08:21:41"
+  description: >-
+    Listen on a local TCP port and forward each connection to a remote host
+    and port. A Python CLI and library. Install `lupaxa-port-forwarder` from
+    PyPI and run `port-forwarder`.
+  categories:
+    - CLI
+    - Networking
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/port-forwarder
+  documentation: https://port-forwarder.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-10T09:42:21"
+
 - id: puppet-lint
   published: true
   name: Puppet Lint
