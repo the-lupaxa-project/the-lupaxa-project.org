@@ -1145,6 +1145,28 @@
   version: "0.1.1"
   released_date: "2026-08-24T14:53:10"
 
+- id: tcp-port-ping
+  published: true
+  name: TCP Port Ping
+  icon: material-source-repository
+  publish_date: "2026-09-10T10:43:12"
+  description: >-
+    Repeatedly connect to a TCP host and port and report latency. A Python
+    CLI and library. Install `lupaxa-tcp-port-ping` from PyPI and run
+    `tcp-port-ping`.
+  categories:
+    - CLI
+    - Networking
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/tcp-port-ping
+  documentation: https://tcp-port-ping.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-10T11:35:30"
+
 - id: trapper
   published: true
   name: Trapper
