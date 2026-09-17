@@ -1095,8 +1095,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.4"
-  released_date: "2026-09-09T15:49:59"
+  version: "0.2.5"
+  released_date: "2026-09-17T13:17:56"
 
 - id: spider-frameworks
   published: true
