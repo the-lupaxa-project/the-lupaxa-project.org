@@ -3,9 +3,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HEADER = (ROOT / "overrides/partials/header.html").read_text(encoding="utf-8")
 MKDOCS = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
-NAV_CSS = (ROOT / "mkdocs/assets/stylesheets/30-navigation.css").read_text(
-    encoding="utf-8"
-)
+NAV_CSS = (ROOT / "mkdocs/assets/stylesheets/30-navigation.css").read_text(encoding="utf-8")
 
 
 def test_header_has_custom_picker_not_alternate():
@@ -13,9 +11,16 @@ def test_header_has_custom_picker_not_alternate():
     assert "partials/alternate.html" not in HEADER
     assert "extra.alternate" not in HEADER
     assert 'translate="no"' in HEADER
-    assert 'value="en"' in HEADER
-    assert 'value="fr"' in HEADER
-    assert 'value="de"' in HEADER
+    assert 'value="en">English<' in HEADER
+    assert 'value="fr">Français<' in HEADER
+    assert 'value="de">Deutsch<' in HEADER
+    assert 'value="es">Español<' in HEADER
+    assert 'value="pt">Português<' in HEADER
+    assert 'value="it">Italiano<' in HEADER
+    assert 'value="nl">Nederlands<' in HEADER
+    assert 'value="ja"' not in HEADER
+    assert "lupaxa-lang-picker__label" not in HEADER
+    assert ">EN<" not in HEADER
     assert 'id="lupaxa-lang-fallback"' in HEADER
 
 
@@ -39,6 +44,8 @@ def test_language_script_follows_page_lifecycle():
 def test_header_css_keeps_picker_out_of_nav_flex():
     assert ".lupaxa-lang-picker" in NAV_CSS
     assert ".lupaxa-lang-fallback" in NAV_CSS
+    assert "max-width: 90rem" not in NAV_CSS
+    assert "flex: 0 0 auto" in NAV_CSS
 
 
 import main
@@ -77,15 +84,12 @@ def test_banner_version_opts_out_of_translate():
     assert 'class="catalogue-banner__version" translate="no"' in markup
 
 
-def test_footer_hero_sponsor_quotes_opt_out_brand_names():
+def test_footer_hero_sponsor_opt_out_brand_names():
     footer = (ROOT / "overrides/partials/copyright.html").read_text(encoding="utf-8")
     index = (ROOT / "mkdocs/index.md").read_text(encoding="utf-8")
     sponsor = (ROOT / "mkdocs/sponsor.md").read_text(encoding="utf-8")
-    quotes = (ROOT / "mkdocs/quotes.md").read_text(encoding="utf-8")
     assert 'translate="no"' in footer
     assert 'class="lupaxa-hero-title"' in index
     assert 'translate="no"' in index
     assert '<strong translate="no">The Lupaxa Project</strong>' in index
     assert '<strong translate="no">The Lupaxa Project</strong>' in sponsor
-    assert 'class="quote-author" translate="no"' in quotes
-    assert 'class="quote-year" translate="no"' in quotes

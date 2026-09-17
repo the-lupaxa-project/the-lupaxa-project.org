@@ -1,5 +1,5 @@
 /* =============================================================================
- * Shared masonry wall chrome (Quotes + Gallery text filters / layout shell).
+ * Shared masonry wall chrome (Humour text filters / layout shell).
  * Page-specific cards stay in 50-pages/*.css.
  * ============================================================================= */
 
@@ -9,21 +9,18 @@
   --lupaxa-wall-card-min: 280px;
 }
 
-.md-content__inner:has(#quotes-wall),
-.md-content__inner:has(#gallery-wall) {
+.md-content__inner:has(#humour-wall) {
   max-width: min(100%, var(--lupaxa-wall-max));
 }
 
-#quotes-wall,
-#gallery-wall {
+#humour-wall {
   box-sizing: border-box;
   margin: 1.25rem 0 var(--lupaxa-spacing-lg);
   padding: 0;
   background: transparent;
 }
 
-.quotes-filters,
-.gallery-filters {
+.humour-filters {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -34,8 +31,7 @@
   font-size: 0.9rem;
 }
 
-.quotes-filter,
-.gallery-filter {
+.humour-filter {
   padding: 0.15rem 0.35rem;
   color: var(--md-default-fg-color--light);
   font: inherit;
@@ -46,28 +42,23 @@
   transition: color var(--lupaxa-transition-fast);
 }
 
-.quotes-filter:hover,
-.quotes-filter.is-active,
-.gallery-filter:hover,
-.gallery-filter.is-active {
+.humour-filter:hover,
+.humour-filter.is-active {
   color: var(--lupaxa-light-blue);
 }
 
-.quotes-filter-sep,
-.gallery-filter-sep {
+.humour-filter-sep {
   color: var(--md-default-fg-color--lighter);
   user-select: none;
 }
 
-.quotes-masonry,
-.gallery-masonry {
+.humour-masonry {
   position: relative;
   max-width: var(--lupaxa-wall-max);
   margin: 0 auto;
 }
 
-.quotes-masonry:not(.is-laid-out),
-.gallery-masonry:not(.is-laid-out) {
+.humour-masonry:not(.is-laid-out) {
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
@@ -77,14 +68,12 @@
   align-items: start;
 }
 
-.quotes-masonry.is-laid-out,
-.gallery-masonry.is-laid-out {
+.humour-masonry.is-laid-out {
   display: block;
 }
 
 @media print {
-  .quotes-filters,
-  .gallery-filters {
+  .humour-filters {
     display: none;
   }
 }

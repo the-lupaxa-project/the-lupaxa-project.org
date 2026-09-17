@@ -37,12 +37,8 @@ hide:
             Explore Policies
         </a>
 
-        <a class="md-button lupaxa-button" href="quotes/">
-            Read Quotes
-        </a>
-
-        <a class="md-button lupaxa-button" href="gallery/">
-            Explore Gallery
+        <a class="md-button lupaxa-button" href="humour/">
+            Explore Humour
         </a>
     </div>
 </div>

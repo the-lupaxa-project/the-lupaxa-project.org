@@ -1,23 +1,23 @@
 import pytest
 
-from gallery_lib import (
+from humour_lib import (
     collect_tags,
     is_remote_media,
-    load_gallery_data,
+    load_humour_data,
     published_entries,
-    validate_gallery,
+    validate_humour,
 )
 
 SAMPLE = {
     "page": {"background": "#111111", "text_color": "#f5f5f5"},
     "entries": [
         {
-            "image": "assets/images/gallery/a.jpg",
+            "image": "assets/images/humour/a.jpg",
             "comment": "Visible",
             "tags": ["travel", "coast"],
         },
         {
-            "image": "assets/images/gallery/draft.jpg",
+            "image": "assets/images/humour/draft.jpg",
             "comment": "Draft",
             "published": False,
             "tags": ["hidden-tag"],
@@ -28,7 +28,7 @@ SAMPLE = {
             "tags": ["travel"],
         },
         {
-            "image": "assets/images/gallery/c.jpg",
+            "image": "assets/images/humour/c.jpg",
         },
     ],
 }
@@ -38,9 +38,9 @@ def test_published_entries_defaults_true_and_respects_false():
     result = published_entries(SAMPLE)
     images = [entry["image"] for entry in result]
     assert images == [
-        "assets/images/gallery/a.jpg",
+        "assets/images/humour/a.jpg",
         "https://example.com/b.jpg",
-        "assets/images/gallery/c.jpg",
+        "assets/images/humour/c.jpg",
     ]
 
 
@@ -57,54 +57,54 @@ def test_collect_tags_excludes_reserved_media_tags():
     assert collect_tags(entries) == ["animals", "travel"]
 
 
-def test_load_gallery_data_reads_yaml(tmp_path):
-    path = tmp_path / "gallery.yml"
+def test_load_humour_data_reads_yaml(tmp_path):
+    path = tmp_path / "humour.yml"
     path.write_text(
         "page:\n  background: '#1a1a1a'\n  text_color: '#f5f5f5'\n"
-        "entries:\n  - image: assets/images/gallery/x.jpg\n    comment: Hi\n",
+        "entries:\n  - image: assets/images/humour/x.jpg\n    comment: Hi\n",
         encoding="utf-8",
     )
-    data = load_gallery_data(path)
+    data = load_humour_data(path)
     assert data["page"]["background"] == "#1a1a1a"
-    assert data["entries"][0]["image"] == "assets/images/gallery/x.jpg"
+    assert data["entries"][0]["image"] == "assets/images/humour/x.jpg"
 
 
-def test_load_gallery_data_rejects_non_mapping_yaml(tmp_path):
-    path = tmp_path / "gallery.yml"
-    path.write_text("- image: assets/images/gallery/x.jpg\n", encoding="utf-8")
+def test_load_humour_data_rejects_non_mapping_yaml(tmp_path):
+    path = tmp_path / "humour.yml"
+    path.write_text("- image: assets/images/humour/x.jpg\n", encoding="utf-8")
     with pytest.raises(ValueError, match="mapping at the top level"):
-        load_gallery_data(path)
+        load_humour_data(path)
 
 
-def test_validate_gallery_rejects_missing_media():
+def test_validate_humour_rejects_missing_media():
     data = {"entries": [{"comment": "No image field"}]}
     with pytest.raises(ValueError, match="image or video"):
-        validate_gallery(data)
+        validate_humour(data)
 
 
-def test_validate_gallery_accepts_video_without_image():
+def test_validate_humour_accepts_video_without_image():
     data = {"entries": [{"video": "https://example.com/clip.mp4", "tags": ["video"]}]}
-    validate_gallery(data)
+    validate_humour(data)
 
 
-def test_validate_gallery_rejects_tags_as_string():
-    data = {"entries": [{"image": "assets/images/gallery/x.jpg", "tags": "travel"}]}
+def test_validate_humour_rejects_tags_as_string():
+    data = {"entries": [{"image": "assets/images/humour/x.jpg", "tags": "travel"}]}
     with pytest.raises(ValueError, match="tags"):
-        validate_gallery(data)
+        validate_humour(data)
 
 
-def test_validate_gallery_rejects_non_mapping_entry():
-    data = {"entries": ["assets/images/gallery/x.jpg"]}
+def test_validate_humour_rejects_non_mapping_entry():
+    data = {"entries": ["assets/images/humour/x.jpg"]}
     with pytest.raises(ValueError, match="mapping"):
-        validate_gallery(data)
+        validate_humour(data)
 
 
-def test_validate_gallery_ignores_unpublished_entries():
+def test_validate_humour_ignores_unpublished_entries():
     data = {"entries": [{"published": False, "comment": "Draft only"}]}
-    validate_gallery(data)
+    validate_humour(data)
 
 
 def test_is_remote_media():
     assert is_remote_media("https://example.com/a.jpg")
     assert is_remote_media("http://example.com/a.jpg")
-    assert not is_remote_media("assets/images/gallery/a.jpg")
+    assert not is_remote_media("assets/images/humour/a.jpg")

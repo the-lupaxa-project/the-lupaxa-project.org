@@ -1,5 +1,5 @@
 /**
- * Gallery masonry + lightbox. Layout/filter via LupaxaMasonryWall.
+ * Humour masonry + lightbox. Layout/filter via LupaxaMasonryWall.
  */
 (() => {
   "use strict";
@@ -25,7 +25,7 @@
     ).filter((element) => !element.hasAttribute("disabled") && element.offsetParent !== null);
 
   const initLightbox = (masonry, wall) => {
-    const lightbox = document.getElementById("gallery-lightbox");
+    const lightbox = document.getElementById("humour-lightbox");
     if (!lightbox) return { open() {}, handleKeydown() {}, destroy() {} };
 
     const image = lightbox.querySelector(".lightbox-image");
@@ -40,7 +40,7 @@
     let currentIndex = -1;
 
     const visibleOpenButtons = () =>
-      Array.from(masonry.querySelectorAll(".gallery-card .gallery-open"));
+      Array.from(masonry.querySelectorAll(".humour-card .humour-open"));
 
     const stopVideo = () => {
       video.pause();
@@ -172,16 +172,16 @@
     activeLightbox = null;
   };
 
-  const initGalleryWall = () => {
+  const initHumourWall = () => {
     cleanupActiveLightbox();
     const wallApi = window.LupaxaMasonryWall;
     if (!wallApi) return;
 
     const result = wallApi.init({
-      wallId: "gallery-wall",
-      masonrySelector: ".gallery-masonry",
-      filterSelector: ".gallery-filter",
-      cardSelector: ".gallery-card",
+      wallId: "humour-wall",
+      masonrySelector: ".humour-masonry",
+      filterSelector: ".humour-filter",
+      cardSelector: ".humour-card",
       matchesFilter,
     });
     if (!result) return;
@@ -190,12 +190,12 @@
     activeLightbox = initLightbox(masonry, wall);
 
     masonry.addEventListener("click", (event) => {
-      const openButton = event.target.closest(".gallery-open");
+      const openButton = event.target.closest(".humour-open");
       if (!openButton || !masonry.contains(openButton)) return;
       activeLightbox.open(openButton);
     });
 
-    masonry.querySelectorAll(".gallery-image").forEach((media) => {
+    masonry.querySelectorAll(".humour-image").forEach((media) => {
       const relayout = () => layout();
       if (media.tagName === "VIDEO") {
         media.addEventListener("loadedmetadata", relayout);
@@ -216,10 +216,10 @@
 
   const lifecycle = window.LupaxaPageLifecycle;
   if (lifecycle && lifecycle.onPageRender) {
-    lifecycle.onPageRender(initGalleryWall);
+    lifecycle.onPageRender(initHumourWall);
   } else if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initGalleryWall);
+    document.addEventListener("DOMContentLoaded", initHumourWall);
   } else {
-    initGalleryWall();
+    initHumourWall();
   }
 })();

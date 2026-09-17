@@ -85,6 +85,20 @@ describe("writePreference", () => {
     assert.equal(storage.getItem("lupaxa-lang"), "fr");
   });
 
+  it("accepts the extended locale list", () => {
+    assert.deepEqual(lib.LOCALES, [
+      "en",
+      "fr",
+      "de",
+      "es",
+      "pt",
+      "it",
+      "nl",
+    ]);
+    const storage = memoryStorage();
+    assert.equal(lib.writePreference(storage, "nl"), "nl");
+  });
+
   it("stores en for an unknown value", () => {
     const storage = memoryStorage();
     assert.equal(lib.writePreference(storage, "zz"), "en");

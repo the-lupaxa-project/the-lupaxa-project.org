@@ -33,22 +33,14 @@ from banner_lib import (
 from banner_lib import (
     resolve_banner as _shared_resolve_banner,
 )
-from gallery_lib import (
-    collect_tags as collect_gallery_tags,
+from humour_lib import (
+    collect_tags as collect_humour_tags,
 )
-from gallery_lib import (
+from humour_lib import (
     is_remote_media,
-    load_gallery_data,
+    load_humour_data,
     published_entries,
-    validate_gallery,
-)
-from quotes_lib import (
-    collect_tags as collect_quote_tags,
-)
-from quotes_lib import (
-    load_quotes_data,
-    published_quotes,
-    validate_quotes,
+    validate_humour,
 )
 
 DATA_DIR = ROOT / "data"
@@ -549,44 +541,25 @@ def define_env(env):
 </div>
 """.strip()
 
-    quotes_path = Path(env.project_dir) / "data" / "quotes.yml"
+    humour_path = Path(env.project_dir) / "data" / "humour.yml"
 
-    def validated_quotes():
-        data = load_quotes_data(quotes_path)
-        validate_quotes(data)
+    def validated_humour():
+        data = load_humour_data(humour_path)
+        validate_humour(data)
         return data
 
     @env.macro
-    def quotes_data():
-        return validated_quotes()
+    def humour_data():
+        return validated_humour()
 
     @env.macro
-    def wall_quotes():
-        return published_quotes(validated_quotes())
+    def wall_humour_entries():
+        return published_entries(validated_humour())
 
     @env.macro
-    def wall_tags():
-        return collect_quote_tags(published_quotes(validated_quotes()))
-
-    gallery_path = Path(env.project_dir) / "data" / "gallery.yml"
-
-    def validated_gallery():
-        data = load_gallery_data(gallery_path)
-        validate_gallery(data)
-        return data
+    def humour_wall_tags():
+        return collect_humour_tags(published_entries(validated_humour()))
 
     @env.macro
-    def gallery_data():
-        return validated_gallery()
-
-    @env.macro
-    def wall_gallery_entries():
-        return published_entries(validated_gallery())
-
-    @env.macro
-    def gallery_wall_tags():
-        return collect_gallery_tags(published_entries(validated_gallery()))
-
-    @env.macro
-    def gallery_media_is_remote(path: str) -> bool:
+    def humour_media_is_remote(path: str) -> bool:
         return is_remote_media(path)

@@ -44,14 +44,8 @@
 
   .lupaxa-lang-picker {
     display: flex;
-  }
-
-  .lupaxa-lang-picker__label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+    margin-right: var(--lupaxa-spacing-md);
+    margin-left: auto;
   }
 
   .md-sidebar--primary {
@@ -154,7 +148,7 @@
 
   .lupaxa-hero-logo,
   .lupaxa-hero > img {
-    width: min(90%, 256px);
+    width: min(90%, 320px);
   }
 
   .lupaxa-hero-actions {

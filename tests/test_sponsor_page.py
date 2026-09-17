@@ -8,12 +8,12 @@ INDEX_MD = (ROOT / "mkdocs/index.md").read_text(encoding="utf-8")
 SPONSOR_MD = (ROOT / "mkdocs/sponsor.md").read_text(encoding="utf-8")
 
 
-def test_nav_lists_sponsor_after_gallery():
-    gallery = "- Gallery: gallery.md"
+def test_nav_lists_sponsor_after_humour():
+    humour = "- Humour: humour.md"
     sponsor = "- Sponsor: sponsor.md"
-    assert gallery in MKDOCS_YML
+    assert humour in MKDOCS_YML
     assert sponsor in MKDOCS_YML
-    assert MKDOCS_YML.index(gallery) < MKDOCS_YML.index(sponsor)
+    assert MKDOCS_YML.index(humour) < MKDOCS_YML.index(sponsor)
     assert "assets/stylesheets/50-pages/sponsor.css" in MKDOCS_YML
 
 

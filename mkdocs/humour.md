@@ -4,39 +4,39 @@ hide:
   - toc
 ---
 
-{% set wall = gallery_data() %}
+{% set wall = humour_data() %}
 
 <div
-  id="gallery-wall"
+  id="humour-wall"
   data-shuffle="{{ 'true' if wall.page.get('shuffle', false) else 'false' }}"
   data-show-count="{{ wall.page.get('show_count', 'all') | e }}"
 >
-  <nav class="gallery-filters" aria-label="Filter gallery by tag">
-    <button type="button" class="gallery-filter is-active" data-filter="all">All</button>
-    {% for tag in gallery_wall_tags() %}
-    <span class="gallery-filter-sep" aria-hidden="true">·</span>
-    <button type="button" class="gallery-filter" data-filter="{{ tag | e }}">{{ tag | e }}</button>
+  <nav class="humour-filters" aria-label="Filter humour by tag">
+    <button type="button" class="humour-filter is-active" data-filter="all">All</button>
+    {% for tag in humour_wall_tags() %}
+    <span class="humour-filter-sep" aria-hidden="true">·</span>
+    <button type="button" class="humour-filter" data-filter="{{ tag | e }}">{{ tag | e }}</button>
     {% endfor %}
   </nav>
   {% if wall.page.get('show_media_filters', false) %}
-  <nav class="gallery-filters gallery-filters-media" aria-label="Filter by media type">
-    <button type="button" class="gallery-filter" data-filter="images">images</button>
-    <span class="gallery-filter-sep" aria-hidden="true">·</span>
-    <button type="button" class="gallery-filter" data-filter="videos">videos</button>
+  <nav class="humour-filters humour-filters-media" aria-label="Filter by media type">
+    <button type="button" class="humour-filter" data-filter="images">images</button>
+    <span class="humour-filter-sep" aria-hidden="true">·</span>
+    <button type="button" class="humour-filter" data-filter="videos">videos</button>
   </nav>
   {% endif %}
 
-  <div class="gallery-masonry">
-    {% for item in wall_gallery_entries() %}
+  <div class="humour-masonry">
+    {% for item in wall_humour_entries() %}
     {% set is_video = item.get('video') %}
     {% set media_src = item.video if is_video else item.image %}
-    {% set media_url = media_src if gallery_media_is_remote(media_src) else media_src | relative_url %}
+    {% set media_url = media_src if humour_media_is_remote(media_src) else media_src | relative_url %}
     {% set poster_raw = item.get('poster', '') %}
-    {% set poster_url = poster_raw if (not poster_raw or gallery_media_is_remote(poster_raw)) else poster_raw | relative_url %}
+    {% set poster_url = poster_raw if (not poster_raw or humour_media_is_remote(poster_raw)) else poster_raw | relative_url %}
     {% set media_tag = 'videos' if is_video else 'images' %}
     {% set item_tags = [media_tag] + (item.get('tags') or []) %}
     <article
-      class="gallery-card{% if is_video %} is-video{% endif %}"
+      class="humour-card{% if is_video %} is-video{% endif %}"
       data-tags="{{ item_tags | join('|') | e }}"
       data-media="{{ 'video' if is_video else 'image' }}"
       style="
@@ -48,7 +48,7 @@ hide:
     >
       <button
         type="button"
-        class="gallery-open"
+        class="humour-open"
         data-type="{{ 'video' if is_video else 'image' }}"
         data-src="{{ media_url | e }}"
         data-poster="{{ poster_url | e }}"
@@ -56,10 +56,10 @@ hide:
         data-date="{{ item.get('date', '') | e }}"
         aria-label="Open {% if is_video %}video{% else %}image{% endif %}{% if item.get('comment') %}: {{ item.comment | e }}{% endif %}"
       >
-        <span class="gallery-media">
+        <span class="humour-media">
           {% if is_video %}
           <video
-            class="gallery-image gallery-video"
+            class="humour-image humour-video"
             src="{{ media_url | e }}"
             {% if poster_url %}poster="{{ poster_url | e }}"{% endif %}
             muted
@@ -73,10 +73,10 @@ hide:
             style="aspect-ratio: {{ item.aspect_ratio | e }};"
             {% endif %}
           ></video>
-          <span class="gallery-play" aria-hidden="true">▶</span>
+          <span class="humour-play" aria-hidden="true">▶</span>
           {% else %}
           <img
-            class="gallery-image"
+            class="humour-image"
             src="{{ media_url | e }}"
             alt="{{ item.get('comment', '') | e }}"
             loading="lazy"
@@ -93,12 +93,12 @@ hide:
         </span>
       </button>
       {% if item.get('comment') or item.get('date') %}
-      <div class="gallery-meta">
+      <div class="humour-meta">
         {% if item.get('comment') %}
-        <p class="gallery-comment">{{ item.comment | e }}</p>
+        <p class="humour-comment">{{ item.comment | e }}</p>
         {% endif %}
         {% if item.get('date') %}
-        <div class="gallery-date">{{ item.date | e }}</div>
+        <div class="humour-date">{{ item.date | e }}</div>
         {% endif %}
       </div>
       {% endif %}
@@ -108,8 +108,8 @@ hide:
 </div>
 
 <div
-  id="gallery-lightbox"
-  class="gallery-lightbox"
+  id="humour-lightbox"
+  class="humour-lightbox"
   hidden
   role="dialog"
   aria-modal="true"

@@ -7,7 +7,7 @@
 const LupaxaLanguagePreference = (() => {
   const STORAGE_KEY = "lupaxa-lang";
   const FALLBACK_DISMISS_KEY = "lupaxa-lang-fallback-dismissed";
-  const LOCALES = ["en", "fr", "de"];
+  const LOCALES = ["en", "fr", "de", "es", "pt", "it", "nl"];
   const SKIP_TAGS = new Set(["PRE", "CODE", "SCRIPT", "STYLE", "NOSCRIPT"]);
 
   const safeStorage = (backing) => {

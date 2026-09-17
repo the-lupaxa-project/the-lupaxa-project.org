@@ -36,9 +36,8 @@ package-dir = {"" = "src", "hooks" = "hooks"}
 py-modules = [
   "articles_lib",
   "banner_lib",
-  "gallery_lib",
+  "humour_lib",
   "main",
-  "quotes_lib",
 ]
 packages = ["hooks"]
 

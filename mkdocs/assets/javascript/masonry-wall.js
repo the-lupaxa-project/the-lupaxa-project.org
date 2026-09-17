@@ -1,5 +1,5 @@
 /**
- * Shared masonry wall primitives for Quotes and Gallery.
+ * Shared masonry wall primitives for Humour.
  * Page scripts supply selectors and optional filter matching.
  */
 (() => {
@@ -68,11 +68,7 @@
       if (present.has(value)) return;
 
       const previous = button.previousElementSibling;
-      if (
-        previous &&
-        (previous.classList.contains("gallery-filter-sep") ||
-          previous.classList.contains("quotes-filter-sep"))
-      ) {
+      if (previous && previous.classList.contains("humour-filter-sep")) {
         previous.remove();
       }
       button.remove();

@@ -98,8 +98,7 @@ nav:
   - Projects: projects.md
   - Articles: articles.md
   - Policies: policies.md
-  - Quotes: quotes.md
-  - Gallery: gallery.md
+  - Humour: humour.md
   - Sponsor: sponsor.md
 
 markdown_extensions:
@@ -155,8 +154,7 @@ extra_css:
 
   - assets/stylesheets/50-pages/about.css
   - assets/stylesheets/50-pages/article.css
-  - assets/stylesheets/50-pages/quotes.css
-  - assets/stylesheets/50-pages/gallery.css
+  - assets/stylesheets/50-pages/humour.css
   - assets/stylesheets/50-pages/sponsor.css
 
   - assets/stylesheets/90-responsive.css
@@ -170,8 +168,7 @@ extra_javascript:
   - assets/javascript/catalogue-filters.js
   - assets/javascript/article-pager.js
   - assets/javascript/masonry-wall.js
-  - assets/javascript/quotes.js
-  - assets/javascript/gallery.js
+  - assets/javascript/humour.js
 
 # =============================================================================
 # Copyright (rendered by overrides/partials/copyright.html)

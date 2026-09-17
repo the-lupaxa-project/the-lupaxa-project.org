@@ -65,8 +65,7 @@ Catalogue entries live in YAML under `data/`:
 | File | Page |
 | --- | --- |
 | `data/organisations.yml` | Organisations |
-| `data/quotes.yml` | Quotes masonry wall |
-| `data/gallery.yml` | Gallery masonry wall (`page.show_count: all` or a number; `page.show_media_filters: true` for images/videos filters) |
+| `data/humour.yml` | Humour masonry wall (`page.show_count: all` or a number; `page.show_media_filters: true` for images/videos filters) |
 | `data/projects.yml` | Projects |
 | `data/policies.yml` | Policies |
 
@@ -111,8 +110,7 @@ JavaScript is split under `mkdocs/assets/javascript/`:
 - `header-active-nav.js` — header active state
 - `catalogue-filters.js` — catalogue search / filter / URL sync
 - `masonry-wall.js` — shared masonry layout and text filters
-- `quotes.js` — quotes wall (uses masonry-wall)
-- `gallery.js` — gallery wall + lightbox (uses masonry-wall)
+- `humour.js` — humour wall + lightbox (uses masonry-wall)
 
 ## Page social metadata
 
