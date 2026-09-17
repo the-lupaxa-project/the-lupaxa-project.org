@@ -11,6 +11,7 @@
   .md-typeset .catalogue-category,
   .md-typeset .catalogue-grid p:has(img.catalogue-logo) > a,
   .md-typeset .catalogue-grid p:has(img.catalogue-logo) > button,
+  .md-typeset .catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap,
   .filter-panel-clear {
     transition: none;
   }
@@ -59,7 +60,8 @@
 }
 
 .md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > a,
-.md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > button {
+.md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > button,
+.md-typeset .grid.cards.catalogue-grid p:has(img.catalogue-logo) > .catalogue-logo-wrap {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;

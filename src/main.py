@@ -492,7 +492,8 @@ def define_env(env):
 
     ---
 
-{banner_block}    <img
+{banner_block}    <span class="catalogue-logo-wrap">
+    <img
         class="catalogue-logo"
         translate="no"
         title="{logo_alt}"
@@ -500,6 +501,7 @@ def define_env(env):
         src="{logo}"
         alt="{logo_alt}"
     />
+    </span>
 
 {description}
 

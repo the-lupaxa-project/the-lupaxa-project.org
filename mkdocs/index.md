@@ -22,7 +22,7 @@ hide:
 
     <div class="lupaxa-hero-actions">
         <a class="md-button lupaxa-button" href="organisations/">
-            Explore Organisations
+            Browse Organisations
         </a>
 
         <a class="md-button lupaxa-button" href="projects/">
@@ -30,15 +30,19 @@ hide:
         </a>
 
         <a class="md-button lupaxa-button" href="articles/">
-            Read Articles
+            Browse Articles
         </a>
 
         <a class="md-button lupaxa-button" href="policies/">
-            Explore Policies
+            Browse Policies
         </a>
 
         <a class="md-button lupaxa-button" href="humour/">
-            Explore Humour
+            Browse Humour
+        </a>
+
+        <a class="md-button lupaxa-button" href="sponsor/">
+            Become a Sponsor
         </a>
     </div>
 </div>
