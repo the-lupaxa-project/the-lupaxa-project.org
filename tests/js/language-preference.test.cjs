@@ -275,3 +275,36 @@ describe("runTranslation", () => {
     assert.equal(doc.documentElement.lang, "en");
   });
 });
+
+describe("onPickerChange", () => {
+  it("writes fr and does not reload", async () => {
+    const storage = memoryStorage();
+    let reloads = 0;
+    const apply = async () => "ok";
+    await lib.onPickerChange("fr", {
+      storage,
+      reload: () => {
+        reloads += 1;
+      },
+      apply,
+    });
+    assert.equal(storage.getItem("lupaxa-lang"), "fr");
+    assert.equal(reloads, 0);
+  });
+
+  it("writes en and reloads", async () => {
+    const storage = memoryStorage({ "lupaxa-lang": "fr" });
+    let reloads = 0;
+    await lib.onPickerChange("en", {
+      storage,
+      reload: () => {
+        reloads += 1;
+      },
+      apply: async () => {
+        throw new Error("should not apply");
+      },
+    });
+    assert.equal(storage.getItem("lupaxa-lang"), "en");
+    assert.equal(reloads, 1);
+  });
+});

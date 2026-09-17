@@ -207,6 +207,110 @@ const LupaxaLanguagePreference = (() => {
     return { status: "ok", generation };
   };
 
+  let generation = 0;
+
+  const browserTranslatorApi = () => {
+    if (typeof self !== "undefined" && self.Translator) {
+      return self.Translator;
+    }
+    return null;
+  };
+
+  const onPickerChange = async (value, { storage, reload, apply }) => {
+    const locale = writePreference(storage, value);
+    if (locale === "en") {
+      reload();
+      return locale;
+    }
+    await apply(locale);
+    return locale;
+  };
+
+  const attach = (deps) => {
+    const doc = deps.document;
+    const storage = safeStorage(deps.storage);
+    const session = safeStorage(deps.sessionStorage);
+    const reload = deps.reload;
+    const api =
+      deps.translatorApi !== undefined
+        ? deps.translatorApi
+        : browserTranslatorApi();
+    const picker = doc.getElementById("lupaxa-lang");
+    const note = doc.getElementById("lupaxa-lang-fallback");
+    const dismiss = doc.getElementById("lupaxa-lang-fallback-dismiss");
+
+    const setNoteHidden = (hidden) => {
+      if (note) {
+        note.hidden = hidden;
+      }
+    };
+
+    const dismissed = () =>
+      session.getItem(FALLBACK_DISMISS_KEY) === "1";
+
+    const apply = async (locale) => {
+      generation += 1;
+      const myGeneration = generation;
+      const roots = [];
+      const header = doc.querySelector(".md-header");
+      const main = doc.querySelector(".md-main");
+      const footer = doc.querySelector(".md-footer");
+      if (header) {
+        roots.push(header);
+      }
+      if (main) {
+        roots.push(main);
+      }
+      if (footer) {
+        roots.push(footer);
+      }
+      const result = await runTranslation({
+        locale,
+        api,
+        roots,
+        document: doc,
+        generation: myGeneration,
+        currentGeneration: () => generation,
+      });
+      if (result.status === "fallback" || result.status === "failed") {
+        if (result.status === "failed" && typeof console !== "undefined") {
+          console.warn("Lupaxa language preference: translation failed");
+        }
+        setNoteHidden(!shouldShowFallback(locale, false, dismissed()));
+      } else {
+        setNoteHidden(true);
+      }
+      if (picker) {
+        picker.value = locale;
+      }
+      return result;
+    };
+
+    if (picker && !picker.dataset.lupaxaLangBound) {
+      picker.dataset.lupaxaLangBound = "1";
+      picker.addEventListener("change", () => {
+        onPickerChange(picker.value, {
+          storage,
+          reload,
+          apply,
+        });
+      });
+    }
+    if (dismiss && !dismiss.dataset.lupaxaLangBound) {
+      dismiss.dataset.lupaxaLangBound = "1";
+      dismiss.addEventListener("click", () => {
+        session.setItem(FALLBACK_DISMISS_KEY, "1");
+        setNoteHidden(true);
+      });
+    }
+
+    const locale = readPreference(storage);
+    if (picker) {
+      picker.value = locale;
+    }
+    return apply(locale);
+  };
+
   return {
     STORAGE_KEY,
     FALLBACK_DISMISS_KEY,
@@ -223,11 +327,29 @@ const LupaxaLanguagePreference = (() => {
     applyDocumentLang,
     translateTextNodes,
     runTranslation,
+    onPickerChange,
+    attach,
   };
 })();
 
 if (typeof window !== "undefined") {
   window.LupaxaLanguagePreference = LupaxaLanguagePreference;
+}
+
+if (
+  typeof window !== "undefined" &&
+  window.document &&
+  window.LupaxaPageLifecycle &&
+  typeof window.LupaxaPageLifecycle.onPageRender === "function"
+) {
+  window.LupaxaPageLifecycle.onPageRender(() => {
+    LupaxaLanguagePreference.attach({
+      document: window.document,
+      storage: window.localStorage,
+      sessionStorage: window.sessionStorage,
+      reload: () => window.location.reload(),
+    });
+  });
 }
 
 if (typeof module !== "undefined" && module.exports) {

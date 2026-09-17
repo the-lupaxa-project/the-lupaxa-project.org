@@ -42,6 +42,18 @@
     object-fit: contain;
   }
 
+  .lupaxa-lang-picker {
+    display: flex;
+  }
+
+  .lupaxa-lang-picker__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
   .md-sidebar--primary {
     z-index: 30;
   }

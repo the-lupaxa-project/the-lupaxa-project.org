@@ -51,8 +51,34 @@
       </ul>
     </nav>
 
-    {% if config.extra.alternate %}
-      {% include "partials/alternate.html" %}
-    {% endif %}
+    <div class="lupaxa-lang-picker" translate="no">
+      <label class="lupaxa-lang-picker__label" for="lupaxa-lang">Language</label>
+      <select
+        class="lupaxa-lang-picker__select"
+        id="lupaxa-lang"
+        aria-label="Language"
+      >
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
   </nav>
+  <div
+    class="lupaxa-lang-fallback"
+    id="lupaxa-lang-fallback"
+    hidden
+    role="status"
+  >
+    <p class="lupaxa-lang-fallback__text">
+      This page is in English. Your browser can translate it.
+    </p>
+    <button
+      type="button"
+      class="lupaxa-lang-fallback__dismiss"
+      id="lupaxa-lang-fallback-dismiss"
+    >
+      Dismiss
+    </button>
+  </div>
 </header>
