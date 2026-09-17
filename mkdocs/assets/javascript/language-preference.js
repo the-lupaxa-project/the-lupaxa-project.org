@@ -135,6 +135,78 @@ const LupaxaLanguagePreference = (() => {
     return found;
   };
 
+  const translatorAvailable = (api) =>
+    Boolean(api && typeof api.create === "function");
+
+  const shouldShowFallback = (locale, available, dismissed) =>
+    locale !== "en" && !available && !dismissed;
+
+  const applyDocumentLang = (doc, locale) => {
+    if (doc && doc.documentElement) {
+      doc.documentElement.lang = locale;
+    }
+  };
+
+  const translateTextNodes = async (nodes, translator, isCurrent) => {
+    for (const node of nodes) {
+      if (!isCurrent()) {
+        return;
+      }
+      const original = node.nodeValue;
+      try {
+        const next = await translator.translate(original);
+        if (!isCurrent()) {
+          return;
+        }
+        if (typeof next === "string" && next.length > 0) {
+          node.nodeValue = next;
+        }
+      } catch (_error) {
+        node.nodeValue = original;
+      }
+    }
+  };
+
+  const runTranslation = async ({
+    locale,
+    api,
+    roots,
+    document: doc,
+    generation,
+    currentGeneration,
+  }) => {
+    if (locale === "en") {
+      applyDocumentLang(doc, "en");
+      return { status: "skipped", generation };
+    }
+    const isCurrent = () => currentGeneration() === generation;
+    if (!translatorAvailable(api)) {
+      return { status: "fallback", generation };
+    }
+    let translator;
+    try {
+      translator = await api.create({
+        sourceLanguage: "en",
+        targetLanguage: locale,
+      });
+    } catch (_error) {
+      return { status: "failed", generation };
+    }
+    if (!isCurrent()) {
+      return { status: "skipped", generation };
+    }
+    const nodes = [];
+    for (const root of roots || []) {
+      nodes.push(...collectTextNodes(root));
+    }
+    await translateTextNodes(nodes, translator, isCurrent);
+    if (!isCurrent()) {
+      return { status: "skipped", generation };
+    }
+    applyDocumentLang(doc, locale);
+    return { status: "ok", generation };
+  };
+
   return {
     STORAGE_KEY,
     FALLBACK_DISMISS_KEY,
@@ -146,6 +218,11 @@ const LupaxaLanguagePreference = (() => {
     isSkippableElement,
     shouldSkipNode,
     collectTextNodes,
+    translatorAvailable,
+    shouldShowFallback,
+    applyDocumentLang,
+    translateTextNodes,
+    runTranslation,
   };
 })();
 
