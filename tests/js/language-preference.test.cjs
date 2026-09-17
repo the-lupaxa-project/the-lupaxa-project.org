@@ -464,6 +464,74 @@ describe("runTranslation", () => {
     assert.equal(copy.nodeValue, "FR:Hello");
   });
 
+  it("does not treat a cached pack progress event as a download", async () => {
+    const progress = [];
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    await lib.runTranslation({
+      locale: "fr",
+      api: {
+        availability: async () => "available",
+        create: async (options) => {
+          options.monitor({
+            addEventListener(type, fn) {
+              if (type === "downloadprogress") {
+                fn({ loaded: 1 });
+              }
+            },
+          });
+          return {
+            translate: async (value) => `FR:${value}`,
+          };
+        },
+      },
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 24,
+      currentGeneration: () => 24,
+      userActivation: true,
+      onProgress(event) {
+        progress.push(event);
+      },
+    });
+    assert.deepEqual(progress, []);
+  });
+
+  it("reports progress only while a pack is still downloading", async () => {
+    const progress = [];
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    await lib.runTranslation({
+      locale: "fr",
+      api: {
+        availability: async () => "downloadable",
+        create: async (options) => {
+          options.monitor({
+            addEventListener(type, fn) {
+              if (type !== "downloadprogress") {
+                return;
+              }
+              fn({ loaded: 0.4 });
+              fn({ loaded: 1 });
+            },
+          });
+          return {
+            translate: async (value) => `FR:${value}`,
+          };
+        },
+      },
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 25,
+      currentGeneration: () => 25,
+      userActivation: true,
+      onProgress(event) {
+        progress.push(event.loaded);
+      },
+    });
+    assert.deepEqual(progress, [0.4]);
+  });
+
   it("returns fallback when availability is unavailable", async () => {
     let creates = 0;
     const copy = text("Hello");
@@ -578,9 +646,17 @@ function fakeDocument() {
       }
     },
   };
+  const seenTexts = [];
   const textEl = {
     className: "lupaxa-lang-fallback__text",
-    textContent: "This page is in English. Your browser can translate it.",
+    _text: "This page is in English. Your browser can translate it.",
+    get textContent() {
+      return this._text;
+    },
+    set textContent(value) {
+      this._text = value;
+      seenTexts.push(value);
+    },
   };
   const note = {
     id: "lupaxa-lang-fallback",
@@ -637,6 +713,7 @@ function fakeDocument() {
     pageCopy,
     reserved,
     tagline,
+    seenTexts,
     noteText() {
       return textEl.textContent;
     },
@@ -720,6 +797,36 @@ describe("attach", () => {
       doc.noteText(),
       /select the language again/i,
     );
+  });
+
+  it("does not show a download banner when the pack is already available", async () => {
+    const doc = fakeDocument();
+    await lib.attach({
+      document: doc,
+      storage: memoryStorage({ "lupaxa-lang": "fr" }),
+      sessionStorage: memoryStorage(),
+      reload: () => {},
+      translatorApi: {
+        availability: async () => "available",
+        create: async (options) => {
+          options.monitor({
+            addEventListener(type, fn) {
+              if (type === "downloadprogress") {
+                fn({ loaded: 1 });
+              }
+            },
+          });
+          return {
+            translate: async (value) => `FR:${value}`,
+          };
+        },
+      },
+    });
+    assert.equal(
+      doc.seenTexts.some((text) => /downloading the language pack/i.test(text)),
+      false,
+    );
+    assert.equal(doc.note.hidden, true);
   });
 
   it("translates main copy and leaves the footer in English", async () => {

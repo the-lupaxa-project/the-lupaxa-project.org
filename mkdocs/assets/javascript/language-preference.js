@@ -209,6 +209,11 @@ const LupaxaLanguagePreference = (() => {
   const NOTE_NEEDS_ACTIVATION =
     "Select the language again to finish setting up translation.";
 
+  const isActiveDownloadProgress = (event) => {
+    const loaded = event && typeof event.loaded === "number" ? event.loaded : NaN;
+    return loaded >= 0 && loaded < 1;
+  };
+
   const availabilityOf = async (api, options) => {
     if (!translatorAvailable(api)) {
       return "unavailable";
@@ -385,9 +390,19 @@ const LupaxaLanguagePreference = (() => {
               return;
             }
             m.addEventListener("downloadprogress", (event) => {
-              if (typeof onProgress === "function") {
-                onProgress(event);
+              if (
+                availability !== "downloadable" &&
+                availability !== "downloading"
+              ) {
+                return;
               }
+              if (
+                !isActiveDownloadProgress(event) ||
+                typeof onProgress !== "function"
+              ) {
+                return;
+              }
+              onProgress(event);
             });
           },
         });
@@ -470,8 +485,7 @@ const LupaxaLanguagePreference = (() => {
       generation += 1;
       const myGeneration = generation;
       if (locale !== "en") {
-        setNoteText(NOTE_PREPARING);
-        setNoteHidden(false);
+        setNoteHidden(true);
       }
       const roots = [];
       const header = doc.querySelector(".md-header");
