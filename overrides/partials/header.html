@@ -66,16 +66,30 @@
         <option value="it">Italiano</option>
         <option value="nl">Nederlands</option>
         <option value="pl">Polski</option>
+        <option value="bg">Български</option>
+        <option value="cs">Čeština</option>
+        <option value="da">Dansk</option>
+        <option value="el">Ελληνικά</option>
+        <option value="fi">Suomi</option>
+        <option value="hr">Hrvatski</option>
+        <option value="hu">Magyar</option>
+        <option value="lt">Lietuvių</option>
+        <option value="no">Norsk</option>
+        <option value="ro">Română</option>
+        <option value="sv">Svenska</option>
+        <option value="tr">Türkçe</option>
+        <option value="uk">Українська</option>
       </select>
     </div>
     {% endif %}
   </nav>
   {% if config.extra.language_picker %}
   <div
-    class="lupaxa-lang-fallback"
+    class="lupaxa-lang-fallback notranslate"
     id="lupaxa-lang-fallback"
     hidden
     role="status"
+    translate="no"
   >
     <p class="lupaxa-lang-fallback__text">
       This page is in English. Your browser can translate it.

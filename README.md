@@ -115,11 +115,13 @@ JavaScript is split under `mkdocs/assets/javascript/`:
 
 The header can include a viewer language picker (`language-preference.js`)
 when `extra.language_picker` is `true`. English stays the source language
-and the URL does not change. Chromium translates the page on-device; the
-first choice of a language may download a language pack (the banner shows
-progress). Later visits reuse Chrome’s pack and a per-locale string cache
-in `localStorage` (`lupaxa-lang-strings`). The footer and brand names stay
-English (`translate="no"` / `.notranslate`).
+and the URL does not change. Desktop Chromium translates the page on-device;
+the first choice of a language may download a language pack (the banner
+shows progress). Other browsers and phones use the same picker and cache
+with an in-page network fallback. Later visits reuse Chrome’s pack (when
+present) and a per-locale string cache in `localStorage`
+(`lupaxa-lang-strings`). The footer and brand names stay English
+(`translate="no"` / `.notranslate`).
 
 ## Page social metadata
 

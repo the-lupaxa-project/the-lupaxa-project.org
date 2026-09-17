@@ -95,9 +95,24 @@ describe("writePreference", () => {
       "it",
       "nl",
       "pl",
+      "bg",
+      "cs",
+      "da",
+      "el",
+      "fi",
+      "hr",
+      "hu",
+      "lt",
+      "no",
+      "ro",
+      "sv",
+      "tr",
+      "uk",
     ]);
     const storage = memoryStorage();
     assert.equal(lib.writePreference(storage, "pl"), "pl");
+    assert.equal(lib.writePreference(storage, "bg"), "bg");
+    assert.equal(lib.writePreference(storage, "uk"), "uk");
   });
 
   it("stores en for an unknown value", () => {
@@ -179,6 +194,109 @@ describe("isUrlLikeText", () => {
   it("detects http(s) and www URLs", () => {
     assert.equal(lib.isUrlLikeText("https://github.com/org/repo"), true);
     assert.equal(lib.isUrlLikeText("View on GitHub"), false);
+  });
+});
+
+describe("uiString", () => {
+  it("returns chrome copy in the selected locale", () => {
+    assert.match(lib.uiString("fr", "downloading"), /pack de langue/i);
+    assert.match(lib.uiString("de", "downloading"), /sprachpaket/i);
+    assert.match(lib.uiString("uk", "downloading"), /мовного пакета/i);
+    assert.equal(
+      lib.uiString("zz", "downloading"),
+      lib.uiString("en", "downloading"),
+    );
+  });
+});
+
+describe("network translator", () => {
+  it("parses a clients5 JSON array", () => {
+    assert.deepEqual(lib.parseNetworkTranslations(["Bonjour"]), ["Bonjour"]);
+    assert.deepEqual(
+      lib.parseNetworkTranslations(["Bonjour", "Parcourir les projets"]),
+      ["Bonjour", "Parcourir les projets"],
+    );
+  });
+
+  it("builds a multi-q translate URL", () => {
+    const url = lib.buildNetworkTranslateUrl("fr", ["Hello", "Browse projects"]);
+    assert.match(url, /clients5\.google\.com\/translate_a\/t/);
+    assert.match(url, /tl=fr/);
+    assert.match(url, /q=Hello/);
+    assert.match(url, /q=Browse/);
+  });
+
+  it("translates via fetch when Translator is missing", async () => {
+    const calls = [];
+    const api = lib.createNetworkTranslatorApi({
+      fetchImpl: async (url) => {
+        calls.push(String(url));
+        return {
+          ok: true,
+          async json() {
+            return ["Bonjour"];
+          },
+        };
+      },
+    });
+    const translator = await api.create({
+      sourceLanguage: "en",
+      targetLanguage: "fr",
+    });
+    assert.equal(await translator.translate("Hello"), "Bonjour");
+    assert.equal(calls.length, 1);
+    assert.match(calls[0], /q=Hello/);
+  });
+
+  it("uses the network API when the on-device translator cannot do the locale", async () => {
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const result = await lib.runTranslation({
+      locale: "fr",
+      api: {
+        availability: async () => "unavailable",
+        create: async () => {
+          throw new Error("should not create native");
+        },
+      },
+      networkApi: lib.createNetworkTranslatorApi({
+        fetchImpl: async () => ({
+          ok: true,
+          async json() {
+            return ["Bonjour"];
+          },
+        }),
+      }),
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 41,
+      currentGeneration: () => 41,
+    });
+    assert.equal(result.status, "ok");
+    assert.equal(copy.nodeValue, "Bonjour");
+  });
+
+  it("rewrites page copy through the network API", async () => {
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const api = lib.createNetworkTranslatorApi({
+      fetchImpl: async () => ({
+        ok: true,
+        async json() {
+          return ["Bonjour"];
+        },
+      }),
+    });
+    const result = await lib.runTranslation({
+      locale: "fr",
+      api,
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 40,
+      currentGeneration: () => 40,
+    });
+    assert.equal(result.status, "ok");
+    assert.equal(copy.nodeValue, "Bonjour");
   });
 });
 
@@ -795,7 +913,7 @@ describe("attach", () => {
     assert.equal(doc.note.hidden, false);
     assert.match(
       doc.noteText(),
-      /select the language again/i,
+      /sélectionnez à nouveau la langue/i,
     );
   });
 
@@ -823,10 +941,55 @@ describe("attach", () => {
       },
     });
     assert.equal(
-      doc.seenTexts.some((text) => /downloading the language pack/i.test(text)),
+      doc.seenTexts.some((text) =>
+        /downloading the language pack|pack de langue/i.test(text),
+      ),
       false,
     );
     assert.equal(doc.note.hidden, true);
+  });
+
+  it("uses the network API when Translator is missing", async () => {
+    const doc = fakeDocument();
+    await lib.attach({
+      document: doc,
+      storage: memoryStorage({ "lupaxa-lang": "fr" }),
+      sessionStorage: memoryStorage(),
+      reload: () => {},
+      fetchImpl: async () => ({
+        ok: true,
+        async json() {
+          return ["Parcourir les projets"];
+        },
+      }),
+    });
+    assert.equal(doc.pageCopy.nodeValue, "Parcourir les projets");
+    assert.equal(
+      doc.seenTexts.some((text) => /traduction/i.test(text)),
+      true,
+    );
+    assert.equal(doc.note.hidden, true);
+  });
+
+  it("shows the fallback note when the network path fails", async () => {
+    const doc = fakeDocument();
+    await lib.attach({
+      document: doc,
+      storage: memoryStorage({ "lupaxa-lang": "fr" }),
+      sessionStorage: memoryStorage(),
+      reload: () => {},
+      translatorApi: lib.createNetworkTranslatorApi({
+        fetchImpl: async () => ({
+          ok: false,
+          async json() {
+            return [];
+          },
+        }),
+      }),
+    });
+    assert.equal(doc.pageCopy.nodeValue, "Browse projects");
+    assert.equal(doc.note.hidden, false);
+    assert.match(doc.noteText(), /cette page est en anglais/i);
   });
 
   it("translates main copy and leaves the footer in English", async () => {

@@ -9,7 +9,8 @@ cursor-docs
 
 # Editors
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 
 # Make
 .makefiles/

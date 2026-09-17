@@ -19,10 +19,28 @@ def test_header_has_custom_picker_not_alternate():
     assert 'value="it">Italiano<' in HEADER
     assert 'value="nl">Nederlands<' in HEADER
     assert 'value="pl">Polski<' in HEADER
+    assert 'value="bg">Български<' in HEADER
+    assert 'value="cs">Čeština<' in HEADER
+    assert 'value="da">Dansk<' in HEADER
+    assert 'value="el">Ελληνικά<' in HEADER
+    assert 'value="fi">Suomi<' in HEADER
+    assert 'value="hr">Hrvatski<' in HEADER
+    assert 'value="hu">Magyar<' in HEADER
+    assert 'value="lt">Lietuvių<' in HEADER
+    assert 'value="no">Norsk<' in HEADER
+    assert 'value="ro">Română<' in HEADER
+    assert 'value="sv">Svenska<' in HEADER
+    assert 'value="tr">Türkçe<' in HEADER
+    assert 'value="uk">Українська<' in HEADER
+    assert 'value="ng"' not in HEADER
+    assert 'value="eo"' not in HEADER
+    assert 'value="la"' not in HEADER
     assert 'value="ja"' not in HEADER
+    assert 'value="tlh"' not in HEADER
     assert "lupaxa-lang-picker__label" not in HEADER
     assert ">EN<" not in HEADER
     assert 'id="lupaxa-lang-fallback"' in HEADER
+    assert 'class="lupaxa-lang-fallback notranslate"' in HEADER
 
 
 def test_language_script_follows_page_lifecycle():

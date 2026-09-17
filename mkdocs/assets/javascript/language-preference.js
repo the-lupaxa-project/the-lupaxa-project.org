@@ -9,7 +9,29 @@ const LupaxaLanguagePreference = (() => {
   const FALLBACK_DISMISS_KEY = "lupaxa-lang-fallback-dismissed";
   const CACHE_KEY = "lupaxa-lang-strings";
   const CACHE_MAX_PER_LOCALE = 500;
-  const LOCALES = ["en", "fr", "de", "es", "pt", "it", "nl", "pl"];
+  const LOCALES = [
+    "en",
+    "fr",
+    "de",
+    "es",
+    "pt",
+    "it",
+    "nl",
+    "pl",
+    "bg",
+    "cs",
+    "da",
+    "el",
+    "fi",
+    "hr",
+    "hu",
+    "lt",
+    "no",
+    "ro",
+    "sv",
+    "tr",
+    "uk",
+  ];
   const SKIP_TAGS = new Set(["PRE", "CODE", "SCRIPT", "STYLE", "NOSCRIPT"]);
   const SKIP_CLASSES = new Set(["md-footer", "md-copyright", "notranslate"]);
 
@@ -201,13 +223,349 @@ const LupaxaLanguagePreference = (() => {
   const translatorAvailable = (api) =>
     Boolean(api && typeof api.create === "function");
 
-  const NOTE_FALLBACK =
-    "This page is in English. Your browser can translate it.";
-  const NOTE_PREPARING = "Preparing translation…";
-  const NOTE_DOWNLOADING =
-    "Downloading the language pack. This can take a moment the first time.";
-  const NOTE_NEEDS_ACTIVATION =
-    "Select the language again to finish setting up translation.";
+  const UI_STRINGS = {
+    en: {
+      fallback: "This page is in English. Your browser can translate it.",
+      preparing: "Preparing translation…",
+      translating: "Translating…",
+      downloading:
+        "Downloading the language pack. This can take a moment the first time.",
+      needsActivation:
+        "Select the language again to finish setting up translation.",
+      dismiss: "Dismiss",
+    },
+    fr: {
+      fallback:
+        "Cette page est en anglais. Votre navigateur peut la traduire.",
+      preparing: "Préparation de la traduction…",
+      translating: "Traduction…",
+      downloading:
+        "Téléchargement du pack de langue. Cela peut prendre un moment la première fois.",
+      needsActivation:
+        "Sélectionnez à nouveau la langue pour terminer la configuration de la traduction.",
+      dismiss: "Fermer",
+    },
+    de: {
+      fallback:
+        "Diese Seite ist auf Englisch. Ihr Browser kann sie übersetzen.",
+      preparing: "Übersetzung wird vorbereitet…",
+      translating: "Übersetzung…",
+      downloading:
+        "Das Sprachpaket wird heruntergeladen. Das kann beim ersten Mal einen Moment dauern.",
+      needsActivation:
+        "Wählen Sie die Sprache erneut aus, um die Übersetzung einzurichten.",
+      dismiss: "Schließen",
+    },
+    es: {
+      fallback:
+        "Esta página está en inglés. Su navegador puede traducirla.",
+      preparing: "Preparando la traducción…",
+      translating: "Traduciendo…",
+      downloading:
+        "Descargando el paquete de idioma. La primera vez puede tardar un momento.",
+      needsActivation:
+        "Seleccione el idioma de nuevo para terminar de configurar la traducción.",
+      dismiss: "Cerrar",
+    },
+    pt: {
+      fallback:
+        "Esta página está em inglês. O seu navegador pode traduzi-la.",
+      preparing: "A preparar a tradução…",
+      translating: "A traduzir…",
+      downloading:
+        "A transferir o pacote de idioma. Pode demorar um pouco da primeira vez.",
+      needsActivation:
+        "Selecione o idioma novamente para concluir a configuração da tradução.",
+      dismiss: "Fechar",
+    },
+    it: {
+      fallback: "Questa pagina è in inglese. Il browser può tradurla.",
+      preparing: "Preparazione della traduzione…",
+      translating: "Traduzione…",
+      downloading:
+        "Download del pacchetto lingua. La prima volta può richiedere qualche momento.",
+      needsActivation:
+        "Seleziona di nuovo la lingua per completare la configurazione della traduzione.",
+      dismiss: "Chiudi",
+    },
+    nl: {
+      fallback:
+        "Deze pagina is in het Engels. Uw browser kan die vertalen.",
+      preparing: "Vertaling voorbereiden…",
+      translating: "Vertalen…",
+      downloading:
+        "Het taalpakket wordt gedownload. Dit kan de eerste keer even duren.",
+      needsActivation:
+        "Selecteer de taal opnieuw om de vertaling te voltooien.",
+      dismiss: "Sluiten",
+    },
+    pl: {
+      fallback:
+        "Ta strona jest po angielsku. Twoja przeglądarka może ją przetłumaczyć.",
+      preparing: "Przygotowywanie tłumaczenia…",
+      translating: "Tłumaczenie…",
+      downloading:
+        "Pobieranie pakietu językowego. Za pierwszym razem może to chwilę potrwać.",
+      needsActivation:
+        "Wybierz język ponownie, aby dokończyć konfigurację tłumaczenia.",
+      dismiss: "Zamknij",
+    },
+    bg: {
+      fallback:
+        "Тази страница е на английски. Браузърът ви може да я преведе.",
+      preparing: "Подготовка на превода…",
+      translating: "Превеждане…",
+      downloading:
+        "Изтегляне на езиковия пакет. Първия път може да отнеме малко време.",
+      needsActivation:
+        "Изберете отново езика, за да завършите настройката на превода.",
+      dismiss: "Затвори",
+    },
+    cs: {
+      fallback: "Tato stránka je v angličtině. Prohlížeč ji může přeložit.",
+      preparing: "Příprava překladu…",
+      translating: "Překládání…",
+      downloading:
+        "Stahování jazykového balíčku. Poprvé to může chvíli trvat.",
+      needsActivation:
+        "Vyberte jazyk znovu, abyste dokončili nastavení překladu.",
+      dismiss: "Zavřít",
+    },
+    da: {
+      fallback:
+        "Denne side er på engelsk. Din browser kan oversætte den.",
+      preparing: "Forbereder oversættelse…",
+      translating: "Oversætter…",
+      downloading:
+        "Sprogpakken downloades. Første gang kan det tage et øjeblik.",
+      needsActivation:
+        "Vælg sproget igen for at færdiggøre opsætningen af oversættelsen.",
+      dismiss: "Luk",
+    },
+    el: {
+      fallback:
+        "Αυτή η σελίδα είναι στα αγγλικά. Το πρόγραμμα περιήγησης μπορεί να τη μεταφράσει.",
+      preparing: "Προετοιμασία μετάφρασης…",
+      translating: "Μετάφραση…",
+      downloading:
+        "Λήψη του πακέτου γλώσσας. Την πρώτη φορά μπορεί να πάρει λίγο χρόνο.",
+      needsActivation:
+        "Επιλέξτε ξανά τη γλώσσα για να ολοκληρώσετε τη ρύθμιση της μετάφρασης.",
+      dismiss: "Κλείσιμο",
+    },
+    fi: {
+      fallback: "Tämä sivu on englanniksi. Selaimesi voi kääntää sen.",
+      preparing: "Valmistellaan käännöstä…",
+      translating: "Käännetään…",
+      downloading:
+        "Kielipakettia ladataan. Ensimmäisellä kerralla tämä voi kestää hetken.",
+      needsActivation:
+        "Valitse kieli uudelleen käännöksen määrityksen viimeistelemiseksi.",
+      dismiss: "Sulje",
+    },
+    hr: {
+      fallback:
+        "Ova je stranica na engleskom. Vaš preglednik može je prevesti.",
+      preparing: "Priprema prijevoda…",
+      translating: "Prevođenje…",
+      downloading:
+        "Preuzimanje jezičnog paketa. Prvi put to može potrajati.",
+      needsActivation:
+        "Ponovno odaberite jezik kako biste dovršili postavljanje prijevoda.",
+      dismiss: "Zatvori",
+    },
+    hu: {
+      fallback: "Ez az oldal angol nyelvű. A böngésző le tudja fordítani.",
+      preparing: "Fordítás előkészítése…",
+      translating: "Fordítás…",
+      downloading:
+        "A nyelvi csomag letöltése. Először eltarthat egy ideig.",
+      needsActivation:
+        "Válassza ki újra a nyelvet a fordítás beállításának befejezéséhez.",
+      dismiss: "Bezárás",
+    },
+    lt: {
+      fallback: "Šis puslapis yra anglų kalba. Naršyklė gali jį išversti.",
+      preparing: "Ruošiamas vertimas…",
+      translating: "Verčiama…",
+      downloading:
+        "Atsisiunčiamas kalbos paketas. Pirmą kartą tai gali šiek tiek užtrukti.",
+      needsActivation:
+        "Pasirinkite kalbą dar kartą, kad baigtumėte vertimo sąranką.",
+      dismiss: "Uždaryti",
+    },
+    no: {
+      fallback: "Denne siden er på engelsk. Nettleseren kan oversette den.",
+      preparing: "Forbereder oversettelse…",
+      translating: "Oversetter…",
+      downloading:
+        "Språkpakken lastes ned. Første gang kan det ta et øyeblikk.",
+      needsActivation:
+        "Velg språket på nytt for å fullføre oppsettet av oversettelsen.",
+      dismiss: "Lukk",
+    },
+    ro: {
+      fallback: "Această pagină este în engleză. Browserul o poate traduce.",
+      preparing: "Se pregătește traducerea…",
+      translating: "Se traduce…",
+      downloading:
+        "Se descarcă pachetul lingvistic. Prima dată poate dura un moment.",
+      needsActivation:
+        "Selectați din nou limba pentru a finaliza configurarea traducerii.",
+      dismiss: "Închide",
+    },
+    sv: {
+      fallback:
+        "Den här sidan är på engelska. Din webbläsare kan översätta den.",
+      preparing: "Förbereder översättning…",
+      translating: "Översätter…",
+      downloading:
+        "Språkpaketet hämtas. Första gången kan det ta en stund.",
+      needsActivation:
+        "Välj språket igen för att slutföra inställningen av översättningen.",
+      dismiss: "Stäng",
+    },
+    tr: {
+      fallback: "Bu sayfa İngilizcedir. Tarayıcınız onu çevirebilir.",
+      preparing: "Çeviri hazırlanıyor…",
+      translating: "Çeviriliyor…",
+      downloading: "Dil paketi indiriliyor. İlk seferde biraz sürebilir.",
+      needsActivation:
+        "Çeviri kurulumunu bitirmek için dili yeniden seçin.",
+      dismiss: "Kapat",
+    },
+    uk: {
+      fallback: "Ця сторінка англійською. Ваш браузер може її перекласти.",
+      preparing: "Підготовка перекладу…",
+      translating: "Переклад…",
+      downloading:
+        "Завантаження мовного пакета. Уперше це може зайняти хвилину.",
+      needsActivation:
+        "Виберіть мову ще раз, щоб завершити налаштування перекладу.",
+      dismiss: "Закрити",
+    },
+  };
+
+  const uiString = (locale, key) => {
+    const pack = UI_STRINGS[normaliseLocale(locale)] || UI_STRINGS.en;
+    return pack[key] || UI_STRINGS.en[key] || "";
+  };
+  const NETWORK_ENDPOINT = "https://clients5.google.com/translate_a/t";
+  const NETWORK_URL_MAX = 1600;
+
+  const parseNetworkTranslations = (payload) => {
+    let data = payload;
+    if (typeof data === "string") {
+      try {
+        data = JSON.parse(data);
+      } catch (_error) {
+        return [];
+      }
+    }
+    if (!Array.isArray(data)) {
+      return [];
+    }
+    return data.map((item) => (typeof item === "string" ? item : ""));
+  };
+
+  const buildNetworkTranslateUrl = (locale, texts) => {
+    const params = new URLSearchParams();
+    params.set("client", "dict-chrome-ex");
+    params.set("sl", "en");
+    params.set("tl", locale);
+    for (const text of texts || []) {
+      params.append("q", text);
+    }
+    return `${NETWORK_ENDPOINT}?${params.toString()}`;
+  };
+
+  const chunkNetworkTexts = (texts, maxLen = NETWORK_URL_MAX) => {
+    const chunks = [];
+    let current = [];
+    let len = 80;
+    for (const text of texts || []) {
+      const extra = encodeURIComponent(text).length + 3;
+      if (current.length && len + extra > maxLen) {
+        chunks.push(current);
+        current = [];
+        len = 80;
+      }
+      current.push(text);
+      len += extra;
+    }
+    if (current.length) {
+      chunks.push(current);
+    }
+    return chunks;
+  };
+
+  const createNetworkTranslatorApi = ({ fetchImpl } = {}) => {
+    if (typeof fetchImpl !== "function") {
+      return null;
+    }
+    return {
+      kind: "network",
+      async availability() {
+        return "available";
+      },
+      async create({ targetLanguage }) {
+        const locale = normaliseLocale(targetLanguage);
+        const translateMany = async (texts) => {
+          const unique = [];
+          const seen = new Set();
+          for (const text of texts || []) {
+            if (text && !seen.has(text)) {
+              seen.add(text);
+              unique.push(text);
+            }
+          }
+          const out = {};
+          for (const chunk of chunkNetworkTexts(unique)) {
+            const url = buildNetworkTranslateUrl(locale, chunk);
+            const res = await fetchImpl(url);
+            if (!res || !res.ok) {
+              throw new Error("translate failed");
+            }
+            const payload =
+              typeof res.json === "function" ? await res.json() : [];
+            const parts = parseNetworkTranslations(payload);
+            for (let i = 0; i < chunk.length; i += 1) {
+              if (parts[i]) {
+                out[chunk[i]] = parts[i];
+              }
+            }
+          }
+          return out;
+        };
+        return {
+          async translate(text) {
+            const map = await translateMany([text]);
+            return map[text] || "";
+          },
+          translateMany,
+          destroy() {},
+        };
+      },
+    };
+  };
+
+  const defaultFetchImpl = () => {
+    if (typeof fetch === "function") {
+      return fetch.bind(typeof self !== "undefined" ? self : globalThis);
+    }
+    return null;
+  };
+
+  const browserTranslatorApi = (fetchImpl) => {
+    if (typeof self !== "undefined" && self.Translator) {
+      return self.Translator;
+    }
+    const fetchFn = fetchImpl || defaultFetchImpl();
+    if (!fetchFn) {
+      return null;
+    }
+    return createNetworkTranslatorApi({ fetchImpl: fetchFn });
+  };
 
   const isActiveDownloadProgress = (event) => {
     const loaded = event && typeof event.loaded === "number" ? event.loaded : NaN;
@@ -286,6 +644,25 @@ const LupaxaLanguagePreference = (() => {
     const storage = cache && cache.storage;
     const cached =
       locale && storage ? readStringCache(storage)[locale] || {} : {};
+    if (translator && typeof translator.translateMany === "function") {
+      const unique = [];
+      const seen = new Set();
+      for (const node of nodes) {
+        if (translatedNodes.has(node)) {
+          continue;
+        }
+        const trimmed = splitEdgeWhitespace(node.nodeValue).trimmed;
+        if (trimmed && !cached[trimmed] && !seen.has(trimmed)) {
+          seen.add(trimmed);
+          unique.push(trimmed);
+        }
+      }
+      if (unique.length) {
+        const mapped = await translator.translateMany(unique);
+        rememberTranslations(storage, locale, Object.entries(mapped || {}));
+        Object.assign(cached, mapped || {});
+      }
+    }
     const pending = [];
     for (const node of nodes) {
       if (!isCurrent()) {
@@ -334,7 +711,9 @@ const LupaxaLanguagePreference = (() => {
     currentGeneration,
     userActivation = false,
     onProgress,
+    onNetwork,
     cacheStorage,
+    networkApi,
   }) => {
     rememberLocale(locale);
     if (locale === "en") {
@@ -354,16 +733,31 @@ const LupaxaLanguagePreference = (() => {
       applyDocumentLang(doc, locale);
       return { status: "ok", generation };
     }
-    if (!translatorAvailable(api)) {
-      return { status: "fallback", generation };
-    }
     const pair = {
       sourceLanguage: "en",
       targetLanguage: locale,
     };
-    const availability = await availabilityOf(api, pair);
+    let effectiveApi = translatorAvailable(api) ? api : networkApi;
+    if (!translatorAvailable(effectiveApi)) {
+      return { status: "fallback", generation };
+    }
+    let availability = await availabilityOf(effectiveApi, pair);
     if (!isCurrent()) {
       return { status: "skipped", generation };
+    }
+    if (
+      availability === "unavailable" &&
+      effectiveApi !== networkApi &&
+      translatorAvailable(networkApi)
+    ) {
+      if (typeof onNetwork === "function") {
+        onNetwork();
+      }
+      effectiveApi = networkApi;
+      availability = await availabilityOf(effectiveApi, pair);
+      if (!isCurrent()) {
+        return { status: "skipped", generation };
+      }
     }
     if (availability === "unavailable") {
       return { status: "fallback", generation };
@@ -377,13 +771,13 @@ const LupaxaLanguagePreference = (() => {
     let translator = null;
     if (
       translatorCache.locale === locale &&
-      translatorCache.api === api &&
+      translatorCache.api === effectiveApi &&
       translatorCache.translator
     ) {
       translator = translatorCache.translator;
     } else {
       try {
-        translator = await api.create({
+        translator = await effectiveApi.create({
           ...pair,
           monitor(m) {
             if (!m || typeof m.addEventListener !== "function") {
@@ -414,12 +808,16 @@ const LupaxaLanguagePreference = (() => {
         return { status: "skipped", generation };
       }
       clearTranslatorCache();
-      translatorCache = { locale, translator, api };
+      translatorCache = { locale, translator, api: effectiveApi };
     }
     if (!isCurrent()) {
       return { status: "skipped", generation };
     }
-    await translateTextNodes(remaining, translator, isCurrent, cache);
+    try {
+      await translateTextNodes(remaining, translator, isCurrent, cache);
+    } catch (_error) {
+      return { status: "failed", generation };
+    }
     if (!isCurrent()) {
       return { status: "skipped", generation };
     }
@@ -428,13 +826,6 @@ const LupaxaLanguagePreference = (() => {
   };
 
   let generation = 0;
-
-  const browserTranslatorApi = () => {
-    if (typeof self !== "undefined" && self.Translator) {
-      return self.Translator;
-    }
-    return null;
-  };
 
   const onPickerChange = async (value, { storage, reload, apply }) => {
     const locale = writePreference(storage, value);
@@ -454,7 +845,17 @@ const LupaxaLanguagePreference = (() => {
     const api =
       deps.translatorApi !== undefined
         ? deps.translatorApi
-        : browserTranslatorApi();
+        : browserTranslatorApi(deps.fetchImpl);
+    const networkApi =
+      deps.networkApi !== undefined
+        ? deps.networkApi
+        : deps.translatorApi !== undefined
+          ? null
+          : api && api.kind === "network"
+            ? null
+            : createNetworkTranslatorApi({
+                fetchImpl: deps.fetchImpl || defaultFetchImpl(),
+              });
     const picker = doc.getElementById("lupaxa-lang");
     if (!picker) {
       return;
@@ -484,8 +885,16 @@ const LupaxaLanguagePreference = (() => {
     const apply = async (locale, { userActivation = false } = {}) => {
       generation += 1;
       const myGeneration = generation;
+      if (dismiss) {
+        dismiss.textContent = uiString(locale, "dismiss");
+      }
       if (locale !== "en") {
-        setNoteHidden(true);
+        if (api && api.kind === "network") {
+          setNoteText(uiString(locale, "translating"));
+          setNoteHidden(false);
+        } else {
+          setNoteHidden(true);
+        }
       }
       const roots = [];
       const header = doc.querySelector(".md-header");
@@ -505,21 +914,26 @@ const LupaxaLanguagePreference = (() => {
         currentGeneration: () => generation,
         userActivation,
         cacheStorage: storage,
+        networkApi,
+        onNetwork() {
+          setNoteText(uiString(locale, "translating"));
+          setNoteHidden(false);
+        },
         onProgress() {
-          setNoteText(NOTE_DOWNLOADING);
+          setNoteText(uiString(locale, "downloading"));
           setNoteHidden(false);
         },
       });
       if (result.status === "ok" || result.status === "skipped") {
         setNoteHidden(true);
       } else if (result.status === "needs-activation") {
-        setNoteText(NOTE_NEEDS_ACTIVATION);
+        setNoteText(uiString(locale, "needsActivation"));
         setNoteHidden(dismissed());
       } else if (result.status === "fallback" || result.status === "failed") {
         if (result.status === "failed" && typeof console !== "undefined") {
           console.warn("Lupaxa language preference: translation failed");
         }
-        setNoteText(NOTE_FALLBACK);
+        setNoteText(uiString(locale, "fallback"));
         setNoteHidden(!shouldShowFallback(locale, false, dismissed()));
       } else {
         setNoteHidden(true);
@@ -567,6 +981,11 @@ const LupaxaLanguagePreference = (() => {
     isSkippableElement,
     shouldSkipNode,
     collectTextNodes,
+    uiString,
+    parseNetworkTranslations,
+    buildNetworkTranslateUrl,
+    createNetworkTranslatorApi,
+    browserTranslatorApi,
     translatorAvailable,
     shouldShowFallback,
     applyDocumentLang,
