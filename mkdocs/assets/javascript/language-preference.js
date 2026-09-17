@@ -147,19 +147,71 @@ const LupaxaLanguagePreference = (() => {
     }
   };
 
+  let translatedNodes = new WeakSet();
+  let activeLocale = "en";
+  let translatorCache = { locale: null, translator: null, api: null };
+
+  const resetTranslatedNodes = () => {
+    translatedNodes = new WeakSet();
+  };
+
+  const rememberLocale = (locale) => {
+    if (activeLocale !== locale) {
+      resetTranslatedNodes();
+      activeLocale = locale;
+    }
+  };
+
+  const destroyTranslator = (translator) => {
+    if (translator && typeof translator.destroy === "function") {
+      try {
+        translator.destroy();
+      } catch (_error) {
+        /* ignore */
+      }
+    }
+  };
+
+  const clearTranslatorCache = () => {
+    destroyTranslator(translatorCache.translator);
+    translatorCache = { locale: null, translator: null, api: null };
+  };
+
+  const splitEdgeWhitespace = (value) => {
+    const text = String(value ?? "");
+    const trimmed = text.trim();
+    if (!trimmed) {
+      return { lead: "", trimmed: "", trail: "" };
+    }
+    const start = text.indexOf(trimmed);
+    return {
+      lead: text.slice(0, start),
+      trimmed,
+      trail: text.slice(start + trimmed.length),
+    };
+  };
+
   const translateTextNodes = async (nodes, translator, isCurrent) => {
     for (const node of nodes) {
       if (!isCurrent()) {
         return;
       }
+      if (translatedNodes.has(node)) {
+        continue;
+      }
       const original = node.nodeValue;
+      const { lead, trimmed, trail } = splitEdgeWhitespace(original);
+      if (!trimmed) {
+        continue;
+      }
       try {
-        const next = await translator.translate(original);
+        const next = await translator.translate(trimmed);
         if (!isCurrent()) {
           return;
         }
         if (typeof next === "string" && next.length > 0) {
-          node.nodeValue = next;
+          node.nodeValue = lead + next + trail;
+          translatedNodes.add(node);
         }
       } catch (_error) {
         node.nodeValue = original;
@@ -175,7 +227,9 @@ const LupaxaLanguagePreference = (() => {
     generation,
     currentGeneration,
   }) => {
+    rememberLocale(locale);
     if (locale === "en") {
+      clearTranslatorCache();
       applyDocumentLang(doc, "en");
       return { status: "skipped", generation };
     }
@@ -183,14 +237,28 @@ const LupaxaLanguagePreference = (() => {
     if (!translatorAvailable(api)) {
       return { status: "fallback", generation };
     }
-    let translator;
-    try {
-      translator = await api.create({
-        sourceLanguage: "en",
-        targetLanguage: locale,
-      });
-    } catch (_error) {
-      return { status: "failed", generation };
+    let translator = null;
+    if (
+      translatorCache.locale === locale &&
+      translatorCache.api === api &&
+      translatorCache.translator
+    ) {
+      translator = translatorCache.translator;
+    } else {
+      try {
+        translator = await api.create({
+          sourceLanguage: "en",
+          targetLanguage: locale,
+        });
+      } catch (_error) {
+        return { status: "failed", generation };
+      }
+      if (!isCurrent()) {
+        destroyTranslator(translator);
+        return { status: "skipped", generation };
+      }
+      clearTranslatorCache();
+      translatorCache = { locale, translator, api };
     }
     if (!isCurrent()) {
       return { status: "skipped", generation };

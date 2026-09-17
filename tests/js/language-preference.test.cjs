@@ -193,6 +193,29 @@ describe("translateTextNodes", () => {
     await lib.translateTextNodes([copy], translator, () => allow && ((allow = false), false));
     assert.equal(copy.nodeValue, "Browse projects");
   });
+
+  it("does not prefix again on a second pass", async () => {
+    const copy = text("Hello");
+    const translator = {
+      async translate(value) {
+        return `FR:${value}`;
+      },
+    };
+    await lib.translateTextNodes([copy], translator, () => true);
+    await lib.translateTextNodes([copy], translator, () => true);
+    assert.equal(copy.nodeValue, "FR:Hello");
+  });
+
+  it("preserves leading and trailing whitespace", async () => {
+    const copy = text(" Hello ");
+    const translator = {
+      async translate(value) {
+        return `FR:${value}`;
+      },
+    };
+    await lib.translateTextNodes([copy], translator, () => true);
+    assert.equal(copy.nodeValue, " FR:Hello ");
+  });
 });
 
 describe("runTranslation", () => {
@@ -274,6 +297,40 @@ describe("runTranslation", () => {
     assert.equal(copy.nodeValue, "Hello");
     assert.equal(doc.documentElement.lang, "en");
   });
+
+  it("does not prefix again when run twice on the same nodes", async () => {
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const doc = { documentElement: { lang: "en" } };
+    let creates = 0;
+    const api = {
+      create: async () => {
+        creates += 1;
+        return {
+          translate: async (value) => `FR:${value}`,
+        };
+      },
+    };
+    const base = {
+      locale: "fr",
+      api,
+      roots: [root],
+      document: doc,
+    };
+    await lib.runTranslation({
+      ...base,
+      generation: 10,
+      currentGeneration: () => 10,
+    });
+    await lib.runTranslation({
+      ...base,
+      generation: 11,
+      currentGeneration: () => 11,
+    });
+    assert.equal(copy.nodeValue, "FR:Hello");
+    assert.equal(doc.documentElement.lang, "fr");
+    assert.equal(creates, 1);
+  });
 });
 
 describe("onPickerChange", () => {
@@ -292,6 +349,21 @@ describe("onPickerChange", () => {
     assert.equal(reloads, 0);
   });
 
+  it("applies fr when the picker selects fr", async () => {
+    const storage = memoryStorage();
+    let applied = null;
+    await lib.onPickerChange("fr", {
+      storage,
+      reload: () => {
+        throw new Error("should not reload");
+      },
+      apply: async (locale) => {
+        applied = locale;
+      },
+    });
+    assert.equal(applied, "fr");
+  });
+
   it("writes en and reloads", async () => {
     const storage = memoryStorage({ "lupaxa-lang": "fr" });
     let reloads = 0;
@@ -306,5 +378,83 @@ describe("onPickerChange", () => {
     });
     assert.equal(storage.getItem("lupaxa-lang"), "en");
     assert.equal(reloads, 1);
+  });
+});
+
+function fakeDocument() {
+  const changeListeners = [];
+  const clickListeners = [];
+  const picker = {
+    id: "lupaxa-lang",
+    value: "en",
+    dataset: {},
+    addEventListener(type, fn) {
+      if (type === "change") {
+        changeListeners.push(fn);
+      }
+    },
+  };
+  const note = {
+    id: "lupaxa-lang-fallback",
+    hidden: true,
+  };
+  const dismiss = {
+    id: "lupaxa-lang-fallback-dismiss",
+    dataset: {},
+    addEventListener(type, fn) {
+      if (type === "click") {
+        clickListeners.push(fn);
+      }
+    },
+  };
+  const ids = {
+    "lupaxa-lang": picker,
+    "lupaxa-lang-fallback": note,
+    "lupaxa-lang-fallback-dismiss": dismiss,
+  };
+  return {
+    documentElement: { lang: "en" },
+    getElementById(id) {
+      return Object.prototype.hasOwnProperty.call(ids, id) ? ids[id] : null;
+    },
+    querySelector() {
+      return null;
+    },
+    picker,
+    note,
+    dismiss,
+    changeListeners,
+    clickListeners,
+  };
+}
+
+describe("attach", () => {
+  it("shows the fallback note for fr when the API is null", async () => {
+    const doc = fakeDocument();
+    const storage = memoryStorage({ "lupaxa-lang": "fr" });
+    const session = memoryStorage();
+    await lib.attach({
+      document: doc,
+      storage,
+      sessionStorage: session,
+      reload: () => {},
+      translatorApi: null,
+    });
+    assert.equal(doc.note.hidden, false);
+    assert.equal(doc.changeListeners.length, 1);
+
+    doc.clickListeners[0]();
+    assert.equal(doc.note.hidden, true);
+    assert.equal(session.getItem(lib.FALLBACK_DISMISS_KEY), "1");
+
+    await lib.attach({
+      document: doc,
+      storage,
+      sessionStorage: session,
+      reload: () => {},
+      translatorApi: null,
+    });
+    assert.equal(doc.changeListeners.length, 1);
+    assert.equal(doc.note.hidden, true);
   });
 });
