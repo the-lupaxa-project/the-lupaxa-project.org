@@ -51,6 +51,7 @@
       </ul>
     </nav>
 
+    {% if config.extra.language_picker %}
     <div class="lupaxa-lang-picker" translate="no">
       <select
         class="lupaxa-lang-picker__select"
@@ -64,9 +65,12 @@
         <option value="pt">Português</option>
         <option value="it">Italiano</option>
         <option value="nl">Nederlands</option>
+        <option value="pl">Polski</option>
       </select>
     </div>
+    {% endif %}
   </nav>
+  {% if config.extra.language_picker %}
   <div
     class="lupaxa-lang-fallback"
     id="lupaxa-lang-fallback"
@@ -84,4 +88,5 @@
       Dismiss
     </button>
   </div>
+  {% endif %}
 </header>

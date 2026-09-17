@@ -7,8 +7,11 @@
 const LupaxaLanguagePreference = (() => {
   const STORAGE_KEY = "lupaxa-lang";
   const FALLBACK_DISMISS_KEY = "lupaxa-lang-fallback-dismissed";
-  const LOCALES = ["en", "fr", "de", "es", "pt", "it", "nl"];
+  const CACHE_KEY = "lupaxa-lang-strings";
+  const CACHE_MAX_PER_LOCALE = 500;
+  const LOCALES = ["en", "fr", "de", "es", "pt", "it", "nl", "pl"];
   const SKIP_TAGS = new Set(["PRE", "CODE", "SCRIPT", "STYLE", "NOSCRIPT"]);
+  const SKIP_CLASSES = new Set(["md-footer", "md-copyright", "notranslate"]);
 
   const safeStorage = (backing) => {
     if (!backing) {
@@ -63,6 +66,61 @@ const LupaxaLanguagePreference = (() => {
     return locale;
   };
 
+  const readStringCache = (storage) => {
+    if (!storage || typeof storage.getItem !== "function") {
+      return {};
+    }
+    try {
+      const raw = storage.getItem(CACHE_KEY);
+      if (!raw) {
+        return {};
+      }
+      const parsed = JSON.parse(raw);
+      return parsed && typeof parsed === "object" ? parsed : {};
+    } catch (_error) {
+      return {};
+    }
+  };
+
+  const writeStringCache = (storage, data) => {
+    if (!storage || typeof storage.setItem !== "function") {
+      return;
+    }
+    try {
+      storage.setItem(CACHE_KEY, JSON.stringify(data));
+    } catch (_error) {
+      /* quota */
+    }
+  };
+
+  const pruneLocaleBucket = (bucket) => {
+    const keys = Object.keys(bucket);
+    if (keys.length <= CACHE_MAX_PER_LOCALE) {
+      return bucket;
+    }
+    const next = {};
+    const keep = keys.slice(keys.length - CACHE_MAX_PER_LOCALE);
+    for (const key of keep) {
+      next[key] = bucket[key];
+    }
+    return next;
+  };
+
+  const rememberTranslations = (storage, locale, pairs) => {
+    if (!storage || !locale || !pairs || !pairs.length) {
+      return;
+    }
+    const data = readStringCache(storage);
+    const bucket = { ...(data[locale] || {}) };
+    for (const [source, translated] of pairs) {
+      if (source && translated) {
+        bucket[source] = translated;
+      }
+    }
+    data[locale] = pruneLocaleBucket(bucket);
+    writeStringCache(storage, data);
+  };
+
   const writePreference = (storage, value) => {
     const locale = normaliseLocale(value);
     try {
@@ -88,8 +146,13 @@ const LupaxaLanguagePreference = (() => {
     if (el.getAttribute && el.getAttribute("translate") === "no") {
       return true;
     }
-    if (el.classList && el.classList.contains("notranslate")) {
-      return true;
+    if (!el.classList || typeof el.classList.contains !== "function") {
+      return false;
+    }
+    for (const name of SKIP_CLASSES) {
+      if (el.classList.contains(name)) {
+        return true;
+      }
     }
     return false;
   };
@@ -137,6 +200,28 @@ const LupaxaLanguagePreference = (() => {
 
   const translatorAvailable = (api) =>
     Boolean(api && typeof api.create === "function");
+
+  const NOTE_FALLBACK =
+    "This page is in English. Your browser can translate it.";
+  const NOTE_PREPARING = "Preparing translation…";
+  const NOTE_DOWNLOADING =
+    "Downloading the language pack. This can take a moment the first time.";
+  const NOTE_NEEDS_ACTIVATION =
+    "Select the language again to finish setting up translation.";
+
+  const availabilityOf = async (api, options) => {
+    if (!translatorAvailable(api)) {
+      return "unavailable";
+    }
+    if (typeof api.availability !== "function") {
+      return "available";
+    }
+    try {
+      return await api.availability(options);
+    } catch (_error) {
+      return "unavailable";
+    }
+  };
 
   const shouldShowFallback = (locale, available, dismissed) =>
     locale !== "en" && !available && !dismissed;
@@ -191,7 +276,12 @@ const LupaxaLanguagePreference = (() => {
     };
   };
 
-  const translateTextNodes = async (nodes, translator, isCurrent) => {
+  const translateTextNodes = async (nodes, translator, isCurrent, cache) => {
+    const locale = cache && cache.locale;
+    const storage = cache && cache.storage;
+    const cached =
+      locale && storage ? readStringCache(storage)[locale] || {} : {};
+    const pending = [];
     for (const node of nodes) {
       if (!isCurrent()) {
         return;
@@ -204,6 +294,14 @@ const LupaxaLanguagePreference = (() => {
       if (!trimmed) {
         continue;
       }
+      if (cached[trimmed]) {
+        node.nodeValue = lead + cached[trimmed] + trail;
+        translatedNodes.add(node);
+        continue;
+      }
+      if (!translator) {
+        continue;
+      }
       try {
         const next = await translator.translate(trimmed);
         if (!isCurrent()) {
@@ -212,11 +310,14 @@ const LupaxaLanguagePreference = (() => {
         if (typeof next === "string" && next.length > 0) {
           node.nodeValue = lead + next + trail;
           translatedNodes.add(node);
+          cached[trimmed] = next;
+          pending.push([trimmed, next]);
         }
       } catch (_error) {
         node.nodeValue = original;
       }
     }
+    rememberTranslations(storage, locale, pending);
   };
 
   const runTranslation = async ({
@@ -226,6 +327,9 @@ const LupaxaLanguagePreference = (() => {
     document: doc,
     generation,
     currentGeneration,
+    userActivation = false,
+    onProgress,
+    cacheStorage,
   }) => {
     rememberLocale(locale);
     if (locale === "en") {
@@ -234,8 +338,36 @@ const LupaxaLanguagePreference = (() => {
       return { status: "skipped", generation };
     }
     const isCurrent = () => currentGeneration() === generation;
+    const cache = { locale, storage: cacheStorage };
+    const nodes = [];
+    for (const root of roots || []) {
+      nodes.push(...collectTextNodes(root));
+    }
+    await translateTextNodes(nodes, null, isCurrent, cache);
+    const remaining = nodes.filter((node) => !translatedNodes.has(node));
+    if (!remaining.length) {
+      applyDocumentLang(doc, locale);
+      return { status: "ok", generation };
+    }
     if (!translatorAvailable(api)) {
       return { status: "fallback", generation };
+    }
+    const pair = {
+      sourceLanguage: "en",
+      targetLanguage: locale,
+    };
+    const availability = await availabilityOf(api, pair);
+    if (!isCurrent()) {
+      return { status: "skipped", generation };
+    }
+    if (availability === "unavailable") {
+      return { status: "fallback", generation };
+    }
+    if (
+      (availability === "downloadable" || availability === "downloading") &&
+      !userActivation
+    ) {
+      return { status: "needs-activation", generation };
     }
     let translator = null;
     if (
@@ -247,8 +379,17 @@ const LupaxaLanguagePreference = (() => {
     } else {
       try {
         translator = await api.create({
-          sourceLanguage: "en",
-          targetLanguage: locale,
+          ...pair,
+          monitor(m) {
+            if (!m || typeof m.addEventListener !== "function") {
+              return;
+            }
+            m.addEventListener("downloadprogress", (event) => {
+              if (typeof onProgress === "function") {
+                onProgress(event);
+              }
+            });
+          },
         });
       } catch (_error) {
         return { status: "failed", generation };
@@ -263,11 +404,7 @@ const LupaxaLanguagePreference = (() => {
     if (!isCurrent()) {
       return { status: "skipped", generation };
     }
-    const nodes = [];
-    for (const root of roots || []) {
-      nodes.push(...collectTextNodes(root));
-    }
-    await translateTextNodes(nodes, translator, isCurrent);
+    await translateTextNodes(remaining, translator, isCurrent, cache);
     if (!isCurrent()) {
       return { status: "skipped", generation };
     }
@@ -304,6 +441,9 @@ const LupaxaLanguagePreference = (() => {
         ? deps.translatorApi
         : browserTranslatorApi();
     const picker = doc.getElementById("lupaxa-lang");
+    if (!picker) {
+      return;
+    }
     const note = doc.getElementById("lupaxa-lang-fallback");
     const dismiss = doc.getElementById("lupaxa-lang-fallback-dismiss");
 
@@ -313,24 +453,34 @@ const LupaxaLanguagePreference = (() => {
       }
     };
 
+    const setNoteText = (text) => {
+      const el =
+        note && typeof note.querySelector === "function"
+          ? note.querySelector(".lupaxa-lang-fallback__text")
+          : null;
+      if (el) {
+        el.textContent = text;
+      }
+    };
+
     const dismissed = () =>
       session.getItem(FALLBACK_DISMISS_KEY) === "1";
 
-    const apply = async (locale) => {
+    const apply = async (locale, { userActivation = false } = {}) => {
       generation += 1;
       const myGeneration = generation;
+      if (locale !== "en") {
+        setNoteText(NOTE_PREPARING);
+        setNoteHidden(false);
+      }
       const roots = [];
       const header = doc.querySelector(".md-header");
       const main = doc.querySelector(".md-main");
-      const footer = doc.querySelector(".md-footer");
       if (header) {
         roots.push(header);
       }
       if (main) {
         roots.push(main);
-      }
-      if (footer) {
-        roots.push(footer);
       }
       const result = await runTranslation({
         locale,
@@ -339,11 +489,23 @@ const LupaxaLanguagePreference = (() => {
         document: doc,
         generation: myGeneration,
         currentGeneration: () => generation,
+        userActivation,
+        cacheStorage: storage,
+        onProgress() {
+          setNoteText(NOTE_DOWNLOADING);
+          setNoteHidden(false);
+        },
       });
-      if (result.status === "fallback" || result.status === "failed") {
+      if (result.status === "ok" || result.status === "skipped") {
+        setNoteHidden(true);
+      } else if (result.status === "needs-activation") {
+        setNoteText(NOTE_NEEDS_ACTIVATION);
+        setNoteHidden(dismissed());
+      } else if (result.status === "fallback" || result.status === "failed") {
         if (result.status === "failed" && typeof console !== "undefined") {
           console.warn("Lupaxa language preference: translation failed");
         }
+        setNoteText(NOTE_FALLBACK);
         setNoteHidden(!shouldShowFallback(locale, false, dismissed()));
       } else {
         setNoteHidden(true);
@@ -360,7 +522,7 @@ const LupaxaLanguagePreference = (() => {
         onPickerChange(picker.value, {
           storage,
           reload,
-          apply,
+          apply: (locale) => apply(locale, { userActivation: true }),
         });
       });
     }
@@ -382,6 +544,7 @@ const LupaxaLanguagePreference = (() => {
   return {
     STORAGE_KEY,
     FALLBACK_DISMISS_KEY,
+    CACHE_KEY,
     LOCALES,
     safeStorage,
     readPreference,

@@ -14,6 +14,9 @@ site_url: https://thelupaxaproject.org/
 
 extra:
   generator: false
+  # Viewer language picker (client-side translation; English URLs).
+  # Default when omitted: false (picker hidden).
+  language_picker: true
   footer_name: The Lupaxa Project
   footer_taglines:
     - Where exploration meets precision.

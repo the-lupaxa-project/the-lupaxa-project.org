@@ -18,6 +18,7 @@ def test_header_has_custom_picker_not_alternate():
     assert 'value="pt">Português<' in HEADER
     assert 'value="it">Italiano<' in HEADER
     assert 'value="nl">Nederlands<' in HEADER
+    assert 'value="pl">Polski<' in HEADER
     assert 'value="ja"' not in HEADER
     assert "lupaxa-lang-picker__label" not in HEADER
     assert ">EN<" not in HEADER
@@ -39,6 +40,8 @@ def test_language_script_follows_page_lifecycle():
     assert "mkdocs-static-i18n" not in MKDOCS
     assert "  language: en" in MKDOCS
     assert "social_locale: en_GB" in MKDOCS
+    assert "language_picker: true" in MKDOCS
+    assert "{% if config.extra.language_picker %}" in HEADER
 
 
 def test_header_css_keeps_picker_out_of_nav_flex():
@@ -88,7 +91,7 @@ def test_footer_hero_sponsor_opt_out_brand_names():
     footer = (ROOT / "overrides/partials/copyright.html").read_text(encoding="utf-8")
     index = (ROOT / "mkdocs/index.md").read_text(encoding="utf-8")
     sponsor = (ROOT / "mkdocs/sponsor.md").read_text(encoding="utf-8")
-    assert 'translate="no"' in footer
+    assert 'class="md-copyright notranslate" translate="no"' in footer
     assert 'class="lupaxa-hero-title"' in index
     assert 'translate="no"' in index
     assert '<strong translate="no">The Lupaxa Project</strong>' in index

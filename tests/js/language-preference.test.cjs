@@ -94,9 +94,10 @@ describe("writePreference", () => {
       "pt",
       "it",
       "nl",
+      "pl",
     ]);
     const storage = memoryStorage();
-    assert.equal(lib.writePreference(storage, "nl"), "nl");
+    assert.equal(lib.writePreference(storage, "pl"), "pl");
   });
 
   it("stores en for an unknown value", () => {
@@ -129,6 +130,17 @@ describe("shouldSkipNode", () => {
     element("p", {}, [copy]);
     assert.equal(lib.shouldSkipNode(copy), false);
   });
+
+  it("skips text inside the site footer", () => {
+    const reserved = text("All rights reserved.");
+    const tagline = text("Where exploration meets precision.");
+    const copyright = element("span", { class: "footer-copyright" }, [reserved]);
+    const slogan = element("span", { class: "footer-tagline" }, [tagline]);
+    const inner = element("div", { class: "md-copyright" }, [copyright, slogan]);
+    element("footer", { class: "md-footer" }, [inner]);
+    assert.equal(lib.shouldSkipNode(reserved), true);
+    assert.equal(lib.shouldSkipNode(tagline), true);
+  });
 });
 
 describe("collectTextNodes", () => {
@@ -144,6 +156,21 @@ describe("collectTextNodes", () => {
     assert.deepEqual(
       nodes.map((node) => node.nodeValue),
       ["Hello"],
+    );
+  });
+
+  it("does not collect footer copyright or taglines", () => {
+    const reserved = text("All rights reserved.");
+    const tagline = text("Where exploration meets precision.");
+    const footer = element("footer", { class: "md-footer" }, [
+      element("div", { class: "md-copyright" }, [
+        element("span", { class: "footer-copyright" }, [reserved]),
+        element("span", { class: "footer-tagline" }, [tagline]),
+      ]),
+    ]);
+    assert.deepEqual(
+      lib.collectTextNodes(footer).map((node) => node.nodeValue),
+      [],
     );
   });
 });
@@ -229,6 +256,44 @@ describe("translateTextNodes", () => {
     };
     await lib.translateTextNodes([copy], translator, () => true);
     assert.equal(copy.nodeValue, " FR:Hello ");
+  });
+
+  it("uses a cache hit without calling the translator", async () => {
+    const copy = text("Hello");
+    let calls = 0;
+    const translator = {
+      async translate() {
+        calls += 1;
+        return "NON";
+      },
+    };
+    const cache = memoryStorage({
+      [lib.CACHE_KEY]: JSON.stringify({ fr: { Hello: "Bonjour" } }),
+    });
+    await lib.translateTextNodes([copy], translator, () => true, {
+      locale: "fr",
+      storage: cache,
+    });
+    assert.equal(copy.nodeValue, "Bonjour");
+    assert.equal(calls, 0);
+  });
+
+  it("stores a successful translation in the cache", async () => {
+    const copy = text("Hello");
+    const cache = memoryStorage();
+    await lib.translateTextNodes(
+      [copy],
+      {
+        async translate(value) {
+          return `FR:${value}`;
+        },
+      },
+      () => true,
+      { locale: "fr", storage: cache },
+    );
+    assert.equal(copy.nodeValue, "FR:Hello");
+    const stored = JSON.parse(cache.getItem(lib.CACHE_KEY));
+    assert.equal(stored.fr.Hello, "FR:Hello");
   });
 });
 
@@ -345,6 +410,111 @@ describe("runTranslation", () => {
     assert.equal(doc.documentElement.lang, "fr");
     assert.equal(creates, 1);
   });
+
+  it("does not create when the pack is downloadable without a user gesture", async () => {
+    let creates = 0;
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const doc = { documentElement: { lang: "en" } };
+    const result = await lib.runTranslation({
+      locale: "fr",
+      api: {
+        availability: async () => "downloadable",
+        create: async () => {
+          creates += 1;
+          throw new Error("should not create");
+        },
+      },
+      roots: [root],
+      document: doc,
+      generation: 20,
+      currentGeneration: () => 20,
+      userActivation: false,
+    });
+    assert.equal(result.status, "needs-activation");
+    assert.equal(creates, 0);
+    assert.equal(copy.nodeValue, "Hello");
+    assert.equal(doc.documentElement.lang, "en");
+  });
+
+  it("creates when the pack is downloadable and the picker provided a gesture", async () => {
+    let creates = 0;
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const result = await lib.runTranslation({
+      locale: "fr",
+      api: {
+        availability: async () => "downloadable",
+        create: async (options) => {
+          creates += 1;
+          assert.equal(typeof options.monitor, "function");
+          return {
+            translate: async (value) => `FR:${value}`,
+          };
+        },
+      },
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 21,
+      currentGeneration: () => 21,
+      userActivation: true,
+    });
+    assert.equal(result.status, "ok");
+    assert.equal(creates, 1);
+    assert.equal(copy.nodeValue, "FR:Hello");
+  });
+
+  it("returns fallback when availability is unavailable", async () => {
+    let creates = 0;
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const result = await lib.runTranslation({
+      locale: "de",
+      api: {
+        availability: async () => "unavailable",
+        create: async () => {
+          creates += 1;
+          return { translate: async () => "nope" };
+        },
+      },
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 22,
+      currentGeneration: () => 22,
+      userActivation: true,
+    });
+    assert.equal(result.status, "fallback");
+    assert.equal(creates, 0);
+    assert.equal(copy.nodeValue, "Hello");
+  });
+
+  it("applies a full string cache without creating a translator", async () => {
+    let creates = 0;
+    const copy = text("Hello");
+    const root = element("p", {}, [copy]);
+    const cache = memoryStorage({
+      [lib.CACHE_KEY]: JSON.stringify({ fr: { Hello: "Bonjour" } }),
+    });
+    const result = await lib.runTranslation({
+      locale: "fr",
+      api: {
+        availability: async () => "downloadable",
+        create: async () => {
+          creates += 1;
+          throw new Error("should not create");
+        },
+      },
+      roots: [root],
+      document: { documentElement: { lang: "en" } },
+      generation: 23,
+      currentGeneration: () => 23,
+      userActivation: false,
+      cacheStorage: cache,
+    });
+    assert.equal(result.status, "ok");
+    assert.equal(creates, 0);
+    assert.equal(copy.nodeValue, "Bonjour");
+  });
 });
 
 describe("onPickerChange", () => {
@@ -408,9 +578,16 @@ function fakeDocument() {
       }
     },
   };
+  const textEl = {
+    className: "lupaxa-lang-fallback__text",
+    textContent: "This page is in English. Your browser can translate it.",
+  };
   const note = {
     id: "lupaxa-lang-fallback",
     hidden: true,
+    querySelector(selector) {
+      return selector === ".lupaxa-lang-fallback__text" ? textEl : null;
+    },
   };
   const dismiss = {
     id: "lupaxa-lang-fallback-dismiss",
@@ -426,12 +603,30 @@ function fakeDocument() {
     "lupaxa-lang-fallback": note,
     "lupaxa-lang-fallback-dismiss": dismiss,
   };
+  const pageCopy = text("Browse projects");
+  const reserved = text("All rights reserved.");
+  const tagline = text("Where exploration meets precision.");
+  const main = element("div", { class: "md-main" }, [
+    element("p", {}, [pageCopy]),
+  ]);
+  const footer = element("footer", { class: "md-footer" }, [
+    element("div", { class: "md-copyright" }, [
+      element("span", { class: "footer-copyright" }, [reserved]),
+      element("span", { class: "footer-tagline" }, [tagline]),
+    ]),
+  ]);
   return {
     documentElement: { lang: "en" },
     getElementById(id) {
       return Object.prototype.hasOwnProperty.call(ids, id) ? ids[id] : null;
     },
-    querySelector() {
+    querySelector(selector) {
+      if (selector === ".md-main") {
+        return main;
+      }
+      if (selector === ".md-footer") {
+        return footer;
+      }
       return null;
     },
     picker,
@@ -439,10 +634,43 @@ function fakeDocument() {
     dismiss,
     changeListeners,
     clickListeners,
+    pageCopy,
+    reserved,
+    tagline,
+    noteText() {
+      return textEl.textContent;
+    },
   };
 }
 
 describe("attach", () => {
+  it("does nothing when the picker is absent", async () => {
+    const doc = {
+      documentElement: { lang: "en" },
+      getElementById() {
+        return null;
+      },
+      querySelector() {
+        throw new Error("should not walk the document");
+      },
+    };
+    const result = await lib.attach({
+      document: doc,
+      storage: memoryStorage({ "lupaxa-lang": "fr" }),
+      sessionStorage: memoryStorage(),
+      reload: () => {
+        throw new Error("should not reload");
+      },
+      translatorApi: {
+        create: async () => {
+          throw new Error("should not create a translator");
+        },
+      },
+    });
+    assert.equal(result, undefined);
+    assert.equal(doc.documentElement.lang, "en");
+  });
+
   it("shows the fallback note for fr when the API is null", async () => {
     const doc = fakeDocument();
     const storage = memoryStorage({ "lupaxa-lang": "fr" });
@@ -470,5 +698,46 @@ describe("attach", () => {
     });
     assert.equal(doc.changeListeners.length, 1);
     assert.equal(doc.note.hidden, true);
+  });
+
+  it("asks for another picker choice when a download needs a gesture", async () => {
+    const doc = fakeDocument();
+    const result = await lib.attach({
+      document: doc,
+      storage: memoryStorage({ "lupaxa-lang": "fr" }),
+      sessionStorage: memoryStorage(),
+      reload: () => {},
+      translatorApi: {
+        availability: async () => "downloadable",
+        create: async () => {
+          throw new Error("should not create on load");
+        },
+      },
+    });
+    assert.equal(result.status, "needs-activation");
+    assert.equal(doc.note.hidden, false);
+    assert.match(
+      doc.noteText(),
+      /select the language again/i,
+    );
+  });
+
+  it("translates main copy and leaves the footer in English", async () => {
+    const doc = fakeDocument();
+    await lib.attach({
+      document: doc,
+      storage: memoryStorage({ "lupaxa-lang": "fr" }),
+      sessionStorage: memoryStorage(),
+      reload: () => {},
+      translatorApi: {
+        availability: async () => "available",
+        create: async () => ({
+          translate: async (value) => `FR:${value}`,
+        }),
+      },
+    });
+    assert.equal(doc.pageCopy.nodeValue, "FR:Browse projects");
+    assert.equal(doc.reserved.nodeValue, "All rights reserved.");
+    assert.equal(doc.tagline.nodeValue, "Where exploration meets precision.");
   });
 });
