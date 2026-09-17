@@ -6,7 +6,7 @@ hide:
 
 <div class="about-introduction about-introduction-lead">
     <p>
-        <strong>The Lupaxa Project</strong> is an informal collective, not a
+        <strong translate="no">The Lupaxa Project</strong> is an informal collective, not a
         company. There are no customers, shareholders or commercial objectives
         directing its work. People build and maintain the tools, documentation
         and this portal in their own time because the work is useful.

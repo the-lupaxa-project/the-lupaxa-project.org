@@ -142,7 +142,7 @@ def _organisation_logo_title(name: str) -> str:
 
 def catalogue_card_heading(item: dict) -> str:
     """Card title as a heading so site search can deep-link to the card."""
-    return f"-   ### :{item['icon']}: {item['name']} {{ #{item['id']} .no_toc }}"
+    return f"-   ### :{item['icon']}: {item['name']} {{ #{item['id']} .no_toc translate=no }}"
 
 
 def _action_link(modifier: str, href: str, label: str, icon: str) -> str:
@@ -374,6 +374,7 @@ def define_env(env):
 
     <img
         class="catalogue-logo"
+        translate="no"
         title="{title}"
         data-name="{name_attr}"
         data-organisation="{item["name"]}"{publish_date_attr}
@@ -450,6 +451,7 @@ def define_env(env):
 
 {banner_block}    <img
         class="catalogue-logo"
+        translate="no"
         title="{item["organisation"]}"
         data-name="{name_attr}"
         data-organisation="{item["organisation"]}"{publish_date_attr}{released_date_attr}
@@ -500,6 +502,7 @@ def define_env(env):
 
 {banner_block}    <img
         class="catalogue-logo"
+        translate="no"
         title="{logo_alt}"
         data-name="{name_attr}"
         src="{logo}"

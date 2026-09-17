@@ -237,7 +237,7 @@ def test_project_card_title_is_searchable_heading(tmp_path, monkeypatch):
     markup = catalogue_grid("project", "project")
 
     assert "### :material-source-repository: Synthetic Project" in markup
-    assert "{ #synthetic-project .no_toc }" in markup
+    assert "{ #synthetic-project .no_toc translate=no }" in markup
 
 
 def test_project_card_includes_released_date_time_on_logo(tmp_path, monkeypatch):

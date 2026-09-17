@@ -206,7 +206,10 @@ def banner_markup_from_resolved(
     if version:
         safe_version = html.escape(f"v{version}", quote=True)
         version_class = " catalogue-banner--with-version"
-        version_html = f'<span class="catalogue-banner__version">{safe_version}</span>'
+        version_html = (
+            f'<span class="catalogue-banner__version" translate="no">'
+            f"{safe_version}</span>"
+        )
         aria_label = f"Status: {safe_label} {safe_version}"
     return (
         f'    <span class="catalogue-banner catalogue-banner--{tone}'

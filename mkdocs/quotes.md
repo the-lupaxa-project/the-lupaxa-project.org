@@ -32,9 +32,9 @@ hide:
         {% endfor %}
       </div>
       <footer class="quote-attribution">
-        <div class="quote-author">{{ quote.author | e }}</div>
+        <div class="quote-author" translate="no">{{ quote.author | e }}</div>
         {% if quote.get('year') %}
-        <div class="quote-year">{{ quote.get('year') | e }}</div>
+        <div class="quote-year" translate="no">{{ quote.get('year') | e }}</div>
         {% endif %}
       </footer>
     </article>

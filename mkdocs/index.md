@@ -8,8 +8,9 @@ hide:
     <img
         class="lupaxa-hero-logo"
         src="{{ 'assets/images/brand/the-lupaxa-project-hero-logo.png' | relative_url }}"
-        alt="The Lupaxa Project Logo"/>
-    <h1 class="lupaxa-hero-title">
+        alt="The Lupaxa Project Logo"
+        translate="no"/>
+    <h1 class="lupaxa-hero-title" translate="no">
         The Lupaxa Project
     </h1>
 
@@ -50,7 +51,7 @@ hide:
 
 <div class="about-introduction about-introduction-lead">
     <p>
-        <strong>The Lupaxa Project</strong> is a community of independent
+        <strong translate="no">The Lupaxa Project</strong> is a community of independent
         developers and contributors building useful software for developers,
         system administrators, security professionals and anyone who values
         clean, dependable tools.
