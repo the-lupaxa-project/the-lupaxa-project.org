@@ -1189,6 +1189,29 @@
   version: "0.1.0"
   released_date: "2026-09-08T17:16:20"
 
+- id: user-notifier
+  published: true
+  name: User Notifier
+  icon: material-source-repository
+  publish_date: "2026-09-21T12:09:02"
+  description: >-
+    PAM hooks that notify on login and privilege escalation via drop-in
+    backends. A dispatcher fans each event out to hooks; Slack is the first.
+    Install with `scripts/install.sh`, then add the `pam_exec` lines to
+    `su`, `sudo`, `login`, and `sshd`.
+  categories:
+    - Security
+    - PAM
+    - Notifications
+  organisation: Security Toolbox
+  logo: assets/images/brand/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/user-notifier
+  documentation: https://user-notifier.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-21T14:29:26"
+
 - id: validate-citations-file
   published: true
   name: Validate Citations File
