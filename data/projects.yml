@@ -826,6 +826,27 @@
   version: "0.1.4"
   released_date: "2026-08-24T14:47:59"
 
+- id: pushit
+  published: true
+  name: Pushit
+  icon: material-source-repository
+  publish_date: "2026-09-22T13:52:13"
+  description: >-
+    Send Pushover notifications. A Python CLI and library with named profiles.
+    Install `lupaxa-pushit` from PyPI and run `pushit`.
+  categories:
+    - CLI
+    - Notifications
+    - Pushover
+  organisation: Notifications Toolbox
+  logo: assets/images/brand/organisation-notifications-toolbox-logo.png
+  logo_alt: Notifications Toolbox
+  repository: https://github.com/lupaxa-notifications-toolbox/pushit
+  documentation: https://pushit.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-22T15:37:06"
+
 - id: pycodestyle
   published: true
   name: PyCodeStyle
