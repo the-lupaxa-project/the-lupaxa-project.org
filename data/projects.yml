@@ -308,6 +308,28 @@
   version: "0.1.2"
   released_date: "2026-08-24T14:49:55"
 
+- id: dns-blacklist-checker
+  published: true
+  name: DNS Blacklist Checker
+  icon: material-source-repository
+  publish_date: "2026-09-22T16:55:27"
+  description: >-
+    Check whether an IP address or hostname is listed on DNS blacklists. A
+    Python CLI and library. Install `lupaxa-dns-blacklist-checker` from PyPI
+    and run `dns-blacklist-checker`.
+  categories:
+    - CLI
+    - DNS
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/dns-blacklist-checker
+  documentation: https://dns-blacklist-checker.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-22T18:57:31"
+
 - id: expired
   published: true
   name: Expired
