@@ -46,23 +46,6 @@
   logo_alt: AWS Toolbox
   repository: https://github.com/lupaxa-aws-toolbox
 
-- id: azure-toolbox
-  published: true
-  name: Azure Toolbox
-  icon: material-domain
-  publish_date: "2025-06-27T18:38:57"
-  description: Automation tools and utilities for Microsoft Azure, covering everyday cloud
-    operations, account tasks and infrastructure management without repeating the
-    same portal work.
-  categories:
-    - Azure
-    - Cloud
-    - Infrastructure
-    - Automation
-  logo: assets/images/brand/organisation-azure-toolbox-logo.png
-  logo_alt: Azure Toolbox
-  repository: https://github.com/lupaxa-azure-toolbox
-
 - id: ci-cd-toolbox
   published: true
   name: CI/CD Toolbox
@@ -139,23 +122,6 @@
   logo: assets/images/brand/organisation-docker-toolbox-logo.png
   logo_alt: Docker Toolbox
   repository: https://github.com/lupaxa-docker-toolbox
-
-- id: gcp-toolbox
-  published: true
-  name: GCP Toolbox
-  icon: material-domain
-  publish_date: "2025-06-27T18:42:03"
-  description: Automation tools and utilities for Google Cloud Platform, covering everyday
-    cloud operations, project tasks and infrastructure management without
-    repeating the same console work.
-  categories:
-    - GCP
-    - Cloud
-    - Infrastructure
-    - Automation
-  logo: assets/images/brand/organisation-gcp-toolbox-logo.png
-  logo_alt: GCP Toolbox
-  repository: https://github.com/lupaxa-gcp-toolbox
 
 - id: git-toolbox
   published: true
