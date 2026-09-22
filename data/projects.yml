@@ -1232,6 +1232,28 @@
   version: "0.1.0"
   released_date: "2026-09-10T11:35:30"
 
+- id: teamsit
+  published: true
+  name: Teamsit
+  icon: material-source-repository
+  publish_date: "2026-09-22T15:24:12"
+  description: >-
+    Send Microsoft Teams messages through an incoming webhook. A Python CLI
+    and library with named profiles. Install `lupaxa-teamsit` from PyPI and
+    run `teamsit`.
+  categories:
+    - CLI
+    - Notifications
+    - Teams
+  organisation: Notifications Toolbox
+  logo: assets/images/brand/organisation-notifications-toolbox-logo.png
+  logo_alt: Notifications Toolbox
+  repository: https://github.com/lupaxa-notifications-toolbox/teamsit
+  documentation: https://teamsit.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-22T16:33:59"
+
 - id: time-to-first-byte
   published: true
   name: Time to First Byte
