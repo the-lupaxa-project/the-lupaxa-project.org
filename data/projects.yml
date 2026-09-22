@@ -1168,6 +1168,28 @@
   version: "0.1.0"
   released_date: "2026-09-10T11:35:30"
 
+- id: time-to-first-byte
+  published: true
+  name: Time to First Byte
+  icon: material-source-repository
+  publish_date: "2026-09-22T08:32:31"
+  description: >-
+    Measure HTTP time to first byte and repeat until interrupted. A Python
+    CLI and library. Install `lupaxa-time-to-first-byte` from PyPI and run
+    `time-to-first-byte`.
+  categories:
+    - CLI
+    - Networking
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/time-to-first-byte
+  documentation: https://time-to-first-byte.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-22T10:25:05"
+
 - id: trapper
   published: true
   name: Trapper
