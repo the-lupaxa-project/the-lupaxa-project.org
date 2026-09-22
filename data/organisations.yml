@@ -325,19 +325,3 @@
   logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project
-
-- id: the-lupaxa-project-private
-  published: true
-  name: The Lupaxa Project (Private)
-  icon: material-domain
-  publish_date: "2025-06-27T18:51:55"
-  description: Private repositories and member-only resources supporting the internal
-    administration and coordination of The Lupaxa Project, away from the public
-    catalogue.
-  categories:
-    - Administration
-    - Internal Tools
-    - Coordination
-  logo: assets/images/brand/organisation-the-lupaxa-project-private-logo.png
-  logo_alt: The Lupaxa Project (Private)
-  repository: https://github.com/the-lupaxa-project-private
