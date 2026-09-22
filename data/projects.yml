@@ -1035,6 +1035,27 @@
   version: "0.1.1"
   released_date: "2026-08-24T14:55:21"
 
+- id: slackit
+  published: true
+  name: Slackit
+  icon: material-source-repository
+  publish_date: "2026-09-22T11:17:44"
+  description: >-
+    Send Slack messages through an incoming webhook. A Python CLI and library
+    with named profiles. Install `lupaxa-slackit` from PyPI and run `slackit`.
+  categories:
+    - CLI
+    - Notifications
+    - Slack
+  organisation: Notifications Toolbox
+  logo: assets/images/brand/organisation-notifications-toolbox-logo.png
+  logo_alt: Notifications Toolbox
+  repository: https://github.com/lupaxa-notifications-toolbox/slackit
+  documentation: https://slackit.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-22T12:08:56"
+
 - id: shellcheck
   published: true
   name: ShellCheck
