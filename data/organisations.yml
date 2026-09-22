@@ -92,22 +92,6 @@
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox
 
-- id: devops-toolbox
-  published: true
-  name: DevOps Toolbox
-  icon: material-domain
-  publish_date: "2025-10-23T12:16:59"
-  description: DevOps automation tools for infrastructure, software delivery and the
-    operational workflows that sit between them, so those steps stay repeatable
-    instead of being done by hand.
-  categories:
-    - DevOps
-    - Automation
-    - Infrastructure
-  logo: assets/images/brand/organisation-devops-toolbox-logo.png
-  logo_alt: DevOps Toolbox
-  repository: https://github.com/lupaxa-devops-toolbox
-
 - id: docker-toolbox
   published: true
   name: Docker Toolbox
