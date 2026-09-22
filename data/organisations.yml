@@ -297,21 +297,6 @@
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox
 
-- id: terraform-toolbox
-  published: true
-  name: Terraform Toolbox
-  icon: material-domain
-  publish_date: "2025-06-27T18:50:41"
-  description: Terraform modules and infrastructure-as-code resources for defining,
-    provisioning and maintaining cloud infrastructure in a form that can be
-    reviewed and reused.
-  categories:
-    - Infrastructure as Code
-    - Automation
-  logo: assets/images/brand/organisation-terraform-toolbox-logo.png
-  logo_alt: Terraform Toolbox
-  repository: https://github.com/lupaxa-terraform-toolbox
-
 - id: workstation-toolbox
   published: true
   name: Workstation Toolbox
