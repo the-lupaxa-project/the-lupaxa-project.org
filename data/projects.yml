@@ -330,6 +330,27 @@
   version: "0.1.0"
   released_date: "2026-09-22T18:57:31"
 
+- id: domain-expiry
+  published: true
+  name: Domain Expiry
+  icon: material-source-repository
+  publish_date: "2026-09-22T21:20:59"
+  description: >-
+    Look up domain name expiration dates over WHOIS. A Python CLI and library.
+    Install `lupaxa-domain-expiry` from PyPI and run `domain-expiry`.
+  categories:
+    - CLI
+    - DNS
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/domain-expiry
+  documentation: https://domain-expiry.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-23T07:59:33"
+
 - id: expired
   published: true
   name: Expired
