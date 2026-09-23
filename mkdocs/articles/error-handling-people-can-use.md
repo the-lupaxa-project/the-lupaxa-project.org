@@ -10,6 +10,7 @@ description: Practical error handling for CLIs and libraries. Clear messages, ex
 tags:
 - Engineering
 - Tools
+- CLI
 ---
 
 # Error Handling People Can Use: Failures That Teach

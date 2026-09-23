@@ -11,6 +11,7 @@ description: How to make releases boring. Tags as the source of truth, changelog
 tags:
 - CI/CD
 - Open Source
+- Automation
 ---
 
 # Release Automation: Shipping Without Heroics

@@ -10,6 +10,7 @@ description: A practical cadence for dependency updates. Dependabot-style PRs, i
 tags:
 - Security
 - Engineering
+- Dependencies
 ---
 
 # Responsible Dependency Updates: Cadence Without Chaos

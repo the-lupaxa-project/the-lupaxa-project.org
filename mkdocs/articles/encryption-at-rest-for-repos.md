@@ -10,6 +10,7 @@ description: Encrypting secrets inside Git repositories. When git-crypt and simi
 tags:
 - Security
 - Git
+- Encryption
 ---
 
 # Encryption at Rest for Repos: Keeping Secrets Out of Plain Git

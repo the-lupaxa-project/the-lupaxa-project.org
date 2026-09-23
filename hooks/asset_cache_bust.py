@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 import subprocess
 from pathlib import Path
+from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,7 +23,7 @@ def asset_version(*, cwd: Path | None = None) -> str:
         return "dev"
 
 
-def extra_asset_paths(config: dict) -> list[str]:
+def extra_asset_paths(config: dict[str, Any]) -> list[str]:
     """Clean extra_css / extra_javascript paths (no query string)."""
     paths: list[str] = []
     for item in config.get("extra_css") or []:
@@ -48,7 +49,7 @@ def apply_asset_version(html: str, paths: list[str], version: str) -> str:
     )
 
 
-def on_post_page(output, page, config):
+def on_post_page(output: str, page: object, config: dict[str, Any]) -> str:
     del page
     version = asset_version()
     return apply_asset_version(output, extra_asset_paths(config), version)

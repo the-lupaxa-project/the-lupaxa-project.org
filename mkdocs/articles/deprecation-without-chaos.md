@@ -11,6 +11,7 @@ description: How to retire APIs and flags without ambushing anyone. Warnings peo
 tags:
 - Open Source
 - Engineering
+- Process
 ---
 
 # Deprecation Without Chaos: Changing APIs Without Burning Trust

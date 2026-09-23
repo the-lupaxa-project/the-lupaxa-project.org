@@ -11,6 +11,7 @@ description: How open-source maintainers stay in the game. Write down scope, dec
 tags:
 - Open Source
 - Community
+- Maintainers
 ---
 
 # Maintainer Boundaries: Saying No Without Burning the Project

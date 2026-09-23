@@ -11,6 +11,7 @@ description: Semantic versioning as it actually plays out in open-source tools. 
 tags:
 - Open Source
 - Engineering
+- Standards
 ---
 
 # Semantic Versioning in the Real World

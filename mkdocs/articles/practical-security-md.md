@@ -11,6 +11,7 @@ description: A practical SECURITY.md playbook for small projects. What to includ
 tags:
 - Security
 - Open Source
+- Documentation
 ---
 
 # Practical SECURITY.md

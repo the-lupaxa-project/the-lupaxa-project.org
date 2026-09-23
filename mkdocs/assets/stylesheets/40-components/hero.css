@@ -50,8 +50,8 @@
   max-width: 48rem;
   margin: 1.2rem auto 0;
   color: var(--md-default-fg-color--light);
-  font-size: clamp(1rem, 2vw, 1.3rem);
-  line-height: 1.25;
+  font-size: clamp(0.88rem, 1.35vw, 1.05rem);
+  line-height: 1.35;
 }
 
 .lupaxa-hero-actions {

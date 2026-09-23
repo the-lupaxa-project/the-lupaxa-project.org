@@ -22,7 +22,8 @@
       {% include "partials/logo.html" %}
     </a>
 
-    <!-- Button to open navigation drawer -->
+    <!-- Button to open navigation drawer (hidden when primary sidebar is off) -->
+    {% if not config.extra.hide_primary_sidebar %}
     <label
       class="md-header__button md-icon lupaxa-header__drawer-button"
       for="__drawer"
@@ -31,26 +32,29 @@
       {% set icon = config.theme.icon.menu or "material/menu" %}
       {% include ".icons/" ~ icon ~ ".svg" %}
     </label>
+    {% endif %}
 
     <!-- Top-level desktop navigation -->
     <nav class="lupaxa-header__nav" aria-label="Primary navigation">
       <ul class="lupaxa-header__nav-list">
         {% for nav_item in nav %}
+          {# Sections have url=None; link to the first child (section index). #}
           <li
             class="lupaxa-header__nav-item{% if nav_item.active %} lupaxa-header__nav-item--active{% endif %}"
           >
             <a
               class="lupaxa-header__nav-link"
-              href="{{ nav_item.url | url }}"
+              href="{% if nav_item.url %}{{ nav_item.url | url }}{% elif nav_item.children %}{{ nav_item.children[0].url | url }}{% else %}{{ '' | url }}{% endif %}"
               {% if nav_item.active %}aria-current="page"{% endif %}
             >
-              {{ nav_item.title }}
+              <span class="lupaxa-header__nav-label">{{ nav_item.title }}</span>
             </a>
           </li>
         {% endfor %}
       </ul>
     </nav>
 
+    <div class="lupaxa-header__tools">
     {% if config.extra.language_picker %}
     <div class="lupaxa-lang-picker" translate="no">
       <select
@@ -82,6 +86,7 @@
       </select>
     </div>
     {% endif %}
+    </div>
   </nav>
   {% if config.extra.language_picker %}
   <div

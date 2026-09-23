@@ -4,6 +4,7 @@ ROOT = Path(__file__).resolve().parent.parent
 HEADER = (ROOT / "overrides/partials/header.html").read_text(encoding="utf-8")
 MKDOCS = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
 NAV_CSS = (ROOT / "mkdocs/assets/stylesheets/30-navigation.css").read_text(encoding="utf-8")
+FOOTER = (ROOT / "overrides/partials/copyright.html").read_text(encoding="utf-8")
 
 
 def test_header_has_custom_picker_not_alternate():
@@ -105,8 +106,18 @@ def test_banner_version_opts_out_of_translate():
     assert 'class="catalogue-banner__version" translate="no"' in markup
 
 
+def test_portal_header_has_no_repository_link():
+    assert "repo_url:" not in MKDOCS
+    assert "partials/source.html" not in HEADER
+    assert "lupaxa-header__tools" in HEADER
+    assert "lupaxa-lang-picker" in HEADER
+    assert ".md-header__source" in NAV_CSS
+    assert "display: none !important" in NAV_CSS
+    assert 'class="md-copyright notranslate" translate="no"' in FOOTER
+
+
 def test_footer_hero_sponsor_opt_out_brand_names():
-    footer = (ROOT / "overrides/partials/copyright.html").read_text(encoding="utf-8")
+    footer = FOOTER
     index = (ROOT / "mkdocs/index.md").read_text(encoding="utf-8")
     sponsor = (ROOT / "mkdocs/sponsor.md").read_text(encoding="utf-8")
     assert 'class="md-copyright notranslate" translate="no"' in footer

@@ -50,7 +50,6 @@
   margin: 0;
   color: inherit;
   font-size: inherit;
-  line-height: var(--lupaxa-body-line-height);
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -168,7 +167,6 @@
 
 .about-name-content p {
   margin: 0;
-  line-height: var(--lupaxa-body-line-height);
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;

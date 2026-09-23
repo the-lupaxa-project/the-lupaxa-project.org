@@ -15,6 +15,9 @@ site_url: https://thelupaxaproject.org/
 
 extra:
   generator: false
+  # Hide left site nav (header already lists pages); keep on-this-page TOC.
+  # Default when omitted: false (left nav visible).
+  hide_primary_sidebar: false
   # Viewer language picker (client-side translation; English URLs).
   # Default when omitted: false (picker hidden).
   language_picker: true
@@ -58,6 +61,9 @@ watch:
 theme:
   name: material
   custom_dir: overrides
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
 
   language: en
 
@@ -72,6 +78,8 @@ theme:
     - navigation.instant
     - navigation.instant.progress
     - navigation.top
+    - navigation.sections
+    - toc.follow
 
   palette:
     scheme: slate
@@ -154,6 +162,7 @@ extra_css:
   - assets/stylesheets/40-components/catalogue.css
   - assets/stylesheets/40-components/filter-panel.css
   - assets/stylesheets/40-components/hero.css
+  - assets/stylesheets/40-components/tables.css
   - assets/stylesheets/40-components/footer.css
   - assets/stylesheets/40-components/masonry-wall.css
 

@@ -3,14 +3,6 @@
  * Base Typography and Links
  * ============================================================================= */
 
-.md-typeset {
-  line-height: var(--lupaxa-body-line-height);
-}
-
-.md-typeset p {
-  line-height: var(--lupaxa-body-line-height);
-}
-
 .md-typeset a {
   color: var(--lupaxa-light-blue);
   text-decoration: none;
@@ -35,7 +27,7 @@
   margin-bottom: var(--lupaxa-spacing-md);
   padding-left: 0.85rem;
   color: var(--md-default-fg-color);
-  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-size: clamp(1.65rem, 2.2vw, 2rem);
   font-weight: 650;
   line-height: 1.15;
   letter-spacing: -0.03em;
@@ -47,7 +39,7 @@
   margin-bottom: var(--lupaxa-spacing-md);
   padding-left: 0.85rem;
   color: var(--md-default-fg-color);
-  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  font-size: clamp(1.2rem, 1.7vw, 1.45rem);
   font-weight: 650;
   line-height: 1.25;
   letter-spacing: -0.02em;
@@ -56,6 +48,11 @@
 
 .md-typeset h2:first-of-type {
   margin-top: var(--lupaxa-spacing-md);
+}
+
+.md-typeset ol li,
+.md-typeset ul li {
+  margin-bottom: 0.15em;
 }
 
 .md-typeset h3 {

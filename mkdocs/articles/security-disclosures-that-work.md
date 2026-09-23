@@ -10,6 +10,7 @@ description: Practical security disclosure for small open-source projects. SECUR
 tags:
 - Security
 - Open Source
+- Vulnerability Reporting
 ---
 
 # Security Disclosures That Work: Reporting Bugs Without the Chaos

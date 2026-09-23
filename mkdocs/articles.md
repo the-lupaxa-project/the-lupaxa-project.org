@@ -114,6 +114,7 @@ hide:
     signed, trust stores, and what actually matters when you generate certs
     for tools and tests.
 
+    <span class="catalogue-category">Certificates</span>
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Tools</span>
 
@@ -127,6 +128,7 @@ hide:
     codes, stdout versus stderr, helpful errors, and interfaces that feel
     good in scripts and in human hands.
 
+    <span class="catalogue-category">CLI</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Tools</span>
 
@@ -153,6 +155,7 @@ hide:
     files, precedence, secrets, and defaults that stay understandable as
     projects grow.
 
+    <span class="catalogue-category">Configuration</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Tools</span>
 
@@ -166,6 +169,7 @@ hide:
     running as non-root, keeping the attack surface small, and avoiding
     container anti-patterns for simple utilities.
 
+    <span class="catalogue-category">Containers</span>
     <span class="catalogue-category">Security</span>
     <span class="catalogue-category">Tools</span>
 
@@ -180,6 +184,7 @@ hide:
     argument is not worth having.
 
     <span class="catalogue-category">Community</span>
+    <span class="catalogue-category">Contributing</span>
     <span class="catalogue-category">Open Source</span>
 
 -   **[Cybersecurity & Chess](articles/cybersecurity-and-chess.md)**
@@ -205,6 +210,7 @@ hide:
     Pinning, lockfiles, audits, supply-chain basics, and keeping your supply
     line trustworthy without enterprise ceremony.
 
+    <span class="catalogue-category">Dependencies</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Security</span>
 
@@ -220,6 +226,7 @@ hide:
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Process</span>
 
 -   **[Docs That Don't Rot](articles/docs-that-dont-rot.md)**
 
@@ -244,6 +251,7 @@ hide:
     tools help, where key management goes wrong, and safer patterns for
     small teams.
 
+    <span class="catalogue-category">Encryption</span>
     <span class="catalogue-category">Git</span>
     <span class="catalogue-category">Security</span>
 
@@ -256,6 +264,7 @@ hide:
     Practical error handling for CLIs and libraries. Clear messages, exit
     codes, retries, typed failures, and when to crash versus recover.
 
+    <span class="catalogue-category">CLI</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Tools</span>
 
@@ -270,6 +279,7 @@ hide:
     without enterprise branching theatre.
 
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Git</span>
     <span class="catalogue-category">Process</span>
 
 -   **[GitHub Actions](articles/github-actions.md)**
@@ -308,6 +318,7 @@ hide:
     rotate, revoke, and retire cryptographic keys and certificates without
     drama.
 
+    <span class="catalogue-category">Encryption</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Security</span>
 
@@ -335,6 +346,7 @@ hide:
     users, and how to choose without a law degree.
 
     <span class="catalogue-category">Community</span>
+    <span class="catalogue-category">Licenses</span>
     <span class="catalogue-category">Open Source</span>
 
 -   **[Maintainer Boundaries](articles/maintainer-boundaries.md)**
@@ -348,6 +360,7 @@ hide:
     protect review time before it runs out.
 
     <span class="catalogue-category">Community</span>
+    <span class="catalogue-category">Maintainers</span>
     <span class="catalogue-category">Open Source</span>
 
 -   **[mTLS and Client Certificates](articles/mtls-and-client-certificates.md)**
@@ -375,6 +388,7 @@ hide:
 
     <span class="catalogue-category">DevOps</span>
     <span class="catalogue-category">Engineering</span>
+    <span class="catalogue-category">Observability</span>
 
 -   **[Practical SECURITY.md](articles/practical-security-md.md)**
 
@@ -386,6 +400,7 @@ hide:
     example structure, scope statements, and making the security policy easy
     to find and follow.
 
+    <span class="catalogue-category">Documentation</span>
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Security</span>
 
@@ -438,6 +453,7 @@ hide:
     people can read, scoped publishing tokens, and CI guardrails that stop a
     bad release before it reaches a registry.
 
+    <span class="catalogue-category">Automation</span>
     <span class="catalogue-category">CI/CD</span>
     <span class="catalogue-category">Open Source</span>
 
@@ -464,6 +480,7 @@ hide:
     rules, reading majors, and keeping upgrades boring without ignoring
     security fixes.
 
+    <span class="catalogue-category">Dependencies</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Security</span>
 
@@ -492,6 +509,7 @@ hide:
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Security</span>
+    <span class="catalogue-category">Testing</span>
 
 -   **[Secrets Management](articles/secrets-management.md)**
 
@@ -557,6 +575,7 @@ hide:
 
     <span class="catalogue-category">Open Source</span>
     <span class="catalogue-category">Security</span>
+    <span class="catalogue-category">Vulnerability Reporting</span>
 
 -   **[Semantic Versioning](articles/semantic-versioning.md)**
 
@@ -570,6 +589,7 @@ hide:
 
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Open Source</span>
+    <span class="catalogue-category">Standards</span>
 
 -   **[Supply-Chain Signing](articles/supply-chain-signing.md)**
 
@@ -634,6 +654,7 @@ hide:
     Assets, attackers, trust boundaries, and a practical checklist without
     enterprise ceremony.
 
+    <span class="catalogue-category">Design</span>
     <span class="catalogue-category">Engineering</span>
     <span class="catalogue-category">Security</span>
 

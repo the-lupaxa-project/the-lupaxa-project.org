@@ -42,10 +42,14 @@
     object-fit: contain;
   }
 
+  /* Tablet / landscape: full GitHub chip + picker, inset from the screen edge. */
+  .lupaxa-header__tools {
+    margin-right: max(var(--lupaxa-spacing-md), env(safe-area-inset-right, 0px));
+  }
+
   .lupaxa-lang-picker {
     display: flex;
-    margin-right: var(--lupaxa-spacing-md);
-    margin-left: auto;
+    margin-right: 0;
   }
 
   .md-sidebar--primary {

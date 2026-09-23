@@ -8,7 +8,6 @@
 
   --lupaxa-content-width: 60rem;
   --lupaxa-header-height: 5rem;
-  --lupaxa-body-line-height: 1.35;
 
   /* Spacing */
 
@@ -67,6 +66,4 @@
   --md-primary-fg-color--light: var(--lupaxa-light-blue);
   --md-primary-fg-color--dark: var(--lupaxa-blue);
   --md-typeset-a-color: var(--lupaxa-light-blue);
-  --md-code-fg-color: var(--lupaxa-light-blue);
-  --md-code-bg-color: color-mix(in srgb, var(--lupaxa-dark-blue) 55%, var(--md-default-bg-color));
 }

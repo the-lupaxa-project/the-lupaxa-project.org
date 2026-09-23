@@ -9,7 +9,7 @@
   categories:
     - Automation
     - CI/CD
-    - Github Actions
+    - GitHub Actions
   logo: assets/images/brand/organisation-actions-toolbox-logo.png
   logo_alt: Actions Toolbox
   repository: https://github.com/lupaxa-actions-toolbox
@@ -24,6 +24,7 @@
     reused.
   categories:
     - APIs
+    - Data Conversion
     - Data Extraction
   logo: assets/images/brand/organisation-api-extractor-toolbox-logo.png
   logo_alt: API Extractor Toolbox
@@ -58,6 +59,7 @@
     - CI/CD
     - Automation
     - DevOps
+    - Linting
   logo: assets/images/brand/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox
@@ -73,6 +75,7 @@
   categories:
     - Databases
     - Storage
+    - Automation
   logo: assets/images/brand/organisation-database-toolbox-logo.png
   logo_alt: Database Toolbox
   repository: https://github.com/lupaxa-database-toolbox
@@ -117,8 +120,8 @@
     checks.
   categories:
     - Git
-    - Repository Management
     - Developer Tools
+    - Automation
   logo: assets/images/brand/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox
@@ -195,6 +198,7 @@
   categories:
     - Alerts
     - Automation
+    - Messaging
     - Notifications
   logo: assets/images/brand/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
@@ -211,6 +215,7 @@
   categories:
     - Certificates
     - Encryption
+    - Reconnaissance
     - Security
   logo: assets/images/brand/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
@@ -256,9 +261,9 @@
     package-management helpers and workstation automation, so developer machines
     can be set up and kept in a known state.
   categories:
-    - Workstation
     - Package Management
     - Productivity
+    - Shell
   logo: assets/images/brand/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox
@@ -274,7 +279,7 @@
   categories:
     - Templates
     - Standards
-    - Repository Management
+    - Documentation
   logo: assets/images/brand/organisation-the-lupaxa-blueprints-logo.png
   logo_alt: The Lupaxa Blueprints
   repository: https://github.com/the-lupaxa-blueprints
@@ -320,8 +325,8 @@
     Lupaxa Project.
   categories:
     - Documentation
-    - Standards
     - Shared Resources
+    - Branding
   logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project

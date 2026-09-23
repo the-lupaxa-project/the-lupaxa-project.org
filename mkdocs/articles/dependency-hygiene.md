@@ -11,6 +11,7 @@ description: Practical dependency hygiene for small teams and open-source projec
 tags:
 - Security
 - Engineering
+- Dependencies
 ---
 
 # Dependency Hygiene: Keeping Your Supply Line Honest

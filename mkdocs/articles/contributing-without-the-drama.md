@@ -11,6 +11,7 @@ description: How to open issues and pull requests people actually want to merge.
 tags:
 - Open Source
 - Community
+- Contributing
 ---
 
 # Contributing Without the Drama: How to Help Open-Source Projects Move Forward

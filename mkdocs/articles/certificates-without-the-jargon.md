@@ -11,6 +11,7 @@ description: X.509 certificates in plain language. Keys, CSRs, self-signed versu
 tags:
 - Security
 - Tools
+- Certificates
 ---
 
 # Certificates Without the Jargon: Trust You Can Explain

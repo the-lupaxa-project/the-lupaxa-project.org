@@ -13,6 +13,7 @@
   categories:
     - Community
     - Conduct
+    - Enforcement
     - Standards
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/CODE_OF_CONDUCT.md
 
@@ -32,6 +33,7 @@
     - Governance
     - Decision-Making
     - Policy
+    - Roles
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/GOVERNANCE.md
 
 - id: how-to-contribute
@@ -50,6 +52,7 @@
     - Contributing
     - Development
     - Guidance
+    - Standards
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/CONTRIBUTING.md
 
 - id: engineering-principles
@@ -68,6 +71,7 @@
     - Engineering
     - Principles
     - Standards
+    - Documentation
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/PRINCIPLES.md
 
 - id: maintainer-guide
@@ -86,6 +90,7 @@
     - Maintainers
     - Stewardship
     - Governance
+    - Community
   document: https://github.com/the-lupaxa-project/.github/blob/master/docs/MAINTAINERS.md
 
 - id: project-organisation

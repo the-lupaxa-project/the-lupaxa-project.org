@@ -11,6 +11,7 @@ description: Practical observability for CLIs, libraries, and small services. Us
 tags:
 - Engineering
 - DevOps
+- Observability
 ---
 
 # Observability for Small Projects: Knowing What Broke

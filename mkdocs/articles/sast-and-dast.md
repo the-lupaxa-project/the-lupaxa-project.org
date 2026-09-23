@@ -11,6 +11,7 @@ description: What static and dynamic application security testing each catch, wh
 tags:
 - Security
 - Engineering
+- Testing
 ---
 
 # SAST and DAST: Two Views of the Same Application

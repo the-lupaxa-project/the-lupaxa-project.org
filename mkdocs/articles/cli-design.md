@@ -11,6 +11,7 @@ description: Practical CLI design for open-source tools. Flags and arguments, ex
 tags:
 - Engineering
 - Tools
+- CLI
 ---
 
 # CLI Design: Interfaces for Scripts and Humans

@@ -11,6 +11,7 @@ description: Practical Git workflows for small teams and solo maintainers. Trunk
 tags:
 - Engineering
 - Process
+- Git
 ---
 
 # Git Workflows for Tiny Teams: Enough Process, Not Too Much

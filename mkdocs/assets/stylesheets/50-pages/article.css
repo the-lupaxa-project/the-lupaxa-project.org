@@ -8,7 +8,6 @@
   margin-inline: auto;
   padding-top: var(--lupaxa-spacing-md);
   font-size: 0.92rem;
-  line-height: var(--lupaxa-body-line-height);
 }
 
 .md-typeset .lupaxa-article-card {
@@ -221,7 +220,6 @@
   .md-typeset.lupaxa-article-page {
     padding-inline: var(--lupaxa-spacing-md);
     font-size: 0.9rem;
-    line-height: var(--lupaxa-body-line-height);
   }
 
   .md-typeset .lupaxa-article-card {

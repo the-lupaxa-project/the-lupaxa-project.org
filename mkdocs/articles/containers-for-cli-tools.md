@@ -11,6 +11,7 @@ description: When and how to ship a CLI tool as a container. Pinning base images
 tags:
 - Security
 - Tools
+- Containers
 ---
 
 # Containers for CLI Tools: When a Box Helps

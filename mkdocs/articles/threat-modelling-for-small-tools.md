@@ -11,6 +11,7 @@ description: Lightweight threat modelling for CLIs, libraries, and small service
 tags:
 - Security
 - Engineering
+- Design
 ---
 
 # Threat Modelling for Small Tools: Who Can Hurt Whom

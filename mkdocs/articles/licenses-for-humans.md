@@ -11,6 +11,7 @@ description: A plain-language guide to open-source licenses for people publishin
 tags:
 - Open Source
 - Community
+- Licenses
 ---
 
 # Licenses for Humans: Choosing How Others Can Use Your Code
