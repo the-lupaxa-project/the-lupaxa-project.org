@@ -1227,6 +1227,27 @@
   version: "0.1.0"
   released_date: "2026-09-09T15:29:32"
 
+- id: ssl-expiry
+  published: true
+  name: SSL Expiry
+  icon: material-source-repository
+  publish_date: "2026-09-23T07:53:20"
+  description: >-
+    Check TLS certificate expiration dates on port 443. A Python CLI and
+    library. Install `lupaxa-ssl-expiry` from PyPI and run `ssl-expiry`.
+  categories:
+    - CLI
+    - Certificates
+    - Reliability
+  organisation: SRE Toolbox
+  logo: assets/images/brand/organisation-sre-toolbox-logo.png
+  logo_alt: SRE Toolbox
+  repository: https://github.com/lupaxa-sre-toolbox/ssl-expiry
+  documentation: https://ssl-expiry.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-23T09:08:04"
+
 - id: sysinfo
   published: true
   name: Sysinfo
