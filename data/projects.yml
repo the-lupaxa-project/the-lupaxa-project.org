@@ -1239,6 +1239,7 @@
   logo: assets/images/brand/organisation-spider-toolbox-logo.png
   logo_alt: Spider Toolbox
   repository: https://github.com/lupaxa-spider-toolbox/spider-frameworks
+  documentation: https://spider-frameworks.thelupaxaproject.org/
   banner: released
   version: "0.1.2"
   released_date: "2026-09-23T15:50:06"
