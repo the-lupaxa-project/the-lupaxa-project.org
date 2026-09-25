@@ -550,6 +550,26 @@
   version: "0.1.4"
   released_date: "2026-08-24T14:45:53"
 
+- id: homebrew-tap
+  published: true
+  name: Homebrew Tap
+  icon: material-source-repository
+  publish_date: "2026-09-25T07:58:33"
+  description: >-
+    Homebrew formulae for The Lupaxa Project tools. Add the tap with
+    `brew tap the-lupaxa-project/tap`. The tap itself tracks HEAD; each
+    formula points at a tagged release of that tool's own repository.
+  categories:
+    - Homebrew
+    - Package Management
+  organisation: The Lupaxa Project
+  logo: assets/images/brand/organisation-the-lupaxa-project-logo.png
+  logo_alt: The Lupaxa Project
+  repository: https://github.com/the-lupaxa-project/homebrew-tap
+  documentation: https://homebrew-tap.thelupaxaproject.org/
+  banner: stable
+  released_date: "2026-09-25T11:42:58"
+
 - id: ini-file-parser
   published: true
   name: INI File Parser

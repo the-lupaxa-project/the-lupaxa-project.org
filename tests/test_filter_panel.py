@@ -74,7 +74,8 @@ def test_filter_panel_status_options_project_includes_stable():
         include_status=True,
     )
 
-    assert "Stable" in markup
+    assert markup.count('value="stable"') == 1
+    assert ">Stable<" in markup
 
 
 def test_filter_panel_policy_page_omits_status_toggle():

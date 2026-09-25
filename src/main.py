@@ -25,6 +25,7 @@ from banner_lib import (
     POLICY_BANNER_PRESETS,
     PROJECT_BANNER_PRESETS,
     format_publish_date_attr,
+    normalise_project_version,
     parse_iso_date,
 )
 from banner_lib import (
@@ -221,10 +222,8 @@ def define_env(env):
             # Fixed lifecycle list (not derived from cards on the page).
             if status_kind == "project":
                 presets = PROJECT_BANNER_PRESETS
-                show_stable = True
             elif status_kind == "policy":
                 presets = POLICY_BANNER_PRESETS
-                show_stable = False
             else:
                 raise ValueError(f"Unrecognised status_kind: {status_kind!r}")
 
@@ -259,15 +258,12 @@ def define_env(env):
                     f"{html.escape(label)}</option>"
                     for slug, (label, _) in presets.items()
                 )
-                stable_option = (
-                    '\n            <option value="stable">Stable</option>' if show_stable else ""
-                )
                 status_block = f"""
     <div class="filter-panel-select">
         <label for="{prefix}-status">{status_label}</label>
         <select id="{prefix}-status" data-{prefix}-status>
             <option value="">All Statuses</option>
-{status_options}{stable_option}
+{status_options}
         </select>
     </div>"""
 
@@ -393,15 +389,17 @@ def define_env(env):
             or (isinstance(raw_banner, str) and not raw_banner.strip())
         ):
             raw_banner = "in-development"
+        raw_version = item.get("version")
+        has_version = normalise_project_version(raw_version) is not None
         banner = _shared_banner_markup(
             raw_banner,
             presets=PROJECT_BANNER_PRESETS,
             event_date=parse_iso_date(item.get("released_date")),
             expiry_days=expiry_days,
             time_limited_statuses=frozenset({"released"}),
-            version=item.get("version"),
-            default_version=DEFAULT_PROJECT_VERSION,
-            stable_after_expiry=True,
+            version=raw_version,
+            default_version=DEFAULT_PROJECT_VERSION if has_version else None,
+            stable_after_expiry=has_version,
         )
         banner_block = f"{banner}\n\n" if banner else ""
         actions = [

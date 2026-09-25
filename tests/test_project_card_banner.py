@@ -63,7 +63,7 @@ def test_project_card_defaults_missing_banner_to_in_development(tmp_path, monkey
     markup = catalogue_grid("project", "project")
 
     assert "In Development" in markup
-    assert "v0.1.0" in markup
+    assert "v0.1.0" not in markup
     assert 'data-banner-status="in-development"' in markup
     assert "catalogue-banner--red" in markup
 
@@ -88,7 +88,8 @@ def test_project_card_shows_fresh_released_banner(tmp_path, monkeypatch):
 
     assert "catalogue-banner" in markup
     assert "Released" in markup
-    assert "v0.1.0" in markup
+    assert "v0.1.0" not in markup
+    assert "Stable" not in markup
 
 
 def test_project_card_shows_stable_version_when_released_expires(tmp_path, monkeypatch):
@@ -132,8 +133,39 @@ def test_project_card_shows_non_time_limited_preset(tmp_path, monkeypatch):
 
     assert "catalogue-banner" in markup
     assert "In Development" in markup
-    assert "v0.1.0" in markup
+    assert "v0.1.0" not in markup
     assert "catalogue-banner--red" in markup
+
+
+def test_project_card_explicit_stable_omits_version(tmp_path, monkeypatch):
+    projects = [_synthetic_project(banner="stable")]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "Stable" in markup
+    assert "Released" not in markup
+    assert "v0.1.0" not in markup
+    assert 'data-banner-status="stable"' in markup
+    assert "catalogue-banner--blue" in markup
+    assert "catalogue-banner--short" in markup
+
+
+def test_project_card_omits_version_and_stable_when_unversioned(tmp_path, monkeypatch):
+    expired_date = (date.today() - timedelta(days=400)).isoformat()
+    projects = [
+        _synthetic_project(
+            banner="released",
+            released_date=expired_date,
+        )
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "catalogue-banner" not in markup
+    assert "v0.1.0" not in markup
+    assert "Stable" not in markup
 
 
 def test_project_card_released_keeps_status_and_shows_version(tmp_path, monkeypatch):

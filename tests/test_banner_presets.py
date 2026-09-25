@@ -13,6 +13,7 @@ EXPECTED_PROJECT = {
     "in-testing": ("In Testing", "magenta"),
     "in-review": ("In Review", "purple"),
     "released": ("Released", "dark-blue"),
+    "stable": ("Stable", "blue"),
 }
 
 

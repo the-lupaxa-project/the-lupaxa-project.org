@@ -74,12 +74,16 @@ UTC timestamp (`YYYY-MM-DDTHH:MM:SS`). Banner expiry still uses the calendar day
 Catalogue “newest” sorts use `released_date` when it is set, otherwise
 `publish_date`, including the time so same-day stamps stay in order.
 
-Project banners always show a SemVer on the sash. Quote `version` as a string
-(`"0.1.0"`); if it is omitted the sash uses `0.1.0`, the default first public release.
+Quote `version` as a string (`"0.1.0"`) when the project has tagged releases.
+HEAD-only catalogues (no GitHub Release tags) omit `version` and use
+`banner: stable` so the sash is **Stable** with no SemVer. Set
+`released_date` from the latest commit on `master` (not a tag) so Newest
+sorts the card when the catalogue itself moves. That stamp does not change
+the Stable sash.
 If `banner` is omitted, the card is **In Development**.
-`banner: released` still expires 28 days after `released_date`. The Released
-sash is dark navy; after expiry the card keeps a lighter Lupaxa-blue **Stable**
-sash with the version on the projects catalogue.
+`banner: released` still expires 28 days after `released_date`. On versioned
+cards the Released sash is dark navy; after expiry the card keeps a lighter
+Lupaxa-blue **Stable** sash with the version on the projects catalogue.
 
 Catalogue pages (organisations, projects, policies, articles) always render A–Z
 by name/title. YAML or filename order is never used. Newest is an explicit sort,

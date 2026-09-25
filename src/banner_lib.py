@@ -11,6 +11,7 @@ PROJECT_BANNER_PRESETS: dict[str, tuple[str, str]] = {
     "in-testing": ("In Testing", "magenta"),
     "in-review": ("In Review", "purple"),
     "released": ("Released", "dark-blue"),
+    "stable": ("Stable", "blue"),
 }
 ARTICLE_BANNER_PRESETS: dict[str, tuple[str, str]] = {
     "new": ("New Article", "blue"),
@@ -199,7 +200,7 @@ def banner_markup_from_resolved(
 ) -> str:
     safe_label = html.escape(label, quote=True)
     safe_key = html.escape(filter_key, quote=True)
-    length_class = " catalogue-banner--short" if len(label) <= 5 else ""
+    length_class = " catalogue-banner--short" if len(label) <= 6 else ""
     version_class = ""
     version_html = ""
     aria_label = f"Status: {safe_label}"
