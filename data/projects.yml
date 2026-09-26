@@ -17,8 +17,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/action-lint
   banner: released
-  version: "0.1.5"
-  released_date: "2026-08-24T14:44:04"
+  version: "0.1.7"
+  released_date: "2026-09-26T21:35:19"
 
 - id: awesomebot
   published: true
@@ -39,8 +39,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:44:11"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:35:42"
 
 - id: bandit
   published: true
@@ -60,8 +60,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/bandit
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:44:21"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:37:57"
 
 - id: bash-aliases
   published: true
@@ -412,8 +412,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T15:06:41"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:37:46"
 
 - id: git-crypt-manager
   published: true
@@ -547,8 +547,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/hadolint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:45:53"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:36:51"
 
 - id: homebrew-tap
   published: true
@@ -609,8 +609,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/json-lint
   banner: released
-  version: "0.1.5"
-  released_date: "2026-08-24T14:51:21"
+  version: "0.1.6"
+  released_date: "2026-09-26T21:36:21"
 
 - id: makefile-lint
   published: true
@@ -630,8 +630,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/makefile-lint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:47:26"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:37:02"
 
 - id: makefile-skills
   published: true
@@ -675,8 +675,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/markdown-lint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:46:36"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:37:40"
 
 - id: mx-inspector
   published: true
@@ -720,8 +720,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/mypy
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:46:43"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:38:01"
 
 - id: perl-lint
   published: true
@@ -741,8 +741,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/perl-lint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:48:20"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:38:07"
 
 - id: photo-renamer
   published: true
@@ -810,8 +810,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/php-lint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:46:44"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:38:28"
 
 - id: pipeline-template
   published: true
@@ -832,8 +832,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pipeline-template
   banner: released
-  version: "0.1.3"
-  released_date: "2026-08-24T14:48:52"
+  version: "0.1.4"
+  released_date: "2026-09-26T21:39:28"
 
 - id: port-forwarder
   published: true
@@ -875,8 +875,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/puppet-lint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:47:19"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:38:16"
 
 - id: pur
   published: true
@@ -896,8 +896,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pur
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:47:59"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:40:05"
 
 - id: pushit
   published: true
@@ -938,8 +938,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pycodestyle
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:48:04"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:38:51"
 
 - id: pydocstyle
   published: true
@@ -959,8 +959,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pydocstyle
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:48:19"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:37:47"
 
 - id: pylama
   published: true
@@ -980,8 +980,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylama
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:49:01"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:38:16"
 
 - id: pylint
   published: true
@@ -1001,8 +1001,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:48:02"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:40:20"
 
 - id: qrcode-generator
   published: true
@@ -1066,8 +1066,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/reek
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:48:40"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:40:12"
 
 - id: reusable-workflows
   published: true
@@ -1109,8 +1109,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/rubocop
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:50:08"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:39:27"
 
 - id: ruff
   published: true
@@ -1130,8 +1130,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:48:45"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:41:00"
 
 - id: setup-git-hooks
   published: true
@@ -1196,8 +1196,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:50:27"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:40:06"
 
 - id: smtp-tester
   published: true
@@ -1440,8 +1440,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/validate-citations-file
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:50:18"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:39:45"
 
 - id: yaml-lint
   published: true
@@ -1461,8 +1461,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
   banner: released
-  version: "0.1.4"
-  released_date: "2026-08-24T14:50:20"
+  version: "0.1.5"
+  released_date: "2026-09-26T21:40:58"
 
 - id: zone-transfer
   published: true
