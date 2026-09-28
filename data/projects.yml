@@ -220,8 +220,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/convert-size
   documentation: https://convert-size.thelupaxaproject.org/
   banner: released
-  version: "0.1.2"
-  released_date: "2026-09-25T16:43:44"
+  version: "0.1.3"
+  released_date: "2026-09-28T15:38:22"
 
 - id: data-converter
   published: true
@@ -242,8 +242,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/data-converter
   documentation: https://data-converter.thelupaxaproject.org/
   banner: released
-  version: "0.1.2"
-  released_date: "2026-09-25T16:54:27"
+  version: "0.1.3"
+  released_date: "2026-09-28T15:58:30"
 
 - id: design-patterns
   published: true
@@ -306,8 +306,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/divulge
   documentation: https://divulge.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-25T17:04:04"
+  version: "0.1.5"
+  released_date: "2026-09-28T16:21:51"
 
 - id: dns-blacklist-checker
   published: true
@@ -368,8 +368,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/expired
   documentation: https://expired.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-25T17:12:28"
+  version: "0.1.4"
+  released_date: "2026-09-28T16:28:28"
 
 - id: favicon-generator
   published: true
@@ -526,8 +526,8 @@
   repository: https://github.com/lupaxa-gh-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-24T09:44:09"
+  version: "0.1.6"
+  released_date: "2026-09-28T16:58:40"
 
 - id: hadolint
   published: true
@@ -568,7 +568,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-09-25T18:29:03"
+  released_date: "2026-09-28T17:04:10"
 
 - id: ini-file-parser
   published: true
@@ -654,8 +654,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: released
-  version: "0.1.6"
-  released_date: "2026-09-25T17:26:07"
+  version: "0.1.7"
+  released_date: "2026-09-28T16:35:18"
 
 - id: markdown-lint
   published: true
@@ -1023,8 +1023,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/qrcode-generator
   documentation: https://qrcode-generator.thelupaxaproject.org/
   banner: released
-  version: "0.2.3"
-  released_date: "2026-09-25T17:35:42"
+  version: "0.2.4"
+  released_date: "2026-09-28T16:41:10"
 
 - id: real-url
   published: true
@@ -1045,8 +1045,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/real-url
   documentation: https://real-url.thelupaxaproject.org/
   banner: released
-  version: "0.1.2"
-  released_date: "2026-09-25T18:06:28"
+  version: "0.1.3"
+  released_date: "2026-09-28T16:46:44"
 
 - id: reek
   published: true
@@ -1239,8 +1239,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.8"
-  released_date: "2026-09-25T18:21:01"
+  version: "0.2.9"
+  released_date: "2026-09-28T14:57:03"
 
 - id: spider-frameworks
   published: true
@@ -1309,8 +1309,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/sysinfo
   documentation: https://sysinfo.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-25T18:18:49"
+  version: "0.1.4"
+  released_date: "2026-09-28T16:53:16"
 
 - id: tcp-port-ping
   published: true
