@@ -234,12 +234,16 @@ def test_catalogue_grid_projects_emit_in_name_order(tmp_path, monkeypatch):
 
 def test_project_card_local_logo_is_site_root_relative(tmp_path, monkeypatch):
     """Raw HTML img src must work from /projects/, not only the homepage."""
-    projects = [_synthetic_project(logo="assets/images/brand/organisation-cicd-toolbox-logo.png")]
+    projects = [
+        _synthetic_project(
+            logo="assets/images/brand/organisations/organisation-cicd-toolbox-logo.png"
+        )
+    ]
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
 
     markup = catalogue_grid("project", "project")
 
-    assert 'src="/assets/images/brand/organisation-cicd-toolbox-logo.png"' in markup
+    assert 'src="/assets/images/brand/organisations/organisation-cicd-toolbox-logo.png"' in markup
 
 
 def test_project_card_keeps_remote_logo_url(tmp_path, monkeypatch):
