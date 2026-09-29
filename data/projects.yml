@@ -878,6 +878,28 @@
   version: "0.1.3"
   released_date: "2026-09-29T08:39:28"
 
+- id: post-clone
+  published: true
+  name: Post Clone
+  icon: material-source-repository
+  publish_date: "2026-09-29T21:06:32"
+  description: >-
+    Bash wrapper that runs a repository script after a full git clone. `git-wrapper` stands in
+    front of `git`, checks allow and deny lists, and asks before running `post-clone` from the
+    new tree. Bare and mirror clones are passed through.
+  categories:
+    - Git
+    - Git Hooks
+    - Automation
+    - CLI
+  organisation: Git Hooks Toolbox
+  logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
+  logo_alt: Git Hooks Toolbox
+  repository: https://github.com/lupaxa-git-hooks-toolbox/post-clone
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-29T22:17:12"
+
 - id: puppet-lint
   published: true
   name: Puppet Lint
