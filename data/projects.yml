@@ -1419,8 +1419,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/token-manager
   documentation: https://token-manager.thelupaxaproject.org/
   banner: released
-  version: "0.1.0"
-  released_date: "2026-09-29T10:44:20"
+  version: "0.2.0"
+  released_date: "2026-09-29T12:04:36"
 
 - id: trapper
   published: true
