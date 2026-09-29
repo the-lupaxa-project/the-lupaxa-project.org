@@ -72,10 +72,13 @@
   color: var(--lupaxa-light-blue);
 }
 
-.md-typeset .grid.cards.about-summary,
 .md-typeset .grid.cards.about-principles,
 .md-typeset .grid.cards.about-build {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.md-typeset .grid.cards.about-summary {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .md-typeset .about-summary > ul > li,

@@ -63,10 +63,6 @@ hide:
         to refine. The Lupaxa Project is where exploration meets precision, and
         where the untamed meets the engineered.
     </p>
-    <p>
-        The project is volunteer-led. If you want to help cover time and
-        running costs, see <a href="sponsor/">Sponsor</a>.
-    </p>
 </div>
 
 <div class="grid cards about-summary" markdown>
@@ -91,6 +87,13 @@ hide:
 
     Projects begin with real problems and are shaped into focused, maintainable
     tools that can be understood and used independently.
+
+-   :material-hand-heart:{ .lg .middle } **Volunteer-led**
+
+    ---
+
+    The project is volunteer-led. If you want to help cover time and
+    running costs, see <a href="sponsor/">Sponsor</a>.
 
 </div>
 
