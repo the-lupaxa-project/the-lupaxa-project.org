@@ -1442,6 +1442,27 @@
   version: "0.1.0"
   released_date: "2026-09-08T17:16:20"
 
+- id: url-parser
+  published: true
+  name: URL Parser
+  icon: material-source-repository
+  publish_date: "2026-09-29T17:04:48"
+  description: >-
+    Sourceable Bash helper that splits a URL into protocol, user, password, host, port, path,
+    query, and fragment. Source `src/url-parser.sh` and call `parse_url`. Must be sourced, not
+    executed.
+  categories:
+    - Developer Tools
+    - URL
+    - Parsing
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/url-parser
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-29T17:46:59"
+
 - id: user-notifier
   published: true
   name: User Notifier
