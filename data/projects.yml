@@ -589,7 +589,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-09-29T09:28:41"
+  released_date: "2026-09-29T13:29:48"
 
 - id: ini-file-parser
   published: true
@@ -1260,8 +1260,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.9"
-  released_date: "2026-09-28T14:57:03"
+  version: "0.2.10"
+  released_date: "2026-09-29T13:53:39"
 
 - id: spider-frameworks
   published: true

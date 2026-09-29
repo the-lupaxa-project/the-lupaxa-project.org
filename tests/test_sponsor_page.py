@@ -39,8 +39,8 @@ def test_home_who_we_are_links_to_sponsor():
     assert "volunteer-led" in INDEX_MD
 
 
-def test_home_hero_has_sponsor_button():
+def test_home_hero_does_not_repeat_navigation():
     hero = INDEX_MD.split("## Who We Are", 1)[0]
-    assert 'href="sponsor/"' in hero
-    assert "Become a Sponsor" in hero
-    assert hero.index('href="humour/"') < hero.index('href="sponsor/"')
+    assert "lupaxa-hero-actions" not in hero
+    assert "Become a Sponsor" not in hero
+    assert "Browse Organisations" not in INDEX_MD

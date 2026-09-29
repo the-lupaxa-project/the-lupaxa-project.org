@@ -19,32 +19,6 @@ hide:
         engineered software, from developer tooling and automation to technical
         resources.
     </p>
-
-    <div class="lupaxa-hero-actions">
-        <a class="md-button lupaxa-button" href="organisations/">
-            Browse Organisations
-        </a>
-
-        <a class="md-button lupaxa-button" href="projects/">
-            Browse Projects
-        </a>
-
-        <a class="md-button lupaxa-button" href="articles/">
-            Browse Articles
-        </a>
-
-        <a class="md-button lupaxa-button" href="policies/">
-            Browse Policies
-        </a>
-
-        <a class="md-button lupaxa-button" href="humour/">
-            Browse Humour
-        </a>
-
-        <a class="md-button lupaxa-button" href="sponsor/">
-            Become a Sponsor
-        </a>
-    </div>
 </div>
 
 ## Who We Are
