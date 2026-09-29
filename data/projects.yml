@@ -1400,6 +1400,28 @@
   version: "0.1.3"
   released_date: "2026-09-29T08:55:10"
 
+- id: token-manager
+  published: true
+  name: Token Manager
+  icon: material-source-repository
+  publish_date: "2026-09-29T10:13:10"
+  description: >-
+    Store API tokens in named profiles and print them as shell exports. Each profile can keep
+    tokens as plaintext JSON, or encrypt them with gpg or openssl. Install `lupaxa-token-manager`
+    from PyPI and run `tokenctl`.
+  categories:
+    - CLI
+    - Encryption
+    - Security
+  organisation: Developers Toolbox
+  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/token-manager
+  documentation: https://token-manager.thelupaxaproject.org/
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-29T10:44:20"
+
 - id: trapper
   published: true
   name: Trapper
