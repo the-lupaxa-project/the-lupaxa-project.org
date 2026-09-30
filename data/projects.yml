@@ -619,6 +619,26 @@
   version: "0.1.6"
   released_date: "2026-09-26T21:36:21"
 
+- id: leaky-bucket
+  published: true
+  name: Leaky Bucket
+  icon: material-source-repository
+  publish_date: "2026-09-30T19:00:48"
+  description: >-
+    Rate-limit events with a leaky bucket. Arrivals that fit are admitted. Drop mode rejects the
+    rest. Queue mode waits until leaked capacity can take them. A Python library only. Install
+    `lupaxa-leaky-bucket` from PyPI and import `lupaxa.leaky_bucket`.
+  categories:
+    - Developer Tools
+    - Rate Limiting
+  organisation: Developers Toolbox
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/leaky-bucket
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-09-30T20:18:26"
+
 - id: makefile-lint
   published: true
   name: Makefile Lint
