@@ -82,10 +82,9 @@
   logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/bash-aliases
-  documentation: https://bash-aliases.thelupaxaproject.org/
   banner: released
-  version: "0.1.6"
-  released_date: "2026-09-29T08:57:41"
+  version: "0.1.7"
+  released_date: "2026-09-30T11:46:42"
 
 - id: bash-colour-testcard
   published: true
@@ -126,10 +125,9 @@
   logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
-  documentation: https://brew-manager.thelupaxaproject.org/
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-29T09:02:14"
+  version: "0.1.6"
+  released_date: "2026-09-30T11:52:29"
 
 - id: certificate-tool
   published: true
@@ -173,10 +171,9 @@
   logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
-  documentation: https://check-git-repositories.thelupaxaproject.org/
   banner: released
-  version: "0.1.6"
-  released_date: "2026-09-28T18:47:24"
+  version: "0.1.7"
+  released_date: "2026-09-30T08:19:19"
 
 - id: cms-detection
   published: true
@@ -196,10 +193,9 @@
   logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/cms-detection
-  documentation: https://cms-detection.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:11:18"
+  version: "0.1.4"
+  released_date: "2026-09-30T11:05:20"
 
 - id: convert-size
   published: true
@@ -218,10 +214,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/convert-size
-  documentation: https://convert-size.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-28T15:38:22"
+  version: "0.1.4"
+  released_date: "2026-09-30T07:07:00"
 
 - id: data-converter
   published: true
@@ -240,10 +235,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/data-converter
-  documentation: https://data-converter.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-28T15:58:30"
+  version: "0.1.4"
+  released_date: "2026-09-30T07:24:00"
 
 - id: design-patterns
   published: true
@@ -282,10 +276,9 @@
   logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/discordit
-  documentation: https://discordit.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T07:51:55"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:06:33"
 
 - id: divulge
   published: true
@@ -304,10 +297,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/divulge
-  documentation: https://divulge.thelupaxaproject.org/
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-28T16:21:51"
+  version: "0.1.6"
+  released_date: "2026-09-30T07:38:17"
 
 - id: dns-blacklist-checker
   published: true
@@ -326,10 +318,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/dns-blacklist-checker
-  documentation: https://dns-blacklist-checker.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:33:43"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:32:58"
 
 - id: domain-expiry
   published: true
@@ -347,10 +338,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/domain-expiry
-  documentation: https://domain-expiry.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:36:27"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:38:49"
 
 - id: expired
   published: true
@@ -366,10 +356,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/expired
-  documentation: https://expired.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-28T16:28:28"
+  version: "0.1.5"
+  released_date: "2026-09-30T07:49:44"
 
 - id: every-repo
   published: true
@@ -409,10 +398,9 @@
   logo: assets/images/brand/organisations/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
-  documentation: https://favicon-generator.thelupaxaproject.org/
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-28T21:11:13"
+  version: "0.1.6"
+  released_date: "2026-09-30T08:58:00"
 
 - id: get-all-tools
   published: true
@@ -454,10 +442,9 @@
   logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
-  documentation: https://git-crypt-manager.thelupaxaproject.org/
   banner: released
-  version: "1.0.6"
-  released_date: "2026-09-29T08:15:20"
+  version: "1.0.7"
+  released_date: "2026-09-30T11:15:29"
 
 - id: git-delete-tags
   published: true
@@ -499,10 +486,9 @@
   logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/git-hooks-multiplexer
-  documentation: https://lupaxa-git-hooks-toolbox.github.io/git-hooks-multiplexer/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-28T18:58:20"
+  version: "0.1.5"
+  released_date: "2026-09-30T08:26:32"
 
 - id: git-reset-history
   published: true
@@ -589,7 +575,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-09-29T13:29:48"
+  released_date: "2026-09-30T12:10:10"
 
 - id: ini-file-parser
   published: true
@@ -784,10 +770,9 @@
   logo: assets/images/brand/organisations/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
-  documentation: https://photo-renamer.thelupaxaproject.org/
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-28T21:13:13"
+  version: "0.1.6"
+  released_date: "2026-09-30T08:52:29"
 
 - id: pre-commit-template
   published: true
@@ -808,10 +793,9 @@
   logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/pre-commit-template
-  documentation: https://pre-commit-template.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-28T19:05:17"
+  version: "0.1.5"
+  released_date: "2026-09-30T08:36:26"
 
 - id: php-lint
   published: true
@@ -873,10 +857,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/port-forwarder
-  documentation: https://port-forwarder.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:39:28"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:50:21"
 
 - id: post-clone
   published: true
@@ -958,10 +941,9 @@
   logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/pushit
-  documentation: https://pushit.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T07:55:50"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:19:44"
 
 - id: pycodestyle
   published: true
@@ -1064,10 +1046,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/qrcode-generator
-  documentation: https://qrcode-generator.thelupaxaproject.org/
   banner: released
-  version: "0.2.4"
-  released_date: "2026-09-28T16:41:10"
+  version: "0.2.5"
+  released_date: "2026-09-30T07:55:53"
 
 - id: real-url
   published: true
@@ -1086,10 +1067,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/real-url
-  documentation: https://real-url.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-28T16:46:44"
+  version: "0.1.4"
+  released_date: "2026-09-30T08:02:42"
 
 - id: reek
   published: true
@@ -1195,10 +1175,9 @@
   logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/setup-git-hooks
-  documentation: https://setup-git-hooks.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-28T19:06:49"
+  version: "0.1.5"
+  released_date: "2026-09-30T08:44:31"
 
 - id: slackit
   published: true
@@ -1216,10 +1195,9 @@
   logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/slackit
-  documentation: https://slackit.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-29T08:00:53"
+  version: "0.1.5"
+  released_date: "2026-09-30T09:12:20"
 
 - id: shellcheck
   published: true
@@ -1258,10 +1236,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/smtp-tester
-  documentation: https://smtp-tester.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:43:08"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:58:09"
 
 - id: snippets
   published: true
@@ -1303,10 +1280,9 @@
   logo: assets/images/brand/organisations/organisation-spider-toolbox-logo.png
   logo_alt: Spider Toolbox
   repository: https://github.com/lupaxa-spider-toolbox/spider-frameworks
-  documentation: https://spider-frameworks.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-29T08:29:08"
+  version: "0.1.5"
+  released_date: "2026-09-30T11:37:43"
 
 - id: ssl-expiry
   published: true
@@ -1324,10 +1300,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/ssl-expiry
-  documentation: https://ssl-expiry.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:46:21"
+  version: "0.1.4"
+  released_date: "2026-09-30T10:05:20"
 
 - id: sysinfo
   published: true
@@ -1350,10 +1325,9 @@
   logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/sysinfo
-  documentation: https://sysinfo.thelupaxaproject.org/
   banner: released
-  version: "0.1.4"
-  released_date: "2026-09-28T16:53:16"
+  version: "0.1.5"
+  released_date: "2026-09-30T08:09:31"
 
 - id: tcp-port-ping
   published: true
@@ -1372,10 +1346,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/tcp-port-ping
-  documentation: https://tcp-port-ping.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:50:36"
+  version: "0.1.4"
+  released_date: "2026-09-30T10:13:37"
 
 - id: teamsit
   published: true
@@ -1394,10 +1367,9 @@
   logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/teamsit
-  documentation: https://teamsit.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:04:10"
+  version: "0.1.4"
+  released_date: "2026-09-30T09:26:33"
 
 - id: time-to-first-byte
   published: true
@@ -1417,10 +1389,9 @@
   logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/time-to-first-byte
-  documentation: https://time-to-first-byte.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:55:10"
+  version: "0.1.4"
+  released_date: "2026-09-30T10:41:56"
 
 - id: token-manager
   published: true
@@ -1503,10 +1474,9 @@
   logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/user-notifier
-  documentation: https://user-notifier.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:23:02"
+  version: "0.1.4"
+  released_date: "2026-09-30T11:23:34"
 
 - id: validate-citations-file
   published: true
@@ -1569,7 +1539,6 @@
   logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/zone-transfer
-  documentation: https://zone-transfer.thelupaxaproject.org/
   banner: released
-  version: "0.1.3"
-  released_date: "2026-09-29T08:26:34"
+  version: "0.1.4"
+  released_date: "2026-09-30T11:29:14"
