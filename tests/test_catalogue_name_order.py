@@ -98,15 +98,13 @@ def test_organisation_card_local_logo_is_site_root_relative(tmp_path, monkeypatc
             "publish_date": "2026-01-01",
             "description": "A",
             "categories": ["Testing"],
-            "logo": "assets/images/brand/organisations/organisation-actions-toolbox-logo.png",
+            "logo": "assets/images/organisations/organisation-actions-toolbox-logo.png",
             "repository": "https://github.com/example/a",
         }
     ]
     grid = _grid(tmp_path, monkeypatch, organisations=organisations)
     markup = grid("organisation", "organisation")
-    assert (
-        'src="/assets/images/brand/organisations/organisation-actions-toolbox-logo.png"' in markup
-    )
+    assert 'src="/assets/images/organisations/organisation-actions-toolbox-logo.png"' in markup
 
 
 def test_policy_grid_is_alphabetical(tmp_path, monkeypatch):

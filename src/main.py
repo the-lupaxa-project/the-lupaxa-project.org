@@ -48,7 +48,7 @@ from humour_lib import (
 DATA_DIR = ROOT / "data"
 
 # Shared brand mark for policy cards (same visual slot as project/org logos).
-DEFAULT_POLICY_LOGO = "assets/images/brand/organisations/organisation-the-lupaxa-project-logo.png"
+DEFAULT_POLICY_LOGO = "assets/images/organisations/organisation-the-lupaxa-project-logo.png"
 DEFAULT_POLICY_LOGO_ALT = "The Lupaxa Project"
 
 

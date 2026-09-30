@@ -13,7 +13,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/action-lint
   banner: released
@@ -35,7 +35,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
   banner: released
@@ -56,7 +56,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/bandit
   banner: released
@@ -79,7 +79,7 @@
     - Productivity
     - Bash
   organisation: Workstation Toolbox
-  logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/bash-aliases
   banner: released
@@ -101,7 +101,7 @@
     - Bash
     - Developer Tools
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/bash-colour-testcard
   banner: released
@@ -122,7 +122,7 @@
     - Workstation
     - Package Management
   organisation: Workstation Toolbox
-  logo: assets/images/brand/organisations/organisation-workstation-toolbox-logo.png
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
   repository: https://github.com/lupaxa-workstation-toolbox/brew-manager
   banner: released
@@ -144,7 +144,7 @@
     - Security
     - CLI
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/certtool
   documentation: https://certtool.thelupaxaproject.org/
@@ -168,7 +168,7 @@
     - Repository Management
     - CLI
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/check-git-repositories
   banner: released
@@ -190,7 +190,7 @@
     - CLI
     - Reconnaissance
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/cms-detection
   banner: released
@@ -211,7 +211,7 @@
     - Utilities
     - Units
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/convert-size
   banner: released
@@ -232,7 +232,7 @@
     - Developer Tools
     - JSON
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/data-converter
   banner: released
@@ -252,7 +252,7 @@
     - Developer Tools
     - Design Patterns
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/design-patterns
   banner: released
@@ -273,7 +273,7 @@
     - Notifications
     - Discord
   organisation: Notifications Toolbox
-  logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
+  logo: assets/images/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/discordit
   banner: released
@@ -294,7 +294,7 @@
     - Developer Tools
     - Messaging
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/divulge
   banner: released
@@ -315,7 +315,7 @@
     - DNS
     - Reliability
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/dns-blacklist-checker
   banner: released
@@ -335,7 +335,7 @@
     - DNS
     - Reliability
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/domain-expiry
   banner: released
@@ -353,7 +353,7 @@
     - Developer Tools
     - CLI
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/expired
   banner: released
@@ -374,7 +374,7 @@
     - Automation
     - CLI
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/every-repo
   banner: released
@@ -395,7 +395,7 @@
     - Websites
     - Utilities
   organisation: Miscellaneous Toolbox
-  logo: assets/images/brand/organisations/organisation-miscellaneous-toolbox-logo.png
+  logo: assets/images/organisations/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/favicon-generator
   banner: released
@@ -417,7 +417,7 @@
     - Developer Tools
     - Automation
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   banner: released
@@ -439,7 +439,7 @@
     - Git
     - Automation
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/git-crypt-manager
   banner: released
@@ -461,7 +461,7 @@
     - Repository Management
     - CLI
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/git-delete-tags
   banner: released
@@ -483,7 +483,7 @@
     - Git Hooks
     - Automation
   organisation: Git Hooks Toolbox
-  logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/git-hooks-multiplexer
   banner: released
@@ -505,7 +505,7 @@
     - Repository Management
     - CLI
   organisation: Git Toolbox
-  logo: assets/images/brand/organisations/organisation-git-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
   repository: https://github.com/lupaxa-git-toolbox/git-reset-history
   banner: released
@@ -528,7 +528,7 @@
     - Automation
     - Repository Management
   organisation: GitHub Toolbox
-  logo: assets/images/brand/organisations/organisation-gh-toolbox-logo.png
+  logo: assets/images/organisations/organisation-gh-toolbox-logo.png
   logo_alt: GitHub Toolbox
   repository: https://github.com/lupaxa-gh-toolbox/github-repo-sync
   documentation: https://github-repo-sync.thelupaxaproject.org/
@@ -550,7 +550,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/hadolint
   banner: released
@@ -570,12 +570,12 @@
     - Homebrew
     - Package Management
   organisation: The Lupaxa Project
-  logo: assets/images/brand/organisations/organisation-the-lupaxa-project-logo.png
+  logo: assets/images/organisations/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-09-30T12:10:10"
+  released_date: "2026-09-30T14:39:38"
 
 - id: ini-file-parser
   published: true
@@ -591,7 +591,7 @@
     - Developer Tools
     - INI
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/ini-file-parser
   banner: released
@@ -612,7 +612,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/json-lint
   banner: released
@@ -633,7 +633,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/makefile-lint
   banner: released
@@ -656,7 +656,7 @@
     - Developer Tools
     - Makefile
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
@@ -678,7 +678,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/markdown-lint
   banner: released
@@ -701,7 +701,7 @@
     - Email
     - Reconnaissance
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/mx-inspector
   documentation: https://mx-inspector.thelupaxaproject.org/
@@ -723,7 +723,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/mypy
   banner: released
@@ -744,7 +744,7 @@
     - Workflow
     - Perl
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/perl-lint
   banner: released
@@ -767,7 +767,7 @@
     - CLI
     - Utilities
   organisation: Miscellaneous Toolbox
-  logo: assets/images/brand/organisations/organisation-miscellaneous-toolbox-logo.png
+  logo: assets/images/organisations/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
   repository: https://github.com/lupaxa-miscellaneous-toolbox/photo-renamer
   banner: released
@@ -790,7 +790,7 @@
     - Templates
     - Automation
   organisation: Git Hooks Toolbox
-  logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/pre-commit-template
   banner: released
@@ -811,7 +811,7 @@
     - Workflow
     - PHP
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/php-lint
   banner: released
@@ -833,7 +833,7 @@
     - Automation
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pipeline-template
   banner: released
@@ -854,7 +854,7 @@
     - Networking
     - Reliability
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/port-forwarder
   banner: released
@@ -876,7 +876,7 @@
     - Automation
     - CLI
   organisation: Git Hooks Toolbox
-  logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/post-clone
   banner: released
@@ -897,7 +897,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/puppet-lint
   banner: released
@@ -918,7 +918,7 @@
     - Workflow
     - Python
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pur
   banner: released
@@ -938,7 +938,7 @@
     - Notifications
     - Pushover
   organisation: Notifications Toolbox
-  logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
+  logo: assets/images/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/pushit
   banner: released
@@ -959,7 +959,7 @@
     - Workflow
     - Python
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pycodestyle
   banner: released
@@ -980,7 +980,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pydocstyle
   banner: released
@@ -1001,7 +1001,7 @@
     - Workflow
     - Python
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylama
   banner: released
@@ -1022,7 +1022,7 @@
     - Workflow
     - Python
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/pylint
   banner: released
@@ -1043,7 +1043,7 @@
     - Developer Tools
     - QR Codes
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/qrcode-generator
   banner: released
@@ -1064,7 +1064,7 @@
     - Developer Tools
     - HTTP
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/real-url
   banner: released
@@ -1085,7 +1085,7 @@
     - Workflow
     - Ruby
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/reek
   banner: released
@@ -1107,7 +1107,7 @@
     - CI/CD
     - Automation
   organisation: The Lupaxa Project
-  logo: assets/images/brand/organisations/organisation-the-lupaxa-project-logo.png
+  logo: assets/images/organisations/organisation-the-lupaxa-project-logo.png
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
   banner: released
@@ -1128,7 +1128,7 @@
     - Workflow
     - Ruby
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/rubocop
   banner: released
@@ -1149,7 +1149,7 @@
     - Workflow
     - Python
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/ruff
   banner: released
@@ -1172,7 +1172,7 @@
     - Automation
     - YAML
   organisation: Git Hooks Toolbox
-  logo: assets/images/brand/organisations/organisation-git-hooks-toolbox-logo.png
+  logo: assets/images/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
   repository: https://github.com/lupaxa-git-hooks-toolbox/setup-git-hooks
   banner: released
@@ -1192,7 +1192,7 @@
     - Notifications
     - Slack
   organisation: Notifications Toolbox
-  logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
+  logo: assets/images/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/slackit
   banner: released
@@ -1213,7 +1213,7 @@
     - Workflow
     - Shell
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/shellcheck
   banner: released
@@ -1233,7 +1233,7 @@
     - Email
     - Reliability
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/smtp-tester
   banner: released
@@ -1254,13 +1254,13 @@
     - Documentation
     - Productivity
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.10"
-  released_date: "2026-09-29T13:53:39"
+  version: "0.2.11"
+  released_date: "2026-09-30T14:29:46"
 
 - id: spider-frameworks
   published: true
@@ -1277,7 +1277,7 @@
     - Data Extraction
     - Templates
   organisation: Spider Toolbox
-  logo: assets/images/brand/organisations/organisation-spider-toolbox-logo.png
+  logo: assets/images/organisations/organisation-spider-toolbox-logo.png
   logo_alt: Spider Toolbox
   repository: https://github.com/lupaxa-spider-toolbox/spider-frameworks
   banner: released
@@ -1297,7 +1297,7 @@
     - Certificates
     - Reliability
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/ssl-expiry
   banner: released
@@ -1322,7 +1322,7 @@
     - CLI
     - Developer Tools
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/sysinfo
   banner: released
@@ -1343,7 +1343,7 @@
     - Networking
     - Reliability
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/tcp-port-ping
   banner: released
@@ -1364,7 +1364,7 @@
     - Notifications
     - Teams
   organisation: Notifications Toolbox
-  logo: assets/images/brand/organisations/organisation-notifications-toolbox-logo.png
+  logo: assets/images/organisations/organisation-notifications-toolbox-logo.png
   logo_alt: Notifications Toolbox
   repository: https://github.com/lupaxa-notifications-toolbox/teamsit
   banner: released
@@ -1386,7 +1386,7 @@
     - Reliability
     - HTTP
   organisation: SRE Toolbox
-  logo: assets/images/brand/organisations/organisation-sre-toolbox-logo.png
+  logo: assets/images/organisations/organisation-sre-toolbox-logo.png
   logo_alt: SRE Toolbox
   repository: https://github.com/lupaxa-sre-toolbox/time-to-first-byte
   banner: released
@@ -1407,7 +1407,7 @@
     - Encryption
     - Security
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/token-manager
   documentation: https://token-manager.thelupaxaproject.org/
@@ -1428,7 +1428,7 @@
     - Developer Tools
     - Debugging
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/trapper
   banner: released
@@ -1449,7 +1449,7 @@
     - URL
     - Parsing
   organisation: Developers Toolbox
-  logo: assets/images/brand/organisations/organisation-developers-toolbox-logo.png
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
   repository: https://github.com/lupaxa-developers-toolbox/url-parser
   banner: released
@@ -1471,7 +1471,7 @@
     - PAM
     - Notifications
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/user-notifier
   banner: released
@@ -1492,7 +1492,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/validate-citations-file
   banner: released
@@ -1513,7 +1513,7 @@
     - Linting
     - Workflow
   organisation: CI/CD Toolbox
-  logo: assets/images/brand/organisations/organisation-cicd-toolbox-logo.png
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/yaml-lint
   banner: released
@@ -1536,7 +1536,7 @@
     - DNS
     - Reconnaissance
   organisation: Security Toolbox
-  logo: assets/images/brand/organisations/organisation-security-toolbox-logo.png
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/zone-transfer
   banner: released

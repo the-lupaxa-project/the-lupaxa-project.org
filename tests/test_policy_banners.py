@@ -170,10 +170,7 @@ def test_policy_card_includes_default_brand_logo(tmp_path, monkeypatch):
     assert 'class="catalogue-logo-wrap"' in markup
     assert 'class="catalogue-logo"' in markup
     assert 'data-name="Synthetic Policy"' in markup
-    assert (
-        'src="/assets/images/brand/organisations/organisation-the-lupaxa-project-logo.png"'
-        in markup
-    )
+    assert 'src="/assets/images/organisations/organisation-the-lupaxa-project-logo.png"' in markup
     assert 'alt="The Lupaxa Project"' in markup
 
 
