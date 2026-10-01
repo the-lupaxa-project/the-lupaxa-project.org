@@ -23,7 +23,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  cursor: zoom-in;
+  cursor: pointer;
   line-height: 0;
 }
 
@@ -62,10 +62,6 @@
   background: rgb(0 0 0 / 55%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-}
-
-.humour-card.is-video .humour-open {
-  cursor: pointer;
 }
 
 .humour-meta {
