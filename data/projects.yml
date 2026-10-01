@@ -536,6 +536,27 @@
   version: "0.1.6"
   released_date: "2026-09-28T16:58:40"
 
+- id: github-token-validator
+  published: true
+  name: GitHub Token Validator
+  icon: material-source-repository
+  publish_date: "2026-09-30T21:15:51"
+  description: >-
+    Report what a GitHub token is allowed to do. It sends read-only GET requests and never prints
+    the token. A Python CLI. Install `lupaxa-github-token-validator` from PyPI and run `gtv` or
+    `github-token-validator`.
+  categories:
+    - GitHub
+    - CLI
+    - Security
+  organisation: GitHub Toolbox
+  logo: assets/images/organisations/organisation-gh-toolbox-logo.png
+  logo_alt: GitHub Toolbox
+  repository: https://github.com/lupaxa-gh-toolbox/github-token-validator
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-01T07:34:33"
+
 - id: hadolint
   published: true
   name: Hadolint
