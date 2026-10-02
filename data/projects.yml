@@ -39,8 +39,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/awesomebot
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-26T21:35:42"
+  version: "0.1.6"
+  released_date: "2026-10-02T15:59:52"
 
 - id: bandit
   published: true
@@ -662,7 +662,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-10-02T11:16:09"
+  released_date: "2026-10-02T13:30:14"
 
 - id: ini-file-parser
   published: true
@@ -1388,8 +1388,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/snippets
   documentation: https://snippets.thelupaxaproject.org/
   banner: released
-  version: "0.2.16"
-  released_date: "2026-10-01T16:18:40"
+  version: "0.2.17"
+  released_date: "2026-10-02T17:14:05"
 
 - id: spider-frameworks
   published: true
