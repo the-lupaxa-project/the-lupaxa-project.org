@@ -259,6 +259,28 @@
   version: "0.1.0"
   released_date: "2026-09-08T16:50:25"
 
+- id: diff-ini-files
+  published: true
+  name: Diff INI Files
+  icon: material-source-repository
+  publish_date: "2026-10-02T13:31:02"
+  description: >-
+    Compare two INI files by section, key, and value. Comments, blank lines, and key order are
+    not differences. A Python CLI. Install `lupaxa-diff-ini-files` from PyPI and run
+    `diff-ini-files`.
+  categories:
+    - CLI
+    - Configuration
+    - Developer Tools
+    - INI
+  organisation: Developers Toolbox
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/diff-ini-files
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-02T16:03:09"
+
 - id: discordit
   published: true
   name: Discordit
@@ -423,6 +445,50 @@
   banner: released
   version: "0.1.5"
   released_date: "2026-09-26T21:37:46"
+
+- id: git-change-author
+  published: true
+  name: Git Change Author
+  icon: material-source-repository
+  publish_date: "2026-10-02T12:56:25"
+  description: >-
+    Bash CLI to rewrite Git commit author and committer identity for one email address, with
+    dry-run, summary, and local-only modes. Matching author and committer emails are replaced on
+    all branches and tags. Prefer `--summary` or a dry-run first; a rewrite can force-push.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - CLI
+  organisation: Git Toolbox
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
+  logo_alt: Git Toolbox
+  repository: https://github.com/lupaxa-git-toolbox/git-change-author
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-02T13:11:17"
+
+- id: git-change-branch-name
+  published: true
+  name: Git Change Branch Name
+  icon: material-source-repository
+  publish_date: "2026-10-02T13:03:37"
+  description: >-
+    Bash CLI to rename a local Git branch and the same branch on the remote, with dry-run,
+    summary, and local-only modes. Commit history is left as it is. Prefer `--summary` or a
+    dry-run first; updating the remote deletes the old branch name.
+  categories:
+    - Git
+    - Automation
+    - Repository Management
+    - CLI
+  organisation: Git Toolbox
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
+  logo_alt: Git Toolbox
+  repository: https://github.com/lupaxa-git-toolbox/git-change-branch-name
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-02T13:24:59"
 
 - id: git-crypt-manager
   published: true
