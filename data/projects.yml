@@ -596,7 +596,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-10-01T16:15:40"
+  released_date: "2026-10-02T11:16:09"
 
 - id: ini-file-parser
   published: true
@@ -923,6 +923,28 @@
   banner: released
   version: "0.1.0"
   released_date: "2026-09-29T22:17:12"
+
+- id: privacy-reset
+  published: true
+  name: Privacy Reset
+  icon: material-source-repository
+  publish_date: "2026-10-02T08:52:15"
+  description: >-
+    Interactive menu to reset macOS privacy grants for one app or every app. The usual case is
+    folder access for the current terminal — Downloads, Desktop, Documents, and Full Disk Access.
+    A portable Bash script that uses `tccutil` and does not need `sudo`.
+  categories:
+    - Workstation
+    - Privacy
+    - macOS
+    - CLI
+  organisation: Workstation Toolbox
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
+  logo_alt: Workstation Toolbox
+  repository: https://github.com/lupaxa-workstation-toolbox/privacy-reset
+  banner: released
+  version: "0.1.1"
+  released_date: "2026-10-02T11:13:03"
 
 - id: puppet-lint
   published: true
