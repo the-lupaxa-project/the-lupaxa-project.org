@@ -728,6 +728,28 @@
   version: "0.1.2"
   released_date: "2026-09-25T17:19:03"
 
+- id: invisible-timing-toolkit
+  published: true
+  name: Invisible Timing Toolkit
+  icon: material-source-repository
+  publish_date: "2026-10-03T16:50:32"
+  description: >-
+    Opt-in runtime timing for Python. Enable the hooks you want — functions,
+    loops, files, HTTP, SQLite, subprocess, and imports — and selected calls
+    print how long they took. Application code stays free of decorators and
+    manual timers.
+  categories:
+    - Python
+    - Developer Tools
+    - Profiling
+  organisation: Developers Toolbox
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/invisible-timing-toolkit
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-03T17:18:28"
+
 - id: json-lint
   published: true
   name: JSON Lint
