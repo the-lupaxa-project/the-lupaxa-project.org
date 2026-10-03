@@ -108,6 +108,27 @@
   version: "0.1.0"
   released_date: "2026-09-08T17:38:18"
 
+- id: basic-cli-chatbot
+  published: true
+  name: Basic CLI Chatbot
+  icon: material-source-repository
+  publish_date: "2026-10-03T10:26:09"
+  description: >-
+    A command-line chatbot for OpenAI, Gemini, Grok, and a local Ollama
+    server. A chat needs a provider and a model. Pass a question to ask once,
+    or run it with no question to open a prompt.
+  categories:
+    - AI
+    - CLI
+    - Developer Tools
+  organisation: AI Toolbox
+  logo: assets/images/organisations/organisation-ai-toolbox-logo.png
+  logo_alt: AI Toolbox
+  repository: https://github.com/lupaxa-ai-toolbox/basic-cli-chatbot
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-03T15:24:23"
+
 - id: brew-manager
   published: true
   name: Brew Manager
@@ -443,8 +464,8 @@
   logo_alt: CI/CD Toolbox
   repository: https://github.com/lupaxa-cicd-toolbox/get-all-tools
   banner: released
-  version: "0.1.5"
-  released_date: "2026-09-26T21:37:46"
+  version: "0.1.6"
+  released_date: "2026-10-03T15:00:18"
 
 - id: git-change-author
   published: true
@@ -662,7 +683,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-10-03T10:24:14"
+  released_date: "2026-10-03T15:36:09"
 
 - id: ini-file-parser
   published: true
@@ -1284,6 +1305,29 @@
   banner: released
   version: "0.1.5"
   released_date: "2026-09-26T21:41:00"
+
+- id: safe-rm
+  published: true
+  name: Safe RM
+  icon: material-source-repository
+  publish_date: "2026-10-03T14:45:00"
+  description: >-
+    Recoverable replacement for interactive `rm` and `rmdir`. A normal removal
+    moves the operand into a private store so it can be listed and restored.
+    Permanent deletion happens only through an explicit delete, empty, purge,
+    or permanent action.
+  categories:
+    - Workstation
+    - CLI
+    - macOS
+    - Linux
+  organisation: Workstation Toolbox
+  logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
+  logo_alt: Workstation Toolbox
+  repository: https://github.com/lupaxa-workstation-toolbox/safe-rm
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-03T15:30:28"
 
 - id: setup-git-hooks
   published: true
