@@ -685,6 +685,28 @@
   banner: stable
   released_date: "2026-10-03T15:36:09"
 
+- id: image-converter
+  published: true
+  name: Image Converter
+  icon: material-source-repository
+  publish_date: "2026-10-03T15:46:54"
+  description: >-
+    Convert an image from one format to another: JPG, JPEG, PNG, GIF, WebP,
+    and SVG. Raster formats are converted with Pillow. SVG input is
+    rasterised, and a raster image converted to SVG is embedded in an SVG
+    document rather than vectorised.
+  categories:
+    - Images
+    - Conversion
+    - CLI
+  organisation: Miscellaneous Toolbox
+  logo: assets/images/organisations/organisation-miscellaneous-toolbox-logo.png
+  logo_alt: Miscellaneous Toolbox
+  repository: https://github.com/lupaxa-miscellaneous-toolbox/image-converter
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-03T16:10:49"
+
 - id: ini-file-parser
   published: true
   name: INI File Parser
