@@ -467,6 +467,28 @@
   version: "0.1.6"
   released_date: "2026-10-03T15:00:18"
 
+- id: git-archaeologist
+  published: true
+  name: Git Archaeologist
+  icon: material-source-repository
+  publish_date: "2026-10-04T11:59:07"
+  description: >-
+    Read-only Python CLI that reads a local Git repository and reports how it
+    evolved: activity, contributors, survivors, extinct paths, churn, and
+    snapshots. The same facts are available as console text, JSON, or
+    Markdown. It does not fetch or rewrite history.
+  categories:
+    - Git
+    - CLI
+    - Developer Tools
+  organisation: Git Toolbox
+  logo: assets/images/organisations/organisation-git-toolbox-logo.png
+  logo_alt: Git Toolbox
+  repository: https://github.com/lupaxa-git-toolbox/git-archaeologist
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-04T13:03:01"
+
 - id: git-change-author
   published: true
   name: Git Change Author
