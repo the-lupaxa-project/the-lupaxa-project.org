@@ -239,6 +239,48 @@
   version: "0.1.4"
   released_date: "2026-09-30T07:07:00"
 
+- id: cursor-docs-vault
+  published: true
+  name: Cursor Docs Vault
+  icon: material-source-repository
+  publish_date: "2026-10-04T15:52:16"
+  description: >-
+    Share Cursor agent specs and plans from one private vault across a team's
+    repositories. Each checkout keeps a `cursor-docs` symlink. Clone the
+    repository, copy `config.example.env` to `config.local.env`, then run
+    `./bootstrap.sh setup`.
+  categories:
+    - AI
+    - Agent Skills
+    - Cursor
+    - Documentation
+  organisation: AI Toolbox
+  logo: assets/images/organisations/organisation-ai-toolbox-logo.png
+  logo_alt: AI Toolbox
+  repository: https://github.com/lupaxa-ai-toolbox/cursor-docs-vault
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-04T16:07:26"
+
+- id: cursor-skills-vault
+  published: true
+  name: Cursor Skills Vault
+  icon: material-source-repository
+  publish_date: "2026-10-04T16:04:37"
+  description: >-
+    Share Cursor agent skills from one private vault across a team.
+  categories:
+    - AI
+    - Agent Skills
+    - Cursor
+  organisation: AI Toolbox
+  logo: assets/images/organisations/organisation-ai-toolbox-logo.png
+  logo_alt: AI Toolbox
+  repository: https://github.com/lupaxa-ai-toolbox/cursor-skills-vault
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-04T16:09:36"
+
 - id: data-converter
   published: true
   name: Data Converter
