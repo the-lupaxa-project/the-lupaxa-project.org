@@ -836,6 +836,28 @@
   version: "0.1.7"
   released_date: "2026-09-28T16:35:18"
 
+- id: markdown-converter
+  published: true
+  name: Markdown Converter
+  icon: material-source-repository
+  publish_date: "2026-10-04T09:00:09"
+  description: >-
+    Python library and CLI that converts Markdown between CommonMark, GitHub
+    Flavored Markdown, and Obsidian. It loads any of those flavours into one
+    document tree, then writes any of them. There are no pairwise converters.
+  categories:
+    - Markdown
+    - Python
+    - Developer Tools
+    - CLI
+  organisation: Developers Toolbox
+  logo: assets/images/organisations/organisation-developers-toolbox-logo.png
+  logo_alt: Developers Toolbox
+  repository: https://github.com/lupaxa-developers-toolbox/markdown-converter
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-04T11:26:56"
+
 - id: markdown-lint
   published: true
   name: Markdown Lint
