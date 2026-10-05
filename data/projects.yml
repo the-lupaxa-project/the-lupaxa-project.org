@@ -765,7 +765,7 @@
   repository: https://github.com/the-lupaxa-project/homebrew-tap
   documentation: https://homebrew-tap.thelupaxaproject.org/
   banner: stable
-  released_date: "2026-10-03T15:36:09"
+  released_date: "2026-10-05T09:31:33"
 
 - id: image-converter
   published: true
@@ -917,6 +917,25 @@
   banner: released
   version: "0.1.7"
   released_date: "2026-09-28T16:35:18"
+
+- id: magic-8ball
+  published: true
+  name: Magic 8ball
+  icon: material-source-repository
+  publish_date: "2026-10-05T10:32:52"
+  description: >-
+    Classic Magic 8-Ball library and slim CLI
+  categories:
+    - After Hours
+    - CLI
+    - Fun
+  organisation: After Hours
+  logo: assets/images/organisations/organisation-after-hours-logo.png
+  logo_alt: After Hours
+  repository: https://github.com/lupaxa-after-hours/magic-8ball
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-05T10:46:31"
 
 - id: markdown-converter
   published: true
