@@ -524,6 +524,25 @@
   version: "0.1.6"
   released_date: "2026-09-30T08:58:00"
 
+- id: fortune-cookie
+  published: true
+  name: Fortune Cookie
+  icon: material-source-repository
+  publish_date: "2026-10-05T13:29:04"
+  description: >-
+    Developer-themed fortune cookie library and command-line tool
+  categories:
+    - After Hours
+    - CLI
+    - Fun
+  organisation: After Hours
+  logo: assets/images/organisations/organisation-after-hours-logo.png
+  logo_alt: After Hours
+  repository: https://github.com/lupaxa-after-hours/fortune-cookie
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-05T14:04:49"
+
 - id: get-all-tools
   published: true
   name: Get All Tools
