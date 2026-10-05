@@ -581,8 +581,8 @@
   logo_alt: Actions Toolbox
   repository: https://github.com/lupaxa-actions-toolbox/get-language-versions
   banner: released
-  version: "0.1.0"
-  released_date: "2026-10-05T15:19:48"
+  version: "0.1.2"
+  released_date: "2026-10-05T15:50:21"
 
 - id: git-archaeologist
   published: true
