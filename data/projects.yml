@@ -565,6 +565,25 @@
   version: "0.1.6"
   released_date: "2026-10-03T15:00:18"
 
+- id: get-language-versions
+  published: true
+  name: Get Language Versions
+  icon: material-source-repository
+  publish_date: "2026-10-05T14:11:38"
+  description: >-
+    GitHub Action that lists the latest runtime versions of a language.
+  categories:
+    - GitHub Actions
+    - CI/CD
+    - Automation
+  organisation: Actions Toolbox
+  logo: assets/images/organisations/organisation-actions-toolbox-logo.png
+  logo_alt: Actions Toolbox
+  repository: https://github.com/lupaxa-actions-toolbox/get-language-versions
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-05T15:19:48"
+
 - id: git-archaeologist
   published: true
   name: Git Archaeologist
