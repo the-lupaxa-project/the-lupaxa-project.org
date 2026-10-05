@@ -445,6 +445,25 @@
   version: "0.1.4"
   released_date: "2026-09-30T09:38:49"
 
+- id: excuse-generator
+  published: true
+  name: Excuse Generator
+  icon: material-source-repository
+  publish_date: "2026-10-05T11:16:16"
+  description: >-
+    Random excuse generator library and command-line tool
+  categories:
+    - After Hours
+    - CLI
+    - Fun
+  organisation: After Hours
+  logo: assets/images/organisations/organisation-after-hours-logo.png
+  logo_alt: After Hours
+  repository: https://github.com/lupaxa-after-hours/excuse-generator
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-05T11:37:52"
+
 - id: expired
   published: true
   name: Expired
