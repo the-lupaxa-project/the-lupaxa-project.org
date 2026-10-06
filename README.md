@@ -81,6 +81,9 @@ HEAD-only catalogues (no GitHub Release tags) omit `version` and use
 sorts the card when the catalogue itself moves. That stamp does not change
 the Stable sash.
 If `banner` is omitted, the card is **In Development**.
+`documentation` is the docs or site URL. The link reads **Documentation** with
+a book icon unless `documentation_label` is set. Product sites use
+`documentation_label: Visit Site`, which also switches the icon to a globe.
 `banner: released` still expires 28 days after `released_date`. On versioned
 cards the Released sash is dark navy; after expiry the card keeps a lighter
 Lupaxa-blue **Stable** sash with the version on the projects catalogue.

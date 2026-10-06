@@ -434,12 +434,15 @@ def define_env(env):
         ]
         documentation = item.get("documentation")
         if documentation:
+            custom_label = str(item.get("documentation_label") or "").strip()
+            label = custom_label or "Documentation"
+            icon = "material-web" if custom_label else "material-book-open-page-variant"
             actions.append(
                 _action_link(
                     "documentation",
                     documentation,
-                    "Documentation",
-                    "material-book-open-page-variant",
+                    html.escape(label),
+                    icon,
                 )
             )
         actions_markup = "\n".join(actions)

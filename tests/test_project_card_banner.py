@@ -264,6 +264,43 @@ def test_project_card_includes_publish_date_on_logo(tmp_path, monkeypatch):
     assert "data-released-date" not in markup
 
 
+def test_project_card_documentation_link_defaults_to_documentation(tmp_path, monkeypatch):
+    projects = [_synthetic_project(documentation="https://example.com/docs/")]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "Documentation" in markup
+    assert "Visit Site" not in markup
+    assert ":material-book-open-page-variant:" in markup
+    assert ":material-web:" not in markup
+    assert 'href="https://example.com/docs/"' in markup
+
+
+def test_project_card_documentation_label_overrides_link_text(tmp_path, monkeypatch):
+    projects = [
+        _synthetic_project(
+            documentation="https://example.com/",
+            documentation_label="Visit Site",
+        )
+    ]
+    catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, projects)
+
+    markup = catalogue_grid("project", "project")
+
+    assert "Visit Site" in markup
+    assert "Documentation" not in markup
+    assert ":material-web:" in markup
+    assert ":material-book-open-page-variant:" not in markup
+
+
+def test_site_cards_use_visit_site_label():
+    projects = yaml.safe_load((ROOT / "data" / "projects.yml").read_text(encoding="utf-8"))
+    by_id = {project["id"]: project for project in projects}
+    for project_id in ("homebrew-tap", "snippets", "toolbox.thelupaxaproject.org"):
+        assert by_id[project_id]["documentation_label"] == "Visit Site"
+
+
 def test_project_card_title_is_searchable_heading(tmp_path, monkeypatch):
     """Site search deep-links to the card via a heading id matching YAML id."""
     catalogue_grid = _catalogue_grid(tmp_path, monkeypatch, [_synthetic_project()])
