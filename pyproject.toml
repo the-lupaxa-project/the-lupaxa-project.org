@@ -29,7 +29,7 @@ dev = [
 
 [project.urls]
 Homepage = "https://thelupaxaproject.org"
-Repository = "https://github.com/the-lupaxa-project/the-lupaxa-project.org"
+Repository = "https://github.com/the-lupaxa-project/thelupaxaproject.org"
 
 [tool.setuptools]
 package-dir = {"" = "src", "hooks" = "hooks"}

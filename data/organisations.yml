@@ -3,10 +3,12 @@
   name: After Hours
   icon: material-domain
   publish_date: "2026-10-05T08:44:56"
-  description: Lupaxa After Hours contains the projects that happen when the
-    serious work is finished and someone says, "I wonder if we could..."
+  description: After Hours contains the projects that happen when the
+    serious work is finished and someone says, "I wonder if we could...".
+    Small, playful tools, written because they were fun to make.
   categories:
     - Experiments
+    - Fun
     - Side Projects
   logo: assets/images/organisations/organisation-after-hours-logo.png
   logo_alt: After Hours
@@ -33,8 +35,9 @@
   name: AI Toolbox
   icon: material-domain
   publish_date: "2026-10-03T09:27:30"
-  description: AI tools and utilities for models, assistants and automation across
-    The Lupaxa Project.
+  description: AI tools and utilities for models, assistants and agent work.
+    Shared helpers for talking to language models, and for keeping agent skills
+    and project notes in one place across a team's repositories.
   categories:
     - AI
     - Automation
@@ -303,8 +306,8 @@
   icon: material-domain
   publish_date: "2026-07-20T13:50:58"
   description: Organisation and repository templates and blueprints for consistent starting
-    points across The Lupaxa Project, so new work begins from the same foundations
-    instead of a blank repository.
+    points, so new work begins from the same foundations instead of a blank
+    repository.
   categories:
     - Templates
     - Standards
@@ -334,9 +337,9 @@
   name: The Lupaxa Lab
   icon: material-domain
   publish_date: "2025-11-09T23:10:02"
-  description: A space for experimental ideas, prototypes and technical investigations that
-    may later grow into established projects elsewhere in The Lupaxa Project
-    ecosystem.
+  description: A space for experimental ideas, prototypes and technical investigations.
+    Work here can stay an experiment, or later grow into an established project
+    of its own.
   categories:
     - Experiments
     - Research
@@ -350,8 +353,8 @@
   icon: material-domain
   publish_date: "2025-06-27T18:52:25"
   description: The central public organisation for shared standards, documentation,
-    workflows, brand assets and other project-wide resources used across The
-    Lupaxa Project.
+    workflows, brand assets and other resources that the other organisations
+    rely on.
   categories:
     - Documentation
     - Shared Resources

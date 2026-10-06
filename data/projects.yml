@@ -4,9 +4,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:01:55"
   description: >-
-    Lint GitHub Actions workflow YAML with [actionlint](https://github.com/rhysd/actionlint). A
-    reusable CICD Toolbox pipeline script for catching workflow syntax and best-practice issues in
-    CI or locally via `src/pipeline.sh`.
+    Lint GitHub Actions workflow YAML with [actionlint](https://github.com/rhysd/actionlint). A reusable
+    CICD Toolbox pipeline for catching workflow syntax and best-practice issues.
   categories:
     - CI/CD
     - GitHub Actions
@@ -26,13 +25,12 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:02:33"
   description: >-
-    Check links in Markdown and text files with
-    [awesome_bot](https://rubygems.org/gems/awesome_bot). A reusable CICD Toolbox pipeline for
-    broken-link detection across documentation sets.
+    Check links in Markdown and text files with [awesome_bot](https://rubygems.org/gems/awesome_bot). A
+    reusable CICD Toolbox pipeline for broken-link detection across documentation sets.
   categories:
     - CI/CD
-    - Documentation
     - Linting
+    - Markdown
     - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
@@ -54,6 +52,7 @@
     - CI/CD
     - Security
     - Linting
+    - Python
     - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
@@ -69,10 +68,9 @@
   icon: material-source-repository
   publish_date: "2026-08-05T17:00:51"
   description: >-
-    Modular Bash aliases with file-equals-group organisation, listing helpers, and Git
-    quality-of-life shortcuts. A forkable starter pack under `~/.bash/aliases/` with example Git,
-    system, MkDocs, and catch-all groups, plus helpers to add, edit, delete, list, and reload
-    aliases.
+    Modular Bash aliases, grouped one file per topic, with listing helpers and Git shortcuts. The
+    examples cover Git, the system, MkDocs, and a catch-all, and helpers can add, edit, delete, list,
+    and reload aliases.
   categories:
     - Workstation
     - Developer Tools
@@ -92,12 +90,10 @@
   icon: material-source-repository
   publish_date: "2026-09-08T17:19:42"
   description: >-
-    Terminal colour testcard for Bash. Detects how many colours the terminal
-    supports, sizes the grid to the current window, and shows each code as a
-    swatch. Run `bash-colour-testcard.sh` in simple, complete, count, or
-    interactive test mode.
+    A terminal colour test card for Bash. It detects how many colours the terminal supports, sizes the
+    grid to the window, and shows each code as a swatch. It can run a simple test, a complete test, a
+    colour count, or an interactive test.
   categories:
-    - CLI
     - Bash
     - Developer Tools
   organisation: Developers Toolbox
@@ -114,12 +110,10 @@
   icon: material-source-repository
   publish_date: "2026-10-03T10:26:09"
   description: >-
-    A command-line chatbot for OpenAI, Gemini, Grok, and a local Ollama
-    server. A chat needs a provider and a model. Pass a question to ask once,
-    or run it with no question to open a prompt.
+    A command-line chatbot for OpenAI, Gemini, Grok, and a local Ollama server. A chat needs a provider
+    and a model. Pass a question to ask once, or run it with no question to open a prompt.
   categories:
     - AI
-    - CLI
     - Developer Tools
   organisation: AI Toolbox
   logo: assets/images/organisations/organisation-ai-toolbox-logo.png
@@ -135,9 +129,8 @@
   icon: material-source-repository
   publish_date: "2026-08-01T09:46:31"
   description: >-
-    Interactive Homebrew maintenance menu for workstation brew state. Run common `brew` operations
-    from a numbered menu — updates, upgrades, cleanup, doctor, installed package lists, and helpers
-    for deprecated or disabled casks — with confirmation prompts before destructive actions.
+    An interactive menu for everyday Homebrew maintenance on a workstation. It covers updates, upgrades,
+    cleanup, doctor, and package lists, and it asks before anything destructive.
   categories:
     - Homebrew
     - Workstation
@@ -156,14 +149,12 @@
   icon: material-source-repository
   publish_date: "2025-11-20T18:56:42"
   description: >-
-    Generate self-signed X.509 certificates, certificate signing requests (CSRs), and private keys
-    using a modern, fully typed Python command-line application and library. Designed for automation
-    as well as interactive use, it provides a clean and consistent interface for creating
-    development and testing certificates.
+    Generate self-signed X.509 certificates, certificate signing requests, and private keys. It is a
+    Python command-line tool and library for development and test certificates, whether you run it by
+    hand or from a script.
   categories:
     - Certificates
     - Security
-    - CLI
   organisation: Security Toolbox
   logo: assets/images/organisations/organisation-security-toolbox-logo.png
   logo_alt: Security Toolbox
@@ -179,15 +170,13 @@
   icon: material-source-repository
   publish_date: "2026-08-01T09:51:27"
   description: >-
-    Scan a directory tree for Git repositories and report anything that is not fully clean and
-    synced with its upstream — uncommitted work, unpushed commits, stashes, and sync drift. A single
-    portable Bash script that needs only bash, find, and git. Useful as an end-of-day check across a
-    workspace full of clones.
+    Scan a directory tree for Git repositories and report anything that is not clean and in sync with
+    its upstream, including uncommitted work, unpushed commits, stashes, and drift. A portable Bash
+    script for an end-of-day check across a workspace of clones.
   categories:
     - Git
     - Automation
     - Repository Management
-    - CLI
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -202,13 +191,11 @@
   icon: material-source-repository
   publish_date: "2026-08-25T21:16:50"
   description: >-
-    Identify which CMS a website is using from public signals — name, evidence,
-    version when it is exposed, and a confidence rating. A Python CLI and
-    library for authorised security-assessment recon. Install
-    `lupaxa-cms-detection` from PyPI and run `cms-detection`.
+    Identify which content management system a website is using from public signals, including the name,
+    the evidence, a version when one is exposed, and a confidence rating. A Python command-line tool and
+    library for authorised security checks.
   categories:
     - Security
-    - CLI
     - Reconnaissance
   organisation: Security Toolbox
   logo: assets/images/organisations/organisation-security-toolbox-logo.png
@@ -224,9 +211,8 @@
   icon: material-source-repository
   publish_date: "2026-08-26T11:00:02"
   description: >-
-    Convert file sizes between IEC binary and SI decimal units, including bits,
-    nibbles, and bytes. A Python library only — there is no CLI. Install
-    `lupaxa-convert-size` from PyPI and import `convert_size`.
+    Convert file sizes between IEC binary and SI decimal units, including bits, nibbles, and bytes. A
+    Python library, with no command-line tool.
   categories:
     - Developer Tools
     - Utilities
@@ -245,10 +231,12 @@
   icon: material-source-repository
   publish_date: "2026-10-04T18:49:03"
   description: >-
-    Validate, explain, and preview five-field Vixie cron expressions.
+    Validate, explain, and preview five-field Vixie cron expressions. You can check a schedule, see what
+    the line means, and look at the times it would run. It does not run the jobs.
   categories:
     - Developer Tools
     - Automation
+    - Cron
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -263,10 +251,8 @@
   icon: material-source-repository
   publish_date: "2026-10-04T15:52:16"
   description: >-
-    Share Cursor agent specs and plans from one private vault across a team's
-    repositories. Each checkout keeps a `cursor-docs` symlink. Clone the
-    repository, copy `config.example.env` to `config.local.env`, then run
-    `./bootstrap.sh setup`.
+    Share Cursor agent specs and plans from one private vault across a team's repositories. Each
+    checkout keeps a `cursor-docs` symlink into that vault.
   categories:
     - AI
     - Agent Skills
@@ -286,7 +272,8 @@
   icon: material-source-repository
   publish_date: "2026-10-04T16:04:37"
   description: >-
-    Share Cursor agent skills from one private vault across a team.
+    Share Cursor agent skills from one private vault across a team. One shared copy serves every
+    repository that uses those skills.
   categories:
     - AI
     - Agent Skills
@@ -305,9 +292,9 @@
   icon: material-source-repository
   publish_date: "2026-08-24T19:40:50"
   description: >-
-    Library that converts data between JSON, JSON5, XML, YAML, and TOML, including dictionary
-    round-trips. Install `lupaxa-data-converter` from PyPI and use `DataConverter` to load one
-    format and write another.
+    A Python library that loads JSON, JSON5, XML, YAML, or TOML into a dictionary, then writes any of
+    those formats. Every conversion goes through that dictionary, so there is no direct converter for
+    each pair of formats.
   categories:
     - Data Conversion
     - Developer Tools
@@ -326,9 +313,8 @@
   icon: material-source-repository
   publish_date: "2026-09-08T16:35:58"
   description: >-
-    A catalogue of software design patterns with matching examples in Go, Perl,
-    Python, Ruby, and Rust. Each pattern is a conceptual template you can adapt
-    to the problem and language at hand.
+    A catalogue of software design patterns with matching examples in Go, Perl, Python, Ruby, and Rust.
+    Each pattern is a conceptual template you can adapt to the problem and language at hand.
   categories:
     - Developer Tools
     - Design Patterns
@@ -346,11 +332,9 @@
   icon: material-source-repository
   publish_date: "2026-10-02T13:31:02"
   description: >-
-    Compare two INI files by section, key, and value. Comments, blank lines, and key order are
-    not differences. A Python CLI. Install `lupaxa-diff-ini-files` from PyPI and run
-    `diff-ini-files`.
+    Compare two INI files by section, key, and value. Comments, blank lines, and key order are not
+    treated as differences. A Python command-line tool.
   categories:
-    - CLI
     - Configuration
     - Developer Tools
     - INI
@@ -368,11 +352,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T12:09:08"
   description: >-
-    Send Discord messages through an incoming webhook. A Python CLI and library
-    with named profiles. Install `lupaxa-discordit` from PyPI and run
-    `discordit`.
+    Send Discord messages through an incoming webhook. It works as a library or as a command, and a
+    successful post is Discord answering with HTTP 204.
   categories:
-    - CLI
     - Notifications
     - Discord
   organisation: Notifications Toolbox
@@ -389,9 +371,8 @@
   icon: material-source-repository
   publish_date: "2026-08-21T13:13:40"
   description: >-
-    Opinionated console messaging helper with coloured, prefixed info, success, warning, error, and
-    system output. Install `lupaxa-divulge` from PyPI and use simple function calls or a chainable
-    `Divulge` object in scripts and tools.
+    A console messaging helper with coloured, prefixed output for info, success, warning, error, and
+    system messages. You can call simple functions, or use a chainable object.
   categories:
     - Console
     - Developer Tools
@@ -410,11 +391,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T16:55:27"
   description: >-
-    Check whether an IP address or hostname is listed on DNS blacklists. A
-    Python CLI and library. Install `lupaxa-dns-blacklist-checker` from PyPI
-    and run `dns-blacklist-checker`.
+    Check whether an IP address or hostname is listed on DNS blacklists. A Python command-line tool and
+    library for a quick look at an address's reputation.
   categories:
-    - CLI
     - DNS
     - Reliability
   organisation: SRE Toolbox
@@ -431,10 +410,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T21:20:59"
   description: >-
-    Look up domain name expiration dates over WHOIS. A Python CLI and library.
-    Install `lupaxa-domain-expiry` from PyPI and run `domain-expiry`.
+    Look up domain name expiration dates over WHOIS. A Python command-line tool and library for seeing
+    when a name is due to lapse.
   categories:
-    - CLI
     - DNS
     - Reliability
   organisation: SRE Toolbox
@@ -451,10 +429,10 @@
   icon: material-source-repository
   publish_date: "2026-10-05T11:16:16"
   description: >-
-    Random excuse generator library and command-line tool
+    A small Python library and command-line tool that invents a random excuse. You choose a category and
+    how absurd the excuse should be.
   categories:
     - After Hours
-    - CLI
     - Fun
   organisation: After Hours
   logo: assets/images/organisations/organisation-after-hours-logo.png
@@ -470,10 +448,10 @@
   icon: material-source-repository
   publish_date: "2026-08-23T16:14:46"
   description: >-
-    Tiny Python library and CLI to check whether a timestamp has expired relative to UTC now.
+    A small Python library and command-line tool that checks whether a timestamp has already passed,
+    compared with the current UTC time.
   categories:
     - Developer Tools
-    - CLI
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -488,13 +466,12 @@
   icon: material-source-repository
   publish_date: "2026-09-29T08:56:13"
   description: >-
-    Run a command, a command file, or a script in every Git repository under a path. A portable
-    Bash script that walks the tree, treats a .git directory or gitdir file as a repository, and
-    continues after a failure unless --fail-fast is set.
+    Run a command, a command file, or a script in every Git repository under a path. A portable Bash
+    script that walks the tree, treats a .git directory or gitdir file as a repository, and continues
+    after a failure unless --fail-fast is set.
   categories:
     - Git
     - Automation
-    - CLI
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -509,9 +486,8 @@
   icon: material-source-repository
   publish_date: "2026-07-28T13:53:05"
   description: >-
-    Generate a modern favicon set from one source image (PNG, JPEG, WebP, or SVG). The project
-    provides a simple and efficient way to create a favicon set from a single source image, ensuring
-    that the favicons are consistent and modern.
+    Make a modern favicon set from one source image, in PNG, JPEG, WebP, or SVG. One picture is enough
+    for the set of icons a site needs.
   categories:
     - Favicons
     - Websites
@@ -530,10 +506,10 @@
   icon: material-source-repository
   publish_date: "2026-10-05T13:29:04"
   description: >-
-    Developer-themed fortune cookie library and command-line tool
+    A Python library and command-line tool that draws a developer fortune. The line might be dubious
+    wisdom, a warning, a prediction, or a joke about Friday.
   categories:
     - After Hours
-    - CLI
     - Fun
   organisation: After Hours
   logo: assets/images/organisations/organisation-after-hours-logo.png
@@ -549,12 +525,10 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:33:18"
   description: >-
-    Download all Lupaxa CICD Toolbox pipeline scripts into `~/bin`. A Python helper that fetches
-    each tool's `src/pipeline.sh` from `lupaxa-cicd-toolbox` (master or latest release) and installs
-    them as `cicd-<tool>` commands.
+    A small Python helper that fetches every Lupaxa CI/CD Toolbox pipeline script and installs each one
+    as a `cicd-<tool>` command, so the shared checks can be run under one naming scheme.
   categories:
     - CI/CD
-    - CLI
     - Developer Tools
     - Automation
   organisation: CI/CD Toolbox
@@ -571,7 +545,8 @@
   icon: material-source-repository
   publish_date: "2026-10-05T14:11:38"
   description: >-
-    GitHub Action that lists the latest runtime versions of a language.
+    A GitHub Action that returns the latest runtime versions of a language. You can use a single
+    version, or pass the list into a build matrix.
   categories:
     - GitHub Actions
     - CI/CD
@@ -590,13 +565,11 @@
   icon: material-source-repository
   publish_date: "2026-10-04T11:59:07"
   description: >-
-    Read-only Python CLI that reads a local Git repository and reports how it
-    evolved: activity, contributors, survivors, extinct paths, churn, and
-    snapshots. The same facts are available as console text, JSON, or
-    Markdown. It does not fetch or rewrite history.
+    Read-only Python CLI that reads a local Git repository and reports how it evolved: activity,
+    contributors, survivors, extinct paths, churn, and snapshots. The same facts are available as
+    console text, JSON, or Markdown. It does not fetch or rewrite history.
   categories:
     - Git
-    - CLI
     - Developer Tools
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
@@ -612,14 +585,13 @@
   icon: material-source-repository
   publish_date: "2026-10-02T12:56:25"
   description: >-
-    Bash CLI to rewrite Git commit author and committer identity for one email address, with
-    dry-run, summary, and local-only modes. Matching author and committer emails are replaced on
-    all branches and tags. Prefer `--summary` or a dry-run first; a rewrite can force-push.
+    Bash CLI to rewrite Git commit author and committer identity for one email address, with dry-run,
+    summary, and local-only modes. Matching author and committer emails are replaced on all branches and
+    tags. Prefer `--summary` or a dry-run first; a rewrite can force-push.
   categories:
     - Git
     - Automation
     - Repository Management
-    - CLI
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -634,14 +606,13 @@
   icon: material-source-repository
   publish_date: "2026-10-02T13:03:37"
   description: >-
-    Bash CLI to rename a local Git branch and the same branch on the remote, with dry-run,
-    summary, and local-only modes. Commit history is left as it is. Prefer `--summary` or a
-    dry-run first; updating the remote deletes the old branch name.
+    Bash CLI to rename a local Git branch and the same branch on the remote, with dry-run, summary, and
+    local-only modes. Commit history is left as it is. Prefer `--summary` or a dry-run first; updating
+    the remote deletes the old branch name.
   categories:
     - Git
     - Automation
     - Repository Management
-    - CLI
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -685,7 +656,6 @@
     - Git
     - Automation
     - Repository Management
-    - CLI
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -700,10 +670,9 @@
   icon: material-source-repository
   publish_date: "2026-08-19T10:25:00"
   description: >-
-    One self-contained Git hook script. Copy it into `.git/hooks` — no pip install, no package. It
-    runs every executable under `hooks/<hook-type>/` at the repository root, in name order, and
-    stops on the first failure. The same file works as pre-commit, commit-msg, pre-push, or any
-    other hook Git invokes.
+    A self-contained Git hook script that runs every executable under `hooks/<hook-type>/` at the
+    repository root, in name order, and stops on the first failure. The same file can act as pre-commit,
+    commit-msg, pre-push, or any other hook Git runs.
   categories:
     - Git
     - Git Hooks
@@ -722,14 +691,13 @@
   icon: material-source-repository
   publish_date: "2026-08-01T09:49:14"
   description: >-
-    Rewrite a Git repository down to a single initial commit — with dry-run, backups, and controlled
-    tag handling. Keeps the current tree while replacing primary-branch history. Useful after
-    scaffolding, before a first public release, or when history is no longer useful.
+    Rewrite a Git repository down to a single initial commit, with a dry run, backups, and controlled
+    tag handling. It keeps the current tree and replaces the history on the primary branch. Useful after
+    scaffolding, before a first public release, or when the old history is no longer useful.
   categories:
     - Git
     - Automation
     - Repository Management
-    - CLI
   organisation: Git Toolbox
   logo: assets/images/organisations/organisation-git-toolbox-logo.png
   logo_alt: Git Toolbox
@@ -744,10 +712,9 @@
   icon: material-source-repository
   publish_date: "2026-07-24T10:38:26"
   description: >-
-    Clone, organise, and safely synchronise large collections of GitHub repositories using a
-    declarative JSON5 configuration file. Each repository is inspected before any Git operation is
-    performed, ensuring that only repositories confirmed to be in a safe state are automatically
-    updated.
+    Clone, organise, and safely synchronise large collections of GitHub repositories using a declarative
+    JSON5 configuration file. Each repository is inspected before any Git operation is performed,
+    ensuring that only repositories confirmed to be in a safe state are automatically updated.
   categories:
     - GitHub
     - Git
@@ -768,12 +735,10 @@
   icon: material-source-repository
   publish_date: "2026-09-30T21:15:51"
   description: >-
-    Report what a GitHub token is allowed to do. It sends read-only GET requests and never prints
-    the token. A Python CLI. Install `lupaxa-github-token-validator` from PyPI and run `gtv` or
-    `github-token-validator`.
+    Report what a GitHub token is allowed to do. It sends read-only requests, never prints the token,
+    and does not list repositories or organisations.
   categories:
     - GitHub
-    - CLI
     - Security
   organisation: GitHub Toolbox
   logo: assets/images/organisations/organisation-gh-toolbox-logo.png
@@ -810,9 +775,8 @@
   icon: material-source-repository
   publish_date: "2026-09-25T07:58:33"
   description: >-
-    Homebrew formulae for The Lupaxa Project tools. Add the tap with
-    `brew tap the-lupaxa-project/tap`. The tap itself tracks HEAD; each
-    formula points at a tagged release of that tool's own repository.
+    Homebrew formulae for The Lupaxa Project tools. The tap itself tracks HEAD, and each formula points
+    at a tagged release of that tool's own repository.
   categories:
     - Homebrew
     - Package Management
@@ -830,14 +794,12 @@
   icon: material-source-repository
   publish_date: "2026-10-03T15:46:54"
   description: >-
-    Convert an image from one format to another: JPG, JPEG, PNG, GIF, WebP,
-    and SVG. Raster formats are converted with Pillow. SVG input is
-    rasterised, and a raster image converted to SVG is embedded in an SVG
-    document rather than vectorised.
+    Convert an image from one format to another: JPG, JPEG, PNG, GIF, WebP, and SVG. Raster formats are
+    converted with Pillow. SVG input is rasterised, and a raster image converted to SVG is embedded in
+    an SVG document rather than vectorised.
   categories:
     - Images
     - Conversion
-    - CLI
   organisation: Miscellaneous Toolbox
   logo: assets/images/organisations/organisation-miscellaneous-toolbox-logo.png
   logo_alt: Miscellaneous Toolbox
@@ -852,13 +814,13 @@
   icon: material-source-repository
   publish_date: "2026-08-24T10:05:28"
   description: >-
-    Sourceable Bash helper that reads INI-style config files into section arrays and key variables.
-    Load a file with `process_ini_file`, then read values with `get_value` or the generated
-    `section_key` variables.
+    A Bash helper that reads INI-style config files into section arrays and named variables. It is
+    sourced into a script rather than run on its own.
   categories:
     - Configuration
     - Developer Tools
     - INI
+    - Bash
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -873,10 +835,9 @@
   icon: material-source-repository
   publish_date: "2026-10-03T16:50:32"
   description: >-
-    Opt-in runtime timing for Python. Enable the hooks you want — functions,
-    loops, files, HTTP, SQLite, subprocess, and imports — and selected calls
-    print how long they took. Application code stays free of decorators and
-    manual timers.
+    Optional runtime timing for Python. You choose which hooks to enable, such as functions, loops,
+    files, HTTP, SQLite, subprocess, and imports, and those calls print how long they took. Application
+    code stays free of decorators and manual timers.
   categories:
     - Python
     - Developer Tools
@@ -895,8 +856,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:04:30"
   description: >-
-    Validate JSON files with [jq](https://stedolan.github.io/jq/). A reusable CICD Toolbox pipeline
-    for JSON syntax validation in repositories.
+    Validate JSON files with [jq](https://stedolan.github.io/jq/). A reusable CICD Toolbox pipeline for
+    JSON syntax validation in repositories.
   categories:
     - CI/CD
     - JSON
@@ -916,9 +877,8 @@
   icon: material-source-repository
   publish_date: "2026-09-30T19:00:48"
   description: >-
-    Rate-limit events with a leaky bucket. Arrivals that fit are admitted. Drop mode rejects the
-    rest. Queue mode waits until leaked capacity can take them. A Python library only. Install
-    `lupaxa-leaky-bucket` from PyPI and import `lupaxa.leaky_bucket`.
+    Rate-limit events with a leaky bucket. Arrivals that fit are admitted. Drop mode rejects the rest.
+    Queue mode waits until there is room. A Python library, with no command-line tool.
   categories:
     - Developer Tools
     - Rate Limiting
@@ -957,10 +917,8 @@
   icon: material-source-repository
   publish_date: "2026-07-22T16:15:19"
   description: >-
-    Reusable Makefile skills for project versioning, Python, MkDocs, Bash, Ruby, Perl, and PHP
-    workflows. Consumer projects keep a thin wrapper Makefile that sparse-clones shared targets
-    into a gitignored `.makefiles/` directory, always enables versioning, and optionally enables
-    standalone skills via `SKILLS`.
+    Reusable Makefile skills for project versioning and for Python, MkDocs, Bash, Ruby, Perl, and PHP. A
+    project turns on versioning and only the language skills it needs.
   categories:
     - Automation
     - Standards
@@ -981,10 +939,10 @@
   icon: material-source-repository
   publish_date: "2026-10-05T10:32:52"
   description: >-
-    Classic Magic 8-Ball library and slim CLI
+    Ask a yes-or-no question and get one of the twenty classic Magic 8-Ball replies. The question is
+    checked and then discarded, and the answer is chosen at random from the traditional set.
   categories:
     - After Hours
-    - CLI
     - Fun
   organisation: After Hours
   logo: assets/images/organisations/organisation-after-hours-logo.png
@@ -1000,14 +958,13 @@
   icon: material-source-repository
   publish_date: "2026-10-04T09:00:09"
   description: >-
-    Python library and CLI that converts Markdown between CommonMark, GitHub
-    Flavored Markdown, and Obsidian. It loads any of those flavours into one
-    document tree, then writes any of them. There are no pairwise converters.
+    Python library and CLI that converts Markdown between CommonMark, GitHub Flavored Markdown, and
+    Obsidian. It loads any of those flavours into one document tree, then writes any of them. There are
+    no pairwise converters.
   categories:
     - Markdown
     - Python
     - Developer Tools
-    - CLI
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -1022,8 +979,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:05:09"
   description: >-
-    Lint Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli).
-    A reusable CICD Toolbox pipeline for documentation style and structure checks.
+    Lint Markdown files with [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli). A
+    reusable CICD Toolbox pipeline for documentation style and structure checks.
   categories:
     - CI/CD
     - Markdown
@@ -1043,14 +1000,13 @@
   icon: material-source-repository
   publish_date: "2026-09-09T08:52:55"
   description: >-
-    Look up a domain's MX hosts, SPF, and DMARC policy from public DNS, with
-    an optional SMTP banner probe and a spoofing-posture score. A Python CLI
-    and library for authorised email-security checks. Install
-    `lupaxa-mx-inspector` from PyPI and run `mx-inspector`.
+    Look up a domain's mail hosts, SPF, and DMARC policy from public DNS, with an optional SMTP banner
+    check and a spoofing-posture score. A Python command-line tool and library for authorised email
+    security checks.
   categories:
     - Security
-    - CLI
     - Email
+    - DNS
     - Reconnaissance
   organisation: Security Toolbox
   logo: assets/images/organisations/organisation-security-toolbox-logo.png
@@ -1067,12 +1023,13 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:17:51"
   description: >-
-    Type-check Python code with [mypy](https://mypy.readthedocs.io/). A reusable CICD Toolbox
-    pipeline for static type checking across Python trees.
+    Type-check Python code with [mypy](https://mypy.readthedocs.io/). A reusable CICD Toolbox pipeline
+    for static type checking across Python trees.
   categories:
     - CI/CD
     - Type Checking
     - Linting
+    - Python
     - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
@@ -1088,8 +1045,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:05:47"
   description: >-
-    Check Perl scripts for syntax errors using the native Perl checker. A reusable CICD Toolbox
-    pipeline for Perl syntax validation.
+    Check Perl scripts for syntax errors with Perl's own checker. A reusable CI/CD Toolbox pipeline that
+    runs that check the same way in every repository.
   categories:
     - CI/CD
     - Linting
@@ -1109,14 +1066,12 @@
   icon: material-source-repository
   publish_date: "2026-08-02T09:10:18"
   description: >-
-    Safely copy or move photographs and videos into consistent, date-based filenames. Reads image
-    EXIF or video metadata when available, falls back to filesystem modification time, and reports
-    progress with Rich. Useful for cleaning up camera rolls and export dumps into predictable paths
-    while keeping originals untouched by default.
+    Copy or move photographs and videos into consistent, date-based filenames. It uses image or video
+    metadata when it can, and the file's modification time otherwise. Originals stay where they are
+    unless you choose to move them.
   categories:
     - Photos
     - Automation
-    - CLI
     - Utilities
   organisation: Miscellaneous Toolbox
   logo: assets/images/organisations/organisation-miscellaneous-toolbox-logo.png
@@ -1132,10 +1087,8 @@
   icon: material-source-repository
   publish_date: "2026-08-19T12:45:00"
   description: >-
-    One self-contained Git pre-commit hook script you copy and configure. No pip install. Edit the
-    header for the tool, file filter, and optional yes/no prompts; leave the engine below `# STOP
-    HERE` alone. Works as a silent lint (ruff, mypy, shellcheck, rubocop) or with prompts on
-    `/dev/tty`.
+    A self-contained Git pre-commit hook template. The header names the tool, which files it checks, and
+    whether it should ask before acting. It can run quietly, or prompt in the terminal.
   categories:
     - Git
     - Git Hooks
@@ -1155,8 +1108,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:06:25"
   description: >-
-    Lint PHP files with [overtrue/phplint](https://github.com/overtrue/phplint). A reusable CICD
-    Toolbox pipeline for PHP syntax validation.
+    Lint PHP files with [overtrue/phplint](https://github.com/overtrue/phplint). A reusable CICD Toolbox
+    pipeline for PHP syntax validation.
   categories:
     - CI/CD
     - Linting
@@ -1177,8 +1130,8 @@
   publish_date: "2026-08-07T08:00:46"
   description: >-
     Reusable shell-based CI/CD pipeline template for Lupaxa projects. New CICD Toolbox tools copy
-    `src/pipeline.sh` and edit only the configuration block; the same script runs from GitHub
-    Actions, Bitbucket, Travis, or a local shell.
+    `src/pipeline.sh` and edit only the configuration block; the same script runs from GitHub Actions,
+    Bitbucket, Travis, or a local shell.
   categories:
     - CI/CD
     - Templates
@@ -1198,11 +1151,9 @@
   icon: material-source-repository
   publish_date: "2026-09-10T08:21:41"
   description: >-
-    Listen on a local TCP port and forward each connection to a remote host
-    and port. A Python CLI and library. Install `lupaxa-port-forwarder` from
-    PyPI and run `port-forwarder`.
+    Listen on a local TCP port and forward each connection to a remote host and port. A Python
+    command-line tool and library that needs nothing beyond the standard library.
   categories:
-    - CLI
     - Networking
     - Reliability
   organisation: SRE Toolbox
@@ -1219,14 +1170,13 @@
   icon: material-source-repository
   publish_date: "2026-09-29T21:06:32"
   description: >-
-    Bash wrapper that runs a repository script after a full git clone. `git-wrapper` stands in
-    front of `git`, checks allow and deny lists, and asks before running `post-clone` from the
-    new tree. Bare and mirror clones are passed through.
+    Bash wrapper that runs a repository script after a full git clone. `git-wrapper` stands in front of
+    `git`, checks allow and deny lists, and asks before running `post-clone` from the new tree. Bare and
+    mirror clones are passed through.
   categories:
     - Git
     - Git Hooks
     - Automation
-    - CLI
   organisation: Git Hooks Toolbox
   logo: assets/images/organisations/organisation-git-hooks-toolbox-logo.png
   logo_alt: Git Hooks Toolbox
@@ -1241,14 +1191,13 @@
   icon: material-source-repository
   publish_date: "2026-10-02T08:52:15"
   description: >-
-    Interactive menu to reset macOS privacy grants for one app or every app. The usual case is
-    folder access for the current terminal — Downloads, Desktop, Documents, and Full Disk Access.
+    An interactive menu to reset macOS privacy grants for one app, or for every app. The usual case is
+    folder access for the current terminal, such as Downloads, Desktop, Documents, and Full Disk Access.
     A portable Bash script that uses `tccutil` and does not need `sudo`.
   categories:
     - Workstation
     - Privacy
     - macOS
-    - CLI
   organisation: Workstation Toolbox
   logo: assets/images/organisations/organisation-workstation-toolbox-logo.png
   logo_alt: Workstation Toolbox
@@ -1284,8 +1233,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:07:42"
   description: >-
-    Check Python `requirements.txt` currency with [pur](https://pypi.org/project/pur/). A reusable
-    CICD Toolbox pipeline that highlights outdated Python dependencies.
+    Check Python `requirements.txt` currency with [pur](https://pypi.org/project/pur/). A reusable CICD
+    Toolbox pipeline that highlights outdated Python dependencies.
   categories:
     - CI/CD
     - Dependencies
@@ -1305,10 +1254,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T13:52:13"
   description: >-
-    Send Pushover notifications. A Python CLI and library with named profiles.
-    Install `lupaxa-pushit` from PyPI and run `pushit`.
+    Send Pushover notifications from a script or the command line. Named profiles keep each destination
+    separate.
   categories:
-    - CLI
     - Notifications
     - Pushover
   organisation: Notifications Toolbox
@@ -1352,6 +1300,7 @@
     - CI/CD
     - Documentation
     - Linting
+    - Python
     - Workflow
   organisation: CI/CD Toolbox
   logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
@@ -1388,8 +1337,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:10:18"
   description: >-
-    Static analysis for Python with [Pylint](https://pypi.org/project/pylint/). A reusable CICD
-    Toolbox pipeline for deep Python linting and code smells.
+    Static analysis for Python with [Pylint](https://pypi.org/project/pylint/). A reusable CICD Toolbox
+    pipeline for deep Python linting and code smells.
   categories:
     - CI/CD
     - Linting
@@ -1409,11 +1358,9 @@
   icon: material-source-repository
   publish_date: "2026-08-23T19:45:02"
   description: >-
-    CLI and library to generate QR codes for text, Wi-Fi, contacts, email, SMS, locations, and
-    calendar events. Install `lupaxa-qrcode-generator` from PyPI and run `qrcode-generator` or
-    `qrcodes`.
+    A command-line tool and library that makes QR codes for text, Wi-Fi, contacts, email, SMS,
+    locations, and calendar events. The same code can be called from a script or run on its own.
   categories:
-    - CLI
     - Developer Tools
     - QR Codes
   organisation: Developers Toolbox
@@ -1430,11 +1377,9 @@
   icon: material-source-repository
   publish_date: "2026-08-26T07:50:01"
   description: >-
-    Follow HTTP redirects and report the URL that actually serves the page,
-    with an optional hop list and status codes. A Python CLI and library.
-    Install `lupaxa-real-url` from PyPI and run `real-url`.
+    Follow HTTP redirects and report the URL that actually serves the page, with an optional list of
+    hops and status codes. A Python command-line tool and library.
   categories:
-    - CLI
     - Developer Tools
     - HTTP
   organisation: Developers Toolbox
@@ -1472,10 +1417,9 @@
   icon: material-source-repository
   publish_date: "2025-11-24T15:43:59"
   description: >-
-    A collection of reusable GitHub Actions workflows for repository quality, continuous
-    integration, documentation, security, and automation. Designed to provide consistent workflows
-    across The Lupaxa Project, these reusable components reduce duplication and simplify repository
-    management.
+    Reusable GitHub Actions workflows for repository quality, continuous integration, documentation,
+    security, and automation. They give The Lupaxa Project one shared way to run those jobs instead of
+    copying the same workflow into every repository.
   categories:
     - GitHub Actions
     - CI/CD
@@ -1515,8 +1459,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:17:12"
   description: >-
-    Lint Python code with [Ruff](https://docs.astral.sh/ruff/) (`ruff check`). A reusable CICD
-    Toolbox pipeline for fast Python linting.
+    Lint Python code with [Ruff](https://docs.astral.sh/ruff/) (`ruff check`). A reusable CICD Toolbox
+    pipeline for fast Python linting.
   categories:
     - CI/CD
     - Linting
@@ -1536,13 +1480,11 @@
   icon: material-source-repository
   publish_date: "2026-10-03T14:45:00"
   description: >-
-    Recoverable replacement for interactive `rm` and `rmdir`. A normal removal
-    moves the operand into a private store so it can be listed and restored.
-    Permanent deletion happens only through an explicit delete, empty, purge,
-    or permanent action.
+    Recoverable replacement for interactive `rm` and `rmdir`. A normal removal moves the operand into a
+    private store so it can be listed and restored. Permanent deletion happens only through an explicit
+    delete, empty, purge, or permanent action.
   categories:
     - Workstation
-    - CLI
     - macOS
     - Linux
   organisation: Workstation Toolbox
@@ -1559,10 +1501,8 @@
   icon: material-source-repository
   publish_date: "2026-08-19T11:20:16"
   description: >-
-    Install Git Hooks Toolbox subhooks from per-type YAML. Each consuming repo lists hook sources in
-    `hooks/<type>-config.yml`. `setup-hooks` fetches `src/<type>` from those remotes and writes
-    `hooks/<type>/01-<filename>`. The multiplexer is installed into Git's hooks directory unless you
-    skip it.
+    Set up Git Hooks Toolbox hooks in a repository from a short YAML list of sources. It fetches each
+    hook, and it can also place the multiplexer in Git's hooks directory.
   categories:
     - Git
     - Git Hooks
@@ -1582,10 +1522,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T11:17:44"
   description: >-
-    Send Slack messages through an incoming webhook. A Python CLI and library
-    with named profiles. Install `lupaxa-slackit` from PyPI and run `slackit`.
+    Send Slack messages through an incoming webhook. It works as a library or as a command, and a
+    successful post is Slack answering with HTTP 200.
   categories:
-    - CLI
     - Notifications
     - Slack
   organisation: Notifications Toolbox
@@ -1623,10 +1562,9 @@
   icon: material-source-repository
   publish_date: "2026-09-10T09:46:46"
   description: >-
-    Send a test email through an SMTP server to verify delivery. A Python CLI
-    and library. Install `lupaxa-smtp-tester` from PyPI and run `smtp-tester`.
+    Send a test email through an SMTP server to check that delivery works. A Python command-line tool
+    and library for confirming that a mail server accepts the message.
   categories:
-    - CLI
     - Email
     - Reliability
   organisation: SRE Toolbox
@@ -1643,9 +1581,9 @@
   icon: material-source-repository
   publish_date: "2026-08-18T16:06:31"
   description: >-
-    A curated collection of reusable code snippets for Shell, Python, Ruby, and
-    other languages. Browse by language or tag, open a snippet in place, and
-    copy highlighted examples with caveats when they matter.
+    A curated collection of reusable code snippets for Shell, Python, Ruby, and other languages. Browse
+    by language or tag, open a snippet in place, and copy highlighted examples with caveats when they
+    matter.
   categories:
     - Developer Tools
     - Documentation
@@ -1665,10 +1603,8 @@
   icon: material-source-repository
   publish_date: "2026-09-09T13:50:42"
   description: >-
-    A collection of web-spider templates for clone-and-pick starting points.
-    Clone the repository, pick a folder under `spiders/`, and use that script
-    as a starting point — not an installable crawler library. Templates cover
-    httpx threadpool, asyncio, Selenium, and threaded Selenium.
+    A collection of web spider templates you can copy as a starting point. They are not an installable
+    crawler library. The templates cover an httpx thread pool, asyncio, Selenium, and threaded Selenium.
   categories:
     - Web Scraping
     - Data Extraction
@@ -1687,10 +1623,8 @@
   icon: material-source-repository
   publish_date: "2026-09-23T07:53:20"
   description: >-
-    Check TLS certificate expiration dates on port 443. A Python CLI and
-    library. Install `lupaxa-ssl-expiry` from PyPI and run `ssl-expiry`.
+    Check when a TLS certificate on port 443 expires. A Python command-line tool and library.
   categories:
-    - CLI
     - Certificates
     - Reliability
   organisation: SRE Toolbox
@@ -1707,16 +1641,11 @@
   icon: material-source-repository
   publish_date: "2026-08-07T13:36:15"
   description: >-
-    Cross-platform system inventory CLI with modular collectors, redaction, and
-    JSON/YAML/XML/HTML reports.
-
-
-    Install the library (`lupaxa-sysinfo`) or the CLI (`lupaxa-sysinfo-cli`) from
-    PyPI. Opt into collectors for CPU, memory, disks, network, processes, and
-    more, with profiles for minimal, CI, and support workflows.
+    A cross-platform system inventory tool with modular collectors, redaction, and reports in JSON,
+    YAML, XML, or HTML. Collectors cover CPU, memory, disks, network, processes, and more, with profiles
+    for a short report, CI, and support.
   categories:
     - System Information
-    - CLI
     - Developer Tools
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
@@ -1732,11 +1661,9 @@
   icon: material-source-repository
   publish_date: "2026-09-10T10:43:12"
   description: >-
-    Repeatedly connect to a TCP host and port and report latency. A Python
-    CLI and library. Install `lupaxa-tcp-port-ping` from PyPI and run
-    `tcp-port-ping`.
+    Connect to a TCP host and port again and again, and report how long each connection takes. A Python
+    command-line tool and library.
   categories:
-    - CLI
     - Networking
     - Reliability
   organisation: SRE Toolbox
@@ -1753,11 +1680,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T15:24:12"
   description: >-
-    Send Microsoft Teams messages through an incoming webhook. A Python CLI
-    and library with named profiles. Install `lupaxa-teamsit` from PyPI and
-    run `teamsit`.
+    Send Microsoft Teams messages through an incoming webhook. A Python command-line tool and library,
+    with named profiles so each destination stays separate.
   categories:
-    - CLI
     - Notifications
     - Teams
   organisation: Notifications Toolbox
@@ -1774,11 +1699,9 @@
   icon: material-source-repository
   publish_date: "2026-09-22T08:32:31"
   description: >-
-    Measure HTTP time to first byte and repeat until interrupted. A Python
-    CLI and library. Install `lupaxa-time-to-first-byte` from PyPI and run
-    `time-to-first-byte`.
+    Measure how long an HTTP server takes to send the first byte, and keep measuring until you stop it.
+    A Python command-line tool and library.
   categories:
-    - CLI
     - Networking
     - Reliability
     - HTTP
@@ -1796,11 +1719,9 @@
   icon: material-source-repository
   publish_date: "2026-09-29T10:13:10"
   description: >-
-    Store API tokens in named profiles and print them as shell exports. Each profile can keep
-    tokens as plaintext JSON, or encrypt them with gpg or openssl. Install `lupaxa-token-manager`
-    from PyPI and run `tokenctl`.
+    Store API tokens in named profiles and print them as shell exports. A profile can keep tokens as
+    plain JSON, or encrypt them with gpg or OpenSSL.
   categories:
-    - CLI
     - Encryption
     - Security
   organisation: Developers Toolbox
@@ -1818,12 +1739,12 @@
   icon: material-source-repository
   publish_date: "2026-09-08T16:53:12"
   description: >-
-    Sourceable Bash plugin that reports file, line, command, snippet, and stack
-    when a script fails. Source `trapper.sh` near the top of a script; it
-    installs `ERR` and `EXIT` traps. Must be sourced, not executed.
+    A Bash plugin that reports the file, line, command, a short snippet, and the stack when a script
+    fails. It is sourced into a script rather than run on its own.
   categories:
     - Developer Tools
     - Debugging
+    - Bash
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -1838,13 +1759,13 @@
   icon: material-source-repository
   publish_date: "2026-09-29T17:04:48"
   description: >-
-    Sourceable Bash helper that splits a URL into protocol, user, password, host, port, path,
-    query, and fragment. Source `src/url-parser.sh` and call `parse_url`. Must be sourced, not
-    executed.
+    A Bash helper that splits a URL into protocol, user, password, host, port, path, query, and
+    fragment. It is sourced into a script rather than run on its own.
   categories:
     - Developer Tools
     - URL
     - Parsing
+    - Bash
   organisation: Developers Toolbox
   logo: assets/images/organisations/organisation-developers-toolbox-logo.png
   logo_alt: Developers Toolbox
@@ -1859,10 +1780,8 @@
   icon: material-source-repository
   publish_date: "2026-09-21T12:09:02"
   description: >-
-    PAM hooks that notify on login and privilege escalation via drop-in
-    backends. A dispatcher fans each event out to hooks; Slack is the first.
-    Install with `scripts/install.sh`, then add the `pam_exec` lines to
-    `su`, `sudo`, `login`, and `sshd`.
+    PAM hooks that notify on login and privilege escalation through drop-in backends. A dispatcher sends
+    each event to those hooks. Slack is the first backend.
   categories:
     - Security
     - PAM
@@ -1881,8 +1800,8 @@
   icon: material-source-repository
   publish_date: "2026-08-07T09:12:52"
   description: >-
-    Validate `CITATION.cff` files with [cffconvert](https://pypi.org/project/cffconvert/). A
-    reusable CICD Toolbox pipeline for citation metadata quality checks.
+    Validate `CITATION.cff` files with [cffconvert](https://pypi.org/project/cffconvert/). A reusable
+    CICD Toolbox pipeline for citation metadata quality checks.
   categories:
     - CI/CD
     - Metadata
@@ -1902,13 +1821,11 @@
   icon: material-source-repository
   publish_date: "2026-09-30T16:36:16"
   description: >-
-    Check whether an email address looks deliverable from syntax, DNS, and an
-    optional SMTP probe up to `RCPT TO`. It never sends a message. A Python
-    CLI and library for authorised checks. Install `lupaxa-verify-email` from
-    PyPI and run `verify-email`.
+    Check whether an email address looks deliverable, using its syntax, DNS, and an optional SMTP
+    conversation that stops before any message is sent. A Python command-line tool and library for
+    authorised checks.
   categories:
     - Security
-    - CLI
     - Email
     - Reconnaissance
   organisation: Security Toolbox
@@ -1946,13 +1863,10 @@
   icon: material-source-repository
   publish_date: "2026-09-09T10:39:34"
   description: >-
-    Test whether a domain's nameservers allow DNS zone transfer (AXFR), and
-    show the zone contents when they do. A Python CLI and library for
-    authorised DNS security checks. Install `lupaxa-zone-transfer` from PyPI
-    and run `zone-transfer`.
+    Test whether a domain's nameservers allow a DNS zone transfer, and show the zone contents when they
+    do. A Python command-line tool and library for authorised DNS security checks.
   categories:
     - Security
-    - CLI
     - DNS
     - Reconnaissance
   organisation: Security Toolbox
