@@ -1733,6 +1733,26 @@
   version: "0.2.0"
   released_date: "2026-09-29T12:04:36"
 
+- id: toolbox.thelupaxaproject.org
+  published: true
+  name: Web Toolbox
+  icon: material-source-repository
+  publish_date: "2026-10-05T20:54:06"
+  description: >-
+    Browser tools for encoding, cryptography, DNS, data, development, and GitHub. Each tool runs in
+    the page you have open, and the text you paste stays on this machine.
+  categories:
+    - Developer Tools
+    - Security
+    - GitHub
+  organisation: The Lupaxa Project
+  logo: assets/images/organisations/organisation-the-lupaxa-project-logo.png
+  logo_alt: The Lupaxa Project
+  repository: https://github.com/the-lupaxa-project/toolbox.thelupaxaproject.org
+  documentation: https://toolbox.thelupaxaproject.org/
+  banner: stable
+  released_date: "2026-10-06T11:14:59"
+
 - id: trapper
   published: true
   name: Trapper
