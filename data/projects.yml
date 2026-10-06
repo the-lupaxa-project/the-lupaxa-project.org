@@ -1695,6 +1695,25 @@
   version: "0.1.0"
   released_date: "2026-10-06T18:28:00"
 
+- id: tcp-wrapper-template
+  published: true
+  name: TCP Wrapper Template
+  icon: material-source-repository
+  publish_date: "2026-10-06T18:25:22"
+  description: >-
+    A starting point for a TCP Wrapper filter that the multiplexer can run. You fill in the filter, and
+    the multiplexer runs it with the other scripts.
+  categories:
+    - Security
+    - Networking
+  organisation: Security Toolbox
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/tcp-wrapper-template
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-06T18:40:01"
+
 - id: teamsit
   published: true
   name: Teamsit
