@@ -1676,6 +1676,25 @@
   version: "0.1.4"
   released_date: "2026-09-30T10:13:37"
 
+- id: tcp-wrapper-multiplexer
+  published: true
+  name: TCP Wrapper Multiplexer
+  icon: material-source-repository
+  publish_date: "2026-10-06T18:13:45"
+  description: >-
+    Run several TCP Wrapper filter scripts in order and stop at the first deny. The first script that
+    refuses the connection decides the result.
+  categories:
+    - Security
+    - Networking
+  organisation: Security Toolbox
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/tcp-wrapper-multiplexer
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-06T18:28:00"
+
 - id: teamsit
   published: true
   name: Teamsit
