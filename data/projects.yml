@@ -1695,6 +1695,25 @@
   version: "0.1.4"
   released_date: "2026-09-30T10:13:37"
 
+- id: tcp-wrapper-asn-filter
+  published: true
+  name: TCP Wrapper ASN Filter
+  icon: material-source-repository
+  publish_date: "2026-10-07T08:12:34"
+  description: >-
+    A TCP Wrapper filter that allows or denies a connection by autonomous system number. The network
+    that owns the remote address decides whether the connection is allowed.
+  categories:
+    - Security
+    - Networking
+  organisation: Security Toolbox
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/tcp-wrapper-asn-filter
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-07T08:43:08"
+
 - id: tcp-wrapper-country-filter
   published: true
   name: TCP Wrapper Country Filter
@@ -1730,8 +1749,8 @@
   logo_alt: Security Toolbox
   repository: https://github.com/lupaxa-security-toolbox/tcp-wrapper-multiplexer
   banner: released
-  version: "0.1.0"
-  released_date: "2026-10-06T18:28:00"
+  version: "0.1.1"
+  released_date: "2026-10-07T08:53:36"
 
 - id: tcp-wrapper-template
   published: true
