@@ -851,6 +851,25 @@
   version: "0.1.0"
   released_date: "2026-10-03T17:18:28"
 
+- id: ipinfo-update
+  published: true
+  name: IPinfo Update
+  icon: material-source-repository
+  publish_date: "2026-10-07T07:23:47"
+  description: >-
+    Download the IPinfo Lite database so local TCP wrappers and other tools can use it. The lookup data
+    stays on this machine.
+  categories:
+    - Security
+    - Networking
+  organisation: Security Toolbox
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/ipinfo-update
+  banner: released
+  version: "0.1.1"
+  released_date: "2026-10-07T08:15:14"
+
 - id: json-lint
   published: true
   name: JSON Lint
@@ -1675,6 +1694,25 @@
   banner: released
   version: "0.1.4"
   released_date: "2026-09-30T10:13:37"
+
+- id: tcp-wrapper-country-filter
+  published: true
+  name: TCP Wrapper Country Filter
+  icon: material-source-repository
+  publish_date: "2026-10-07T07:49:30"
+  description: >-
+    A TCP Wrapper filter that allows or denies a connection by country. The country of the remote
+    address decides whether the connection is allowed.
+  categories:
+    - Security
+    - Networking
+  organisation: Security Toolbox
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/tcp-wrapper-country-filter
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-07T08:14:41"
 
 - id: tcp-wrapper-multiplexer
   published: true
