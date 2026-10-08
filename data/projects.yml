@@ -1061,7 +1061,7 @@
 
 - id: nagios-plugin-templates-bash
   published: true
-  name: Nagios Plugin Templates Bash
+  name: Nagios Bash Template
   icon: material-source-repository
   publish_date: "2026-10-08T09:58:34"
   description: >-
@@ -1070,6 +1070,8 @@
   categories:
     - Monitoring
     - Nagios
+    - Plugin
+    - Templates
   organisation: Monitoring Toolbox
   logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
   logo_alt: Monitoring Toolbox
@@ -1080,7 +1082,7 @@
 
 - id: nagios-plugin-templates-perl
   published: true
-  name: Nagios Plugin Templates Perl
+  name: Nagios Perl Template
   icon: material-source-repository
   publish_date: "2026-10-08T10:05:07"
   description: >-
@@ -1089,6 +1091,8 @@
   categories:
     - Monitoring
     - Nagios
+    - Plugin
+    - Templates
   organisation: Monitoring Toolbox
   logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
   logo_alt: Monitoring Toolbox
@@ -1097,9 +1101,30 @@
   version: "0.1.0"
   released_date: "2026-10-08T10:47:59"
 
+- id: nagios-plugin-templates-powershell
+  published: true
+  name: Nagios PowerShell Template
+  icon: material-source-repository
+  publish_date: "2026-10-08T10:04:36"
+  description: >-
+    PowerShell templates for Nagios-style plugin checks. A new check can start from one of these
+    templates and report in the Nagios plugin format.
+  categories:
+    - Monitoring
+    - Nagios
+    - Plugin
+    - Templates
+  organisation: Monitoring Toolbox
+  logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
+  logo_alt: Monitoring Toolbox
+  repository: https://github.com/lupaxa-monitoring-toolbox/nagios-plugin-templates-powershell
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-08T11:43:48"
+
 - id: nagios-plugin-templates-python
   published: true
-  name: Nagios Plugin Templates Python
+  name: Nagios Python Template
   icon: material-source-repository
   publish_date: "2026-10-08T10:01:20"
   description: >-
@@ -1108,6 +1133,8 @@
   categories:
     - Monitoring
     - Nagios
+    - Plugin
+    - Templates
   organisation: Monitoring Toolbox
   logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
   logo_alt: Monitoring Toolbox
