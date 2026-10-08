@@ -950,8 +950,8 @@
   repository: https://github.com/lupaxa-developers-toolbox/makefile-skills
   documentation: https://makefile-skills.thelupaxaproject.org/
   banner: released
-  version: "0.1.8"
-  released_date: "2026-10-07T09:23:07"
+  version: "0.1.9"
+  released_date: "2026-10-08T11:28:50"
 
 - id: magic-8ball
   published: true
@@ -1058,6 +1058,63 @@
   banner: released
   version: "0.1.6"
   released_date: "2026-10-07T09:15:32"
+
+- id: nagios-plugin-templates-bash
+  published: true
+  name: Nagios Plugin Templates Bash
+  icon: material-source-repository
+  publish_date: "2026-10-08T09:58:34"
+  description: >-
+    Bash templates for Nagios-style plugin checks. A new check can start from one of these templates
+    and report in the Nagios plugin format.
+  categories:
+    - Monitoring
+    - Nagios
+  organisation: Monitoring Toolbox
+  logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
+  logo_alt: Monitoring Toolbox
+  repository: https://github.com/lupaxa-monitoring-toolbox/nagios-plugin-templates-bash
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-08T10:12:31"
+
+- id: nagios-plugin-templates-perl
+  published: true
+  name: Nagios Plugin Templates Perl
+  icon: material-source-repository
+  publish_date: "2026-10-08T10:05:07"
+  description: >-
+    Perl templates for Nagios-style plugin checks. A new check can start from one of these templates
+    and report in the Nagios plugin format.
+  categories:
+    - Monitoring
+    - Nagios
+  organisation: Monitoring Toolbox
+  logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
+  logo_alt: Monitoring Toolbox
+  repository: https://github.com/lupaxa-monitoring-toolbox/nagios-plugin-templates-perl
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-08T10:47:59"
+
+- id: nagios-plugin-templates-python
+  published: true
+  name: Nagios Plugin Templates Python
+  icon: material-source-repository
+  publish_date: "2026-10-08T10:01:20"
+  description: >-
+    Python templates for Nagios-style plugin checks. A new check can start from one of these templates
+    and report in the Nagios plugin format.
+  categories:
+    - Monitoring
+    - Nagios
+  organisation: Monitoring Toolbox
+  logo: assets/images/organisations/organisation-monitoring-toolbox-logo.png
+  logo_alt: Monitoring Toolbox
+  repository: https://github.com/lupaxa-monitoring-toolbox/nagios-plugin-templates-python
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-08T10:35:56"
 
 - id: perl-lint
   published: true
@@ -1204,6 +1261,27 @@
   banner: released
   version: "0.1.1"
   released_date: "2026-10-07T09:19:41"
+
+- id: powershell-linter
+  published: true
+  name: PowerShell Linter
+  icon: material-source-repository
+  publish_date: "2026-10-08T10:35:48"
+  description: >-
+    Lint PowerShell scripts with PSScriptAnalyzer. A reusable CI/CD Toolbox pipeline that runs that
+    check the same way in every repository.
+  categories:
+    - CI/CD
+    - PowerShell
+    - Linting
+    - Workflow
+  organisation: CI/CD Toolbox
+  logo: assets/images/organisations/organisation-cicd-toolbox-logo.png
+  logo_alt: CI/CD Toolbox
+  repository: https://github.com/lupaxa-cicd-toolbox/powershell-linter
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-08T10:51:52"
 
 - id: privacy-reset
   published: true
@@ -1449,8 +1527,8 @@
   logo_alt: The Lupaxa Project
   repository: https://github.com/the-lupaxa-project/workflows
   banner: released
-  version: "0.1.18"
-  released_date: "2026-10-07T09:54:43"
+  version: "0.1.19"
+  released_date: "2026-10-08T10:52:42"
 
 - id: rubocop
   published: true
@@ -1615,8 +1693,8 @@
   documentation: https://snippets.thelupaxaproject.org/
   documentation_label: Visit Site
   banner: released
-  version: "0.2.19"
-  released_date: "2026-10-07T09:23:49"
+  version: "0.2.20"
+  released_date: "2026-10-07T13:49:00"
 
 - id: spider-frameworks
   published: true
