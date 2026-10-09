@@ -143,6 +143,28 @@
   version: "0.1.7"
   released_date: "2026-10-07T09:25:39"
 
+- id: browser-interrogator
+  published: true
+  name: Browser Interrogator
+  icon: material-source-repository
+  publish_date: "2026-10-09T08:14:22"
+  description: >-
+    Shows the connection, device, and browser facts any website can read on a page load. The list is
+    what the browser already offers, before anyone asks a question.
+  categories:
+    - Security
+    - Privacy
+    - Browser
+  organisation: Security Toolbox
+  logo: assets/images/organisations/organisation-security-toolbox-logo.png
+  logo_alt: Security Toolbox
+  repository: https://github.com/lupaxa-security-toolbox/browser-interrogator
+  documentation: https://browserinterrogator.com/
+  documentation_label: Visit Site
+  banner: released
+  version: "0.1.0"
+  released_date: "2026-10-09T10:04:07"
+
 - id: certificate-tool
   published: true
   name: Certificate Tool

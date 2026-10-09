@@ -297,7 +297,12 @@ def test_project_card_documentation_label_overrides_link_text(tmp_path, monkeypa
 def test_site_cards_use_visit_site_label():
     projects = yaml.safe_load((ROOT / "data" / "projects.yml").read_text(encoding="utf-8"))
     by_id = {project["id"]: project for project in projects}
-    for project_id in ("homebrew-tap", "snippets", "toolbox.thelupaxaproject.org"):
+    for project_id in (
+        "browser-interrogator",
+        "homebrew-tap",
+        "snippets",
+        "toolbox.thelupaxaproject.org",
+    ):
         assert by_id[project_id]["documentation_label"] == "Visit Site"
 
 
